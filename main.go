@@ -5,16 +5,33 @@ import (
 	. "go/ast"
 	"go/parser"
 	"go/token"
+	"os"
 	"unicode"
 )
 
 func exprAsString(e Expr) string {
-/*	if t, ok := e.(*TypeSpec); ok {
-		return "ok"
-	} else {
-		panic("hey this is wrong")
-	} */
+	switch v := e.(type) {
+	case *Ident:
+		return v.Name
+	case *ArrayType:
+		return "[]" + exprAsString(v.Elt)
+	case *StarExpr:
+		return "*" + exprAsString(v.X)
+	default:
+		panic("unrecognized Expr type")
+	}
 	return " huh?"
+}
+
+func paramNamesAsString(names []*Ident) string {
+	s := ""
+	for i, n := range names {
+		if i > 0 {
+			s = s + ", "
+		}
+		s = s + n.Name
+	}
+	return s
 }
 
 func fieldListAsString(fl *FieldList) string {
@@ -29,9 +46,9 @@ func fieldListAsString(fl *FieldList) string {
 		if f.Names == nil {
 			s = s + "_"
 		} else {
-			s = s + "<params>" // paramNamesAsString(f.Names => *Ident)
+			s = s + paramNamesAsString(f.Names)
 		}
-		s = s + exprAsString(f.Type)
+		s = s + " " + exprAsString(f.Type)
 	}
 	return s
 }
@@ -59,7 +76,19 @@ func Xyzzy() {
 }
 
 func (int) SkipMe() string {  // has a receiver, so not currently handled
-}`
+}
+
+// LookupMX returns the DNS MX records for the given domain name sorted by preference.
+func LookupMX(name string) ([]*MX, error) {
+	return DefaultResolver.lookupMX(context.Background(), name)
+}
+
+// LookupMX returns the DNS MX records for the given domain name sorted by preference.
+func (r *Resolver) LookupMX(ctx context.Context, name string) ([]*MX, error) {
+	return r.lookupMX(ctx, name)
+}
+
+`
 
 	// Parse src but stop after processing the imports.
 	f, err := parser.ParseFile(fset, "", src, /* Or call parser.ParseDir? Also: parser.ImportsOnly, parser.ParseComments ? See https://golang.org/pkg/go/parser/ */ 0)
@@ -68,7 +97,10 @@ func (int) SkipMe() string {  // has a receiver, so not currently handled
 		return
 	}
 
-	Print(fset, f)
+	if len(os.Args) > 1 && os.Args[1] == "--dump" {
+		Print(fset, f)
+		os.Exit(0)
+	}
 
 	// Print the imports from the file's AST.
 	for _, s := range f.Imports {
