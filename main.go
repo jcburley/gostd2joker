@@ -5,6 +5,7 @@ import (
 	. "go/ast"
 	"go/parser"
 	"go/token"
+	"strings"
 	"os"
 	"unicode"
 )
@@ -17,10 +18,11 @@ func exprAsString(e Expr) string {
 		return "[]" + exprAsString(v.Elt)
 	case *StarExpr:
 		return "*" + exprAsString(v.X)
+	case *SelectorExpr:
+		return exprAsString(v.X) + "." + v.Sel.Name
 	default:
-		panic("unrecognized Expr type")
+		panic("unrecognized Expr type " + fmt.Sprintf("%T", e) + " at: " + fmt.Sprintf("%v", e))
 	}
-	return " huh?"
 }
 
 func paramNamesAsString(names []*Ident) string {
@@ -53,17 +55,83 @@ func fieldListAsString(fl *FieldList) string {
 	return s
 }
 
+func printDecls(f *File) {
+	for _, s := range f.Decls {
+		if fn, ok := s.(*FuncDecl); ok {
+			rcv := fn.Recv // *FieldList of receivers or nil (functions)
+			if rcv != nil {
+				continue  // Skipping these for now
+			}
+			if unicode.IsLower(rune(fn.Name.Name[0])) {
+				continue  // Skipping non-exported functions
+			}
+			typ := fn.Type // *FuncType of signature: params, results, and position of "func" keyword
+			fmt.Printf("%s(%s) => %s\n", fn.Name, fieldListAsString(typ.Params), fieldListAsString(typ.Results))
+		}
+	}
+}
+
+func printPackage(p *Package) {
+	for n, f := range p.Files {
+		fmt.Printf("File %s:\n", n)
+		printDecls(f)
+	}
+}
+
+func processDir(d string, mode parser.Mode, dump bool) int {
+	fmt.Printf("Processing dirname=%s dump=%t:\n", d, dump)
+
+	fset := token.NewFileSet() // positions are relative to fset
+	pkgs, err := parser.ParseDir(fset, d, nil, mode)
+	if err != nil {
+		fmt.Fprintln(os.Stderr, err)
+		return 1
+	}
+
+	if (dump) {
+		for k, v := range pkgs {
+			fmt.Printf("Package %s:\n", k)
+			printPackage(v)
+			fmt.Println("")
+		}
+	} else {
+	}
+	
+	return 0
+}
+
+func notOption(arg string) bool {
+	return arg == "-" || !strings.HasPrefix(arg, "-")
+}
+
 func main() {
 	fset := token.NewFileSet() // positions are relative to fset
 
+	length := len(os.Args)
 	dump := false
 	filename := ""
+	dir := ""
+	var mode parser.Mode = 0 /* Also: parser.ImportsOnly, parser.ParseComments ? See https://golang.org/pkg/go/parser/ */
 
-	for _, a := range os.Args[1:] {
+	for i := 1; i < length; i++ { // shift
+		a := os.Args[i]
 		if a[0] == "-"[0] {
 			switch a {
 			case "--dump":
 				dump = true
+			case "--dir":
+				if filename != "" {
+					panic("cannot specify both a filename and the --dir <dirname> option")
+				}
+				if dir != "" {
+					panic("cannot specify --dir <dirname> more than once")
+				}
+				if i < length-1 && notOption(os.Args[i+1]) {
+					i += 1 // shift
+					dir = os.Args[i]
+				} else {
+					panic("missing path after --dir option")
+				}
 			default:
 				panic("unrecognized option " + a)
 			}
@@ -72,6 +140,10 @@ func main() {
 		} else {
 			panic("only one filename may be specified on command line: " + a)
 		}
+	}
+
+	if dir != "" {
+		os.Exit(processDir(dir, mode, dump))
 	}
 
 	src := `package foo
@@ -108,10 +180,9 @@ func (r *Resolver) LookupMX(ctx context.Context, name string) ([]*MX, error) {
 
 `
 
-	// Parse src but stop after processing the imports.
 	f, err := parser.ParseFile(fset, filename,
 		func () interface{} { if filename == "" { return src } else { return nil } }(),
-		/* Or call parser.ParseDir? Also: parser.ImportsOnly, parser.ParseComments ? See https://golang.org/pkg/go/parser/ */ 0)
+		mode)
 	if err != nil {
 		fmt.Println(err)
 		return
@@ -128,17 +199,5 @@ func (r *Resolver) LookupMX(ctx context.Context, name string) ([]*MX, error) {
 	}
 
 	// Now print the decls.
-	for _, s := range f.Decls {
-		if fn, ok := s.(*FuncDecl); ok {
-			rcv := fn.Recv // *FieldList of receivers or nil (functions)
-			if rcv != nil {
-				continue  // Skipping these for now
-			}
-			if unicode.IsLower(rune(fn.Name.Name[0])) {
-				continue  // Skipping non-exported functions
-			}
-			typ := fn.Type // *FuncType of signature: params, results, and position of "func" keyword
-			fmt.Printf("%s(%s) => %s\n", fn.Name, fieldListAsString(typ.Params), fieldListAsString(typ.Results))
-		}
-	}
+	printDecls(f)
 }
