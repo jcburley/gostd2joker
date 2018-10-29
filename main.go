@@ -56,6 +56,24 @@ func fieldListAsString(fl *FieldList) string {
 func main() {
 	fset := token.NewFileSet() // positions are relative to fset
 
+	dump := false
+	filename := ""
+
+	for _, a := range os.Args[1:] {
+		if a[0] == "-"[0] {
+			switch a {
+			case "--dump":
+				dump = true
+			default:
+				panic("unrecognized option " + a)
+			}
+		} else if filename == "" {
+			filename = a
+		} else {
+			panic("only one filename may be specified on command line: " + a)
+		}
+	}
+
 	src := `package foo
 
 import (
@@ -91,13 +109,15 @@ func (r *Resolver) LookupMX(ctx context.Context, name string) ([]*MX, error) {
 `
 
 	// Parse src but stop after processing the imports.
-	f, err := parser.ParseFile(fset, "", src, /* Or call parser.ParseDir? Also: parser.ImportsOnly, parser.ParseComments ? See https://golang.org/pkg/go/parser/ */ 0)
+	f, err := parser.ParseFile(fset, filename,
+		func () interface{} { if filename == "" { return src } else { return nil } }(),
+		/* Or call parser.ParseDir? Also: parser.ImportsOnly, parser.ParseComments ? See https://golang.org/pkg/go/parser/ */ 0)
 	if err != nil {
 		fmt.Println(err)
 		return
 	}
 
-	if len(os.Args) > 1 && os.Args[1] == "--dump" {
+	if dump {
 		Print(fset, f)
 		os.Exit(0)
 	}
