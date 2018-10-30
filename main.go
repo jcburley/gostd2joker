@@ -124,6 +124,14 @@ func commentGroupAsString(doc *CommentGroup) string {
 	}
 }
 
+func commentGroupInQuotes(doc *CommentGroup) string {
+	if doc == nil || doc.Text() == "" {
+		return ""
+	}
+	return `  "` + strings.Trim(doc.Text(), " \t\n") + `"
+`
+}
+
 func printDecls(f *File) {
 	for _, s := range f.Decls {
 		switch v := s.(type) {
@@ -320,7 +328,44 @@ func walkDirs(d string, mode parser.Mode) error {
 	return err
 }
 
+func exprAsClojure(e Expr) string {
+	return "<type>"
+}
+
+func paramNameAsClojure(name *Ident) string {
+	return name.Name
+}
+
+func fieldListAsClojure(fl *FieldList) string {
+	if fl == nil {
+		return ""
+	}
+	var s string
+	for _, f := range fl.List {
+		cltype := exprAsClojure(f.Type)
+		for _, p := range f.Names {
+			if s != "" {
+				s = s + ", "
+			}
+			s = s + "^" + cltype + " "
+			if f.Names == nil {
+				s = s + "_"
+			} else {
+				s = s + paramNameAsClojure(p)
+			}
+		}
+	}
+	return s
+}
+
 func emitFunction(f string, d *FuncDecl) {
+	sfmt := `
+(defn %s
+%s  {:added "1.0"
+   :go "%s"}
+  [%s])
+`
+	fmt.Printf(sfmt, d.Name.Name, commentGroupInQuotes(d.Doc), d.Name.Name, fieldListAsClojure(d.Type.Params))
 }
 
 func notOption(arg string) bool {
