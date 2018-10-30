@@ -349,6 +349,22 @@ func exprAsClojure(e Expr) string {
 	}
 }
 
+func exprAsGo(e Expr) string {
+	switch v := e.(type) {
+	case *Ident:
+		switch v.Name {
+		case "string":
+			return "string"
+		case "int":
+			return "int"
+		default:
+			return "Object"
+		}
+	default:
+		return fmt.Sprintf("ABEND881(unrecognized Expr type %T at: %v)", e, e)
+	}
+}
+
 func paramNameAsClojure(name *Ident) string {
 	return name.Name
 }
@@ -398,8 +414,29 @@ func funcNameAsGoPrivate(f string) string {
 	return strings.ToLower(f[0:1]) + f[1:]
 }
 
+func paramNameAsGo(p string) string {
+	return p
+}
+
 func paramListAsGo(fl *FieldList) string {
-	return "<params>"
+	s := ""
+	for _, f := range fl.List {
+		gotype := exprAsGo(f.Type)
+		for _, p := range f.Names {
+			if s != "" {
+				s += ", "
+			}
+			if p == nil {
+				s += "ABEND712"
+			} else {
+				s += paramNameAsGo(p.Name)
+			}
+			if gotype != "" {
+				s += " " + gotype
+			}
+		}
+	}
+	return s
 }
 
 func typeAsGo(fl *FieldList) string {
