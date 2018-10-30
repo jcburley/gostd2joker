@@ -167,17 +167,21 @@ func processFuncDecl(pkg string, name string, f *File, fn *FuncDecl) {
 	}
 }
 
-var types = map[string]bool {}
+var types = map[string]string {}
 
 func processTypeSpec(pkg string, name string, f *File, ts *TypeSpec) {
 	if (dump) {
 		Print(fset, ts)
 	}
 	typename := pkg + "." + ts.Name.Name
-	if types[typename] {
-		panic("already seen type " + typename + ", yet again in " + name)
+	if v, ok := types[typename]; ok {
+		if v != "DUPLICATE" {
+			fmt.Fprintf(os.Stderr, "already seen type %s in %s, yet again in %s\n",
+				typename, v, name)
+			name = "DUPLICATE"
+		}
 	}
-	types[typename] = true
+	types[typename] = name
 }
 
 func processTypeSpecs(pkg string, name string, f *File, tss []Spec) {
@@ -357,8 +361,8 @@ func main() {
 		if err != nil {
 			panic("Error walking directory " + dir + ": " + fmt.Sprintf("%v", err))
 		}
-		for t, _ := range types {
-			fmt.Printf("TYPE %s\n", t)
+		for t, v := range types {
+			fmt.Printf("TYPE %s in %s\n", t, v)
 		}
 		os.Exit(0)
 	}
