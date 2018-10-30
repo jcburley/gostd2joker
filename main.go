@@ -226,14 +226,14 @@ func processPackage(pkg string, p *Package) {
 	}
 }
 
-func processDir(d string, mode parser.Mode) error {
+func processDir(d string, path string, mode parser.Mode) error {
 	if (verbose) {
 		fmt.Printf("Processing dirname=%s dump=%t:\n", d, dump)
 	}
 
-	pkgs, err := parser.ParseDir(fset, d,
+	pkgs, err := parser.ParseDir(fset, path,
 		// Walk only *.go files that meet default (target) build constraints, e.g. per "// build ..."
-		func (info os.FileInfo) bool { b, e := build.Default.MatchFile(d, info.Name()); return b && e == nil },
+		func (info os.FileInfo) bool { b, e := build.Default.MatchFile(path, info.Name()); return b && e == nil },
 		mode)
 	if err != nil {
 		fmt.Fprintln(os.Stderr, err)
@@ -247,17 +247,17 @@ func processDir(d string, mode parser.Mode) error {
 			fmt.Println("")
 		}
 	} else {
-		basename := filepath.Base(d)
+		basename := filepath.Base(path)
 		for k, v := range pkgs {
 			if k != basename && k != basename + "_test" {
 				if (verbose) {
-					fmt.Printf("NOTICE: Package %s is defined in %s -- ignored\n", k, d)
+					fmt.Printf("NOTICE: Package %s is defined in %s -- ignored\n", k, path)
 				}
 			} else {
 				if (verbose) {
 					fmt.Printf("Package %s:\n", k)
 				}
-				processPackage(d + "/" + k, v)
+				processPackage(strings.Replace(path, d + "/", "", 1) + "/" + k, v)
 			}
 		}
 	}
@@ -293,7 +293,7 @@ func walkDirs(d string, mode parser.Mode) error {
 				if (verbose) {
 					fmt.Printf("Walking from %s to %s\n", d, path)
 				}
-				return processDir(path, mode)
+				return processDir(d, path, mode)
 			}
 			return nil // not a directory
 		})
