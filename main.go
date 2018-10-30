@@ -152,9 +152,57 @@ func printDecls(f *File) {
 }
 
 func printPackage(p *Package) {
-	for n, f := range p.Files {
-		fmt.Printf("File %s:\n", n)
+	for nam, f := range p.Files {
+		fmt.Printf("File %s:\n", nam)
 		printDecls(f)
+	}
+}
+
+func processFuncDecl(pkg string, name string, f *File, fn *FuncDecl) {
+}
+
+func processTypeSpec(pkg string, name string, f *File, tss Spec) {
+}
+
+func processTypeSpecs(pkg string, name string, f *File, tss []Spec) {
+	for _, spec := range tss {
+		ts := spec.(*TypeSpec)
+		if unicode.IsLower(rune(ts.Name.Name[0])) {
+			continue  // Skipping non-exported functions
+		}
+		processTypeSpec(pkg, name, f, ts)
+	}
+}
+
+func processDecls(pkg string, name string, f *File) {
+	for _, s := range f.Decls {
+		switch v := s.(type) {
+		case *FuncDecl:
+			rcv := v.Recv // *FieldList of receivers or nil (functions)
+			if rcv != nil {
+				continue  // Skipping these for now
+			}
+			if unicode.IsLower(rune(v.Name.Name[0])) {
+				continue  // Skipping non-exported functions
+			}
+			if (dump) {
+				Print(fset, v)
+			}
+			processFuncDecl(pkg, name, f, v)
+		case *GenDecl:
+			if v.Tok != token.TYPE {
+				continue
+			}
+			processTypeSpecs(pkg, name, f, v.Specs)
+		default:
+			panic("unrecognized Decl type " + fmt.Sprintf("%T", v) + " at: " + fmt.Sprintf("%v", v))
+		}
+	}
+}
+
+func processPackage(pkg string, p *Package) {
+	for name, f := range p.Files {
+		processDecls(pkg, name, f)
 	}
 }
 
@@ -180,7 +228,7 @@ func processDir(d string, mode parser.Mode) error {
 //				fmt.Printf("NOTICE: Package %s is defined in %s -- ignored\n", k, d)
 			} else {
 				fmt.Printf("Package %s:\n", k)
-				printPackage(v)
+				processPackage(k, v)
 			}
 		}
 	}
