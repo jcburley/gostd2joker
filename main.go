@@ -162,7 +162,8 @@ func printPackage(p *Package) {
 	}
 }
 
-var functions = map[string]string {}
+var functions = map[string]*FuncDecl {}
+var DUPLICATEFUNCTION = &FuncDecl {}
 
 func processFuncDecl(pkg string, filename string, f *File, fn *FuncDecl) {
 	if (dump) {
@@ -170,13 +171,13 @@ func processFuncDecl(pkg string, filename string, f *File, fn *FuncDecl) {
 	}
 	fname := pkg + "." + fn.Name.Name
 	if v, ok := functions[fname]; ok {
-		if v != "DUPLICATE" {
+		if v != DUPLICATEFUNCTION {
 			fmt.Fprintf(os.Stderr, "already seen function %s in %s, yet again in %s\n",
 				fname, v, filename)
-			filename = "DUPLICATE"
+			fn = DUPLICATEFUNCTION
 		}
 	}
-	functions[fname] = filename
+	functions[fname] = fn
 }
 
 var types = map[string]string {}
@@ -319,6 +320,9 @@ func walkDirs(d string, mode parser.Mode) error {
 	return err
 }
 
+func emitFunction(f string, d *FuncDecl) {
+}
+
 func notOption(arg string) bool {
 	return arg == "-" || !strings.HasPrefix(arg, "-")
 }
@@ -380,9 +384,13 @@ func main() {
 			}
 		}
 		for f, v := range functions {
-			if verbose {
-				fmt.Printf("FUNC %s in %s\n", f, v)
+			if v == DUPLICATEFUNCTION {
+				continue
 			}
+			if verbose {
+				fmt.Printf("FUNC %s in %v\n", f, v)
+			}
+			emitFunction(f, v)
 		}
 		if verbose {
 			fmt.Printf("Totals: types=%d functions=%d receivers=%d\n",
