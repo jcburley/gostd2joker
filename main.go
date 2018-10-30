@@ -20,6 +20,17 @@ import (
 
 */
 
+func chanDirAsString(dir ChanDir) string {
+	switch dir {
+	case SEND:
+		return "chan->"
+	case RECV:
+		return "<-chan"
+	default:
+		return "???chan???"
+	}
+}
+
 func exprAsString(e Expr) string {
 	switch v := e.(type) {
 	case *Ident:
@@ -30,6 +41,16 @@ func exprAsString(e Expr) string {
 		return "*" + exprAsString(v.X)
 	case *SelectorExpr:
 		return exprAsString(v.X) + "." + v.Sel.Name
+	case *FuncType:
+		return "func(" + fieldListAsString(v.Params) + ")=>" + fieldListAsString(v.Results)
+	case *InterfaceType:
+		return "interface{" + fieldListAsString(v.Methods) + "}"
+	case *Ellipsis:
+		return "..." + exprAsString(v.Elt)
+	case *MapType:
+		return "map[" + exprAsString(v.Key) + "]" + exprAsString(v.Value)
+	case *ChanType:
+		return chanDirAsString(v.Dir) + " " + exprAsString(v.Value)
 	default:
 		panic("unrecognized Expr type " + fmt.Sprintf("%T", e) + " at: " + fmt.Sprintf("%v", e))
 	}
@@ -76,7 +97,7 @@ func printDecls(f *File) {
 				continue  // Skipping non-exported functions
 			}
 			typ := fn.Type // *FuncType of signature: params, results, and position of "func" keyword
-			fmt.Printf("%s(%s) => %s\n", fn.Name, fieldListAsString(typ.Params), fieldListAsString(typ.Results))
+			fmt.Printf("%s(%s) => (%s)\n", fn.Name, fieldListAsString(typ.Params), fieldListAsString(typ.Results))
 		}
 	}
 }
@@ -88,14 +109,14 @@ func printPackage(p *Package) {
 	}
 }
 
-func processDir(d string, mode parser.Mode, dump bool) int {
+func processDir(d string, mode parser.Mode, dump bool) error {
 	fmt.Printf("Processing dirname=%s dump=%t:\n", d, dump)
 
 	fset := token.NewFileSet() // positions are relative to fset
 	pkgs, err := parser.ParseDir(fset, d, nil, mode)
 	if err != nil {
 		fmt.Fprintln(os.Stderr, err)
-		return 1
+		return err
 	}
 
 	if (dump) {
@@ -106,17 +127,55 @@ func processDir(d string, mode parser.Mode, dump bool) int {
 		}
 	} else {
 		basename := filepath.Base(d)
-		for k, _ := range pkgs {
+		for k, v := range pkgs {
 			if k != basename && k != basename + "_test" {
-				fmt.Printf("PROBLEM: Package %s is defined in %s\n", k, d)
+//				fmt.Printf("NOTICE: Package %s is defined in %s -- ignored\n", k, d)
+			} else {
+				fmt.Printf("Package %s:\n", k)
+				printPackage(v)
 			}
 		}
 	}
-	
-	return 0
+
+	return nil
+}
+
+var excludeDirs = map[string]bool {
+	"builtin": true,
+	"cmd": true,
+	"internal": true, // look into this later?
+	"testdata": true,
 }
 
 
+func walkDirs(d string, mode parser.Mode, dump bool) error {
+	err := filepath.Walk(d,
+		func(path string, info os.FileInfo, err error) error {
+			if err != nil {
+				fmt.Fprintf(os.Stderr, "Skipping %s due to: %v\n", path, err)
+				return err
+			}
+			if path == d {
+				return nil // skip (implicit) "."
+			}
+			if excludeDirs[filepath.Base(path)] {
+//				fmt.Printf("Excluding %s\n", path)
+				return filepath.SkipDir
+			}
+			if info.IsDir() {
+//				fmt.Printf("From %s to %s\n", d, path)
+				return processDir(path, mode, dump)
+			}
+			return nil // not a directory
+		})
+
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error while walking %s: %v\n", d, err)
+		return err
+	}
+
+	return err
+}
 
 func notOption(arg string) bool {
 	return arg == "-" || !strings.HasPrefix(arg, "-")
@@ -161,7 +220,11 @@ func main() {
 	}
 
 	if dir != "" {
-		os.Exit(processDir(dir, mode, dump))
+		err := walkDirs(dir, mode, dump)
+		if err != nil {
+			panic("Error walking directory " + dir + ": " + fmt.Sprintf("%v", err))
+		}
+		os.Exit(0)
 	}
 
 	src := `package foo
