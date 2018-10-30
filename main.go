@@ -257,7 +257,7 @@ func processDir(d string, mode parser.Mode) error {
 				if (verbose) {
 					fmt.Printf("Package %s:\n", k)
 				}
-				processPackage(k, v)
+				processPackage(d + "/" + k, v)
 			}
 		}
 	}
