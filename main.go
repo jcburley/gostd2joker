@@ -398,28 +398,58 @@ func funcNameAsGoPrivate(f string) string {
 	return strings.ToLower(f[0:1]) + f[1:]
 }
 
+func paramListAsGo(fl *FieldList) string {
+	return "<params>"
+}
+
+func typeAsGo(fl *FieldList) string {
+	return "<type>"
+}
+
+func bodyAsGo(f *FuncDecl) string {
+	return "\t<body>"
+}
+
 var jokerCode = map[string]map[string]string {}
+var goCode = map[string]map[string]string {}
 
 func emitFunction(f string, fn *funcInfo) {
 	d := fn.fd
 	pkg := fn.pkg
-	sfmt := `
+	jfmt := `
 (defn %s
 %s  {:added "1.0"
    :go "%s(%s)"}
   [%s])
 `
 	goFname := funcNameAsGoPrivate(d.Name.Name)
-	jokerfn := fmt.Sprintf(sfmt, d.Name.Name, commentGroupInQuotes(d.Doc),
+	jokerfn := fmt.Sprintf(jfmt, d.Name.Name, commentGroupInQuotes(d.Doc),
 		goFname, fieldListToGo(d.Type.Params),
 		fieldListAsClojure(d.Type.Params))
-	if strings.Contains(jokerfn, "ABEND") {
+
+	gfmt := `
+func %s(%s) %s {
+%s
+}
+`
+
+	gofn := fmt.Sprintf(gfmt, goFname, paramListAsGo(d.Type.Params), typeAsGo(d.Type.Results),
+		bodyAsGo(d))
+
+	if strings.Contains(jokerfn, "ABEND") || strings.Contains(gofn, "ABEND") {
 		jokerfn = strings.Replace(jokerfn, "\n", "\n;; ", -1)
+		gofn = strings.Replace(gofn, "\n", "\n// ", -1)
 	}
+
 	if _, ok := jokerCode[pkg]; !ok {
 		jokerCode[pkg] = map[string]string {}
 	}
 	jokerCode[pkg][d.Name.Name] = jokerfn
+
+	if _, ok := goCode[pkg]; !ok {
+		goCode[pkg] = map[string]string {}
+	}
+	goCode[pkg][d.Name.Name] = gofn
 }
 
 func notOption(arg string) bool {
@@ -492,6 +522,11 @@ func main() {
 			emitFunction(f, v)
 		}
 		for p, v := range jokerCode {
+			for f, w := range v {
+				fmt.Printf("FUNC %s.%s has %v\n", p, f, w)
+			}
+		}
+		for p, v := range goCode {
 			for f, w := range v {
 				fmt.Printf("FUNC %s.%s has %v\n", p, f, w)
 			}
