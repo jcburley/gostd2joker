@@ -440,7 +440,13 @@ func paramListAsGo(fl *FieldList) string {
 }
 
 func typeAsGo(fl *FieldList) string {
-	return "<type>"
+	if fl == nil || fl.List == nil || len(fl.List) < 1 {
+		return ""
+	}
+	if len(fl.List) > 1 {
+		return "Object"
+	}
+	return exprAsGo(fl.List[0].Type)
 }
 
 func bodyAsGo(f *FuncDecl) string {
