@@ -91,22 +91,33 @@ func fieldListAsString(fl *FieldList) string {
 	return s
 }
 
-func typeSpecsAsString(tss []Spec) string {
-	s := ""
+func printTypeSpecs(tss []Spec) {
 	for _, spec := range tss {
-		if s != "" {
-			s += ", "
-		}
 		ts := spec.(*TypeSpec)
 		if unicode.IsLower(rune(ts.Name.Name[0])) {
 			continue  // Skipping non-exported functions
 		}
-		s += ts.Name.Name + " " + exprAsString(ts.Type)
 		if (dump) {
 			Print(fset, ts)
 		}
+		fmt.Printf("%sTYPE %s %s\n",
+			commentGroupAsString(ts.Doc),
+			ts.Name.Name,
+			exprAsString(ts.Type))
 	}
-	return s
+}
+
+func commentGroupAsString(doc *CommentGroup) string {
+	if doc == nil {
+		return "\n"
+	}
+	dt := doc.Text()
+	nl := strings.Count(dt, "\n")
+	if nl > 1 {
+		return "\n/* " + strings.Replace(dt, "\n", "\n   ", nl - 1) + "*/\n"
+	} else {
+		return "\n// " + dt
+	}
 }
 
 func printDecls(f *File) {
@@ -124,15 +135,16 @@ func printDecls(f *File) {
 				Print(fset, v)
 			}
 			typ := v.Type // *FuncType of signature: params, results, and position of "func" keyword
-			fmt.Printf("%s(%s) => (%s)\n", v.Name, fieldListAsString(typ.Params), fieldListAsString(typ.Results))
+			fmt.Printf("%s%s(%s) => (%s)\n",
+				commentGroupAsString(v.Doc),
+				v.Name,
+				fieldListAsString(typ.Params),
+				fieldListAsString(typ.Results))
 		case *GenDecl:
 			if v.Tok != token.TYPE {
 				continue
 			}
-			types := typeSpecsAsString(v.Specs)
-			if types != "" {
-				fmt.Printf("Types: (%s)\n", types)
-			}
+			printTypeSpecs(v.Specs)
 		default:
 			panic("unrecognized Decl type " + fmt.Sprintf("%T", v) + " at: " + fmt.Sprintf("%v", v))
 		}
@@ -224,7 +236,7 @@ func main() {
 	length := len(os.Args)
 	filename := ""
 	dir := ""
-	var mode parser.Mode = 0 /* Also: parser.ImportsOnly, parser.ParseComments ? See https://golang.org/pkg/go/parser/ */
+	var mode parser.Mode = parser.ParseComments /* Also: parser.ImportsOnly, parser.ParseComments ? See https://golang.org/pkg/go/parser/ */
 
 	for i := 1; i < length; i++ { // shift
 		a := os.Args[i]
