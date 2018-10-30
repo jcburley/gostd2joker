@@ -7,8 +7,18 @@ import (
 	"go/token"
 	"strings"
 	"os"
+	"path/filepath"
 	"unicode"
 )
+
+/* Want to support e.g.:
+
+     net/dial.go:DialTimeout(network, address string, timeout time.Duration) => _ Conn, _ error
+
+   I.e. a function defined in one package refers to a type defined in
+   another (a different directory, even).
+
+*/
 
 func exprAsString(e Expr) string {
 	switch v := e.(type) {
@@ -95,10 +105,18 @@ func processDir(d string, mode parser.Mode, dump bool) int {
 			fmt.Println("")
 		}
 	} else {
+		basename := filepath.Base(d)
+		for k, _ := range pkgs {
+			if k != basename && k != basename + "_test" {
+				fmt.Printf("PROBLEM: Package %s is defined in %s\n", k, d)
+			}
+		}
 	}
 	
 	return 0
 }
+
+
 
 func notOption(arg string) bool {
 	return arg == "-" || !strings.HasPrefix(arg, "-")
