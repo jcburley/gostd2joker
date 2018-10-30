@@ -393,6 +393,8 @@ func funcNameAsGoPrivate(f string) string {
 	return strings.ToLower(f[0:1]) + f[1:]
 }
 
+var jokerCode = map[string]map[string]string {}
+
 func emitFunction(f string, d *FuncDecl) {
 	sfmt := `
 (defn %s
@@ -401,9 +403,16 @@ func emitFunction(f string, d *FuncDecl) {
   [%s])
 `
 	goFname := funcNameAsGoPrivate(d.Name.Name)
-	fmt.Printf(sfmt, d.Name.Name, commentGroupInQuotes(d.Doc),
+	jokerfn := fmt.Sprintf(sfmt, d.Name.Name, commentGroupInQuotes(d.Doc),
 		goFname, fieldListToGo(d.Type.Params),
 		fieldListAsClojure(d.Type.Params))
+	if strings.Contains(jokerfn, "ABEND") {
+		jokerfn = strings.Replace(jokerfn, "\n", "\n;; ", -1)
+	}
+	if _, ok := jokerCode["net"]; !ok {
+		jokerCode["net"] = map[string]string {}
+	}
+	jokerCode["net"][d.Name.Name] = jokerfn
 }
 
 func notOption(arg string) bool {
@@ -474,6 +483,11 @@ func main() {
 				fmt.Printf("FUNC %s in %v\n", f, v)
 			}
 			emitFunction(f, v)
+		}
+		for p, v := range jokerCode {
+			for f, w := range v {
+				fmt.Printf("FUNC %s.%s has %v\n", p, f, w)
+			}
 		}
 		if verbose {
 			fmt.Printf("Totals: types=%d functions=%d receivers=%d\n",
