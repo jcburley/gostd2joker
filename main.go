@@ -170,7 +170,12 @@ func printPackage(p *Package) {
 	}
 }
 
-var functions = map[string]*FuncDecl {}
+type funcInfo struct {
+	fd *FuncDecl
+	pkg string
+}
+
+var functions = map[string]*funcInfo {}
 var DUPLICATEFUNCTION = &FuncDecl {}
 
 func processFuncDecl(pkg string, filename string, f *File, fn *FuncDecl) {
@@ -179,13 +184,13 @@ func processFuncDecl(pkg string, filename string, f *File, fn *FuncDecl) {
 	}
 	fname := pkg + "." + fn.Name.Name
 	if v, ok := functions[fname]; ok {
-		if v != DUPLICATEFUNCTION {
+		if v.fd != DUPLICATEFUNCTION {
 			fmt.Fprintf(os.Stderr, "already seen function %s in %s, yet again in %s\n",
-				fname, v, filename)
+				fname, v.fd, filename)
 			fn = DUPLICATEFUNCTION
 		}
 	}
-	functions[fname] = fn
+	functions[fname] = &funcInfo{fn, pkg}
 }
 
 var types = map[string]string {}
@@ -395,7 +400,9 @@ func funcNameAsGoPrivate(f string) string {
 
 var jokerCode = map[string]map[string]string {}
 
-func emitFunction(f string, d *FuncDecl) {
+func emitFunction(f string, fn *funcInfo) {
+	d := fn.fd
+	pkg := fn.pkg
 	sfmt := `
 (defn %s
 %s  {:added "1.0"
@@ -409,10 +416,10 @@ func emitFunction(f string, d *FuncDecl) {
 	if strings.Contains(jokerfn, "ABEND") {
 		jokerfn = strings.Replace(jokerfn, "\n", "\n;; ", -1)
 	}
-	if _, ok := jokerCode["net"]; !ok {
-		jokerCode["net"] = map[string]string {}
+	if _, ok := jokerCode[pkg]; !ok {
+		jokerCode[pkg] = map[string]string {}
 	}
-	jokerCode["net"][d.Name.Name] = jokerfn
+	jokerCode[pkg][d.Name.Name] = jokerfn
 }
 
 func notOption(arg string) bool {
@@ -476,7 +483,7 @@ func main() {
 			}
 		}
 		for f, v := range functions {
-			if v == DUPLICATEFUNCTION {
+			if v.fd == DUPLICATEFUNCTION {
 				continue
 			}
 			if verbose {
