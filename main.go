@@ -19,6 +19,12 @@ import (
    I.e. a function defined in one package refers to a type defined in
    another (a different directory, even).
 
+   Sample routines include (from 'net' package):
+     - lookupMX
+     - queryEscape
+   E.g.:
+     ./gostd2joker --dir $PWD/tests 2>&1 | grep -C20 lookupMX
+
 */
 
 var fset *token.FileSet
@@ -403,7 +409,7 @@ func fieldListToGo(fl *FieldList) string {
 			if p == nil {
 				s += "ABEND922"
 			} else {
-				s += paramNameAsClojure(p)
+				s += p.Name
 			}
 		}
 	}
@@ -449,8 +455,57 @@ func typeAsGo(fl *FieldList) string {
 	return exprAsGo(fl.List[0].Type)
 }
 
-func bodyAsGo(f *FuncDecl) string {
-	return "\t<body>"
+func resultsAsGo(fl *FieldList) string {
+	if fl == nil {
+		return ""
+	}
+	s := ""
+	arg := 0
+	for _, rl := range fl.List {
+		if rl.Names == nil {
+			arg += 1
+			if (arg > 1) {
+				s += ", "
+			}
+			s += fmt.Sprintf("arg_%d", arg)
+		} else {
+			for _, r := range rl.Names {
+				arg += 1
+				if (arg > 1) {
+					s += ", "
+				}
+				if r == nil || r.Name == "" {
+					s += fmt.Sprintf("arg_%d", arg)
+				} else {
+					s += r.Name
+				}
+			}
+		}
+	}
+	return s
+}
+
+func argsAsGo(p *FieldList) string {
+	s := ""
+	for _, f := range p.List {
+		for _, p := range f.Names {
+			if s != "" {
+				s += ", "
+			}
+			if p == nil {
+				s += "ABEND712"
+			} else {
+				s += paramNameAsGo(p.Name)
+			}
+		}
+	}
+	return s
+}
+
+func bodyAsGo(pkg string, f *FuncDecl) string {
+	callStr := resultsAsGo(f.Type.Results) + " := " + pkg + "." + f.Name.Name + "(" + argsAsGo(f.Type.Params) + ")"
+
+	return "\t" + strings.Replace(callStr, "\n", "\n\t", -1) + " // done"
 }
 
 var jokerCode = map[string]map[string]string {}
@@ -458,7 +513,7 @@ var goCode = map[string]map[string]string {}
 
 func emitFunction(f string, fn *funcInfo) {
 	d := fn.fd
-	pkg := fn.pkg
+	pkg := filepath.Base(fn.pkg)
 	jfmt := `
 (defn %s
 %s  {:added "1.0"
@@ -477,7 +532,7 @@ func %s(%s) %s {
 `
 
 	gofn := fmt.Sprintf(gfmt, goFname, paramListAsGo(d.Type.Params), typeAsGo(d.Type.Results),
-		bodyAsGo(d))
+		bodyAsGo(pkg, d))
 
 	if strings.Contains(jokerfn, "ABEND") || strings.Contains(gofn, "ABEND") {
 		jokerfn = strings.Replace(jokerfn, "\n", "\n;; ", -1)
