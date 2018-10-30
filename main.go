@@ -21,7 +21,9 @@ import (
 */
 
 var fset *token.FileSet
+var list bool
 var dump bool
+var verbose bool
 
 func chanDirAsString(dir ChanDir) string {
 	switch dir {
@@ -159,6 +161,9 @@ func printPackage(p *Package) {
 }
 
 func processFuncDecl(pkg string, name string, f *File, fn *FuncDecl) {
+	if (dump) {
+		Print(fset, fn)
+	}
 }
 
 func processTypeSpec(pkg string, name string, f *File, tss Spec) {
@@ -185,9 +190,6 @@ func processDecls(pkg string, name string, f *File) {
 			if unicode.IsLower(rune(v.Name.Name[0])) {
 				continue  // Skipping non-exported functions
 			}
-			if (dump) {
-				Print(fset, v)
-			}
 			processFuncDecl(pkg, name, f, v)
 		case *GenDecl:
 			if v.Tok != token.TYPE {
@@ -207,7 +209,9 @@ func processPackage(pkg string, p *Package) {
 }
 
 func processDir(d string, mode parser.Mode) error {
-	fmt.Printf("Processing dirname=%s dump=%t:\n", d, dump)
+	if (verbose) {
+		fmt.Printf("Processing dirname=%s dump=%t:\n", d, dump)
+	}
 
 	pkgs, err := parser.ParseDir(fset, d, nil, mode)
 	if err != nil {
@@ -225,9 +229,13 @@ func processDir(d string, mode parser.Mode) error {
 		basename := filepath.Base(d)
 		for k, v := range pkgs {
 			if k != basename && k != basename + "_test" {
-//				fmt.Printf("NOTICE: Package %s is defined in %s -- ignored\n", k, d)
+				if (verbose) {
+					fmt.Printf("NOTICE: Package %s is defined in %s -- ignored\n", k, d)
+				}
 			} else {
-				fmt.Printf("Package %s:\n", k)
+				if (verbose) {
+					fmt.Printf("Package %s:\n", k)
+				}
 				processPackage(k, v)
 			}
 		}
@@ -255,11 +263,15 @@ func walkDirs(d string, mode parser.Mode) error {
 				return nil // skip (implicit) "."
 			}
 			if excludeDirs[filepath.Base(path)] {
-//				fmt.Printf("Excluding %s\n", path)
+				if (verbose) {
+					fmt.Printf("Excluding %s\n", path)
+				}
 				return filepath.SkipDir
 			}
 			if info.IsDir() {
-//				fmt.Printf("From %s to %s\n", d, path)
+				if (verbose) {
+					fmt.Printf("Walking from %s to %s\n", d, path)
+				}
 				return processDir(path, mode)
 			}
 			return nil // not a directory
@@ -292,6 +304,8 @@ func main() {
 			switch a {
 			case "--dump":
 				dump = true
+			case "--verbose", "-v":
+				verbose = true
 			case "--dir":
 				if filename != "" {
 					panic("cannot specify both a filename and the --dir <dirname> option")
