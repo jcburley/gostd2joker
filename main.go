@@ -214,6 +214,9 @@ func processDecls(pkg string, name string, f *File) {
 }
 
 func processPackage(pkg string, p *Package) {
+	if (verbose) {
+		fmt.Printf("Processing package=%s:\n", pkg)
+	}
 	for name, f := range p.Files {
 		processDecls(pkg, name, f)
 	}
@@ -226,7 +229,7 @@ func processDir(d string, mode parser.Mode) error {
 
 	pkgs, err := parser.ParseDir(fset, d,
 		// Walk only *.go files that meet default (target) build constraints, e.g. per "// build ..."
-		func (info os.FileInfo) bool { b, e := build.Default.MatchFile(d, info.Name()); return b && e != nil },
+		func (info os.FileInfo) bool { b, e := build.Default.MatchFile(d, info.Name()); return b && e == nil },
 		mode)
 	if err != nil {
 		fmt.Fprintln(os.Stderr, err)
@@ -353,6 +356,9 @@ func main() {
 		err := walkDirs(dir, mode)
 		if err != nil {
 			panic("Error walking directory " + dir + ": " + fmt.Sprintf("%v", err))
+		}
+		for t, _ := range types {
+			fmt.Printf("TYPE %s\n", t)
 		}
 		os.Exit(0)
 	}
