@@ -20,6 +20,9 @@ import (
 
 */
 
+var fset *token.FileSet
+var dump bool
+
 func chanDirAsString(dir ChanDir) string {
 	switch dir {
 	case SEND:
@@ -99,6 +102,9 @@ func typeSpecsAsString(tss []Spec) string {
 			continue  // Skipping non-exported functions
 		}
 		s += ts.Name.Name + " " + exprAsString(ts.Type)
+		if (dump) {
+			Print(fset, ts)
+		}
 	}
 	return s
 }
@@ -113,6 +119,9 @@ func printDecls(f *File) {
 			}
 			if unicode.IsLower(rune(v.Name.Name[0])) {
 				continue  // Skipping non-exported functions
+			}
+			if (dump) {
+				Print(fset, v)
 			}
 			typ := v.Type // *FuncType of signature: params, results, and position of "func" keyword
 			fmt.Printf("%s(%s) => (%s)\n", v.Name, fieldListAsString(typ.Params), fieldListAsString(typ.Results))
@@ -137,10 +146,9 @@ func printPackage(p *Package) {
 	}
 }
 
-func processDir(d string, mode parser.Mode, dump bool) error {
+func processDir(d string, mode parser.Mode) error {
 	fmt.Printf("Processing dirname=%s dump=%t:\n", d, dump)
 
-	fset := token.NewFileSet() // positions are relative to fset
 	pkgs, err := parser.ParseDir(fset, d, nil, mode)
 	if err != nil {
 		fmt.Fprintln(os.Stderr, err)
@@ -176,7 +184,7 @@ var excludeDirs = map[string]bool {
 }
 
 
-func walkDirs(d string, mode parser.Mode, dump bool) error {
+func walkDirs(d string, mode parser.Mode) error {
 	err := filepath.Walk(d,
 		func(path string, info os.FileInfo, err error) error {
 			if err != nil {
@@ -192,7 +200,7 @@ func walkDirs(d string, mode parser.Mode, dump bool) error {
 			}
 			if info.IsDir() {
 //				fmt.Printf("From %s to %s\n", d, path)
-				return processDir(path, mode, dump)
+				return processDir(path, mode)
 			}
 			return nil // not a directory
 		})
@@ -210,10 +218,10 @@ func notOption(arg string) bool {
 }
 
 func main() {
-	fset := token.NewFileSet() // positions are relative to fset
+	fset = token.NewFileSet() // positions are relative to fset
+	dump = false
 
 	length := len(os.Args)
-	dump := false
 	filename := ""
 	dir := ""
 	var mode parser.Mode = 0 /* Also: parser.ImportsOnly, parser.ParseComments ? See https://golang.org/pkg/go/parser/ */
@@ -248,7 +256,7 @@ func main() {
 	}
 
 	if dir != "" {
-		err := walkDirs(dir, mode, dump)
+		err := walkDirs(dir, mode)
 		if err != nil {
 			panic("Error walking directory " + dir + ": " + fmt.Sprintf("%v", err))
 		}
