@@ -51,6 +51,8 @@ func exprAsString(e Expr) string {
 		return "map[" + exprAsString(v.Key) + "]" + exprAsString(v.Value)
 	case *ChanType:
 		return chanDirAsString(v.Dir) + " " + exprAsString(v.Value)
+	case *StructType:
+		return "struct{" + fieldListAsString(v.Fields) + " }"
 	default:
 		panic("unrecognized Expr type " + fmt.Sprintf("%T", e) + " at: " + fmt.Sprintf("%v", e))
 	}
@@ -86,18 +88,44 @@ func fieldListAsString(fl *FieldList) string {
 	return s
 }
 
+func typeSpecsAsString(tss []Spec) string {
+	s := ""
+	for _, spec := range tss {
+		if s != "" {
+			s += ", "
+		}
+		ts := spec.(*TypeSpec)
+		if unicode.IsLower(rune(ts.Name.Name[0])) {
+			continue  // Skipping non-exported functions
+		}
+		s += ts.Name.Name + " " + exprAsString(ts.Type)
+	}
+	return s
+}
+
 func printDecls(f *File) {
 	for _, s := range f.Decls {
-		if fn, ok := s.(*FuncDecl); ok {
-			rcv := fn.Recv // *FieldList of receivers or nil (functions)
+		switch v := s.(type) {
+		case *FuncDecl:
+			rcv := v.Recv // *FieldList of receivers or nil (functions)
 			if rcv != nil {
 				continue  // Skipping these for now
 			}
-			if unicode.IsLower(rune(fn.Name.Name[0])) {
+			if unicode.IsLower(rune(v.Name.Name[0])) {
 				continue  // Skipping non-exported functions
 			}
-			typ := fn.Type // *FuncType of signature: params, results, and position of "func" keyword
-			fmt.Printf("%s(%s) => (%s)\n", fn.Name, fieldListAsString(typ.Params), fieldListAsString(typ.Results))
+			typ := v.Type // *FuncType of signature: params, results, and position of "func" keyword
+			fmt.Printf("%s(%s) => (%s)\n", v.Name, fieldListAsString(typ.Params), fieldListAsString(typ.Results))
+		case *GenDecl:
+			if v.Tok != token.TYPE {
+				continue
+			}
+			types := typeSpecsAsString(v.Specs)
+			if types != "" {
+				fmt.Printf("Types: (%s)\n", types)
+			}
+		default:
+			panic("unrecognized Decl type " + fmt.Sprintf("%T", v) + " at: " + fmt.Sprintf("%v", v))
 		}
 	}
 }
