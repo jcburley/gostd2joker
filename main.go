@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	. "go/ast"
+	"go/build"
 	"go/parser"
 	"go/token"
 	"strings"
@@ -166,7 +167,17 @@ func processFuncDecl(pkg string, name string, f *File, fn *FuncDecl) {
 	}
 }
 
-func processTypeSpec(pkg string, name string, f *File, tss Spec) {
+var types = map[string]bool {}
+
+func processTypeSpec(pkg string, name string, f *File, ts *TypeSpec) {
+	if (dump) {
+		Print(fset, ts)
+	}
+	typename := pkg + "." + ts.Name.Name
+	if types[typename] {
+		panic("already seen type " + typename + ", yet again in " + name)
+	}
+	types[typename] = true
 }
 
 func processTypeSpecs(pkg string, name string, f *File, tss []Spec) {
@@ -213,13 +224,16 @@ func processDir(d string, mode parser.Mode) error {
 		fmt.Printf("Processing dirname=%s dump=%t:\n", d, dump)
 	}
 
-	pkgs, err := parser.ParseDir(fset, d, nil, mode)
+	pkgs, err := parser.ParseDir(fset, d,
+		// Walk only *.go files that meet default (target) build constraints, e.g. per "// build ..."
+		func (info os.FileInfo) bool { b, e := build.Default.MatchFile(d, info.Name()); return b && e != nil },
+		mode)
 	if err != nil {
 		fmt.Fprintln(os.Stderr, err)
 		return err
 	}
 
-	if (dump) {
+	if (list) {
 		for k, v := range pkgs {
 			fmt.Printf("Package %s:\n", k)
 			printPackage(v)
@@ -304,6 +318,8 @@ func main() {
 			switch a {
 			case "--dump":
 				dump = true
+			case "--list":
+				list = true
 			case "--verbose", "-v":
 				verbose = true
 			case "--dir":
@@ -327,6 +343,10 @@ func main() {
 		} else {
 			panic("only one filename may be specified on command line: " + a)
 		}
+	}
+
+	if verbose {
+		fmt.Printf("Default context:\n%v\n", build.Default)
 	}
 
 	if dir != "" {
@@ -381,7 +401,9 @@ func (r *Resolver) LookupMX(ctx context.Context, name string) ([]*MX, error) {
 
 	if dump {
 		Print(fset, f)
-		os.Exit(0)
+		if list {
+			os.Exit(0)
+		}
 	}
 
 	// Print the imports from the file's AST.
