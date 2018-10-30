@@ -69,9 +69,9 @@ func paramNamesAsString(names []*Ident) string {
 	s := ""
 	for i, n := range names {
 		if i > 0 {
-			s = s + ", "
+			s += ", "
 		}
-		s = s + n.Name
+		s += n.Name
 	}
 	return s
 }
@@ -83,14 +83,14 @@ func fieldListAsString(fl *FieldList) string {
 	var s string
 	for i, f := range fl.List {
 		if i > 0 {
-			s = s + ", "
+			s += ", "
 		}
 		if f.Names == nil {
-			s = s + "_"
+			s += "_"
 		} else {
-			s = s + paramNamesAsString(f.Names)
+			s += paramNamesAsString(f.Names)
 		}
-		s = s + " " + exprAsString(f.Type)
+		s += " " + exprAsString(f.Type)
 	}
 	return s
 }
