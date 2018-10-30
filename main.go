@@ -329,7 +329,19 @@ func walkDirs(d string, mode parser.Mode) error {
 }
 
 func exprAsClojure(e Expr) string {
-	return "<type>"
+	switch v := e.(type) {
+	case *Ident:
+		switch v.Name {
+		case "string":
+			return "String"
+		case "int":
+			return "Int"
+		default:
+			return ""
+		}
+	default:
+		return fmt.Sprintf("ABEND881(unrecognized Expr type %T at: %v)", e, e)
+	}
 }
 
 func paramNameAsClojure(name *Ident) string {
@@ -345,27 +357,53 @@ func fieldListAsClojure(fl *FieldList) string {
 		cltype := exprAsClojure(f.Type)
 		for _, p := range f.Names {
 			if s != "" {
-				s = s + ", "
+				s += ", "
 			}
-			s = s + "^" + cltype + " "
-			if f.Names == nil {
-				s = s + "_"
+			if cltype != "" {
+				s += "^" + cltype + " "
+			}
+			if p == nil {
+				s += "_"
 			} else {
-				s = s + paramNameAsClojure(p)
+				s += paramNameAsClojure(p)
 			}
 		}
 	}
 	return s
 }
 
+func fieldListToGo(fl *FieldList) string {
+	s := ""
+	for _, f := range fl.List {
+		for _, p := range f.Names {
+			if s != "" {
+				s += ", "
+			}
+			if p == nil {
+				s += "ABEND922"
+			} else {
+				s += paramNameAsClojure(p)
+			}
+		}
+	}
+	return s
+}
+
+func funcNameAsGoPrivate(f string) string {
+	return strings.ToLower(f[0:1]) + f[1:]
+}
+
 func emitFunction(f string, d *FuncDecl) {
 	sfmt := `
 (defn %s
 %s  {:added "1.0"
-   :go "%s"}
+   :go "%s(%s)"}
   [%s])
 `
-	fmt.Printf(sfmt, d.Name.Name, commentGroupInQuotes(d.Doc), d.Name.Name, fieldListAsClojure(d.Type.Params))
+	goFname := funcNameAsGoPrivate(d.Name.Name)
+	fmt.Printf(sfmt, d.Name.Name, commentGroupInQuotes(d.Doc),
+		goFname, fieldListToGo(d.Type.Params),
+		fieldListAsClojure(d.Type.Params))
 }
 
 func notOption(arg string) bool {
