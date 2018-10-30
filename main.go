@@ -25,6 +25,7 @@ var fset *token.FileSet
 var list bool
 var dump bool
 var verbose bool
+var receivers int
 
 func chanDirAsString(dir ChanDir) string {
 	switch dir {
@@ -140,7 +141,7 @@ func printDecls(f *File) {
 			typ := v.Type // *FuncType of signature: params, results, and position of "func" keyword
 			fmt.Printf("%s%s(%s) => (%s)\n",
 				commentGroupAsString(v.Doc),
-				v.Name,
+				v.Name.Name,
 				fieldListAsString(typ.Params),
 				fieldListAsString(typ.Results))
 		case *GenDecl:
@@ -161,15 +162,26 @@ func printPackage(p *Package) {
 	}
 }
 
-func processFuncDecl(pkg string, name string, f *File, fn *FuncDecl) {
+var functions = map[string]string {}
+
+func processFuncDecl(pkg string, filename string, f *File, fn *FuncDecl) {
 	if (dump) {
 		Print(fset, fn)
 	}
+	fname := pkg + "." + fn.Name.Name
+	if v, ok := functions[fname]; ok {
+		if v != "DUPLICATE" {
+			fmt.Fprintf(os.Stderr, "already seen function %s in %s, yet again in %s\n",
+				fname, v, filename)
+			filename = "DUPLICATE"
+		}
+	}
+	functions[fname] = filename
 }
 
 var types = map[string]string {}
 
-func processTypeSpec(pkg string, name string, f *File, ts *TypeSpec) {
+func processTypeSpec(pkg string, filename string, f *File, ts *TypeSpec) {
 	if (dump) {
 		Print(fset, ts)
 	}
@@ -177,40 +189,41 @@ func processTypeSpec(pkg string, name string, f *File, ts *TypeSpec) {
 	if v, ok := types[typename]; ok {
 		if v != "DUPLICATE" {
 			fmt.Fprintf(os.Stderr, "already seen type %s in %s, yet again in %s\n",
-				typename, v, name)
-			name = "DUPLICATE"
+				typename, v, filename)
+			filename = "DUPLICATE"
 		}
 	}
-	types[typename] = name
+	types[typename] = filename
 }
 
-func processTypeSpecs(pkg string, name string, f *File, tss []Spec) {
+func processTypeSpecs(pkg string, filename string, f *File, tss []Spec) {
 	for _, spec := range tss {
 		ts := spec.(*TypeSpec)
 		if unicode.IsLower(rune(ts.Name.Name[0])) {
 			continue  // Skipping non-exported functions
 		}
-		processTypeSpec(pkg, name, f, ts)
+		processTypeSpec(pkg, filename, f, ts)
 	}
 }
 
-func processDecls(pkg string, name string, f *File) {
+func processDecls(pkg string, filename string, f *File) {
 	for _, s := range f.Decls {
 		switch v := s.(type) {
 		case *FuncDecl:
 			rcv := v.Recv // *FieldList of receivers or nil (functions)
 			if rcv != nil {
+				receivers += 1
 				continue  // Skipping these for now
 			}
 			if unicode.IsLower(rune(v.Name.Name[0])) {
 				continue  // Skipping non-exported functions
 			}
-			processFuncDecl(pkg, name, f, v)
+			processFuncDecl(pkg, filename, f, v)
 		case *GenDecl:
 			if v.Tok != token.TYPE {
 				continue
 			}
-			processTypeSpecs(pkg, name, f, v.Specs)
+			processTypeSpecs(pkg, filename, f, v.Specs)
 		default:
 			panic("unrecognized Decl type " + fmt.Sprintf("%T", v) + " at: " + fmt.Sprintf("%v", v))
 		}
@@ -218,16 +231,16 @@ func processDecls(pkg string, name string, f *File) {
 }
 
 func processPackage(pkg string, p *Package) {
-	if (verbose) {
+	if verbose {
 		fmt.Printf("Processing package=%s:\n", pkg)
 	}
-	for name, f := range p.Files {
-		processDecls(pkg, name, f)
+	for filename, f := range p.Files {
+		processDecls(pkg, filename, f)
 	}
 }
 
 func processDir(d string, path string, mode parser.Mode) error {
-	if (verbose) {
+	if verbose {
 		fmt.Printf("Processing dirname=%s dump=%t:\n", d, dump)
 	}
 
@@ -250,11 +263,11 @@ func processDir(d string, path string, mode parser.Mode) error {
 		basename := filepath.Base(path)
 		for k, v := range pkgs {
 			if k != basename && k != basename + "_test" {
-				if (verbose) {
+				if verbose {
 					fmt.Printf("NOTICE: Package %s is defined in %s -- ignored\n", k, path)
 				}
 			} else {
-				if (verbose) {
+				if verbose {
 					fmt.Printf("Package %s:\n", k)
 				}
 				processPackage(strings.Replace(path, d + "/", "", 1) + "/" + k, v)
@@ -284,13 +297,13 @@ func walkDirs(d string, mode parser.Mode) error {
 				return nil // skip (implicit) "."
 			}
 			if excludeDirs[filepath.Base(path)] {
-				if (verbose) {
+				if verbose {
 					fmt.Printf("Excluding %s\n", path)
 				}
 				return filepath.SkipDir
 			}
 			if info.IsDir() {
-				if (verbose) {
+				if verbose {
 					fmt.Printf("Walking from %s to %s\n", d, path)
 				}
 				return processDir(d, path, mode)
@@ -362,7 +375,18 @@ func main() {
 			panic("Error walking directory " + dir + ": " + fmt.Sprintf("%v", err))
 		}
 		for t, v := range types {
-			fmt.Printf("TYPE %s in %s\n", t, v)
+			if verbose {
+				fmt.Printf("TYPE %s in %s\n", t, v)
+			}
+		}
+		for f, v := range functions {
+			if verbose {
+				fmt.Printf("FUNC %s in %s\n", f, v)
+			}
+		}
+		if verbose {
+			fmt.Printf("Totals: types=%d functions=%d receivers=%d\n",
+				len(types), len(functions), receivers)
 		}
 		os.Exit(0)
 	}
