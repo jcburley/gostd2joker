@@ -290,7 +290,8 @@ func processDir(d string, path string, mode parser.Mode) error {
 				if verbose {
 					fmt.Printf("Package %s:\n", k)
 				}
-				processPackage(strings.Replace(path, d + "/", "", 1) + "/" + k, v)
+				processPackage(k, v)
+//				processPackage(strings.Replace(path, d + "/", "", 1) + "/" + k, v)
 			}
 		}
 	}
@@ -510,7 +511,16 @@ func bodyAsGo(pkg string, f *FuncDecl) string {
 	return "\t" + strings.Replace(callStr, "\n", "\n\t", -1)
 }
 
-func typeAsClojure(e Expr) string {
+func namedTypeAsClojure(pkg string, t string) string {
+	qt := pkg + "." + t
+	if v, ok := types[qt]; ok {
+		return fmt.Sprintf("ABEND000(have %s for %s)", v, qt)
+	} else {
+		return fmt.Sprintf("ABEND042(cannot find typename %s)", qt)
+	}
+}
+
+func typeAsClojure(pkg string, e Expr) string {
 	switch v := e.(type) {
 	case *Ident:
 		switch v.Name {
@@ -521,25 +531,25 @@ func typeAsClojure(e Expr) string {
 		case "error":
 			return "Error"
 		default:
-			return fmt.Sprintf("ABEND402(unrecognized name %s)", v)
+			return namedTypeAsClojure(pkg, v.Name)
 		}
 	case *ArrayType:
-		return "[" + typeAsClojure(v.Elt) + "]"
+		return "[" + typeAsClojure(pkg, v.Elt) + "]"
 	case *StarExpr:
-		return typeAsClojure(v.X)
+		return typeAsClojure(pkg, v.X)
 	default:
 		return fmt.Sprintf("ABEND881(unrecognized Expr type %T at: %v)", e, e)
 	}
 }
 
-func returnTypeAsClojure(fl *FieldList) string {
+func returnTypeAsClojure(pkg string, fl *FieldList) string {
 	if fl == nil || fl.List == nil {
 		return ""
 	}
 	var s string
 	multiple := false
 	for _, f := range fl.List {
-		cltype := typeAsClojure(f.Type)
+		cltype := typeAsClojure(pkg, f.Type)
 		if f.Names == nil {
 			if s != "" {
 				s += " "
@@ -565,8 +575,8 @@ func returnTypeAsClojure(fl *FieldList) string {
 	return s
 }
 
-func jokerReturnType(f *FuncDecl) string {
-	s := returnTypeAsClojure(f.Type.Results)
+func jokerReturnType(pkg string, f *FuncDecl) string {
+	s := returnTypeAsClojure(pkg, f.Type.Results)
 	if s != "" {
 		return "^" + s
 	}
@@ -586,7 +596,7 @@ func emitFunction(f string, fn *funcInfo) {
   [%s])
 `
 	goFname := funcNameAsGoPrivate(d.Name.Name)
-	jokerType := jokerReturnType(d)
+	jokerType := jokerReturnType(pkg, d)
 	if jokerType != "" {
 		jokerType += " "
 	}
