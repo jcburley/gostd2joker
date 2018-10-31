@@ -18,3 +18,39 @@ Among things to do to "productize" this:
 * Generate imports and such properly
 * Might have to replace the current ad-hoc tracking of Go packages with something that respects `import` and the like
 * Explain how to use the tool in Joker's `README.md`
+
+## Sample Usage
+
+This uses a "small" copy of the `src/net/` subdirectory in the Go source tree -- enough to quickly iterate over getting `LookupMX()` to look more like we might want it to. A full copy of that subdirectory is in `tests/big`. Note that this tool currently manages to work on the entire `golang/go/src` tree, though it sees multiple definitions of the same function (and complains about them -- they shouldn't be output, of course).
+
+```
+$ ./gostd2joker --dir $PWD/tests/small 2>&1 | grep -E -C5 '(lookupMX|queryEscape)'
+
+FUNC net.LookupMX has: 
+(defn ^[[{:host ^String Host, :pref ^Int Pref}] Error] LookupMX
+  "LookupMX returns the DNS MX records for the given domain name sorted by preference."
+  {:added "1.0"
+   :go "lookupMX(name)"}
+  [^String name])
+
+FUNC net.LookupPort has: 
+(defn ^[port err] LookupPort
+  "LookupPort looks up the port for the given network and service."
+--
+FUNC url.QueryEscape has: 
+(defn ^String QueryEscape
+  "QueryEscape escapes the string so it can be safely placed
+inside a URL query."
+  {:added "1.0"
+   :go "queryEscape(s)"}
+  [^String s])
+
+FUNC url.PathEscape has: 
+(defn ^String PathEscape
+  "PathEscape escapes the string so it can be safely placed
+$
+```
+
+Note that `^[[{:host ..., :pref ...}] Error]` construct -- it indicates that `LookupMX()` returns a vector whose first element is itself a vector of maps with the indicated keys, and whose second element is of type `Error`.
+
+I'm not sure that syntax really works, though -- because it doesn't seem to distinguish between a one-element vector and a vector of multiple elements of the same type (of the one element listed).
