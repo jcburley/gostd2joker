@@ -18,6 +18,8 @@ Among things to do to "productize" this:
 * Generate imports and such properly
 * Might have to replace the current ad-hoc tracking of Go packages with something that respects `import` and the like
 * Explain how to use the tool in Joker's `README.md`
+* Document the code better
+* Probably should remove all the `--dump` and maybe `--list` stuff if/when the tool is operating smoothly
 
 ## Sample Usage
 
