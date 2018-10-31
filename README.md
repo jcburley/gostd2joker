@@ -18,6 +18,7 @@ Among things to do to "productize" this:
 * Generate imports and such properly
 * Change `generate-std.joke` to support this tool's output (this avoids the tool having to generate `*_native.go` snippets or files in many, if not all, cases)
 * Might have to replace the current ad-hoc tracking of Go packages with something that respects `import` and the like
+* Have tool generate more-helpful docstrings than just copying the ones with the Go functions -- e.g. the return types, maybe decorated with extra information?
 * Explain how to use the tool in Joker's `README.md`
 * Document the code better
 * Probably should remove all the `--dump` and maybe `--list` stuff if/when the tool is operating smoothly
