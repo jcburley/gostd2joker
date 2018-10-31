@@ -199,21 +199,30 @@ func processFuncDecl(pkg string, filename string, f *File, fn *FuncDecl) {
 	functions[fname] = &funcInfo{fn, pkg}
 }
 
-var types = map[string]string {}
+type typeInfo struct {
+	td *TypeSpec
+	file string
+}
+
+var types = map[string][]*typeInfo {}
 
 func processTypeSpec(pkg string, filename string, f *File, ts *TypeSpec) {
 	if (dump) {
 		Print(fset, ts)
 	}
 	typename := pkg + "." + ts.Name.Name
-	if v, ok := types[typename]; ok {
-		if v != "DUPLICATE" {
-			fmt.Fprintf(os.Stderr, "already seen type %s in %s, yet again in %s\n",
-				typename, v, filename)
-			filename = "DUPLICATE"
+	var candidates []*typeInfo
+	if candidates, ok := types[typename]; ok {
+		for _, c := range candidates {
+			if c.file == filename {
+				panic(fmt.Sprintf("type %s defined twice in file %s", typename, filename))
+			}
 		}
+	} else {
+		candidates = []*typeInfo {}
 	}
-	types[typename] = filename
+	candidates = append(candidates, &typeInfo{ts, filename})
+	types[typename] = candidates
 }
 
 func processTypeSpecs(pkg string, filename string, f *File, tss []Spec) {
@@ -514,7 +523,7 @@ func bodyAsGo(pkg string, f *FuncDecl) string {
 func namedTypeAsClojure(pkg string, t string) string {
 	qt := pkg + "." + t
 	if v, ok := types[qt]; ok {
-		return fmt.Sprintf("ABEND000(have %s for %s)", v, qt)
+		return typeAsClojure(pkg, v[0].td.Type)
 	} else {
 		return fmt.Sprintf("ABEND042(cannot find typename %s)", qt)
 	}
@@ -691,7 +700,10 @@ func main() {
 		}
 		for t, v := range types {
 			if verbose {
-				fmt.Printf("TYPE %s in %s\n", t, v)
+				fmt.Printf("TYPE %s:\n", t)
+				for _, ts := range v {
+					fmt.Printf("  %s => %v\n", ts.file, ts.td)
+				}
 			}
 		}
 		for f, v := range functions {
@@ -699,7 +711,7 @@ func main() {
 				continue
 			}
 			if verbose {
-				fmt.Printf("FUNC %s in %v\n", f, v)
+				fmt.Printf("FUNC %s => %v:\n", f, v.fd)
 			}
 			emitFunction(f, v)
 		}
