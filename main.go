@@ -505,7 +505,13 @@ func argsAsGo(p *FieldList) string {
 func bodyAsGo(pkg string, f *FuncDecl) string {
 	callStr := resultsAsGo(f.Type.Results) + " := " + pkg + "." + f.Name.Name + "(" + argsAsGo(f.Type.Params) + ")"
 
-	return "\t" + strings.Replace(callStr, "\n", "\n\t", -1) + " // done"
+	callStr += "\n...ABEND: TODO..."
+
+	return "\t" + strings.Replace(callStr, "\n", "\n\t", -1)
+}
+
+func jokerReturnType(f *FuncDecl) string {
+	return ""  // TODO
 }
 
 var jokerCode = map[string]map[string]string {}
@@ -515,13 +521,17 @@ func emitFunction(f string, fn *funcInfo) {
 	d := fn.fd
 	pkg := filepath.Base(fn.pkg)
 	jfmt := `
-(defn %s
+(defn %s%s
 %s  {:added "1.0"
    :go "%s(%s)"}
   [%s])
 `
 	goFname := funcNameAsGoPrivate(d.Name.Name)
-	jokerfn := fmt.Sprintf(jfmt, d.Name.Name, commentGroupInQuotes(d.Doc),
+	jokerType := jokerReturnType(d)
+	if jokerType != "" {
+		jokerType += " "
+	}
+	jokerFn := fmt.Sprintf(jfmt, jokerType, d.Name.Name, commentGroupInQuotes(d.Doc),
 		goFname, fieldListToGo(d.Type.Params),
 		fieldListAsClojure(d.Type.Params))
 
@@ -531,23 +541,28 @@ func %s(%s) %s {
 }
 `
 
-	gofn := fmt.Sprintf(gfmt, goFname, paramListAsGo(d.Type.Params), typeAsGo(d.Type.Results),
-		bodyAsGo(pkg, d))
+	gofn := ""
+	if jokerType == "" {
+		gofn = fmt.Sprintf(gfmt, goFname, paramListAsGo(d.Type.Params), typeAsGo(d.Type.Results),
+			bodyAsGo(pkg, d))
+	}
 
-	if strings.Contains(jokerfn, "ABEND") || strings.Contains(gofn, "ABEND") {
-		jokerfn = strings.Replace(jokerfn, "\n", "\n;; ", -1)
+	if strings.Contains(jokerFn, "ABEND") || strings.Contains(gofn, "ABEND") {
+		jokerFn = strings.Replace(jokerFn, "\n", "\n;; ", -1)
 		gofn = strings.Replace(gofn, "\n", "\n// ", -1)
 	}
 
 	if _, ok := jokerCode[pkg]; !ok {
 		jokerCode[pkg] = map[string]string {}
 	}
-	jokerCode[pkg][d.Name.Name] = jokerfn
+	jokerCode[pkg][d.Name.Name] = jokerFn
 
-	if _, ok := goCode[pkg]; !ok {
-		goCode[pkg] = map[string]string {}
+	if gofn != "" {
+		if _, ok := goCode[pkg]; !ok {
+			goCode[pkg] = map[string]string {}
+		}
+		goCode[pkg][d.Name.Name] = gofn
 	}
-	goCode[pkg][d.Name.Name] = gofn
 }
 
 func notOption(arg string) bool {
