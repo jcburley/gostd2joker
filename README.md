@@ -21,6 +21,7 @@ Among things to do to "productize" this:
 * Explain how to use the tool in Joker's `README.md`
 * Document the code better
 * Probably should remove all the `--dump` and maybe `--list` stuff if/when the tool is operating smoothly
+* Assess performance impact (especially startup time) and mitigate as appropriate
 
 ## Sample Usage
 
