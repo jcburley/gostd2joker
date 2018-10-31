@@ -86,7 +86,7 @@ func fieldListAsString(fl *FieldList) string {
 	if fl == nil {
 		return ""
 	}
-	var s string
+	s := ""
 	for i, f := range fl.List {
 		if i > 0 {
 			s += ", "
@@ -510,8 +510,67 @@ func bodyAsGo(pkg string, f *FuncDecl) string {
 	return "\t" + strings.Replace(callStr, "\n", "\n\t", -1)
 }
 
+func typeAsClojure(e Expr) string {
+	switch v := e.(type) {
+	case *Ident:
+		switch v.Name {
+		case "string":
+			return "String"
+		case "int":
+			return "Int"
+		case "error":
+			return "Error"
+		default:
+			return fmt.Sprintf("ABEND402(unrecognized name %s)", v)
+		}
+	case *ArrayType:
+		return "[" + typeAsClojure(v.Elt) + "]"
+	case *StarExpr:
+		return typeAsClojure(v.X)
+	default:
+		return fmt.Sprintf("ABEND881(unrecognized Expr type %T at: %v)", e, e)
+	}
+}
+
+func returnTypeAsClojure(fl *FieldList) string {
+	if fl == nil || fl.List == nil {
+		return ""
+	}
+	var s string
+	multiple := false
+	for _, f := range fl.List {
+		cltype := typeAsClojure(f.Type)
+		if f.Names == nil {
+			if s != "" {
+				s += " "
+				multiple = true
+			}
+			s += cltype
+		}
+		for _, p := range f.Names {
+			if s != "" {
+				s += " "
+				multiple = true
+			}
+			if p == nil {
+				s += "_"
+			} else {
+				s += paramNameAsClojure(p)
+			}
+		}
+	}
+	if multiple {
+		return "[" + s + "]"
+	}
+	return s
+}
+
 func jokerReturnType(f *FuncDecl) string {
-	return ""  // TODO
+	s := returnTypeAsClojure(f.Type.Results)
+	if s != "" {
+		return "^" + s
+	}
+	return s
 }
 
 var jokerCode = map[string]map[string]string {}
@@ -636,12 +695,12 @@ func main() {
 		}
 		for p, v := range jokerCode {
 			for f, w := range v {
-				fmt.Printf("FUNC %s.%s has %v\n", p, f, w)
+				fmt.Printf("FUNC %s.%s has: %v\n", p, f, w)
 			}
 		}
 		for p, v := range goCode {
 			for f, w := range v {
-				fmt.Printf("FUNC %s.%s has %v\n", p, f, w)
+				fmt.Printf("FUNC %s.%s has: %v\n", p, f, w)
 			}
 		}
 		if verbose {
