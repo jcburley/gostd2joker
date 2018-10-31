@@ -1,6 +1,6 @@
 # gostd2joker
 
-Idea here is for people who build Joker to optionally run (a future version of) this tool against a Go source tree, which _must_ correspond to the version of Go they use to build Joker itself, to populate the `std/go/` subdirectory under Joker itself.
+Idea here is for people who build Joker to optionally run (a future version of) this tool against a Go source tree, which _must_ correspond to the version of Go they use to build Joker itself, to populate the `std/go/` subdirectory under Joker itself. Further, the build parameters (`$GOOS`, `$GOARCH`, etc.) must match -- so `build-all.sh` would have to pass those to this tool (if it was to be used) for each of the targets. I think this also means `std/go` would need to be recreated from scratch each time (via `rm -rf` or equivalent), so nothing left over from a previous build, perhaps for a different architecture (or version of Go), would get picked up. Possibly the tool itself should do this (when `--dir` is specified, which will be the typical use case).
 
 At the moment, this is just a proof of concept, focusing on `net.LookupMX()`. E.g. run it like this:
 
