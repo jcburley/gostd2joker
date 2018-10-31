@@ -355,7 +355,7 @@ func exprAsClojure(e Expr) string {
 		switch v.Name {
 		case "string":
 			return "String"
-		case "int":
+		case "int", "uint", "int16", "uint16":
 			return "Int"
 		default:
 			return ""
@@ -529,13 +529,43 @@ func namedTypeAsClojure(pkg string, t string) string {
 	}
 }
 
+// E.g.: {:host ^String "Host" :pref ^Int "Pref"}
+func structAsClojure(pkg string, fl *FieldList) string {
+	if fl == nil {
+		return ""
+	}
+	var s string
+	for _, f := range fl.List {
+		cltype := exprAsClojure(f.Type)
+		for _, p := range f.Names {
+			if s != "" {
+				s += ", "
+			}
+			if p == nil {
+				s += "_"
+			} else {
+				s += ":" + strings.ToLower(p.Name)
+			}
+			if cltype != "" {
+				s += " ^" + cltype
+			}
+			if p == nil {
+				s += " _"
+			} else {
+				s += " " + p.Name
+			}
+		}
+	}
+	return s
+}
+
 func typeAsClojure(pkg string, e Expr) string {
 	switch v := e.(type) {
 	case *Ident:
 		switch v.Name {
 		case "string":
 			return "String"
-		case "int":
+		case "int", "int16", "uint", "uint16":
 			return "Int"
 		case "error":
 			return "Error"
@@ -546,6 +576,8 @@ func typeAsClojure(pkg string, e Expr) string {
 		return "[" + typeAsClojure(pkg, v.Elt) + "]"
 	case *StarExpr:
 		return typeAsClojure(pkg, v.X)
+	case *StructType:
+		return "{" + structAsClojure(pkg, v.Fields) + "}"
 	default:
 		return fmt.Sprintf("ABEND881(unrecognized Expr type %T at: %v)", e, e)
 	}
