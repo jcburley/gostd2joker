@@ -5,7 +5,7 @@ Idea here is for people who build Joker to optionally run (a future version of) 
 At the moment, this is just a proof of concept, focusing on `net.LookupMX()`. E.g. run it like this:
 
 ```
-$ ./gostd2joker --dir ~/github/golang/go/src 2>&1 | less  # --dir is an "anti-debugging" option; it's the normal usage
+$ ./gostd2joker --source ~/github/golang/go/src 2>&1 | less  # --source is now a required option
 ```
 
 Then page through it. Code snippets intended for e.g. `joker/std/go/net.joke` are currently just printed to `stdout`, making iteration much easier.
@@ -29,7 +29,7 @@ Among things to do to "productize" this:
 This uses a "small" copy of the `golang/go/src/net/` subdirectory in the Go source tree -- enough to quickly iterate over getting `LookupMX()` to look more like we might want it to. A full copy of that subdirectory is in `tests/big`. Note that this tool currently manages to work on the entire `golang/go/src/` tree, though it sees multiple definitions of the same function (and complains about them -- they shouldn't be output, of course).
 
 ```
-$ ./gostd2joker --dir $PWD/tests/small 2>&1 | grep -E -C5 '(lookupMX|queryEscape)'
+$ ./gostd2joker --source $PWD/tests/small 2>&1 | grep -E -C5 '(lookupMX|queryEscape)'
 
 FUNC net.LookupMX has: 
 (defn ^[[{:host ^String Host, :pref ^Int Pref}] Error] LookupMX

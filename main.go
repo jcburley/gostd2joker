@@ -9,6 +9,7 @@ import (
 	"strings"
 	"os"
 	"path/filepath"
+	"syscall"
 	"unicode"
 )
 
@@ -32,6 +33,7 @@ var list bool
 var dump bool
 var verbose bool
 var receivers int
+var populateDir string
 
 func chanDirAsString(dir ChanDir) string {
 	switch dir {
@@ -179,6 +181,7 @@ func printPackage(p *Package) {
 type funcInfo struct {
 	fd *FuncDecl
 	pkg string
+	filename string
 }
 
 var functions = map[string]*funcInfo {}
@@ -192,11 +195,11 @@ func processFuncDecl(pkg string, filename string, f *File, fn *FuncDecl) {
 	if v, ok := functions[fname]; ok {
 		if v.fd != DUPLICATEFUNCTION {
 			fmt.Fprintf(os.Stderr, "already seen function %s in %s, yet again in %s\n",
-				fname, v.fd, filename)
+				fname, v.filename, filename)
 			fn = DUPLICATEFUNCTION
 		}
 	}
-	functions[fname] = &funcInfo{fn, pkg}
+	functions[fname] = &funcInfo{fn, pkg, filename}
 }
 
 type typeInfo struct {
@@ -270,7 +273,7 @@ func processPackage(pkg string, p *Package) {
 
 func processDir(d string, path string, mode parser.Mode) error {
 	if verbose {
-		fmt.Printf("Processing dirname=%s dump=%t:\n", d, dump)
+		fmt.Printf("Processing sourceDir=%s dump=%t:\n", d, dump)
 	}
 
 	pkgs, err := parser.ParseDir(fset, path,
@@ -684,40 +687,51 @@ func main() {
 	dump = false
 
 	length := len(os.Args)
-	filename := ""
-	dir := ""
+	sourceDir := ""
+	replace := false
+	overwrite := false
+
 	var mode parser.Mode = parser.ParseComments /* Also: parser.ImportsOnly, parser.ParseComments ? See https://golang.org/pkg/go/parser/ */
 
 	for i := 1; i < length; i++ { // shift
 		a := os.Args[i]
 		if a[0] == "-"[0] {
 			switch a {
+			case "--populate":
+				if populateDir != "" {
+					panic("cannot specify --populate <go-source-dir-name> more than once")
+				}
+				if i < length-1 && notOption(os.Args[i+1]) {
+					i += 1 // shift
+					populateDir = os.Args[i]
+				} else {
+					panic("missing path after --populate option")
+				}
 			case "--dump":
 				dump = true
+			case "--overwrite":
+				overwrite = true
+			case "--replace":
+				replace = true
 			case "--list":
 				list = true
 			case "--verbose", "-v":
 				verbose = true
-			case "--dir":
-				if filename != "" {
-					panic("cannot specify both a filename and the --dir <dirname> option")
-				}
-				if dir != "" {
-					panic("cannot specify --dir <dirname> more than once")
+			case "--source":
+				if sourceDir != "" {
+					panic("cannot specify --source <go-source-dir-name> more than once")
 				}
 				if i < length-1 && notOption(os.Args[i+1]) {
 					i += 1 // shift
-					dir = os.Args[i]
+					sourceDir = os.Args[i]
 				} else {
-					panic("missing path after --dir option")
+					panic("missing path after --source option")
 				}
 			default:
 				panic("unrecognized option " + a)
 			}
-		} else if filename == "" {
-			filename = a
 		} else {
-			panic("only one filename may be specified on command line: " + a)
+			panic("extraneous argument(s) starting with: " + a)
 		}
 	}
 
@@ -725,99 +739,73 @@ func main() {
 		fmt.Printf("Default context:\n%v\n", build.Default)
 	}
 
-	if dir != "" {
-		err := walkDirs(dir, mode)
-		if err != nil {
-			panic("Error walking directory " + dir + ": " + fmt.Sprintf("%v", err))
+	if sourceDir == "" {
+		panic("Must specify --source <go-source-dir-name> option")
+	}
+
+	if fi, e := os.Stat(filepath.Join(sourceDir, "/go")); e != nil || !fi.IsDir() {
+		if m, e := filepath.Glob(filepath.Join(sourceDir, "/*.go")); e != nil || m == nil || len(m) == 0 {
+			panic(fmt.Sprintf("Does not exist or is not a Go source directory: %s;\n%v", sourceDir, m))
 		}
+	}
+
+	if replace {
+		if e := os.RemoveAll(populateDir); e != nil {
+			panic(fmt.Sprintf("Unable to effectively 'rm -fr %s'", populateDir))
+		}
+	}
+
+	if !overwrite && populateDir != "" {
+		var stat syscall.Stat_t
+		if e := syscall.Stat(populateDir, &stat); e == nil || e.Error() != "no such file or directory" {
+			msg := "already exists"
+			if e != nil {
+				msg = e.Error()
+			}
+			panic(fmt.Sprintf("Cannot populate empty directory %s; please 'rm -fr' first, or specify --overwrite or --replace: %s",
+				populateDir, msg))
+		}
+		if e := os.MkdirAll(populateDir, 0777); e != nil {
+			panic(fmt.Sprintf("Cannot 'mkdir -p %s': %s", populateDir, e.Error()))
+		}
+	}
+
+	err := walkDirs(sourceDir, mode)
+	if err != nil {
+		panic("Error walking directory " + sourceDir + ": " + fmt.Sprintf("%v", err))
+	}
+
+	if verbose {
 		for t, v := range types {
-			if verbose {
-				fmt.Printf("TYPE %s:\n", t)
-				for _, ts := range v {
-					fmt.Printf("  %s => %v\n", ts.file, ts.td)
-				}
+			fmt.Printf("TYPE %s:\n", t)
+			for _, ts := range v {
+				fmt.Printf("  %s => %v\n", ts.file, ts.td)
 			}
 		}
-		for f, v := range functions {
-			if v.fd == DUPLICATEFUNCTION {
-				continue
-			}
-			if verbose {
-				fmt.Printf("FUNC %s => %v:\n", f, v.fd)
-			}
-			emitFunction(f, v)
-		}
-		for p, v := range jokerCode {
-			for f, w := range v {
-				fmt.Printf("FUNC %s.%s has: %v\n", p, f, w)
-			}
-		}
-		for p, v := range goCode {
-			for f, w := range v {
-				fmt.Printf("FUNC %s.%s has: %v\n", p, f, w)
-			}
+	}
+
+	for f, v := range functions {
+		if v.fd == DUPLICATEFUNCTION {
+			continue
 		}
 		if verbose {
-			fmt.Printf("Totals: types=%d functions=%d receivers=%d\n",
-				len(types), len(functions), receivers)
+			fmt.Printf("FUNC %s => %v:\n", f, v.fd)
 		}
-		os.Exit(0)
+		emitFunction(f, v)
 	}
-
-	src := `package foo
-
-import (
-	"fmt"
-	"time"
-)
-
-var x Int
-
-func skipMe() {  // lowercase first letter is not exported
-	fmt.Println(time.Now())
-}
-
-func SomeConverter(i int, s string) (string, error) {
-}
-
-func Xyzzy() {
-}
-
-func (int) SkipMe() string {  // has a receiver, so not currently handled
-}
-
-// LookupMX returns the DNS MX records for the given domain name sorted by preference.
-func LookupMX(name string) ([]*MX, error) {
-	return DefaultResolver.lookupMX(context.Background(), name)
-}
-
-// LookupMX returns the DNS MX records for the given domain name sorted by preference.
-func (r *Resolver) LookupMX(ctx context.Context, name string) ([]*MX, error) {
-	return r.lookupMX(ctx, name)
-}
-
-`
-
-	f, err := parser.ParseFile(fset, filename,
-		func () interface{} { if filename == "" { return src } else { return nil } }(),
-		mode)
-	if err != nil {
-		fmt.Println(err)
-		return
-	}
-
-	if dump {
-		Print(fset, f)
-		if list {
-			os.Exit(0)
+	for p, v := range jokerCode {
+		for f, w := range v {
+			fmt.Printf("FUNC %s.%s has: %v\n", p, f, w)
 		}
 	}
-
-	// Print the imports from the file's AST.
-	for _, s := range f.Imports {
-		fmt.Println(s.Path.Value)
+	for p, v := range goCode {
+		for f, w := range v {
+			fmt.Printf("FUNC %s.%s has: %v\n", p, f, w)
+		}
 	}
-
-	// Now print the decls.
-	printDecls(f)
+	if verbose {
+		fmt.Printf("Totals: types=%d functions=%d receivers=%d\n",
+			len(types), len(functions), receivers)
+	}
+	os.Exit(0)
 }
