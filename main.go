@@ -194,6 +194,8 @@ type funcInfo struct {
 var functions = map[string]*funcInfo {}
 var DUPLICATEFUNCTION = &FuncDecl {}
 
+var alreadySeen = []string {}
+
 func processFuncDecl(pkg string, filename string, f *File, fn *FuncDecl) {
 	if (dump) {
 		Print(fset, fn)
@@ -201,8 +203,9 @@ func processFuncDecl(pkg string, filename string, f *File, fn *FuncDecl) {
 	fname := pkg + "." + fn.Name.Name
 	if v, ok := functions[fname]; ok {
 		if v.fd != DUPLICATEFUNCTION {
-			fmt.Fprintf(os.Stderr, "already seen function %s in %s, yet again in %s\n",
-				fname, v.filename, filename)
+			alreadySeen = append(alreadySeen,
+				fmt.Sprintf("already seen function %s in %s, yet again in %s",
+					fname, v.filename, filename))
 			fn = DUPLICATEFUNCTION
 		}
 	}
@@ -864,6 +867,11 @@ func main() {
 	err := walkDirs(sourceDir, mode)
 	if err != nil {
 		panic("Error walking directory " + sourceDir + ": " + fmt.Sprintf("%v", err))
+	}
+
+	sort.Strings(alreadySeen)
+	for _, a := range alreadySeen {
+		fmt.Fprintln(os.Stderr, a)
 	}
 
 	if verbose {
