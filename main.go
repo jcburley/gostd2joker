@@ -204,7 +204,7 @@ func processFuncDecl(pkg string, filename string, f *File, fn *FuncDecl) {
 	if v, ok := functions[fname]; ok {
 		if v.fd != DUPLICATEFUNCTION {
 			alreadySeen = append(alreadySeen,
-				fmt.Sprintf("already seen function %s in %s, yet again in %s",
+				fmt.Sprintf("NOTE: Already seen function %s in %s, yet again in %s",
 					fname, v.filename, filename))
 			fn = DUPLICATEFUNCTION
 		}
