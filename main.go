@@ -212,6 +212,12 @@ type typeInfo struct {
 
 type typeInfoArray []*typeInfo
 
+/* Go apparently doesn't support/allow 'interface{}' as the value (or
+/* key) of a map such that any arbitrary type can be substituted at
+/* run time, so there are several of these nearly-identical functions
+/* sprinkled through this code. Still get some reuse out of some of
+/* them, and it's still easier to maintain these copies than if the
+/* body of these were to be included at each call point.... */
 func sortedTypeInfoMap(m map[string]typeInfoArray, f func(k string, v typeInfoArray)) {
 	var keys []string
 	for k, _ := range m {
