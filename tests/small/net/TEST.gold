@@ -5,17 +5,17 @@ Processing sourceDir=tests/small/net dump=false:
 Package url:
 Processing package=url:
 TYPE url.Error:
-  tests/small/net/url/url.go => &{<nil> Error 0 0xc0000a46a0 <nil>}
+  tests/small/net/url/url.go
 TYPE url.EscapeError:
-  tests/small/net/url/url.go => &{<nil> EscapeError 0 string <nil>}
+  tests/small/net/url/url.go
 TYPE url.InvalidHostError:
-  tests/small/net/url/url.go => &{<nil> InvalidHostError 0 string <nil>}
+  tests/small/net/url/url.go
 TYPE url.URL:
-  tests/small/net/url/url.go => &{<nil> URL 0 0xc000114c00 <nil>}
+  tests/small/net/url/url.go
 TYPE url.Userinfo:
-  tests/small/net/url/url.go => &{<nil> Userinfo 0 0xc000115300 <nil>}
+  tests/small/net/url/url.go
 TYPE url.Values:
-  tests/small/net/url/url.go => &{<nil> Values 0 0xc0001360c0 <nil>}
+  tests/small/net/url/url.go
 JOKER FUNC url.Parse has: 
 ;; (defn ^[{:scheme ^String Scheme, :opaque ^String Opaque, :user ^ABEND881(unrecognized Expr type *ast.StarExpr at: &{9580 Userinfo}) User, :host ^String Host, :path ^String Path, :rawpath ^String RawPath, :forcequery ForceQuery, :rawquery ^String RawQuery, :fragment ^String Fragment} Error] Parse
 ;;   "Parse parses rawurl into a URL structure.
@@ -29,7 +29,7 @@ JOKER FUNC url.Parse has:
 ;;   [^String rawurl])
 ;; 
 JOKER FUNC url.ParseQuery has: 
-;; (defn ^[ABEND881(unrecognized Expr type *ast.MapType at: &{23298 string 0xc000136090}) Error] ParseQuery
+;; (defn ^[ABEND883(unrecognized Expr type *ast.MapType at: &{23298 string 0xc000134090}) Error] ParseQuery
 ;;   "ParseQuery parses the URL-encoded query string and returns
 ;; a map listing the values specified for each key.
 ;; ParseQuery always returns a non-nil map containing all the

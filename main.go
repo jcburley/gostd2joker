@@ -49,6 +49,10 @@ func chanDirAsString(dir ChanDir) string {
 	}
 }
 
+func whereAt(e interface{}) string {
+	return fmt.Sprintf("%v", e)
+}
+
 func exprAsString(e Expr) string {
 	switch v := e.(type) {
 	case *Ident:
@@ -72,7 +76,7 @@ func exprAsString(e Expr) string {
 	case *StructType:
 		return "struct{" + fieldListAsString(v.Fields) + " }"
 	default:
-		panic("unrecognized Expr type " + fmt.Sprintf("%T", e) + " at: " + fmt.Sprintf("%v", e))
+		panic(fmt.Sprintf("unrecognized Expr type %T at: %s", e, whereAt(e)))
 	}
 }
 
@@ -169,7 +173,7 @@ func printDecls(f *File) {
 			}
 			printTypeSpecs(v.Specs)
 		default:
-			panic("unrecognized Decl type " + fmt.Sprintf("%T", v) + " at: " + fmt.Sprintf("%v", v))
+			panic(fmt.Sprintf("unrecognized Decl type %T at: %s", v, whereAt(v)))
 		}
 	}
 }
@@ -280,7 +284,7 @@ func processDecls(pkg string, filename string, f *File) {
 			}
 			processTypeSpecs(pkg, filename, f, v.Specs)
 		default:
-			panic("unrecognized Decl type " + fmt.Sprintf("%T", v) + " at: " + fmt.Sprintf("%v", v))
+			panic(fmt.Sprintf("unrecognized Decl type %T at: %s", v, whereAt(v)))
 		}
 	}
 }
@@ -393,7 +397,7 @@ func exprAsClojure(e Expr) string {
 			return ""
 		}
 	default:
-		return fmt.Sprintf("ABEND881(unrecognized Expr type %T at: %v)", e, e)
+		return fmt.Sprintf("ABEND881(unrecognized Expr type %T at: %s)", e, whereAt(e))
 	}
 }
 
@@ -409,7 +413,7 @@ func exprAsGo(e Expr) string {
 			return "Object"
 		}
 	default:
-		return fmt.Sprintf("ABEND881(unrecognized Expr type %T at: %v)", e, e)
+		return fmt.Sprintf("ABEND882(unrecognized Expr type %T at: %s)", e, whereAt(e))
 	}
 }
 
@@ -611,7 +615,7 @@ func typeAsClojure(pkg string, e Expr) string {
 	case *StructType:
 		return "{" + structAsClojure(pkg, v.Fields) + "}"
 	default:
-		return fmt.Sprintf("ABEND881(unrecognized Expr type %T at: %v)", e, e)
+		return fmt.Sprintf("ABEND883(unrecognized Expr type %T at: %s)", e, whereAt(e))
 	}
 }
 
@@ -867,28 +871,13 @@ func main() {
 
 	if verbose {
 		/* Output map in sorted order to stabilize for testing. */
-		if false {
-			var keys []string
-			for k, _ := range types {
-				keys = append(keys, k)
-			}
-			sort.Strings(keys)
-			for _, t := range keys {
-				v := types[t]
+		sortedTypeInfoMap(types,
+			func(t string, v typeInfoArray) {
 				fmt.Printf("TYPE %s:\n", t)
 				for _, ts := range v {
-					fmt.Printf("  %s => %v\n", ts.file, ts.td)
+					fmt.Printf("  %s\n", ts.file)
 				}
-			}
-		} else {
-			sortedTypeInfoMap(types,
-				func(t string, v typeInfoArray) {
-					fmt.Printf("TYPE %s:\n", t)
-					for _, ts := range v {
-						fmt.Printf("  %s => %v\n", ts.file, ts.td)
-					}
-				})
-		}
+			})
 	}
 
 	/* Emit function code snippets in arbitrary/random order. */
