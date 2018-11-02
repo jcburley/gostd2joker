@@ -13,6 +13,8 @@ import (
 	"unicode"
 )
 
+const VERSION = "0.1"
+
 /* Want to support e.g.:
 
      net/dial.go:DialTimeout(network, address string, timeout time.Duration) => _ Conn, _ error
@@ -285,7 +287,7 @@ func processDir(d string, path string, mode parser.Mode) error {
 		return err
 	}
 
-	if (list) {
+	if list {
 		for k, v := range pkgs {
 			fmt.Printf("Package %s:\n", k)
 			printPackage(v)
@@ -682,6 +684,28 @@ func notOption(arg string) bool {
 	return arg == "-" || !strings.HasPrefix(arg, "-")
 }
 
+func usage() {
+	fmt.Print(`
+Usage: gostd2joker options...
+
+Options:
+  --source <go-source-dir-name>  # Location of Go source tree's src/ subdirectory
+  --populate <joker-std-subdir>  # Where to write the joker.go.* files (usually .../joker/std/go/)
+  --overwrite                    # Overwrite any existing <joker-std-subdir> files, leaving existing files intact
+  --replace                      # 'rm -fr <joker-std-subdir>' before creating <joker-std-subdir>
+  --fresh                        # (Default) Refuse to overwrite existing <joker-std-subdir> directory
+  --verbose, -v                  # Print info on what's going on
+  --list                         # List packages, as each walked directory is processed, instead of processing them
+  --dump                         # Use go's AST dump API on pertinent elements (functions, types, etc.)
+  --help, -h                     # Print this information
+
+If <joker-std-subdir> is not specified, no Go nor Clojure source files
+(nor any other files nor directories) are created, effecting a sort of
+"dry run".
+`)
+	os.Exit(0)
+}
+
 func main() {
 	fset = token.NewFileSet() // positions are relative to fset
 	dump = false
@@ -697,9 +721,13 @@ func main() {
 		a := os.Args[i]
 		if a[0] == "-"[0] {
 			switch a {
+			case "--help", "-h":
+				usage()
+			case "--version", "-V":
+				fmt.Printf("%s version %s\n", os.Args[0], VERSION)
 			case "--populate":
 				if populateDir != "" {
-					panic("cannot specify --populate <go-source-dir-name> more than once")
+					panic("cannot specify --populate <joker-std-subdir> more than once")
 				}
 				if i < length-1 && notOption(os.Args[i+1]) {
 					i += 1 // shift
@@ -711,8 +739,13 @@ func main() {
 				dump = true
 			case "--overwrite":
 				overwrite = true
+				replace = false
 			case "--replace":
 				replace = true
+				overwrite = false
+			case "--fresh":
+				replace = false
+				overwrite = false
 			case "--list":
 				list = true
 			case "--verbose", "-v":
@@ -749,24 +782,26 @@ func main() {
 		}
 	}
 
-	if replace {
-		if e := os.RemoveAll(populateDir); e != nil {
-			panic(fmt.Sprintf("Unable to effectively 'rm -fr %s'", populateDir))
-		}
-	}
-
-	if !overwrite && populateDir != "" {
-		var stat syscall.Stat_t
-		if e := syscall.Stat(populateDir, &stat); e == nil || e.Error() != "no such file or directory" {
-			msg := "already exists"
-			if e != nil {
-				msg = e.Error()
+	if populateDir != "" {
+		if replace {
+			if e := os.RemoveAll(populateDir); e != nil {
+				panic(fmt.Sprintf("Unable to effectively 'rm -fr %s'", populateDir))
 			}
-			panic(fmt.Sprintf("Cannot populate empty directory %s; please 'rm -fr' first, or specify --overwrite or --replace: %s",
-				populateDir, msg))
 		}
-		if e := os.MkdirAll(populateDir, 0777); e != nil {
-			panic(fmt.Sprintf("Cannot 'mkdir -p %s': %s", populateDir, e.Error()))
+
+		if !overwrite {
+			var stat syscall.Stat_t
+			if e := syscall.Stat(populateDir, &stat); e == nil || e.Error() != "no such file or directory" {
+				msg := "already exists"
+				if e != nil {
+					msg = e.Error()
+				}
+				panic(fmt.Sprintf("Cannot populate empty directory %s; please 'rm -fr' first, or specify --overwrite or --replace: %s",
+					populateDir, msg))
+			}
+			if e := os.MkdirAll(populateDir, 0777); e != nil {
+				panic(fmt.Sprintf("Cannot 'mkdir -p %s': %s", populateDir, e.Error()))
+			}
 		}
 	}
 
