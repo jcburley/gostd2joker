@@ -301,7 +301,13 @@ func processDir(d string, path string, mode parser.Mode) error {
 
 	pkgs, err := parser.ParseDir(fset, path,
 		// Walk only *.go files that meet default (target) build constraints, e.g. per "// build ..."
-		func (info os.FileInfo) bool { b, e := build.Default.MatchFile(path, info.Name()); return b && e == nil },
+		func (info os.FileInfo) bool {
+			if strings.HasSuffix(info.Name(), "_test.go") {
+				return false
+			}
+			b, e := build.Default.MatchFile(path, info.Name());
+			return b && e == nil
+		},
 		mode)
 	if err != nil {
 		fmt.Fprintln(os.Stderr, err)
