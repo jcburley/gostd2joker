@@ -17,7 +17,7 @@ TYPE url.Userinfo:
 TYPE url.Values:
   tests/small/net/url/url.go
 JOKER FUNC url.Parse has: 
-;; (defn ^[{:scheme ^String Scheme, :opaque ^String Opaque, :user ^ABEND881(unrecognized Expr type *ast.StarExpr at: &{9580 Userinfo}) User, :host ^String Host, :path ^String Path, :rawpath ^String RawPath, :forcequery ForceQuery, :rawquery ^String RawQuery, :fragment ^String Fragment} Error] Parse
+;; (defn ^[{:scheme ^String Scheme, :opaque ^String Opaque, :user ^ABEND881(unrecognized Expr type *ast.StarExpr at: tests/small/net/url/url.go:347:13) User, :host ^String Host, :path ^String Path, :rawpath ^String RawPath, :forcequery ForceQuery, :rawquery ^String RawQuery, :fragment ^String Fragment} Error] Parse
 ;;   "Parse parses rawurl into a URL structure.
 ;; 
 ;; The rawurl may be relative (a path, without a host) or absolute
@@ -29,7 +29,7 @@ JOKER FUNC url.Parse has:
 ;;   [^String rawurl])
 ;; 
 JOKER FUNC url.ParseQuery has: 
-;; (defn ^[ABEND883(unrecognized Expr type *ast.MapType at: &{23298 string 0xc000134090}) Error] ParseQuery
+;; (defn ^[ABEND883(unrecognized Expr type *ast.MapType at: tests/small/net/url/url.go:804:13) Error] ParseQuery
 ;;   "ParseQuery parses the URL-encoded query string and returns
 ;; a map listing the values specified for each key.
 ;; ParseQuery always returns a non-nil map containing all the
@@ -44,7 +44,7 @@ JOKER FUNC url.ParseQuery has:
 ;;   [^String query])
 ;; 
 JOKER FUNC url.ParseRequestURI has: 
-;; (defn ^[{:scheme ^String Scheme, :opaque ^String Opaque, :user ^ABEND881(unrecognized Expr type *ast.StarExpr at: &{9580 Userinfo}) User, :host ^String Host, :path ^String Path, :rawpath ^String RawPath, :forcequery ForceQuery, :rawquery ^String RawQuery, :fragment ^String Fragment} Error] ParseRequestURI
+;; (defn ^[{:scheme ^String Scheme, :opaque ^String Opaque, :user ^ABEND881(unrecognized Expr type *ast.StarExpr at: tests/small/net/url/url.go:347:13) User, :host ^String Host, :path ^String Path, :rawpath ^String RawPath, :forcequery ForceQuery, :rawquery ^String RawQuery, :fragment ^String Fragment} Error] ParseRequestURI
 ;;   "ParseRequestURI parses rawurl into a URL structure. It assumes that
 ;; rawurl was received in an HTTP request, so the rawurl is interpreted
 ;; only as an absolute URI or an absolute path.

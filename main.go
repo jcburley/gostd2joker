@@ -49,8 +49,8 @@ func chanDirAsString(dir ChanDir) string {
 	}
 }
 
-func whereAt(e interface{}) string {
-	return fmt.Sprintf("%v", e)
+func whereAt(p token.Pos) string {
+	return fmt.Sprintf("%s", fset.Position(p).String())
 }
 
 func exprAsString(e Expr) string {
@@ -76,7 +76,7 @@ func exprAsString(e Expr) string {
 	case *StructType:
 		return "struct{" + fieldListAsString(v.Fields) + " }"
 	default:
-		panic(fmt.Sprintf("unrecognized Expr type %T at: %s", e, whereAt(e)))
+		panic(fmt.Sprintf("unrecognized Expr type %T at: %s", e, whereAt(v.Pos())))
 	}
 }
 
@@ -173,7 +173,7 @@ func printDecls(f *File) {
 			}
 			printTypeSpecs(v.Specs)
 		default:
-			panic(fmt.Sprintf("unrecognized Decl type %T at: %s", v, whereAt(v)))
+			panic(fmt.Sprintf("unrecognized Decl type %T at: %s", v, whereAt(v.Pos())))
 		}
 	}
 }
@@ -284,7 +284,7 @@ func processDecls(pkg string, filename string, f *File) {
 			}
 			processTypeSpecs(pkg, filename, f, v.Specs)
 		default:
-			panic(fmt.Sprintf("unrecognized Decl type %T at: %s", v, whereAt(v)))
+			panic(fmt.Sprintf("unrecognized Decl type %T at: %s", v, whereAt(v.Pos())))
 		}
 	}
 }
@@ -397,7 +397,7 @@ func exprAsClojure(e Expr) string {
 			return ""
 		}
 	default:
-		return fmt.Sprintf("ABEND881(unrecognized Expr type %T at: %s)", e, whereAt(e))
+		return fmt.Sprintf("ABEND881(unrecognized Expr type %T at: %s)", e, whereAt(e.Pos()))
 	}
 }
 
@@ -413,7 +413,7 @@ func exprAsGo(e Expr) string {
 			return "Object"
 		}
 	default:
-		return fmt.Sprintf("ABEND882(unrecognized Expr type %T at: %s)", e, whereAt(e))
+		return fmt.Sprintf("ABEND882(unrecognized Expr type %T at: %s)", e, whereAt(e.Pos()))
 	}
 }
 
@@ -615,7 +615,7 @@ func typeAsClojure(pkg string, e Expr) string {
 	case *StructType:
 		return "{" + structAsClojure(pkg, v.Fields) + "}"
 	default:
-		return fmt.Sprintf("ABEND883(unrecognized Expr type %T at: %s)", e, whereAt(e))
+		return fmt.Sprintf("ABEND883(unrecognized Expr type %T at: %s)", e, whereAt(e.Pos()))
 	}
 }
 
