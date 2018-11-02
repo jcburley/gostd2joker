@@ -1,0 +1,1516 @@
+Default context:
+{amd64 linux /usr/local/go /home/craig/.go true false gc [] [go1.1 go1.2 go1.3 go1.4 go1.5 go1.6 go1.7 go1.8 go1.9 go1.10 go1.11]  <nil> <nil> <nil> <nil> <nil> <nil> <nil>}
+Walking from tests/big/net to tests/big/net/http
+Processing sourceDir=tests/big/net dump=false:
+Package http:
+Processing package=http:
+Walking from tests/big/net to tests/big/net/http/cgi
+Processing sourceDir=tests/big/net dump=false:
+Package cgi:
+Processing package=cgi:
+Excluding tests/big/net/http/cgi/testdata
+Walking from tests/big/net to tests/big/net/http/cookiejar
+Processing sourceDir=tests/big/net dump=false:
+Package cookiejar:
+Processing package=cookiejar:
+Walking from tests/big/net to tests/big/net/http/fcgi
+Processing sourceDir=tests/big/net dump=false:
+Package fcgi:
+Processing package=fcgi:
+Walking from tests/big/net to tests/big/net/http/httptest
+Processing sourceDir=tests/big/net dump=false:
+Package httptest:
+Processing package=httptest:
+Walking from tests/big/net to tests/big/net/http/httptrace
+Processing sourceDir=tests/big/net dump=false:
+Package httptrace:
+Processing package=httptrace:
+Walking from tests/big/net to tests/big/net/http/httputil
+Processing sourceDir=tests/big/net dump=false:
+Package httputil:
+Processing package=httputil:
+Excluding tests/big/net/http/internal
+Walking from tests/big/net to tests/big/net/http/pprof
+Processing sourceDir=tests/big/net dump=false:
+Package pprof:
+Processing package=pprof:
+Excluding tests/big/net/http/testdata
+Excluding tests/big/net/internal
+Walking from tests/big/net to tests/big/net/mail
+Processing sourceDir=tests/big/net dump=false:
+Package mail:
+Processing package=mail:
+Walking from tests/big/net to tests/big/net/rpc
+Processing sourceDir=tests/big/net dump=false:
+Package rpc:
+Processing package=rpc:
+Walking from tests/big/net to tests/big/net/rpc/jsonrpc
+Processing sourceDir=tests/big/net dump=false:
+Package jsonrpc:
+Processing package=jsonrpc:
+Walking from tests/big/net to tests/big/net/smtp
+Processing sourceDir=tests/big/net dump=false:
+Package smtp:
+Processing package=smtp:
+Excluding tests/big/net/testdata
+Walking from tests/big/net to tests/big/net/textproto
+Processing sourceDir=tests/big/net dump=false:
+Package textproto:
+Processing package=textproto:
+Walking from tests/big/net to tests/big/net/url
+Processing sourceDir=tests/big/net dump=false:
+Package url:
+Processing package=url:
+TYPE cgi.Handler:
+  tests/big/net/http/cgi/host.go => &{<nil> Handler 0 0xc0007bc5e0 <nil>}
+TYPE cookiejar.Jar:
+  tests/big/net/http/cookiejar/jar.go => &{<nil> Jar 0 0xc000619300 <nil>}
+TYPE cookiejar.Options:
+  tests/big/net/http/cookiejar/jar.go => &{<nil> Options 0 0xc000618fe0 <nil>}
+TYPE cookiejar.PublicSuffixList:
+  tests/big/net/http/cookiejar/jar.go => &{<nil> PublicSuffixList 0 0xc000618860 <nil>}
+TYPE http.Client:
+  tests/big/net/http/client.go => &{<nil> Client 0 0xc0001aa480 <nil>}
+TYPE http.CloseNotifier:
+  tests/big/net/http/server.go => &{<nil> CloseNotifier 0 0xc0006957c0 <nil>}
+TYPE http.ConnState:
+  tests/big/net/http/server.go => &{<nil> ConnState 0 int <nil>}
+TYPE http.Cookie:
+  tests/big/net/http/cookie.go => &{<nil> Cookie 0 0xc000318740 <nil>}
+TYPE http.CookieJar:
+  tests/big/net/http/jar.go => &{<nil> CookieJar 0 0xc000398440 <nil>}
+TYPE http.Dir:
+  tests/big/net/http/fs.go => &{<nil> Dir 0 string <nil>}
+TYPE http.File:
+  tests/big/net/http/fs.go => &{<nil> File 0 0xc0002cc680 <nil>}
+TYPE http.FileSystem:
+  tests/big/net/http/fs.go => &{<nil> FileSystem 0 0xc0002cc240 <nil>}
+TYPE http.Flusher:
+  tests/big/net/http/server.go => &{<nil> Flusher 0 0xc000694de0 <nil>}
+TYPE http.Handler:
+  tests/big/net/http/server.go => &{<nil> Handler 0 0xc000694120 <nil>}
+TYPE http.HandlerFunc:
+  tests/big/net/http/server.go => &{<nil> HandlerFunc 0 0xc00071cec0 <nil>}
+TYPE http.Header:
+  tests/big/net/http/header.go => &{<nil> Header 0 0xc00008cab0 <nil>}
+TYPE http.Hijacker:
+  tests/big/net/http/server.go => &{<nil> Hijacker 0 0xc000695360 <nil>}
+TYPE http.ProtocolError:
+  tests/big/net/http/request.go => &{<nil> ProtocolError 0 0xc000116740 <nil>}
+TYPE http.PushOptions:
+  tests/big/net/http/http.go => &{<nil> PushOptions 0 0xc000618a20 <nil>}
+TYPE http.Pusher:
+  tests/big/net/http/http.go => &{<nil> Pusher 0 0xc000618ec0 <nil>}
+TYPE http.Request:
+  tests/big/net/http/request.go => &{<nil> Request 0 0xc00012fa40 <nil>}
+TYPE http.Response:
+  tests/big/net/http/response.go => &{<nil> Response 0 0xc00078bca0 <nil>}
+TYPE http.ResponseWriter:
+  tests/big/net/http/server.go => &{<nil> ResponseWriter 0 0xc000694b80 <nil>}
+TYPE http.RoundTripper:
+  tests/big/net/http/client.go => &{<nil> RoundTripper 0 0xc0001aaaa0 <nil>}
+TYPE http.SameSite:
+  tests/big/net/http/cookie.go => &{<nil> SameSite 0 int <nil>}
+TYPE http.ServeMux:
+  tests/big/net/http/server.go => &{<nil> ServeMux 0 0xc000728cc0 <nil>}
+TYPE http.Server:
+  tests/big/net/http/server.go => &{<nil> Server 0 0xc00074a9e0 <nil>}
+TYPE http.Transport:
+  tests/big/net/http/transport.go => &{<nil> Transport 0 0xc000202220 <nil>}
+TYPE httptest.ResponseRecorder:
+  tests/big/net/http/httptest/recorder.go => &{<nil> ResponseRecorder 0 0xc000207600 <nil>}
+TYPE httptest.Server:
+  tests/big/net/http/httptest/server.go => &{<nil> Server 0 0xc0002be2a0 <nil>}
+TYPE httptrace.ClientTrace:
+  tests/big/net/http/httptrace/trace.go => &{<nil> ClientTrace 0 0xc00033e3e0 <nil>}
+TYPE httptrace.DNSDoneInfo:
+  tests/big/net/http/httptrace/trace.go => &{<nil> DNSDoneInfo 0 0xc00033f840 <nil>}
+TYPE httptrace.DNSStartInfo:
+  tests/big/net/http/httptrace/trace.go => &{<nil> DNSStartInfo 0 0xc00033f4a0 <nil>}
+TYPE httptrace.GotConnInfo:
+  tests/big/net/http/httptrace/trace.go => &{<nil> GotConnInfo 0 0xc00034ed80 <nil>}
+TYPE httptrace.WroteRequestInfo:
+  tests/big/net/http/httptrace/trace.go => &{<nil> WroteRequestInfo 0 0xc00033e500 <nil>}
+TYPE httputil.BufferPool:
+  tests/big/net/http/httputil/reverseproxy.go => &{<nil> BufferPool 0 0xc000728200 <nil>}
+TYPE httputil.ClientConn:
+  tests/big/net/http/httputil/persist.go => &{<nil> ClientConn 0 0xc0007a4b80 <nil>}
+TYPE httputil.ReverseProxy:
+  tests/big/net/http/httputil/reverseproxy.go => &{<nil> ReverseProxy 0 0xc000721e20 <nil>}
+TYPE httputil.ServerConn:
+  tests/big/net/http/httputil/persist.go => &{<nil> ServerConn 0 0xc000774e60 <nil>}
+TYPE mail.Address:
+  tests/big/net/mail/message.go => &{<nil> Address 0 0xc0002af1c0 <nil>}
+TYPE mail.AddressParser:
+  tests/big/net/mail/message.go => &{<nil> AddressParser 0 0xc0002af7a0 <nil>}
+TYPE mail.Header:
+  tests/big/net/mail/message.go => &{<nil> Header 0 0xc000343b30 <nil>}
+TYPE mail.Message:
+  tests/big/net/mail/message.go => &{<nil> Message 0 0xc0007a6dc0 <nil>}
+TYPE rpc.Call:
+  tests/big/net/rpc/client.go => &{<nil> Call 0 0xc0006a98e0 <nil>}
+TYPE rpc.Client:
+  tests/big/net/rpc/client.go => &{<nil> Client 0 0xc0006a9dc0 <nil>}
+TYPE rpc.ClientCodec:
+  tests/big/net/rpc/client.go => &{<nil> ClientCodec 0 0xc0006da1e0 <nil>}
+TYPE rpc.Request:
+  tests/big/net/rpc/server.go => &{<nil> Request 0 0xc0007e7860 <nil>}
+TYPE rpc.Response:
+  tests/big/net/rpc/server.go => &{<nil> Response 0 0xc0007e7b80 <nil>}
+TYPE rpc.Server:
+  tests/big/net/rpc/server.go => &{<nil> Server 0 0xc0007e7f20 <nil>}
+TYPE rpc.ServerCodec:
+  tests/big/net/rpc/server.go => &{<nil> ServerCodec 0 0xc0004ba080 <nil>}
+TYPE rpc.ServerError:
+  tests/big/net/rpc/client.go => &{<nil> ServerError 0 string <nil>}
+TYPE smtp.Auth:
+  tests/big/net/smtp/auth.go => &{<nil> Auth 0 0xc000524700 <nil>}
+TYPE smtp.Client:
+  tests/big/net/smtp/smtp.go => &{<nil> Client 0 0xc000527260 <nil>}
+TYPE smtp.ServerInfo:
+  tests/big/net/smtp/auth.go => &{<nil> ServerInfo 0 0xc000524940 <nil>}
+TYPE textproto.Conn:
+  tests/big/net/textproto/textproto.go => &{<nil> Conn 0 0xc000761aa0 <nil>}
+TYPE textproto.Error:
+  tests/big/net/textproto/textproto.go => &{<nil> Error 0 0xc000761440 <nil>}
+TYPE textproto.MIMEHeader:
+  tests/big/net/textproto/header.go => &{<nil> MIMEHeader 0 0xc0007d10b0 <nil>}
+TYPE textproto.Pipeline:
+  tests/big/net/textproto/pipeline.go => &{<nil> Pipeline 0 0xc00078a6c0 <nil>}
+TYPE textproto.ProtocolError:
+  tests/big/net/textproto/textproto.go => &{<nil> ProtocolError 0 string <nil>}
+TYPE textproto.Reader:
+  tests/big/net/textproto/reader.go => &{<nil> Reader 0 0xc000471fa0 <nil>}
+TYPE textproto.Writer:
+  tests/big/net/textproto/writer.go => &{<nil> Writer 0 0xc000768a60 <nil>}
+TYPE url.Error:
+  tests/big/net/url/url.go => &{<nil> Error 0 0xc000751f20 <nil>}
+TYPE url.EscapeError:
+  tests/big/net/url/url.go => &{<nil> EscapeError 0 string <nil>}
+TYPE url.InvalidHostError:
+  tests/big/net/url/url.go => &{<nil> InvalidHostError 0 string <nil>}
+TYPE url.URL:
+  tests/big/net/url/url.go => &{<nil> URL 0 0xc00033f0c0 <nil>}
+TYPE url.Userinfo:
+  tests/big/net/url/url.go => &{<nil> Userinfo 0 0xc000324060 <nil>}
+TYPE url.Values:
+  tests/big/net/url/url.go => &{<nil> Values 0 0xc000617470 <nil>}
+JOKER FUNC cgi.Request has: 
+;; (defn ^[ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{http Request}) Error] Request
+;;   "Request returns the HTTP request as represented in the current
+;; environment. This assumes the current program is being run
+;; by a web server in a CGI environment.
+;; The returned Request's Body is populated, if applicable."
+;;   {:added "1.0"
+;;    :go "request()"}
+;;   [])
+;; 
+JOKER FUNC cgi.RequestFromMap has: 
+;; (defn ^[ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{http Request}) Error] RequestFromMap
+;;   "RequestFromMap creates an http.Request from CGI variables.
+;; The returned Request's Body field is not populated."
+;;   {:added "1.0"
+;;    :go "requestFromMap(params)"}
+;;   [^ABEND881(unrecognized Expr type *ast.MapType at: &{705226 string string}) params])
+;; 
+JOKER FUNC cgi.Serve has: 
+;; (defn ^Error Serve
+;;   "Serve executes the provided Handler on the currently active CGI
+;; request, if any. If there's no current CGI environment
+;; an error is returned. The provided handler may be nil to use
+;; http.DefaultServeMux."
+;;   {:added "1.0"
+;;    :go "serve(handler)"}
+;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{http Handler}) handler])
+;; 
+JOKER FUNC cookiejar.New has: 
+;; (defn ^[{:pslist psList, :mu ^ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{sync Mutex}) mu, :entries ^ABEND881(unrecognized Expr type *ast.MapType at: &{714943 string 0xc0007e1d40}) entries, :nextseqnum nextSeqNum} Error] New
+;;   "New returns a new cookie jar. A nil *Options is equivalent to a zero
+;; Options."
+;;   {:added "1.0"
+;;    :go "new(o)"}
+;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: &{715181 Options}) o])
+;; 
+JOKER FUNC fcgi.ProcessEnv has: 
+;; (defn ^ABEND881(unrecognized Expr type *ast.MapType at: &{741366 string string}) ProcessEnv
+;;   "ProcessEnv returns FastCGI environment variables associated with the request r
+;; for which no effort was made to be included in the request itself - the data
+;; is hidden in the request's context. As an example, if REMOTE_USER is set for a
+;; request, it will not be found anywhere in r, but it will be included in
+;; ProcessEnv's response (via r's context)."
+;;   {:added "1.0"
+;;    :go "processEnv(r)"}
+;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: &{741351 0xc000206460}) r])
+;; 
+JOKER FUNC fcgi.Serve has: 
+;; (defn ^Error Serve
+;;   "Serve accepts incoming FastCGI connections on the listener l, creating a new
+;; goroutine for each. The goroutine reads requests and then calls handler
+;; to reply to them.
+;; If l is nil, Serve accepts connections from os.Stdin.
+;; If handler is nil, http.DefaultServeMux is used."
+;;   {:added "1.0"
+;;    :go "serve(l, handler)"}
+;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{net Listener}) l, ^ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{http Handler}) handler])
+;; 
+JOKER FUNC http.CanonicalHeaderKey has: 
+(defn ^String CanonicalHeaderKey
+  "CanonicalHeaderKey returns the canonical format of the
+header key s. The canonicalization converts the first
+letter and any letter following a hyphen to upper case;
+the rest are converted to lowercase. For example, the
+canonical key for "accept-encoding" is "Accept-Encoding".
+If s contains a space or invalid header field bytes, it is
+returned without modifications."
+  {:added "1.0"
+   :go "canonicalHeaderKey(s)"}
+  [^String s])
+
+JOKER FUNC http.DetectContentType has: 
+;; (defn ^String DetectContentType
+;;   "DetectContentType implements the algorithm described
+;; at https://mimesniff.spec.whatwg.org/ to determine the
+;; Content-Type of the given data. It considers at most the
+;; first 512 bytes of data. DetectContentType always returns
+;; a valid MIME type: if it cannot determine a more specific one, it
+;; returns "application/octet-stream"."
+;;   {:added "1.0"
+;;    :go "detectContentType(data)"}
+;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: &{212236 <nil> byte}) data])
+;; 
+JOKER FUNC http.Error has: 
+;; (defn Error
+;;   "Error replies to the request with the specified error message and HTTP code.
+;; It does not otherwise end the request; the caller should ensure no further
+;; writes are done to w.
+;; The error message should be plain text."
+;;   {:added "1.0"
+;;    :go "error(w, error, code)"}
+;;   [w, ^String error, ^Int code])
+;; 
+JOKER FUNC http.FileServer has: 
+;; (defn ^ABEND881(unrecognized Expr type *ast.InterfaceType at: &{583179 0xc000674510 false}) FileServer
+;;   "FileServer returns a handler that serves HTTP requests
+;; with the contents of the file system rooted at root.
+;; 
+;; To use the operating system's file system implementation,
+;; use http.Dir:
+;; 
+;;     http.Handle("/", http.FileServer(http.Dir("/tmp")))
+;; 
+;; As a special case, the returned file server redirects any request
+;; ending in "/index.html" to the same path, without the final
+;; "index.html"."
+;;   {:added "1.0"
+;;    :go "fileServer(root)"}
+;;   [root])
+;; 
+JOKER FUNC http.Get has: 
+(defn ^[resp err] Get
+  "Get issues a GET to the specified URL. If the response is one of
+the following redirect codes, Get follows the redirect, up to a
+maximum of 10 redirects:
+
+   301 (Moved Permanently)
+   302 (Found)
+   303 (See Other)
+   307 (Temporary Redirect)
+   308 (Permanent Redirect)
+
+An error is returned if there were too many redirects or if there
+was an HTTP protocol error. A non-2xx response doesn't cause an
+error. Any returned error will be of type *url.Error. The url.Error
+value's Timeout method will report true if request timed out or was
+canceled.
+
+When err is nil, resp always contains a non-nil resp.Body.
+Caller should close resp.Body when done reading from it.
+
+Get is a wrapper around DefaultClient.Get.
+
+To make a request with custom headers, use NewRequest and
+DefaultClient.Do."
+  {:added "1.0"
+   :go "get(url)"}
+  [^String url])
+
+JOKER FUNC http.Handle has: 
+;; (defn Handle
+;;   "Handle registers the handler for the given pattern
+;; in the DefaultServeMux.
+;; The documentation for ServeMux explains how patterns are matched."
+;;   {:added "1.0"
+;;    :go "handle(pattern, handler)"}
+;;   [^String pattern, handler])
+;; 
+JOKER FUNC http.HandleFunc has: 
+;; (defn HandleFunc
+;;   "HandleFunc registers the handler function for the given pattern
+;; in the DefaultServeMux.
+;; The documentation for ServeMux explains how patterns are matched."
+;;   {:added "1.0"
+;;    :go "handleFunc(pattern, handler)"}
+;;   [^String pattern, ^ABEND881(unrecognized Expr type *ast.FuncType at: &{653903 0xc00073d1a0 <nil>}) handler])
+;; 
+JOKER FUNC http.Head has: 
+(defn ^[resp err] Head
+  "Head issues a HEAD to the specified URL. If the response is one of
+the following redirect codes, Head follows the redirect, up to a
+maximum of 10 redirects:
+
+   301 (Moved Permanently)
+   302 (Found)
+   303 (See Other)
+   307 (Temporary Redirect)
+   308 (Permanent Redirect)
+
+Head is a wrapper around DefaultClient.Head"
+  {:added "1.0"
+   :go "head(url)"}
+  [^String url])
+
+JOKER FUNC http.ListenAndServe has: 
+(defn ^Error ListenAndServe
+  "ListenAndServe listens on the TCP network address addr and then calls
+Serve with handler to handle requests on incoming connections.
+Accepted connections are configured to enable TCP keep-alives.
+
+The handler is typically nil, in which case the DefaultServeMux is used.
+
+ListenAndServe always returns a non-nil error."
+  {:added "1.0"
+   :go "listenAndServe(addr, handler)"}
+  [^String addr, handler])
+
+JOKER FUNC http.ListenAndServeTLS has: 
+(defn ^Error ListenAndServeTLS
+  "ListenAndServeTLS acts identically to ListenAndServe, except that it
+expects HTTPS connections. Additionally, files containing a certificate and
+matching private key for the server must be provided. If the certificate
+is signed by a certificate authority, the certFile should be the concatenation
+of the server's certificate, any intermediates, and the CA's certificate."
+  {:added "1.0"
+   :go "listenAndServeTLS(addr, certFile, keyFile, handler)"}
+  [^String addr, ^String certFile, ^String keyFile, handler])
+
+JOKER FUNC http.MaxBytesReader has: 
+;; (defn ^ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{io ReadCloser}) MaxBytesReader
+;;   "MaxBytesReader is similar to io.LimitReader but is intended for
+;; limiting the size of incoming request bodies. In contrast to
+;; io.LimitReader, MaxBytesReader's result is a ReadCloser, returns a
+;; non-EOF error for a Read beyond the limit, and closes the
+;; underlying reader when its Close method is called.
+;; 
+;; MaxBytesReader prevents clients from accidentally or maliciously
+;; sending a large request and wasting server resources."
+;;   {:added "1.0"
+;;    :go "maxBytesReader(w, r, n)"}
+;;   [w, ^ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{io ReadCloser}) r, n])
+;; 
+JOKER FUNC http.NewFileTransport has: 
+;; (defn ^ABEND881(unrecognized Expr type *ast.InterfaceType at: &{54624 0xc0001905a0 false}) NewFileTransport
+;;   "NewFileTransport returns a new RoundTripper, serving the provided
+;; FileSystem. The returned RoundTripper ignores the URL host in its
+;; incoming requests, as well as most other properties of the
+;; request.
+;; 
+;; The typical use case for NewFileTransport is to register the "file"
+;; protocol with a Transport, as in:
+;; 
+;;   t := &http.Transport{}
+;;   t.RegisterProtocol("file", http.NewFileTransport(http.Dir("/")))
+;;   c := &http.Client{Transport: t}
+;;   res, err := c.Get("file:///etc/passwd")
+;;   ..."
+;;   {:added "1.0"
+;;    :go "newFileTransport(fs)"}
+;;   [fs])
+;; 
+JOKER FUNC http.NewRequest has: 
+;; (defn ^[{:method ^String Method, :url ^ABEND881(unrecognized Expr type *ast.StarExpr at: &{10730 0xc0001179e0}) URL, :proto ^String Proto, :protomajor ^Int ProtoMajor, :protominor ^Int ProtoMinor, :header Header, :body ^ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{io ReadCloser}) Body, :getbody ^ABEND881(unrecognized Expr type *ast.FuncType at: &{12780 0xc000128870 0xc0001288a0}) GetBody, :contentlength ContentLength, :transferencoding ^ABEND881(unrecognized Expr type *ast.ArrayType at: &{13428 <nil> string}) TransferEncoding, :close Close, :host ^String Host, :form ^ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{url Values}) Form, :postform ^ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{url Values}) PostForm, :multipartform ^ABEND881(unrecognized Expr type *ast.StarExpr at: &{15526 0xc00012ef40}) MultipartForm, :trailer Trailer, :remoteaddr ^String RemoteAddr, :requesturi ^String RequestURI, :tls ^ABEND881(unrecognized Expr type *ast.StarExpr at: &{17515 0xc00012f620}) TLS, :cancel ^ABEND881(unrecognized Expr type *ast.ChanType at: &{17962 17962 2 0xc00012f7e0}) Cancel, :response ^ABEND881(unrecognized Expr type *ast.StarExpr at: &{18130 Response}) Response, :ctx ^ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{context Context}) ctx} Error] NewRequest
+;;   "NewRequest returns a new Request given a method, URL, and optional body.
+;; 
+;; If the provided body is also an io.Closer, the returned
+;; Request.Body is set to body and will be closed by the Client
+;; methods Do, Post, and PostForm, and Transport.RoundTrip.
+;; 
+;; NewRequest returns a Request suitable for use with Client.Do or
+;; Transport.RoundTrip. To create a request for use with testing a
+;; Server Handler, either use the NewRequest function in the
+;; net/http/httptest package, use ReadRequest, or manually update the
+;; Request fields. See the Request type's documentation for the
+;; difference between inbound and outbound request fields.
+;; 
+;; If body is of type *bytes.Buffer, *bytes.Reader, or
+;; *strings.Reader, the returned request's ContentLength is set to its
+;; exact value (instead of -1), GetBody is populated (so 307 and 308
+;; redirects can replay the body), and Body is set to NoBody if the
+;; ContentLength is 0."
+;;   {:added "1.0"
+;;    :go "newRequest(method, url, body)"}
+;;   [^String method, ^String url, ^ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{io Reader}) body])
+;; 
+JOKER FUNC http.NewServeMux has: 
+;; (defn ^{:mu ^ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{sync RWMutex}) mu, :m ^ABEND881(unrecognized Expr type *ast.MapType at: &{646833 string muxEntry}) m, :hosts hosts} NewServeMux
+;;   "NewServeMux allocates and returns a new ServeMux."
+;;   {:added "1.0"
+;;    :go "newServeMux()"}
+;;   [])
+;; 
+JOKER FUNC http.NotFound has: 
+;; (defn NotFound
+;;   "NotFound replies to the request with an HTTP 404 not found error."
+;;   {:added "1.0"
+;;    :go "notFound(w, r)"}
+;;   [w, ^ABEND881(unrecognized Expr type *ast.StarExpr at: &{640861 Request}) r])
+;; 
+JOKER FUNC http.NotFoundHandler has: 
+;; (defn ^ABEND881(unrecognized Expr type *ast.InterfaceType at: &{583179 0xc000674510 false}) NotFoundHandler
+;;   "NotFoundHandler returns a simple request handler
+;; that replies to each request with a ``404 page not found'' reply."
+;;   {:added "1.0"
+;;    :go "notFoundHandler()"}
+;;   [])
+;; 
+JOKER FUNC http.ParseHTTPVersion has: 
+(defn ^[major minor ok] ParseHTTPVersion
+  "ParseHTTPVersion parses a HTTP version string.
+"HTTP/1.0" returns (1, 0, true)."
+  {:added "1.0"
+   :go "parseHTTPVersion(vers)"}
+  [^String vers])
+
+JOKER FUNC http.ParseTime has: 
+(defn ^[t err] ParseTime
+  "ParseTime parses a time header (such as the Date: header),
+trying each of the three formats allowed by HTTP/1.1:
+TimeFormat, time.RFC850, and time.ANSIC."
+  {:added "1.0"
+   :go "parseTime(text)"}
+  [^String text])
+
+JOKER FUNC http.Post has: 
+;; (defn ^[resp err] Post
+;;   "Post issues a POST to the specified URL.
+;; 
+;; Caller should close resp.Body when done reading from it.
+;; 
+;; If the provided body is an io.Closer, it is closed after the
+;; request.
+;; 
+;; Post is a wrapper around DefaultClient.Post.
+;; 
+;; To set custom headers, use NewRequest and DefaultClient.Do.
+;; 
+;; See the Client.Do method documentation for details on how redirects
+;; are handled."
+;;   {:added "1.0"
+;;    :go "post(url, contentType, body)"}
+;;   [^String url, ^String contentType, ^ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{io Reader}) body])
+;; 
+JOKER FUNC http.PostForm has: 
+;; (defn ^[resp err] PostForm
+;;   "PostForm issues a POST to the specified URL, with data's keys and
+;; values URL-encoded as the request body.
+;; 
+;; The Content-Type header is set to application/x-www-form-urlencoded.
+;; To set other headers, use NewRequest and DefaultClient.Do.
+;; 
+;; When err is nil, resp always contains a non-nil resp.Body.
+;; Caller should close resp.Body when done reading from it.
+;; 
+;; PostForm is a wrapper around DefaultClient.PostForm.
+;; 
+;; See the Client.Do method documentation for details on how redirects
+;; are handled."
+;;   {:added "1.0"
+;;    :go "postForm(url, data)"}
+;;   [^String url, ^ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{url Values}) data])
+;; 
+JOKER FUNC http.ProxyFromEnvironment has: 
+;; (defn ^[ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{url URL}) Error] ProxyFromEnvironment
+;;   "ProxyFromEnvironment returns the URL of the proxy to use for a
+;; given request, as indicated by the environment variables
+;; HTTP_PROXY, HTTPS_PROXY and NO_PROXY (or the lowercase versions
+;; thereof). HTTPS_PROXY takes precedence over HTTP_PROXY for https
+;; requests.
+;; 
+;; The environment values may be either a complete URL or a
+;; "host[:port]", in which case the "http" scheme is assumed.
+;; An error is returned if the value is a different form.
+;; 
+;; A nil URL and nil error are returned if no proxy is defined in the
+;; environment, or a proxy should not be used for the given request,
+;; as defined by NO_PROXY.
+;; 
+;; As a special case, if req.URL.Host is "localhost" (with or without
+;; a port number), then a nil URL and nil error will be returned."
+;;   {:added "1.0"
+;;    :go "proxyFromEnvironment(req)"}
+;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: &{93190 Request}) req])
+;; 
+JOKER FUNC http.ProxyURL has: 
+;; (defn ^ABEND881(unrecognized Expr type *ast.FuncType at: &{93387 0xc0001feed0 0xc0001fef00}) ProxyURL
+;;   "ProxyURL returns a proxy function (for use in a Transport)
+;; that always returns the same URL."
+;;   {:added "1.0"
+;;    :go "proxyURL(fixedURL)"}
+;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: &{93377 0xc000203ce0}) fixedURL])
+;; 
+JOKER FUNC http.ReadRequest has: 
+;; (defn ^[{:method ^String Method, :url ^ABEND881(unrecognized Expr type *ast.StarExpr at: &{10730 0xc0001179e0}) URL, :proto ^String Proto, :protomajor ^Int ProtoMajor, :protominor ^Int ProtoMinor, :header Header, :body ^ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{io ReadCloser}) Body, :getbody ^ABEND881(unrecognized Expr type *ast.FuncType at: &{12780 0xc000128870 0xc0001288a0}) GetBody, :contentlength ContentLength, :transferencoding ^ABEND881(unrecognized Expr type *ast.ArrayType at: &{13428 <nil> string}) TransferEncoding, :close Close, :host ^String Host, :form ^ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{url Values}) Form, :postform ^ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{url Values}) PostForm, :multipartform ^ABEND881(unrecognized Expr type *ast.StarExpr at: &{15526 0xc00012ef40}) MultipartForm, :trailer Trailer, :remoteaddr ^String RemoteAddr, :requesturi ^String RequestURI, :tls ^ABEND881(unrecognized Expr type *ast.StarExpr at: &{17515 0xc00012f620}) TLS, :cancel ^ABEND881(unrecognized Expr type *ast.ChanType at: &{17962 17962 2 0xc00012f7e0}) Cancel, :response ^ABEND881(unrecognized Expr type *ast.StarExpr at: &{18130 Response}) Response, :ctx ^ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{context Context}) ctx} Error] ReadRequest
+;;   "ReadRequest reads and parses an incoming request from b.
+;; 
+;; ReadRequest is a low-level function and should only be used for
+;; specialized applications; most code should use the Server to read
+;; requests and handle them via the Handler interface. ReadRequest
+;; only supports HTTP/1.x requests. For HTTP/2, use golang.org/x/net/http2."
+;;   {:added "1.0"
+;;    :go "readRequest(b)"}
+;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: &{37772 0xc0001575e0}) b])
+;; 
+JOKER FUNC http.ReadResponse has: 
+;; (defn ^[{:status ^String Status, :statuscode ^Int StatusCode, :proto ^String Proto, :protomajor ^Int ProtoMajor, :protominor ^Int ProtoMinor, :header Header, :body ^ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{io ReadCloser}) Body, :contentlength ContentLength, :transferencoding ^ABEND881(unrecognized Expr type *ast.ArrayType at: &{686173 <nil> string}) TransferEncoding, :close Close, :uncompressed Uncompressed, :trailer Trailer, :request ^ABEND881(unrecognized Expr type *ast.StarExpr at: &{687517 Request}) Request, :tls ^ABEND881(unrecognized Expr type *ast.StarExpr at: &{687739 0xc00078bc60}) TLS} Error] ReadResponse
+;;   "ReadResponse reads and returns an HTTP response from r.
+;; The req parameter optionally specifies the Request that corresponds
+;; to this Response. If nil, a GET request is assumed.
+;; Clients must call resp.Body.Close when finished reading resp.Body.
+;; After that call, clients can inspect resp.Trailer to find key/value
+;; pairs included in the response trailer."
+;;   {:added "1.0"
+;;    :go "readResponse(r, req)"}
+;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: &{688922 0xc000798800}) r, ^ABEND881(unrecognized Expr type *ast.StarExpr at: &{688941 Request}) req])
+;; 
+JOKER FUNC http.Redirect has: 
+;; (defn Redirect
+;;   "Redirect replies to the request with a redirect to url,
+;; which may be a path relative to the request path.
+;; 
+;; The provided code should be in the 3xx range and is usually
+;; StatusMovedPermanently, StatusFound or StatusSeeOther.
+;; 
+;; If the Content-Type header has not been set, Redirect sets it
+;; to "text/html; charset=utf-8" and writes a small HTML body.
+;; Setting the Content-Type header to any value, including nil,
+;; disables that behavior."
+;;   {:added "1.0"
+;;    :go "redirect(w, r, url, code)"}
+;;   [w, ^ABEND881(unrecognized Expr type *ast.StarExpr at: &{642255 Request}) r, ^String url, ^Int code])
+;; 
+JOKER FUNC http.RedirectHandler has: 
+;; (defn ^ABEND881(unrecognized Expr type *ast.InterfaceType at: &{583179 0xc000674510 false}) RedirectHandler
+;;   "RedirectHandler returns a request handler that redirects
+;; each request it receives to the given url using the given
+;; status code.
+;; 
+;; The provided code should be in the 3xx range and is usually
+;; StatusMovedPermanently, StatusFound or StatusSeeOther."
+;;   {:added "1.0"
+;;    :go "redirectHandler(url, code)"}
+;;   [^String url, ^Int code])
+;; 
+JOKER FUNC http.Serve has: 
+;; (defn ^Error Serve
+;;   "Serve accepts incoming HTTP connections on the listener l,
+;; creating a new service goroutine for each. The service goroutines
+;; read requests and then call handler to reply to them.
+;; 
+;; The handler is typically nil, in which case the DefaultServeMux is used.
+;; 
+;; HTTP/2 support is only enabled if the Listener returns *tls.Conn
+;; connections and they were configured with "h2" in the TLS
+;; Config.NextProtos.
+;; 
+;; Serve always returns a non-nil error."
+;;   {:added "1.0"
+;;    :go "serve(l, handler)"}
+;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{net Listener}) l, handler])
+;; 
+JOKER FUNC http.ServeContent has: 
+;; (defn ServeContent
+;;   "ServeContent replies to the request using the content in the
+;; provided ReadSeeker. The main benefit of ServeContent over io.Copy
+;; is that it handles Range requests properly, sets the MIME type, and
+;; handles If-Match, If-Unmodified-Since, If-None-Match, If-Modified-Since,
+;; and If-Range requests.
+;; 
+;; If the response's Content-Type header is not set, ServeContent
+;; first tries to deduce the type from name's file extension and,
+;; if that fails, falls back to reading the first block of the content
+;; and passing it to DetectContentType.
+;; The name is otherwise unused; in particular it can be empty and is
+;; never sent in the response.
+;; 
+;; If modtime is not the zero time or Unix epoch, ServeContent
+;; includes it in a Last-Modified header in the response. If the
+;; request includes an If-Modified-Since header, ServeContent uses
+;; modtime to decide whether the content needs to be sent at all.
+;; 
+;; The content's Seek method must work: ServeContent uses
+;; a seek to the end of the content to determine its size.
+;; 
+;; If the caller has set w's ETag header formatted per RFC 7232, section 2.3,
+;; ServeContent uses it to handle requests using If-Match, If-None-Match, or If-Range.
+;; 
+;; Note that *os.File implements the io.ReadSeeker interface."
+;;   {:added "1.0"
+;;    :go "serveContent(w, req, name, modtime, content)"}
+;;   [w, ^ABEND881(unrecognized Expr type *ast.StarExpr at: &{157232 Request}) req, ^String name, ^ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{time Time}) modtime, ^ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{io ReadSeeker}) content])
+;; 
+JOKER FUNC http.ServeFile has: 
+;; (defn ServeFile
+;;   "ServeFile replies to the request with the contents of the named
+;; file or directory.
+;; 
+;; If the provided file or directory name is a relative path, it is
+;; interpreted relative to the current directory and may ascend to
+;; parent directories. If the provided name is constructed from user
+;; input, it should be sanitized before calling ServeFile.
+;; 
+;; As a precaution, ServeFile will reject requests where r.URL.Path
+;; contains a ".." path element; this protects against callers who
+;; might unsafely use filepath.Join on r.URL.Path without sanitizing
+;; it and then use that filepath.Join result as the name argument.
+;; 
+;; As another special case, ServeFile redirects any request where r.URL.Path
+;; ends in "/index.html" to the same path, without the final
+;; "index.html". To avoid such redirects either modify the path or
+;; use ServeContent.
+;; 
+;; Outside of those two special cases, ServeFile does not use
+;; r.URL.Path for selecting the file or directory to serve; only the
+;; file or directory provided in the name argument is used."
+;;   {:added "1.0"
+;;    :go "serveFile(w, r, name)"}
+;;   [w, ^ABEND881(unrecognized Expr type *ast.StarExpr at: &{171688 Request}) r, ^String name])
+;; 
+JOKER FUNC http.ServeTLS has: 
+;; (defn ^Error ServeTLS
+;;   "ServeTLS accepts incoming HTTPS connections on the listener l,
+;; creating a new service goroutine for each. The service goroutines
+;; read requests and then call handler to reply to them.
+;; 
+;; The handler is typically nil, in which case the DefaultServeMux is used.
+;; 
+;; Additionally, files containing a certificate and matching private key
+;; for the server must be provided. If the certificate is signed by a
+;; certificate authority, the certFile should be the concatenation
+;; of the server's certificate, any intermediates, and the CA's certificate.
+;; 
+;; ServeTLS always returns a non-nil error."
+;;   {:added "1.0"
+;;    :go "serveTLS(l, handler, certFile, keyFile)"}
+;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{net Listener}) l, handler, ^String certFile, ^String keyFile])
+;; 
+JOKER FUNC http.SetCookie has: 
+;; (defn SetCookie
+;;   "SetCookie adds a Set-Cookie header to the provided ResponseWriter's headers.
+;; The provided cookie must have a valid Name. Invalid cookies may be
+;; silently dropped."
+;;   {:added "1.0"
+;;    :go "setCookie(w, cookie)"}
+;;   [w, ^ABEND881(unrecognized Expr type *ast.StarExpr at: &{180622 Cookie}) cookie])
+;; 
+JOKER FUNC http.StatusText has: 
+(defn ^String StatusText
+  "StatusText returns a text for the HTTP status code. It returns the empty
+string if the code is unknown."
+  {:added "1.0"
+   :go "statusText(code)"}
+  [^Int code])
+
+JOKER FUNC http.StripPrefix has: 
+;; (defn ^ABEND881(unrecognized Expr type *ast.InterfaceType at: &{583179 0xc000674510 false}) StripPrefix
+;;   "StripPrefix returns a handler that serves HTTP requests
+;; by removing the given prefix from the request URL's Path
+;; and invoking the handler h. StripPrefix handles a
+;; request for a path that doesn't begin with prefix by
+;; replying with an HTTP 404 not found error."
+;;   {:added "1.0"
+;;    :go "stripPrefix(prefix, h)"}
+;;   [^String prefix, h])
+;; 
+JOKER FUNC http.TimeoutHandler has: 
+;; (defn ^ABEND881(unrecognized Expr type *ast.InterfaceType at: &{583179 0xc000674510 false}) TimeoutHandler
+;;   "TimeoutHandler returns a Handler that runs h with the given time limit.
+;; 
+;; The new Handler calls h.ServeHTTP to handle each request, but if a
+;; call runs for longer than its time limit, the handler responds with
+;; a 503 Service Unavailable error and the given message in its body.
+;; (If msg is empty, a suitable default message will be sent.)
+;; After such a timeout, writes by h to its ResponseWriter will return
+;; ErrHandlerTimeout.
+;; 
+;; TimeoutHandler buffers all Handler writes to memory and does not
+;; support the Hijacker or Flusher interfaces."
+;;   {:added "1.0"
+;;    :go "timeoutHandler(h, dt, msg)"}
+;;   [h, ^ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{time Duration}) dt, ^String msg])
+;; 
+JOKER FUNC httptest.NewRecorder has: 
+;; (defn ^{:code ^Int Code, :headermap ^ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{http Header}) HeaderMap, :body ^ABEND881(unrecognized Expr type *ast.StarExpr at: &{743445 0xc000207340}) Body, :flushed Flushed, :result ^ABEND881(unrecognized Expr type *ast.StarExpr at: &{743537 0xc000207480}) result, :snapheader ^ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{http Header}) snapHeader, :wroteheader wroteHeader} NewRecorder
+;;   "NewRecorder returns an initialized ResponseRecorder."
+;;   {:added "1.0"
+;;    :go "newRecorder()"}
+;;   [])
+;; 
+JOKER FUNC httptest.NewRequest has: 
+;; (defn ^ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{http Request}) NewRequest
+;;   "NewRequest returns a new incoming server Request, suitable
+;; for passing to an http.Handler for testing.
+;; 
+;; The target is the RFC 7230 "request-target": it may be either a
+;; path or an absolute URL. If target is an absolute URL, the host name
+;; from the URL is used. Otherwise, "example.com" is used.
+;; 
+;; The TLS field is set to a non-nil dummy value if target has scheme
+;; "https".
+;; 
+;; The Request.Proto is always HTTP/1.1.
+;; 
+;; An empty method means "GET".
+;; 
+;; The provided body may be nil. If the body is of type *bytes.Reader,
+;; *strings.Reader, or *bytes.Buffer, the Request.ContentLength is
+;; set.
+;; 
+;; NewRequest panics on error for ease of use in testing, where a
+;; panic is acceptable.
+;; 
+;; To generate a client HTTP request instead of a server request, see
+;; the NewRequest function in the net/http package."
+;;   {:added "1.0"
+;;    :go "newRequest(method, target, body)"}
+;;   [^String method, ^String target, ^ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{io Reader}) body])
+;; 
+JOKER FUNC httptest.NewServer has: 
+;; (defn ^{:url ^String URL, :listener ^ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{net Listener}) Listener, :tls ^ABEND881(unrecognized Expr type *ast.StarExpr at: &{751686 0xc0002b3c60}) TLS, :config ^ABEND881(unrecognized Expr type *ast.StarExpr at: &{751800 0xc0002b3d80}) Config, :certificate ^ABEND881(unrecognized Expr type *ast.StarExpr at: &{751906 0xc0002b3e60}) certificate, :wg ^ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{sync WaitGroup}) wg, :mu ^ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{sync Mutex}) mu, :closed closed, :conns ^ABEND881(unrecognized Expr type *ast.MapType at: &{752132 0xc0002be0e0 0xc0002be140}) conns, :client ^ABEND881(unrecognized Expr type *ast.StarExpr at: &{752309 0xc0002be260}) client} NewServer
+;;   "NewServer starts and returns a new Server.
+;; The caller should call Close when finished, to shut it down."
+;;   {:added "1.0"
+;;    :go "newServer(handler)"}
+;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{http Handler}) handler])
+;; 
+JOKER FUNC httptest.NewTLSServer has: 
+;; (defn ^{:url ^String URL, :listener ^ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{net Listener}) Listener, :tls ^ABEND881(unrecognized Expr type *ast.StarExpr at: &{751686 0xc0002b3c60}) TLS, :config ^ABEND881(unrecognized Expr type *ast.StarExpr at: &{751800 0xc0002b3d80}) Config, :certificate ^ABEND881(unrecognized Expr type *ast.StarExpr at: &{751906 0xc0002b3e60}) certificate, :wg ^ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{sync WaitGroup}) wg, :mu ^ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{sync Mutex}) mu, :closed closed, :conns ^ABEND881(unrecognized Expr type *ast.MapType at: &{752132 0xc0002be0e0 0xc0002be140}) conns, :client ^ABEND881(unrecognized Expr type *ast.StarExpr at: &{752309 0xc0002be260}) client} NewTLSServer
+;;   "NewTLSServer starts and returns a new Server using TLS.
+;; The caller should call Close when finished, to shut it down."
+;;   {:added "1.0"
+;;    :go "newTLSServer(handler)"}
+;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{http Handler}) handler])
+;; 
+JOKER FUNC httptest.NewUnstartedServer has: 
+;; (defn ^{:url ^String URL, :listener ^ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{net Listener}) Listener, :tls ^ABEND881(unrecognized Expr type *ast.StarExpr at: &{751686 0xc0002b3c60}) TLS, :config ^ABEND881(unrecognized Expr type *ast.StarExpr at: &{751800 0xc0002b3d80}) Config, :certificate ^ABEND881(unrecognized Expr type *ast.StarExpr at: &{751906 0xc0002b3e60}) certificate, :wg ^ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{sync WaitGroup}) wg, :mu ^ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{sync Mutex}) mu, :closed closed, :conns ^ABEND881(unrecognized Expr type *ast.MapType at: &{752132 0xc0002be0e0 0xc0002be140}) conns, :client ^ABEND881(unrecognized Expr type *ast.StarExpr at: &{752309 0xc0002be260}) client} NewUnstartedServer
+;;   "NewUnstartedServer returns a new Server but doesn't start it.
+;; 
+;; After changing its configuration, the caller should call Start or
+;; StartTLS.
+;; 
+;; The caller should call Close when finished, to shut it down."
+;;   {:added "1.0"
+;;    :go "newUnstartedServer(handler)"}
+;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{http Handler}) handler])
+;; 
+JOKER FUNC httptrace.ContextClientTrace has: 
+;; (defn ^{:getconn ^ABEND881(unrecognized Expr type *ast.FuncType at: &{763432 0xc0001ffd10 <nil>}) GetConn, :gotconn ^ABEND881(unrecognized Expr type *ast.FuncType at: &{763643 0xc0001ffd70 <nil>}) GotConn, :putidleconn ^ABEND881(unrecognized Expr type *ast.FuncType at: &{764106 0xc0001ffdd0 <nil>}) PutIdleConn, :gotfirstresponsebyte ^ABEND881(unrecognized Expr type *ast.FuncType at: &{764242 0xc0001ffe30 <nil>}) GotFirstResponseByte, :got100continue ^ABEND881(unrecognized Expr type *ast.FuncType at: &{764353 0xc0001ffe90 <nil>}) Got100Continue, :got1xxresponse ^ABEND881(unrecognized Expr type *ast.FuncType at: &{764677 0xc0001ffef0 0xc0001fff20}) Got1xxResponse, :dnsstart ^ABEND881(unrecognized Expr type *ast.FuncType at: &{764787 0xc0001fff80 <nil>}) DNSStart, :dnsdone ^ABEND881(unrecognized Expr type *ast.FuncType at: &{764862 0xc00020e000 <nil>}) DNSDone, :connectstart ^ABEND881(unrecognized Expr type *ast.FuncType at: &{765070 0xc00020e060 <nil>}) ConnectStart, :connectdone ^ABEND881(unrecognized Expr type *ast.FuncType at: &{765367 0xc00020e0c0 <nil>}) ConnectDone, :tlshandshakestart ^ABEND881(unrecognized Expr type *ast.FuncType at: &{765625 0xc00020e120 <nil>}) TLSHandshakeStart, :tlshandshakedone ^ABEND881(unrecognized Expr type *ast.FuncType at: &{765812 0xc00020e180 <nil>}) TLSHandshakeDone, :wroteheaderfield ^ABEND881(unrecognized Expr type *ast.FuncType at: &{766046 0xc00020e210 <nil>}) WroteHeaderField, :wroteheaders ^ABEND881(unrecognized Expr type *ast.FuncType at: &{766178 0xc00020e270 <nil>}) WroteHeaders, :wait100continue ^ABEND881(unrecognized Expr type *ast.FuncType at: &{766428 0xc00020e2d0 <nil>}) Wait100Continue, :wroterequest ^ABEND881(unrecognized Expr type *ast.FuncType at: &{766603 0xc00020e330 <nil>}) WroteRequest} ContextClientTrace
+;;   "ContextClientTrace returns the ClientTrace associated with the
+;; provided context. If none, it returns nil."
+;;   {:added "1.0"
+;;    :go "contextClientTrace(ctx)"}
+;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{context Context}) ctx])
+;; 
+JOKER FUNC httptrace.WithClientTrace has: 
+;; (defn ^ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{context Context}) WithClientTrace
+;;   "WithClientTrace returns a new context based on the provided parent
+;; ctx. HTTP client requests made with the returned context will use
+;; the provided trace hooks, in addition to any previous hooks
+;; registered with ctx. Any hooks defined in the provided trace will
+;; be called first."
+;;   {:added "1.0"
+;;    :go "withClientTrace(ctx, trace)"}
+;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{context Context}) ctx, ^ABEND881(unrecognized Expr type *ast.StarExpr at: &{761845 ClientTrace}) trace])
+;; 
+JOKER FUNC httputil.DumpRequest has: 
+;; (defn ^[[ABEND042(cannot find typename httputil.byte)] Error] DumpRequest
+;;   "DumpRequest returns the given request in its HTTP/1.x wire
+;; representation. It should only be used by servers to debug client
+;; requests. The returned representation is an approximation only;
+;; some details of the initial request are lost while parsing it into
+;; an http.Request. In particular, the order and case of header field
+;; names are lost. The order of values in multi-valued headers is kept
+;; intact. HTTP/2 requests are dumped in HTTP/1.x form, not in their
+;; original binary representations.
+;; 
+;; If body is true, DumpRequest also returns the body. To do so, it
+;; consumes req.Body and then replaces it with a new io.ReadCloser
+;; that yields the same bytes. If DumpRequest returns an error,
+;; the state of req is undefined.
+;; 
+;; The documentation for http.Request.Write details which fields
+;; of req are included in the dump."
+;;   {:added "1.0"
+;;    :go "dumpRequest(req, body)"}
+;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: &{776440 0xc00069b020}) req, body])
+;; 
+JOKER FUNC httputil.DumpRequestOut has: 
+;; (defn ^[[ABEND042(cannot find typename httputil.byte)] Error] DumpRequestOut
+;;   "DumpRequestOut is like DumpRequest but for outgoing client requests. It
+;; includes any headers that the standard http.Transport adds, such as
+;; User-Agent."
+;;   {:added "1.0"
+;;    :go "dumpRequestOut(req, body)"}
+;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: &{772653 0xc0003a84a0}) req, body])
+;; 
+JOKER FUNC httputil.DumpResponse has: 
+;; (defn ^[[ABEND042(cannot find typename httputil.byte)] Error] DumpResponse
+;;   "DumpResponse is like DumpRequest but dumps a response."
+;;   {:added "1.0"
+;;    :go "dumpResponse(resp, body)"}
+;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: &{778970 0xc0006b39c0}) resp, body])
+;; 
+JOKER FUNC httputil.NewChunkedReader has: 
+;; (defn ^ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{io Reader}) NewChunkedReader
+;;   "NewChunkedReader returns a new chunkedReader that translates the data read from r
+;; out of HTTP "chunked" format before returning it.
+;; The chunkedReader returns io.EOF when the final 0-length chunk is read.
+;; 
+;; NewChunkedReader is not needed by normal applications. The http package
+;; automatically decodes chunking when reading response bodies."
+;;   {:added "1.0"
+;;    :go "newChunkedReader(r)"}
+;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{io Reader}) r])
+;; 
+JOKER FUNC httputil.NewChunkedWriter has: 
+;; (defn ^ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{io WriteCloser}) NewChunkedWriter
+;;   "NewChunkedWriter returns a new chunkedWriter that translates writes into HTTP
+;; "chunked" format before writing them to w. Closing the returned chunkedWriter
+;; sends the final 0-length chunk that marks the end of the stream but does
+;; not send the final CRLF that appears after trailers; trailers and the last
+;; CRLF must be written separately.
+;; 
+;; NewChunkedWriter is not needed by normal applications. The http
+;; package adds chunking automatically if handlers don't set a
+;; Content-Length header. Using NewChunkedWriter inside a handler
+;; would result in double chunking or chunking with a Content-Length
+;; length, both of which are wrong."
+;;   {:added "1.0"
+;;    :go "newChunkedWriter(w)"}
+;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{io Writer}) w])
+;; 
+JOKER FUNC httputil.NewClientConn has: 
+;; (defn ^{:mu ^ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{sync Mutex}) mu, :c ^ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{net Conn}) c, :r ^ABEND881(unrecognized Expr type *ast.StarExpr at: &{797549 0xc0007a46c0}) r, :re re, :we we, :lastbody ^ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{io ReadCloser}) lastbody, :nread ^Int nread, :nwritten ^Int nwritten, :pipereq ^ABEND881(unrecognized Expr type *ast.MapType at: &{797676 0xc0007a4960 uint}) pipereq, :pipe ^ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{textproto Pipeline}) pipe, :writereq ^ABEND881(unrecognized Expr type *ast.FuncType at: &{797739 0xc0002fed20 0xc0002fedb0}) writeReq} NewClientConn
+;;   "NewClientConn is an artifact of Go's early HTTP implementation.
+;; It is low-level, old, and unused by Go's current HTTP stack.
+;; We should have deleted it before Go 1.
+;; 
+;; Deprecated: Use the Client or Transport in package net/http instead."
+;;   {:added "1.0"
+;;    :go "newClientConn(c, r)"}
+;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{net Conn}) c, ^ABEND881(unrecognized Expr type *ast.StarExpr at: &{798060 0xc0007a4d80}) r])
+;; 
+JOKER FUNC httputil.NewProxyClientConn has: 
+;; (defn ^{:mu ^ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{sync Mutex}) mu, :c ^ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{net Conn}) c, :r ^ABEND881(unrecognized Expr type *ast.StarExpr at: &{797549 0xc0007a46c0}) r, :re re, :we we, :lastbody ^ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{io ReadCloser}) lastbody, :nread ^Int nread, :nwritten ^Int nwritten, :pipereq ^ABEND881(unrecognized Expr type *ast.MapType at: &{797676 0xc0007a4960 uint}) pipereq, :pipe ^ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{textproto Pipeline}) pipe, :writereq ^ABEND881(unrecognized Expr type *ast.FuncType at: &{797739 0xc0002fed20 0xc0002fedb0}) writeReq} NewProxyClientConn
+;;   "NewProxyClientConn is an artifact of Go's early HTTP implementation.
+;; It is low-level, old, and unused by Go's current HTTP stack.
+;; We should have deleted it before Go 1.
+;; 
+;; Deprecated: Use the Client or Transport in package net/http instead."
+;;   {:added "1.0"
+;;    :go "newProxyClientConn(c, r)"}
+;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{net Conn}) c, ^ABEND881(unrecognized Expr type *ast.StarExpr at: &{798557 0xc0007a56e0}) r])
+;; 
+JOKER FUNC httputil.NewServerConn has: 
+;; (defn ^{:mu ^ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{sync Mutex}) mu, :c ^ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{net Conn}) c, :r ^ABEND881(unrecognized Expr type *ast.StarExpr at: &{792586 0xc000774b00}) r, :re re, :we we, :lastbody ^ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{io ReadCloser}) lastbody, :nread ^Int nread, :nwritten ^Int nwritten, :pipereq ^ABEND881(unrecognized Expr type *ast.MapType at: &{792713 0xc000774da0 uint}) pipereq, :pipe ^ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{textproto Pipeline}) pipe} NewServerConn
+;;   "NewServerConn is an artifact of Go's early HTTP implementation.
+;; It is low-level, old, and unused by Go's current HTTP stack.
+;; We should have deleted it before Go 1.
+;; 
+;; Deprecated: Use the Server in package net/http instead."
+;;   {:added "1.0"
+;;    :go "newServerConn(c, r)"}
+;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{net Conn}) c, ^ABEND881(unrecognized Expr type *ast.StarExpr at: &{793033 0xc000775060}) r])
+;; 
+JOKER FUNC httputil.NewSingleHostReverseProxy has: 
+;; (defn ^{:director ^ABEND881(unrecognized Expr type *ast.FuncType at: &{780545 0xc00029b2f0 <nil>}) Director, :transport ^ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{http RoundTripper}) Transport, :flushinterval ^ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{time Duration}) FlushInterval, :errorlog ^ABEND881(unrecognized Expr type *ast.StarExpr at: &{781070 0xc00071cfa0}) ErrorLog, :bufferpool BufferPool, :modifyresponse ^ABEND881(unrecognized Expr type *ast.FuncType at: &{781706 0xc00029b350 0xc00029b380}) ModifyResponse, :errorhandler ^ABEND881(unrecognized Expr type *ast.FuncType at: &{781972 0xc00029b3e0 <nil>}) ErrorHandler} NewSingleHostReverseProxy
+;;   "NewSingleHostReverseProxy returns a new ReverseProxy that routes
+;; URLs to the scheme, host, and base path provided in target. If the
+;; target's path is "/base" and the incoming request was for "/dir",
+;; the target request will be for /base/dir.
+;; NewSingleHostReverseProxy does not rewrite the Host header.
+;; To rewrite Host headers, use ReverseProxy directly with a custom
+;; Director policy."
+;;   {:added "1.0"
+;;    :go "newSingleHostReverseProxy(target)"}
+;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: &{782871 0xc000728fa0}) target])
+;; 
+JOKER FUNC jsonrpc.Dial has: 
+;; (defn ^[ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{rpc Client}) Error] Dial
+;;   "Dial connects to a JSON-RPC server at the specified network address."
+;;   {:added "1.0"
+;;    :go "dial(network, address)"}
+;;   [^String network, ^String address])
+;; 
+JOKER FUNC jsonrpc.NewClient has: 
+;; (defn ^ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{rpc Client}) NewClient
+;;   "NewClient returns a new rpc.Client to handle requests to the
+;; set of services at the other end of the connection."
+;;   {:added "1.0"
+;;    :go "newClient(conn)"}
+;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{io ReadWriteCloser}) conn])
+;; 
+JOKER FUNC jsonrpc.NewClientCodec has: 
+;; (defn ^ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{rpc ClientCodec}) NewClientCodec
+;;   "NewClientCodec returns a new rpc.ClientCodec using JSON-RPC on conn."
+;;   {:added "1.0"
+;;    :go "newClientCodec(conn)"}
+;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{io ReadWriteCloser}) conn])
+;; 
+JOKER FUNC jsonrpc.NewServerCodec has: 
+;; (defn ^ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{rpc ServerCodec}) NewServerCodec
+;;   "NewServerCodec returns a new rpc.ServerCodec using JSON-RPC on conn."
+;;   {:added "1.0"
+;;    :go "newServerCodec(conn)"}
+;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{io ReadWriteCloser}) conn])
+;; 
+JOKER FUNC jsonrpc.ServeConn has: 
+;; (defn ServeConn
+;;   "ServeConn runs the JSON-RPC server on a single connection.
+;; ServeConn blocks, serving the connection until the client hangs up.
+;; The caller typically invokes ServeConn in a go statement."
+;;   {:added "1.0"
+;;    :go "serveConn(conn)"}
+;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{io ReadWriteCloser}) conn])
+;; 
+JOKER FUNC mail.ParseAddress has: 
+(defn ^[{:name ^String Name, :address ^String Address} Error] ParseAddress
+  "Parses a single RFC 5322 address, e.g. "Barry Gibbs <bg@example.com>""
+  {:added "1.0"
+   :go "parseAddress(address)"}
+  [^String address])
+
+JOKER FUNC mail.ParseAddressList has: 
+(defn ^[[{:name ^String Name, :address ^String Address}] Error] ParseAddressList
+  "ParseAddressList parses the given string as a list of addresses."
+  {:added "1.0"
+   :go "parseAddressList(list)"}
+  [^String list])
+
+JOKER FUNC mail.ParseDate has: 
+;; (defn ^[ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{time Time}) Error] ParseDate
+;;   "ParseDate parses an RFC 5322 date string."
+;;   {:added "1.0"
+;;    :go "parseDate(date)"}
+;;   [^String date])
+;; 
+JOKER FUNC mail.ReadMessage has: 
+;; (defn ^[msg err] ReadMessage
+;;   "ReadMessage reads a message from r.
+;; The headers are parsed, and the body of the message will be available
+;; for reading from msg.Body."
+;;   {:added "1.0"
+;;    :go "readMessage(r)"}
+;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{io Reader}) r])
+;; 
+JOKER FUNC pprof.Cmdline has: 
+;; (defn Cmdline
+;;   "Cmdline responds with the running program's
+;; command line, with arguments separated by NUL bytes.
+;; The package initialization registers it as /debug/pprof/cmdline."
+;;   {:added "1.0"
+;;    :go "cmdline(w, r)"}
+;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{http ResponseWriter}) w, ^ABEND881(unrecognized Expr type *ast.StarExpr at: &{805036 0xc000809e80}) r])
+;; 
+JOKER FUNC pprof.Handler has: 
+;; (defn ^ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{http Handler}) Handler
+;;   "Handler returns an HTTP handler that serves the named profile."
+;;   {:added "1.0"
+;;    :go "handler(name)"}
+;;   [^String name])
+;; 
+JOKER FUNC pprof.Index has: 
+;; (defn Index
+;;   "Index responds with the pprof-formatted profile named by the request.
+;; For example, "/debug/pprof/heap" serves the "heap" profile.
+;; Index responds to a request for "/debug/pprof/" with an HTML page
+;; listing the available profiles."
+;;   {:added "1.0"
+;;    :go "index(w, r)"}
+;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{http ResponseWriter}) w, ^ABEND881(unrecognized Expr type *ast.StarExpr at: &{811528 0xc0007433e0}) r])
+;; 
+JOKER FUNC pprof.Profile has: 
+;; (defn Profile
+;;   "Profile responds with the pprof-formatted cpu profile.
+;; Profiling lasts for duration specified in seconds GET parameter, or for 30 seconds if not specified.
+;; The package initialization registers it as /debug/pprof/profile."
+;;   {:added "1.0"
+;;    :go "profile(w, r)"}
+;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{http ResponseWriter}) w, ^ABEND881(unrecognized Expr type *ast.StarExpr at: &{806173 0xc00071b2a0}) r])
+;; 
+JOKER FUNC pprof.Symbol has: 
+;; (defn Symbol
+;;   "Symbol looks up the program counters listed in the request,
+;; responding with a table mapping program counters to function names.
+;; The package initialization registers it as /debug/pprof/symbol."
+;;   {:added "1.0"
+;;    :go "symbol(w, r)"}
+;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{http ResponseWriter}) w, ^ABEND881(unrecognized Expr type *ast.StarExpr at: &{808325 0xc00072cec0}) r])
+;; 
+JOKER FUNC pprof.Trace has: 
+;; (defn Trace
+;;   "Trace responds with the execution trace in binary form.
+;; Tracing lasts for duration specified in seconds GET parameter, or for 1 second if not specified.
+;; The package initialization registers it as /debug/pprof/trace."
+;;   {:added "1.0"
+;;    :go "trace(w, r)"}
+;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{http ResponseWriter}) w, ^ABEND881(unrecognized Expr type *ast.StarExpr at: &{807280 0xc00072c0c0}) r])
+;; 
+JOKER FUNC rpc.Accept has: 
+;; (defn Accept
+;;   "Accept accepts connections on the listener and serves requests
+;; to DefaultServer for each incoming connection.
+;; Accept blocks; the caller typically invokes it in a go statement."
+;;   {:added "1.0"
+;;    :go "accept(lis)"}
+;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{net Listener}) lis])
+;; 
+JOKER FUNC rpc.Dial has: 
+;; (defn ^[{:codec codec, :reqmutex ^ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{sync Mutex}) reqMutex, :request request, :mutex ^ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{sync Mutex}) mutex, :seq seq, :pending ^ABEND881(unrecognized Expr type *ast.MapType at: &{834953 uint64 0xc0006a9ca0}) pending, :closing closing, :shutdown shutdown} Error] Dial
+;;   "Dial connects to an RPC server at the specified network address."
+;;   {:added "1.0"
+;;    :go "dial(network, address)"}
+;;   [^String network, ^String address])
+;; 
+JOKER FUNC rpc.DialHTTP has: 
+;; (defn ^[{:codec codec, :reqmutex ^ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{sync Mutex}) reqMutex, :request request, :mutex ^ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{sync Mutex}) mutex, :seq seq, :pending ^ABEND881(unrecognized Expr type *ast.MapType at: &{834953 uint64 0xc0006a9ca0}) pending, :closing closing, :shutdown shutdown} Error] DialHTTP
+;;   "DialHTTP connects to an HTTP RPC server at the specified network address
+;; listening on the default HTTP RPC path."
+;;   {:added "1.0"
+;;    :go "dialHTTP(network, address)"}
+;;   [^String network, ^String address])
+;; 
+JOKER FUNC rpc.DialHTTPPath has: 
+;; (defn ^[{:codec codec, :reqmutex ^ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{sync Mutex}) reqMutex, :request request, :mutex ^ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{sync Mutex}) mutex, :seq seq, :pending ^ABEND881(unrecognized Expr type *ast.MapType at: &{834953 uint64 0xc0006a9ca0}) pending, :closing closing, :shutdown shutdown} Error] DialHTTPPath
+;;   "DialHTTPPath connects to an HTTP RPC server
+;; at the specified network address and path."
+;;   {:added "1.0"
+;;    :go "dialHTTPPath(network, address, path)"}
+;;   [^String network, ^String address, ^String path])
+;; 
+JOKER FUNC rpc.HandleHTTP has: 
+;; (defn HandleHTTP
+;;   "HandleHTTP registers an HTTP handler for RPC messages to DefaultServer
+;; on DefaultRPCPath and a debugging handler on DefaultDebugPath.
+;; It is still necessary to invoke http.Serve(), typically in a go statement."
+;;   {:added "1.0"
+;;    :go "handleHTTP()"}
+;;   [])
+;; 
+JOKER FUNC rpc.NewClient has: 
+;; (defn ^{:codec codec, :reqmutex ^ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{sync Mutex}) reqMutex, :request request, :mutex ^ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{sync Mutex}) mutex, :seq seq, :pending ^ABEND881(unrecognized Expr type *ast.MapType at: &{834953 uint64 0xc0006a9ca0}) pending, :closing closing, :shutdown shutdown} NewClient
+;;   "NewClient returns a new Client to handle requests to the
+;; set of services at the other end of the connection.
+;; It adds a buffer to the write side of the connection so
+;; the header and payload are sent as a unit.
+;; 
+;; The read and write halves of the connection are serialized independently,
+;; so no interlocking is required. However each half may be accessed
+;; concurrently so the implementation of conn should protect against
+;; concurrent reads or concurrent writes."
+;;   {:added "1.0"
+;;    :go "newClient(conn)"}
+;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{io ReadWriteCloser}) conn])
+;; 
+JOKER FUNC rpc.NewClientWithCodec has: 
+;; (defn ^{:codec codec, :reqmutex ^ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{sync Mutex}) reqMutex, :request request, :mutex ^ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{sync Mutex}) mutex, :seq seq, :pending ^ABEND881(unrecognized Expr type *ast.MapType at: &{834953 uint64 0xc0006a9ca0}) pending, :closing closing, :shutdown shutdown} NewClientWithCodec
+;;   "NewClientWithCodec is like NewClient but uses the specified
+;; codec to encode requests and decode responses."
+;;   {:added "1.0"
+;;    :go "newClientWithCodec(codec)"}
+;;   [codec])
+;; 
+JOKER FUNC rpc.NewServer has: 
+;; (defn ^{:servicemap ^ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{sync Map}) serviceMap, :reqlock ^ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{sync Mutex}) reqLock, :freereq ^ABEND881(unrecognized Expr type *ast.StarExpr at: &{848770 Request}) freeReq, :resplock ^ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{sync Mutex}) respLock, :freeresp ^ABEND881(unrecognized Expr type *ast.StarExpr at: &{848835 Response}) freeResp} NewServer
+;;   "NewServer returns a new Server."
+;;   {:added "1.0"
+;;    :go "newServer()"}
+;;   [])
+;; 
+JOKER FUNC rpc.Register has: 
+;; (defn ^Error Register
+;;   "Register publishes the receiver's methods in the DefaultServer."
+;;   {:added "1.0"
+;;    :go "register(rcvr)"}
+;;   [^ABEND881(unrecognized Expr type *ast.InterfaceType at: &{861672 0xc00074ff50 false}) rcvr])
+;; 
+JOKER FUNC rpc.RegisterName has: 
+;; (defn ^Error RegisterName
+;;   "RegisterName is like Register but uses the provided name for the type
+;; instead of the receiver's concrete type."
+;;   {:added "1.0"
+;;    :go "registerName(name, rcvr)"}
+;;   [^String name, ^ABEND881(unrecognized Expr type *ast.InterfaceType at: &{861885 0xc00075a0c0 false}) rcvr])
+;; 
+JOKER FUNC rpc.ServeCodec has: 
+;; (defn ServeCodec
+;;   "ServeCodec is like ServeConn but uses the specified codec to
+;; decode requests and encode responses."
+;;   {:added "1.0"
+;;    :go "serveCodec(codec)"}
+;;   [codec])
+;; 
+JOKER FUNC rpc.ServeConn has: 
+;; (defn ServeConn
+;;   "ServeConn runs the DefaultServer on a single connection.
+;; ServeConn blocks, serving the connection until the client hangs up.
+;; The caller typically invokes ServeConn in a go statement.
+;; ServeConn uses the gob wire format (see package gob) on the
+;; connection. To use an alternate codec, use ServeCodec.
+;; See NewClient's comment for information about concurrent access."
+;;   {:added "1.0"
+;;    :go "serveConn(conn)"}
+;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{io ReadWriteCloser}) conn])
+;; 
+JOKER FUNC rpc.ServeRequest has: 
+(defn ^Error ServeRequest
+  "ServeRequest is like ServeCodec but synchronously serves a single request.
+It does not close the codec upon completion."
+  {:added "1.0"
+   :go "serveRequest(codec)"}
+  [codec])
+
+JOKER FUNC smtp.CRAMMD5Auth has: 
+;; (defn ^ABEND881(unrecognized Expr type *ast.InterfaceType at: &{871724 0xc00076bf20 false}) CRAMMD5Auth
+;;   "CRAMMD5Auth returns an Auth that implements the CRAM-MD5 authentication
+;; mechanism as defined in RFC 2195.
+;; The returned Auth uses the given username and secret to authenticate
+;; to the server using the challenge-response mechanism."
+;;   {:added "1.0"
+;;    :go "cRAMMD5Auth(username, secret)"}
+;;   [^String username, ^String secret])
+;; 
+JOKER FUNC smtp.Dial has: 
+;; (defn ^[{:text ^ABEND881(unrecognized Expr type *ast.StarExpr at: &{876154 0xc000526da0}) Text, :conn ^ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{net Conn}) conn, :tls tls, :servername ^String serverName, :ext ^ABEND881(unrecognized Expr type *ast.MapType at: &{876388 string string}) ext, :auth ^ABEND881(unrecognized Expr type *ast.ArrayType at: &{876448 <nil> string}) auth, :localname ^String localName, :didhello didHello, :helloerror helloError} Error] Dial
+;;   "Dial returns a new Client connected to an SMTP server at addr.
+;; The addr must include a port, as in "mail.example.com:smtp"."
+;;   {:added "1.0"
+;;    :go "dial(addr)"}
+;;   [^String addr])
+;; 
+JOKER FUNC smtp.NewClient has: 
+;; (defn ^[{:text ^ABEND881(unrecognized Expr type *ast.StarExpr at: &{876154 0xc000526da0}) Text, :conn ^ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{net Conn}) conn, :tls tls, :servername ^String serverName, :ext ^ABEND881(unrecognized Expr type *ast.MapType at: &{876388 string string}) ext, :auth ^ABEND881(unrecognized Expr type *ast.ArrayType at: &{876448 <nil> string}) auth, :localname ^String localName, :didhello didHello, :helloerror helloError} Error] NewClient
+;;   "NewClient returns a new Client using an existing connection and host as a
+;; server name to be used when authenticating."
+;;   {:added "1.0"
+;;    :go "newClient(conn, host)"}
+;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{net Conn}) conn, ^String host])
+;; 
+JOKER FUNC smtp.PlainAuth has: 
+;; (defn ^ABEND881(unrecognized Expr type *ast.InterfaceType at: &{871724 0xc00076bf20 false}) PlainAuth
+;;   "PlainAuth returns an Auth that implements the PLAIN authentication
+;; mechanism as defined in RFC 4616. The returned Auth uses the given
+;; username and password to authenticate to host and act as identity.
+;; Usually identity should be the empty string, to act as username.
+;; 
+;; PlainAuth will only send the credentials if the connection is using TLS
+;; or is connected to localhost. Otherwise authentication will fail with an
+;; error, without sending the credentials."
+;;   {:added "1.0"
+;;    :go "plainAuth(identity, username, password, host)"}
+;;   [^String identity, ^String username, ^String password, ^String host])
+;; 
+JOKER FUNC smtp.SendMail has: 
+;; (defn ^Error SendMail
+;;   "SendMail connects to the server at addr, switches to TLS if
+;; possible, authenticates with the optional mechanism a if possible,
+;; and then sends an email from address from, to addresses to, with
+;; message msg.
+;; The addr must include a port, as in "mail.example.com:smtp".
+;; 
+;; The addresses in the to parameter are the SMTP RCPT addresses.
+;; 
+;; The msg parameter should be an RFC 822-style email with headers
+;; first, a blank line, and then the message body. The lines of msg
+;; should be CRLF terminated. The msg headers should usually include
+;; fields such as "From", "To", "Subject", and "Cc".  Sending "Bcc"
+;; messages is accomplished by including an email address in the to
+;; parameter but not including it in the msg headers.
+;; 
+;; The SendMail function and the net/smtp package are low-level
+;; mechanisms and provide no support for DKIM signing, MIME
+;; attachments (see the mime/multipart package), or other mail
+;; functionality. Higher-level packages exist outside of the standard
+;; library."
+;;   {:added "1.0"
+;;    :go "sendMail(addr, a, from, to, msg)"}
+;;   [^String addr, a, ^String from, ^ABEND881(unrecognized Expr type *ast.ArrayType at: &{884547 <nil> string}) to, ^ABEND881(unrecognized Expr type *ast.ArrayType at: &{884561 <nil> byte}) msg])
+;; 
+JOKER FUNC textproto.CanonicalMIMEHeaderKey has: 
+(defn ^String CanonicalMIMEHeaderKey
+  "CanonicalMIMEHeaderKey returns the canonical format of the
+MIME header key s. The canonicalization converts the first
+letter and any letter following a hyphen to upper case;
+the rest are converted to lowercase. For example, the
+canonical key for "accept-encoding" is "Accept-Encoding".
+MIME header keys are assumed to be ASCII only.
+If s contains a space or invalid header field bytes, it is
+returned without modifications."
+  {:added "1.0"
+   :go "canonicalMIMEHeaderKey(s)"}
+  [^String s])
+
+JOKER FUNC textproto.Dial has: 
+;; (defn ^[{:conn ^ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{io ReadWriteCloser}) conn} Error] Dial
+;;   "Dial connects to the given address on the given network using net.Dial
+;; and then returns a new Conn for the connection."
+;;   {:added "1.0"
+;;    :go "dial(network, addr)"}
+;;   [^String network, ^String addr])
+;; 
+JOKER FUNC textproto.NewConn has: 
+;; (defn ^{:conn ^ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{io ReadWriteCloser}) conn} NewConn
+;;   "NewConn returns a new Conn using conn for I/O."
+;;   {:added "1.0"
+;;    :go "newConn(conn)"}
+;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{io ReadWriteCloser}) conn])
+;; 
+JOKER FUNC textproto.NewReader has: 
+;; (defn ^{:r ^ABEND881(unrecognized Expr type *ast.StarExpr at: &{888756 0xc000471e20}) R, :dot ^ABEND881(unrecognized Expr type *ast.StarExpr at: &{888775 dotReader}) dot, :buf ^ABEND881(unrecognized Expr type *ast.ArrayType at: &{888791 <nil> byte}) buf} NewReader
+;;   "NewReader returns a new Reader reading from r.
+;; 
+;; To avoid denial of service attacks, the provided bufio.Reader
+;; should be reading from an io.LimitReader or similar Reader to bound
+;; the size of responses."
+;;   {:added "1.0"
+;;    :go "newReader(r)"}
+;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: &{889082 0xc000470180}) r])
+;; 
+JOKER FUNC textproto.NewWriter has: 
+;; (defn ^{:w ^ABEND881(unrecognized Expr type *ast.StarExpr at: &{910819 0xc0007689c0}) W, :dot ^ABEND881(unrecognized Expr type *ast.StarExpr at: &{910838 dotWriter}) dot} NewWriter
+;;   "NewWriter returns a new Writer writing to w."
+;;   {:added "1.0"
+;;    :go "newWriter(w)"}
+;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: &{910917 0xc000768ba0}) w])
+;; 
+JOKER FUNC textproto.TrimBytes has: 
+;; (defn ^[ABEND042(cannot find typename textproto.byte)] TrimBytes
+;;   "TrimBytes returns b without leading and trailing ASCII space."
+;;   {:added "1.0"
+;;    :go "trimBytes(b)"}
+;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: &{916383 <nil> byte}) b])
+;; 
+JOKER FUNC textproto.TrimString has: 
+(defn ^String TrimString
+  "TrimString returns s without leading and trailing ASCII space."
+  {:added "1.0"
+   :go "trimString(s)"}
+  [^String s])
+
+JOKER FUNC url.Parse has: 
+;; (defn ^[{:scheme ^String Scheme, :opaque ^String Opaque, :user ^ABEND881(unrecognized Expr type *ast.StarExpr at: &{926304 Userinfo}) User, :host ^String Host, :path ^String Path, :rawpath ^String RawPath, :forcequery ForceQuery, :rawquery ^String RawQuery, :fragment ^String Fragment} Error] Parse
+;;   "Parse parses rawurl into a URL structure.
+;; 
+;; The rawurl may be relative (a path, without a host) or absolute
+;; (starting with a scheme). Trying to parse a hostname and path
+;; without a scheme is invalid but may not necessarily return an
+;; error, due to parsing ambiguities."
+;;   {:added "1.0"
+;;    :go "parse(rawurl)"}
+;;   [^String rawurl])
+;; 
+JOKER FUNC url.ParseQuery has: 
+;; (defn ^[ABEND881(unrecognized Expr type *ast.MapType at: &{940022 string 0xc000617440}) Error] ParseQuery
+;;   "ParseQuery parses the URL-encoded query string and returns
+;; a map listing the values specified for each key.
+;; ParseQuery always returns a non-nil map containing all the
+;; valid query parameters found; err describes the first decoding error
+;; encountered, if any.
+;; 
+;; Query is expected to be a list of key=value settings separated by
+;; ampersands or semicolons. A setting without an equals sign is
+;; interpreted as a key set to an empty value."
+;;   {:added "1.0"
+;;    :go "parseQuery(query)"}
+;;   [^String query])
+;; 
+JOKER FUNC url.ParseRequestURI has: 
+;; (defn ^[{:scheme ^String Scheme, :opaque ^String Opaque, :user ^ABEND881(unrecognized Expr type *ast.StarExpr at: &{926304 Userinfo}) User, :host ^String Host, :path ^String Path, :rawpath ^String RawPath, :forcequery ForceQuery, :rawquery ^String RawQuery, :fragment ^String Fragment} Error] ParseRequestURI
+;;   "ParseRequestURI parses rawurl into a URL structure. It assumes that
+;; rawurl was received in an HTTP request, so the rawurl is interpreted
+;; only as an absolute URI or an absolute path.
+;; The string rawurl is assumed not to have a #fragment suffix.
+;; (Web browsers strip #fragment before sending the URL to a web server.)"
+;;   {:added "1.0"
+;;    :go "parseRequestURI(rawurl)"}
+;;   [^String rawurl])
+;; 
+JOKER FUNC url.PathEscape has: 
+(defn ^String PathEscape
+  "PathEscape escapes the string so it can be safely placed
+inside a URL path segment."
+  {:added "1.0"
+   :go "pathEscape(s)"}
+  [^String s])
+
+JOKER FUNC url.PathUnescape has: 
+(defn ^[String Error] PathUnescape
+  "PathUnescape does the inverse transformation of PathEscape,
+converting each 3-byte encoded substring of the form "%AB" into the
+hex-decoded byte 0xAB. It returns an error if any % is not followed
+by two hexadecimal digits.
+
+PathUnescape is identical to QueryUnescape except that it does not
+unescape '+' to ' ' (space)."
+  {:added "1.0"
+   :go "pathUnescape(s)"}
+  [^String s])
+
+JOKER FUNC url.QueryEscape has: 
+(defn ^String QueryEscape
+  "QueryEscape escapes the string so it can be safely placed
+inside a URL query."
+  {:added "1.0"
+   :go "queryEscape(s)"}
+  [^String s])
+
+JOKER FUNC url.QueryUnescape has: 
+(defn ^[String Error] QueryUnescape
+  "QueryUnescape does the inverse transformation of QueryEscape,
+converting each 3-byte encoded substring of the form "%AB" into the
+hex-decoded byte 0xAB.
+It returns an error if any % is not followed by two hexadecimal
+digits."
+  {:added "1.0"
+   :go "queryUnescape(s)"}
+  [^String s])
+
+JOKER FUNC url.User has: 
+(defn ^{:username ^String username, :password ^String password, :passwordset passwordSet} User
+  "User returns a Userinfo containing the provided username
+and no password set."
+  {:added "1.0"
+   :go "user(username)"}
+  [^String username])
+
+JOKER FUNC url.UserPassword has: 
+(defn ^{:username ^String username, :password ^String password, :passwordset passwordSet} UserPassword
+  "UserPassword returns a Userinfo containing the provided username
+and password.
+
+This functionality should only be used with legacy web sites.
+RFC 2396 warns that interpreting Userinfo this way
+``is NOT RECOMMENDED, because the passing of authentication
+information in clear text (such as URI) has proven to be a
+security risk in almost every case where it has been used.''"
+  {:added "1.0"
+   :go "userPassword(username, password)"}
+  [^String username, ^String password])
+
+GO FUNC http.Error has: 
+// func error(w Object, error string, code int)  {
+// 	 := http.Error(w, error, code)
+// 	...ABEND: TODO...
+// }
+// 
+GO FUNC http.Handle has: 
+// func handle(pattern string, handler Object)  {
+// 	 := http.Handle(pattern, handler)
+// 	...ABEND: TODO...
+// }
+// 
+GO FUNC http.HandleFunc has: 
+// func handleFunc(pattern string, handler ABEND881(unrecognized Expr type *ast.FuncType at: &{653903 0xc00073d1a0 <nil>}))  {
+// 	 := http.HandleFunc(pattern, handler)
+// 	...ABEND: TODO...
+// }
+// 
+GO FUNC http.NotFound has: 
+// func notFound(w Object, r ABEND881(unrecognized Expr type *ast.StarExpr at: &{640861 Request}))  {
+// 	 := http.NotFound(w, r)
+// 	...ABEND: TODO...
+// }
+// 
+GO FUNC http.Redirect has: 
+// func redirect(w Object, r ABEND881(unrecognized Expr type *ast.StarExpr at: &{642255 Request}), url string, code int)  {
+// 	 := http.Redirect(w, r, url, code)
+// 	...ABEND: TODO...
+// }
+// 
+GO FUNC http.ServeContent has: 
+// func serveContent(w Object, req ABEND881(unrecognized Expr type *ast.StarExpr at: &{157232 Request}), name string, modtime ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{time Time}), content ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{io ReadSeeker}))  {
+// 	 := http.ServeContent(w, req, name, modtime, content)
+// 	...ABEND: TODO...
+// }
+// 
+GO FUNC http.ServeFile has: 
+// func serveFile(w Object, r ABEND881(unrecognized Expr type *ast.StarExpr at: &{171688 Request}), name string)  {
+// 	 := http.ServeFile(w, r, name)
+// 	...ABEND: TODO...
+// }
+// 
+GO FUNC http.SetCookie has: 
+// func setCookie(w Object, cookie ABEND881(unrecognized Expr type *ast.StarExpr at: &{180622 Cookie}))  {
+// 	 := http.SetCookie(w, cookie)
+// 	...ABEND: TODO...
+// }
+// 
+GO FUNC jsonrpc.ServeConn has: 
+// func serveConn(conn ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{io ReadWriteCloser}))  {
+// 	 := jsonrpc.ServeConn(conn)
+// 	...ABEND: TODO...
+// }
+// 
+GO FUNC pprof.Cmdline has: 
+// func cmdline(w ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{http ResponseWriter}), r ABEND881(unrecognized Expr type *ast.StarExpr at: &{805036 0xc000809e80}))  {
+// 	 := pprof.Cmdline(w, r)
+// 	...ABEND: TODO...
+// }
+// 
+GO FUNC pprof.Index has: 
+// func index(w ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{http ResponseWriter}), r ABEND881(unrecognized Expr type *ast.StarExpr at: &{811528 0xc0007433e0}))  {
+// 	 := pprof.Index(w, r)
+// 	...ABEND: TODO...
+// }
+// 
+GO FUNC pprof.Profile has: 
+// func profile(w ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{http ResponseWriter}), r ABEND881(unrecognized Expr type *ast.StarExpr at: &{806173 0xc00071b2a0}))  {
+// 	 := pprof.Profile(w, r)
+// 	...ABEND: TODO...
+// }
+// 
+GO FUNC pprof.Symbol has: 
+// func symbol(w ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{http ResponseWriter}), r ABEND881(unrecognized Expr type *ast.StarExpr at: &{808325 0xc00072cec0}))  {
+// 	 := pprof.Symbol(w, r)
+// 	...ABEND: TODO...
+// }
+// 
+GO FUNC pprof.Trace has: 
+// func trace(w ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{http ResponseWriter}), r ABEND881(unrecognized Expr type *ast.StarExpr at: &{807280 0xc00072c0c0}))  {
+// 	 := pprof.Trace(w, r)
+// 	...ABEND: TODO...
+// }
+// 
+GO FUNC rpc.Accept has: 
+// func accept(lis ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{net Listener}))  {
+// 	 := rpc.Accept(lis)
+// 	...ABEND: TODO...
+// }
+// 
+GO FUNC rpc.HandleHTTP has: 
+// func handleHTTP()  {
+// 	 := rpc.HandleHTTP()
+// 	...ABEND: TODO...
+// }
+// 
+GO FUNC rpc.ServeCodec has: 
+// func serveCodec(codec Object)  {
+// 	 := rpc.ServeCodec(codec)
+// 	...ABEND: TODO...
+// }
+// 
+GO FUNC rpc.ServeConn has: 
+// func serveConn(conn ABEND881(unrecognized Expr type *ast.SelectorExpr at: &{io ReadWriteCloser}))  {
+// 	 := rpc.ServeConn(conn)
+// 	...ABEND: TODO...
+// }
+// 
+Totals: types=67 functions=105 receivers=901

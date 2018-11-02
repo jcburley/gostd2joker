@@ -656,6 +656,8 @@ func jokerReturnType(pkg string, f *FuncDecl) string {
 	return s
 }
 
+/* Map package names to maps of filenames to code strings. */
+
 type codeInfo map[string]string
 
 var jokerCode = map[string]codeInfo {}

@@ -1,0 +1,119 @@
+Default context:
+{amd64 linux /usr/local/go /home/craig/.go true false gc [] [go1.1 go1.2 go1.3 go1.4 go1.5 go1.6 go1.7 go1.8 go1.9 go1.10 go1.11]  <nil> <nil> <nil> <nil> <nil> <nil> <nil>}
+Walking from tests/small/net to tests/small/net/url
+Processing sourceDir=tests/small/net dump=false:
+Package url:
+Processing package=url:
+TYPE url.Error:
+  tests/small/net/url/url.go => &{<nil> Error 0 0xc0000a46a0 <nil>}
+TYPE url.EscapeError:
+  tests/small/net/url/url.go => &{<nil> EscapeError 0 string <nil>}
+TYPE url.InvalidHostError:
+  tests/small/net/url/url.go => &{<nil> InvalidHostError 0 string <nil>}
+TYPE url.URL:
+  tests/small/net/url/url.go => &{<nil> URL 0 0xc000114c00 <nil>}
+TYPE url.Userinfo:
+  tests/small/net/url/url.go => &{<nil> Userinfo 0 0xc000115300 <nil>}
+TYPE url.Values:
+  tests/small/net/url/url.go => &{<nil> Values 0 0xc0001360c0 <nil>}
+JOKER FUNC url.Parse has: 
+;; (defn ^[{:scheme ^String Scheme, :opaque ^String Opaque, :user ^ABEND881(unrecognized Expr type *ast.StarExpr at: &{9580 Userinfo}) User, :host ^String Host, :path ^String Path, :rawpath ^String RawPath, :forcequery ForceQuery, :rawquery ^String RawQuery, :fragment ^String Fragment} Error] Parse
+;;   "Parse parses rawurl into a URL structure.
+;; 
+;; The rawurl may be relative (a path, without a host) or absolute
+;; (starting with a scheme). Trying to parse a hostname and path
+;; without a scheme is invalid but may not necessarily return an
+;; error, due to parsing ambiguities."
+;;   {:added "1.0"
+;;    :go "parse(rawurl)"}
+;;   [^String rawurl])
+;; 
+JOKER FUNC url.ParseQuery has: 
+;; (defn ^[ABEND881(unrecognized Expr type *ast.MapType at: &{23298 string 0xc000136090}) Error] ParseQuery
+;;   "ParseQuery parses the URL-encoded query string and returns
+;; a map listing the values specified for each key.
+;; ParseQuery always returns a non-nil map containing all the
+;; valid query parameters found; err describes the first decoding error
+;; encountered, if any.
+;; 
+;; Query is expected to be a list of key=value settings separated by
+;; ampersands or semicolons. A setting without an equals sign is
+;; interpreted as a key set to an empty value."
+;;   {:added "1.0"
+;;    :go "parseQuery(query)"}
+;;   [^String query])
+;; 
+JOKER FUNC url.ParseRequestURI has: 
+;; (defn ^[{:scheme ^String Scheme, :opaque ^String Opaque, :user ^ABEND881(unrecognized Expr type *ast.StarExpr at: &{9580 Userinfo}) User, :host ^String Host, :path ^String Path, :rawpath ^String RawPath, :forcequery ForceQuery, :rawquery ^String RawQuery, :fragment ^String Fragment} Error] ParseRequestURI
+;;   "ParseRequestURI parses rawurl into a URL structure. It assumes that
+;; rawurl was received in an HTTP request, so the rawurl is interpreted
+;; only as an absolute URI or an absolute path.
+;; The string rawurl is assumed not to have a #fragment suffix.
+;; (Web browsers strip #fragment before sending the URL to a web server.)"
+;;   {:added "1.0"
+;;    :go "parseRequestURI(rawurl)"}
+;;   [^String rawurl])
+;; 
+JOKER FUNC url.PathEscape has: 
+(defn ^String PathEscape
+  "PathEscape escapes the string so it can be safely placed
+inside a URL path segment."
+  {:added "1.0"
+   :go "pathEscape(s)"}
+  [^String s])
+
+JOKER FUNC url.PathUnescape has: 
+(defn ^[String Error] PathUnescape
+  "PathUnescape does the inverse transformation of PathEscape,
+converting each 3-byte encoded substring of the form "%AB" into the
+hex-decoded byte 0xAB. It returns an error if any % is not followed
+by two hexadecimal digits.
+
+PathUnescape is identical to QueryUnescape except that it does not
+unescape '+' to ' ' (space)."
+  {:added "1.0"
+   :go "pathUnescape(s)"}
+  [^String s])
+
+JOKER FUNC url.QueryEscape has: 
+(defn ^String QueryEscape
+  "QueryEscape escapes the string so it can be safely placed
+inside a URL query."
+  {:added "1.0"
+   :go "queryEscape(s)"}
+  [^String s])
+
+JOKER FUNC url.QueryUnescape has: 
+(defn ^[String Error] QueryUnescape
+  "QueryUnescape does the inverse transformation of QueryEscape,
+converting each 3-byte encoded substring of the form "%AB" into the
+hex-decoded byte 0xAB.
+It returns an error if any % is not followed by two hexadecimal
+digits."
+  {:added "1.0"
+   :go "queryUnescape(s)"}
+  [^String s])
+
+JOKER FUNC url.User has: 
+(defn ^{:username ^String username, :password ^String password, :passwordset passwordSet} User
+  "User returns a Userinfo containing the provided username
+and no password set."
+  {:added "1.0"
+   :go "user(username)"}
+  [^String username])
+
+JOKER FUNC url.UserPassword has: 
+(defn ^{:username ^String username, :password ^String password, :passwordset passwordSet} UserPassword
+  "UserPassword returns a Userinfo containing the provided username
+and password.
+
+This functionality should only be used with legacy web sites.
+RFC 2396 warns that interpreting Userinfo this way
+``is NOT RECOMMENDED, because the passing of authentication
+information in clear text (such as URI) has proven to be a
+security risk in almost every case where it has been used.''"
+  {:added "1.0"
+   :go "userPassword(username, password)"}
+  [^String username, ^String password])
+
+Totals: types=6 functions=9 receivers=25
