@@ -229,8 +229,7 @@ func sortedTypeInfoMap(m map[string]typeInfoArray, f func(k string, v typeInfoAr
 	}
 	sort.Strings(keys)
 	for _, k := range keys {
-		v := m[k]
-		f(k, v)
+		f(k, m[k])
 	}
 }
 
@@ -674,8 +673,7 @@ func sortedPackageMap(m map[string]codeInfo, f func(k string, v codeInfo)) {
 	}
 	sort.Strings(keys)
 	for _, k := range keys {
-		v := m[k]
-		f(k, v)
+		f(k, m[k])
 	}
 }
 
@@ -686,8 +684,7 @@ func sortedCodeMap(m codeInfo, f func(k string, v string)) {
 	}
 	sort.Strings(keys)
 	for _, k := range keys {
-		v := m[k]
-		f(k, v)
+		f(k, m[k])
 	}
 }
 
