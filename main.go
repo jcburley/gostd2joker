@@ -9,6 +9,7 @@ import (
 	"strings"
 	"os"
 	"path/filepath"
+	"sort"
 	"syscall"
 	"unicode"
 )
@@ -209,14 +210,28 @@ type typeInfo struct {
 	file string
 }
 
-var types = map[string][]*typeInfo {}
+type typeInfoArray []*typeInfo
+
+func sortedTypeInfoMap(m map[string]typeInfoArray, f func(k string, v typeInfoArray)) {
+	var keys []string
+	for k, _ := range m {
+		keys = append(keys, k)
+	}
+	sort.Strings(keys)
+	for _, k := range keys {
+		v := m[k]
+		f(k, v)
+	}
+}
+
+var types = map[string]typeInfoArray {}
 
 func processTypeSpec(pkg string, filename string, f *File, ts *TypeSpec) {
 	if (dump) {
 		Print(fset, ts)
 	}
 	typename := pkg + "." + ts.Name.Name
-	var candidates []*typeInfo
+	var candidates typeInfoArray
 	if candidates, ok := types[typename]; ok {
 		for _, c := range candidates {
 			if c.file == filename {
@@ -224,7 +239,7 @@ func processTypeSpec(pkg string, filename string, f *File, ts *TypeSpec) {
 			}
 		}
 	} else {
-		candidates = []*typeInfo {}
+		candidates = typeInfoArray {}
 	}
 	candidates = append(candidates, &typeInfo{ts, filename})
 	types[typename] = candidates
@@ -629,8 +644,34 @@ func jokerReturnType(pkg string, f *FuncDecl) string {
 	return s
 }
 
-var jokerCode = map[string]map[string]string {}
-var goCode = map[string]map[string]string {}
+type codeInfo map[string]string
+
+var jokerCode = map[string]codeInfo {}
+var goCode = map[string]codeInfo {}
+
+func sortedPackageMap(m map[string]codeInfo, f func(k string, v codeInfo)) {
+	var keys []string
+	for k, _ := range m {
+		keys = append(keys, k)
+	}
+	sort.Strings(keys)
+	for _, k := range keys {
+		v := m[k]
+		f(k, v)
+	}
+}
+
+func sortedCodeMap(m codeInfo, f func(k string, v string)) {
+	var keys []string
+	for k, _ := range m {
+		keys = append(keys, k)
+	}
+	sort.Strings(keys)
+	for _, k := range keys {
+		v := m[k]
+		f(k, v)
+	}
+}
 
 func emitFunction(f string, fn *funcInfo) {
 	d := fn.fd
@@ -668,13 +709,13 @@ func %s(%s) %s {
 	}
 
 	if _, ok := jokerCode[pkg]; !ok {
-		jokerCode[pkg] = map[string]string {}
+		jokerCode[pkg] = codeInfo {}
 	}
 	jokerCode[pkg][d.Name.Name] = jokerFn
 
 	if gofn != "" {
 		if _, ok := goCode[pkg]; !ok {
-			goCode[pkg] = map[string]string {}
+			goCode[pkg] = codeInfo {}
 		}
 		goCode[pkg][d.Name.Name] = gofn
 	}
@@ -811,36 +852,54 @@ func main() {
 	}
 
 	if verbose {
-		for t, v := range types {
-			fmt.Printf("TYPE %s:\n", t)
-			for _, ts := range v {
-				fmt.Printf("  %s => %v\n", ts.file, ts.td)
+		/* Output map in sorted order to stabilize for testing. */
+		if false {
+			var keys []string
+			for k, _ := range types {
+				keys = append(keys, k)
 			}
+			sort.Strings(keys)
+			for _, t := range keys {
+				v := types[t]
+				fmt.Printf("TYPE %s:\n", t)
+				for _, ts := range v {
+					fmt.Printf("  %s => %v\n", ts.file, ts.td)
+				}
+			}
+		} else {
+			sortedTypeInfoMap(types,
+				func(t string, v typeInfoArray) {
+					fmt.Printf("TYPE %s:\n", t)
+					for _, ts := range v {
+						fmt.Printf("  %s => %v\n", ts.file, ts.td)
+					}
+				})
 		}
 	}
 
+	/* Emit function code snippets in arbitrary/random order. */
 	for f, v := range functions {
 		if v.fd == DUPLICATEFUNCTION {
 			continue
 		}
-		if verbose {
-			fmt.Printf("FUNC %s => %v:\n", f, v.fd)
-		}
 		emitFunction(f, v)
 	}
-	for p, v := range jokerCode {
-		for f, w := range v {
-			fmt.Printf("FUNC %s.%s has: %v\n", p, f, w)
-		}
-	}
-	for p, v := range goCode {
-		for f, w := range v {
-			fmt.Printf("FUNC %s.%s has: %v\n", p, f, w)
-		}
-	}
+
+	sortedPackageMap(jokerCode,
+		func(p string, v codeInfo) {
+			sortedCodeMap(v,
+				func(f string, w string) { fmt.Printf("JOKER FUNC %s.%s has: %v\n", p, f, w) })
+		})
+	sortedPackageMap(goCode,
+		func(p string, v codeInfo) {
+			sortedCodeMap(v,
+				func(f string, w string) { fmt.Printf("GO FUNC %s.%s has: %v\n", p, f, w) })
+		})
+
 	if verbose {
 		fmt.Printf("Totals: types=%d functions=%d receivers=%d\n",
 			len(types), len(functions), receivers)
 	}
+
 	os.Exit(0)
 }
