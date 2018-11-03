@@ -30,7 +30,7 @@ TYPE url.Userinfo:
   tests/small/net/url/url.go
 TYPE url.Values:
   tests/small/net/url/url.go
-JOKER FUNC net.LookupAddr has: 
+JOKER FUNC net.LookupAddr has:
 (defn ^[names err] LookupAddr
   "LookupAddr performs a reverse lookup for the given address, returning a list
 of names mapping to that address.
@@ -41,7 +41,7 @@ returned. To bypass the host resolver, use a custom Resolver."
    :go "lookupAddr(addr)"}
   [^String addr])
 
-JOKER FUNC net.LookupCNAME has: 
+JOKER FUNC net.LookupCNAME has:
 (defn ^[cname err] LookupCNAME
   "LookupCNAME returns the canonical name for the given host.
 Callers that do not care about the canonical name can call
@@ -57,7 +57,7 @@ address records."
    :go "lookupCNAME(host)"}
   [^String host])
 
-JOKER FUNC net.LookupHost has: 
+JOKER FUNC net.LookupHost has:
 (defn ^[addrs err] LookupHost
   "LookupHost looks up the given host using the local resolver.
 It returns a slice of that host's addresses."
@@ -65,7 +65,7 @@ It returns a slice of that host's addresses."
    :go "lookupHost(host)"}
   [^String host])
 
-JOKER FUNC net.LookupIP has: 
+JOKER FUNC net.LookupIP has:
 ;; (defn ^[[ABEND042(cannot find typename net.IP)] Error] LookupIP
 ;;   "LookupIP looks up host using the local resolver.
 ;; It returns a slice of that host's IPv4 and IPv6 addresses."
@@ -73,28 +73,28 @@ JOKER FUNC net.LookupIP has:
 ;;    :go "lookupIP(host)"}
 ;;   [^String host])
 ;; 
-JOKER FUNC net.LookupMX has: 
+JOKER FUNC net.LookupMX has:
 (defn ^[[{:host ^String Host, :pref ^Int Pref}] Error] LookupMX
   "LookupMX returns the DNS MX records for the given domain name sorted by preference."
   {:added "1.0"
    :go "lookupMX(name)"}
   [^String name])
 
-JOKER FUNC net.LookupNS has: 
+JOKER FUNC net.LookupNS has:
 (defn ^[[{:host ^String Host}] Error] LookupNS
   "LookupNS returns the DNS NS records for the given domain name."
   {:added "1.0"
    :go "lookupNS(name)"}
   [^String name])
 
-JOKER FUNC net.LookupPort has: 
+JOKER FUNC net.LookupPort has:
 (defn ^[port err] LookupPort
   "LookupPort looks up the port for the given network and service."
   {:added "1.0"
    :go "lookupPort(network, service)"}
   [^String network, ^String service])
 
-JOKER FUNC net.LookupSRV has: 
+JOKER FUNC net.LookupSRV has:
 (defn ^[cname addrs err] LookupSRV
   "LookupSRV tries to resolve an SRV query of the given service,
 protocol, and domain name. The proto is "tcp" or "udp".
@@ -109,14 +109,14 @@ and proto are empty strings, LookupSRV looks up name directly."
    :go "lookupSRV(service, proto, name)"}
   [^String service, ^String proto, ^String name])
 
-JOKER FUNC net.LookupTXT has: 
+JOKER FUNC net.LookupTXT has:
 (defn ^[[String] Error] LookupTXT
   "LookupTXT returns the DNS TXT records for the given domain name."
   {:added "1.0"
    :go "lookupTXT(name)"}
   [^String name])
 
-JOKER FUNC url.Parse has: 
+JOKER FUNC url.Parse has:
 ;; (defn ^[{:scheme ^String Scheme, :opaque ^String Opaque, :user ^ABEND881(unrecognized Expr type *ast.StarExpr at: tests/small/net/url/url.go:347:13) User, :host ^String Host, :path ^String Path, :rawpath ^String RawPath, :forcequery ForceQuery, :rawquery ^String RawQuery, :fragment ^String Fragment} Error] Parse
 ;;   "Parse parses rawurl into a URL structure.
 ;; 
@@ -128,7 +128,7 @@ JOKER FUNC url.Parse has:
 ;;    :go "parse(rawurl)"}
 ;;   [^String rawurl])
 ;; 
-JOKER FUNC url.ParseQuery has: 
+JOKER FUNC url.ParseQuery has:
 ;; (defn ^[ABEND883(unrecognized Expr type *ast.MapType at: tests/small/net/url/url.go:804:13) Error] ParseQuery
 ;;   "ParseQuery parses the URL-encoded query string and returns
 ;; a map listing the values specified for each key.
@@ -143,7 +143,7 @@ JOKER FUNC url.ParseQuery has:
 ;;    :go "parseQuery(query)"}
 ;;   [^String query])
 ;; 
-JOKER FUNC url.ParseRequestURI has: 
+JOKER FUNC url.ParseRequestURI has:
 ;; (defn ^[{:scheme ^String Scheme, :opaque ^String Opaque, :user ^ABEND881(unrecognized Expr type *ast.StarExpr at: tests/small/net/url/url.go:347:13) User, :host ^String Host, :path ^String Path, :rawpath ^String RawPath, :forcequery ForceQuery, :rawquery ^String RawQuery, :fragment ^String Fragment} Error] ParseRequestURI
 ;;   "ParseRequestURI parses rawurl into a URL structure. It assumes that
 ;; rawurl was received in an HTTP request, so the rawurl is interpreted
@@ -154,7 +154,7 @@ JOKER FUNC url.ParseRequestURI has:
 ;;    :go "parseRequestURI(rawurl)"}
 ;;   [^String rawurl])
 ;; 
-JOKER FUNC url.PathEscape has: 
+JOKER FUNC url.PathEscape has:
 (defn ^String PathEscape
   "PathEscape escapes the string so it can be safely placed
 inside a URL path segment."
@@ -162,7 +162,7 @@ inside a URL path segment."
    :go "pathEscape(s)"}
   [^String s])
 
-JOKER FUNC url.PathUnescape has: 
+JOKER FUNC url.PathUnescape has:
 (defn ^[String Error] PathUnescape
   "PathUnescape does the inverse transformation of PathEscape,
 converting each 3-byte encoded substring of the form "%AB" into the
@@ -175,7 +175,7 @@ unescape '+' to ' ' (space)."
    :go "pathUnescape(s)"}
   [^String s])
 
-JOKER FUNC url.QueryEscape has: 
+JOKER FUNC url.QueryEscape has:
 (defn ^String QueryEscape
   "QueryEscape escapes the string so it can be safely placed
 inside a URL query."
@@ -183,7 +183,7 @@ inside a URL query."
    :go "queryEscape(s)"}
   [^String s])
 
-JOKER FUNC url.QueryUnescape has: 
+JOKER FUNC url.QueryUnescape has:
 (defn ^[String Error] QueryUnescape
   "QueryUnescape does the inverse transformation of QueryEscape,
 converting each 3-byte encoded substring of the form "%AB" into the
@@ -194,7 +194,7 @@ digits."
    :go "queryUnescape(s)"}
   [^String s])
 
-JOKER FUNC url.User has: 
+JOKER FUNC url.User has:
 (defn ^{:username ^String username, :password ^String password, :passwordset passwordSet} User
   "User returns a Userinfo containing the provided username
 and no password set."
@@ -202,7 +202,7 @@ and no password set."
    :go "user(username)"}
   [^String username])
 
-JOKER FUNC url.UserPassword has: 
+JOKER FUNC url.UserPassword has:
 (defn ^{:username ^String username, :password ^String password, :passwordset passwordSet} UserPassword
   "UserPassword returns a Userinfo containing the provided username
 and password.
