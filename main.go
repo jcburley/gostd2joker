@@ -1,6 +1,7 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
 	. "go/ast"
 	"go/build"
@@ -16,6 +17,12 @@ import (
 )
 
 const VERSION = "0.1"
+
+func check(e error) {
+    if e != nil {
+        panic(e)
+    }
+}
 
 /* Want to support e.g.:
 
@@ -896,15 +903,54 @@ func main() {
 		emitFunction(f, v)
 	}
 
+	var out *bufio.Writer
+	var unbuf_out *os.File
+
 	sortedPackageMap(jokerCode,
 		func(p string, v codeInfo) {
+			if populateDir != "" {
+				jf := filepath.Join(populateDir, p + ".joke")
+				var e error
+				unbuf_out, e = os.Create(jf)
+				check(e)
+				out = bufio.NewWriterSize(unbuf_out, 16384)
+			}
 			sortedCodeMap(v,
-				func(f string, w string) { fmt.Printf("JOKER FUNC %s.%s has:%v\n", p, f, w) })
+				func(f string, w string) {
+					fmt.Printf("JOKER FUNC %s.%s has:%v\n", p, f, w)
+					if out != nil {
+						out.WriteString(w)
+					}
+				})
+			if out != nil {
+				out.Flush()
+				unbuf_out.Close()
+				out = nil
+			}
 		})
 	sortedPackageMap(goCode,
 		func(p string, v codeInfo) {
+			if populateDir != "" {
+				gf := filepath.Join(populateDir, p, p + "_native.go")
+				var e error
+				e = os.MkdirAll(filepath.Dir(gf), 0777)
+				check(e)
+				unbuf_out, e = os.Create(gf)
+				check(e)
+				out = bufio.NewWriterSize(unbuf_out, 16384)
+			}
 			sortedCodeMap(v,
-				func(f string, w string) { fmt.Printf("GO FUNC %s.%s has:%v\n", p, f, w) })
+				func(f string, w string) {
+					if out != nil {
+						out.WriteString(w)
+					}
+					fmt.Printf("GO FUNC %s.%s has:%v\n", p, f, w)
+				})
+			if out != nil {
+				out.Flush()
+				unbuf_out.Close()
+				out = nil
+			}
 		})
 
 	if verbose {
