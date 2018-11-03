@@ -12,6 +12,7 @@ import (
 	"os"
 	"path/filepath"
 	"sort"
+	"strconv"
 	"syscall"
 	"unicode"
 )
@@ -151,8 +152,7 @@ func commentGroupInQuotes(doc *CommentGroup) string {
 	if doc == nil || doc.Text() == "" {
 		return ""
 	}
-	return `  "` + strings.Trim(doc.Text(), " \t\n") + `"
-`
+	return `  ` + strings.Trim(strconv.Quote(doc.Text()), " \t\n") + "\n"
 }
 
 func printDecls(f *File) {
