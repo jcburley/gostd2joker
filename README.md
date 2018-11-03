@@ -68,8 +68,7 @@ The `test.sh` script runs tests against a small, then larger, then
 If you have a copy of the Go source tree available, define the `GOSRC` environment variable to point to its `src/` subdirectory, ideally via a the relative symlink `../GOSRC`, to be compatible with existing test output. E.g.:
 
 ```
-$ ln -s ~/golang/go/src ../GOSRC
-$ export GOSRC=../GOSRC
+$ ln -s ~/golang/go/src ../GOSRC  # If $GOSRC is undefined, ../GOSRC will be tried
 ```
 
 (This same environment variable might someday be "respected" by `gostd2joker` and even `joker/run.sh` someday.)
