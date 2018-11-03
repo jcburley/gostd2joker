@@ -84,8 +84,8 @@ $
 
 The script currently runs tests in this order:
 
-1. `tests/small/net`
-2. `tests/big/net`
+1. `tests/small`
+2. `tests/big`
 3. (If `$GOSRC` is non-null and points to a directory) `$GOSRC`
 
 After each test it runs, it uses `git diff` to compare the resulting `.gold` file with the checked-out version and, if there are any differences, it runs the command specified via `--on-error` (again, the default is `exit 99`, so the script will exit as soon as it sees a failing test).
