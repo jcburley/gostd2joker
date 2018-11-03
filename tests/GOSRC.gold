@@ -731,20 +731,20 @@ Walking from /home/craig/github/golang/go/src to /home/craig/github/golang/go/sr
 Processing sourceDir=/home/craig/github/golang/go/src dump=false:
 Package norm:
 Processing package=norm:
-already seen function rand.Int in /home/craig/github/golang/go/src/crypto/rand/util.go, yet again in /home/craig/github/golang/go/src/math/rand/rand.go
-already seen function rand.Read in /home/craig/github/golang/go/src/crypto/rand/rand.go, yet again in /home/craig/github/golang/go/src/math/rand/rand.go
-already seen function template.HTMLEscape in /home/craig/github/golang/go/src/html/template/escape.go, yet again in /home/craig/github/golang/go/src/text/template/funcs.go
-already seen function template.HTMLEscapeString in /home/craig/github/golang/go/src/html/template/escape.go, yet again in /home/craig/github/golang/go/src/text/template/funcs.go
-already seen function template.HTMLEscaper in /home/craig/github/golang/go/src/html/template/escape.go, yet again in /home/craig/github/golang/go/src/text/template/funcs.go
-already seen function template.IsTrue in /home/craig/github/golang/go/src/html/template/template.go, yet again in /home/craig/github/golang/go/src/text/template/exec.go
-already seen function template.JSEscape in /home/craig/github/golang/go/src/html/template/escape.go, yet again in /home/craig/github/golang/go/src/text/template/funcs.go
-already seen function template.JSEscapeString in /home/craig/github/golang/go/src/html/template/escape.go, yet again in /home/craig/github/golang/go/src/text/template/funcs.go
-already seen function template.JSEscaper in /home/craig/github/golang/go/src/html/template/escape.go, yet again in /home/craig/github/golang/go/src/text/template/funcs.go
-already seen function template.Must in /home/craig/github/golang/go/src/html/template/template.go, yet again in /home/craig/github/golang/go/src/text/template/helper.go
-already seen function template.New in /home/craig/github/golang/go/src/html/template/template.go, yet again in /home/craig/github/golang/go/src/text/template/template.go
-already seen function template.ParseFiles in /home/craig/github/golang/go/src/html/template/template.go, yet again in /home/craig/github/golang/go/src/text/template/helper.go
-already seen function template.ParseGlob in /home/craig/github/golang/go/src/html/template/template.go, yet again in /home/craig/github/golang/go/src/text/template/helper.go
-already seen function template.URLQueryEscaper in /home/craig/github/golang/go/src/html/template/escape.go, yet again in /home/craig/github/golang/go/src/text/template/funcs.go
+NOTE: Already seen function rand.Int in /home/craig/github/golang/go/src/crypto/rand/util.go, yet again in /home/craig/github/golang/go/src/math/rand/rand.go
+NOTE: Already seen function rand.Read in /home/craig/github/golang/go/src/crypto/rand/rand.go, yet again in /home/craig/github/golang/go/src/math/rand/rand.go
+NOTE: Already seen function template.HTMLEscape in /home/craig/github/golang/go/src/html/template/escape.go, yet again in /home/craig/github/golang/go/src/text/template/funcs.go
+NOTE: Already seen function template.HTMLEscapeString in /home/craig/github/golang/go/src/html/template/escape.go, yet again in /home/craig/github/golang/go/src/text/template/funcs.go
+NOTE: Already seen function template.HTMLEscaper in /home/craig/github/golang/go/src/html/template/escape.go, yet again in /home/craig/github/golang/go/src/text/template/funcs.go
+NOTE: Already seen function template.IsTrue in /home/craig/github/golang/go/src/html/template/template.go, yet again in /home/craig/github/golang/go/src/text/template/exec.go
+NOTE: Already seen function template.JSEscape in /home/craig/github/golang/go/src/html/template/escape.go, yet again in /home/craig/github/golang/go/src/text/template/funcs.go
+NOTE: Already seen function template.JSEscapeString in /home/craig/github/golang/go/src/html/template/escape.go, yet again in /home/craig/github/golang/go/src/text/template/funcs.go
+NOTE: Already seen function template.JSEscaper in /home/craig/github/golang/go/src/html/template/escape.go, yet again in /home/craig/github/golang/go/src/text/template/funcs.go
+NOTE: Already seen function template.Must in /home/craig/github/golang/go/src/html/template/template.go, yet again in /home/craig/github/golang/go/src/text/template/helper.go
+NOTE: Already seen function template.New in /home/craig/github/golang/go/src/html/template/template.go, yet again in /home/craig/github/golang/go/src/text/template/template.go
+NOTE: Already seen function template.ParseFiles in /home/craig/github/golang/go/src/html/template/template.go, yet again in /home/craig/github/golang/go/src/text/template/helper.go
+NOTE: Already seen function template.ParseGlob in /home/craig/github/golang/go/src/html/template/template.go, yet again in /home/craig/github/golang/go/src/text/template/helper.go
+NOTE: Already seen function template.URLQueryEscaper in /home/craig/github/golang/go/src/html/template/escape.go, yet again in /home/craig/github/golang/go/src/text/template/funcs.go
 TYPE aes.KeySizeError:
   /home/craig/github/golang/go/src/crypto/aes/cipher.go
 TYPE ascii85.CorruptInputError:
