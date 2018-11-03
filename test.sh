@@ -12,6 +12,6 @@ git diff --quiet -u tests/small/TEST.gold || { echo >&2 "FAILED: small test"; $E
 git diff --quiet -u tests/big/TEST.gold || { echo >&2 "FAILED: big test"; $EXIT; }
 
 if [ -n "$GOSRC" -a -d "$GOSRC" ]; then
-    ./gostd2joker -v --source "$GOSRC" 2>&1 | grep -v '^Default context:' | sed -e 's:/Users/craig:/home/craig:g' > tests/GOSRC.gold
+    ./gostd2joker -v --source "$GOSRC" 2>&1 | grep -v '^Default context:' > tests/GOSRC.gold
     git diff --quiet -u tests/GOSRC.gold || { echo >&2 "FAILED: \$GOSRC test"; $EXIT; }
 fi
