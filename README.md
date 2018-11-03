@@ -65,10 +65,11 @@ I'm not sure that syntax really works, though -- because it doesn't seem to dist
 The `test.sh` script runs tests against a small, then larger, then
 (optionally) full, copy of Go 1.11's `golang/go/src/` tree.
 
-If you have a copy of the Go source tree available, define the `GOSRC` environment variable to point to its `src/` subdirectory. E.g.:
+If you have a copy of the Go source tree available, define the `GOSRC` environment variable to point to its `src/` subdirectory, ideally via a the relative symlink `../GOSRC`, to be compatible with existing test output. E.g.:
 
 ```
-$ export GOSRC=~/golang/go/src
+$ ln -s ~/golang/go/src ../GOSRC
+$ export GOSRC=../GOSRC
 ```
 
 (This same environment variable might someday be "respected" by `gostd2joker` and even `joker/run.sh` someday.)
