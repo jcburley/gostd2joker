@@ -59,3 +59,33 @@ $
 Note that `^[[{:host ..., :pref ...}] Error]` construct -- it indicates that `LookupMX()` returns a vector whose first element is itself a vector of maps with the indicated keys, and whose second element is of type `Error`.
 
 I'm not sure that syntax really works, though -- because it doesn't seem to distinguish between a one-element vector and a vector of multiple elements of the same type (of the one element listed). I think Clojure itself would specify a Java class name instead; not sure to what that would translate in Joker.
+
+## Run Tests
+
+The `test.sh` script runs tests against a small, then larger, then
+(optionally) full, copy of Go 1.11's `golang/go/src/` tree.
+
+If you have a copy of the Go source tree available, define the `GOSRC` environment variable to point to it. E.g.:
+
+```
+$ export GOSRC=~/golang/go/src
+```
+
+(This same environment variable might someday be "respected" by `gostd2joker` and even `joker/run.sh` someday.)
+
+Then, invoke `test.sh` either with no options, or with `--on-error :` to run the `:` (`true`) command when it detects an error (the default being `exit 99`).
+
+E.g.:
+
+```
+$ ./test.sh
+$
+```
+
+The script currently runs tests in this order:
+
+1. `tests/small/net`
+2. `tests/big/net`
+3. (If `$GOSRC` is non-null and points to a directory) `$GOSRC`
+
+After each test it runs, it uses `git diff` to compare the resulting `.gold` file with the checked-out version and, if there are any differences, it runs the command specified via `--on-error` (again, the default is `exit 99`, so the script will exit as soon as it sees a failing test).
