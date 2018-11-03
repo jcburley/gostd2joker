@@ -896,12 +896,12 @@ func main() {
 	sortedPackageMap(jokerCode,
 		func(p string, v codeInfo) {
 			sortedCodeMap(v,
-				func(f string, w string) { fmt.Printf("JOKER FUNC %s.%s has: %v\n", p, f, w) })
+				func(f string, w string) { fmt.Printf("JOKER FUNC %s.%s has:%v\n", p, f, w) })
 		})
 	sortedPackageMap(goCode,
 		func(p string, v codeInfo) {
 			sortedCodeMap(v,
-				func(f string, w string) { fmt.Printf("GO FUNC %s.%s has: %v\n", p, f, w) })
+				func(f string, w string) { fmt.Printf("GO FUNC %s.%s has:%v\n", p, f, w) })
 		})
 
 	if verbose {
