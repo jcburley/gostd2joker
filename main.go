@@ -831,7 +831,7 @@ func main() {
 	}
 
 	if verbose {
-		fmt.Printf("Default context:\n%v\n", build.Default)
+		fmt.Printf("Default context: %v\n", build.Default)
 	}
 
 	if sourceDir == "" {
@@ -918,5 +918,4 @@ func main() {
 func init() {
 	p := `(?m)^(.)`
 	nonEmptyLineRegexp = regexp.MustCompile(p)
-	fmt.Printf("Successfully compiled regexp %s into: %v\n", p, nonEmptyLineRegexp)
 }
