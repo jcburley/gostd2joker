@@ -363,26 +363,29 @@ var excludeDirs = map[string]bool {
 
 
 func walkDirs(d string, mode parser.Mode) error {
-	err := filepath.Walk(d,
+	target, err := filepath.EvalSymlinks(d)
+	check(err)
+	err = filepath.Walk(target,
 		func(path string, info os.FileInfo, err error) error {
+			rel := strings.Replace(path, target, d, 1)
 			if err != nil {
-				fmt.Fprintf(os.Stderr, "Skipping %s due to: %v\n", path, err)
+				fmt.Fprintf(os.Stderr, "Skipping %s due to: %v\n", rel, err)
 				return err
 			}
-			if path == d {
+			if rel == d {
 				return nil // skip (implicit) "."
 			}
-			if excludeDirs[filepath.Base(path)] {
+			if excludeDirs[filepath.Base(rel)] {
 				if verbose {
-					fmt.Printf("Excluding %s\n", path)
+					fmt.Printf("Excluding %s\n", rel)
 				}
 				return filepath.SkipDir
 			}
 			if info.IsDir() {
 				if verbose {
-					fmt.Printf("Walking from %s to %s\n", d, path)
+					fmt.Printf("Walking from %s to %s\n", d, rel)
 				}
-				return processDir(d, path, mode)
+				return processDir(d, rel, mode)
 			}
 			return nil // not a directory
 		})
@@ -845,8 +848,8 @@ func main() {
 		panic("Must specify --source <go-source-dir-name> option")
 	}
 
-	if fi, e := os.Stat(filepath.Join(sourceDir, "/go")); e != nil || !fi.IsDir() {
-		if m, e := filepath.Glob(filepath.Join(sourceDir, "/*.go")); e != nil || m == nil || len(m) == 0 {
+	if fi, e := os.Stat(filepath.Join(sourceDir, "go")); e != nil || !fi.IsDir() {
+		if m, e := filepath.Glob(filepath.Join(sourceDir, "*.go")); e != nil || m == nil || len(m) == 0 {
 			panic(fmt.Sprintf("Does not exist or is not a Go source directory: %s;\n%v", sourceDir, m))
 		}
 	}
@@ -874,7 +877,7 @@ func main() {
 		}
 	}
 
-	err := walkDirs(sourceDir, mode)
+	err := walkDirs(filepath.Join(sourceDir, "."), mode)
 	if err != nil {
 		panic("Error walking directory " + sourceDir + ": " + fmt.Sprintf("%v", err))
 	}
