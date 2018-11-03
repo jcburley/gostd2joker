@@ -1,9 +1,23 @@
 Default context:
 {amd64 linux /usr/local/go /home/craig/.go true false gc [] [go1.1 go1.2 go1.3 go1.4 go1.5 go1.6 go1.7 go1.8 go1.9 go1.10 go1.11]  <nil> <nil> <nil> <nil> <nil> <nil> <nil>}
-Walking from tests/small/net to tests/small/net/url
-Processing sourceDir=tests/small/net dump=false:
+Walking from tests/small to tests/small/go
+Processing sourceDir=tests/small dump=false:
+Walking from tests/small to tests/small/net
+Processing sourceDir=tests/small dump=false:
+Package net:
+Processing package=net:
+Walking from tests/small to tests/small/net/url
+Processing sourceDir=tests/small dump=false:
 Package url:
 Processing package=url:
+TYPE net.MX:
+  tests/small/net/dnsclient.go
+TYPE net.NS:
+  tests/small/net/dnsclient.go
+TYPE net.Resolver:
+  tests/small/net/lookup.go
+TYPE net.SRV:
+  tests/small/net/dnsclient.go
 TYPE url.Error:
   tests/small/net/url/url.go
 TYPE url.EscapeError:
@@ -16,6 +30,92 @@ TYPE url.Userinfo:
   tests/small/net/url/url.go
 TYPE url.Values:
   tests/small/net/url/url.go
+JOKER FUNC net.LookupAddr has: 
+(defn ^[names err] LookupAddr
+  "LookupAddr performs a reverse lookup for the given address, returning a list
+of names mapping to that address.
+
+When using the host C library resolver, at most one result will be
+returned. To bypass the host resolver, use a custom Resolver."
+  {:added "1.0"
+   :go "lookupAddr(addr)"}
+  [^String addr])
+
+JOKER FUNC net.LookupCNAME has: 
+(defn ^[cname err] LookupCNAME
+  "LookupCNAME returns the canonical name for the given host.
+Callers that do not care about the canonical name can call
+LookupHost or LookupIP directly; both take care of resolving
+the canonical name as part of the lookup.
+
+A canonical name is the final name after following zero
+or more CNAME records.
+LookupCNAME does not return an error if host does not
+contain DNS "CNAME" records, as long as host resolves to
+address records."
+  {:added "1.0"
+   :go "lookupCNAME(host)"}
+  [^String host])
+
+JOKER FUNC net.LookupHost has: 
+(defn ^[addrs err] LookupHost
+  "LookupHost looks up the given host using the local resolver.
+It returns a slice of that host's addresses."
+  {:added "1.0"
+   :go "lookupHost(host)"}
+  [^String host])
+
+JOKER FUNC net.LookupIP has: 
+;; (defn ^[[ABEND042(cannot find typename net.IP)] Error] LookupIP
+;;   "LookupIP looks up host using the local resolver.
+;; It returns a slice of that host's IPv4 and IPv6 addresses."
+;;   {:added "1.0"
+;;    :go "lookupIP(host)"}
+;;   [^String host])
+;; 
+JOKER FUNC net.LookupMX has: 
+(defn ^[[{:host ^String Host, :pref ^Int Pref}] Error] LookupMX
+  "LookupMX returns the DNS MX records for the given domain name sorted by preference."
+  {:added "1.0"
+   :go "lookupMX(name)"}
+  [^String name])
+
+JOKER FUNC net.LookupNS has: 
+(defn ^[[{:host ^String Host}] Error] LookupNS
+  "LookupNS returns the DNS NS records for the given domain name."
+  {:added "1.0"
+   :go "lookupNS(name)"}
+  [^String name])
+
+JOKER FUNC net.LookupPort has: 
+(defn ^[port err] LookupPort
+  "LookupPort looks up the port for the given network and service."
+  {:added "1.0"
+   :go "lookupPort(network, service)"}
+  [^String network, ^String service])
+
+JOKER FUNC net.LookupSRV has: 
+(defn ^[cname addrs err] LookupSRV
+  "LookupSRV tries to resolve an SRV query of the given service,
+protocol, and domain name. The proto is "tcp" or "udp".
+The returned records are sorted by priority and randomized
+by weight within a priority.
+
+LookupSRV constructs the DNS name to look up following RFC 2782.
+That is, it looks up _service._proto.name. To accommodate services
+publishing SRV records under non-standard names, if both service
+and proto are empty strings, LookupSRV looks up name directly."
+  {:added "1.0"
+   :go "lookupSRV(service, proto, name)"}
+  [^String service, ^String proto, ^String name])
+
+JOKER FUNC net.LookupTXT has: 
+(defn ^[[String] Error] LookupTXT
+  "LookupTXT returns the DNS TXT records for the given domain name."
+  {:added "1.0"
+   :go "lookupTXT(name)"}
+  [^String name])
+
 JOKER FUNC url.Parse has: 
 ;; (defn ^[{:scheme ^String Scheme, :opaque ^String Opaque, :user ^ABEND881(unrecognized Expr type *ast.StarExpr at: tests/small/net/url/url.go:347:13) User, :host ^String Host, :path ^String Path, :rawpath ^String RawPath, :forcequery ForceQuery, :rawquery ^String RawQuery, :fragment ^String Fragment} Error] Parse
 ;;   "Parse parses rawurl into a URL structure.
@@ -116,4 +216,4 @@ security risk in almost every case where it has been used.''"
    :go "userPassword(username, password)"}
   [^String username, ^String password])
 
-Totals: types=6 functions=9 receivers=25
+Totals: types=10 functions=18 receivers=46
