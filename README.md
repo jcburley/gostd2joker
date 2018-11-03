@@ -89,3 +89,5 @@ The script currently runs tests in this order:
 3. (If `$GOSRC` is non-null and points to a directory) `$GOSRC`
 
 After each test it runs, it uses `git diff` to compare the resulting `.gold` file with the checked-out version and, if there are any differences, it runs the command specified via `--on-error` (again, the default is `exit 99`, so the script will exit as soon as it sees a failing test).
+
+NOTE: `$GOSRC` can now be pointed to a symlink, and `tests/GOSRC.out` has been rebuilt with `GOSRC=../GOSRC`, with that is a symlink (one directory level above `gostd2joker` itself) to the Go source tree. This allows me to easily run on different machines and OSes without having tons of needless differences due to absolute pathnames being different (some machines use `/home`, others `/Users`, to hold home directories).
