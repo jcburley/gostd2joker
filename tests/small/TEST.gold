@@ -1,3 +1,4 @@
+Successfully compiled regexp (?m)^(.) into: (?m)^(.)
 Default context:
 {amd64 linux /usr/local/go /home/craig/.go true false gc [] [go1.1 go1.2 go1.3 go1.4 go1.5 go1.6 go1.7 go1.8 go1.9 go1.10 go1.11]  <nil> <nil> <nil> <nil> <nil> <nil> <nil>}
 Walking from tests/small to tests/small/go
@@ -72,7 +73,7 @@ JOKER FUNC net.LookupIP has:
 ;;   {:added "1.0"
 ;;    :go "lookupIP(host)"}
 ;;   [^String host])
-;; 
+
 JOKER FUNC net.LookupMX has:
 (defn ^[[{:host ^String Host, :pref ^Int Pref}] Error] LookupMX
   "LookupMX returns the DNS MX records for the given domain name sorted by preference."
@@ -119,7 +120,7 @@ JOKER FUNC net.LookupTXT has:
 JOKER FUNC url.Parse has:
 ;; (defn ^[{:scheme ^String Scheme, :opaque ^String Opaque, :user ^ABEND881(unrecognized Expr type *ast.StarExpr at: tests/small/net/url/url.go:347:13) User, :host ^String Host, :path ^String Path, :rawpath ^String RawPath, :forcequery ForceQuery, :rawquery ^String RawQuery, :fragment ^String Fragment} Error] Parse
 ;;   "Parse parses rawurl into a URL structure.
-;; 
+
 ;; The rawurl may be relative (a path, without a host) or absolute
 ;; (starting with a scheme). Trying to parse a hostname and path
 ;; without a scheme is invalid but may not necessarily return an
@@ -127,7 +128,7 @@ JOKER FUNC url.Parse has:
 ;;   {:added "1.0"
 ;;    :go "parse(rawurl)"}
 ;;   [^String rawurl])
-;; 
+
 JOKER FUNC url.ParseQuery has:
 ;; (defn ^[ABEND883(unrecognized Expr type *ast.MapType at: tests/small/net/url/url.go:804:13) Error] ParseQuery
 ;;   "ParseQuery parses the URL-encoded query string and returns
@@ -135,14 +136,14 @@ JOKER FUNC url.ParseQuery has:
 ;; ParseQuery always returns a non-nil map containing all the
 ;; valid query parameters found; err describes the first decoding error
 ;; encountered, if any.
-;; 
+
 ;; Query is expected to be a list of key=value settings separated by
 ;; ampersands or semicolons. A setting without an equals sign is
 ;; interpreted as a key set to an empty value."
 ;;   {:added "1.0"
 ;;    :go "parseQuery(query)"}
 ;;   [^String query])
-;; 
+
 JOKER FUNC url.ParseRequestURI has:
 ;; (defn ^[{:scheme ^String Scheme, :opaque ^String Opaque, :user ^ABEND881(unrecognized Expr type *ast.StarExpr at: tests/small/net/url/url.go:347:13) User, :host ^String Host, :path ^String Path, :rawpath ^String RawPath, :forcequery ForceQuery, :rawquery ^String RawQuery, :fragment ^String Fragment} Error] ParseRequestURI
 ;;   "ParseRequestURI parses rawurl into a URL structure. It assumes that
@@ -153,7 +154,7 @@ JOKER FUNC url.ParseRequestURI has:
 ;;   {:added "1.0"
 ;;    :go "parseRequestURI(rawurl)"}
 ;;   [^String rawurl])
-;; 
+
 JOKER FUNC url.PathEscape has:
 (defn ^String PathEscape
   "PathEscape escapes the string so it can be safely placed

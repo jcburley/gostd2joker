@@ -6,6 +6,7 @@ import (
 	"go/build"
 	"go/parser"
 	"go/token"
+	"regexp"
 	"strings"
 	"os"
 	"path/filepath"
@@ -691,6 +692,8 @@ func sortedCodeMap(m codeInfo, f func(k string, v string)) {
 	}
 }
 
+var nonEmptyLineRegexp *regexp.Regexp
+
 func emitFunction(f string, fn *funcInfo) {
 	d := fn.fd
 	pkg := filepath.Base(fn.pkg)
@@ -722,8 +725,8 @@ func %s(%s) %s {
 	}
 
 	if strings.Contains(jokerFn, "ABEND") || strings.Contains(gofn, "ABEND") {
-		jokerFn = strings.Replace(jokerFn, "\n", "\n;; ", -1)
-		gofn = strings.Replace(gofn, "\n", "\n// ", -1)
+		jokerFn = nonEmptyLineRegexp.ReplaceAllString(jokerFn, `;; $1`)
+		gofn = nonEmptyLineRegexp.ReplaceAllString(gofn, `// $1`)
 	}
 
 	if _, ok := jokerCode[pkg]; !ok {
@@ -910,4 +913,10 @@ func main() {
 	}
 
 	os.Exit(0)
+}
+
+func init() {
+	p := `(?m)^(.)`
+	nonEmptyLineRegexp = regexp.MustCompile(p)
+	fmt.Printf("Successfully compiled regexp %s into: %v\n", p, nonEmptyLineRegexp)
 }
