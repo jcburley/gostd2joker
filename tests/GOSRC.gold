@@ -703,8 +703,6 @@ Package nettest:
 Processing package=nettest:
 Walking from ../GOSRC to ../GOSRC/vendor/golang_org/x/net/route
 Processing sourceDir=../GOSRC dump=false:
-Package route:
-Processing package=route:
 Walking from ../GOSRC to ../GOSRC/vendor/golang_org/x/text
 Processing sourceDir=../GOSRC dump=false:
 Walking from ../GOSRC to ../GOSRC/vendor/golang_org/x/text/secure
@@ -2123,38 +2121,6 @@ TYPE regexp.Regexp:
   ../GOSRC/regexp/regexp.go
 TYPE ring.Ring:
   ../GOSRC/container/ring/ring.go
-TYPE route.Addr:
-  ../GOSRC/vendor/golang_org/x/net/route/address.go
-TYPE route.DefaultAddr:
-  ../GOSRC/vendor/golang_org/x/net/route/address.go
-TYPE route.Inet4Addr:
-  ../GOSRC/vendor/golang_org/x/net/route/address.go
-TYPE route.Inet6Addr:
-  ../GOSRC/vendor/golang_org/x/net/route/address.go
-TYPE route.InterfaceAddrMessage:
-  ../GOSRC/vendor/golang_org/x/net/route/interface.go
-TYPE route.InterfaceAnnounceMessage:
-  ../GOSRC/vendor/golang_org/x/net/route/interface.go
-TYPE route.InterfaceMessage:
-  ../GOSRC/vendor/golang_org/x/net/route/interface.go
-TYPE route.InterfaceMetrics:
-  ../GOSRC/vendor/golang_org/x/net/route/sys_darwin.go
-TYPE route.InterfaceMulticastAddrMessage:
-  ../GOSRC/vendor/golang_org/x/net/route/interface.go
-TYPE route.LinkAddr:
-  ../GOSRC/vendor/golang_org/x/net/route/address.go
-TYPE route.Message:
-  ../GOSRC/vendor/golang_org/x/net/route/message.go
-TYPE route.RIBType:
-  ../GOSRC/vendor/golang_org/x/net/route/route.go
-TYPE route.RouteMessage:
-  ../GOSRC/vendor/golang_org/x/net/route/route.go
-TYPE route.RouteMetrics:
-  ../GOSRC/vendor/golang_org/x/net/route/sys_darwin.go
-TYPE route.Sys:
-  ../GOSRC/vendor/golang_org/x/net/route/message.go
-TYPE route.SysType:
-  ../GOSRC/vendor/golang_org/x/net/route/message.go
 TYPE rpc.Call:
   ../GOSRC/net/rpc/client.go
 TYPE rpc.Client:
@@ -2321,146 +2287,160 @@ TYPE syntax.Prog:
   ../GOSRC/regexp/syntax/prog.go
 TYPE syntax.Regexp:
   ../GOSRC/regexp/syntax/regexp.go
-TYPE syscall.BpfHdr:
-  ../GOSRC/syscall/ztypes_darwin_amd64.go
-TYPE syscall.BpfInsn:
-  ../GOSRC/syscall/ztypes_darwin_amd64.go
-TYPE syscall.BpfProgram:
-  ../GOSRC/syscall/ztypes_darwin_amd64.go
-TYPE syscall.BpfStat:
-  ../GOSRC/syscall/ztypes_darwin_amd64.go
-TYPE syscall.BpfVersion:
-  ../GOSRC/syscall/ztypes_darwin_amd64.go
 TYPE syscall.Cmsghdr:
-  ../GOSRC/syscall/ztypes_darwin_amd64.go
+  ../GOSRC/syscall/ztypes_linux_amd64.go
 TYPE syscall.Conn:
   ../GOSRC/syscall/net.go
 TYPE syscall.Credential:
   ../GOSRC/syscall/exec_unix.go
 TYPE syscall.Dirent:
-  ../GOSRC/syscall/ztypes_darwin_amd64.go
+  ../GOSRC/syscall/ztypes_linux_amd64.go
+TYPE syscall.EpollEvent:
+  ../GOSRC/syscall/ztypes_linux_amd64.go
 TYPE syscall.Errno:
   ../GOSRC/syscall/syscall_unix.go
-TYPE syscall.Fbootstraptransfer_t:
-  ../GOSRC/syscall/ztypes_darwin_amd64.go
 TYPE syscall.FdSet:
-  ../GOSRC/syscall/ztypes_darwin_amd64.go
+  ../GOSRC/syscall/ztypes_linux_amd64.go
 TYPE syscall.Flock_t:
-  ../GOSRC/syscall/ztypes_darwin_amd64.go
+  ../GOSRC/syscall/ztypes_linux_amd64.go
 TYPE syscall.Fsid:
-  ../GOSRC/syscall/ztypes_darwin_amd64.go
-TYPE syscall.Fstore_t:
-  ../GOSRC/syscall/ztypes_darwin_amd64.go
+  ../GOSRC/syscall/ztypes_linux_amd64.go
 TYPE syscall.ICMPv6Filter:
-  ../GOSRC/syscall/ztypes_darwin_amd64.go
+  ../GOSRC/syscall/ztypes_linux_amd64.go
 TYPE syscall.IPMreq:
-  ../GOSRC/syscall/ztypes_darwin_amd64.go
+  ../GOSRC/syscall/ztypes_linux_amd64.go
+TYPE syscall.IPMreqn:
+  ../GOSRC/syscall/ztypes_linux_amd64.go
 TYPE syscall.IPv6MTUInfo:
-  ../GOSRC/syscall/ztypes_darwin_amd64.go
+  ../GOSRC/syscall/ztypes_linux_amd64.go
 TYPE syscall.IPv6Mreq:
-  ../GOSRC/syscall/ztypes_darwin_amd64.go
-TYPE syscall.IfData:
-  ../GOSRC/syscall/ztypes_darwin_amd64.go
-TYPE syscall.IfMsghdr:
-  ../GOSRC/syscall/ztypes_darwin_amd64.go
-TYPE syscall.IfaMsghdr:
-  ../GOSRC/syscall/ztypes_darwin_amd64.go
-TYPE syscall.IfmaMsghdr:
-  ../GOSRC/syscall/ztypes_darwin_amd64.go
-TYPE syscall.IfmaMsghdr2:
-  ../GOSRC/syscall/ztypes_darwin_amd64.go
+  ../GOSRC/syscall/ztypes_linux_amd64.go
+TYPE syscall.IfAddrmsg:
+  ../GOSRC/syscall/ztypes_linux_amd64.go
+TYPE syscall.IfInfomsg:
+  ../GOSRC/syscall/ztypes_linux_amd64.go
 TYPE syscall.Inet4Pktinfo:
-  ../GOSRC/syscall/ztypes_darwin_amd64.go
+  ../GOSRC/syscall/ztypes_linux_amd64.go
 TYPE syscall.Inet6Pktinfo:
-  ../GOSRC/syscall/ztypes_darwin_amd64.go
-TYPE syscall.InterfaceAddrMessage:
-  ../GOSRC/syscall/route_bsd.go
-TYPE syscall.InterfaceMessage:
-  ../GOSRC/syscall/route_bsd.go
-TYPE syscall.InterfaceMulticastAddrMessage:
-  ../GOSRC/syscall/route_darwin.go
+  ../GOSRC/syscall/ztypes_linux_amd64.go
+TYPE syscall.InotifyEvent:
+  ../GOSRC/syscall/ztypes_linux_amd64.go
 TYPE syscall.Iovec:
-  ../GOSRC/syscall/ztypes_darwin_amd64.go
-TYPE syscall.Kevent_t:
-  ../GOSRC/syscall/ztypes_darwin_amd64.go
+  ../GOSRC/syscall/ztypes_linux_amd64.go
 TYPE syscall.Linger:
-  ../GOSRC/syscall/ztypes_darwin_amd64.go
-TYPE syscall.Log2phys_t:
-  ../GOSRC/syscall/ztypes_darwin_amd64.go
+  ../GOSRC/syscall/ztypes_linux_amd64.go
 TYPE syscall.Msghdr:
-  ../GOSRC/syscall/ztypes_darwin_amd64.go
+  ../GOSRC/syscall/ztypes_linux_amd64.go
+TYPE syscall.NetlinkMessage:
+  ../GOSRC/syscall/netlink_linux.go
+TYPE syscall.NetlinkRouteAttr:
+  ../GOSRC/syscall/netlink_linux.go
+TYPE syscall.NetlinkRouteRequest:
+  ../GOSRC/syscall/netlink_linux.go
+TYPE syscall.NlAttr:
+  ../GOSRC/syscall/ztypes_linux_amd64.go
+TYPE syscall.NlMsgerr:
+  ../GOSRC/syscall/ztypes_linux_amd64.go
+TYPE syscall.NlMsghdr:
+  ../GOSRC/syscall/ztypes_linux_amd64.go
 TYPE syscall.ProcAttr:
   ../GOSRC/syscall/exec_unix.go
-TYPE syscall.Radvisory_t:
-  ../GOSRC/syscall/ztypes_darwin_amd64.go
+TYPE syscall.PtraceRegs:
+  ../GOSRC/syscall/ztypes_linux_amd64.go
 TYPE syscall.RawConn:
   ../GOSRC/syscall/net.go
 TYPE syscall.RawSockaddr:
-  ../GOSRC/syscall/ztypes_darwin_amd64.go
+  ../GOSRC/syscall/ztypes_linux_amd64.go
 TYPE syscall.RawSockaddrAny:
-  ../GOSRC/syscall/ztypes_darwin_amd64.go
-TYPE syscall.RawSockaddrDatalink:
-  ../GOSRC/syscall/ztypes_darwin_amd64.go
+  ../GOSRC/syscall/ztypes_linux_amd64.go
 TYPE syscall.RawSockaddrInet4:
-  ../GOSRC/syscall/ztypes_darwin_amd64.go
+  ../GOSRC/syscall/ztypes_linux_amd64.go
 TYPE syscall.RawSockaddrInet6:
-  ../GOSRC/syscall/ztypes_darwin_amd64.go
+  ../GOSRC/syscall/ztypes_linux_amd64.go
+TYPE syscall.RawSockaddrLinklayer:
+  ../GOSRC/syscall/ztypes_linux_amd64.go
+TYPE syscall.RawSockaddrNetlink:
+  ../GOSRC/syscall/ztypes_linux_amd64.go
 TYPE syscall.RawSockaddrUnix:
-  ../GOSRC/syscall/ztypes_darwin_amd64.go
+  ../GOSRC/syscall/ztypes_linux_amd64.go
 TYPE syscall.Rlimit:
-  ../GOSRC/syscall/ztypes_darwin_amd64.go
-TYPE syscall.RouteMessage:
-  ../GOSRC/syscall/route_bsd.go
-TYPE syscall.RoutingMessage:
-  ../GOSRC/syscall/route_bsd.go
-TYPE syscall.RtMetrics:
-  ../GOSRC/syscall/ztypes_darwin_amd64.go
-TYPE syscall.RtMsghdr:
-  ../GOSRC/syscall/ztypes_darwin_amd64.go
+  ../GOSRC/syscall/ztypes_linux_amd64.go
+TYPE syscall.RtAttr:
+  ../GOSRC/syscall/ztypes_linux_amd64.go
+TYPE syscall.RtGenmsg:
+  ../GOSRC/syscall/ztypes_linux_amd64.go
+TYPE syscall.RtMsg:
+  ../GOSRC/syscall/ztypes_linux_amd64.go
+TYPE syscall.RtNexthop:
+  ../GOSRC/syscall/ztypes_linux_amd64.go
 TYPE syscall.Rusage:
-  ../GOSRC/syscall/ztypes_darwin_amd64.go
+  ../GOSRC/syscall/ztypes_linux_amd64.go
 TYPE syscall.Signal:
   ../GOSRC/syscall/syscall_unix.go
+TYPE syscall.SockFilter:
+  ../GOSRC/syscall/ztypes_linux_amd64.go
+TYPE syscall.SockFprog:
+  ../GOSRC/syscall/ztypes_linux_amd64.go
 TYPE syscall.Sockaddr:
   ../GOSRC/syscall/syscall_unix.go
-TYPE syscall.SockaddrDatalink:
-  ../GOSRC/syscall/syscall_darwin.go
 TYPE syscall.SockaddrInet4:
   ../GOSRC/syscall/syscall_unix.go
 TYPE syscall.SockaddrInet6:
   ../GOSRC/syscall/syscall_unix.go
+TYPE syscall.SockaddrLinklayer:
+  ../GOSRC/syscall/syscall_linux.go
+TYPE syscall.SockaddrNetlink:
+  ../GOSRC/syscall/syscall_linux.go
 TYPE syscall.SockaddrUnix:
   ../GOSRC/syscall/syscall_unix.go
 TYPE syscall.SocketControlMessage:
   ../GOSRC/syscall/sockcmsg_unix.go
 TYPE syscall.Stat_t:
-  ../GOSRC/syscall/ztypes_darwin_amd64.go
+  ../GOSRC/syscall/ztypes_linux_amd64.go
 TYPE syscall.Statfs_t:
-  ../GOSRC/syscall/ztypes_darwin_amd64.go
+  ../GOSRC/syscall/ztypes_linux_amd64.go
 TYPE syscall.SysProcAttr:
-  ../GOSRC/syscall/exec_bsd.go
+  ../GOSRC/syscall/exec_linux.go
+TYPE syscall.SysProcIDMap:
+  ../GOSRC/syscall/exec_linux.go
+TYPE syscall.Sysinfo_t:
+  ../GOSRC/syscall/ztypes_linux_amd64.go
+TYPE syscall.TCPInfo:
+  ../GOSRC/syscall/ztypes_linux_amd64.go
 TYPE syscall.Termios:
-  ../GOSRC/syscall/ztypes_darwin_amd64.go
+  ../GOSRC/syscall/ztypes_linux_amd64.go
+TYPE syscall.Time_t:
+  ../GOSRC/syscall/ztypes_linux_amd64.go
 TYPE syscall.Timespec:
-  ../GOSRC/syscall/ztypes_darwin_amd64.go
+  ../GOSRC/syscall/ztypes_linux_amd64.go
 TYPE syscall.Timeval:
-  ../GOSRC/syscall/ztypes_darwin_amd64.go
-TYPE syscall.Timeval32:
-  ../GOSRC/syscall/ztypes_darwin_amd64.go
+  ../GOSRC/syscall/ztypes_linux_amd64.go
+TYPE syscall.Timex:
+  ../GOSRC/syscall/ztypes_linux_amd64.go
+TYPE syscall.Tms:
+  ../GOSRC/syscall/ztypes_linux_amd64.go
+TYPE syscall.Ucred:
+  ../GOSRC/syscall/ztypes_linux_amd64.go
+TYPE syscall.Ustat_t:
+  ../GOSRC/syscall/ztypes_linux_amd64.go
+TYPE syscall.Utimbuf:
+  ../GOSRC/syscall/ztypes_linux_amd64.go
+TYPE syscall.Utsname:
+  ../GOSRC/syscall/ztypes_linux_amd64.go
 TYPE syscall.WaitStatus:
-  ../GOSRC/syscall/syscall_bsd.go
+  ../GOSRC/syscall/syscall_linux.go
 TYPE syscall._C_int:
-  ../GOSRC/syscall/ztypes_darwin_amd64.go
+  ../GOSRC/syscall/ztypes_linux_amd64.go
 TYPE syscall._C_long:
-  ../GOSRC/syscall/ztypes_darwin_amd64.go
+  ../GOSRC/syscall/ztypes_linux_amd64.go
 TYPE syscall._C_long_long:
-  ../GOSRC/syscall/ztypes_darwin_amd64.go
+  ../GOSRC/syscall/ztypes_linux_amd64.go
 TYPE syscall._C_short:
-  ../GOSRC/syscall/ztypes_darwin_amd64.go
+  ../GOSRC/syscall/ztypes_linux_amd64.go
 TYPE syscall._Gid_t:
-  ../GOSRC/syscall/ztypes_darwin_amd64.go
+  ../GOSRC/syscall/ztypes_linux_amd64.go
 TYPE syscall._Socklen:
-  ../GOSRC/syscall/ztypes_darwin_amd64.go
+  ../GOSRC/syscall/ztypes_linux_amd64.go
 TYPE syslog.Priority:
   ../GOSRC/log/syslog/syslog.go
 TYPE syslog.Writer:
@@ -9132,20 +9112,6 @@ JOKER FUNC ring.New has:
 ;;    :go "new(n)"}
 ;;   [^Int n])
 
-JOKER FUNC route.FetchRIB has:
-;; (defn ^[[ABEND042(cannot find typename route.byte)] Error] FetchRIB
-;;   "FetchRIB fetches a routing information base from the operating\nsystem.\n\nThe provided af must be an address family.\n\nThe provided arg must be a RIBType-specific argument.\nWhen RIBType is related to routes, arg might be a set of route\nflags. When RIBType is related to network interfaces, arg might be\nan interface index or a set of interface flags. In most cases, zero\nmeans a wildcard.\n"
-;;   {:added "1.0"
-;;    :go "fetchRIB(af, typ, arg)"}
-;;   [^Int af, typ, ^Int arg])
-
-JOKER FUNC route.ParseRIB has:
-;; (defn ^[[ABEND883(unrecognized Expr type *ast.InterfaceType at: ../GOSRC/vendor/golang_org/x/net/route/message.go:10:14)] Error] ParseRIB
-;;   "ParseRIB parses b as a routing information base and returns a list\nof routing messages.\n"
-;;   {:added "1.0"
-;;    :go "parseRIB(typ, b)"}
-;;   [typ, ^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/vendor/golang_org/x/net/route/message.go:33:30) b])
-
 JOKER FUNC rpc.Accept has:
 ;; (defn Accept
 ;;   "Accept accepts connections on the listener and serves requests\nto DefaultServer for each incoming connection.\nAccept blocks; the caller typically invokes it in a go statement.\n"
@@ -9544,6 +9510,19 @@ JOKER FUNC runtime.Version has:
   {:added "1.0"
    :go "version()"}
   [])
+
+JOKER FUNC runtime._ELF_ST_BIND has:
+;; (defn ^ABEND042(cannot find typename runtime.byte) _ELF_ST_BIND
+;;   " How to extract and insert information held in the st_info field.\n"
+;;   {:added "1.0"
+;;    :go "_ELF_ST_BIND(val)"}
+;;   [val])
+
+JOKER FUNC runtime._ELF_ST_TYPE has:
+;; (defn ^ABEND042(cannot find typename runtime.byte) _ELF_ST_TYPE
+;;   {:added "1.0"
+;;    :go "_ELF_ST_TYPE(val)"}
+;;   [val])
 
 JOKER FUNC runtime._ExternalCode has:
 ;; (defn _ExternalCode
@@ -10545,17 +10524,36 @@ JOKER FUNC syscall.Accept has:
    :go "accept(fd)"}
   [^Int fd])
 
+JOKER FUNC syscall.Accept4 has:
+(defn ^[nfd sa err] Accept4
+  {:added "1.0"
+   :go "accept4(fd, flags)"}
+  [^Int fd, ^Int flags])
+
 JOKER FUNC syscall.Access has:
 (defn ^err Access
   {:added "1.0"
    :go "access(path, mode)"}
   [^String path, mode])
 
-JOKER FUNC syscall.Adjtime has:
-;; (defn ^err Adjtime
+JOKER FUNC syscall.Acct has:
+(defn ^err Acct
+  {:added "1.0"
+   :go "acct(path)"}
+  [^String path])
+
+JOKER FUNC syscall.Adjtimex has:
+;; (defn ^[state err] Adjtimex
 ;;   {:added "1.0"
-;;    :go "adjtime(delta, olddelta)"}
-;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: ../GOSRC/syscall/zsyscall_darwin_amd64.go:311:20) delta, ^ABEND881(unrecognized Expr type *ast.StarExpr at: ../GOSRC/syscall/zsyscall_darwin_amd64.go:311:39) olddelta])
+;;    :go "adjtimex(buf)"}
+;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: ../GOSRC/syscall/zsyscall_linux_amd64.go:268:19) buf])
+
+JOKER FUNC syscall.AttachLsf has:
+;; (defn ^Error AttachLsf
+;;   "Deprecated: Use golang.org/x/net/bpf instead.\n"
+;;   {:added "1.0"
+;;    :go "attachLsf(fd, i)"}
+;;   [^Int fd, ^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/syscall/lsf_linux.go:73:26) i])
 
 JOKER FUNC syscall.Bind has:
 (defn ^err Bind
@@ -10563,61 +10561,12 @@ JOKER FUNC syscall.Bind has:
    :go "bind(fd, sa)"}
   [^Int fd, sa])
 
-JOKER FUNC syscall.BpfBuflen has:
-(defn ^[Int Error] BpfBuflen
-  "Deprecated: Use golang.org/x/net/bpf instead.\n"
+JOKER FUNC syscall.BindToDevice has:
+(defn ^err BindToDevice
+  "BindToDevice binds the socket associated with fd to device.\n"
   {:added "1.0"
-   :go "bpfBuflen(fd)"}
-  [^Int fd])
-
-JOKER FUNC syscall.BpfDatalink has:
-(defn ^[Int Error] BpfDatalink
-  "Deprecated: Use golang.org/x/net/bpf instead.\n"
-  {:added "1.0"
-   :go "bpfDatalink(fd)"}
-  [^Int fd])
-
-JOKER FUNC syscall.BpfHeadercmpl has:
-(defn ^[Int Error] BpfHeadercmpl
-  "Deprecated: Use golang.org/x/net/bpf instead.\n"
-  {:added "1.0"
-   :go "bpfHeadercmpl(fd)"}
-  [^Int fd])
-
-JOKER FUNC syscall.BpfInterface has:
-(defn ^[String Error] BpfInterface
-  "Deprecated: Use golang.org/x/net/bpf instead.\n"
-  {:added "1.0"
-   :go "bpfInterface(fd, name)"}
-  [^Int fd, ^String name])
-
-JOKER FUNC syscall.BpfJump has:
-(defn ^{:code ^Int Code, :jt Jt, :jf Jf, :k K} BpfJump
-  "Deprecated: Use golang.org/x/net/bpf instead.\n"
-  {:added "1.0"
-   :go "bpfJump(code, k, jt, jf)"}
-  [^Int code, ^Int k, ^Int jt, ^Int jf])
-
-JOKER FUNC syscall.BpfStats has:
-(defn ^[{:recv Recv, :drop Drop} Error] BpfStats
-  "Deprecated: Use golang.org/x/net/bpf instead.\n"
-  {:added "1.0"
-   :go "bpfStats(fd)"}
-  [^Int fd])
-
-JOKER FUNC syscall.BpfStmt has:
-(defn ^{:code ^Int Code, :jt Jt, :jf Jf, :k K} BpfStmt
-  "Deprecated: Use golang.org/x/net/bpf instead.\n"
-  {:added "1.0"
-   :go "bpfStmt(code, k)"}
-  [^Int code, ^Int k])
-
-JOKER FUNC syscall.BpfTimeout has:
-;; (defn ^[{:sec Sec, :usec Usec, :pad_cgo_0 ^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/syscall/ztypes_darwin_amd64.go:31:12) Pad_cgo_0} Error] BpfTimeout
-;;   "Deprecated: Use golang.org/x/net/bpf instead.\n"
-;;   {:added "1.0"
-;;    :go "bpfTimeout(fd)"}
-;;   [^Int fd])
+   :go "bindToDevice(fd, device)"}
+  [^Int fd, ^String device])
 
 JOKER FUNC syscall.BytePtrFromString has:
 ;; (defn ^[ABEND042(cannot find typename syscall.byte) Error] BytePtrFromString
@@ -10638,19 +10587,6 @@ JOKER FUNC syscall.Chdir has:
   {:added "1.0"
    :go "chdir(path)"}
   [^String path])
-
-JOKER FUNC syscall.CheckBpfVersion has:
-(defn ^Error CheckBpfVersion
-  "Deprecated: Use golang.org/x/net/bpf instead.\n"
-  {:added "1.0"
-   :go "checkBpfVersion(fd)"}
-  [^Int fd])
-
-JOKER FUNC syscall.Chflags has:
-(defn ^err Chflags
-  {:added "1.0"
-   :go "chflags(path, flags)"}
-  [^String path, ^Int flags])
 
 JOKER FUNC syscall.Chmod has:
 (defn ^err Chmod
@@ -10708,17 +10644,36 @@ JOKER FUNC syscall.Connect has:
    :go "connect(fd, sa)"}
   [^Int fd, sa])
 
-JOKER FUNC syscall.Dup has:
-(defn ^[nfd err] Dup
+JOKER FUNC syscall.Creat has:
+(defn ^[fd err] Creat
   {:added "1.0"
-   :go "dup(fd)"}
+   :go "creat(path, mode)"}
+  [^String path, mode])
+
+JOKER FUNC syscall.DetachLsf has:
+(defn ^Error DetachLsf
+  "Deprecated: Use golang.org/x/net/bpf instead.\n"
+  {:added "1.0"
+   :go "detachLsf(fd)"}
   [^Int fd])
+
+JOKER FUNC syscall.Dup has:
+(defn ^[fd err] Dup
+  {:added "1.0"
+   :go "dup(oldfd)"}
+  [^Int oldfd])
 
 JOKER FUNC syscall.Dup2 has:
 (defn ^err Dup2
   {:added "1.0"
-   :go "dup2(from, to)"}
-  [^Int from, ^Int to])
+   :go "dup2(oldfd, newfd)"}
+  [^Int oldfd, ^Int newfd])
+
+JOKER FUNC syscall.Dup3 has:
+(defn ^err Dup3
+  {:added "1.0"
+   :go "dup3(oldfd, newfd, flags)"}
+  [^Int oldfd, ^Int newfd, ^Int flags])
 
 JOKER FUNC syscall.Environ has:
 (defn ^[String] Environ
@@ -10726,11 +10681,29 @@ JOKER FUNC syscall.Environ has:
    :go "environ()"}
   [])
 
-JOKER FUNC syscall.Exchangedata has:
-(defn ^err Exchangedata
+JOKER FUNC syscall.EpollCreate has:
+(defn ^[fd err] EpollCreate
   {:added "1.0"
-   :go "exchangedata(path1, path2, options)"}
-  [^String path1, ^String path2, ^Int options])
+   :go "epollCreate(size)"}
+  [^Int size])
+
+JOKER FUNC syscall.EpollCreate1 has:
+(defn ^[fd err] EpollCreate1
+  {:added "1.0"
+   :go "epollCreate1(flag)"}
+  [^Int flag])
+
+JOKER FUNC syscall.EpollCtl has:
+;; (defn ^err EpollCtl
+;;   {:added "1.0"
+;;    :go "epollCtl(epfd, op, fd, event)"}
+;;   [^Int epfd, ^Int op, ^Int fd, ^ABEND881(unrecognized Expr type *ast.StarExpr at: ../GOSRC/syscall/zsyscall_linux_amd64.go:362:47) event])
+
+JOKER FUNC syscall.EpollWait has:
+;; (defn ^[n err] EpollWait
+;;   {:added "1.0"
+;;    :go "epollWait(epfd, events, msec)"}
+;;   [^Int epfd, ^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/syscall/zsyscall_linux_amd64.go:1707:33) events, ^Int msec])
 
 JOKER FUNC syscall.Exec has:
 ;; (defn ^err Exec
@@ -10745,17 +10718,23 @@ JOKER FUNC syscall.Exit has:
 ;;    :go "exit(code)"}
 ;;   [^Int code])
 
+JOKER FUNC syscall.Faccessat has:
+(defn ^err Faccessat
+  {:added "1.0"
+   :go "faccessat(dirfd, path, mode, flags)"}
+  [^Int dirfd, ^String path, mode, ^Int flags])
+
+JOKER FUNC syscall.Fallocate has:
+(defn ^err Fallocate
+  {:added "1.0"
+   :go "fallocate(fd, mode, off, len)"}
+  [^Int fd, mode, off, len])
+
 JOKER FUNC syscall.Fchdir has:
 (defn ^err Fchdir
   {:added "1.0"
    :go "fchdir(fd)"}
   [^Int fd])
-
-JOKER FUNC syscall.Fchflags has:
-(defn ^err Fchflags
-  {:added "1.0"
-   :go "fchflags(fd, flags)"}
-  [^Int fd, ^Int flags])
 
 JOKER FUNC syscall.Fchmod has:
 (defn ^err Fchmod
@@ -10763,11 +10742,23 @@ JOKER FUNC syscall.Fchmod has:
    :go "fchmod(fd, mode)"}
   [^Int fd, mode])
 
+JOKER FUNC syscall.Fchmodat has:
+(defn ^err Fchmodat
+  {:added "1.0"
+   :go "fchmodat(dirfd, path, mode, flags)"}
+  [^Int dirfd, ^String path, mode, ^Int flags])
+
 JOKER FUNC syscall.Fchown has:
 (defn ^err Fchown
   {:added "1.0"
    :go "fchown(fd, uid, gid)"}
   [^Int fd, ^Int uid, ^Int gid])
+
+JOKER FUNC syscall.Fchownat has:
+(defn ^err Fchownat
+  {:added "1.0"
+   :go "fchownat(dirfd, path, uid, gid, flags)"}
+  [^Int dirfd, ^String path, ^Int uid, ^Int gid, ^Int flags])
 
 JOKER FUNC syscall.FcntlFlock has:
 ;; (defn ^Error FcntlFlock
@@ -10776,18 +10767,17 @@ JOKER FUNC syscall.FcntlFlock has:
 ;;    :go "fcntlFlock(fd, cmd, lk)"}
 ;;   [fd, ^Int cmd, ^ABEND881(unrecognized Expr type *ast.StarExpr at: ../GOSRC/syscall/flock.go:16:41) lk])
 
+JOKER FUNC syscall.Fdatasync has:
+(defn ^err Fdatasync
+  {:added "1.0"
+   :go "fdatasync(fd)"}
+  [^Int fd])
+
 JOKER FUNC syscall.Flock has:
 (defn ^err Flock
   {:added "1.0"
    :go "flock(fd, how)"}
   [^Int fd, ^Int how])
-
-JOKER FUNC syscall.FlushBpf has:
-(defn ^Error FlushBpf
-  "Deprecated: Use golang.org/x/net/bpf instead.\n"
-  {:added "1.0"
-   :go "flushBpf(fd)"}
-  [^Int fd])
 
 JOKER FUNC syscall.ForkExec has:
 ;; (defn ^[pid err] ForkExec
@@ -10796,23 +10786,17 @@ JOKER FUNC syscall.ForkExec has:
 ;;    :go "forkExec(argv0, argv, attr)"}
 ;;   [^String argv0, ^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/syscall/exec_unix.go:235:34) argv, ^ABEND881(unrecognized Expr type *ast.StarExpr at: ../GOSRC/syscall/exec_unix.go:235:49) attr])
 
-JOKER FUNC syscall.Fpathconf has:
-(defn ^[val err] Fpathconf
-  {:added "1.0"
-   :go "fpathconf(fd, name)"}
-  [^Int fd, ^Int name])
-
 JOKER FUNC syscall.Fstat has:
 ;; (defn ^err Fstat
 ;;   {:added "1.0"
 ;;    :go "fstat(fd, stat)"}
-;;   [^Int fd, ^ABEND881(unrecognized Expr type *ast.StarExpr at: ../GOSRC/syscall/zsyscall_darwin_amd64.go:508:25) stat])
+;;   [^Int fd, ^ABEND881(unrecognized Expr type *ast.StarExpr at: ../GOSRC/syscall/zsyscall_linux_amd64.go:1161:25) stat])
 
 JOKER FUNC syscall.Fstatfs has:
 ;; (defn ^err Fstatfs
 ;;   {:added "1.0"
-;;    :go "fstatfs(fd, stat)"}
-;;   [^Int fd, ^ABEND881(unrecognized Expr type *ast.StarExpr at: ../GOSRC/syscall/zsyscall_darwin_amd64.go:518:27) stat])
+;;    :go "fstatfs(fd, buf)"}
+;;   [^Int fd, ^ABEND881(unrecognized Expr type *ast.StarExpr at: ../GOSRC/syscall/zsyscall_linux_amd64.go:1171:26) buf])
 
 JOKER FUNC syscall.Fsync has:
 (defn ^err Fsync
@@ -10830,19 +10814,25 @@ JOKER FUNC syscall.Futimes has:
 ;; (defn ^err Futimes
 ;;   {:added "1.0"
 ;;    :go "futimes(fd, tv)"}
-;;   [^Int fd, ^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/syscall/syscall_bsd.go:533:25) tv])
+;;   [^Int fd, ^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/syscall/syscall_linux.go:219:25) tv])
 
-JOKER FUNC syscall.Getdirentries has:
-;; (defn ^[n err] Getdirentries
+JOKER FUNC syscall.Futimesat has:
+;; (defn ^err Futimesat
 ;;   {:added "1.0"
-;;    :go "getdirentries(fd, buf, basep)"}
-;;   [^Int fd, ^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/syscall/zsyscall_darwin_amd64.go:548:32) buf, ^ABEND881(unrecognized Expr type *ast.StarExpr at: ../GOSRC/syscall/zsyscall_darwin_amd64.go:548:46) basep])
+;;    :go "futimesat(dirfd, path, tv)"}
+;;   [^Int dirfd, ^String path, ^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/syscall/syscall_linux.go:208:43) tv])
 
-JOKER FUNC syscall.Getdtablesize has:
-(defn ^size Getdtablesize
-  {:added "1.0"
-   :go "getdtablesize()"}
-  [])
+JOKER FUNC syscall.Getcwd has:
+;; (defn ^[n err] Getcwd
+;;   {:added "1.0"
+;;    :go "getcwd(buf)"}
+;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/syscall/zsyscall_linux_amd64.go:175:17) buf])
+
+JOKER FUNC syscall.Getdents has:
+;; (defn ^[n err] Getdents
+;;   {:added "1.0"
+;;    :go "getdents(fd, buf)"}
+;;   [^Int fd, ^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/syscall/zsyscall_linux_amd64.go:458:27) buf])
 
 JOKER FUNC syscall.Getegid has:
 (defn ^egid Getegid
@@ -10857,16 +10847,10 @@ JOKER FUNC syscall.Getenv has:
   [^String key])
 
 JOKER FUNC syscall.Geteuid has:
-(defn ^uid Geteuid
+(defn ^euid Geteuid
   {:added "1.0"
    :go "geteuid()"}
   [])
-
-JOKER FUNC syscall.Getfsstat has:
-;; (defn ^[n err] Getfsstat
-;;   {:added "1.0"
-;;    :go "getfsstat(buf, flags)"}
-;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/syscall/syscall_darwin.go:176:20) buf, ^Int flags])
 
 JOKER FUNC syscall.Getgid has:
 (defn ^gid Getgid
@@ -10899,7 +10883,7 @@ JOKER FUNC syscall.Getpgid has:
   [^Int pid])
 
 JOKER FUNC syscall.Getpgrp has:
-(defn ^pgrp Getpgrp
+(defn ^pid Getpgrp
   {:added "1.0"
    :go "getpgrp()"}
   [])
@@ -10925,20 +10909,14 @@ JOKER FUNC syscall.Getpriority has:
 JOKER FUNC syscall.Getrlimit has:
 ;; (defn ^err Getrlimit
 ;;   {:added "1.0"
-;;    :go "getrlimit(which, lim)"}
-;;   [^Int which, ^ABEND881(unrecognized Expr type *ast.StarExpr at: ../GOSRC/syscall/zsyscall_darwin_amd64.go:643:31) lim])
+;;    :go "getrlimit(resource, rlim)"}
+;;   [^Int resource, ^ABEND881(unrecognized Expr type *ast.StarExpr at: ../GOSRC/syscall/zsyscall_linux_amd64.go:1215:35) rlim])
 
 JOKER FUNC syscall.Getrusage has:
 ;; (defn ^err Getrusage
 ;;   {:added "1.0"
 ;;    :go "getrusage(who, rusage)"}
-;;   [^Int who, ^ABEND881(unrecognized Expr type *ast.StarExpr at: ../GOSRC/syscall/zsyscall_darwin_amd64.go:653:32) rusage])
-
-JOKER FUNC syscall.Getsid has:
-(defn ^[sid err] Getsid
-  {:added "1.0"
-   :go "getsid(pid)"}
-  [^Int pid])
+;;   [^Int who, ^ABEND881(unrecognized Expr type *ast.StarExpr at: ../GOSRC/syscall/zsyscall_linux_amd64.go:513:32) rusage])
 
 JOKER FUNC syscall.Getsockname has:
 (defn ^[sa err] Getsockname
@@ -10946,22 +10924,22 @@ JOKER FUNC syscall.Getsockname has:
    :go "getsockname(fd)"}
   [^Int fd])
 
-JOKER FUNC syscall.GetsockoptByte has:
-(defn ^[value err] GetsockoptByte
-  {:added "1.0"
-   :go "getsockoptByte(fd, level, opt)"}
-  [^Int fd, ^Int level, ^Int opt])
-
 JOKER FUNC syscall.GetsockoptICMPv6Filter has:
-;; (defn ^[{:filt ^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/syscall/ztypes_darwin_amd64.go:256:7) Filt} Error] GetsockoptICMPv6Filter
+;; (defn ^[{:data ^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/syscall/ztypes_linux_amd64.go:267:7) Data} Error] GetsockoptICMPv6Filter
 ;;   {:added "1.0"
 ;;    :go "getsockoptICMPv6Filter(fd, level, opt)"}
 ;;   [^Int fd, ^Int level, ^Int opt])
 
 JOKER FUNC syscall.GetsockoptIPMreq has:
-;; (defn ^[{:multiaddr ^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/syscall/ztypes_darwin_amd64.go:212:12) Multiaddr, :interface ^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/syscall/ztypes_darwin_amd64.go:213:12) Interface} Error] GetsockoptIPMreq
+;; (defn ^[{:multiaddr ^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/syscall/ztypes_linux_amd64.go:217:12) Multiaddr, :interface ^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/syscall/ztypes_linux_amd64.go:218:12) Interface} Error] GetsockoptIPMreq
 ;;   {:added "1.0"
 ;;    :go "getsockoptIPMreq(fd, level, opt)"}
+;;   [^Int fd, ^Int level, ^Int opt])
+
+JOKER FUNC syscall.GetsockoptIPMreqn has:
+;; (defn ^[{:multiaddr ^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/syscall/ztypes_linux_amd64.go:222:12) Multiaddr, :address ^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/syscall/ztypes_linux_amd64.go:223:12) Address, :ifindex Ifindex} Error] GetsockoptIPMreqn
+;;   {:added "1.0"
+;;    :go "getsockoptIPMreqn(fd, level, opt)"}
 ;;   [^Int fd, ^Int level, ^Int opt])
 
 JOKER FUNC syscall.GetsockoptIPv6MTUInfo has:
@@ -10971,7 +10949,7 @@ JOKER FUNC syscall.GetsockoptIPv6MTUInfo has:
   [^Int fd, ^Int level, ^Int opt])
 
 JOKER FUNC syscall.GetsockoptIPv6Mreq has:
-;; (defn ^[{:multiaddr ^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/syscall/ztypes_darwin_amd64.go:217:12) Multiaddr, :interface Interface} Error] GetsockoptIPv6Mreq
+;; (defn ^[{:multiaddr ^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/syscall/ztypes_linux_amd64.go:228:12) Multiaddr, :interface Interface} Error] GetsockoptIPv6Mreq
 ;;   {:added "1.0"
 ;;    :go "getsockoptIPv6Mreq(fd, level, opt)"}
 ;;   [^Int fd, ^Int level, ^Int opt])
@@ -10988,12 +10966,23 @@ JOKER FUNC syscall.GetsockoptInt has:
    :go "getsockoptInt(fd, level, opt)"}
   [^Int fd, ^Int level, ^Int opt])
 
+JOKER FUNC syscall.GetsockoptUcred has:
+(defn ^[{:pid Pid, :uid Uid, :gid Gid} Error] GetsockoptUcred
+  {:added "1.0"
+   :go "getsockoptUcred(fd, level, opt)"}
+  [^Int fd, ^Int level, ^Int opt])
+
+JOKER FUNC syscall.Gettid has:
+(defn ^tid Gettid
+  {:added "1.0"
+   :go "gettid()"}
+  [])
+
 JOKER FUNC syscall.Gettimeofday has:
-;; (defn ^Error Gettimeofday
-;;   "sysnb\tgettimeofday(tp *Timeval) (sec int64, usec int32, err error)\n"
+;; (defn ^err Gettimeofday
 ;;   {:added "1.0"
 ;;    :go "gettimeofday(tv)"}
-;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: ../GOSRC/syscall/syscall_darwin_amd64.go:18:22) tv])
+;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: ../GOSRC/syscall/syscall_linux_amd64.go:72:22) tv])
 
 JOKER FUNC syscall.Getuid has:
 (defn ^uid Getuid
@@ -11002,34 +10991,64 @@ JOKER FUNC syscall.Getuid has:
   [])
 
 JOKER FUNC syscall.Getwd has:
-(defn ^[String Error] Getwd
+(defn ^[wd err] Getwd
   {:added "1.0"
    :go "getwd()"}
   [])
 
-JOKER FUNC syscall.Issetugid has:
-(defn ^tainted Issetugid
+JOKER FUNC syscall.Getxattr has:
+;; (defn ^[sz err] Getxattr
+;;   {:added "1.0"
+;;    :go "getxattr(path, attr, dest)"}
+;;   [^String path, ^String attr, ^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/syscall/zsyscall_linux_amd64.go:531:46) dest])
+
+JOKER FUNC syscall.InotifyAddWatch has:
+(defn ^[watchdesc err] InotifyAddWatch
   {:added "1.0"
-   :go "issetugid()"}
+   :go "inotifyAddWatch(fd, pathname, mask)"}
+  [^Int fd, ^String pathname, mask])
+
+JOKER FUNC syscall.InotifyInit has:
+(defn ^[fd err] InotifyInit
+  {:added "1.0"
+   :go "inotifyInit()"}
   [])
 
-JOKER FUNC syscall.Kevent has:
-;; (defn ^[n err] Kevent
-;;   {:added "1.0"
-;;    :go "kevent(kq, changes, events, timeout)"}
-;;   [^Int kq, ^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/syscall/syscall_bsd.go:439:37) changes, ^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/syscall/syscall_bsd.go:439:37) events, ^ABEND881(unrecognized Expr type *ast.StarExpr at: ../GOSRC/syscall/syscall_bsd.go:439:57) timeout])
+JOKER FUNC syscall.InotifyInit1 has:
+(defn ^[fd err] InotifyInit1
+  {:added "1.0"
+   :go "inotifyInit1(flags)"}
+  [^Int flags])
+
+JOKER FUNC syscall.InotifyRmWatch has:
+(defn ^[success err] InotifyRmWatch
+  {:added "1.0"
+   :go "inotifyRmWatch(fd, watchdesc)"}
+  [^Int fd, watchdesc])
+
+JOKER FUNC syscall.Ioperm has:
+(defn ^err Ioperm
+  {:added "1.0"
+   :go "ioperm(from, num, on)"}
+  [^Int from, ^Int num, ^Int on])
+
+JOKER FUNC syscall.Iopl has:
+(defn ^err Iopl
+  {:added "1.0"
+   :go "iopl(level)"}
+  [^Int level])
 
 JOKER FUNC syscall.Kill has:
 (defn ^err Kill
   {:added "1.0"
-   :go "kill(pid, signum)"}
-  [^Int pid, signum])
+   :go "kill(pid, sig)"}
+  [^Int pid, sig])
 
-JOKER FUNC syscall.Kqueue has:
-(defn ^[fd err] Kqueue
-  {:added "1.0"
-   :go "kqueue()"}
-  [])
+JOKER FUNC syscall.Klogctl has:
+;; (defn ^[n err] Klogctl
+;;   {:added "1.0"
+;;    :go "klogctl(typ, buf)"}
+;;   [^Int typ, ^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/syscall/zsyscall_linux_amd64.go:606:27) buf])
 
 JOKER FUNC syscall.Lchown has:
 (defn ^err Lchown
@@ -11040,26 +11059,65 @@ JOKER FUNC syscall.Lchown has:
 JOKER FUNC syscall.Link has:
 (defn ^err Link
   {:added "1.0"
-   :go "link(path, link)"}
-  [^String path, ^String link])
+   :go "link(oldpath, newpath)"}
+  [^String oldpath, ^String newpath])
 
 JOKER FUNC syscall.Listen has:
 (defn ^err Listen
   {:added "1.0"
-   :go "listen(s, backlog)"}
-  [^Int s, ^Int backlog])
+   :go "listen(s, n)"}
+  [^Int s, ^Int n])
+
+JOKER FUNC syscall.Listxattr has:
+;; (defn ^[sz err] Listxattr
+;;   {:added "1.0"
+;;    :go "listxattr(path, dest)"}
+;;   [^String path, ^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/syscall/zsyscall_linux_amd64.go:623:34) dest])
+
+JOKER FUNC syscall.LsfJump has:
+(defn ^{:code ^Int Code, :jt Jt, :jf Jf, :k K} LsfJump
+  "Deprecated: Use golang.org/x/net/bpf instead.\n"
+  {:added "1.0"
+   :go "lsfJump(code, k, jt, jf)"}
+  [^Int code, ^Int k, ^Int jt, ^Int jf])
+
+JOKER FUNC syscall.LsfSocket has:
+(defn ^[Int Error] LsfSocket
+  "Deprecated: Use golang.org/x/net/bpf instead.\n"
+  {:added "1.0"
+   :go "lsfSocket(ifindex, proto)"}
+  [^Int ifindex, ^Int proto])
+
+JOKER FUNC syscall.LsfStmt has:
+(defn ^{:code ^Int Code, :jt Jt, :jf Jf, :k K} LsfStmt
+  "Deprecated: Use golang.org/x/net/bpf instead.\n"
+  {:added "1.0"
+   :go "lsfStmt(code, k)"}
+  [^Int code, ^Int k])
 
 JOKER FUNC syscall.Lstat has:
 ;; (defn ^err Lstat
 ;;   {:added "1.0"
 ;;    :go "lstat(path, stat)"}
-;;   [^String path, ^ABEND881(unrecognized Expr type *ast.StarExpr at: ../GOSRC/syscall/zsyscall_darwin_amd64.go:746:30) stat])
+;;   [^String path, ^ABEND881(unrecognized Expr type *ast.StarExpr at: ../GOSRC/syscall/zsyscall_linux_amd64.go:1289:30) stat])
+
+JOKER FUNC syscall.Madvise has:
+;; (defn ^err Madvise
+;;   {:added "1.0"
+;;    :go "madvise(b, advice)"}
+;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/syscall/zsyscall_linux_amd64.go:1057:16) b, ^Int advice])
 
 JOKER FUNC syscall.Mkdir has:
 (defn ^err Mkdir
   {:added "1.0"
    :go "mkdir(path, mode)"}
   [^String path, mode])
+
+JOKER FUNC syscall.Mkdirat has:
+(defn ^err Mkdirat
+  {:added "1.0"
+   :go "mkdirat(dirfd, path, mode)"}
+  [^Int dirfd, ^String path, mode])
 
 JOKER FUNC syscall.Mkfifo has:
 (defn ^err Mkfifo
@@ -11073,11 +11131,17 @@ JOKER FUNC syscall.Mknod has:
    :go "mknod(path, mode, dev)"}
   [^String path, mode, ^Int dev])
 
+JOKER FUNC syscall.Mknodat has:
+(defn ^err Mknodat
+  {:added "1.0"
+   :go "mknodat(dirfd, path, mode, dev)"}
+  [^Int dirfd, ^String path, mode, ^Int dev])
+
 JOKER FUNC syscall.Mlock has:
 ;; (defn ^err Mlock
 ;;   {:added "1.0"
 ;;    :go "mlock(b)"}
-;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/syscall/zsyscall_darwin_amd64.go:806:14) b])
+;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/syscall/zsyscall_linux_amd64.go:1089:14) b])
 
 JOKER FUNC syscall.Mlockall has:
 (defn ^err Mlockall
@@ -11091,17 +11155,23 @@ JOKER FUNC syscall.Mmap has:
    :go "mmap(fd, offset, length, prot, flags)"}
   [^Int fd, offset, ^Int length, ^Int prot, ^Int flags])
 
+JOKER FUNC syscall.Mount has:
+(defn ^err Mount
+  {:added "1.0"
+   :go "mount(source, target, fstype, flags, data)"}
+  [^String source, ^String target, ^String fstype, flags, ^String data])
+
 JOKER FUNC syscall.Mprotect has:
 ;; (defn ^err Mprotect
 ;;   {:added "1.0"
 ;;    :go "mprotect(b, prot)"}
-;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/syscall/zsyscall_darwin_amd64.go:832:17) b, ^Int prot])
+;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/syscall/zsyscall_linux_amd64.go:1073:17) b, ^Int prot])
 
 JOKER FUNC syscall.Munlock has:
 ;; (defn ^err Munlock
 ;;   {:added "1.0"
 ;;    :go "munlock(b)"}
-;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/syscall/zsyscall_darwin_amd64.go:848:16) b])
+;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/syscall/zsyscall_linux_amd64.go:1105:16) b])
 
 JOKER FUNC syscall.Munlockall has:
 (defn ^err Munlockall
@@ -11113,7 +11183,20 @@ JOKER FUNC syscall.Munmap has:
 ;; (defn ^err Munmap
 ;;   {:added "1.0"
 ;;    :go "munmap(b)"}
-;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/syscall/syscall_bsd.go:552:15) b])
+;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/syscall/syscall_linux.go:1001:15) b])
+
+JOKER FUNC syscall.Nanosleep has:
+;; (defn ^err Nanosleep
+;;   {:added "1.0"
+;;    :go "nanosleep(time, leftover)"}
+;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: ../GOSRC/syscall/zsyscall_linux_amd64.go:675:21) time, ^ABEND881(unrecognized Expr type *ast.StarExpr at: ../GOSRC/syscall/zsyscall_linux_amd64.go:675:41) leftover])
+
+JOKER FUNC syscall.NetlinkRIB has:
+;; (defn ^[[ABEND042(cannot find typename syscall.byte)] Error] NetlinkRIB
+;;   "NetlinkRIB returns routing information base, as known as RIB, which\nconsists of network facility information, states and parameters.\n"
+;;   {:added "1.0"
+;;    :go "netlinkRIB(proto, family)"}
+;;   [^Int proto, ^Int family])
 
 JOKER FUNC syscall.NsecToTimespec has:
 (defn ^{:sec Sec, :nsec Nsec} NsecToTimespec
@@ -11123,17 +11206,23 @@ JOKER FUNC syscall.NsecToTimespec has:
   [nsec])
 
 JOKER FUNC syscall.NsecToTimeval has:
-;; (defn ^{:sec Sec, :usec Usec, :pad_cgo_0 ^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/syscall/ztypes_darwin_amd64.go:31:12) Pad_cgo_0} NsecToTimeval
-;;   "NsecToTimeval takes a number of nanoseconds since the Unix epoch\nand returns the corresponding Timeval value.\n"
-;;   {:added "1.0"
-;;    :go "nsecToTimeval(nsec)"}
-;;   [nsec])
+(defn ^{:sec Sec, :usec Usec} NsecToTimeval
+  "NsecToTimeval takes a number of nanoseconds since the Unix epoch\nand returns the corresponding Timeval value.\n"
+  {:added "1.0"
+   :go "nsecToTimeval(nsec)"}
+  [nsec])
 
 JOKER FUNC syscall.Open has:
 (defn ^[fd err] Open
   {:added "1.0"
    :go "open(path, mode, perm)"}
   [^String path, ^Int mode, perm])
+
+JOKER FUNC syscall.Openat has:
+(defn ^[fd err] Openat
+  {:added "1.0"
+   :go "openat(dirfd, path, flags, mode)"}
+  [^Int dirfd, ^String path, ^Int flags, mode])
 
 JOKER FUNC syscall.ParseDirent has:
 ;; (defn ^[consumed count newnames] ParseDirent
@@ -11142,19 +11231,19 @@ JOKER FUNC syscall.ParseDirent has:
 ;;    :go "parseDirent(buf, max, names)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/syscall/dirent.go:64:22) buf, ^Int max, ^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/syscall/dirent.go:64:45) names])
 
-JOKER FUNC syscall.ParseRoutingMessage has:
-;; (defn ^[msgs err] ParseRoutingMessage
-;;   "ParseRoutingMessage parses b as routing messages and returns the\nslice containing the RoutingMessage interfaces.\n\nDeprecated: Use golang.org/x/net/route instead.\n"
+JOKER FUNC syscall.ParseNetlinkMessage has:
+;; (defn ^[[{:header Header, :data ^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/syscall/netlink_linux.go:111:9) Data}] Error] ParseNetlinkMessage
+;;   "ParseNetlinkMessage parses b as an array of netlink messages and\nreturns the slice containing the NetlinkMessage structures.\n"
 ;;   {:added "1.0"
-;;    :go "parseRoutingMessage(b)"}
-;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/syscall/route_bsd.go:331:28) b])
+;;    :go "parseNetlinkMessage(b)"}
+;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/syscall/netlink_linux.go:116:28) b])
 
-JOKER FUNC syscall.ParseRoutingSockaddr has:
-;; (defn ^[[ABEND883(unrecognized Expr type *ast.InterfaceType at: ../GOSRC/syscall/syscall_unix.go:205:15)] Error] ParseRoutingSockaddr
-;;   "ParseRoutingSockaddr parses msg's payload as raw sockaddrs and\nreturns the slice containing the Sockaddr interfaces.\n\nDeprecated: Use golang.org/x/net/route instead.\n"
+JOKER FUNC syscall.ParseNetlinkRouteAttr has:
+;; (defn ^[[{:attr Attr, :value ^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/syscall/netlink_linux.go:142:8) Value}] Error] ParseNetlinkRouteAttr
+;;   "ParseNetlinkRouteAttr parses m's payload as an array of netlink\nroute attributes and returns the slice containing the\nNetlinkRouteAttr structures.\n"
 ;;   {:added "1.0"
-;;    :go "parseRoutingSockaddr(msg)"}
-;;   [msg])
+;;    :go "parseNetlinkRouteAttr(m)"}
+;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: ../GOSRC/syscall/netlink_linux.go:148:30) m])
 
 JOKER FUNC syscall.ParseSocketControlMessage has:
 ;; (defn ^[[{:header Header, :data ^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/syscall/sockcmsg_unix.go:44:9) Data}] Error] ParseSocketControlMessage
@@ -11163,6 +11252,13 @@ JOKER FUNC syscall.ParseSocketControlMessage has:
 ;;    :go "parseSocketControlMessage(b)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/syscall/sockcmsg_unix.go:49:34) b])
 
+JOKER FUNC syscall.ParseUnixCredentials has:
+;; (defn ^[{:pid Pid, :uid Uid, :gid Gid} Error] ParseUnixCredentials
+;;   "ParseUnixCredentials decodes a socket control message that contains\ncredentials in a Ucred structure. To receive such a message, the\nSO_PASSCRED option must be enabled on the socket.\n"
+;;   {:added "1.0"
+;;    :go "parseUnixCredentials(m)"}
+;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: ../GOSRC/syscall/sockcmsg_linux.go:27:29) m])
+
 JOKER FUNC syscall.ParseUnixRights has:
 ;; (defn ^[[Int] Error] ParseUnixRights
 ;;   "ParseUnixRights decodes a socket control message that contains an\ninteger array of open file descriptors from another process.\n"
@@ -11170,30 +11266,47 @@ JOKER FUNC syscall.ParseUnixRights has:
 ;;    :go "parseUnixRights(m)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: ../GOSRC/syscall/sockcmsg_unix.go:91:24) m])
 
-JOKER FUNC syscall.Pathconf has:
-(defn ^[val err] Pathconf
+JOKER FUNC syscall.Pause has:
+(defn ^err Pause
   {:added "1.0"
-   :go "pathconf(path, name)"}
-  [^String path, ^Int name])
+   :go "pause()"}
+  [])
 
 JOKER FUNC syscall.Pipe has:
 ;; (defn ^err Pipe
 ;;   {:added "1.0"
 ;;    :go "pipe(p)"}
-;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/syscall/syscall_darwin.go:168:13) p])
+;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/syscall/syscall_linux_amd64.go:102:13) p])
+
+JOKER FUNC syscall.Pipe2 has:
+;; (defn ^err Pipe2
+;;   {:added "1.0"
+;;    :go "pipe2(p, flags)"}
+;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/syscall/syscall_linux_amd64.go:115:14) p, ^Int flags])
+
+JOKER FUNC syscall.PivotRoot has:
+(defn ^err PivotRoot
+  {:added "1.0"
+   :go "pivotRoot(newroot, putold)"}
+  [^String newroot, ^String putold])
 
 JOKER FUNC syscall.Pread has:
 ;; (defn ^[n err] Pread
 ;;   {:added "1.0"
 ;;    :go "pread(fd, p, offset)"}
-;;   [^Int fd, ^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/syscall/zsyscall_darwin_amd64.go:906:22) p, offset])
+;;   [^Int fd, ^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/syscall/zsyscall_linux_amd64.go:1304:22) p, offset])
 
 JOKER FUNC syscall.PtraceAttach has:
 (defn ^err PtraceAttach
-  "sys   ptrace(request int, pid int, addr uintptr, data uintptr) (err error)\n"
   {:added "1.0"
    :go "ptraceAttach(pid)"}
   [^Int pid])
+
+JOKER FUNC syscall.PtraceCont has:
+(defn ^err PtraceCont
+  {:added "1.0"
+   :go "ptraceCont(pid, signal)"}
+  [^Int pid, ^Int signal])
 
 JOKER FUNC syscall.PtraceDetach has:
 (defn ^err PtraceDetach
@@ -11201,11 +11314,71 @@ JOKER FUNC syscall.PtraceDetach has:
    :go "ptraceDetach(pid)"}
   [^Int pid])
 
+JOKER FUNC syscall.PtraceGetEventMsg has:
+(defn ^[msg err] PtraceGetEventMsg
+  {:added "1.0"
+   :go "ptraceGetEventMsg(pid)"}
+  [^Int pid])
+
+JOKER FUNC syscall.PtraceGetRegs has:
+;; (defn ^err PtraceGetRegs
+;;   {:added "1.0"
+;;    :go "ptraceGetRegs(pid, regsout)"}
+;;   [^Int pid, ^ABEND881(unrecognized Expr type *ast.StarExpr at: ../GOSRC/syscall/syscall_linux.go:823:37) regsout])
+
+JOKER FUNC syscall.PtracePeekData has:
+;; (defn ^[count err] PtracePeekData
+;;   {:added "1.0"
+;;    :go "ptracePeekData(pid, addr, out)"}
+;;   [^Int pid, addr, ^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/syscall/syscall_linux.go:760:48) out])
+
+JOKER FUNC syscall.PtracePeekText has:
+;; (defn ^[count err] PtracePeekText
+;;   {:added "1.0"
+;;    :go "ptracePeekText(pid, addr, out)"}
+;;   [^Int pid, addr, ^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/syscall/syscall_linux.go:756:48) out])
+
+JOKER FUNC syscall.PtracePokeData has:
+;; (defn ^[count err] PtracePokeData
+;;   {:added "1.0"
+;;    :go "ptracePokeData(pid, addr, data)"}
+;;   [^Int pid, addr, ^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/syscall/syscall_linux.go:819:49) data])
+
+JOKER FUNC syscall.PtracePokeText has:
+;; (defn ^[count err] PtracePokeText
+;;   {:added "1.0"
+;;    :go "ptracePokeText(pid, addr, data)"}
+;;   [^Int pid, addr, ^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/syscall/syscall_linux.go:815:49) data])
+
+JOKER FUNC syscall.PtraceSetOptions has:
+(defn ^err PtraceSetOptions
+  {:added "1.0"
+   :go "ptraceSetOptions(pid, options)"}
+  [^Int pid, ^Int options])
+
+JOKER FUNC syscall.PtraceSetRegs has:
+;; (defn ^err PtraceSetRegs
+;;   {:added "1.0"
+;;    :go "ptraceSetRegs(pid, regs)"}
+;;   [^Int pid, ^ABEND881(unrecognized Expr type *ast.StarExpr at: ../GOSRC/syscall/syscall_linux.go:827:34) regs])
+
+JOKER FUNC syscall.PtraceSingleStep has:
+(defn ^err PtraceSingleStep
+  {:added "1.0"
+   :go "ptraceSingleStep(pid)"}
+  [^Int pid])
+
+JOKER FUNC syscall.PtraceSyscall has:
+(defn ^err PtraceSyscall
+  {:added "1.0"
+   :go "ptraceSyscall(pid, signal)"}
+  [^Int pid, ^Int signal])
+
 JOKER FUNC syscall.Pwrite has:
 ;; (defn ^[n err] Pwrite
 ;;   {:added "1.0"
 ;;    :go "pwrite(fd, p, offset)"}
-;;   [^Int fd, ^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/syscall/zsyscall_darwin_amd64.go:923:23) p, offset])
+;;   [^Int fd, ^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/syscall/zsyscall_linux_amd64.go:1321:23) p, offset])
 
 JOKER FUNC syscall.RawSyscall has:
 (defn ^[r1 r2 err] RawSyscall
@@ -11229,13 +11402,19 @@ JOKER FUNC syscall.ReadDirent has:
 ;; (defn ^[n err] ReadDirent
 ;;   {:added "1.0"
 ;;    :go "readDirent(fd, buf)"}
-;;   [^Int fd, ^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/syscall/syscall_bsd.go:65:29) buf])
+;;   [^Int fd, ^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/syscall/syscall_linux.go:862:29) buf])
 
 JOKER FUNC syscall.Readlink has:
 ;; (defn ^[n err] Readlink
 ;;   {:added "1.0"
 ;;    :go "readlink(path, buf)"}
-;;   [^String path, ^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/syscall/zsyscall_darwin_amd64.go:957:32) buf])
+;;   [^String path, ^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/syscall/syscall_linux.go:149:32) buf])
+
+JOKER FUNC syscall.Reboot has:
+(defn ^err Reboot
+  {:added "1.0"
+   :go "reboot(cmd)"}
+  [^Int cmd])
 
 JOKER FUNC syscall.Recvfrom has:
 ;; (defn ^[n from err] Recvfrom
@@ -11247,44 +11426,43 @@ JOKER FUNC syscall.Recvmsg has:
 ;; (defn ^[n oobn recvflags from err] Recvmsg
 ;;   {:added "1.0"
 ;;    :go "recvmsg(fd, p, oob, flags)"}
-;;   [^Int fd, ^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/syscall/syscall_bsd.go:358:29) p, ^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/syscall/syscall_bsd.go:358:29) oob, ^Int flags])
+;;   [^Int fd, ^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/syscall/syscall_linux.go:617:29) p, ^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/syscall/syscall_linux.go:617:29) oob, ^Int flags])
+
+JOKER FUNC syscall.Removexattr has:
+(defn ^err Removexattr
+  {:added "1.0"
+   :go "removexattr(path, attr)"}
+  [^String path, ^String attr])
 
 JOKER FUNC syscall.Rename has:
 (defn ^err Rename
   {:added "1.0"
-   :go "rename(from, to)"}
-  [^String from, ^String to])
+   :go "rename(oldpath, newpath)"}
+  [^String oldpath, ^String newpath])
 
-JOKER FUNC syscall.Revoke has:
-(defn ^err Revoke
+JOKER FUNC syscall.Renameat has:
+(defn ^err Renameat
   {:added "1.0"
-   :go "revoke(path)"}
-  [^String path])
+   :go "renameat(olddirfd, oldpath, newdirfd, newpath)"}
+  [^Int olddirfd, ^String oldpath, ^Int newdirfd, ^String newpath])
 
 JOKER FUNC syscall.Rmdir has:
-(defn ^err Rmdir
+(defn ^Error Rmdir
   {:added "1.0"
    :go "rmdir(path)"}
   [^String path])
 
-JOKER FUNC syscall.RouteRIB has:
-;; (defn ^[[ABEND042(cannot find typename syscall.byte)] Error] RouteRIB
-;;   "RouteRIB returns routing information base, as known as RIB,\nwhich consists of network facility information, states and\nparameters.\n\nDeprecated: Use golang.org/x/net/route instead.\n"
-;;   {:added "1.0"
-;;    :go "routeRIB(facility, param)"}
-;;   [^Int facility, ^Int param])
-
 JOKER FUNC syscall.Seek has:
-(defn ^[newoffset err] Seek
+(defn ^[off err] Seek
   {:added "1.0"
    :go "seek(fd, offset, whence)"}
   [^Int fd, offset, ^Int whence])
 
 JOKER FUNC syscall.Select has:
-;; (defn ^err Select
+;; (defn ^[n err] Select
 ;;   {:added "1.0"
-;;    :go "select(n, r, w, e, timeout)"}
-;;   [^Int n, ^ABEND881(unrecognized Expr type *ast.StarExpr at: ../GOSRC/syscall/zsyscall_darwin_amd64.go:1040:22) r, ^ABEND881(unrecognized Expr type *ast.StarExpr at: ../GOSRC/syscall/zsyscall_darwin_amd64.go:1040:32) w, ^ABEND881(unrecognized Expr type *ast.StarExpr at: ../GOSRC/syscall/zsyscall_darwin_amd64.go:1040:42) e, ^ABEND881(unrecognized Expr type *ast.StarExpr at: ../GOSRC/syscall/zsyscall_darwin_amd64.go:1040:58) timeout])
+;;    :go "select(nfd, r, w, e, timeout)"}
+;;   [^Int nfd, ^ABEND881(unrecognized Expr type *ast.StarExpr at: ../GOSRC/syscall/zsyscall_linux_amd64.go:1349:24) r, ^ABEND881(unrecognized Expr type *ast.StarExpr at: ../GOSRC/syscall/zsyscall_linux_amd64.go:1349:34) w, ^ABEND881(unrecognized Expr type *ast.StarExpr at: ../GOSRC/syscall/zsyscall_linux_amd64.go:1349:44) e, ^ABEND881(unrecognized Expr type *ast.StarExpr at: ../GOSRC/syscall/zsyscall_linux_amd64.go:1349:60) timeout])
 
 JOKER FUNC syscall.Sendfile has:
 ;; (defn ^[written err] Sendfile
@@ -11296,13 +11474,13 @@ JOKER FUNC syscall.Sendmsg has:
 ;; (defn ^err Sendmsg
 ;;   {:added "1.0"
 ;;    :go "sendmsg(fd, p, oob, to, flags)"}
-;;   [^Int fd, ^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/syscall/syscall_bsd.go:394:29) p, ^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/syscall/syscall_bsd.go:394:29) oob, to, ^Int flags])
+;;   [^Int fd, ^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/syscall/syscall_linux.go:658:29) p, ^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/syscall/syscall_linux.go:658:29) oob, to, ^Int flags])
 
 JOKER FUNC syscall.SendmsgN has:
 ;; (defn ^[n err] SendmsgN
 ;;   {:added "1.0"
 ;;    :go "sendmsgN(fd, p, oob, to, flags)"}
-;;   [^Int fd, ^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/syscall/syscall_bsd.go:399:30) p, ^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/syscall/syscall_bsd.go:399:30) oob, to, ^Int flags])
+;;   [^Int fd, ^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/syscall/syscall_linux.go:663:30) p, ^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/syscall/syscall_linux.go:663:30) oob, to, ^Int flags])
 
 JOKER FUNC syscall.Sendto has:
 ;; (defn ^err Sendto
@@ -11310,67 +11488,12 @@ JOKER FUNC syscall.Sendto has:
 ;;    :go "sendto(fd, p, flags, to)"}
 ;;   [^Int fd, ^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/syscall/syscall_unix.go:271:23) p, ^Int flags, to])
 
-JOKER FUNC syscall.SetBpf has:
-;; (defn ^Error SetBpf
-;;   "Deprecated: Use golang.org/x/net/bpf instead.\n"
-;;   {:added "1.0"
-;;    :go "setBpf(fd, i)"}
-;;   [^Int fd, ^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/syscall/bpf_bsd.go:146:23) i])
-
-JOKER FUNC syscall.SetBpfBuflen has:
-(defn ^[Int Error] SetBpfBuflen
+JOKER FUNC syscall.SetLsfPromisc has:
+(defn ^Error SetLsfPromisc
   "Deprecated: Use golang.org/x/net/bpf instead.\n"
   {:added "1.0"
-   :go "setBpfBuflen(fd, l)"}
-  [^Int fd, ^Int l])
-
-JOKER FUNC syscall.SetBpfDatalink has:
-(defn ^[Int Error] SetBpfDatalink
-  "Deprecated: Use golang.org/x/net/bpf instead.\n"
-  {:added "1.0"
-   :go "setBpfDatalink(fd, t)"}
-  [^Int fd, ^Int t])
-
-JOKER FUNC syscall.SetBpfHeadercmpl has:
-(defn ^Error SetBpfHeadercmpl
-  "Deprecated: Use golang.org/x/net/bpf instead.\n"
-  {:added "1.0"
-   :go "setBpfHeadercmpl(fd, f)"}
-  [^Int fd, ^Int f])
-
-JOKER FUNC syscall.SetBpfImmediate has:
-(defn ^Error SetBpfImmediate
-  "Deprecated: Use golang.org/x/net/bpf instead.\n"
-  {:added "1.0"
-   :go "setBpfImmediate(fd, m)"}
-  [^Int fd, ^Int m])
-
-JOKER FUNC syscall.SetBpfInterface has:
-(defn ^Error SetBpfInterface
-  "Deprecated: Use golang.org/x/net/bpf instead.\n"
-  {:added "1.0"
-   :go "setBpfInterface(fd, name)"}
-  [^Int fd, ^String name])
-
-JOKER FUNC syscall.SetBpfPromisc has:
-(defn ^Error SetBpfPromisc
-  "Deprecated: Use golang.org/x/net/bpf instead.\n"
-  {:added "1.0"
-   :go "setBpfPromisc(fd, m)"}
-  [^Int fd, ^Int m])
-
-JOKER FUNC syscall.SetBpfTimeout has:
-;; (defn ^Error SetBpfTimeout
-;;   "Deprecated: Use golang.org/x/net/bpf instead.\n"
-;;   {:added "1.0"
-;;    :go "setBpfTimeout(fd, tv)"}
-;;   [^Int fd, ^ABEND881(unrecognized Expr type *ast.StarExpr at: ../GOSRC/syscall/bpf_bsd.go:118:31) tv])
-
-JOKER FUNC syscall.SetKevent has:
-;; (defn SetKevent
-;;   {:added "1.0"
-;;    :go "setKevent(k, fd, mode, flags)"}
-;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: ../GOSRC/syscall/syscall_darwin_amd64.go:35:18) k, ^Int fd, ^Int mode, ^Int flags])
+   :go "setLsfPromisc(name, m)"}
+  [^String name, m])
 
 JOKER FUNC syscall.SetNonblock has:
 (defn ^err SetNonblock
@@ -11378,11 +11501,11 @@ JOKER FUNC syscall.SetNonblock has:
    :go "setNonblock(fd, nonblocking)"}
   [^Int fd, nonblocking])
 
-JOKER FUNC syscall.Setegid has:
-(defn ^err Setegid
-  {:added "1.0"
-   :go "setegid(egid)"}
-  [^Int egid])
+JOKER FUNC syscall.Setdomainname has:
+;; (defn ^err Setdomainname
+;;   {:added "1.0"
+;;    :go "setdomainname(p)"}
+;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/syscall/zsyscall_linux_amd64.go:782:22) p])
 
 JOKER FUNC syscall.Setenv has:
 (defn ^Error Setenv
@@ -11390,11 +11513,17 @@ JOKER FUNC syscall.Setenv has:
    :go "setenv(key, value)"}
   [^String key, ^String value])
 
-JOKER FUNC syscall.Seteuid has:
-(defn ^err Seteuid
+JOKER FUNC syscall.Setfsgid has:
+(defn ^err Setfsgid
   {:added "1.0"
-   :go "seteuid(euid)"}
-  [^Int euid])
+   :go "setfsgid(gid)"}
+  [^Int gid])
+
+JOKER FUNC syscall.Setfsuid has:
+(defn ^err Setfsuid
+  {:added "1.0"
+   :go "setfsuid(uid)"}
+  [^Int uid])
 
 JOKER FUNC syscall.Setgid has:
 (defn ^err Setgid
@@ -11406,13 +11535,13 @@ JOKER FUNC syscall.Setgroups has:
 ;; (defn ^err Setgroups
 ;;   {:added "1.0"
 ;;    :go "setgroups(gids)"}
-;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/syscall/syscall_bsd.go:53:21) gids])
+;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/syscall/syscall_linux.go:268:21) gids])
 
-JOKER FUNC syscall.Setlogin has:
-(defn ^err Setlogin
-  {:added "1.0"
-   :go "setlogin(name)"}
-  [^String name])
+JOKER FUNC syscall.Sethostname has:
+;; (defn ^err Sethostname
+;;   {:added "1.0"
+;;    :go "sethostname(p)"}
+;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/syscall/zsyscall_linux_amd64.go:798:20) p])
 
 JOKER FUNC syscall.Setpgid has:
 (defn ^err Setpgid
@@ -11426,17 +11555,23 @@ JOKER FUNC syscall.Setpriority has:
    :go "setpriority(which, who, prio)"}
   [^Int which, ^Int who, ^Int prio])
 
-JOKER FUNC syscall.Setprivexec has:
-(defn ^err Setprivexec
-  {:added "1.0"
-   :go "setprivexec(flag)"}
-  [^Int flag])
-
 JOKER FUNC syscall.Setregid has:
 (defn ^err Setregid
   {:added "1.0"
    :go "setregid(rgid, egid)"}
   [^Int rgid, ^Int egid])
+
+JOKER FUNC syscall.Setresgid has:
+(defn ^err Setresgid
+  {:added "1.0"
+   :go "setresgid(rgid, egid, sgid)"}
+  [^Int rgid, ^Int egid, ^Int sgid])
+
+JOKER FUNC syscall.Setresuid has:
+(defn ^err Setresuid
+  {:added "1.0"
+   :go "setresuid(ruid, euid, suid)"}
+  [^Int ruid, ^Int euid, ^Int suid])
 
 JOKER FUNC syscall.Setreuid has:
 (defn ^err Setreuid
@@ -11447,8 +11582,8 @@ JOKER FUNC syscall.Setreuid has:
 JOKER FUNC syscall.Setrlimit has:
 ;; (defn ^err Setrlimit
 ;;   {:added "1.0"
-;;    :go "setrlimit(which, lim)"}
-;;   [^Int which, ^ABEND881(unrecognized Expr type *ast.StarExpr at: ../GOSRC/syscall/zsyscall_darwin_amd64.go:1145:31) lim])
+;;    :go "setrlimit(resource, rlim)"}
+;;   [^Int resource, ^ABEND881(unrecognized Expr type *ast.StarExpr at: ../GOSRC/syscall/zsyscall_linux_amd64.go:1421:35) rlim])
 
 JOKER FUNC syscall.Setsid has:
 (defn ^[pid err] Setsid
@@ -11473,6 +11608,12 @@ JOKER FUNC syscall.SetsockoptIPMreq has:
 ;;   {:added "1.0"
 ;;    :go "setsockoptIPMreq(fd, level, opt, mreq)"}
 ;;   [^Int fd, ^Int level, ^Int opt, ^ABEND881(unrecognized Expr type *ast.StarExpr at: ../GOSRC/syscall/syscall_unix.go:292:48) mreq])
+
+JOKER FUNC syscall.SetsockoptIPMreqn has:
+;; (defn ^err SetsockoptIPMreqn
+;;   {:added "1.0"
+;;    :go "setsockoptIPMreqn(fd, level, opt, mreq)"}
+;;   [^Int fd, ^Int level, ^Int opt, ^ABEND881(unrecognized Expr type *ast.StarExpr at: ../GOSRC/syscall/syscall_linux.go:613:49) mreq])
 
 JOKER FUNC syscall.SetsockoptIPv6Mreq has:
 ;; (defn ^err SetsockoptIPv6Mreq
@@ -11513,8 +11654,8 @@ JOKER FUNC syscall.SetsockoptTimeval has:
 JOKER FUNC syscall.Settimeofday has:
 ;; (defn ^err Settimeofday
 ;;   {:added "1.0"
-;;    :go "settimeofday(tp)"}
-;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: ../GOSRC/syscall/zsyscall_darwin_amd64.go:1166:22) tp])
+;;    :go "settimeofday(tv)"}
+;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: ../GOSRC/syscall/zsyscall_linux_amd64.go:835:22) tv])
 
 JOKER FUNC syscall.Setuid has:
 (defn ^err Setuid
@@ -11522,11 +11663,17 @@ JOKER FUNC syscall.Setuid has:
    :go "setuid(uid)"}
   [^Int uid])
 
+JOKER FUNC syscall.Setxattr has:
+;; (defn ^err Setxattr
+;;   {:added "1.0"
+;;    :go "setxattr(path, attr, data, flags)"}
+;;   [^String path, ^String attr, ^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/syscall/zsyscall_linux_amd64.go:855:46) data, ^Int flags])
+
 JOKER FUNC syscall.Shutdown has:
 (defn ^err Shutdown
   {:added "1.0"
-   :go "shutdown(s, how)"}
-  [^Int s, ^Int how])
+   :go "shutdown(fd, how)"}
+  [^Int fd, ^Int how])
 
 JOKER FUNC syscall.SlicePtrFromStrings has:
 ;; (defn ^[[ABEND042(cannot find typename syscall.byte)] Error] SlicePtrFromStrings
@@ -11547,6 +11694,12 @@ JOKER FUNC syscall.Socketpair has:
    :go "socketpair(domain, typ, proto)"}
   [^Int domain, ^Int typ, ^Int proto])
 
+JOKER FUNC syscall.Splice has:
+;; (defn ^[n err] Splice
+;;   {:added "1.0"
+;;    :go "splice(rfd, roff, wfd, woff, len, flags)"}
+;;   [^Int rfd, ^ABEND881(unrecognized Expr type *ast.StarExpr at: ../GOSRC/syscall/zsyscall_linux_amd64.go:1451:27) roff, ^Int wfd, ^ABEND881(unrecognized Expr type *ast.StarExpr at: ../GOSRC/syscall/zsyscall_linux_amd64.go:1451:49) woff, ^Int len, ^Int flags])
+
 JOKER FUNC syscall.StartProcess has:
 ;; (defn ^[pid handle err] StartProcess
 ;;   "StartProcess wraps ForkExec for package os.\n"
@@ -11558,13 +11711,13 @@ JOKER FUNC syscall.Stat has:
 ;; (defn ^err Stat
 ;;   {:added "1.0"
 ;;    :go "stat(path, stat)"}
-;;   [^String path, ^ABEND881(unrecognized Expr type *ast.StarExpr at: ../GOSRC/syscall/zsyscall_darwin_amd64.go:1186:29) stat])
+;;   [^String path, ^ABEND881(unrecognized Expr type *ast.StarExpr at: ../GOSRC/syscall/syscall_linux_amd64.go:65:29) stat])
 
 JOKER FUNC syscall.Statfs has:
 ;; (defn ^err Statfs
 ;;   {:added "1.0"
-;;    :go "statfs(path, stat)"}
-;;   [^String path, ^ABEND881(unrecognized Expr type *ast.StarExpr at: ../GOSRC/syscall/zsyscall_darwin_amd64.go:1201:31) stat])
+;;    :go "statfs(path, buf)"}
+;;   [^String path, ^ABEND881(unrecognized Expr type *ast.StarExpr at: ../GOSRC/syscall/zsyscall_linux_amd64.go:1462:30) buf])
 
 JOKER FUNC syscall.StringBytePtr has:
 ;; (defn ^ABEND042(cannot find typename syscall.byte) StringBytePtr
@@ -11590,14 +11743,20 @@ JOKER FUNC syscall.StringSlicePtr has:
 JOKER FUNC syscall.Symlink has:
 (defn ^err Symlink
   {:added "1.0"
-   :go "symlink(path, link)"}
-  [^String path, ^String link])
+   :go "symlink(oldpath, newpath)"}
+  [^String oldpath, ^String newpath])
 
 JOKER FUNC syscall.Sync has:
-(defn ^err Sync
+;; (defn Sync
+;;   {:added "1.0"
+;;    :go "sync()"}
+;;   [])
+
+JOKER FUNC syscall.SyncFileRange has:
+(defn ^err SyncFileRange
   {:added "1.0"
-   :go "sync()"}
-  [])
+   :go "syncFileRange(fd, off, n, flags)"}
+  [^Int fd, off, n, ^Int flags])
 
 JOKER FUNC syscall.Syscall has:
 (defn ^[r1 r2 err] Syscall
@@ -11611,23 +11770,35 @@ JOKER FUNC syscall.Syscall6 has:
    :go "syscall6(trap, a1, a2, a3, a4, a5, a6)"}
   [trap, a1, a2, a3, a4, a5, a6])
 
-JOKER FUNC syscall.Syscall9 has:
-(defn ^[r1 r2 err] Syscall9
-  {:added "1.0"
-   :go "syscall9(trap, a1, a2, a3, a4, a5, a6, a7, a8, a9)"}
-  [trap, a1, a2, a3, a4, a5, a6, a7, a8, a9])
+JOKER FUNC syscall.Sysinfo has:
+;; (defn ^err Sysinfo
+;;   {:added "1.0"
+;;    :go "sysinfo(info)"}
+;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: ../GOSRC/syscall/zsyscall_linux_amd64.go:888:19) info])
 
-JOKER FUNC syscall.Sysctl has:
-(defn ^[value err] Sysctl
+JOKER FUNC syscall.Tee has:
+(defn ^[n err] Tee
   {:added "1.0"
-   :go "sysctl(name)"}
-  [^String name])
+   :go "tee(rfd, wfd, len, flags)"}
+  [^Int rfd, ^Int wfd, ^Int len, ^Int flags])
 
-JOKER FUNC syscall.SysctlUint32 has:
-(defn ^[value err] SysctlUint32
+JOKER FUNC syscall.Tgkill has:
+(defn ^err Tgkill
   {:added "1.0"
-   :go "sysctlUint32(name)"}
-  [^String name])
+   :go "tgkill(tgid, tid, sig)"}
+  [^Int tgid, ^Int tid, sig])
+
+JOKER FUNC syscall.Time has:
+;; (defn ^[tt err] Time
+;;   {:added "1.0"
+;;    :go "time(t)"}
+;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: ../GOSRC/syscall/syscall_linux_amd64.go:80:13) t])
+
+JOKER FUNC syscall.Times has:
+;; (defn ^[ticks err] Times
+;;   {:added "1.0"
+;;    :go "times(tms)"}
+;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: ../GOSRC/syscall/zsyscall_linux_amd64.go:919:16) tms])
 
 JOKER FUNC syscall.TimespecToNsec has:
 ;; (defn ^ABEND042(cannot find typename syscall.int64) TimespecToNsec
@@ -11652,14 +11823,21 @@ JOKER FUNC syscall.Truncate has:
 JOKER FUNC syscall.Umask has:
 (defn ^oldmask Umask
   {:added "1.0"
-   :go "umask(newmask)"}
-  [^Int newmask])
+   :go "umask(mask)"}
+  [^Int mask])
 
-JOKER FUNC syscall.Undelete has:
-(defn ^err Undelete
-  {:added "1.0"
-   :go "undelete(path)"}
-  [^String path])
+JOKER FUNC syscall.Uname has:
+;; (defn ^err Uname
+;;   {:added "1.0"
+;;    :go "uname(buf)"}
+;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: ../GOSRC/syscall/zsyscall_linux_amd64.go:938:16) buf])
+
+JOKER FUNC syscall.UnixCredentials has:
+;; (defn ^[ABEND042(cannot find typename syscall.byte)] UnixCredentials
+;;   "UnixCredentials encodes credentials into a socket control message\nfor sending to another process. This can be used for\nauthentication.\n"
+;;   {:added "1.0"
+;;    :go "unixCredentials(ucred)"}
+;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: ../GOSRC/syscall/sockcmsg_linux.go:14:28) ucred])
 
 JOKER FUNC syscall.UnixRights has:
 ;; (defn ^[ABEND042(cannot find typename syscall.byte)] UnixRights
@@ -11669,16 +11847,22 @@ JOKER FUNC syscall.UnixRights has:
 ;;   [^ABEND881(unrecognized Expr type *ast.Ellipsis at: ../GOSRC/syscall/sockcmsg_unix.go:74:21) fds])
 
 JOKER FUNC syscall.Unlink has:
-(defn ^err Unlink
+(defn ^Error Unlink
   {:added "1.0"
    :go "unlink(path)"}
   [^String path])
 
+JOKER FUNC syscall.Unlinkat has:
+(defn ^Error Unlinkat
+  {:added "1.0"
+   :go "unlinkat(dirfd, path)"}
+  [^Int dirfd, ^String path])
+
 JOKER FUNC syscall.Unmount has:
 (defn ^err Unmount
   {:added "1.0"
-   :go "unmount(path, flags)"}
-  [^String path, ^Int flags])
+   :go "unmount(target, flags)"}
+  [^String target, ^Int flags])
 
 JOKER FUNC syscall.Unsetenv has:
 (defn ^Error Unsetenv
@@ -11686,23 +11870,41 @@ JOKER FUNC syscall.Unsetenv has:
    :go "unsetenv(key)"}
   [^String key])
 
+JOKER FUNC syscall.Unshare has:
+(defn ^err Unshare
+  {:added "1.0"
+   :go "unshare(flags)"}
+  [^Int flags])
+
+JOKER FUNC syscall.Ustat has:
+;; (defn ^err Ustat
+;;   {:added "1.0"
+;;    :go "ustat(dev, ubuf)"}
+;;   [^Int dev, ^ABEND881(unrecognized Expr type *ast.StarExpr at: ../GOSRC/syscall/zsyscall_linux_amd64.go:973:26) ubuf])
+
+JOKER FUNC syscall.Utime has:
+;; (defn ^err Utime
+;;   {:added "1.0"
+;;    :go "utime(path, buf)"}
+;;   [^String path, ^ABEND881(unrecognized Expr type *ast.StarExpr at: ../GOSRC/syscall/zsyscall_linux_amd64.go:983:29) buf])
+
 JOKER FUNC syscall.Utimes has:
 ;; (defn ^err Utimes
 ;;   {:added "1.0"
 ;;    :go "utimes(path, tv)"}
-;;   [^String path, ^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/syscall/syscall_bsd.go:502:29) tv])
+;;   [^String path, ^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/syscall/syscall_linux.go:179:29) tv])
 
 JOKER FUNC syscall.UtimesNano has:
-;; (defn ^Error UtimesNano
+;; (defn ^err UtimesNano
 ;;   {:added "1.0"
 ;;    :go "utimesNano(path, ts)"}
-;;   [^String path, ^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/syscall/syscall_bsd.go:509:33) ts])
+;;   [^String path, ^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/syscall/syscall_linux.go:188:33) ts])
 
 JOKER FUNC syscall.Wait4 has:
 ;; (defn ^[wpid err] Wait4
 ;;   {:added "1.0"
 ;;    :go "wait4(pid, wstatus, options, rusage)"}
-;;   [^Int pid, ^ABEND881(unrecognized Expr type *ast.StarExpr at: ../GOSRC/syscall/syscall_bsd.go:127:29) wstatus, ^Int options, ^ABEND881(unrecognized Expr type *ast.StarExpr at: ../GOSRC/syscall/syscall_bsd.go:127:62) rusage])
+;;   [^Int pid, ^ABEND881(unrecognized Expr type *ast.StarExpr at: ../GOSRC/syscall/syscall_linux.go:339:29) wstatus, ^Int options, ^ABEND881(unrecognized Expr type *ast.StarExpr at: ../GOSRC/syscall/syscall_linux.go:339:62) rusage])
 
 JOKER FUNC syscall.Write has:
 ;; (defn ^[n err] Write
@@ -13940,9 +14142,9 @@ GO FUNC syscall.Exit has:
 // 	...ABEND: TODO...
 // }
 
-GO FUNC syscall.SetKevent has:
-// func setKevent(k ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/syscall/syscall_darwin_amd64.go:35:18), fd int, mode int, flags int)  {
-// 	 := syscall.SetKevent(k, fd, mode, flags)
+GO FUNC syscall.Sync has:
+// func sync()  {
+// 	 := syscall.Sync()
 // 	...ABEND: TODO...
 // }
 
@@ -14036,4 +14238,4 @@ GO FUNC zip.RegisterDecompressor has:
 // 	...ABEND: TODO...
 // }
 
-Totals: types=1034 functions=1523 receivers=6082
+Totals: types=1025 functions=1562 receivers=6046
