@@ -621,12 +621,16 @@ func typeAsClojure(pkg string, e Expr) string {
 		default:
 			return namedTypeAsClojure(pkg, v.Name)
 		}
+/*
 	case *ArrayType:
 		return "[" + typeAsClojure(pkg, v.Elt) + "]"
+*/
 	case *StarExpr:
 		return typeAsClojure(pkg, v.X)
+/*
 	case *StructType:
 		return "{" + structAsClojure(pkg, v.Fields) + "}"
+*/
 	default:
 		return fmt.Sprintf("ABEND883(unrecognized Expr type %T at: %s)", e, whereAt(e.Pos()))
 	}
