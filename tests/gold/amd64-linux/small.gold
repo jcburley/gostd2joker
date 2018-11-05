@@ -29,84 +29,84 @@ TYPE url.Userinfo:
 TYPE url.Values:
   tests/small/net/url/url.go
 JOKER FUNC net.LookupAddr has:
-(defn ^[names err] LookupAddr
-  "LookupAddr performs a reverse lookup for the given address, returning a list\nof names mapping to that address.\n\nWhen using the host C library resolver, at most one result will be\nreturned. To bypass the host resolver, use a custom Resolver.\n"
-  {:added "1.0"
-   :go "lookupAddr(addr)"}
-  [^String addr])
+;; (defn LookupAddr
+;;   "LookupAddr performs a reverse lookup for the given address, returning a list\nof names mapping to that address.\n\nWhen using the host C library resolver, at most one result will be\nreturned. To bypass the host resolver, use a custom Resolver.\n"
+;;   {:added "1.0"
+;;    :go "lookupAddr(addr)"}
+;;   [^String addr])
 
 JOKER FUNC net.LookupCNAME has:
-(defn ^[cname err] LookupCNAME
-  "LookupCNAME returns the canonical name for the given host.\nCallers that do not care about the canonical name can call\nLookupHost or LookupIP directly; both take care of resolving\nthe canonical name as part of the lookup.\n\nA canonical name is the final name after following zero\nor more CNAME records.\nLookupCNAME does not return an error if host does not\ncontain DNS \"CNAME\" records, as long as host resolves to\naddress records.\n"
-  {:added "1.0"
-   :go "lookupCNAME(host)"}
-  [^String host])
+;; (defn LookupCNAME
+;;   "LookupCNAME returns the canonical name for the given host.\nCallers that do not care about the canonical name can call\nLookupHost or LookupIP directly; both take care of resolving\nthe canonical name as part of the lookup.\n\nA canonical name is the final name after following zero\nor more CNAME records.\nLookupCNAME does not return an error if host does not\ncontain DNS \"CNAME\" records, as long as host resolves to\naddress records.\n"
+;;   {:added "1.0"
+;;    :go "lookupCNAME(host)"}
+;;   [^String host])
 
 JOKER FUNC net.LookupHost has:
-(defn ^[addrs err] LookupHost
-  "LookupHost looks up the given host using the local resolver.\nIt returns a slice of that host's addresses.\n"
-  {:added "1.0"
-   :go "lookupHost(host)"}
-  [^String host])
+;; (defn LookupHost
+;;   "LookupHost looks up the given host using the local resolver.\nIt returns a slice of that host's addresses.\n"
+;;   {:added "1.0"
+;;    :go "lookupHost(host)"}
+;;   [^String host])
 
 JOKER FUNC net.LookupIP has:
-;; (defn ^[ABEND883(unrecognized Expr type *ast.ArrayType at: tests/small/net/lookup.go:177:29) Error] LookupIP
+;; (defn LookupIP
 ;;   "LookupIP looks up host using the local resolver.\nIt returns a slice of that host's IPv4 and IPv6 addresses.\n"
 ;;   {:added "1.0"
 ;;    :go "lookupIP(host)"}
 ;;   [^String host])
 
 JOKER FUNC net.LookupMX has:
-;; (defn ^[ABEND883(unrecognized Expr type *ast.ArrayType at: tests/small/net/lookup.go:358:29) Error] LookupMX
+;; (defn LookupMX
 ;;   "LookupMX returns the DNS MX records for the given domain name sorted by preference.\n"
 ;;   {:added "1.0"
 ;;    :go "lookupMX(name)"}
 ;;   [^String name])
 
 JOKER FUNC net.LookupNS has:
-;; (defn ^[ABEND883(unrecognized Expr type *ast.ArrayType at: tests/small/net/lookup.go:368:29) Error] LookupNS
+;; (defn LookupNS
 ;;   "LookupNS returns the DNS NS records for the given domain name.\n"
 ;;   {:added "1.0"
 ;;    :go "lookupNS(name)"}
 ;;   [^String name])
 
 JOKER FUNC net.LookupPort has:
-(defn ^[port err] LookupPort
-  "LookupPort looks up the port for the given network and service.\n"
-  {:added "1.0"
-   :go "lookupPort(network, service)"}
-  [^String network, ^String service])
+;; (defn LookupPort
+;;   "LookupPort looks up the port for the given network and service.\n"
+;;   {:added "1.0"
+;;    :go "lookupPort(network, service)"}
+;;   [^String network, ^String service])
 
 JOKER FUNC net.LookupSRV has:
-(defn ^[cname addrs err] LookupSRV
-  "LookupSRV tries to resolve an SRV query of the given service,\nprotocol, and domain name. The proto is \"tcp\" or \"udp\".\nThe returned records are sorted by priority and randomized\nby weight within a priority.\n\nLookupSRV constructs the DNS name to look up following RFC 2782.\nThat is, it looks up _service._proto.name. To accommodate services\npublishing SRV records under non-standard names, if both service\nand proto are empty strings, LookupSRV looks up name directly.\n"
-  {:added "1.0"
-   :go "lookupSRV(service, proto, name)"}
-  [^String service, ^String proto, ^String name])
+;; (defn LookupSRV
+;;   "LookupSRV tries to resolve an SRV query of the given service,\nprotocol, and domain name. The proto is \"tcp\" or \"udp\".\nThe returned records are sorted by priority and randomized\nby weight within a priority.\n\nLookupSRV constructs the DNS name to look up following RFC 2782.\nThat is, it looks up _service._proto.name. To accommodate services\npublishing SRV records under non-standard names, if both service\nand proto are empty strings, LookupSRV looks up name directly.\n"
+;;   {:added "1.0"
+;;    :go "lookupSRV(service, proto, name)"}
+;;   [^String service, ^String proto, ^String name])
 
 JOKER FUNC net.LookupTXT has:
-;; (defn ^[ABEND883(unrecognized Expr type *ast.ArrayType at: tests/small/net/lookup.go:378:30) Error] LookupTXT
+;; (defn LookupTXT
 ;;   "LookupTXT returns the DNS TXT records for the given domain name.\n"
 ;;   {:added "1.0"
 ;;    :go "lookupTXT(name)"}
 ;;   [^String name])
 
 JOKER FUNC url.Parse has:
-;; (defn ^[ABEND883(unrecognized Expr type *ast.StructType at: tests/small/net/url/url.go:344:10) Error] Parse
+;; (defn Parse
 ;;   "Parse parses rawurl into a URL structure.\n\nThe rawurl may be relative (a path, without a host) or absolute\n(starting with a scheme). Trying to parse a hostname and path\nwithout a scheme is invalid but may not necessarily return an\nerror, due to parsing ambiguities.\n"
 ;;   {:added "1.0"
 ;;    :go "parse(rawurl)"}
 ;;   [^String rawurl])
 
 JOKER FUNC url.ParseQuery has:
-;; (defn ^[ABEND883(unrecognized Expr type *ast.MapType at: tests/small/net/url/url.go:804:13) Error] ParseQuery
+;; (defn ParseQuery
 ;;   "ParseQuery parses the URL-encoded query string and returns\na map listing the values specified for each key.\nParseQuery always returns a non-nil map containing all the\nvalid query parameters found; err describes the first decoding error\nencountered, if any.\n\nQuery is expected to be a list of key=value settings separated by\nampersands or semicolons. A setting without an equals sign is\ninterpreted as a key set to an empty value.\n"
 ;;   {:added "1.0"
 ;;    :go "parseQuery(query)"}
 ;;   [^String query])
 
 JOKER FUNC url.ParseRequestURI has:
-;; (defn ^[ABEND883(unrecognized Expr type *ast.StructType at: tests/small/net/url/url.go:344:10) Error] ParseRequestURI
+;; (defn ParseRequestURI
 ;;   "ParseRequestURI parses rawurl into a URL structure. It assumes that\nrawurl was received in an HTTP request, so the rawurl is interpreted\nonly as an absolute URI or an absolute path.\nThe string rawurl is assumed not to have a #fragment suffix.\n(Web browsers strip #fragment before sending the URL to a web server.)\n"
 ;;   {:added "1.0"
 ;;    :go "parseRequestURI(rawurl)"}
@@ -120,11 +120,11 @@ JOKER FUNC url.PathEscape has:
   [^String s])
 
 JOKER FUNC url.PathUnescape has:
-(defn ^[String Error] PathUnescape
-  "PathUnescape does the inverse transformation of PathEscape,\nconverting each 3-byte encoded substring of the form \"%AB\" into the\nhex-decoded byte 0xAB. It returns an error if any % is not followed\nby two hexadecimal digits.\n\nPathUnescape is identical to QueryUnescape except that it does not\nunescape '+' to ' ' (space).\n"
-  {:added "1.0"
-   :go "pathUnescape(s)"}
-  [^String s])
+;; (defn PathUnescape
+;;   "PathUnescape does the inverse transformation of PathEscape,\nconverting each 3-byte encoded substring of the form \"%AB\" into the\nhex-decoded byte 0xAB. It returns an error if any % is not followed\nby two hexadecimal digits.\n\nPathUnescape is identical to QueryUnescape except that it does not\nunescape '+' to ' ' (space).\n"
+;;   {:added "1.0"
+;;    :go "pathUnescape(s)"}
+;;   [^String s])
 
 JOKER FUNC url.QueryEscape has:
 (defn ^String QueryEscape
@@ -134,24 +134,120 @@ JOKER FUNC url.QueryEscape has:
   [^String s])
 
 JOKER FUNC url.QueryUnescape has:
-(defn ^[String Error] QueryUnescape
-  "QueryUnescape does the inverse transformation of QueryEscape,\nconverting each 3-byte encoded substring of the form \"%AB\" into the\nhex-decoded byte 0xAB.\nIt returns an error if any % is not followed by two hexadecimal\ndigits.\n"
-  {:added "1.0"
-   :go "queryUnescape(s)"}
-  [^String s])
+;; (defn QueryUnescape
+;;   "QueryUnescape does the inverse transformation of QueryEscape,\nconverting each 3-byte encoded substring of the form \"%AB\" into the\nhex-decoded byte 0xAB.\nIt returns an error if any % is not followed by two hexadecimal\ndigits.\n"
+;;   {:added "1.0"
+;;    :go "queryUnescape(s)"}
+;;   [^String s])
 
 JOKER FUNC url.User has:
-;; (defn ^ABEND883(unrecognized Expr type *ast.StructType at: tests/small/net/url/url.go:378:15) User
+;; (defn User
 ;;   "User returns a Userinfo containing the provided username\nand no password set.\n"
 ;;   {:added "1.0"
 ;;    :go "user(username)"}
 ;;   [^String username])
 
 JOKER FUNC url.UserPassword has:
-;; (defn ^ABEND883(unrecognized Expr type *ast.StructType at: tests/small/net/url/url.go:378:15) UserPassword
+;; (defn UserPassword
 ;;   "UserPassword returns a Userinfo containing the provided username\nand password.\n\nThis functionality should only be used with legacy web sites.\nRFC 2396 warns that interpreting Userinfo this way\n``is NOT RECOMMENDED, because the passing of authentication\ninformation in clear text (such as URI) has proven to be a\nsecurity risk in almost every case where it has been used.''\n"
 ;;   {:added "1.0"
 ;;    :go "userPassword(username, password)"}
 ;;   [^String username, ^String password])
+
+GO FUNC net.LookupAddr has:
+// func lookupAddr(addr string) Object {
+// 	names, err := net.LookupAddr(addr)
+// 	...ABEND: TODO...
+// }
+
+GO FUNC net.LookupCNAME has:
+// func lookupCNAME(host string) Object {
+// 	cname, err := net.LookupCNAME(host)
+// 	...ABEND: TODO...
+// }
+
+GO FUNC net.LookupHost has:
+// func lookupHost(host string) Object {
+// 	addrs, err := net.LookupHost(host)
+// 	...ABEND: TODO...
+// }
+
+GO FUNC net.LookupIP has:
+// func lookupIP(host string) Object {
+// 	arg_1, arg_2 := net.LookupIP(host)
+// 	...ABEND: TODO...
+// }
+
+GO FUNC net.LookupMX has:
+// func lookupMX(name string) Object {
+// 	arg_1, arg_2 := net.LookupMX(name)
+// 	...ABEND: TODO...
+// }
+
+GO FUNC net.LookupNS has:
+// func lookupNS(name string) Object {
+// 	arg_1, arg_2 := net.LookupNS(name)
+// 	...ABEND: TODO...
+// }
+
+GO FUNC net.LookupPort has:
+// func lookupPort(network string, service string) Object {
+// 	port, err := net.LookupPort(network, service)
+// 	...ABEND: TODO...
+// }
+
+GO FUNC net.LookupSRV has:
+// func lookupSRV(service string, proto string, name string) Object {
+// 	cname, addrs, err := net.LookupSRV(service, proto, name)
+// 	...ABEND: TODO...
+// }
+
+GO FUNC net.LookupTXT has:
+// func lookupTXT(name string) Object {
+// 	arg_1, arg_2 := net.LookupTXT(name)
+// 	...ABEND: TODO...
+// }
+
+GO FUNC url.Parse has:
+// func parse(rawurl string) Object {
+// 	arg_1, arg_2 := url.Parse(rawurl)
+// 	...ABEND: TODO...
+// }
+
+GO FUNC url.ParseQuery has:
+// func parseQuery(query string) Object {
+// 	arg_1, arg_2 := url.ParseQuery(query)
+// 	...ABEND: TODO...
+// }
+
+GO FUNC url.ParseRequestURI has:
+// func parseRequestURI(rawurl string) Object {
+// 	arg_1, arg_2 := url.ParseRequestURI(rawurl)
+// 	...ABEND: TODO...
+// }
+
+GO FUNC url.PathUnescape has:
+// func pathUnescape(s string) Object {
+// 	arg_1, arg_2 := url.PathUnescape(s)
+// 	...ABEND: TODO...
+// }
+
+GO FUNC url.QueryUnescape has:
+// func queryUnescape(s string) Object {
+// 	arg_1, arg_2 := url.QueryUnescape(s)
+// 	...ABEND: TODO...
+// }
+
+GO FUNC url.User has:
+// func user(username string)  {
+// 	arg_1 := url.User(username)
+// 	...ABEND: TODO...
+// }
+
+GO FUNC url.UserPassword has:
+// func userPassword(username string, password string)  {
+// 	arg_1 := url.UserPassword(username, password)
+// 	...ABEND: TODO...
+// }
 
 Totals: types=10 functions=18 receivers=46

@@ -608,7 +608,7 @@ func genReturnTypeElement(pkg string, e Expr) (jok, gol string) {
 			jok = "String"
 			gol = "string"
 			return
-		case "int", "int16", "uint", "uint16":
+		case "int", "int16", "uint", "uint16", "byte":
 			jok = "Int"
 			gol = "int"
 			return
@@ -620,10 +620,11 @@ func genReturnTypeElement(pkg string, e Expr) (jok, gol string) {
 			jok, gol = genNamedReturnTypeElement(pkg, v.Name)
 			return
 		}
-/*
 	case *ArrayType:
-		return "[" + typeAsClojure(pkg, v.Elt) + "]"
-*/
+		jok, gol = genReturnTypeElement(pkg, v.Elt)
+		jok = "[" + jok + "]"
+		gol = "[]" + gol
+		return
 	case *StarExpr:
 		jok, gol = genReturnTypeElement(pkg, v.X)  // TODO: Maybe return a ref or something Joker (someday) supports?
 /*
@@ -671,11 +672,21 @@ func genRawReturnType(pkg string, fl *FieldList) (jok, gol string) {
 	return
 }
 
+// Return a form of the return type as supported by generate-std.joke,
+// or empty string if not supported (which will trigger attempting to
+// generate appropriate code for *_native.go).
+func jokerReturnTypeForGenerateSTD(jok string) string {
+	switch jok {
+	case "String", "Int", "Double", "Bool", "Time", "Error":  // TODO: Have tested only String so far
+		return "^" + jok
+	default:
+		return ""
+	}
+}
+
 func genReturnType(pkg string, f *FuncDecl) (jok, gol string) {
 	jok, gol = genRawReturnType(pkg, f.Type.Results)
-	if jok != "" {
-		jok = "^" + jok
-	}
+	jok = jokerReturnTypeForGenerateSTD(jok)
 	return
 }
 
