@@ -239,13 +239,13 @@ GO FUNC url.QueryUnescape has:
 // }
 
 GO FUNC url.User has:
-// func user(username string)  {
+// func user(username string) Object {
 // 	arg_1 := url.User(username)
 // 	...ABEND: TODO...
 // }
 
 GO FUNC url.UserPassword has:
-// func userPassword(username string, password string)  {
+// func userPassword(username string, password string) Object {
 // 	arg_1 := url.UserPassword(username, password)
 // 	...ABEND: TODO...
 // }

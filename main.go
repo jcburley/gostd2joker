@@ -644,29 +644,41 @@ func genRawReturnType(pkg string, fl *FieldList) (jok, gol string) {
 	}
 	multiple := false
 	for _, f := range fl.List {
-		joktype, _ := genReturnTypeElement(pkg, f.Type)
+		joktype, goltype := genReturnTypeElement(pkg, f.Type)
 		if f.Names == nil {
 			if jok != "" {
 				jok += " "
 				multiple = true
 			}
 			jok += joktype
+			if gol != "" {
+				gol += ", "
+			}
+			gol += goltype
+			continue
 		}
 		for _, p := range f.Names {
 			if jok != "" {
 				jok += " "
 				multiple = true
 			}
+			if gol != "" {
+				gol += " "
+			}
 			if p == nil {
 				jok += "_"
+				gol += "rtn_1"  // TODO: increment suffix like resultsAsGo()
 			} else {
 				jok += paramNameAsClojure(p)
+				gol += paramNameAsGo(p.Name)
 			}
 		}
 	}
 	if multiple {
 		jok = "[" + jok + "]"
-		gol = "Object"
+		if gol != "" {
+			gol = "(" + gol + ")"
+		}
 		return
 	}
 	return
@@ -674,19 +686,22 @@ func genRawReturnType(pkg string, fl *FieldList) (jok, gol string) {
 
 // Return a form of the return type as supported by generate-std.joke,
 // or empty string if not supported (which will trigger attempting to
-// generate appropriate code for *_native.go).
-func jokerReturnTypeForGenerateSTD(jok string) string {
-	switch jok {
+// generate appropriate code for *_native.go). gol either passes
+// through or "Object" is returned for it if jok is returned as empty.
+func jokerReturnTypeForGenerateSTD(in_jok, in_gol string) (jok, gol string) {
+	switch in_jok {
 	case "String", "Int", "Double", "Bool", "Time", "Error":  // TODO: Have tested only String so far
-		return "^" + jok
+		jok = "^" + in_jok
 	default:
-		return ""
+		jok = ""
+		gol = "Object"
 	}
+	return
 }
 
 func genReturnType(pkg string, f *FuncDecl) (jok, gol string) {
 	jok, gol = genRawReturnType(pkg, f.Type.Results)
-	jok = jokerReturnTypeForGenerateSTD(jok)
+	jok, gol = jokerReturnTypeForGenerateSTD(jok, gol)
 	return
 }
 
