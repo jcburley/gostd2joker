@@ -50,25 +50,25 @@ JOKER FUNC net.LookupHost has:
   [^String host])
 
 JOKER FUNC net.LookupIP has:
-;; (defn ^[[ABEND042(cannot find typename net.IP)] Error] LookupIP
+;; (defn ^[ABEND883(unrecognized Expr type *ast.ArrayType at: tests/small/net/lookup.go:177:29) Error] LookupIP
 ;;   "LookupIP looks up host using the local resolver.\nIt returns a slice of that host's IPv4 and IPv6 addresses.\n"
 ;;   {:added "1.0"
 ;;    :go "lookupIP(host)"}
 ;;   [^String host])
 
 JOKER FUNC net.LookupMX has:
-(defn ^[[{:host ^String Host, :pref ^Int Pref}] Error] LookupMX
-  "LookupMX returns the DNS MX records for the given domain name sorted by preference.\n"
-  {:added "1.0"
-   :go "lookupMX(name)"}
-  [^String name])
+;; (defn ^[ABEND883(unrecognized Expr type *ast.ArrayType at: tests/small/net/lookup.go:358:29) Error] LookupMX
+;;   "LookupMX returns the DNS MX records for the given domain name sorted by preference.\n"
+;;   {:added "1.0"
+;;    :go "lookupMX(name)"}
+;;   [^String name])
 
 JOKER FUNC net.LookupNS has:
-(defn ^[[{:host ^String Host}] Error] LookupNS
-  "LookupNS returns the DNS NS records for the given domain name.\n"
-  {:added "1.0"
-   :go "lookupNS(name)"}
-  [^String name])
+;; (defn ^[ABEND883(unrecognized Expr type *ast.ArrayType at: tests/small/net/lookup.go:368:29) Error] LookupNS
+;;   "LookupNS returns the DNS NS records for the given domain name.\n"
+;;   {:added "1.0"
+;;    :go "lookupNS(name)"}
+;;   [^String name])
 
 JOKER FUNC net.LookupPort has:
 (defn ^[port err] LookupPort
@@ -85,14 +85,14 @@ JOKER FUNC net.LookupSRV has:
   [^String service, ^String proto, ^String name])
 
 JOKER FUNC net.LookupTXT has:
-(defn ^[[String] Error] LookupTXT
-  "LookupTXT returns the DNS TXT records for the given domain name.\n"
-  {:added "1.0"
-   :go "lookupTXT(name)"}
-  [^String name])
+;; (defn ^[ABEND883(unrecognized Expr type *ast.ArrayType at: tests/small/net/lookup.go:378:30) Error] LookupTXT
+;;   "LookupTXT returns the DNS TXT records for the given domain name.\n"
+;;   {:added "1.0"
+;;    :go "lookupTXT(name)"}
+;;   [^String name])
 
 JOKER FUNC url.Parse has:
-;; (defn ^[{:scheme ^String Scheme, :opaque ^String Opaque, :user ^ABEND881(unrecognized Expr type *ast.StarExpr at: tests/small/net/url/url.go:347:13) User, :host ^String Host, :path ^String Path, :rawpath ^String RawPath, :forcequery ForceQuery, :rawquery ^String RawQuery, :fragment ^String Fragment} Error] Parse
+;; (defn ^[ABEND883(unrecognized Expr type *ast.StructType at: tests/small/net/url/url.go:344:10) Error] Parse
 ;;   "Parse parses rawurl into a URL structure.\n\nThe rawurl may be relative (a path, without a host) or absolute\n(starting with a scheme). Trying to parse a hostname and path\nwithout a scheme is invalid but may not necessarily return an\nerror, due to parsing ambiguities.\n"
 ;;   {:added "1.0"
 ;;    :go "parse(rawurl)"}
@@ -106,7 +106,7 @@ JOKER FUNC url.ParseQuery has:
 ;;   [^String query])
 
 JOKER FUNC url.ParseRequestURI has:
-;; (defn ^[{:scheme ^String Scheme, :opaque ^String Opaque, :user ^ABEND881(unrecognized Expr type *ast.StarExpr at: tests/small/net/url/url.go:347:13) User, :host ^String Host, :path ^String Path, :rawpath ^String RawPath, :forcequery ForceQuery, :rawquery ^String RawQuery, :fragment ^String Fragment} Error] ParseRequestURI
+;; (defn ^[ABEND883(unrecognized Expr type *ast.StructType at: tests/small/net/url/url.go:344:10) Error] ParseRequestURI
 ;;   "ParseRequestURI parses rawurl into a URL structure. It assumes that\nrawurl was received in an HTTP request, so the rawurl is interpreted\nonly as an absolute URI or an absolute path.\nThe string rawurl is assumed not to have a #fragment suffix.\n(Web browsers strip #fragment before sending the URL to a web server.)\n"
 ;;   {:added "1.0"
 ;;    :go "parseRequestURI(rawurl)"}
@@ -141,17 +141,17 @@ JOKER FUNC url.QueryUnescape has:
   [^String s])
 
 JOKER FUNC url.User has:
-(defn ^{:username ^String username, :password ^String password, :passwordset passwordSet} User
-  "User returns a Userinfo containing the provided username\nand no password set.\n"
-  {:added "1.0"
-   :go "user(username)"}
-  [^String username])
+;; (defn ^ABEND883(unrecognized Expr type *ast.StructType at: tests/small/net/url/url.go:378:15) User
+;;   "User returns a Userinfo containing the provided username\nand no password set.\n"
+;;   {:added "1.0"
+;;    :go "user(username)"}
+;;   [^String username])
 
 JOKER FUNC url.UserPassword has:
-(defn ^{:username ^String username, :password ^String password, :passwordset passwordSet} UserPassword
-  "UserPassword returns a Userinfo containing the provided username\nand password.\n\nThis functionality should only be used with legacy web sites.\nRFC 2396 warns that interpreting Userinfo this way\n``is NOT RECOMMENDED, because the passing of authentication\ninformation in clear text (such as URI) has proven to be a\nsecurity risk in almost every case where it has been used.''\n"
-  {:added "1.0"
-   :go "userPassword(username, password)"}
-  [^String username, ^String password])
+;; (defn ^ABEND883(unrecognized Expr type *ast.StructType at: tests/small/net/url/url.go:378:15) UserPassword
+;;   "UserPassword returns a Userinfo containing the provided username\nand password.\n\nThis functionality should only be used with legacy web sites.\nRFC 2396 warns that interpreting Userinfo this way\n``is NOT RECOMMENDED, because the passing of authentication\ninformation in clear text (such as URI) has proven to be a\nsecurity risk in almost every case where it has been used.''\n"
+;;   {:added "1.0"
+;;    :go "userPassword(username, password)"}
+;;   [^String username, ^String password])
 
 Totals: types=10 functions=18 receivers=46
