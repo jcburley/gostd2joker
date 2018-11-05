@@ -552,7 +552,7 @@ func argsAsGo(p *FieldList) string {
 				s += ", "
 			}
 			if p == nil {
-				s += "ABEND712"
+				s += "ABEND713"
 			} else {
 				s += paramNameAsGo(p.Name)
 			}
@@ -569,12 +569,14 @@ func bodyAsGo(pkg string, f *FuncDecl) string {
 	return "\t" + strings.Replace(callStr, "\n", "\n\t", -1)
 }
 
-func namedTypeAsClojure(pkg string, t string) string {
+func genNamedReturnTypeElement(pkg string, t string) (clj, gol string) {
 	qt := pkg + "." + t
 	if v, ok := types[qt]; ok {
-		return typeAsClojure(pkg, v[0].td.Type)
+		clj, gol = genReturnTypeElement(pkg, v[0].td.Type)
+		return
 	} else {
-		return fmt.Sprintf("ABEND042(cannot find typename %s)", qt)
+		clj = fmt.Sprintf("ABEND042(cannot find typename %s)", qt)
+		return
 	}
 }
 
@@ -608,73 +610,78 @@ func structAsClojure(pkg string, fl *FieldList) string {
 	return s
 }
 
-func typeAsClojure(pkg string, e Expr) string {
+func genReturnTypeElement(pkg string, e Expr) (clj, gol string) {
 	switch v := e.(type) {
 	case *Ident:
 		switch v.Name {
 		case "string":
-			return "String"
+			clj = "String"
+			return
 		case "int", "int16", "uint", "uint16":
-			return "Int"
+			clj = "Int"
+			return
 		case "error":
-			return "Error"
+			clj = "Error"
+			return
 		default:
-			return namedTypeAsClojure(pkg, v.Name)
+			clj, gol = genNamedReturnTypeElement(pkg, v.Name)
 		}
 /*
 	case *ArrayType:
 		return "[" + typeAsClojure(pkg, v.Elt) + "]"
 */
 	case *StarExpr:
-		return typeAsClojure(pkg, v.X)
+		clj, gol = genReturnTypeElement(pkg, v.X)  // TODO: Maybe return a ref or something Joker (someday) supports?
 /*
 	case *StructType:
 		return "{" + structAsClojure(pkg, v.Fields) + "}"
 */
 	default:
-		return fmt.Sprintf("ABEND883(unrecognized Expr type %T at: %s)", e, whereAt(e.Pos()))
+		clj = fmt.Sprintf("ABEND883(unrecognized Expr type %T at: %s)", e, whereAt(e.Pos()))
+		return
 	}
+	return
 }
 
-func returnTypeAsClojure(pkg string, fl *FieldList) string {
+func genRawReturnType(pkg string, fl *FieldList) (clj, gol string) {
 	if fl == nil || fl.List == nil {
-		return ""
+		return
 	}
-	var s string
 	multiple := false
 	for _, f := range fl.List {
-		cltype := typeAsClojure(pkg, f.Type)
+		cljtype, _ := genReturnTypeElement(pkg, f.Type)
 		if f.Names == nil {
-			if s != "" {
-				s += " "
+			if clj != "" {
+				clj += " "
 				multiple = true
 			}
-			s += cltype
+			clj += cljtype
 		}
 		for _, p := range f.Names {
-			if s != "" {
-				s += " "
+			if clj != "" {
+				clj += " "
 				multiple = true
 			}
 			if p == nil {
-				s += "_"
+				clj += "_"
 			} else {
-				s += paramNameAsClojure(p)
+				clj += paramNameAsClojure(p)
 			}
 		}
 	}
 	if multiple {
-		return "[" + s + "]"
+		clj = "[" + clj + "]"
+		return
 	}
-	return s
+	return
 }
 
-func jokerReturnType(pkg string, f *FuncDecl) string {
-	s := returnTypeAsClojure(pkg, f.Type.Results)
-	if s != "" {
-		return "^" + s
+func genReturnType(pkg string, f *FuncDecl) (clj, gol string) {
+	clj, gol = genRawReturnType(pkg, f.Type.Results)
+	if clj != "" {
+		clj = "^" + clj
 	}
-	return s
+	return
 }
 
 /* Map package names to maps of filenames to code strings. */
@@ -708,7 +715,7 @@ func sortedCodeMap(m codeInfo, f func(k string, v string)) {
 
 var nonEmptyLineRegexp *regexp.Regexp
 
-func emitFunction(f string, fn *funcInfo) {
+func genFunction(f string, fn *funcInfo) {
 	d := fn.fd
 	pkg := filepath.Base(fn.pkg)
 	jfmt := `
@@ -718,11 +725,11 @@ func emitFunction(f string, fn *funcInfo) {
   [%s])
 `
 	goFname := funcNameAsGoPrivate(d.Name.Name)
-	jokerType := jokerReturnType(pkg, d)
-	if jokerType != "" {
-		jokerType += " "
+	jokerReturnType, goReturnType := genReturnType(pkg, d)
+	if jokerReturnType != "" {
+		jokerReturnType += " "
 	}
-	jokerFn := fmt.Sprintf(jfmt, jokerType, d.Name.Name, commentGroupInQuotes(d.Doc),
+	jokerFn := fmt.Sprintf(jfmt, jokerReturnType, d.Name.Name, commentGroupInQuotes(d.Doc),
 		goFname, fieldListToGo(d.Type.Params),
 		fieldListAsClojure(d.Type.Params))
 
@@ -733,8 +740,8 @@ func %s(%s) %s {
 `
 
 	gofn := ""
-	if jokerType == "" {
-		gofn = fmt.Sprintf(gfmt, goFname, paramListAsGo(d.Type.Params), typeAsGo(d.Type.Results),
+	if jokerReturnType == "" {
+		gofn = fmt.Sprintf(gfmt, goFname, paramListAsGo(d.Type.Params), goReturnType,
 			bodyAsGo(pkg, d))
 	}
 
@@ -902,12 +909,12 @@ func main() {
 			})
 	}
 
-	/* Emit function code snippets in arbitrary/random order. */
+	/* Generate function code snippets in arbitrary/random order. */
 	for f, v := range functions {
 		if v.fd == DUPLICATEFUNCTION {
 			continue
 		}
-		emitFunction(f, v)
+		genFunction(f, v)
 	}
 
 	var out *bufio.Writer
