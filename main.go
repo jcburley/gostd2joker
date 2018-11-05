@@ -504,16 +504,6 @@ func paramListAsGo(fl *FieldList) string {
 	return s
 }
 
-func typeAsGo(fl *FieldList) string {
-	if fl == nil || fl.List == nil || len(fl.List) < 1 {
-		return ""
-	}
-	if len(fl.List) > 1 {
-		return "Object"
-	}
-	return exprAsGo(fl.List[0].Type)
-}
-
 func resultsAsGo(fl *FieldList) string {
 	if fl == nil {
 		return ""
@@ -569,13 +559,13 @@ func bodyAsGo(pkg string, f *FuncDecl) string {
 	return "\t" + strings.Replace(callStr, "\n", "\n\t", -1)
 }
 
-func genNamedReturnTypeElement(pkg string, t string) (clj, gol string) {
+func genNamedReturnTypeElement(pkg string, t string) (jok, gol string) {
 	qt := pkg + "." + t
 	if v, ok := types[qt]; ok {
-		clj, gol = genReturnTypeElement(pkg, v[0].td.Type)
+		jok, gol = genReturnTypeElement(pkg, v[0].td.Type)
 		return
 	} else {
-		clj = fmt.Sprintf("ABEND042(cannot find typename %s)", qt)
+		jok = fmt.Sprintf("ABEND042(cannot find typename %s)", qt)
 		return
 	}
 }
@@ -610,76 +600,81 @@ func structAsClojure(pkg string, fl *FieldList) string {
 	return s
 }
 
-func genReturnTypeElement(pkg string, e Expr) (clj, gol string) {
+func genReturnTypeElement(pkg string, e Expr) (jok, gol string) {
 	switch v := e.(type) {
 	case *Ident:
 		switch v.Name {
 		case "string":
-			clj = "String"
+			jok = "String"
+			gol = "string"
 			return
 		case "int", "int16", "uint", "uint16":
-			clj = "Int"
+			jok = "Int"
+			gol = "int"
 			return
 		case "error":
-			clj = "Error"
+			jok = "Error"
+			gol = "error"
 			return
 		default:
-			clj, gol = genNamedReturnTypeElement(pkg, v.Name)
+			jok, gol = genNamedReturnTypeElement(pkg, v.Name)
+			return
 		}
 /*
 	case *ArrayType:
 		return "[" + typeAsClojure(pkg, v.Elt) + "]"
 */
 	case *StarExpr:
-		clj, gol = genReturnTypeElement(pkg, v.X)  // TODO: Maybe return a ref or something Joker (someday) supports?
+		jok, gol = genReturnTypeElement(pkg, v.X)  // TODO: Maybe return a ref or something Joker (someday) supports?
 /*
 	case *StructType:
 		return "{" + structAsClojure(pkg, v.Fields) + "}"
 */
 	default:
-		clj = fmt.Sprintf("ABEND883(unrecognized Expr type %T at: %s)", e, whereAt(e.Pos()))
+		jok = fmt.Sprintf("ABEND883(unrecognized Expr type %T at: %s)", e, whereAt(e.Pos()))
 		return
 	}
 	return
 }
 
-func genRawReturnType(pkg string, fl *FieldList) (clj, gol string) {
+func genRawReturnType(pkg string, fl *FieldList) (jok, gol string) {
 	if fl == nil || fl.List == nil {
 		return
 	}
 	multiple := false
 	for _, f := range fl.List {
-		cljtype, _ := genReturnTypeElement(pkg, f.Type)
+		joktype, _ := genReturnTypeElement(pkg, f.Type)
 		if f.Names == nil {
-			if clj != "" {
-				clj += " "
+			if jok != "" {
+				jok += " "
 				multiple = true
 			}
-			clj += cljtype
+			jok += joktype
 		}
 		for _, p := range f.Names {
-			if clj != "" {
-				clj += " "
+			if jok != "" {
+				jok += " "
 				multiple = true
 			}
 			if p == nil {
-				clj += "_"
+				jok += "_"
 			} else {
-				clj += paramNameAsClojure(p)
+				jok += paramNameAsClojure(p)
 			}
 		}
 	}
 	if multiple {
-		clj = "[" + clj + "]"
+		jok = "[" + jok + "]"
+		gol = "Object"
 		return
 	}
 	return
 }
 
-func genReturnType(pkg string, f *FuncDecl) (clj, gol string) {
-	clj, gol = genRawReturnType(pkg, f.Type.Results)
-	if clj != "" {
-		clj = "^" + clj
+func genReturnType(pkg string, f *FuncDecl) (jok, gol string) {
+	jok, gol = genRawReturnType(pkg, f.Type.Results)
+	if jok != "" {
+		jok = "^" + jok
 	}
 	return
 }
