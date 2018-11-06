@@ -516,9 +516,13 @@ func genReturnTypeElement(pkg string, e Expr) (jok, gol string) {
 			jok = "String"
 			gol = "string"
 			return
-		case "int", "int16", "uint", "uint16", "byte":
+		case "int", "int16", "uint", "uint16", "int32", "uint32", "int64", "byte":  // TODO: Does Joker always have 64-bit signed ints?
 			jok = "Int"
 			gol = "int"
+			return
+		case "bool":
+			jok = "Bool"
+			gol = "bool"
 			return
 		case "error":
 			jok = "Error"
