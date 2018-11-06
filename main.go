@@ -486,7 +486,8 @@ func genReturnTypeElement(pkg string, e Expr) (jok, gol string) {
 			gol = "error"
 			return
 		default:
-			jok, gol = genNamedReturnTypeElement(pkg, v.Name)
+			jok, _ = genNamedReturnTypeElement(pkg, v.Name)
+			gol = v.Name  // This is as far as Go needs to go for a type signature
 			return
 		}
 	case *ArrayType:
@@ -496,6 +497,7 @@ func genReturnTypeElement(pkg string, e Expr) (jok, gol string) {
 		return
 	case *StarExpr:
 		jok, gol = genReturnTypeElement(pkg, v.X)  // TODO: Maybe return a ref or something Joker (someday) supports?
+		gol = "*" + gol
 /*
 	case *StructType:
 		return "{" + structAsClojure(pkg, v.Fields) + "}"
