@@ -996,6 +996,7 @@ package %s
 
 import (
 	"%s"
+	. "github.com/candid82/joker/core"
 )
 `,
 					p, p)
