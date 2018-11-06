@@ -41,111 +41,13 @@ func check(e error) {
 */
 
 var fset *token.FileSet
-var list bool
 var dump bool
 var verbose bool
 var receivers int
 var populateDir string
 
-func chanDirAsString(dir ChanDir) string {
-	switch dir {
-	case SEND:
-		return "chan->"
-	case RECV:
-		return "<-chan"
-	default:
-		return "???chan???"
-	}
-}
-
 func whereAt(p token.Pos) string {
 	return fmt.Sprintf("%s", fset.Position(p).String())
-}
-
-func exprAsString(e Expr) string {
-	switch v := e.(type) {
-	case *Ident:
-		return v.Name
-	case *ArrayType:
-		return "[]" + exprAsString(v.Elt)
-	case *StarExpr:
-		return "*" + exprAsString(v.X)
-	case *SelectorExpr:
-		return exprAsString(v.X) + "." + v.Sel.Name
-	case *FuncType:
-		return "func(" + fieldListAsString(v.Params) + ")=>" + fieldListAsString(v.Results)
-	case *InterfaceType:
-		return "interface{" + fieldListAsString(v.Methods) + "}"
-	case *Ellipsis:
-		return "..." + exprAsString(v.Elt)
-	case *MapType:
-		return "map[" + exprAsString(v.Key) + "]" + exprAsString(v.Value)
-	case *ChanType:
-		return chanDirAsString(v.Dir) + " " + exprAsString(v.Value)
-	case *StructType:
-		return "struct{" + fieldListAsString(v.Fields) + " }"
-	default:
-		panic(fmt.Sprintf("unrecognized Expr type %T at: %s", e, whereAt(v.Pos())))
-	}
-}
-
-func paramNamesAsString(names []*Ident) string {
-	s := ""
-	for i, n := range names {
-		if i > 0 {
-			s += ", "
-		}
-		s += n.Name
-	}
-	return s
-}
-
-func fieldListAsString(fl *FieldList) string {
-	if fl == nil {
-		return ""
-	}
-	s := ""
-	for i, f := range fl.List {
-		if i > 0 {
-			s += ", "
-		}
-		if f.Names == nil {
-			s += "_"
-		} else {
-			s += paramNamesAsString(f.Names)
-		}
-		s += " " + exprAsString(f.Type)
-	}
-	return s
-}
-
-func printTypeSpecs(tss []Spec) {
-	for _, spec := range tss {
-		ts := spec.(*TypeSpec)
-		if unicode.IsLower(rune(ts.Name.Name[0])) {
-			continue  // Skipping non-exported functions
-		}
-		if (dump) {
-			Print(fset, ts)
-		}
-		fmt.Printf("%sTYPE %s %s\n",
-			commentGroupAsString(ts.Doc),
-			ts.Name.Name,
-			exprAsString(ts.Type))
-	}
-}
-
-func commentGroupAsString(doc *CommentGroup) string {
-	if doc == nil {
-		return "\n"
-	}
-	dt := doc.Text()
-	nl := strings.Count(dt, "\n")
-	if nl > 1 {
-		return "\n/* " + strings.Replace(dt, "\n", "\n   ", nl - 1) + "*/\n"
-	} else {
-		return "\n// " + dt
-	}
 }
 
 func commentGroupInQuotes(doc *CommentGroup, jok, gol string) string {
@@ -166,44 +68,6 @@ func commentGroupInQuotes(doc *CommentGroup, jok, gol string) string {
 		d += "Joker return type: " + jok
 	}
 	return `  ` + strings.Trim(strconv.Quote(d), " \t\n") + "\n"
-}
-
-func printDecls(f *File) {
-	for _, s := range f.Decls {
-		switch v := s.(type) {
-		case *FuncDecl:
-			rcv := v.Recv // *FieldList of receivers or nil (functions)
-			if rcv != nil {
-				continue  // Skipping these for now
-			}
-			if unicode.IsLower(rune(v.Name.Name[0])) {
-				continue  // Skipping non-exported functions
-			}
-			if (dump) {
-				Print(fset, v)
-			}
-			typ := v.Type // *FuncType of signature: params, results, and position of "func" keyword
-			fmt.Printf("%s%s(%s) => (%s)\n",
-				commentGroupAsString(v.Doc),
-				v.Name.Name,
-				fieldListAsString(typ.Params),
-				fieldListAsString(typ.Results))
-		case *GenDecl:
-			if v.Tok != token.TYPE {
-				continue
-			}
-			printTypeSpecs(v.Specs)
-		default:
-			panic(fmt.Sprintf("unrecognized Decl type %T at: %s", v, whereAt(v.Pos())))
-		}
-	}
-}
-
-func printPackage(p *Package) {
-	for nam, f := range p.Files {
-		fmt.Printf("File %s:\n", nam)
-		printDecls(f)
-	}
 }
 
 type funcInfo struct {
@@ -341,26 +205,18 @@ func processDir(d string, path string, mode parser.Mode) error {
 		return err
 	}
 
-	if list {
-		for k, v := range pkgs {
-			fmt.Printf("Package %s:\n", k)
-			printPackage(v)
-			fmt.Println("")
-		}
-	} else {
-		basename := filepath.Base(path)
-		for k, v := range pkgs {
-			if k != basename && k != basename + "_test" {
-				if verbose {
-					fmt.Printf("NOTICE: Package %s is defined in %s -- ignored\n", k, path)
-				}
-			} else {
-				if verbose {
-					fmt.Printf("Package %s:\n", k)
-				}
-				processPackage(k, v)
-//				processPackage(strings.Replace(path, d + "/", "", 1) + "/" + k, v)
+	basename := filepath.Base(path)
+	for k, v := range pkgs {
+		if k != basename && k != basename + "_test" {
+			if verbose {
+				fmt.Printf("NOTICE: Package %s is defined in %s -- ignored\n", k, path)
 			}
+		} else {
+			if verbose {
+				fmt.Printf("Package %s:\n", k)
+			}
+			processPackage(k, v)
+			//				processPackage(strings.Replace(path, d + "/", "", 1) + "/" + k, v)
 		}
 	}
 
@@ -808,7 +664,6 @@ Options:
   --replace                      # 'rm -fr <joker-std-subdir>' before creating <joker-std-subdir>
   --fresh                        # (Default) Refuse to overwrite existing <joker-std-subdir> directory
   --verbose, -v                  # Print info on what's going on
-  --list                         # List packages, as each walked directory is processed, instead of processing them
   --dump                         # Use go's AST dump API on pertinent elements (functions, types, etc.)
   --help, -h                     # Print this information
 
@@ -859,8 +714,6 @@ func main() {
 			case "--fresh":
 				replace = false
 				overwrite = false
-			case "--list":
-				list = true
 			case "--verbose", "-v":
 				verbose = true
 			case "--source":
