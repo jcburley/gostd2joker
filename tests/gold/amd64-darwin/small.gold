@@ -51,21 +51,21 @@ JOKER FUNC net.LookupHost has:
 
 JOKER FUNC net.LookupIP has:
 ;; (defn LookupIP
-;;   "LookupIP looks up host using the local resolver.\nIt returns a slice of that host's IPv4 and IPv6 addresses.\nGo return type: ([], error)\nJoker return type: [(vector-of ABEND042(cannot find typename net.IP)) Error]"
+;;   "LookupIP looks up host using the local resolver.\nIt returns a slice of that host's IPv4 and IPv6 addresses.\nGo return type: ([]IP, error)\nJoker return type: [(vector-of ABEND042(cannot find typename net.IP)) Error]"
 ;;   {:added "1.0"
 ;;    :go "lookupIP(host)"}
 ;;   [^String host])
 
 JOKER FUNC net.LookupMX has:
 ;; (defn LookupMX
-;;   "LookupMX returns the DNS MX records for the given domain name sorted by preference.\nGo return type: ([], error)\nJoker return type: [(vector-of ABEND883(unrecognized Expr type *ast.StructType at: tests/small/net/dnsclient.go:193:9)) Error]"
+;;   "LookupMX returns the DNS MX records for the given domain name sorted by preference.\nGo return type: ([]*MX, error)\nJoker return type: [(vector-of ABEND883(unrecognized Expr type *ast.StructType at: tests/small/net/dnsclient.go:193:9)) Error]"
 ;;   {:added "1.0"
 ;;    :go "lookupMX(name)"}
 ;;   [^String name])
 
 JOKER FUNC net.LookupNS has:
 ;; (defn LookupNS
-;;   "LookupNS returns the DNS NS records for the given domain name.\nGo return type: ([], error)\nJoker return type: [(vector-of ABEND883(unrecognized Expr type *ast.StructType at: tests/small/net/dnsclient.go:215:9)) Error]"
+;;   "LookupNS returns the DNS NS records for the given domain name.\nGo return type: ([]*NS, error)\nJoker return type: [(vector-of ABEND883(unrecognized Expr type *ast.StructType at: tests/small/net/dnsclient.go:215:9)) Error]"
 ;;   {:added "1.0"
 ;;    :go "lookupNS(name)"}
 ;;   [^String name])
@@ -93,21 +93,21 @@ JOKER FUNC net.LookupTXT has:
 
 JOKER FUNC url.Parse has:
 ;; (defn Parse
-;;   "Parse parses rawurl into a URL structure.\n\nThe rawurl may be relative (a path, without a host) or absolute\n(starting with a scheme). Trying to parse a hostname and path\nwithout a scheme is invalid but may not necessarily return an\nerror, due to parsing ambiguities.\nGo return type: (error)\nJoker return type: [ABEND883(unrecognized Expr type *ast.StructType at: tests/small/net/url/url.go:344:10) Error]"
+;;   "Parse parses rawurl into a URL structure.\n\nThe rawurl may be relative (a path, without a host) or absolute\n(starting with a scheme). Trying to parse a hostname and path\nwithout a scheme is invalid but may not necessarily return an\nerror, due to parsing ambiguities.\nGo return type: (*URL, error)\nJoker return type: [ABEND883(unrecognized Expr type *ast.StructType at: tests/small/net/url/url.go:344:10) Error]"
 ;;   {:added "1.0"
 ;;    :go "parse(rawurl)"}
 ;;   [^String rawurl])
 
 JOKER FUNC url.ParseQuery has:
 ;; (defn ParseQuery
-;;   "ParseQuery parses the URL-encoded query string and returns\na map listing the values specified for each key.\nParseQuery always returns a non-nil map containing all the\nvalid query parameters found; err describes the first decoding error\nencountered, if any.\n\nQuery is expected to be a list of key=value settings separated by\nampersands or semicolons. A setting without an equals sign is\ninterpreted as a key set to an empty value.\nGo return type: (error)\nJoker return type: [ABEND883(unrecognized Expr type *ast.MapType at: tests/small/net/url/url.go:804:13) Error]"
+;;   "ParseQuery parses the URL-encoded query string and returns\na map listing the values specified for each key.\nParseQuery always returns a non-nil map containing all the\nvalid query parameters found; err describes the first decoding error\nencountered, if any.\n\nQuery is expected to be a list of key=value settings separated by\nampersands or semicolons. A setting without an equals sign is\ninterpreted as a key set to an empty value.\nGo return type: (Values, error)\nJoker return type: [ABEND883(unrecognized Expr type *ast.MapType at: tests/small/net/url/url.go:804:13) Error]"
 ;;   {:added "1.0"
 ;;    :go "parseQuery(query)"}
 ;;   [^String query])
 
 JOKER FUNC url.ParseRequestURI has:
 ;; (defn ParseRequestURI
-;;   "ParseRequestURI parses rawurl into a URL structure. It assumes that\nrawurl was received in an HTTP request, so the rawurl is interpreted\nonly as an absolute URI or an absolute path.\nThe string rawurl is assumed not to have a #fragment suffix.\n(Web browsers strip #fragment before sending the URL to a web server.)\nGo return type: (error)\nJoker return type: [ABEND883(unrecognized Expr type *ast.StructType at: tests/small/net/url/url.go:344:10) Error]"
+;;   "ParseRequestURI parses rawurl into a URL structure. It assumes that\nrawurl was received in an HTTP request, so the rawurl is interpreted\nonly as an absolute URI or an absolute path.\nThe string rawurl is assumed not to have a #fragment suffix.\n(Web browsers strip #fragment before sending the URL to a web server.)\nGo return type: (*URL, error)\nJoker return type: [ABEND883(unrecognized Expr type *ast.StructType at: tests/small/net/url/url.go:344:10) Error]"
 ;;   {:added "1.0"
 ;;    :go "parseRequestURI(rawurl)"}
 ;;   [^String rawurl])
@@ -142,14 +142,14 @@ JOKER FUNC url.QueryUnescape has:
 
 JOKER FUNC url.User has:
 ;; (defn User
-;;   "User returns a Userinfo containing the provided username\nand no password set.\nJoker return type: ABEND883(unrecognized Expr type *ast.StructType at: tests/small/net/url/url.go:378:15)"
+;;   "User returns a Userinfo containing the provided username\nand no password set.\nGo return type: *Userinfo\nJoker return type: ABEND883(unrecognized Expr type *ast.StructType at: tests/small/net/url/url.go:378:15)"
 ;;   {:added "1.0"
 ;;    :go "user(username)"}
 ;;   [^String username])
 
 JOKER FUNC url.UserPassword has:
 ;; (defn UserPassword
-;;   "UserPassword returns a Userinfo containing the provided username\nand password.\n\nThis functionality should only be used with legacy web sites.\nRFC 2396 warns that interpreting Userinfo this way\n``is NOT RECOMMENDED, because the passing of authentication\ninformation in clear text (such as URI) has proven to be a\nsecurity risk in almost every case where it has been used.''\nJoker return type: ABEND883(unrecognized Expr type *ast.StructType at: tests/small/net/url/url.go:378:15)"
+;;   "UserPassword returns a Userinfo containing the provided username\nand password.\n\nThis functionality should only be used with legacy web sites.\nRFC 2396 warns that interpreting Userinfo this way\n``is NOT RECOMMENDED, because the passing of authentication\ninformation in clear text (such as URI) has proven to be a\nsecurity risk in almost every case where it has been used.''\nGo return type: *Userinfo\nJoker return type: ABEND883(unrecognized Expr type *ast.StructType at: tests/small/net/url/url.go:378:15)"
 ;;   {:added "1.0"
 ;;    :go "userPassword(username, password)"}
 ;;   [^String username, ^String password])
