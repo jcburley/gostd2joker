@@ -641,25 +641,42 @@ func sortedCodeMap(m codeInfo, f func(k string, v string)) {
 
 var nonEmptyLineRegexp *regexp.Regexp
 
+type funcCode struct {
+	jokerParamList string  // fieldListAsClojure(d.Type.Params)
+	goParamList string  // paramListAsGo(d.Type.Params)
+	jokerGoCode string  // goFname + "(" + fieldListToGo(d.Type.Params) + ")"
+	goCode string  // bodyAsGo(pkg, d)
+	jokerReturnTypeForDoc string  // genReturnType(pkg, d.Type.Results)
+	goReturnTypeForDoc string  // genReturnType(pkg, d.Type.Results)
+}
+
+func genFuncCode(pkg string, d *FuncDecl, goFname string) (fc funcCode) {
+	fc.jokerParamList = fieldListAsClojure(d.Type.Params)
+	fc.goParamList = paramListAsGo(d.Type.Params)
+	fc.jokerGoCode = goFname + "(" + fieldListToGo(d.Type.Params) + ")"
+	fc.goCode = bodyAsGo(pkg, d)
+	fc.jokerReturnTypeForDoc, fc.goReturnTypeForDoc = genReturnType(pkg, d.Type.Results)
+	return
+}
+
 func genFunction(f string, fn *funcInfo) {
 	d := fn.fd
 	pkg := filepath.Base(fn.pkg)
 	jfmt := `
 (defn %s%s
 %s  {:added "1.0"
-   :go "%s(%s)"}
+   :go "%s"}
   [%s])
 `
 	goFname := funcNameAsGoPrivate(d.Name.Name)
-	jokerReturnTypeForDoc, goReturnTypeForDoc := genReturnType(pkg, d.Type.Results)
-	jokerReturnType, goReturnType := jokerReturnTypeForGenerateSTD(jokerReturnTypeForDoc, goReturnTypeForDoc)
+	fc := genFuncCode(pkg, d, goFname)
+	jokerReturnType, goReturnType := jokerReturnTypeForGenerateSTD(fc.jokerReturnTypeForDoc, fc.goReturnTypeForDoc)
 	if jokerReturnType != "" {
 		jokerReturnType += " "
 	}
 	jokerFn := fmt.Sprintf(jfmt, jokerReturnType, d.Name.Name,
-		commentGroupInQuotes(d.Doc, jokerReturnTypeForDoc, goReturnTypeForDoc),
-		goFname, fieldListToGo(d.Type.Params),
-		fieldListAsClojure(d.Type.Params))
+		commentGroupInQuotes(d.Doc, fc.jokerReturnTypeForDoc, fc.goReturnTypeForDoc),
+		fc.jokerGoCode, fc.jokerParamList)
 
 	gfmt := `
 func %s(%s) %s {
@@ -667,15 +684,14 @@ func %s(%s) %s {
 }
 `
 
-	gofn := ""
-	if jokerReturnType == "" {
-		gofn = fmt.Sprintf(gfmt, goFname, paramListAsGo(d.Type.Params), goReturnType,
-			bodyAsGo(pkg, d))
+	goFn := ""
+	if jokerReturnType == "" {  // TODO: Generate this anyway if it contains ABEND, so we can see what's needed.
+		goFn = fmt.Sprintf(gfmt, goFname, fc.goParamList, goReturnType, fc.goCode)
 	}
 
-	if strings.Contains(jokerFn, "ABEND") || strings.Contains(gofn, "ABEND") {
+	if strings.Contains(jokerFn, "ABEND") || strings.Contains(goFn, "ABEND") {
 		jokerFn = nonEmptyLineRegexp.ReplaceAllString(jokerFn, `;; $1`)
-		gofn = nonEmptyLineRegexp.ReplaceAllString(gofn, `// $1`)
+		goFn = nonEmptyLineRegexp.ReplaceAllString(goFn, `// $1`)
 	}
 
 	if _, ok := jokerCode[pkg]; !ok {
@@ -683,11 +699,11 @@ func %s(%s) %s {
 	}
 	jokerCode[pkg][d.Name.Name] = jokerFn
 
-	if gofn != "" {
+	if goFn != "" {
 		if _, ok := goCode[pkg]; !ok {
 			goCode[pkg] = codeInfo {}
 		}
-		goCode[pkg][d.Name.Name] = gofn
+		goCode[pkg][d.Name.Name] = goFn
 	}
 }
 
