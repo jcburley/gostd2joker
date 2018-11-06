@@ -100,6 +100,10 @@ func processFuncDecl(pkg string, filename string, f *File, fn *FuncDecl) {
 type typeInfo struct {
 	td *TypeSpec
 	file string
+	building bool
+	built bool
+	jok string
+	gol string
 }
 
 type typeInfoArray []*typeInfo
@@ -138,7 +142,7 @@ func processTypeSpec(pkg string, filename string, f *File, ts *TypeSpec) {
 	} else {
 		candidates = typeInfoArray {}
 	}
-	candidates = append(candidates, &typeInfo{ts, filename})
+	candidates = append(candidates, &typeInfo{ts, filename, false, false, "", ""})
 	types[typename] = candidates
 }
 
@@ -431,7 +435,21 @@ func bodyAsGo(pkg string, f *FuncDecl) string {
 func genNamedReturnTypeElement(pkg string, t string) (jok, gol string) {
 	qt := pkg + "." + t
 	if v, ok := types[qt]; ok {
-		jok, gol = genReturnTypeElement(pkg, v[0].td.Type)
+		if v[0].built {
+			jok = v[0].jok
+			gol = v[0].gol
+			return
+		}
+		if v[0].building {
+			jok = fmt.Sprintf("ABEND947(recursive type reference involving %s)", qt)  // TODO: handle these, e.g. http Request/Response
+			gol = jok
+		} else {
+			v[0].building = true
+			jok, gol = genReturnTypeElement(pkg, v[0].td.Type)
+		}
+		v[0].jok = jok
+		v[0].gol = gol
+		v[0].built = true
 		return
 	} else {
 		jok = fmt.Sprintf("ABEND042(cannot find typename %s)", qt)
@@ -439,34 +457,44 @@ func genNamedReturnTypeElement(pkg string, t string) (jok, gol string) {
 	}
 }
 
-// E.g.: {:host ^String "Host" :pref ^Int "Pref"}
-func structAsClojure(pkg string, fl *FieldList) string {
+// func tryThis(s string) struct { a int; b string } {
+//	return struct { a int; b string }{ 5, "hey" }
+// }
+
+// Joker: { :a ^Int, :b ^String }
+// Go: struct { a int; b string }
+func genStruct(pkg string, fl *FieldList) (jok, gol string) {
 	if fl == nil {
-		return ""
+		jok = "{}"
+		gol = "struct {}"
+		return
 	}
-	var s string
 	for _, f := range fl.List {
-		cltype := exprAsClojure(f.Type)
+		joktype, goltype := genReturnTypeElement(pkg, f.Type)
 		for _, p := range f.Names {
-			if s != "" {
-				s += ", "
+			if jok != "" {
+				jok += ", "
+			}
+			if gol != "" {
+				gol += "; "
 			}
 			if p == nil {
-				s += "_"
+				jok += "_ "
 			} else {
-				s += ":" + strings.ToLower(p.Name)
+				jok += ":" + p.Name + " "
+				gol += p.Name + " "
 			}
-			if cltype != "" {
-				s += " ^" + cltype
+			if joktype != "" {
+				jok += "^" + joktype
 			}
-			if p == nil {
-				s += " _"
-			} else {
-				s += " " + p.Name
+			if goltype != "" {
+				gol += goltype
 			}
 		}
 	}
-	return s
+	jok = "{" + jok + "}"
+	gol = "struct {" + gol + "}"
+	return
 }
 
 func genReturnTypeElement(pkg string, e Expr) (jok, gol string) {
@@ -498,10 +526,8 @@ func genReturnTypeElement(pkg string, e Expr) (jok, gol string) {
 	case *StarExpr:
 		jok, gol = genReturnTypeElement(pkg, v.X)  // TODO: Maybe return a ref or something Joker (someday) supports?
 		gol = "*" + gol
-/*
 	case *StructType:
-		return "{" + structAsClojure(pkg, v.Fields) + "}"
-*/
+		jok, gol = genStruct(pkg, v.Fields)
 	default:
 		jok = fmt.Sprintf("ABEND883(unrecognized Expr type %T at: %s)", e, whereAt(e.Pos()))
 		return
