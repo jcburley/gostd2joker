@@ -635,7 +635,7 @@ func genReturnTypeElement(pkg string, e Expr) (jok, gol string) {
 		}
 	case *ArrayType:
 		jok, gol = genReturnTypeElement(pkg, v.Elt)
-		jok = "[" + jok + "]"
+		jok = "(vector-of " + jok + ")"
 		gol = "[]" + gol
 		return
 	case *StarExpr:

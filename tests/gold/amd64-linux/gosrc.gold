@@ -2851,14 +2851,14 @@ JOKER FUNC ascii85.NewEncoder has:
 
 JOKER FUNC asn1.Marshal has:
 ;; (defn Marshal
-;;   "Marshal returns the ASN.1 encoding of val.\n\nIn addition to the struct tags recognised by Unmarshal, the following can be\nused:\n\n\tia5:         causes strings to be marshaled as ASN.1, IA5String values\n\tomitempty:   causes empty slices to be skipped\n\tprintable:   causes strings to be marshaled as ASN.1, PrintableString values\n\tutf8:        causes strings to be marshaled as ASN.1, UTF8String values\n\tutc:         causes time.Time to be marshaled as ASN.1, UTCTime values\n\tgeneralized: causes time.Time to be marshaled as ASN.1, GeneralizedTime values\nGo return type: ([]int, error)\nJoker return type: [[Int] Error]"
+;;   "Marshal returns the ASN.1 encoding of val.\n\nIn addition to the struct tags recognised by Unmarshal, the following can be\nused:\n\n\tia5:         causes strings to be marshaled as ASN.1, IA5String values\n\tomitempty:   causes empty slices to be skipped\n\tprintable:   causes strings to be marshaled as ASN.1, PrintableString values\n\tutf8:        causes strings to be marshaled as ASN.1, UTF8String values\n\tutc:         causes time.Time to be marshaled as ASN.1, UTCTime values\n\tgeneralized: causes time.Time to be marshaled as ASN.1, GeneralizedTime values\nGo return type: ([]int, error)\nJoker return type: [(vector-of Int) Error]"
 ;;   {:added "1.0"
 ;;    :go "marshal(val)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.InterfaceType at: ../GOSRC/encoding/asn1/marshal.go:677:18) val])
 
 JOKER FUNC asn1.MarshalWithParams has:
 ;; (defn MarshalWithParams
-;;   "MarshalWithParams allows field parameters to be specified for the\ntop-level element. The form of the params is the same as the field tags.\nGo return type: ([]int, error)\nJoker return type: [[Int] Error]"
+;;   "MarshalWithParams allows field parameters to be specified for the\ntop-level element. The form of the params is the same as the field tags.\nGo return type: ([]int, error)\nJoker return type: [(vector-of Int) Error]"
 ;;   {:added "1.0"
 ;;    :go "marshalWithParams(val, params)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.InterfaceType at: ../GOSRC/encoding/asn1/marshal.go:683:28) val, ^String params])
@@ -3250,7 +3250,7 @@ JOKER FUNC base64.NewEncoding has:
 
 JOKER FUNC bidi.AppendReverse has:
 ;; (defn AppendReverse
-;;   "AppendReverse reverses the order of characters of in, appends them to out,\nand returns the result. Modifiers will still follow the runes they modify.\nBrackets are replaced with their counterparts.\nGo return type: []int\nJoker return type: [Int]"
+;;   "AppendReverse reverses the order of characters of in, appends them to out,\nand returns the result. Modifiers will still follow the runes they modify.\nBrackets are replaced with their counterparts.\nGo return type: []int\nJoker return type: (vector-of Int)"
 ;;   {:added "1.0"
 ;;    :go "appendReverse(out, in)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/vendor/golang_org/x/text/unicode/bidi/bidi.go:189:28) out, ^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/vendor/golang_org/x/text/unicode/bidi/bidi.go:189:28) in])
@@ -3810,14 +3810,14 @@ JOKER FUNC bytes.EqualFold has:
 
 JOKER FUNC bytes.Fields has:
 ;; (defn Fields
-;;   "Fields interprets s as a sequence of UTF-8-encoded code points.\nIt splits the slice s around each instance of one or more consecutive white space\ncharacters, as defined by unicode.IsSpace, returning a slice of subslices of s or an\nempty slice if s contains only white space.\nGo return type: [][]int\nJoker return type: [[Int]]"
+;;   "Fields interprets s as a sequence of UTF-8-encoded code points.\nIt splits the slice s around each instance of one or more consecutive white space\ncharacters, as defined by unicode.IsSpace, returning a slice of subslices of s or an\nempty slice if s contains only white space.\nGo return type: [][]int\nJoker return type: (vector-of (vector-of Int))"
 ;;   {:added "1.0"
 ;;    :go "fields(s)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/bytes/bytes.go:283:15) s])
 
 JOKER FUNC bytes.FieldsFunc has:
 ;; (defn FieldsFunc
-;;   "FieldsFunc interprets s as a sequence of UTF-8-encoded code points.\nIt splits the slice s at each run of code points c satisfying f(c) and\nreturns a slice of subslices of s. If all code points in s satisfy f(c), or\nlen(s) == 0, an empty slice is returned.\nFieldsFunc makes no guarantees about the order in which it calls f(c).\nIf f does not return consistent results for a given c, FieldsFunc may crash.\nGo return type: [][]int\nJoker return type: [[Int]]"
+;;   "FieldsFunc interprets s as a sequence of UTF-8-encoded code points.\nIt splits the slice s at each run of code points c satisfying f(c) and\nreturns a slice of subslices of s. If all code points in s satisfy f(c), or\nlen(s) == 0, an empty slice is returned.\nFieldsFunc makes no guarantees about the order in which it calls f(c).\nIf f does not return consistent results for a given c, FieldsFunc may crash.\nGo return type: [][]int\nJoker return type: (vector-of (vector-of Int))"
 ;;   {:added "1.0"
 ;;    :go "fieldsFunc(s, f)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/bytes/bytes.go:339:19) s, ^ABEND881(unrecognized Expr type *ast.FuncType at: ../GOSRC/bytes/bytes.go:339:29) f])
@@ -3873,7 +3873,7 @@ JOKER FUNC bytes.IndexRune has:
 
 JOKER FUNC bytes.Join has:
 ;; (defn Join
-;;   "Join concatenates the elements of s to create a new byte slice. The separator\nsep is placed between elements in the resulting slice.\nGo return type: []int\nJoker return type: [Int]"
+;;   "Join concatenates the elements of s to create a new byte slice. The separator\nsep is placed between elements in the resulting slice.\nGo return type: []int\nJoker return type: (vector-of Int)"
 ;;   {:added "1.0"
 ;;    :go "join(s, sep)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/bytes/bytes.go:387:13) s, ^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/bytes/bytes.go:387:27) sep])
@@ -3908,7 +3908,7 @@ JOKER FUNC bytes.LastIndexFunc has:
 
 JOKER FUNC bytes.Map has:
 ;; (defn Map
-;;   "Map returns a copy of the byte slice s with all its characters modified\naccording to the mapping function. If mapping returns a negative value, the character is\ndropped from the byte slice with no replacement. The characters in s and the\noutput are interpreted as UTF-8-encoded code points.\nGo return type: []int\nJoker return type: [Int]"
+;;   "Map returns a copy of the byte slice s with all its characters modified\naccording to the mapping function. If mapping returns a negative value, the character is\ndropped from the byte slice with no replacement. The characters in s and the\noutput are interpreted as UTF-8-encoded code points.\nGo return type: []int\nJoker return type: (vector-of Int)"
 ;;   {:added "1.0"
 ;;    :go "map(mapping, s)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.FuncType at: ../GOSRC/bytes/bytes.go:423:18) mapping, ^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/bytes/bytes.go:423:39) s])
@@ -3936,161 +3936,161 @@ JOKER FUNC bytes.NewReader has:
 
 JOKER FUNC bytes.Repeat has:
 ;; (defn Repeat
-;;   "Repeat returns a new byte slice consisting of count copies of b.\n\nIt panics if count is negative or if\nthe result of (len(b) * count) overflows.\nGo return type: []int\nJoker return type: [Int]"
+;;   "Repeat returns a new byte slice consisting of count copies of b.\n\nIt panics if count is negative or if\nthe result of (len(b) * count) overflows.\nGo return type: []int\nJoker return type: (vector-of Int)"
 ;;   {:added "1.0"
 ;;    :go "repeat(b, count)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/bytes/bytes.go:460:15) b, ^Int count])
 
 JOKER FUNC bytes.Replace has:
 ;; (defn Replace
-;;   "Replace returns a copy of the slice s with the first n\nnon-overlapping instances of old replaced by new.\nIf old is empty, it matches at the beginning of the slice\nand after each UTF-8 sequence, yielding up to k+1 replacements\nfor a k-rune slice.\nIf n < 0, there is no limit on the number of replacements.\nGo return type: []int\nJoker return type: [Int]"
+;;   "Replace returns a copy of the slice s with the first n\nnon-overlapping instances of old replaced by new.\nIf old is empty, it matches at the beginning of the slice\nand after each UTF-8 sequence, yielding up to k+1 replacements\nfor a k-rune slice.\nIf n < 0, there is no limit on the number of replacements.\nGo return type: []int\nJoker return type: (vector-of Int)"
 ;;   {:added "1.0"
 ;;    :go "replace(s, old, new, n)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/bytes/bytes.go:741:26) s, ^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/bytes/bytes.go:741:26) old, ^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/bytes/bytes.go:741:26) new, ^Int n])
 
 JOKER FUNC bytes.Runes has:
 ;; (defn Runes
-;;   "Runes interprets s as a sequence of UTF-8-encoded code points.\nIt returns a slice of runes (Unicode code points) equivalent to s.\nGo return type: []\nJoker return type: [ABEND042(cannot find typename bytes.rune)]"
+;;   "Runes interprets s as a sequence of UTF-8-encoded code points.\nIt returns a slice of runes (Unicode code points) equivalent to s.\nGo return type: []\nJoker return type: (vector-of ABEND042(cannot find typename bytes.rune))"
 ;;   {:added "1.0"
 ;;    :go "runes(s)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/bytes/bytes.go:723:14) s])
 
 JOKER FUNC bytes.Split has:
 ;; (defn Split
-;;   "Split slices s into all subslices separated by sep and returns a slice of\nthe subslices between those separators.\nIf sep is empty, Split splits after each UTF-8 sequence.\nIt is equivalent to SplitN with a count of -1.\nGo return type: [][]int\nJoker return type: [[Int]]"
+;;   "Split slices s into all subslices separated by sep and returns a slice of\nthe subslices between those separators.\nIf sep is empty, Split splits after each UTF-8 sequence.\nIt is equivalent to SplitN with a count of -1.\nGo return type: [][]int\nJoker return type: (vector-of (vector-of Int))"
 ;;   {:added "1.0"
 ;;    :go "split(s, sep)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/bytes/bytes.go:267:19) s, ^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/bytes/bytes.go:267:19) sep])
 
 JOKER FUNC bytes.SplitAfter has:
 ;; (defn SplitAfter
-;;   "SplitAfter slices s into all subslices after each instance of sep and\nreturns a slice of those subslices.\nIf sep is empty, SplitAfter splits after each UTF-8 sequence.\nIt is equivalent to SplitAfterN with a count of -1.\nGo return type: [][]int\nJoker return type: [[Int]]"
+;;   "SplitAfter slices s into all subslices after each instance of sep and\nreturns a slice of those subslices.\nIf sep is empty, SplitAfter splits after each UTF-8 sequence.\nIt is equivalent to SplitAfterN with a count of -1.\nGo return type: [][]int\nJoker return type: (vector-of (vector-of Int))"
 ;;   {:added "1.0"
 ;;    :go "splitAfter(s, sep)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/bytes/bytes.go:273:24) s, ^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/bytes/bytes.go:273:24) sep])
 
 JOKER FUNC bytes.SplitAfterN has:
 ;; (defn SplitAfterN
-;;   "SplitAfterN slices s into subslices after each instance of sep and\nreturns a slice of those subslices.\nIf sep is empty, SplitAfterN splits after each UTF-8 sequence.\nThe count determines the number of subslices to return:\n  n > 0: at most n subslices; the last subslice will be the unsplit remainder.\n  n == 0: the result is nil (zero subslices)\n  n < 0: all subslices\nGo return type: [][]int\nJoker return type: [[Int]]"
+;;   "SplitAfterN slices s into subslices after each instance of sep and\nreturns a slice of those subslices.\nIf sep is empty, SplitAfterN splits after each UTF-8 sequence.\nThe count determines the number of subslices to return:\n  n > 0: at most n subslices; the last subslice will be the unsplit remainder.\n  n == 0: the result is nil (zero subslices)\n  n < 0: all subslices\nGo return type: [][]int\nJoker return type: (vector-of (vector-of Int))"
 ;;   {:added "1.0"
 ;;    :go "splitAfterN(s, sep, n)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/bytes/bytes.go:259:25) s, ^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/bytes/bytes.go:259:25) sep, ^Int n])
 
 JOKER FUNC bytes.SplitN has:
 ;; (defn SplitN
-;;   "SplitN slices s into subslices separated by sep and returns a slice of\nthe subslices between those separators.\nIf sep is empty, SplitN splits after each UTF-8 sequence.\nThe count determines the number of subslices to return:\n  n > 0: at most n subslices; the last subslice will be the unsplit remainder.\n  n == 0: the result is nil (zero subslices)\n  n < 0: all subslices\nGo return type: [][]int\nJoker return type: [[Int]]"
+;;   "SplitN slices s into subslices separated by sep and returns a slice of\nthe subslices between those separators.\nIf sep is empty, SplitN splits after each UTF-8 sequence.\nThe count determines the number of subslices to return:\n  n > 0: at most n subslices; the last subslice will be the unsplit remainder.\n  n == 0: the result is nil (zero subslices)\n  n < 0: all subslices\nGo return type: [][]int\nJoker return type: (vector-of (vector-of Int))"
 ;;   {:added "1.0"
 ;;    :go "splitN(s, sep, n)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/bytes/bytes.go:250:20) s, ^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/bytes/bytes.go:250:20) sep, ^Int n])
 
 JOKER FUNC bytes.Title has:
 ;; (defn Title
-;;   "Title treats s as UTF-8-encoded bytes and returns a copy with all Unicode letters that begin\nwords mapped to their title case.\n\nBUG(rsc): The rule Title uses for word boundaries does not handle Unicode punctuation properly.\nGo return type: []int\nJoker return type: [Int]"
+;;   "Title treats s as UTF-8-encoded bytes and returns a copy with all Unicode letters that begin\nwords mapped to their title case.\n\nBUG(rsc): The rule Title uses for word boundaries does not handle Unicode punctuation properly.\nGo return type: []int\nJoker return type: (vector-of Int)"
 ;;   {:added "1.0"
 ;;    :go "title(s)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/bytes/bytes.go:536:14) s])
 
 JOKER FUNC bytes.ToLower has:
 ;; (defn ToLower
-;;   "ToLower treats s as UTF-8-encoded bytes and returns a copy with all the Unicode letters mapped to their lower case.\nGo return type: []int\nJoker return type: [Int]"
+;;   "ToLower treats s as UTF-8-encoded bytes and returns a copy with all the Unicode letters mapped to their lower case.\nGo return type: []int\nJoker return type: (vector-of Int)"
 ;;   {:added "1.0"
 ;;    :go "toLower(s)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/bytes/bytes.go:484:16) s])
 
 JOKER FUNC bytes.ToLowerSpecial has:
 ;; (defn ToLowerSpecial
-;;   "ToLowerSpecial treats s as UTF-8-encoded bytes and returns a copy with all the Unicode letters mapped to their\nlower case, giving priority to the special casing rules.\nGo return type: []int\nJoker return type: [Int]"
+;;   "ToLowerSpecial treats s as UTF-8-encoded bytes and returns a copy with all the Unicode letters mapped to their\nlower case, giving priority to the special casing rules.\nGo return type: []int\nJoker return type: (vector-of Int)"
 ;;   {:added "1.0"
 ;;    :go "toLowerSpecial(c, s)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/bytes/bytes.go:497:23) c, ^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/bytes/bytes.go:497:46) s])
 
 JOKER FUNC bytes.ToTitle has:
 ;; (defn ToTitle
-;;   "ToTitle treats s as UTF-8-encoded bytes and returns a copy with all the Unicode letters mapped to their title case.\nGo return type: []int\nJoker return type: [Int]"
+;;   "ToTitle treats s as UTF-8-encoded bytes and returns a copy with all the Unicode letters mapped to their title case.\nGo return type: []int\nJoker return type: (vector-of Int)"
 ;;   {:added "1.0"
 ;;    :go "toTitle(s)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/bytes/bytes.go:487:16) s])
 
 JOKER FUNC bytes.ToTitleSpecial has:
 ;; (defn ToTitleSpecial
-;;   "ToTitleSpecial treats s as UTF-8-encoded bytes and returns a copy with all the Unicode letters mapped to their\ntitle case, giving priority to the special casing rules.\nGo return type: []int\nJoker return type: [Int]"
+;;   "ToTitleSpecial treats s as UTF-8-encoded bytes and returns a copy with all the Unicode letters mapped to their\ntitle case, giving priority to the special casing rules.\nGo return type: []int\nJoker return type: (vector-of Int)"
 ;;   {:added "1.0"
 ;;    :go "toTitleSpecial(c, s)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/bytes/bytes.go:503:23) c, ^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/bytes/bytes.go:503:46) s])
 
 JOKER FUNC bytes.ToUpper has:
 ;; (defn ToUpper
-;;   "ToUpper treats s as UTF-8-encoded bytes and returns a copy with all the Unicode letters within it mapped to their upper case.\nGo return type: []int\nJoker return type: [Int]"
+;;   "ToUpper treats s as UTF-8-encoded bytes and returns a copy with all the Unicode letters within it mapped to their upper case.\nGo return type: []int\nJoker return type: (vector-of Int)"
 ;;   {:added "1.0"
 ;;    :go "toUpper(s)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/bytes/bytes.go:481:16) s])
 
 JOKER FUNC bytes.ToUpperSpecial has:
 ;; (defn ToUpperSpecial
-;;   "ToUpperSpecial treats s as UTF-8-encoded bytes and returns a copy with all the Unicode letters mapped to their\nupper case, giving priority to the special casing rules.\nGo return type: []int\nJoker return type: [Int]"
+;;   "ToUpperSpecial treats s as UTF-8-encoded bytes and returns a copy with all the Unicode letters mapped to their\nupper case, giving priority to the special casing rules.\nGo return type: []int\nJoker return type: (vector-of Int)"
 ;;   {:added "1.0"
 ;;    :go "toUpperSpecial(c, s)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/bytes/bytes.go:491:23) c, ^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/bytes/bytes.go:491:46) s])
 
 JOKER FUNC bytes.Trim has:
 ;; (defn Trim
-;;   "Trim returns a subslice of s by slicing off all leading and\ntrailing UTF-8-encoded code points contained in cutset.\nGo return type: []int\nJoker return type: [Int]"
+;;   "Trim returns a subslice of s by slicing off all leading and\ntrailing UTF-8-encoded code points contained in cutset.\nGo return type: []int\nJoker return type: (vector-of Int)"
 ;;   {:added "1.0"
 ;;    :go "trim(s, cutset)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/bytes/bytes.go:699:13) s, ^String cutset])
 
 JOKER FUNC bytes.TrimFunc has:
 ;; (defn TrimFunc
-;;   "TrimFunc returns a subslice of s by slicing off all leading and trailing\nUTF-8-encoded code points c that satisfy f(c).\nGo return type: []int\nJoker return type: [Int]"
+;;   "TrimFunc returns a subslice of s by slicing off all leading and trailing\nUTF-8-encoded code points c that satisfy f(c).\nGo return type: []int\nJoker return type: (vector-of Int)"
 ;;   {:added "1.0"
 ;;    :go "trimFunc(s, f)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/bytes/bytes.go:578:17) s, ^ABEND881(unrecognized Expr type *ast.FuncType at: ../GOSRC/bytes/bytes.go:578:27) f])
 
 JOKER FUNC bytes.TrimLeft has:
 ;; (defn TrimLeft
-;;   "TrimLeft returns a subslice of s by slicing off all leading\nUTF-8-encoded code points contained in cutset.\nGo return type: []int\nJoker return type: [Int]"
+;;   "TrimLeft returns a subslice of s by slicing off all leading\nUTF-8-encoded code points contained in cutset.\nGo return type: []int\nJoker return type: (vector-of Int)"
 ;;   {:added "1.0"
 ;;    :go "trimLeft(s, cutset)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/bytes/bytes.go:705:17) s, ^String cutset])
 
 JOKER FUNC bytes.TrimLeftFunc has:
 ;; (defn TrimLeftFunc
-;;   "TrimLeftFunc treats s as UTF-8-encoded bytes and returns a subslice of s by slicing off\nall leading UTF-8-encoded code points c that satisfy f(c).\nGo return type: []int\nJoker return type: [Int]"
+;;   "TrimLeftFunc treats s as UTF-8-encoded bytes and returns a subslice of s by slicing off\nall leading UTF-8-encoded code points c that satisfy f(c).\nGo return type: []int\nJoker return type: (vector-of Int)"
 ;;   {:added "1.0"
 ;;    :go "trimLeftFunc(s, f)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/bytes/bytes.go:555:21) s, ^ABEND881(unrecognized Expr type *ast.FuncType at: ../GOSRC/bytes/bytes.go:555:31) f])
 
 JOKER FUNC bytes.TrimPrefix has:
 ;; (defn TrimPrefix
-;;   "TrimPrefix returns s without the provided leading prefix string.\nIf s doesn't start with prefix, s is returned unchanged.\nGo return type: []int\nJoker return type: [Int]"
+;;   "TrimPrefix returns s without the provided leading prefix string.\nIf s doesn't start with prefix, s is returned unchanged.\nGo return type: []int\nJoker return type: (vector-of Int)"
 ;;   {:added "1.0"
 ;;    :go "trimPrefix(s, prefix)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/bytes/bytes.go:584:27) s, ^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/bytes/bytes.go:584:27) prefix])
 
 JOKER FUNC bytes.TrimRight has:
 ;; (defn TrimRight
-;;   "TrimRight returns a subslice of s by slicing off all trailing\nUTF-8-encoded code points that are contained in cutset.\nGo return type: []int\nJoker return type: [Int]"
+;;   "TrimRight returns a subslice of s by slicing off all trailing\nUTF-8-encoded code points that are contained in cutset.\nGo return type: []int\nJoker return type: (vector-of Int)"
 ;;   {:added "1.0"
 ;;    :go "trimRight(s, cutset)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/bytes/bytes.go:711:18) s, ^String cutset])
 
 JOKER FUNC bytes.TrimRightFunc has:
 ;; (defn TrimRightFunc
-;;   "TrimRightFunc returns a subslice of s by slicing off all trailing\nUTF-8-encoded code points c that satisfy f(c).\nGo return type: []int\nJoker return type: [Int]"
+;;   "TrimRightFunc returns a subslice of s by slicing off all trailing\nUTF-8-encoded code points c that satisfy f(c).\nGo return type: []int\nJoker return type: (vector-of Int)"
 ;;   {:added "1.0"
 ;;    :go "trimRightFunc(s, f)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/bytes/bytes.go:565:22) s, ^ABEND881(unrecognized Expr type *ast.FuncType at: ../GOSRC/bytes/bytes.go:565:32) f])
 
 JOKER FUNC bytes.TrimSpace has:
 ;; (defn TrimSpace
-;;   "TrimSpace returns a subslice of s by slicing off all leading and\ntrailing white space, as defined by Unicode.\nGo return type: []int\nJoker return type: [Int]"
+;;   "TrimSpace returns a subslice of s by slicing off all leading and\ntrailing white space, as defined by Unicode.\nGo return type: []int\nJoker return type: (vector-of Int)"
 ;;   {:added "1.0"
 ;;    :go "trimSpace(s)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/bytes/bytes.go:717:18) s])
 
 JOKER FUNC bytes.TrimSuffix has:
 ;; (defn TrimSuffix
-;;   "TrimSuffix returns s without the provided trailing suffix string.\nIf s doesn't end with suffix, s is returned unchanged.\nGo return type: []int\nJoker return type: [Int]"
+;;   "TrimSuffix returns s without the provided trailing suffix string.\nIf s doesn't end with suffix, s is returned unchanged.\nGo return type: []int\nJoker return type: (vector-of Int)"
 ;;   {:added "1.0"
 ;;    :go "trimSuffix(s, suffix)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/bytes/bytes.go:593:27) s, ^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/bytes/bytes.go:593:27) suffix])
@@ -4454,7 +4454,7 @@ JOKER FUNC constant.BoolVal has:
 
 JOKER FUNC constant.Bytes has:
 ;; (defn Bytes
-;;   "Bytes returns the bytes for the absolute value of x in little-\nendian binary representation; x must be an Int.\nGo return type: []int\nJoker return type: [Int]"
+;;   "Bytes returns the bytes for the absolute value of x in little-\nendian binary representation; x must be an Int.\nGo return type: []int\nJoker return type: (vector-of Int)"
 ;;   {:added "1.0"
 ;;    :go "bytes(x)"}
 ;;   [x])
@@ -4699,7 +4699,7 @@ JOKER FUNC crc32.ChecksumIEEE has:
 
 JOKER FUNC crc32.MakeTable has:
 ;; (defn MakeTable
-;;   "MakeTable returns a Table constructed from the specified polynomial.\nThe contents of this Table must not be modified.\nGo return type: []\nJoker return type: [ABEND042(cannot find typename crc32.uint32)]"
+;;   "MakeTable returns a Table constructed from the specified polynomial.\nThe contents of this Table must not be modified.\nGo return type: []\nJoker return type: (vector-of ABEND042(cannot find typename crc32.uint32))"
 ;;   {:added "1.0"
 ;;    :go "makeTable(poly)"}
 ;;   [poly])
@@ -4734,7 +4734,7 @@ JOKER FUNC crc64.Checksum has:
 
 JOKER FUNC crc64.MakeTable has:
 ;; (defn MakeTable
-;;   "MakeTable returns a Table constructed from the specified polynomial.\nThe contents of this Table must not be modified.\nGo return type: []\nJoker return type: [ABEND042(cannot find typename crc64.uint64)]"
+;;   "MakeTable returns a Table constructed from the specified polynomial.\nThe contents of this Table must not be modified.\nGo return type: []\nJoker return type: (vector-of ABEND042(cannot find typename crc64.uint64))"
 ;;   {:added "1.0"
 ;;    :go "makeTable(poly)"}
 ;;   [poly])
@@ -4860,7 +4860,7 @@ JOKER FUNC debug.SetTraceback has:
 
 JOKER FUNC debug.Stack has:
 ;; (defn Stack
-;;   "Stack returns a formatted stack trace of the goroutine that calls it.\nIt calls runtime.Stack with a large enough buffer to capture the entire trace.\nGo return type: []int\nJoker return type: [Int]"
+;;   "Stack returns a formatted stack trace of the goroutine that calls it.\nIt calls runtime.Stack with a large enough buffer to capture the entire trace.\nGo return type: []int\nJoker return type: (vector-of Int)"
 ;;   {:added "1.0"
 ;;    :go "stack()"}
 ;;   [])
@@ -4902,7 +4902,7 @@ JOKER FUNC dnsmessage.NewName has:
 
 JOKER FUNC doc.Examples has:
 ;; (defn Examples
-;;   "Examples returns the examples found in the files, sorted by Name field.\nThe Order fields record the order in which the examples were encountered.\n\nPlayable Examples must be in a package whose name ends in \"_test\".\nAn Example is \"playable\" (the Play field is non-nil) in either of these\ncircumstances:\n  - The example function is self-contained: the function references only\n    identifiers from other packages (or predeclared identifiers, such as\n    \"int\") and the test file does not include a dot import.\n  - The entire test file is the example: the file contains exactly one\n    example function, zero test or benchmark functions, and at least one\n    top-level function, type, variable, or constant declaration other\n    than the example function.\nGo return type: []\nJoker return type: [ABEND883(unrecognized Expr type *ast.StructType at: ../GOSRC/go/doc/example.go:22:14)]"
+;;   "Examples returns the examples found in the files, sorted by Name field.\nThe Order fields record the order in which the examples were encountered.\n\nPlayable Examples must be in a package whose name ends in \"_test\".\nAn Example is \"playable\" (the Play field is non-nil) in either of these\ncircumstances:\n  - The example function is self-contained: the function references only\n    identifiers from other packages (or predeclared identifiers, such as\n    \"int\") and the test file does not include a dot import.\n  - The entire test file is the example: the file contains exactly one\n    example function, zero test or benchmark functions, and at least one\n    top-level function, type, variable, or constant declaration other\n    than the example function.\nGo return type: []\nJoker return type: (vector-of ABEND883(unrecognized Expr type *ast.StructType at: ../GOSRC/go/doc/example.go:22:14))"
 ;;   {:added "1.0"
 ;;    :go "examples(files)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.Ellipsis at: ../GOSRC/go/doc/example.go:47:21) files])
@@ -5119,7 +5119,7 @@ JOKER FUNC elliptic.GenerateKey has:
 
 JOKER FUNC elliptic.Marshal has:
 ;; (defn Marshal
-;;   "Marshal converts a point into the uncompressed form specified in section 4.3.6 of ANSI X9.62.\nGo return type: []int\nJoker return type: [Int]"
+;;   "Marshal converts a point into the uncompressed form specified in section 4.3.6 of ANSI X9.62.\nGo return type: []int\nJoker return type: (vector-of Int)"
 ;;   {:added "1.0"
 ;;    :go "marshal(curve, x, y)"}
 ;;   [curve, ^ABEND881(unrecognized Expr type *ast.StarExpr at: ../GOSRC/crypto/elliptic/elliptic.go:305:32) x, ^ABEND881(unrecognized Expr type *ast.StarExpr at: ../GOSRC/crypto/elliptic/elliptic.go:305:32) y])
@@ -5357,7 +5357,7 @@ JOKER FUNC filepath.Split has:
 
 JOKER FUNC filepath.SplitList has:
 ;; (defn SplitList
-;;   "SplitList splits a list of paths joined by the OS-specific ListSeparator,\nusually found in PATH or GOPATH environment variables.\nUnlike strings.Split, SplitList returns an empty slice when passed an empty\nstring.\nGo return type: []string\nJoker return type: [String]"
+;;   "SplitList splits a list of paths joined by the OS-specific ListSeparator,\nusually found in PATH or GOPATH environment variables.\nUnlike strings.Split, SplitList returns an empty slice when passed an empty\nstring.\nGo return type: []string\nJoker return type: (vector-of String)"
 ;;   {:added "1.0"
 ;;    :go "splitList(path)"}
 ;;   [^String path])
@@ -5392,7 +5392,7 @@ JOKER FUNC flag.Arg has:
 
 JOKER FUNC flag.Args has:
 ;; (defn Args
-;;   "Args returns the non-flag command-line arguments.\nGo return type: []string\nJoker return type: [String]"
+;;   "Args returns the non-flag command-line arguments.\nGo return type: []string\nJoker return type: (vector-of String)"
 ;;   {:added "1.0"
 ;;    :go "args()"}
 ;;   [])
@@ -5805,7 +5805,7 @@ JOKER FUNC format.Node has:
 
 JOKER FUNC format.Source has:
 ;; (defn Source
-;;   "Source formats src in canonical gofmt style and returns the result\nor an (I/O or syntax) error. src is expected to be a syntactically\ncorrect Go source file, or a list of Go declarations or statements.\n\nIf src is a partial source file, the leading and trailing space of src\nis applied to the result (such that it has the same leading and trailing\nspace as src), and the result is indented by the same amount as the first\nline of src containing code. Imports are not sorted for partial source files.\nGo return type: ([]int, error)\nJoker return type: [[Int] Error]"
+;;   "Source formats src in canonical gofmt style and returns the result\nor an (I/O or syntax) error. src is expected to be a syntactically\ncorrect Go source file, or a list of Go declarations or statements.\n\nIf src is a partial source file, the leading and trailing space of src\nis applied to the result (such that it has the same leading and trailing\nspace as src), and the result is indented by the same amount as the first\nline of src containing code. Imports are not sorted for partial source files.\nGo return type: ([]int, error)\nJoker return type: [(vector-of Int) Error]"
 ;;   {:added "1.0"
 ;;    :go "source(src)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/go/format/format.go:91:17) src])
@@ -5952,7 +5952,7 @@ JOKER FUNC hex.Decode has:
 
 JOKER FUNC hex.DecodeString has:
 ;; (defn DecodeString
-;;   "DecodeString returns the bytes represented by the hexadecimal string s.\n\nDecodeString expects that src contains only hexadecimal\ncharacters and that src has even length.\nIf the input is malformed, DecodeString returns\nthe bytes decoded before the error.\nGo return type: ([]int, error)\nJoker return type: [[Int] Error]"
+;;   "DecodeString returns the bytes represented by the hexadecimal string s.\n\nDecodeString expects that src contains only hexadecimal\ncharacters and that src has even length.\nIf the input is malformed, DecodeString returns\nthe bytes decoded before the error.\nGo return type: ([]int, error)\nJoker return type: [(vector-of Int) Error]"
 ;;   {:added "1.0"
 ;;    :go "decodeString(s)"}
 ;;   [^String s])
@@ -6029,7 +6029,7 @@ JOKER FUNC hmac.New has:
 
 JOKER FUNC hpack.AppendHuffmanString has:
 ;; (defn AppendHuffmanString
-;;   "AppendHuffmanString appends s, as encoded in Huffman codes, to dst\nand returns the extended buffer.\nGo return type: []int\nJoker return type: [Int]"
+;;   "AppendHuffmanString appends s, as encoded in Huffman codes, to dst\nand returns the extended buffer.\nGo return type: []int\nJoker return type: (vector-of Int)"
 ;;   {:added "1.0"
 ;;    :go "appendHuffmanString(dst, s)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/vendor/golang_org/x/net/http2/hpack/huffman.go:160:30) dst, ^String s])
@@ -6428,21 +6428,21 @@ JOKER FUNC httptrace.WithClientTrace has:
 
 JOKER FUNC httputil.DumpRequest has:
 ;; (defn DumpRequest
-;;   "DumpRequest returns the given request in its HTTP/1.x wire\nrepresentation. It should only be used by servers to debug client\nrequests. The returned representation is an approximation only;\nsome details of the initial request are lost while parsing it into\nan http.Request. In particular, the order and case of header field\nnames are lost. The order of values in multi-valued headers is kept\nintact. HTTP/2 requests are dumped in HTTP/1.x form, not in their\noriginal binary representations.\n\nIf body is true, DumpRequest also returns the body. To do so, it\nconsumes req.Body and then replaces it with a new io.ReadCloser\nthat yields the same bytes. If DumpRequest returns an error,\nthe state of req is undefined.\n\nThe documentation for http.Request.Write details which fields\nof req are included in the dump.\nGo return type: ([]int, error)\nJoker return type: [[Int] Error]"
+;;   "DumpRequest returns the given request in its HTTP/1.x wire\nrepresentation. It should only be used by servers to debug client\nrequests. The returned representation is an approximation only;\nsome details of the initial request are lost while parsing it into\nan http.Request. In particular, the order and case of header field\nnames are lost. The order of values in multi-valued headers is kept\nintact. HTTP/2 requests are dumped in HTTP/1.x form, not in their\noriginal binary representations.\n\nIf body is true, DumpRequest also returns the body. To do so, it\nconsumes req.Body and then replaces it with a new io.ReadCloser\nthat yields the same bytes. If DumpRequest returns an error,\nthe state of req is undefined.\n\nThe documentation for http.Request.Write details which fields\nof req are included in the dump.\nGo return type: ([]int, error)\nJoker return type: [(vector-of Int) Error]"
 ;;   {:added "1.0"
 ;;    :go "dumpRequest(req, body)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: ../GOSRC/net/http/httputil/dump.go:191:22) req, body])
 
 JOKER FUNC httputil.DumpRequestOut has:
 ;; (defn DumpRequestOut
-;;   "DumpRequestOut is like DumpRequest but for outgoing client requests. It\nincludes any headers that the standard http.Transport adds, such as\nUser-Agent.\nGo return type: ([]int, error)\nJoker return type: [[Int] Error]"
+;;   "DumpRequestOut is like DumpRequest but for outgoing client requests. It\nincludes any headers that the standard http.Transport adds, such as\nUser-Agent.\nGo return type: ([]int, error)\nJoker return type: [(vector-of Int) Error]"
 ;;   {:added "1.0"
 ;;    :go "dumpRequestOut(req, body)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: ../GOSRC/net/http/httputil/dump.go:66:25) req, body])
 
 JOKER FUNC httputil.DumpResponse has:
 ;; (defn DumpResponse
-;;   "DumpResponse is like DumpRequest but dumps a response.\nGo return type: ([]int, error)\nJoker return type: [[Int] Error]"
+;;   "DumpResponse is like DumpRequest but dumps a response.\nGo return type: ([]int, error)\nJoker return type: [(vector-of Int) Error]"
 ;;   {:added "1.0"
 ;;    :go "dumpResponse(resp, body)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: ../GOSRC/net/http/httputil/dump.go:281:24) resp, body])
@@ -6848,21 +6848,21 @@ JOKER FUNC ioutil.NopCloser has:
 
 JOKER FUNC ioutil.ReadAll has:
 ;; (defn ReadAll
-;;   "ReadAll reads from r until an error or EOF and returns the data it read.\nA successful call returns err == nil, not err == EOF. Because ReadAll is\ndefined to read from src until EOF, it does not treat an EOF from Read\nas an error to be reported.\nGo return type: ([]int, error)\nJoker return type: [[Int] Error]"
+;;   "ReadAll reads from r until an error or EOF and returns the data it read.\nA successful call returns err == nil, not err == EOF. Because ReadAll is\ndefined to read from src until EOF, it does not treat an EOF from Read\nas an error to be reported.\nGo return type: ([]int, error)\nJoker return type: [(vector-of Int) Error]"
 ;;   {:added "1.0"
 ;;    :go "readAll(r)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/io/ioutil/ioutil.go:44:16) r])
 
 JOKER FUNC ioutil.ReadDir has:
 ;; (defn ReadDir
-;;   "ReadDir reads the directory named by dirname and returns\na list of directory entries sorted by filename.\nGo return type: ([], error)\nJoker return type: [[ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/io/ioutil/ioutil.go:96:33)] Error]"
+;;   "ReadDir reads the directory named by dirname and returns\na list of directory entries sorted by filename.\nGo return type: ([], error)\nJoker return type: [(vector-of ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/io/ioutil/ioutil.go:96:33)) Error]"
 ;;   {:added "1.0"
 ;;    :go "readDir(dirname)"}
 ;;   [^String dirname])
 
 JOKER FUNC ioutil.ReadFile has:
 ;; (defn ReadFile
-;;   "ReadFile reads the file named by filename and returns the contents.\nA successful call returns err == nil, not err == EOF. Because ReadFile\nreads the whole file, it does not treat an EOF from Read as an error\nto be reported.\nGo return type: ([]int, error)\nJoker return type: [[Int] Error]"
+;;   "ReadFile reads the file named by filename and returns the contents.\nA successful call returns err == nil, not err == EOF. Because ReadFile\nreads the whole file, it does not treat an EOF from Read as an error\nto be reported.\nGo return type: ([]int, error)\nJoker return type: [(vector-of Int) Error]"
 ;;   {:added "1.0"
 ;;    :go "readFile(filename)"}
 ;;   [^String filename])
@@ -6932,14 +6932,14 @@ JOKER FUNC json.Indent has:
 
 JOKER FUNC json.Marshal has:
 ;; (defn Marshal
-;;   "Marshal returns the JSON encoding of v.\n\nMarshal traverses the value v recursively.\nIf an encountered value implements the Marshaler interface\nand is not a nil pointer, Marshal calls its MarshalJSON method\nto produce JSON. If no MarshalJSON method is present but the\nvalue implements encoding.TextMarshaler instead, Marshal calls\nits MarshalText method and encodes the result as a JSON string.\nThe nil pointer exception is not strictly necessary\nbut mimics a similar, necessary exception in the behavior of\nUnmarshalJSON.\n\nOtherwise, Marshal uses the following type-dependent default encodings:\n\nBoolean values encode as JSON booleans.\n\nFloating point, integer, and Number values encode as JSON numbers.\n\nString values encode as JSON strings coerced to valid UTF-8,\nreplacing invalid bytes with the Unicode replacement rune.\nThe angle brackets \"<\" and \">\" are escaped to \"\\u003c\" and \"\\u003e\"\nto keep some browsers from misinterpreting JSON output as HTML.\nAmpersand \"&\" is also escaped to \"\\u0026\" for the same reason.\nThis escaping can be disabled using an Encoder that had SetEscapeHTML(false)\ncalled on it.\n\nArray and slice values encode as JSON arrays, except that\n[]byte encodes as a base64-encoded string, and a nil slice\nencodes as the null JSON value.\n\nStruct values encode as JSON objects.\nEach exported struct field becomes a member of the object, using the\nfield name as the object key, unless the field is omitted for one of the\nreasons given below.\n\nThe encoding of each struct field can be customized by the format string\nstored under the \"json\" key in the struct field's tag.\nThe format string gives the name of the field, possibly followed by a\ncomma-separated list of options. The name may be empty in order to\nspecify options without overriding the default field name.\n\nThe \"omitempty\" option specifies that the field should be omitted\nfrom the encoding if the field has an empty value, defined as\nfalse, 0, a nil pointer, a nil interface value, and any empty array,\nslice, map, or string.\n\nAs a special case, if the field tag is \"-\", the field is always omitted.\nNote that a field with name \"-\" can still be generated using the tag \"-,\".\n\nExamples of struct field tags and their meanings:\n\n  // Field appears in JSON as key \"myName\".\n  Field int `json:\"myName\"`\n\n  // Field appears in JSON as key \"myName\" and\n  // the field is omitted from the object if its value is empty,\n  // as defined above.\n  Field int `json:\"myName,omitempty\"`\n\n  // Field appears in JSON as key \"Field\" (the default), but\n  // the field is skipped if empty.\n  // Note the leading comma.\n  Field int `json:\",omitempty\"`\n\n  // Field is ignored by this package.\n  Field int `json:\"-\"`\n\n  // Field appears in JSON as key \"-\".\n  Field int `json:\"-,\"`\n\nThe \"string\" option signals that a field is stored as JSON inside a\nJSON-encoded string. It applies only to fields of string, floating point,\ninteger, or boolean types. This extra level of encoding is sometimes used\nwhen communicating with JavaScript programs:\n\n   Int64String int64 `json:\",string\"`\n\nThe key name will be used if it's a non-empty string consisting of\nonly Unicode letters, digits, and ASCII punctuation except quotation\nmarks, backslash, and comma.\n\nAnonymous struct fields are usually marshaled as if their inner exported fields\nwere fields in the outer struct, subject to the usual Go visibility rules amended\nas described in the next paragraph.\nAn anonymous struct field with a name given in its JSON tag is treated as\nhaving that name, rather than being anonymous.\nAn anonymous struct field of interface type is treated the same as having\nthat type as its name, rather than being anonymous.\n\nThe Go visibility rules for struct fields are amended for JSON when\ndeciding which field to marshal or unmarshal. If there are\nmultiple fields at the same level, and that level is the least\nnested (and would therefore be the nesting level selected by the\nusual Go rules), the following extra rules apply:\n\n1) Of those fields, if any are JSON-tagged, only tagged fields are considered,\neven if there are multiple untagged fields that would otherwise conflict.\n\n2) If there is exactly one field (tagged or not according to the first rule), that is selected.\n\n3) Otherwise there are multiple fields, and all are ignored; no error occurs.\n\nHandling of anonymous struct fields is new in Go 1.1.\nPrior to Go 1.1, anonymous struct fields were ignored. To force ignoring of\nan anonymous struct field in both current and earlier versions, give the field\na JSON tag of \"-\".\n\nMap values encode as JSON objects. The map's key type must either be a\nstring, an integer type, or implement encoding.TextMarshaler. The map keys\nare sorted and used as JSON object keys by applying the following rules,\nsubject to the UTF-8 coercion described for string values above:\n  - string keys are used directly\n  - encoding.TextMarshalers are marshaled\n  - integer keys are converted to strings\n\nPointer values encode as the value pointed to.\nA nil pointer encodes as the null JSON value.\n\nInterface values encode as the value contained in the interface.\nA nil interface value encodes as the null JSON value.\n\nChannel, complex, and function values cannot be encoded in JSON.\nAttempting to encode such a value causes Marshal to return\nan UnsupportedTypeError.\n\nJSON cannot represent cyclic data structures and Marshal does not\nhandle them. Passing cyclic structures to Marshal will result in\nan infinite recursion.\nGo return type: ([]int, error)\nJoker return type: [[Int] Error]"
+;;   "Marshal returns the JSON encoding of v.\n\nMarshal traverses the value v recursively.\nIf an encountered value implements the Marshaler interface\nand is not a nil pointer, Marshal calls its MarshalJSON method\nto produce JSON. If no MarshalJSON method is present but the\nvalue implements encoding.TextMarshaler instead, Marshal calls\nits MarshalText method and encodes the result as a JSON string.\nThe nil pointer exception is not strictly necessary\nbut mimics a similar, necessary exception in the behavior of\nUnmarshalJSON.\n\nOtherwise, Marshal uses the following type-dependent default encodings:\n\nBoolean values encode as JSON booleans.\n\nFloating point, integer, and Number values encode as JSON numbers.\n\nString values encode as JSON strings coerced to valid UTF-8,\nreplacing invalid bytes with the Unicode replacement rune.\nThe angle brackets \"<\" and \">\" are escaped to \"\\u003c\" and \"\\u003e\"\nto keep some browsers from misinterpreting JSON output as HTML.\nAmpersand \"&\" is also escaped to \"\\u0026\" for the same reason.\nThis escaping can be disabled using an Encoder that had SetEscapeHTML(false)\ncalled on it.\n\nArray and slice values encode as JSON arrays, except that\n[]byte encodes as a base64-encoded string, and a nil slice\nencodes as the null JSON value.\n\nStruct values encode as JSON objects.\nEach exported struct field becomes a member of the object, using the\nfield name as the object key, unless the field is omitted for one of the\nreasons given below.\n\nThe encoding of each struct field can be customized by the format string\nstored under the \"json\" key in the struct field's tag.\nThe format string gives the name of the field, possibly followed by a\ncomma-separated list of options. The name may be empty in order to\nspecify options without overriding the default field name.\n\nThe \"omitempty\" option specifies that the field should be omitted\nfrom the encoding if the field has an empty value, defined as\nfalse, 0, a nil pointer, a nil interface value, and any empty array,\nslice, map, or string.\n\nAs a special case, if the field tag is \"-\", the field is always omitted.\nNote that a field with name \"-\" can still be generated using the tag \"-,\".\n\nExamples of struct field tags and their meanings:\n\n  // Field appears in JSON as key \"myName\".\n  Field int `json:\"myName\"`\n\n  // Field appears in JSON as key \"myName\" and\n  // the field is omitted from the object if its value is empty,\n  // as defined above.\n  Field int `json:\"myName,omitempty\"`\n\n  // Field appears in JSON as key \"Field\" (the default), but\n  // the field is skipped if empty.\n  // Note the leading comma.\n  Field int `json:\",omitempty\"`\n\n  // Field is ignored by this package.\n  Field int `json:\"-\"`\n\n  // Field appears in JSON as key \"-\".\n  Field int `json:\"-,\"`\n\nThe \"string\" option signals that a field is stored as JSON inside a\nJSON-encoded string. It applies only to fields of string, floating point,\ninteger, or boolean types. This extra level of encoding is sometimes used\nwhen communicating with JavaScript programs:\n\n   Int64String int64 `json:\",string\"`\n\nThe key name will be used if it's a non-empty string consisting of\nonly Unicode letters, digits, and ASCII punctuation except quotation\nmarks, backslash, and comma.\n\nAnonymous struct fields are usually marshaled as if their inner exported fields\nwere fields in the outer struct, subject to the usual Go visibility rules amended\nas described in the next paragraph.\nAn anonymous struct field with a name given in its JSON tag is treated as\nhaving that name, rather than being anonymous.\nAn anonymous struct field of interface type is treated the same as having\nthat type as its name, rather than being anonymous.\n\nThe Go visibility rules for struct fields are amended for JSON when\ndeciding which field to marshal or unmarshal. If there are\nmultiple fields at the same level, and that level is the least\nnested (and would therefore be the nesting level selected by the\nusual Go rules), the following extra rules apply:\n\n1) Of those fields, if any are JSON-tagged, only tagged fields are considered,\neven if there are multiple untagged fields that would otherwise conflict.\n\n2) If there is exactly one field (tagged or not according to the first rule), that is selected.\n\n3) Otherwise there are multiple fields, and all are ignored; no error occurs.\n\nHandling of anonymous struct fields is new in Go 1.1.\nPrior to Go 1.1, anonymous struct fields were ignored. To force ignoring of\nan anonymous struct field in both current and earlier versions, give the field\na JSON tag of \"-\".\n\nMap values encode as JSON objects. The map's key type must either be a\nstring, an integer type, or implement encoding.TextMarshaler. The map keys\nare sorted and used as JSON object keys by applying the following rules,\nsubject to the UTF-8 coercion described for string values above:\n  - string keys are used directly\n  - encoding.TextMarshalers are marshaled\n  - integer keys are converted to strings\n\nPointer values encode as the value pointed to.\nA nil pointer encodes as the null JSON value.\n\nInterface values encode as the value contained in the interface.\nA nil interface value encodes as the null JSON value.\n\nChannel, complex, and function values cannot be encoded in JSON.\nAttempting to encode such a value causes Marshal to return\nan UnsupportedTypeError.\n\nJSON cannot represent cyclic data structures and Marshal does not\nhandle them. Passing cyclic structures to Marshal will result in\nan infinite recursion.\nGo return type: ([]int, error)\nJoker return type: [(vector-of Int) Error]"
 ;;   {:added "1.0"
 ;;    :go "marshal(v)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.InterfaceType at: ../GOSRC/encoding/json/encode.go:157:16) v])
 
 JOKER FUNC json.MarshalIndent has:
 ;; (defn MarshalIndent
-;;   "MarshalIndent is like Marshal but applies Indent to format the output.\nEach JSON element in the output will begin on a new line beginning with prefix\nfollowed by one or more copies of indent according to the indentation nesting.\nGo return type: ([]int, error)\nJoker return type: [[Int] Error]"
+;;   "MarshalIndent is like Marshal but applies Indent to format the output.\nEach JSON element in the output will begin on a new line beginning with prefix\nfollowed by one or more copies of indent according to the indentation nesting.\nGo return type: ([]int, error)\nJoker return type: [(vector-of Int) Error]"
 ;;   {:added "1.0"
 ;;    :go "marshalIndent(v, prefix, indent)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.InterfaceType at: ../GOSRC/encoding/json/encode.go:175:22) v, ^String prefix, ^String indent])
@@ -7177,7 +7177,7 @@ JOKER FUNC mail.ParseAddress has:
 
 JOKER FUNC mail.ParseAddressList has:
 ;; (defn ParseAddressList
-;;   "ParseAddressList parses the given string as a list of addresses.\nGo return type: ([], error)\nJoker return type: [[ABEND883(unrecognized Expr type *ast.StructType at: ../GOSRC/net/mail/message.go:141:14)] Error]"
+;;   "ParseAddressList parses the given string as a list of addresses.\nGo return type: ([], error)\nJoker return type: [(vector-of ABEND883(unrecognized Expr type *ast.StructType at: ../GOSRC/net/mail/message.go:141:14)) Error]"
 ;;   {:added "1.0"
 ;;    :go "parseAddressList(list)"}
 ;;   [^String list])
@@ -7667,7 +7667,7 @@ JOKER FUNC md5.New has:
 
 JOKER FUNC md5.Sum has:
 ;; (defn Sum
-;;   "Sum returns the MD5 checksum of the data.\nGo return type: []int\nJoker return type: [Int]"
+;;   "Sum returns the MD5 checksum of the data.\nGo return type: []int\nJoker return type: (vector-of Int)"
 ;;   {:added "1.0"
 ;;    :go "sum(data)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/crypto/md5/md5.go:204:15) data])
@@ -7681,7 +7681,7 @@ JOKER FUNC mime.AddExtensionType has:
 
 JOKER FUNC mime.ExtensionsByType has:
 ;; (defn ExtensionsByType
-;;   "ExtensionsByType returns the extensions known to be associated with the MIME\ntype typ. The returned extensions will each begin with a leading dot, as in\n\".html\". When typ has no associated extensions, ExtensionsByType returns an\nnil slice.\nGo return type: ([]string, error)\nJoker return type: [[String] Error]"
+;;   "ExtensionsByType returns the extensions known to be associated with the MIME\ntype typ. The returned extensions will each begin with a leading dot, as in\n\".html\". When typ has no associated extensions, ExtensionsByType returns an\nnil slice.\nGo return type: ([]string, error)\nJoker return type: [(vector-of String) Error]"
 ;;   {:added "1.0"
 ;;    :go "extensionsByType(typ)"}
 ;;   [^String typ])
@@ -7723,7 +7723,7 @@ JOKER FUNC multipart.NewWriter has:
 
 JOKER FUNC net.CIDRMask has:
 ;; (defn CIDRMask
-;;   "CIDRMask returns an IPMask consisting of `ones' 1 bits\nfollowed by 0s up to a total length of `bits' bits.\nFor a mask of this form, CIDRMask is the inverse of IPMask.Size.\nGo return type: []int\nJoker return type: [Int]"
+;;   "CIDRMask returns an IPMask consisting of `ones' 1 bits\nfollowed by 0s up to a total length of `bits' bits.\nFor a mask of this form, CIDRMask is the inverse of IPMask.Size.\nGo return type: []int\nJoker return type: (vector-of Int)"
 ;;   {:added "1.0"
 ;;    :go "cIDRMask(ones, bits)"}
 ;;   [^Int ones, ^Int bits])
@@ -7793,21 +7793,21 @@ JOKER FUNC net.FilePacketConn has:
 
 JOKER FUNC net.IPv4 has:
 ;; (defn IPv4
-;;   "IPv4 returns the IP address (in 16-byte form) of the\nIPv4 address a.b.c.d.\nGo return type: []int\nJoker return type: [Int]"
+;;   "IPv4 returns the IP address (in 16-byte form) of the\nIPv4 address a.b.c.d.\nGo return type: []int\nJoker return type: (vector-of Int)"
 ;;   {:added "1.0"
 ;;    :go "iPv4(a, b, c, d)"}
 ;;   [a, b, c, d])
 
 JOKER FUNC net.IPv4Mask has:
 ;; (defn IPv4Mask
-;;   "IPv4Mask returns the IP mask (in 4-byte form) of the\nIPv4 mask a.b.c.d.\nGo return type: []int\nJoker return type: [Int]"
+;;   "IPv4Mask returns the IP mask (in 4-byte form) of the\nIPv4 mask a.b.c.d.\nGo return type: []int\nJoker return type: (vector-of Int)"
 ;;   {:added "1.0"
 ;;    :go "iPv4Mask(a, b, c, d)"}
 ;;   [a, b, c, d])
 
 JOKER FUNC net.InterfaceAddrs has:
 ;; (defn InterfaceAddrs
-;;   "InterfaceAddrs returns a list of the system's unicast interface\naddresses.\n\nThe returned list does not identify the associated interface; use\nInterfaces and Interface.Addrs for more detail.\nGo return type: ([], error)\nJoker return type: [[ABEND883(unrecognized Expr type *ast.InterfaceType at: ../GOSRC/net/net.go:105:11)] Error]"
+;;   "InterfaceAddrs returns a list of the system's unicast interface\naddresses.\n\nThe returned list does not identify the associated interface; use\nInterfaces and Interface.Addrs for more detail.\nGo return type: ([], error)\nJoker return type: [(vector-of ABEND883(unrecognized Expr type *ast.InterfaceType at: ../GOSRC/net/net.go:105:11)) Error]"
 ;;   {:added "1.0"
 ;;    :go "interfaceAddrs()"}
 ;;   [])
@@ -7828,7 +7828,7 @@ JOKER FUNC net.InterfaceByName has:
 
 JOKER FUNC net.Interfaces has:
 ;; (defn Interfaces
-;;   "Interfaces returns a list of the system's network interfaces.\nGo return type: ([], error)\nJoker return type: [[ABEND883(unrecognized Expr type *ast.StructType at: ../GOSRC/net/interface.go:30:16)] Error]"
+;;   "Interfaces returns a list of the system's network interfaces.\nGo return type: ([], error)\nJoker return type: [(vector-of ABEND883(unrecognized Expr type *ast.StructType at: ../GOSRC/net/interface.go:30:16)) Error]"
 ;;   {:added "1.0"
 ;;    :go "interfaces()"}
 ;;   [])
@@ -7919,21 +7919,21 @@ JOKER FUNC net.LookupHost has:
 
 JOKER FUNC net.LookupIP has:
 ;; (defn LookupIP
-;;   "LookupIP looks up host using the local resolver.\nIt returns a slice of that host's IPv4 and IPv6 addresses.\nGo return type: ([][]int, error)\nJoker return type: [[[Int]] Error]"
+;;   "LookupIP looks up host using the local resolver.\nIt returns a slice of that host's IPv4 and IPv6 addresses.\nGo return type: ([][]int, error)\nJoker return type: [(vector-of (vector-of Int)) Error]"
 ;;   {:added "1.0"
 ;;    :go "lookupIP(host)"}
 ;;   [^String host])
 
 JOKER FUNC net.LookupMX has:
 ;; (defn LookupMX
-;;   "LookupMX returns the DNS MX records for the given domain name sorted by preference.\nGo return type: ([], error)\nJoker return type: [[ABEND883(unrecognized Expr type *ast.StructType at: ../GOSRC/net/dnsclient.go:193:9)] Error]"
+;;   "LookupMX returns the DNS MX records for the given domain name sorted by preference.\nGo return type: ([], error)\nJoker return type: [(vector-of ABEND883(unrecognized Expr type *ast.StructType at: ../GOSRC/net/dnsclient.go:193:9)) Error]"
 ;;   {:added "1.0"
 ;;    :go "lookupMX(name)"}
 ;;   [^String name])
 
 JOKER FUNC net.LookupNS has:
 ;; (defn LookupNS
-;;   "LookupNS returns the DNS NS records for the given domain name.\nGo return type: ([], error)\nJoker return type: [[ABEND883(unrecognized Expr type *ast.StructType at: ../GOSRC/net/dnsclient.go:215:9)] Error]"
+;;   "LookupNS returns the DNS NS records for the given domain name.\nGo return type: ([], error)\nJoker return type: [(vector-of ABEND883(unrecognized Expr type *ast.StructType at: ../GOSRC/net/dnsclient.go:215:9)) Error]"
 ;;   {:added "1.0"
 ;;    :go "lookupNS(name)"}
 ;;   [^String name])
@@ -7954,21 +7954,21 @@ JOKER FUNC net.LookupSRV has:
 
 JOKER FUNC net.LookupTXT has:
 ;; (defn LookupTXT
-;;   "LookupTXT returns the DNS TXT records for the given domain name.\nGo return type: ([]string, error)\nJoker return type: [[String] Error]"
+;;   "LookupTXT returns the DNS TXT records for the given domain name.\nGo return type: ([]string, error)\nJoker return type: [(vector-of String) Error]"
 ;;   {:added "1.0"
 ;;    :go "lookupTXT(name)"}
 ;;   [^String name])
 
 JOKER FUNC net.ParseCIDR has:
 ;; (defn ParseCIDR
-;;   "ParseCIDR parses s as a CIDR notation IP address and prefix length,\nlike \"192.0.2.0/24\" or \"2001:db8::/32\", as defined in\nRFC 4632 and RFC 4291.\n\nIt returns the IP address and the network implied by the IP and\nprefix length.\nFor example, ParseCIDR(\"192.0.2.1/24\") returns the IP address\n192.0.2.1 and the network 192.0.2.0/24.\nGo return type: ([]int, , error)\nJoker return type: [[Int] ABEND883(unrecognized Expr type *ast.StructType at: ../GOSRC/net/ip.go:38:12) Error]"
+;;   "ParseCIDR parses s as a CIDR notation IP address and prefix length,\nlike \"192.0.2.0/24\" or \"2001:db8::/32\", as defined in\nRFC 4632 and RFC 4291.\n\nIt returns the IP address and the network implied by the IP and\nprefix length.\nFor example, ParseCIDR(\"192.0.2.1/24\") returns the IP address\n192.0.2.1 and the network 192.0.2.0/24.\nGo return type: ([]int, , error)\nJoker return type: [(vector-of Int) ABEND883(unrecognized Expr type *ast.StructType at: ../GOSRC/net/ip.go:38:12) Error]"
 ;;   {:added "1.0"
 ;;    :go "parseCIDR(s)"}
 ;;   [^String s])
 
 JOKER FUNC net.ParseIP has:
 ;; (defn ParseIP
-;;   "ParseIP parses s as an IP address, returning the result.\nThe string s can be in dotted decimal (\"192.0.2.1\")\nor IPv6 (\"2001:db8::68\") form.\nIf s is not a valid textual representation of an IP address,\nParseIP returns nil.\nGo return type: []int\nJoker return type: [Int]"
+;;   "ParseIP parses s as an IP address, returning the result.\nThe string s can be in dotted decimal (\"192.0.2.1\")\nor IPv6 (\"2001:db8::68\") form.\nIf s is not a valid textual representation of an IP address,\nParseIP returns nil.\nGo return type: []int\nJoker return type: (vector-of Int)"
 ;;   {:added "1.0"
 ;;    :go "parseIP(s)"}
 ;;   [^String s])
@@ -8073,7 +8073,7 @@ JOKER FUNC os.Create has:
 
 JOKER FUNC os.Environ has:
 ;; (defn Environ
-;;   "Environ returns a copy of strings representing the environment,\nin the form \"key=value\".\nGo return type: []string\nJoker return type: [String]"
+;;   "Environ returns a copy of strings representing the environment,\nin the form \"key=value\".\nGo return type: []string\nJoker return type: (vector-of String)"
 ;;   {:added "1.0"
 ;;    :go "environ()"}
 ;;   [])
@@ -8143,7 +8143,7 @@ JOKER FUNC os.Getgid has:
 
 JOKER FUNC os.Getgroups has:
 ;; (defn Getgroups
-;;   "Getgroups returns a list of the numeric ids of groups that the caller belongs to.\n\nOn Windows, it returns syscall.EWINDOWS. See the os/user package\nfor a possible alternative.\nGo return type: ([]int, error)\nJoker return type: [[Int] Error]"
+;;   "Getgroups returns a list of the numeric ids of groups that the caller belongs to.\n\nOn Windows, it returns syscall.EWINDOWS. See the os/user package\nfor a possible alternative.\nGo return type: ([]int, error)\nJoker return type: [(vector-of Int) Error]"
 ;;   {:added "1.0"
 ;;    :go "getgroups()"}
 ;;   [])
@@ -8535,7 +8535,7 @@ JOKER FUNC pem.Encode has:
 
 JOKER FUNC pem.EncodeToMemory has:
 ;; (defn EncodeToMemory
-;;   "EncodeToMemory returns the PEM encoding of b.\n\nIf b has invalid headers and cannot be encoded,\nEncodeToMemory returns nil. If it is important to\nreport details about this error case, use Encode instead.\nGo return type: []int\nJoker return type: [Int]"
+;;   "EncodeToMemory returns the PEM encoding of b.\n\nIf b has invalid headers and cannot be encoded,\nEncodeToMemory returns nil. If it is important to\nreport details about this error case, use Encode instead.\nGo return type: []int\nJoker return type: (vector-of Int)"
 ;;   {:added "1.0"
 ;;    :go "encodeToMemory(b)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: ../GOSRC/encoding/pem/pem.go:326:23) b])
@@ -8668,7 +8668,7 @@ JOKER FUNC pprof.Profile has:
 
 JOKER FUNC pprof.Profiles has:
 ;; (defn Profiles
-;;   "Profiles returns a slice of all the known profiles, sorted by name.\nGo return type: []\nJoker return type: [ABEND883(unrecognized Expr type *ast.StructType at: ../GOSRC/runtime/pprof/pprof.go:132:14)]"
+;;   "Profiles returns a slice of all the known profiles, sorted by name.\nGo return type: []\nJoker return type: (vector-of ABEND883(unrecognized Expr type *ast.StructType at: ../GOSRC/runtime/pprof/pprof.go:132:14))"
 ;;   {:added "1.0"
 ;;    :go "profiles()"}
 ;;   [])
@@ -8850,7 +8850,7 @@ JOKER FUNC rand.NormFloat64 has:
 
 JOKER FUNC rand.Perm has:
 ;; (defn Perm
-;;   "Perm returns, as a slice of n ints, a pseudo-random permutation of the integers [0,n)\nfrom the default Source.\nGo return type: []int\nJoker return type: [Int]"
+;;   "Perm returns, as a slice of n ints, a pseudo-random permutation of the integers [0,n)\nfrom the default Source.\nGo return type: []int\nJoker return type: (vector-of Int)"
 ;;   {:added "1.0"
 ;;    :go "perm(n)"}
 ;;   [^Int n])
@@ -9221,14 +9221,14 @@ JOKER FUNC rpc.ServeRequest has:
 
 JOKER FUNC rsa.DecryptOAEP has:
 ;; (defn DecryptOAEP
-;;   "OAEP is parameterised by a hash function that is used as a random oracle.\nEncryption and decryption of a given message must use the same hash function\nand sha256.New() is a reasonable choice.\n\nThe random parameter, if not nil, is used to blind the private-key operation\nand avoid timing side-channel attacks. Blinding is purely internal to this\nfunction – the random data need not match that used when encrypting.\n\nThe label parameter must match the value given when encrypting. See\nEncryptOAEP for details.\nGo return type: ([]int, error)\nJoker return type: [[Int] Error]"
+;;   "OAEP is parameterised by a hash function that is used as a random oracle.\nEncryption and decryption of a given message must use the same hash function\nand sha256.New() is a reasonable choice.\n\nThe random parameter, if not nil, is used to blind the private-key operation\nand avoid timing side-channel attacks. Blinding is purely internal to this\nfunction – the random data need not match that used when encrypting.\n\nThe label parameter must match the value given when encrypting. See\nEncryptOAEP for details.\nGo return type: ([]int, error)\nJoker return type: [(vector-of Int) Error]"
 ;;   {:added "1.0"
 ;;    :go "decryptOAEP(hash, random, priv, ciphertext, label)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/crypto/rsa/rsa.go:569:23) hash, ^ABEND881(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/crypto/rsa/rsa.go:569:41) random, ^ABEND881(unrecognized Expr type *ast.StarExpr at: ../GOSRC/crypto/rsa/rsa.go:569:57) priv, ^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/crypto/rsa/rsa.go:569:81) ciphertext, ^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/crypto/rsa/rsa.go:569:95) label])
 
 JOKER FUNC rsa.DecryptPKCS1v15 has:
 ;; (defn DecryptPKCS1v15
-;;   "DecryptPKCS1v15 decrypts a plaintext using RSA and the padding scheme from PKCS#1 v1.5.\nIf rand != nil, it uses RSA blinding to avoid timing side-channel attacks.\n\nNote that whether this function returns an error or not discloses secret\ninformation. If an attacker can cause this function to run repeatedly and\nlearn whether each instance returned an error then they can decrypt and\nforge signatures as if they had the private key. See\nDecryptPKCS1v15SessionKey for a way of solving this problem.\nGo return type: ([]int, error)\nJoker return type: [[Int] Error]"
+;;   "DecryptPKCS1v15 decrypts a plaintext using RSA and the padding scheme from PKCS#1 v1.5.\nIf rand != nil, it uses RSA blinding to avoid timing side-channel attacks.\n\nNote that whether this function returns an error or not discloses secret\ninformation. If an attacker can cause this function to run repeatedly and\nlearn whether each instance returned an error then they can decrypt and\nforge signatures as if they had the private key. See\nDecryptPKCS1v15SessionKey for a way of solving this problem.\nGo return type: ([]int, error)\nJoker return type: [(vector-of Int) Error]"
 ;;   {:added "1.0"
 ;;    :go "decryptPKCS1v15(rand, priv, ciphertext)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/crypto/rsa/pkcs1v15.go:76:27) rand, ^ABEND881(unrecognized Expr type *ast.StarExpr at: ../GOSRC/crypto/rsa/pkcs1v15.go:76:43) priv, ^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/crypto/rsa/pkcs1v15.go:76:67) ciphertext])
@@ -9242,14 +9242,14 @@ JOKER FUNC rsa.DecryptPKCS1v15SessionKey has:
 
 JOKER FUNC rsa.EncryptOAEP has:
 ;; (defn EncryptOAEP
-;;   "EncryptOAEP encrypts the given message with RSA-OAEP.\n\nOAEP is parameterised by a hash function that is used as a random oracle.\nEncryption and decryption of a given message must use the same hash function\nand sha256.New() is a reasonable choice.\n\nThe random parameter is used as a source of entropy to ensure that\nencrypting the same message twice doesn't result in the same ciphertext.\n\nThe label parameter may contain arbitrary data that will not be encrypted,\nbut which gives important context to the message. For example, if a given\npublic key is used to decrypt two types of messages then distinct label\nvalues could be used to ensure that a ciphertext for one purpose cannot be\nused for another by an attacker. If not required it can be empty.\n\nThe message must be no longer than the length of the public modulus minus\ntwice the hash length, minus a further 2.\nGo return type: ([]int, error)\nJoker return type: [[Int] Error]"
+;;   "EncryptOAEP encrypts the given message with RSA-OAEP.\n\nOAEP is parameterised by a hash function that is used as a random oracle.\nEncryption and decryption of a given message must use the same hash function\nand sha256.New() is a reasonable choice.\n\nThe random parameter is used as a source of entropy to ensure that\nencrypting the same message twice doesn't result in the same ciphertext.\n\nThe label parameter may contain arbitrary data that will not be encrypted,\nbut which gives important context to the message. For example, if a given\npublic key is used to decrypt two types of messages then distinct label\nvalues could be used to ensure that a ciphertext for one purpose cannot be\nused for another by an attacker. If not required it can be empty.\n\nThe message must be no longer than the length of the public modulus minus\ntwice the hash length, minus a further 2.\nGo return type: ([]int, error)\nJoker return type: [(vector-of Int) Error]"
 ;;   {:added "1.0"
 ;;    :go "encryptOAEP(hash, random, pub, msg, label)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/crypto/rsa/rsa.go:376:23) hash, ^ABEND881(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/crypto/rsa/rsa.go:376:41) random, ^ABEND881(unrecognized Expr type *ast.StarExpr at: ../GOSRC/crypto/rsa/rsa.go:376:56) pub, ^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/crypto/rsa/rsa.go:376:72) msg, ^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/crypto/rsa/rsa.go:376:86) label])
 
 JOKER FUNC rsa.EncryptPKCS1v15 has:
 ;; (defn EncryptPKCS1v15
-;;   "EncryptPKCS1v15 encrypts the given message with RSA and the padding\nscheme from PKCS#1 v1.5.  The message must be no longer than the\nlength of the public modulus minus 11 bytes.\n\nThe rand parameter is used as a source of entropy to ensure that\nencrypting the same message twice doesn't result in the same\nciphertext.\n\nWARNING: use of this function to encrypt plaintexts other than\nsession keys is dangerous. Use RSA OAEP in new protocols.\nGo return type: ([]int, error)\nJoker return type: [[Int] Error]"
+;;   "EncryptPKCS1v15 encrypts the given message with RSA and the padding\nscheme from PKCS#1 v1.5.  The message must be no longer than the\nlength of the public modulus minus 11 bytes.\n\nThe rand parameter is used as a source of entropy to ensure that\nencrypting the same message twice doesn't result in the same\nciphertext.\n\nWARNING: use of this function to encrypt plaintexts other than\nsession keys is dangerous. Use RSA OAEP in new protocols.\nGo return type: ([]int, error)\nJoker return type: [(vector-of Int) Error]"
 ;;   {:added "1.0"
 ;;    :go "encryptPKCS1v15(rand, pub, msg)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/crypto/rsa/pkcs1v15.go:39:27) rand, ^ABEND881(unrecognized Expr type *ast.StarExpr at: ../GOSRC/crypto/rsa/pkcs1v15.go:39:42) pub, ^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/crypto/rsa/pkcs1v15.go:39:58) msg])
@@ -9270,14 +9270,14 @@ JOKER FUNC rsa.GenerateMultiPrimeKey has:
 
 JOKER FUNC rsa.SignPKCS1v15 has:
 ;; (defn SignPKCS1v15
-;;   "SignPKCS1v15 calculates the signature of hashed using\nRSASSA-PKCS1-V1_5-SIGN from RSA PKCS#1 v1.5.  Note that hashed must\nbe the result of hashing the input message using the given hash\nfunction. If hash is zero, hashed is signed directly. This isn't\nadvisable except for interoperability.\n\nIf rand is not nil then RSA blinding will be used to avoid timing\nside-channel attacks.\n\nThis function is deterministic. Thus, if the set of possible\nmessages is small, an attacker may be able to build a map from\nmessages to signatures and identify the signed messages. As ever,\nsignatures provide authenticity, not confidentiality.\nGo return type: ([]int, error)\nJoker return type: [[Int] Error]"
+;;   "SignPKCS1v15 calculates the signature of hashed using\nRSASSA-PKCS1-V1_5-SIGN from RSA PKCS#1 v1.5.  Note that hashed must\nbe the result of hashing the input message using the given hash\nfunction. If hash is zero, hashed is signed directly. This isn't\nadvisable except for interoperability.\n\nIf rand is not nil then RSA blinding will be used to avoid timing\nside-channel attacks.\n\nThis function is deterministic. Thus, if the set of possible\nmessages is small, an attacker may be able to build a map from\nmessages to signatures and identify the signed messages. As ever,\nsignatures provide authenticity, not confidentiality.\nGo return type: ([]int, error)\nJoker return type: [(vector-of Int) Error]"
 ;;   {:added "1.0"
 ;;    :go "signPKCS1v15(rand, priv, hash, hashed)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/crypto/rsa/pkcs1v15.go:232:24) rand, ^ABEND881(unrecognized Expr type *ast.StarExpr at: ../GOSRC/crypto/rsa/pkcs1v15.go:232:40) priv, ^ABEND881(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/crypto/rsa/pkcs1v15.go:232:58) hash, ^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/crypto/rsa/pkcs1v15.go:232:78) hashed])
 
 JOKER FUNC rsa.SignPSS has:
 ;; (defn SignPSS
-;;   "SignPSS calculates the signature of hashed using RSASSA-PSS [1].\nNote that hashed must be the result of hashing the input message using the\ngiven hash function. The opts argument may be nil, in which case sensible\ndefaults are used.\nGo return type: ([]int, error)\nJoker return type: [[Int] Error]"
+;;   "SignPSS calculates the signature of hashed using RSASSA-PSS [1].\nNote that hashed must be the result of hashing the input message using the\ngiven hash function. The opts argument may be nil, in which case sensible\ndefaults are used.\nGo return type: ([]int, error)\nJoker return type: [(vector-of Int) Error]"
 ;;   {:added "1.0"
 ;;    :go "signPSS(rand, priv, hash, hashed, opts)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/crypto/rsa/pss.go:249:19) rand, ^ABEND881(unrecognized Expr type *ast.StarExpr at: ../GOSRC/crypto/rsa/pss.go:249:35) priv, ^ABEND881(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/crypto/rsa/pss.go:249:53) hash, ^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/crypto/rsa/pss.go:249:73) hashed, ^ABEND881(unrecognized Expr type *ast.StarExpr at: ../GOSRC/crypto/rsa/pss.go:249:86) opts])
@@ -9312,7 +9312,7 @@ JOKER FUNC runtime.Breakpoint has:
 
 JOKER FUNC runtime.CPUProfile has:
 ;; (defn CPUProfile
-;;   "CPUProfile panics.\nIt formerly provided raw access to chunks of\na pprof-format profile generated by the runtime.\nThe details of generating that format have changed,\nso this functionality has been removed.\n\nDeprecated: use the runtime/pprof package,\nor the handlers in the net/http/pprof package,\nor the testing package's -test.cpuprofile flag instead.\nGo return type: []int\nJoker return type: [Int]"
+;;   "CPUProfile panics.\nIt formerly provided raw access to chunks of\na pprof-format profile generated by the runtime.\nThe details of generating that format have changed,\nso this functionality has been removed.\n\nDeprecated: use the runtime/pprof package,\nor the handlers in the net/http/pprof package,\nor the testing package's -test.cpuprofile flag instead.\nGo return type: []int\nJoker return type: (vector-of Int)"
 ;;   {:added "1.0"
 ;;    :go "cPUProfile()"}
 ;;   [])
@@ -9445,7 +9445,7 @@ JOKER FUNC runtime.ReadMemStats has:
 
 JOKER FUNC runtime.ReadTrace has:
 ;; (defn ReadTrace
-;;   "ReadTrace returns the next chunk of binary tracing data, blocking until data\nis available. If tracing is turned off and all the data accumulated while it\nwas on has been returned, ReadTrace returns nil. The caller must copy the\nreturned data before calling ReadTrace again.\nReadTrace must be called from one goroutine at a time.\nGo return type: []int\nJoker return type: [Int]"
+;;   "ReadTrace returns the next chunk of binary tracing data, blocking until data\nis available. If tracing is turned off and all the data accumulated while it\nwas on has been returned, ReadTrace returns nil. The caller must copy the\nreturned data before calling ReadTrace again.\nReadTrace must be called from one goroutine at a time.\nGo return type: []int\nJoker return type: (vector-of Int)"
 ;;   {:added "1.0"
 ;;    :go "readTrace()"}
 ;;   [])
@@ -9613,7 +9613,7 @@ JOKER FUNC sha1.New has:
 
 JOKER FUNC sha1.Sum has:
 ;; (defn Sum
-;;   "Sum returns the SHA-1 checksum of the data.\nGo return type: []int\nJoker return type: [Int]"
+;;   "Sum returns the SHA-1 checksum of the data.\nGo return type: []int\nJoker return type: (vector-of Int)"
 ;;   {:added "1.0"
 ;;    :go "sum(data)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/crypto/sha1/sha1.go:260:15) data])
@@ -9641,7 +9641,7 @@ JOKER FUNC sha256.Sum224 has:
 
 JOKER FUNC sha256.Sum256 has:
 ;; (defn Sum256
-;;   "Sum256 returns the SHA256 checksum of the data.\nGo return type: []int\nJoker return type: [Int]"
+;;   "Sum256 returns the SHA256 checksum of the data.\nGo return type: []int\nJoker return type: (vector-of Int)"
 ;;   {:added "1.0"
 ;;    :go "sum256(data)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/crypto/sha256/sha256.go:273:18) data])
@@ -9683,7 +9683,7 @@ JOKER FUNC sha512.Sum384 has:
 
 JOKER FUNC sha512.Sum512 has:
 ;; (defn Sum512
-;;   "Sum512 returns the SHA512 checksum of the data.\nGo return type: []int\nJoker return type: [Int]"
+;;   "Sum512 returns the SHA512 checksum of the data.\nGo return type: []int\nJoker return type: (vector-of Int)"
 ;;   {:added "1.0"
 ;;    :go "sum512(data)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/crypto/sha512/sha512.go:343:18) data])
@@ -9893,7 +9893,7 @@ JOKER FUNC sort.StringsAreSorted has:
 
 JOKER FUNC sql.Drivers has:
 ;; (defn Drivers
-;;   "Drivers returns a sorted list of the names of the registered drivers.\nGo return type: []string\nJoker return type: [String]"
+;;   "Drivers returns a sorted list of the names of the registered drivers.\nGo return type: []string\nJoker return type: (vector-of String)"
 ;;   {:added "1.0"
 ;;    :go "drivers()"}
 ;;   [])
@@ -9928,70 +9928,70 @@ JOKER FUNC sql.Register has:
 
 JOKER FUNC strconv.AppendBool has:
 ;; (defn AppendBool
-;;   "AppendBool appends \"true\" or \"false\", according to the value of b,\nto dst and returns the extended buffer.\nGo return type: []int\nJoker return type: [Int]"
+;;   "AppendBool appends \"true\" or \"false\", according to the value of b,\nto dst and returns the extended buffer.\nGo return type: []int\nJoker return type: (vector-of Int)"
 ;;   {:added "1.0"
 ;;    :go "appendBool(dst, b)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/strconv/atob.go:30:21) dst, b])
 
 JOKER FUNC strconv.AppendFloat has:
 ;; (defn AppendFloat
-;;   "AppendFloat appends the string form of the floating-point number f,\nas generated by FormatFloat, to dst and returns the extended buffer.\nGo return type: []int\nJoker return type: [Int]"
+;;   "AppendFloat appends the string form of the floating-point number f,\nas generated by FormatFloat, to dst and returns the extended buffer.\nGo return type: []int\nJoker return type: (vector-of Int)"
 ;;   {:added "1.0"
 ;;    :go "appendFloat(dst, f, fmt, prec, bitSize)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/strconv/ftoa.go:51:22) dst, f, fmt, ^Int prec, ^Int bitSize])
 
 JOKER FUNC strconv.AppendInt has:
 ;; (defn AppendInt
-;;   "AppendInt appends the string form of the integer i,\nas generated by FormatInt, to dst and returns the extended buffer.\nGo return type: []int\nJoker return type: [Int]"
+;;   "AppendInt appends the string form of the integer i,\nas generated by FormatInt, to dst and returns the extended buffer.\nGo return type: []int\nJoker return type: (vector-of Int)"
 ;;   {:added "1.0"
 ;;    :go "appendInt(dst, i, base)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/strconv/itoa.go:40:20) dst, i, ^Int base])
 
 JOKER FUNC strconv.AppendQuote has:
 ;; (defn AppendQuote
-;;   "AppendQuote appends a double-quoted Go string literal representing s,\nas generated by Quote, to dst and returns the extended buffer.\nGo return type: []int\nJoker return type: [Int]"
+;;   "AppendQuote appends a double-quoted Go string literal representing s,\nas generated by Quote, to dst and returns the extended buffer.\nGo return type: []int\nJoker return type: (vector-of Int)"
 ;;   {:added "1.0"
 ;;    :go "appendQuote(dst, s)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/strconv/quote.go:117:22) dst, ^String s])
 
 JOKER FUNC strconv.AppendQuoteRune has:
 ;; (defn AppendQuoteRune
-;;   "AppendQuoteRune appends a single-quoted Go character literal representing the rune,\nas generated by QuoteRune, to dst and returns the extended buffer.\nGo return type: []int\nJoker return type: [Int]"
+;;   "AppendQuoteRune appends a single-quoted Go character literal representing the rune,\nas generated by QuoteRune, to dst and returns the extended buffer.\nGo return type: []int\nJoker return type: (vector-of Int)"
 ;;   {:added "1.0"
 ;;    :go "appendQuoteRune(dst, r)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/strconv/quote.go:156:26) dst, r])
 
 JOKER FUNC strconv.AppendQuoteRuneToASCII has:
 ;; (defn AppendQuoteRuneToASCII
-;;   "AppendQuoteRuneToASCII appends a single-quoted Go character literal representing the rune,\nas generated by QuoteRuneToASCII, to dst and returns the extended buffer.\nGo return type: []int\nJoker return type: [Int]"
+;;   "AppendQuoteRuneToASCII appends a single-quoted Go character literal representing the rune,\nas generated by QuoteRuneToASCII, to dst and returns the extended buffer.\nGo return type: []int\nJoker return type: (vector-of Int)"
 ;;   {:added "1.0"
 ;;    :go "appendQuoteRuneToASCII(dst, r)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/strconv/quote.go:170:33) dst, r])
 
 JOKER FUNC strconv.AppendQuoteRuneToGraphic has:
 ;; (defn AppendQuoteRuneToGraphic
-;;   "AppendQuoteRuneToGraphic appends a single-quoted Go character literal representing the rune,\nas generated by QuoteRuneToGraphic, to dst and returns the extended buffer.\nGo return type: []int\nJoker return type: [Int]"
+;;   "AppendQuoteRuneToGraphic appends a single-quoted Go character literal representing the rune,\nas generated by QuoteRuneToGraphic, to dst and returns the extended buffer.\nGo return type: []int\nJoker return type: (vector-of Int)"
 ;;   {:added "1.0"
 ;;    :go "appendQuoteRuneToGraphic(dst, r)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/strconv/quote.go:184:35) dst, r])
 
 JOKER FUNC strconv.AppendQuoteToASCII has:
 ;; (defn AppendQuoteToASCII
-;;   "AppendQuoteToASCII appends a double-quoted Go string literal representing s,\nas generated by QuoteToASCII, to dst and returns the extended buffer.\nGo return type: []int\nJoker return type: [Int]"
+;;   "AppendQuoteToASCII appends a double-quoted Go string literal representing s,\nas generated by QuoteToASCII, to dst and returns the extended buffer.\nGo return type: []int\nJoker return type: (vector-of Int)"
 ;;   {:added "1.0"
 ;;    :go "appendQuoteToASCII(dst, s)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/strconv/quote.go:130:29) dst, ^String s])
 
 JOKER FUNC strconv.AppendQuoteToGraphic has:
 ;; (defn AppendQuoteToGraphic
-;;   "AppendQuoteToGraphic appends a double-quoted Go string literal representing s,\nas generated by QuoteToGraphic, to dst and returns the extended buffer.\nGo return type: []int\nJoker return type: [Int]"
+;;   "AppendQuoteToGraphic appends a double-quoted Go string literal representing s,\nas generated by QuoteToGraphic, to dst and returns the extended buffer.\nGo return type: []int\nJoker return type: (vector-of Int)"
 ;;   {:added "1.0"
 ;;    :go "appendQuoteToGraphic(dst, s)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/strconv/quote.go:143:31) dst, ^String s])
 
 JOKER FUNC strconv.AppendUint has:
 ;; (defn AppendUint
-;;   "AppendUint appends the string form of the unsigned integer i,\nas generated by FormatUint, to dst and returns the extended buffer.\nGo return type: []int\nJoker return type: [Int]"
+;;   "AppendUint appends the string form of the unsigned integer i,\nas generated by FormatUint, to dst and returns the extended buffer.\nGo return type: []int\nJoker return type: (vector-of Int)"
 ;;   {:added "1.0"
 ;;    :go "appendUint(dst, i, base)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/strconv/itoa.go:50:21) dst, i, ^Int base])
@@ -10187,14 +10187,14 @@ JOKER FUNC strings.EqualFold has:
 
 JOKER FUNC strings.Fields has:
 ;; (defn Fields
-;;   "Fields splits the string s around each instance of one or more consecutive white space\ncharacters, as defined by unicode.IsSpace, returning a slice of substrings of s or an\nempty slice if s contains only white space.\nGo return type: []string\nJoker return type: [String]"
+;;   "Fields splits the string s around each instance of one or more consecutive white space\ncharacters, as defined by unicode.IsSpace, returning a slice of substrings of s or an\nempty slice if s contains only white space.\nGo return type: []string\nJoker return type: (vector-of String)"
 ;;   {:added "1.0"
 ;;    :go "fields(s)"}
 ;;   [^String s])
 
 JOKER FUNC strings.FieldsFunc has:
 ;; (defn FieldsFunc
-;;   "FieldsFunc splits the string s at each run of Unicode code points c satisfying f(c)\nand returns an array of slices of s. If all code points in s satisfy f(c) or the\nstring is empty, an empty slice is returned.\nFieldsFunc makes no guarantees about the order in which it calls f(c).\nIf f does not return consistent results for a given c, FieldsFunc may crash.\nGo return type: []string\nJoker return type: [String]"
+;;   "FieldsFunc splits the string s at each run of Unicode code points c satisfying f(c)\nand returns an array of slices of s. If all code points in s satisfy f(c) or the\nstring is empty, an empty slice is returned.\nFieldsFunc makes no guarantees about the order in which it calls f(c).\nIf f does not return consistent results for a given c, FieldsFunc may crash.\nGo return type: []string\nJoker return type: (vector-of String)"
 ;;   {:added "1.0"
 ;;    :go "fieldsFunc(s, f)"}
 ;;   [^String s, ^ABEND881(unrecognized Expr type *ast.FuncType at: ../GOSRC/strings/strings.go:378:29) f])
@@ -10320,28 +10320,28 @@ JOKER FUNC strings.Replace has:
 
 JOKER FUNC strings.Split has:
 ;; (defn Split
-;;   "Split slices s into all substrings separated by sep and returns a slice of\nthe substrings between those separators.\n\nIf s does not contain sep and sep is not empty, Split returns a\nslice of length 1 whose only element is s.\n\nIf sep is empty, Split splits after each UTF-8 sequence. If both s\nand sep are empty, Split returns an empty slice.\n\nIt is equivalent to SplitN with a count of -1.\nGo return type: []string\nJoker return type: [String]"
+;;   "Split slices s into all substrings separated by sep and returns a slice of\nthe substrings between those separators.\n\nIf s does not contain sep and sep is not empty, Split returns a\nslice of length 1 whose only element is s.\n\nIf sep is empty, Split splits after each UTF-8 sequence. If both s\nand sep are empty, Split returns an empty slice.\n\nIt is equivalent to SplitN with a count of -1.\nGo return type: []string\nJoker return type: (vector-of String)"
 ;;   {:added "1.0"
 ;;    :go "split(s, sep)"}
 ;;   [^String s, ^String sep])
 
 JOKER FUNC strings.SplitAfter has:
 ;; (defn SplitAfter
-;;   "SplitAfter slices s into all substrings after each instance of sep and\nreturns a slice of those substrings.\n\nIf s does not contain sep and sep is not empty, SplitAfter returns\na slice of length 1 whose only element is s.\n\nIf sep is empty, SplitAfter splits after each UTF-8 sequence. If\nboth s and sep are empty, SplitAfter returns an empty slice.\n\nIt is equivalent to SplitAfterN with a count of -1.\nGo return type: []string\nJoker return type: [String]"
+;;   "SplitAfter slices s into all substrings after each instance of sep and\nreturns a slice of those substrings.\n\nIf s does not contain sep and sep is not empty, SplitAfter returns\na slice of length 1 whose only element is s.\n\nIf sep is empty, SplitAfter splits after each UTF-8 sequence. If\nboth s and sep are empty, SplitAfter returns an empty slice.\n\nIt is equivalent to SplitAfterN with a count of -1.\nGo return type: []string\nJoker return type: (vector-of String)"
 ;;   {:added "1.0"
 ;;    :go "splitAfter(s, sep)"}
 ;;   [^String s, ^String sep])
 
 JOKER FUNC strings.SplitAfterN has:
 ;; (defn SplitAfterN
-;;   "SplitAfterN slices s into substrings after each instance of sep and\nreturns a slice of those substrings.\n\nThe count determines the number of substrings to return:\n  n > 0: at most n substrings; the last substring will be the unsplit remainder.\n  n == 0: the result is nil (zero substrings)\n  n < 0: all substrings\n\nEdge cases for s and sep (for example, empty strings) are handled\nas described in the documentation for SplitAfter.\nGo return type: []string\nJoker return type: [String]"
+;;   "SplitAfterN slices s into substrings after each instance of sep and\nreturns a slice of those substrings.\n\nThe count determines the number of substrings to return:\n  n > 0: at most n substrings; the last substring will be the unsplit remainder.\n  n == 0: the result is nil (zero substrings)\n  n < 0: all substrings\n\nEdge cases for s and sep (for example, empty strings) are handled\nas described in the documentation for SplitAfter.\nGo return type: []string\nJoker return type: (vector-of String)"
 ;;   {:added "1.0"
 ;;    :go "splitAfterN(s, sep, n)"}
 ;;   [^String s, ^String sep, ^Int n])
 
 JOKER FUNC strings.SplitN has:
 ;; (defn SplitN
-;;   "SplitN slices s into substrings separated by sep and returns a slice of\nthe substrings between those separators.\n\nThe count determines the number of substrings to return:\n  n > 0: at most n substrings; the last substring will be the unsplit remainder.\n  n == 0: the result is nil (zero substrings)\n  n < 0: all substrings\n\nEdge cases for s and sep (for example, empty strings) are handled\nas described in the documentation for Split.\nGo return type: []string\nJoker return type: [String]"
+;;   "SplitN slices s into substrings separated by sep and returns a slice of\nthe substrings between those separators.\n\nThe count determines the number of substrings to return:\n  n > 0: at most n substrings; the last substring will be the unsplit remainder.\n  n == 0: the result is nil (zero substrings)\n  n < 0: all substrings\n\nEdge cases for s and sep (for example, empty strings) are handled\nas described in the documentation for Split.\nGo return type: []string\nJoker return type: (vector-of String)"
 ;;   {:added "1.0"
 ;;    :go "splitN(s, sep, n)"}
 ;;   [^String s, ^String sep, ^Int n])
@@ -10607,7 +10607,7 @@ JOKER FUNC syscall.BytePtrFromString has:
 
 JOKER FUNC syscall.ByteSliceFromString has:
 ;; (defn ByteSliceFromString
-;;   "ByteSliceFromString returns a NUL-terminated slice of bytes\ncontaining the text of s. If s contains a NUL byte at any\nlocation, it returns (nil, EINVAL).\nGo return type: ([]int, error)\nJoker return type: [[Int] Error]"
+;;   "ByteSliceFromString returns a NUL-terminated slice of bytes\ncontaining the text of s. If s contains a NUL byte at any\nlocation, it returns (nil, EINVAL).\nGo return type: ([]int, error)\nJoker return type: [(vector-of Int) Error]"
 ;;   {:added "1.0"
 ;;    :go "byteSliceFromString(s)"}
 ;;   [^String s])
@@ -10719,7 +10719,7 @@ JOKER FUNC syscall.Dup3 has:
 
 JOKER FUNC syscall.Environ has:
 ;; (defn Environ
-;;   "Go return type: []string\nJoker return type: [String]"
+;;   "Go return type: []string\nJoker return type: (vector-of String)"
 ;;   {:added "1.0"
 ;;    :go "environ()"}
 ;;   [])
@@ -11314,7 +11314,7 @@ JOKER FUNC syscall.Nanosleep has:
 
 JOKER FUNC syscall.NetlinkRIB has:
 ;; (defn NetlinkRIB
-;;   "NetlinkRIB returns routing information base, as known as RIB, which\nconsists of network facility information, states and parameters.\nGo return type: ([]int, error)\nJoker return type: [[Int] Error]"
+;;   "NetlinkRIB returns routing information base, as known as RIB, which\nconsists of network facility information, states and parameters.\nGo return type: ([]int, error)\nJoker return type: [(vector-of Int) Error]"
 ;;   {:added "1.0"
 ;;    :go "netlinkRIB(proto, family)"}
 ;;   [^Int proto, ^Int family])
@@ -11356,21 +11356,21 @@ JOKER FUNC syscall.ParseDirent has:
 
 JOKER FUNC syscall.ParseNetlinkMessage has:
 ;; (defn ParseNetlinkMessage
-;;   "ParseNetlinkMessage parses b as an array of netlink messages and\nreturns the slice containing the NetlinkMessage structures.\nGo return type: ([], error)\nJoker return type: [[ABEND883(unrecognized Expr type *ast.StructType at: ../GOSRC/syscall/netlink_linux.go:109:21)] Error]"
+;;   "ParseNetlinkMessage parses b as an array of netlink messages and\nreturns the slice containing the NetlinkMessage structures.\nGo return type: ([], error)\nJoker return type: [(vector-of ABEND883(unrecognized Expr type *ast.StructType at: ../GOSRC/syscall/netlink_linux.go:109:21)) Error]"
 ;;   {:added "1.0"
 ;;    :go "parseNetlinkMessage(b)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/syscall/netlink_linux.go:116:28) b])
 
 JOKER FUNC syscall.ParseNetlinkRouteAttr has:
 ;; (defn ParseNetlinkRouteAttr
-;;   "ParseNetlinkRouteAttr parses m's payload as an array of netlink\nroute attributes and returns the slice containing the\nNetlinkRouteAttr structures.\nGo return type: ([], error)\nJoker return type: [[ABEND883(unrecognized Expr type *ast.StructType at: ../GOSRC/syscall/netlink_linux.go:140:23)] Error]"
+;;   "ParseNetlinkRouteAttr parses m's payload as an array of netlink\nroute attributes and returns the slice containing the\nNetlinkRouteAttr structures.\nGo return type: ([], error)\nJoker return type: [(vector-of ABEND883(unrecognized Expr type *ast.StructType at: ../GOSRC/syscall/netlink_linux.go:140:23)) Error]"
 ;;   {:added "1.0"
 ;;    :go "parseNetlinkRouteAttr(m)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: ../GOSRC/syscall/netlink_linux.go:148:30) m])
 
 JOKER FUNC syscall.ParseSocketControlMessage has:
 ;; (defn ParseSocketControlMessage
-;;   "ParseSocketControlMessage parses b as an array of socket control\nmessages.\nGo return type: ([], error)\nJoker return type: [[ABEND883(unrecognized Expr type *ast.StructType at: ../GOSRC/syscall/sockcmsg_unix.go:42:27)] Error]"
+;;   "ParseSocketControlMessage parses b as an array of socket control\nmessages.\nGo return type: ([], error)\nJoker return type: [(vector-of ABEND883(unrecognized Expr type *ast.StructType at: ../GOSRC/syscall/sockcmsg_unix.go:42:27)) Error]"
 ;;   {:added "1.0"
 ;;    :go "parseSocketControlMessage(b)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/syscall/sockcmsg_unix.go:49:34) b])
@@ -11384,7 +11384,7 @@ JOKER FUNC syscall.ParseUnixCredentials has:
 
 JOKER FUNC syscall.ParseUnixRights has:
 ;; (defn ParseUnixRights
-;;   "ParseUnixRights decodes a socket control message that contains an\ninteger array of open file descriptors from another process.\nGo return type: ([]int, error)\nJoker return type: [[Int] Error]"
+;;   "ParseUnixRights decodes a socket control message that contains an\ninteger array of open file descriptors from another process.\nGo return type: ([]int, error)\nJoker return type: [(vector-of Int) Error]"
 ;;   {:added "1.0"
 ;;    :go "parseUnixRights(m)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: ../GOSRC/syscall/sockcmsg_unix.go:91:24) m])
@@ -11867,7 +11867,7 @@ JOKER FUNC syscall.Shutdown has:
 
 JOKER FUNC syscall.SlicePtrFromStrings has:
 ;; (defn SlicePtrFromStrings
-;;   "SlicePtrFromStrings converts a slice of strings to a slice of\npointers to NUL-terminated byte arrays. If any string contains\na NUL byte, it returns (nil, EINVAL).\nGo return type: ([]int, error)\nJoker return type: [[Int] Error]"
+;;   "SlicePtrFromStrings converts a slice of strings to a slice of\npointers to NUL-terminated byte arrays. If any string contains\na NUL byte, it returns (nil, EINVAL).\nGo return type: ([]int, error)\nJoker return type: [(vector-of Int) Error]"
 ;;   {:added "1.0"
 ;;    :go "slicePtrFromStrings(ss)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/syscall/exec_unix.go:83:29) ss])
@@ -11923,14 +11923,14 @@ JOKER FUNC syscall.StringBytePtr has:
 
 JOKER FUNC syscall.StringByteSlice has:
 ;; (defn StringByteSlice
-;;   "StringByteSlice converts a string to a NUL-terminated []byte,\nIf s contains a NUL byte this function panics instead of\nreturning an error.\n\nDeprecated: Use ByteSliceFromString instead.\nGo return type: []int\nJoker return type: [Int]"
+;;   "StringByteSlice converts a string to a NUL-terminated []byte,\nIf s contains a NUL byte this function panics instead of\nreturning an error.\n\nDeprecated: Use ByteSliceFromString instead.\nGo return type: []int\nJoker return type: (vector-of Int)"
 ;;   {:added "1.0"
 ;;    :go "stringByteSlice(s)"}
 ;;   [^String s])
 
 JOKER FUNC syscall.StringSlicePtr has:
 ;; (defn StringSlicePtr
-;;   "StringSlicePtr converts a slice of strings to a slice of pointers\nto NUL-terminated byte arrays. If any string contains a NUL byte\nthis function panics instead of returning an error.\n\nDeprecated: Use SlicePtrFromStrings instead.\nGo return type: []int\nJoker return type: [Int]"
+;;   "StringSlicePtr converts a slice of strings to a slice of pointers\nto NUL-terminated byte arrays. If any string contains a NUL byte\nthis function panics instead of returning an error.\n\nDeprecated: Use SlicePtrFromStrings instead.\nGo return type: []int\nJoker return type: (vector-of Int)"
 ;;   {:added "1.0"
 ;;    :go "stringSlicePtr(ss)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/syscall/exec_unix.go:71:24) ss])
@@ -12042,14 +12042,14 @@ JOKER FUNC syscall.Uname has:
 
 JOKER FUNC syscall.UnixCredentials has:
 ;; (defn UnixCredentials
-;;   "UnixCredentials encodes credentials into a socket control message\nfor sending to another process. This can be used for\nauthentication.\nGo return type: []int\nJoker return type: [Int]"
+;;   "UnixCredentials encodes credentials into a socket control message\nfor sending to another process. This can be used for\nauthentication.\nGo return type: []int\nJoker return type: (vector-of Int)"
 ;;   {:added "1.0"
 ;;    :go "unixCredentials(ucred)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: ../GOSRC/syscall/sockcmsg_linux.go:14:28) ucred])
 
 JOKER FUNC syscall.UnixRights has:
 ;; (defn UnixRights
-;;   "UnixRights encodes a set of open file descriptors into a socket\ncontrol message for sending to another process.\nGo return type: []int\nJoker return type: [Int]"
+;;   "UnixRights encodes a set of open file descriptors into a socket\ncontrol message for sending to another process.\nGo return type: []int\nJoker return type: (vector-of Int)"
 ;;   {:added "1.0"
 ;;    :go "unixRights(fds)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.Ellipsis at: ../GOSRC/syscall/sockcmsg_unix.go:74:21) fds])
@@ -12301,7 +12301,7 @@ JOKER FUNC textproto.NewWriter has:
 
 JOKER FUNC textproto.TrimBytes has:
 ;; (defn TrimBytes
-;;   "TrimBytes returns b without leading and trailing ASCII space.\nGo return type: []int\nJoker return type: [Int]"
+;;   "TrimBytes returns b without leading and trailing ASCII space.\nGo return type: []int\nJoker return type: (vector-of Int)"
 ;;   {:added "1.0"
 ;;    :go "trimBytes(b)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/net/textproto/textproto.go:137:18) b])
@@ -13204,7 +13204,7 @@ JOKER FUNC user.LookupId has:
 
 JOKER FUNC utf16.Decode has:
 ;; (defn Decode
-;;   "Decode returns the Unicode code point sequence represented\nby the UTF-16 encoding s.\nGo return type: []\nJoker return type: [ABEND042(cannot find typename utf16.rune)]"
+;;   "Decode returns the Unicode code point sequence represented\nby the UTF-16 encoding s.\nGo return type: []\nJoker return type: (vector-of ABEND042(cannot find typename utf16.rune))"
 ;;   {:added "1.0"
 ;;    :go "decode(s)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/unicode/utf16/utf16.go:88:15) s])
@@ -13218,7 +13218,7 @@ JOKER FUNC utf16.DecodeRune has:
 
 JOKER FUNC utf16.Encode has:
 ;; (defn Encode
-;;   "Encode returns the UTF-16 encoding of the Unicode code point sequence s.\nGo return type: []int\nJoker return type: [Int]"
+;;   "Encode returns the UTF-16 encoding of the Unicode code point sequence s.\nGo return type: []int\nJoker return type: (vector-of Int)"
 ;;   {:added "1.0"
 ;;    :go "encode(s)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/unicode/utf16/utf16.go:56:15) s])
@@ -13351,7 +13351,7 @@ JOKER FUNC x509.CreateCertificateRequest has:
 
 JOKER FUNC x509.DecryptPEMBlock has:
 ;; (defn DecryptPEMBlock
-;;   "DecryptPEMBlock takes a password encrypted PEM block and the password used to\nencrypt it and returns a slice of decrypted DER encoded bytes. It inspects\nthe DEK-Info header to determine the algorithm used for decryption. If no\nDEK-Info header is present, an error is returned. If an incorrect password\nis detected an IncorrectPasswordError is returned. Because of deficiencies\nin the encrypted-PEM format, it's not always possible to detect an incorrect\npassword. In these cases no error will be returned but the decrypted DER\nbytes will be random noise.\nGo return type: ([]int, error)\nJoker return type: [[Int] Error]"
+;;   "DecryptPEMBlock takes a password encrypted PEM block and the password used to\nencrypt it and returns a slice of decrypted DER encoded bytes. It inspects\nthe DEK-Info header to determine the algorithm used for decryption. If no\nDEK-Info header is present, an error is returned. If an incorrect password\nis detected an IncorrectPasswordError is returned. Because of deficiencies\nin the encrypted-PEM format, it's not always possible to detect an incorrect\npassword. In these cases no error will be returned but the decrypted DER\nbytes will be random noise.\nGo return type: ([]int, error)\nJoker return type: [(vector-of Int) Error]"
 ;;   {:added "1.0"
 ;;    :go "decryptPEMBlock(b, password)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: ../GOSRC/crypto/x509/pem_decrypt.go:115:24) b, ^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/crypto/x509/pem_decrypt.go:115:45) password])
@@ -13372,35 +13372,35 @@ JOKER FUNC x509.IsEncryptedPEMBlock has:
 
 JOKER FUNC x509.MarshalECPrivateKey has:
 ;; (defn MarshalECPrivateKey
-;;   "MarshalECPrivateKey marshals an EC private key into ASN.1, DER format.\nGo return type: ([]int, error)\nJoker return type: [[Int] Error]"
+;;   "MarshalECPrivateKey marshals an EC private key into ASN.1, DER format.\nGo return type: ([]int, error)\nJoker return type: [(vector-of Int) Error]"
 ;;   {:added "1.0"
 ;;    :go "marshalECPrivateKey(key)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: ../GOSRC/crypto/x509/sec1.go:37:30) key])
 
 JOKER FUNC x509.MarshalPKCS1PrivateKey has:
 ;; (defn MarshalPKCS1PrivateKey
-;;   "MarshalPKCS1PrivateKey converts a private key to ASN.1 DER encoded form.\nGo return type: []int\nJoker return type: [Int]"
+;;   "MarshalPKCS1PrivateKey converts a private key to ASN.1 DER encoded form.\nGo return type: []int\nJoker return type: (vector-of Int)"
 ;;   {:added "1.0"
 ;;    :go "marshalPKCS1PrivateKey(key)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: ../GOSRC/crypto/x509/pkcs1.go:92:33) key])
 
 JOKER FUNC x509.MarshalPKCS1PublicKey has:
 ;; (defn MarshalPKCS1PublicKey
-;;   "MarshalPKCS1PublicKey converts an RSA public key to PKCS#1, ASN.1 DER form.\nGo return type: []int\nJoker return type: [Int]"
+;;   "MarshalPKCS1PublicKey converts an RSA public key to PKCS#1, ASN.1 DER form.\nGo return type: []int\nJoker return type: (vector-of Int)"
 ;;   {:added "1.0"
 ;;    :go "marshalPKCS1PublicKey(key)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: ../GOSRC/crypto/x509/pkcs1.go:148:32) key])
 
 JOKER FUNC x509.MarshalPKCS8PrivateKey has:
 ;; (defn MarshalPKCS8PrivateKey
-;;   "MarshalPKCS8PrivateKey converts a private key to PKCS#8 encoded form.\nThe following key types are supported: *rsa.PrivateKey, *ecdsa.PrivateKey.\nUnsupported key types result in an error.\n\nSee RFC 5208.\nGo return type: ([]int, error)\nJoker return type: [[Int] Error]"
+;;   "MarshalPKCS8PrivateKey converts a private key to PKCS#8 encoded form.\nThe following key types are supported: *rsa.PrivateKey, *ecdsa.PrivateKey.\nUnsupported key types result in an error.\n\nSee RFC 5208.\nGo return type: ([]int, error)\nJoker return type: [(vector-of Int) Error]"
 ;;   {:added "1.0"
 ;;    :go "marshalPKCS8PrivateKey(key)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.InterfaceType at: ../GOSRC/crypto/x509/pkcs8.go:63:33) key])
 
 JOKER FUNC x509.MarshalPKIXPublicKey has:
 ;; (defn MarshalPKIXPublicKey
-;;   "MarshalPKIXPublicKey serialises a public key to DER-encoded PKIX format.\nGo return type: ([]int, error)\nJoker return type: [[Int] Error]"
+;;   "MarshalPKIXPublicKey serialises a public key to DER-encoded PKIX format.\nGo return type: ([]int, error)\nJoker return type: [(vector-of Int) Error]"
 ;;   {:added "1.0"
 ;;    :go "marshalPKIXPublicKey(pub)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.InterfaceType at: ../GOSRC/crypto/x509/x509.go:104:31) pub])
@@ -13435,7 +13435,7 @@ JOKER FUNC x509.ParseCertificateRequest has:
 
 JOKER FUNC x509.ParseCertificates has:
 ;; (defn ParseCertificates
-;;   "ParseCertificates parses one or more certificates from the given ASN.1 DER\ndata. The certificates must be concatenated with no intermediate padding.\nGo return type: ([], error)\nJoker return type: [[ABEND883(unrecognized Expr type *ast.StructType at: ../GOSRC/crypto/x509/x509.go:633:18)] Error]"
+;;   "ParseCertificates parses one or more certificates from the given ASN.1 DER\ndata. The certificates must be concatenated with no intermediate padding.\nGo return type: ([], error)\nJoker return type: [(vector-of ABEND883(unrecognized Expr type *ast.StructType at: ../GOSRC/crypto/x509/x509.go:633:18)) Error]"
 ;;   {:added "1.0"
 ;;    :go "parseCertificates(asn1Data)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/crypto/x509/x509.go:1577:33) asn1Data])
@@ -13512,14 +13512,14 @@ JOKER FUNC xml.EscapeText has:
 
 JOKER FUNC xml.Marshal has:
 ;; (defn Marshal
-;;   "Marshal returns the XML encoding of v.\n\nMarshal handles an array or slice by marshaling each of the elements.\nMarshal handles a pointer by marshaling the value it points at or, if the\npointer is nil, by writing nothing. Marshal handles an interface value by\nmarshaling the value it contains or, if the interface value is nil, by\nwriting nothing. Marshal handles all other data by writing one or more XML\nelements containing the data.\n\nThe name for the XML elements is taken from, in order of preference:\n    - the tag on the XMLName field, if the data is a struct\n    - the value of the XMLName field of type Name\n    - the tag of the struct field used to obtain the data\n    - the name of the struct field used to obtain the data\n    - the name of the marshaled type\n\nThe XML element for a struct contains marshaled elements for each of the\nexported fields of the struct, with these exceptions:\n    - the XMLName field, described above, is omitted.\n    - a field with tag \"-\" is omitted.\n    - a field with tag \"name,attr\" becomes an attribute with\n      the given name in the XML element.\n    - a field with tag \",attr\" becomes an attribute with the\n      field name in the XML element.\n    - a field with tag \",chardata\" is written as character data,\n      not as an XML element.\n    - a field with tag \",cdata\" is written as character data\n      wrapped in one or more <![CDATA[ ... ]]> tags, not as an XML element.\n    - a field with tag \",innerxml\" is written verbatim, not subject\n      to the usual marshaling procedure.\n    - a field with tag \",comment\" is written as an XML comment, not\n      subject to the usual marshaling procedure. It must not contain\n      the \"--\" string within it.\n    - a field with a tag including the \"omitempty\" option is omitted\n      if the field value is empty. The empty values are false, 0, any\n      nil pointer or interface value, and any array, slice, map, or\n      string of length zero.\n    - an anonymous struct field is handled as if the fields of its\n      value were part of the outer struct.\n\nIf a field uses a tag \"a>b>c\", then the element c will be nested inside\nparent elements a and b. Fields that appear next to each other that name\nthe same parent will be enclosed in one XML element.\n\nIf the XML name for a struct field is defined by both the field tag and the\nstruct's XMLName field, the names must match.\n\nSee MarshalIndent for an example.\n\nMarshal will return an error if asked to marshal a channel, function, or map.\nGo return type: ([]int, error)\nJoker return type: [[Int] Error]"
+;;   "Marshal returns the XML encoding of v.\n\nMarshal handles an array or slice by marshaling each of the elements.\nMarshal handles a pointer by marshaling the value it points at or, if the\npointer is nil, by writing nothing. Marshal handles an interface value by\nmarshaling the value it contains or, if the interface value is nil, by\nwriting nothing. Marshal handles all other data by writing one or more XML\nelements containing the data.\n\nThe name for the XML elements is taken from, in order of preference:\n    - the tag on the XMLName field, if the data is a struct\n    - the value of the XMLName field of type Name\n    - the tag of the struct field used to obtain the data\n    - the name of the struct field used to obtain the data\n    - the name of the marshaled type\n\nThe XML element for a struct contains marshaled elements for each of the\nexported fields of the struct, with these exceptions:\n    - the XMLName field, described above, is omitted.\n    - a field with tag \"-\" is omitted.\n    - a field with tag \"name,attr\" becomes an attribute with\n      the given name in the XML element.\n    - a field with tag \",attr\" becomes an attribute with the\n      field name in the XML element.\n    - a field with tag \",chardata\" is written as character data,\n      not as an XML element.\n    - a field with tag \",cdata\" is written as character data\n      wrapped in one or more <![CDATA[ ... ]]> tags, not as an XML element.\n    - a field with tag \",innerxml\" is written verbatim, not subject\n      to the usual marshaling procedure.\n    - a field with tag \",comment\" is written as an XML comment, not\n      subject to the usual marshaling procedure. It must not contain\n      the \"--\" string within it.\n    - a field with a tag including the \"omitempty\" option is omitted\n      if the field value is empty. The empty values are false, 0, any\n      nil pointer or interface value, and any array, slice, map, or\n      string of length zero.\n    - an anonymous struct field is handled as if the fields of its\n      value were part of the outer struct.\n\nIf a field uses a tag \"a>b>c\", then the element c will be nested inside\nparent elements a and b. Fields that appear next to each other that name\nthe same parent will be enclosed in one XML element.\n\nIf the XML name for a struct field is defined by both the field tag and the\nstruct's XMLName field, the names must match.\n\nSee MarshalIndent for an example.\n\nMarshal will return an error if asked to marshal a channel, function, or map.\nGo return type: ([]int, error)\nJoker return type: [(vector-of Int) Error]"
 ;;   {:added "1.0"
 ;;    :go "marshal(v)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.InterfaceType at: ../GOSRC/encoding/xml/marshal.go:75:16) v])
 
 JOKER FUNC xml.MarshalIndent has:
 ;; (defn MarshalIndent
-;;   "MarshalIndent works like Marshal, but each XML element begins on a new\nindented line that starts with prefix and is followed by one or more\ncopies of indent according to the nesting depth.\nGo return type: ([]int, error)\nJoker return type: [[Int] Error]"
+;;   "MarshalIndent works like Marshal, but each XML element begins on a new\nindented line that starts with prefix and is followed by one or more\ncopies of indent according to the nesting depth.\nGo return type: ([]int, error)\nJoker return type: [(vector-of Int) Error]"
 ;;   {:added "1.0"
 ;;    :go "marshalIndent(v, prefix, indent)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.InterfaceType at: ../GOSRC/encoding/xml/marshal.go:121:22) v, ^String prefix, ^String indent])

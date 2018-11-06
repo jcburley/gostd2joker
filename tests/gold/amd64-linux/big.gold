@@ -600,21 +600,21 @@ JOKER FUNC httptrace.WithClientTrace has:
 
 JOKER FUNC httputil.DumpRequest has:
 ;; (defn DumpRequest
-;;   "DumpRequest returns the given request in its HTTP/1.x wire\nrepresentation. It should only be used by servers to debug client\nrequests. The returned representation is an approximation only;\nsome details of the initial request are lost while parsing it into\nan http.Request. In particular, the order and case of header field\nnames are lost. The order of values in multi-valued headers is kept\nintact. HTTP/2 requests are dumped in HTTP/1.x form, not in their\noriginal binary representations.\n\nIf body is true, DumpRequest also returns the body. To do so, it\nconsumes req.Body and then replaces it with a new io.ReadCloser\nthat yields the same bytes. If DumpRequest returns an error,\nthe state of req is undefined.\n\nThe documentation for http.Request.Write details which fields\nof req are included in the dump.\nGo return type: ([]int, error)\nJoker return type: [[Int] Error]"
+;;   "DumpRequest returns the given request in its HTTP/1.x wire\nrepresentation. It should only be used by servers to debug client\nrequests. The returned representation is an approximation only;\nsome details of the initial request are lost while parsing it into\nan http.Request. In particular, the order and case of header field\nnames are lost. The order of values in multi-valued headers is kept\nintact. HTTP/2 requests are dumped in HTTP/1.x form, not in their\noriginal binary representations.\n\nIf body is true, DumpRequest also returns the body. To do so, it\nconsumes req.Body and then replaces it with a new io.ReadCloser\nthat yields the same bytes. If DumpRequest returns an error,\nthe state of req is undefined.\n\nThe documentation for http.Request.Write details which fields\nof req are included in the dump.\nGo return type: ([]int, error)\nJoker return type: [(vector-of Int) Error]"
 ;;   {:added "1.0"
 ;;    :go "dumpRequest(req, body)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: tests/big/net/http/httputil/dump.go:191:22) req, body])
 
 JOKER FUNC httputil.DumpRequestOut has:
 ;; (defn DumpRequestOut
-;;   "DumpRequestOut is like DumpRequest but for outgoing client requests. It\nincludes any headers that the standard http.Transport adds, such as\nUser-Agent.\nGo return type: ([]int, error)\nJoker return type: [[Int] Error]"
+;;   "DumpRequestOut is like DumpRequest but for outgoing client requests. It\nincludes any headers that the standard http.Transport adds, such as\nUser-Agent.\nGo return type: ([]int, error)\nJoker return type: [(vector-of Int) Error]"
 ;;   {:added "1.0"
 ;;    :go "dumpRequestOut(req, body)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: tests/big/net/http/httputil/dump.go:66:25) req, body])
 
 JOKER FUNC httputil.DumpResponse has:
 ;; (defn DumpResponse
-;;   "DumpResponse is like DumpRequest but dumps a response.\nGo return type: ([]int, error)\nJoker return type: [[Int] Error]"
+;;   "DumpResponse is like DumpRequest but dumps a response.\nGo return type: ([]int, error)\nJoker return type: [(vector-of Int) Error]"
 ;;   {:added "1.0"
 ;;    :go "dumpResponse(resp, body)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: tests/big/net/http/httputil/dump.go:281:24) resp, body])
@@ -705,7 +705,7 @@ JOKER FUNC mail.ParseAddress has:
 
 JOKER FUNC mail.ParseAddressList has:
 ;; (defn ParseAddressList
-;;   "ParseAddressList parses the given string as a list of addresses.\nGo return type: ([], error)\nJoker return type: [[ABEND883(unrecognized Expr type *ast.StructType at: tests/big/net/mail/message.go:141:14)] Error]"
+;;   "ParseAddressList parses the given string as a list of addresses.\nGo return type: ([], error)\nJoker return type: [(vector-of ABEND883(unrecognized Expr type *ast.StructType at: tests/big/net/mail/message.go:141:14)) Error]"
 ;;   {:added "1.0"
 ;;    :go "parseAddressList(list)"}
 ;;   [^String list])
@@ -726,7 +726,7 @@ JOKER FUNC mail.ReadMessage has:
 
 JOKER FUNC net.CIDRMask has:
 ;; (defn CIDRMask
-;;   "CIDRMask returns an IPMask consisting of `ones' 1 bits\nfollowed by 0s up to a total length of `bits' bits.\nFor a mask of this form, CIDRMask is the inverse of IPMask.Size.\nGo return type: []int\nJoker return type: [Int]"
+;;   "CIDRMask returns an IPMask consisting of `ones' 1 bits\nfollowed by 0s up to a total length of `bits' bits.\nFor a mask of this form, CIDRMask is the inverse of IPMask.Size.\nGo return type: []int\nJoker return type: (vector-of Int)"
 ;;   {:added "1.0"
 ;;    :go "cIDRMask(ones, bits)"}
 ;;   [^Int ones, ^Int bits])
@@ -796,21 +796,21 @@ JOKER FUNC net.FilePacketConn has:
 
 JOKER FUNC net.IPv4 has:
 ;; (defn IPv4
-;;   "IPv4 returns the IP address (in 16-byte form) of the\nIPv4 address a.b.c.d.\nGo return type: []int\nJoker return type: [Int]"
+;;   "IPv4 returns the IP address (in 16-byte form) of the\nIPv4 address a.b.c.d.\nGo return type: []int\nJoker return type: (vector-of Int)"
 ;;   {:added "1.0"
 ;;    :go "iPv4(a, b, c, d)"}
 ;;   [a, b, c, d])
 
 JOKER FUNC net.IPv4Mask has:
 ;; (defn IPv4Mask
-;;   "IPv4Mask returns the IP mask (in 4-byte form) of the\nIPv4 mask a.b.c.d.\nGo return type: []int\nJoker return type: [Int]"
+;;   "IPv4Mask returns the IP mask (in 4-byte form) of the\nIPv4 mask a.b.c.d.\nGo return type: []int\nJoker return type: (vector-of Int)"
 ;;   {:added "1.0"
 ;;    :go "iPv4Mask(a, b, c, d)"}
 ;;   [a, b, c, d])
 
 JOKER FUNC net.InterfaceAddrs has:
 ;; (defn InterfaceAddrs
-;;   "InterfaceAddrs returns a list of the system's unicast interface\naddresses.\n\nThe returned list does not identify the associated interface; use\nInterfaces and Interface.Addrs for more detail.\nGo return type: ([], error)\nJoker return type: [[ABEND883(unrecognized Expr type *ast.InterfaceType at: tests/big/net/net.go:105:11)] Error]"
+;;   "InterfaceAddrs returns a list of the system's unicast interface\naddresses.\n\nThe returned list does not identify the associated interface; use\nInterfaces and Interface.Addrs for more detail.\nGo return type: ([], error)\nJoker return type: [(vector-of ABEND883(unrecognized Expr type *ast.InterfaceType at: tests/big/net/net.go:105:11)) Error]"
 ;;   {:added "1.0"
 ;;    :go "interfaceAddrs()"}
 ;;   [])
@@ -831,7 +831,7 @@ JOKER FUNC net.InterfaceByName has:
 
 JOKER FUNC net.Interfaces has:
 ;; (defn Interfaces
-;;   "Interfaces returns a list of the system's network interfaces.\nGo return type: ([], error)\nJoker return type: [[ABEND883(unrecognized Expr type *ast.StructType at: tests/big/net/interface.go:30:16)] Error]"
+;;   "Interfaces returns a list of the system's network interfaces.\nGo return type: ([], error)\nJoker return type: [(vector-of ABEND883(unrecognized Expr type *ast.StructType at: tests/big/net/interface.go:30:16)) Error]"
 ;;   {:added "1.0"
 ;;    :go "interfaces()"}
 ;;   [])
@@ -922,21 +922,21 @@ JOKER FUNC net.LookupHost has:
 
 JOKER FUNC net.LookupIP has:
 ;; (defn LookupIP
-;;   "LookupIP looks up host using the local resolver.\nIt returns a slice of that host's IPv4 and IPv6 addresses.\nGo return type: ([][]int, error)\nJoker return type: [[[Int]] Error]"
+;;   "LookupIP looks up host using the local resolver.\nIt returns a slice of that host's IPv4 and IPv6 addresses.\nGo return type: ([][]int, error)\nJoker return type: [(vector-of (vector-of Int)) Error]"
 ;;   {:added "1.0"
 ;;    :go "lookupIP(host)"}
 ;;   [^String host])
 
 JOKER FUNC net.LookupMX has:
 ;; (defn LookupMX
-;;   "LookupMX returns the DNS MX records for the given domain name sorted by preference.\nGo return type: ([], error)\nJoker return type: [[ABEND883(unrecognized Expr type *ast.StructType at: tests/big/net/dnsclient.go:193:9)] Error]"
+;;   "LookupMX returns the DNS MX records for the given domain name sorted by preference.\nGo return type: ([], error)\nJoker return type: [(vector-of ABEND883(unrecognized Expr type *ast.StructType at: tests/big/net/dnsclient.go:193:9)) Error]"
 ;;   {:added "1.0"
 ;;    :go "lookupMX(name)"}
 ;;   [^String name])
 
 JOKER FUNC net.LookupNS has:
 ;; (defn LookupNS
-;;   "LookupNS returns the DNS NS records for the given domain name.\nGo return type: ([], error)\nJoker return type: [[ABEND883(unrecognized Expr type *ast.StructType at: tests/big/net/dnsclient.go:215:9)] Error]"
+;;   "LookupNS returns the DNS NS records for the given domain name.\nGo return type: ([], error)\nJoker return type: [(vector-of ABEND883(unrecognized Expr type *ast.StructType at: tests/big/net/dnsclient.go:215:9)) Error]"
 ;;   {:added "1.0"
 ;;    :go "lookupNS(name)"}
 ;;   [^String name])
@@ -957,21 +957,21 @@ JOKER FUNC net.LookupSRV has:
 
 JOKER FUNC net.LookupTXT has:
 ;; (defn LookupTXT
-;;   "LookupTXT returns the DNS TXT records for the given domain name.\nGo return type: ([]string, error)\nJoker return type: [[String] Error]"
+;;   "LookupTXT returns the DNS TXT records for the given domain name.\nGo return type: ([]string, error)\nJoker return type: [(vector-of String) Error]"
 ;;   {:added "1.0"
 ;;    :go "lookupTXT(name)"}
 ;;   [^String name])
 
 JOKER FUNC net.ParseCIDR has:
 ;; (defn ParseCIDR
-;;   "ParseCIDR parses s as a CIDR notation IP address and prefix length,\nlike \"192.0.2.0/24\" or \"2001:db8::/32\", as defined in\nRFC 4632 and RFC 4291.\n\nIt returns the IP address and the network implied by the IP and\nprefix length.\nFor example, ParseCIDR(\"192.0.2.1/24\") returns the IP address\n192.0.2.1 and the network 192.0.2.0/24.\nGo return type: ([]int, , error)\nJoker return type: [[Int] ABEND883(unrecognized Expr type *ast.StructType at: tests/big/net/ip.go:38:12) Error]"
+;;   "ParseCIDR parses s as a CIDR notation IP address and prefix length,\nlike \"192.0.2.0/24\" or \"2001:db8::/32\", as defined in\nRFC 4632 and RFC 4291.\n\nIt returns the IP address and the network implied by the IP and\nprefix length.\nFor example, ParseCIDR(\"192.0.2.1/24\") returns the IP address\n192.0.2.1 and the network 192.0.2.0/24.\nGo return type: ([]int, , error)\nJoker return type: [(vector-of Int) ABEND883(unrecognized Expr type *ast.StructType at: tests/big/net/ip.go:38:12) Error]"
 ;;   {:added "1.0"
 ;;    :go "parseCIDR(s)"}
 ;;   [^String s])
 
 JOKER FUNC net.ParseIP has:
 ;; (defn ParseIP
-;;   "ParseIP parses s as an IP address, returning the result.\nThe string s can be in dotted decimal (\"192.0.2.1\")\nor IPv6 (\"2001:db8::68\") form.\nIf s is not a valid textual representation of an IP address,\nParseIP returns nil.\nGo return type: []int\nJoker return type: [Int]"
+;;   "ParseIP parses s as an IP address, returning the result.\nThe string s can be in dotted decimal (\"192.0.2.1\")\nor IPv6 (\"2001:db8::68\") form.\nIf s is not a valid textual representation of an IP address,\nParseIP returns nil.\nGo return type: []int\nJoker return type: (vector-of Int)"
 ;;   {:added "1.0"
 ;;    :go "parseIP(s)"}
 ;;   [^String s])
@@ -1230,7 +1230,7 @@ JOKER FUNC textproto.NewWriter has:
 
 JOKER FUNC textproto.TrimBytes has:
 ;; (defn TrimBytes
-;;   "TrimBytes returns b without leading and trailing ASCII space.\nGo return type: []int\nJoker return type: [Int]"
+;;   "TrimBytes returns b without leading and trailing ASCII space.\nGo return type: []int\nJoker return type: (vector-of Int)"
 ;;   {:added "1.0"
 ;;    :go "trimBytes(b)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: tests/big/net/textproto/textproto.go:137:18) b])
