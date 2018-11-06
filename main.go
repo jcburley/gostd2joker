@@ -574,8 +574,7 @@ func genReturnType(pkg string, fl *FieldList) (jok, gol string) {
 				gol += " "
 			}
 			if p == nil {
-				jok += "_"
-				gol += "rtn_1"  // TODO: increment suffix like resultsAsGo()
+				panic(fmt.Sprintf("ABEND414(nil name in pkg %s", pkg))
 			} else {
 				jok += paramNameAsClojure(p.Name)
 				gol += paramNameAsGo(p.Name)
