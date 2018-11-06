@@ -76,6 +76,23 @@ type funcInfo struct {
 	filename string
 }
 
+/* Go apparently doesn't support/allow 'interface{}' as the value (or
+/* key) of a map such that any arbitrary type can be substituted at
+/* run time, so there are several of these nearly-identical functions
+/* sprinkled through this code. Still get some reuse out of some of
+/* them, and it's still easier to maintain these copies than if the
+/* body of these were to be included at each call point.... */
+func sortedFuncInfoMap(m map[string]*funcInfo, f func(k string, v *funcInfo)) {
+	var keys []string
+	for k, _ := range m {
+		keys = append(keys, k)
+	}
+	sort.Strings(keys)
+	for _, k := range keys {
+		f(k, m[k])
+	}
+}
+
 var functions = map[string]*funcInfo {}
 var DUPLICATEFUNCTION = &FuncDecl {}
 
@@ -108,12 +125,6 @@ type typeInfo struct {
 
 type typeInfoArray []*typeInfo
 
-/* Go apparently doesn't support/allow 'interface{}' as the value (or
-/* key) of a map such that any arbitrary type can be substituted at
-/* run time, so there are several of these nearly-identical functions
-/* sprinkled through this code. Still get some reuse out of some of
-/* them, and it's still easier to maintain these copies than if the
-/* body of these were to be included at each call point.... */
 func sortedTypeInfoMap(m map[string]typeInfoArray, f func(k string, v typeInfoArray)) {
 	var keys []string
 	for k, _ := range m {
@@ -303,8 +314,8 @@ func exprAsGo(e Expr) string {
 	}
 }
 
-func paramNameAsClojure(name *Ident) string {
-	return name.Name
+func paramNameAsClojure(n string) string {
+	return n
 }
 
 func fieldListAsClojure(fl *FieldList) string {
@@ -324,7 +335,7 @@ func fieldListAsClojure(fl *FieldList) string {
 			if p == nil {
 				s += "_"
 			} else {
-				s += paramNameAsClojure(p)
+				s += paramNameAsClojure(p.Name)
 			}
 		}
 	}
@@ -566,7 +577,7 @@ func genReturnType(pkg string, fl *FieldList) (jok, gol string) {
 				jok += "_"
 				gol += "rtn_1"  // TODO: increment suffix like resultsAsGo()
 			} else {
-				jok += paramNameAsClojure(p)
+				jok += paramNameAsClojure(p.Name)
 				gol += paramNameAsGo(p.Name)
 			}
 		}
@@ -820,13 +831,13 @@ func main() {
 			})
 	}
 
-	/* Generate function code snippets in arbitrary/random order. */
-	for f, v := range functions {
-		if v.fd == DUPLICATEFUNCTION {
-			continue
-		}
-		genFunction(f, v)
-	}
+	/* Generate function code snippets in alphabetical order, to stabilize test output in re unsupported types. */
+	sortedFuncInfoMap(functions,
+		func(f string, v *funcInfo) {
+			if v.fd != DUPLICATEFUNCTION {
+				genFunction(f, v)
+			}
+		})
 
 	var out *bufio.Writer
 	var unbuf_out *os.File
