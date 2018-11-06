@@ -148,11 +148,24 @@ func commentGroupAsString(doc *CommentGroup) string {
 	}
 }
 
-func commentGroupInQuotes(doc *CommentGroup) string {
-	if doc == nil || doc.Text() == "" {
-		return ""
+func commentGroupInQuotes(doc *CommentGroup, jok, gol string) string {
+	var d string
+	if doc != nil {
+		d = doc.Text()
 	}
-	return `  ` + strings.Trim(strconv.Quote(doc.Text()), " \t\n") + "\n"
+	if gol != "" {
+		if d != "" {
+			d = strings.Trim(d, " \t\n") + "\n"
+		}
+		d += "Go return type: " + gol
+	}
+	if jok != "" {
+		if d != "" {
+			d = strings.Trim(d, " \t\n") + "\n"
+		}
+		d += "Joker return type: " + jok
+	}
+	return `  ` + strings.Trim(strconv.Quote(d), " \t\n") + "\n"
 }
 
 func printDecls(f *File) {
@@ -638,7 +651,7 @@ func genReturnTypeElement(pkg string, e Expr) (jok, gol string) {
 	return
 }
 
-func genRawReturnType(pkg string, fl *FieldList) (jok, gol string) {
+func genReturnType(pkg string, fl *FieldList) (jok, gol string) {
 	if fl == nil || fl.List == nil {
 		return
 	}
@@ -699,12 +712,6 @@ func jokerReturnTypeForGenerateSTD(in_jok, in_gol string) (jok, gol string) {
 	return
 }
 
-func genReturnType(pkg string, f *FuncDecl) (jok, gol string) {
-	jok, gol = genRawReturnType(pkg, f.Type.Results)
-	jok, gol = jokerReturnTypeForGenerateSTD(jok, gol)
-	return
-}
-
 /* Map package names to maps of filenames to code strings. */
 
 type codeInfo map[string]string
@@ -746,11 +753,13 @@ func genFunction(f string, fn *funcInfo) {
   [%s])
 `
 	goFname := funcNameAsGoPrivate(d.Name.Name)
-	jokerReturnType, goReturnType := genReturnType(pkg, d)
+	jokerReturnTypeForDoc, goReturnTypeForDoc := genReturnType(pkg, d.Type.Results)
+	jokerReturnType, goReturnType := jokerReturnTypeForGenerateSTD(jokerReturnTypeForDoc, goReturnTypeForDoc)
 	if jokerReturnType != "" {
 		jokerReturnType += " "
 	}
-	jokerFn := fmt.Sprintf(jfmt, jokerReturnType, d.Name.Name, commentGroupInQuotes(d.Doc),
+	jokerFn := fmt.Sprintf(jfmt, jokerReturnType, d.Name.Name,
+		commentGroupInQuotes(d.Doc, jokerReturnTypeForDoc, goReturnTypeForDoc),
 		goFname, fieldListToGo(d.Type.Params),
 		fieldListAsClojure(d.Type.Params))
 
