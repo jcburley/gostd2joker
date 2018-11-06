@@ -51,21 +51,21 @@ JOKER FUNC net.LookupHost has:
 
 JOKER FUNC net.LookupIP has:
 ;; (defn LookupIP
-;;   "LookupIP looks up host using the local resolver.\nIt returns a slice of that host's IPv4 and IPv6 addresses.\nGo return type: ([], error)\nJoker return type: [[ABEND042(cannot find typename net.IP)] Error]"
+;;   "LookupIP looks up host using the local resolver.\nIt returns a slice of that host's IPv4 and IPv6 addresses.\nGo return type: ([], error)\nJoker return type: [(vector-of ABEND042(cannot find typename net.IP)) Error]"
 ;;   {:added "1.0"
 ;;    :go "lookupIP(host)"}
 ;;   [^String host])
 
 JOKER FUNC net.LookupMX has:
 ;; (defn LookupMX
-;;   "LookupMX returns the DNS MX records for the given domain name sorted by preference.\nGo return type: ([], error)\nJoker return type: [[ABEND883(unrecognized Expr type *ast.StructType at: tests/small/net/dnsclient.go:193:9)] Error]"
+;;   "LookupMX returns the DNS MX records for the given domain name sorted by preference.\nGo return type: ([], error)\nJoker return type: [(vector-of ABEND883(unrecognized Expr type *ast.StructType at: tests/small/net/dnsclient.go:193:9)) Error]"
 ;;   {:added "1.0"
 ;;    :go "lookupMX(name)"}
 ;;   [^String name])
 
 JOKER FUNC net.LookupNS has:
 ;; (defn LookupNS
-;;   "LookupNS returns the DNS NS records for the given domain name.\nGo return type: ([], error)\nJoker return type: [[ABEND883(unrecognized Expr type *ast.StructType at: tests/small/net/dnsclient.go:215:9)] Error]"
+;;   "LookupNS returns the DNS NS records for the given domain name.\nGo return type: ([], error)\nJoker return type: [(vector-of ABEND883(unrecognized Expr type *ast.StructType at: tests/small/net/dnsclient.go:215:9)) Error]"
 ;;   {:added "1.0"
 ;;    :go "lookupNS(name)"}
 ;;   [^String name])
@@ -86,7 +86,7 @@ JOKER FUNC net.LookupSRV has:
 
 JOKER FUNC net.LookupTXT has:
 ;; (defn LookupTXT
-;;   "LookupTXT returns the DNS TXT records for the given domain name.\nGo return type: ([]string, error)\nJoker return type: [[String] Error]"
+;;   "LookupTXT returns the DNS TXT records for the given domain name.\nGo return type: ([]string, error)\nJoker return type: [(vector-of String) Error]"
 ;;   {:added "1.0"
 ;;    :go "lookupTXT(name)"}
 ;;   [^String name])
