@@ -443,7 +443,7 @@ func bodyAsGo(pkg string, f *FuncDecl) string {
 	return "\t" + strings.Replace(callStr, "\n", "\n\t", -1)
 }
 
-func genNamedReturnTypeElement(pkg string, t string) (jok, gol string) {
+func genGoPostNamed(indent, pkg, tmp, t string) (jok, gol string) {
 	qt := pkg + "." + t
 	if v, ok := types[qt]; ok {
 		if v[0].built {
@@ -456,7 +456,7 @@ func genNamedReturnTypeElement(pkg string, t string) (jok, gol string) {
 			gol = jok
 		} else {
 			v[0].building = true
-			jok, gol = genReturnTypeElement(pkg, v[0].td.Type)
+			jok, gol = genGoPostElement(indent, pkg, tmp, v[0].td.Type)
 		}
 		v[0].jok = jok
 		v[0].gol = gol
@@ -474,14 +474,14 @@ func genNamedReturnTypeElement(pkg string, t string) (jok, gol string) {
 
 // Joker: { :a ^Int, :b ^String }
 // Go: struct { a int; b string }
-func genStruct(pkg string, fl *FieldList) (jok, gol string) {
+func genGoPostStruct(indent, pkg, tmp string, fl *FieldList) (jok, gol string) {
 	if fl == nil {
 		jok = "{}"
 		gol = "struct {}"
 		return
 	}
 	for _, f := range fl.List {
-		joktype, goltype := genReturnTypeElement(pkg, f.Type)
+		joktype, goltype := genGoPostElement(indent, pkg, tmp, f.Type)
 		for _, p := range f.Names {
 			if jok != "" {
 				jok += ", "
@@ -508,7 +508,7 @@ func genStruct(pkg string, fl *FieldList) (jok, gol string) {
 	return
 }
 
-func genReturnTypeElement(pkg string, e Expr) (jok, gol string) {
+func genGoPostElement(indent, pkg, tmp string, e Expr) (jok, gol string) {
 	switch v := e.(type) {
 	case *Ident:
 		switch v.Name {
@@ -529,20 +529,20 @@ func genReturnTypeElement(pkg string, e Expr) (jok, gol string) {
 			gol = "error"
 			return
 		default:
-			jok, _ = genNamedReturnTypeElement(pkg, v.Name)
+			jok, _ = genGoPostNamed(indent, pkg, tmp, v.Name)
 			gol = v.Name  // This is as far as Go needs to go for a type signature
 			return
 		}
 	case *ArrayType:
-		jok, gol = genReturnTypeElement(pkg, v.Elt)
+		jok, gol = genGoPostElement(indent, pkg, tmp, v.Elt)
 		jok = "(vector-of " + jok + ")"
 		gol = "[]" + gol
 		return
 	case *StarExpr:
-		jok, gol = genReturnTypeElement(pkg, v.X)  // TODO: Maybe return a ref or something Joker (someday) supports?
+		jok, gol = genGoPostElement(indent, pkg, tmp, v.X)  // TODO: Maybe return a ref or something Joker (someday) supports?
 		gol = "*" + gol
 	case *StructType:
-		jok, gol = genStruct(pkg, v.Fields)
+		jok, gol = genGoPostStruct(indent, pkg, tmp, v.Fields)
 	default:
 		jok = fmt.Sprintf("ABEND883(unrecognized Expr type %T at: %s)", e, whereAt(e.Pos()))
 		return
@@ -550,14 +550,19 @@ func genReturnTypeElement(pkg string, e Expr) (jok, gol string) {
 	return
 }
 
-func genReturnType(pkg string, fl *FieldList) (jok, gol string) {
-	if fl == nil || fl.List == nil {
-		return
-	}
+func genGoPostList(indent string, pkg string, fl *FieldList) (gores, jok, gol, goc string) {
 	multiple := false
+	idx := 0
 	for _, f := range fl.List {
-		joktype, goltype := genReturnTypeElement(pkg, f.Type)
+		var rtn string // name of returned value(s)
 		if f.Names == nil {
+			idx += 1
+			if (idx > 1) {
+				gores += ", "
+			}
+			rtn = fmt.Sprintf("arg_%d", idx)
+			gores += rtn
+			joktype, goltype := genGoPostElement(indent, pkg, rtn, f.Type)  // ~~~
 			if jok != "" {
 				jok += " "
 				multiple = true
@@ -570,19 +575,34 @@ func genReturnType(pkg string, fl *FieldList) (jok, gol string) {
 			continue
 		}
 		for _, p := range f.Names {
+			idx += 1
+			if (idx > 1) {
+				gores += ", "
+			}
+			if p == nil || p.Name == "" {
+				rtn = fmt.Sprintf("arg_%d", idx)
+			} else {
+				rtn = p.Name
+			}
+			gores += rtn
+			joktype, goltype := genGoPostElement(indent, pkg, rtn, f.Type) // ~~~
 			if jok != "" {
 				jok += " "
 				multiple = true
 			}
+			jok += "^" + joktype
 			if gol != "" {
-				gol += " "
+				gol += ", "
 			}
 			if p == nil {
 				panic(fmt.Sprintf("ABEND414(nil name in pkg %s", pkg))
 			} else {
-				jok += paramNameAsClojure(p.Name)
-				gol += paramNameAsGo(p.Name)
+				jok += " " + paramNameAsClojure(p.Name)
+				if goltype == "" {  // REMOVE TEST
+					gol += paramNameAsGo(p.Name)
+				}
 			}
+			gol += goltype
 		}
 	}
 	if multiple {
@@ -590,7 +610,9 @@ func genReturnType(pkg string, fl *FieldList) (jok, gol string) {
 		if gol != "" {
 			gol = "(" + gol + ")"
 		}
-		return
+	}
+	if goc != "" {
+		goc = indent + goc
 	}
 	return
 }
@@ -650,12 +672,46 @@ type funcCode struct {
 	goReturnTypeForDoc string  // genReturnType(pkg, d.Type.Results)
 }
 
+func genGoPre(indent string, fl *FieldList, goFname string) (jok, jok2gol, gol, code, params string) {
+	jok = fieldListAsClojure(fl)
+	jok2gol = goFname + "(" + fieldListToGo(fl) + ")"
+	code = "" // TODO: enhance to support composites
+	gol = paramListAsGo(fl)
+	params = argsAsGo(fl)
+	return
+}
+
+func genGoCall(pkg, goFname string, goParams string) string {
+	return pkg + "." + goFname + "(" + goParams + ")\n"
+}
+
+func genGoPost(indent string, pkg string, d *FuncDecl) (goResultAssign, jokerReturnTypeForDoc, goReturnTypeForDoc string, goReturnCode string) {
+	fl := d.Type.Results
+	if fl == nil || fl.List == nil {
+		return
+	}
+	goResultAssign, jokerReturnTypeForDoc, goReturnTypeForDoc, goReturnCode = genGoPostList(indent, pkg, fl)
+	return
+}
+
 func genFuncCode(pkg string, d *FuncDecl, goFname string) (fc funcCode) {
-	fc.jokerParamList = fieldListAsClojure(d.Type.Params)
-	fc.goParamList = paramListAsGo(d.Type.Params)
-	fc.jokerGoCode = goFname + "(" + fieldListToGo(d.Type.Params) + ")"
-	fc.goCode = bodyAsGo(pkg, d)
-	fc.jokerReturnTypeForDoc, fc.goReturnTypeForDoc = genReturnType(pkg, d.Type.Results)
+	var goPreCode, goParams, goResultAssign, goPostCode string
+
+	fc.jokerParamList, fc.jokerGoCode, fc.goParamList, goPreCode, goParams =
+		genGoPre("\t", d.Type.Params, goFname)
+	goCall := genGoCall(pkg, goFname, goParams)
+	goResultAssign, fc.jokerReturnTypeForDoc, fc.goReturnTypeForDoc, goPostCode = genGoPost("\t", pkg, d)
+
+	if goPostCode == "" {
+		goPostCode = "\t...ABEND: TODO..."
+	}
+
+	if goResultAssign != "" {
+		goResultAssign += " := "
+	}
+	fc.goCode = goPreCode + // Optional block of pre-code
+		"\t" + goResultAssign + goCall + // [results := ]fn-to-call([args...])
+		goPostCode // Optional block of post-code
 	return
 }
 
