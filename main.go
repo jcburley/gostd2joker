@@ -438,7 +438,7 @@ func argsAsGo(p *FieldList) string {
 func bodyAsGo(pkg string, f *FuncDecl) string {
 	callStr := resultsAsGo(f.Type.Results) + " := " + pkg + "." + f.Name.Name + "(" + argsAsGo(f.Type.Params) + ")"
 
-	callStr += "\n...ABEND: TODO..."
+	callStr += "\n...ABEND603: TODO..."
 
 	return "\t" + strings.Replace(callStr, "\n", "\n\t", -1)
 }
@@ -590,21 +590,23 @@ func genGoPostList(indent string, pkg string, fl *FieldList) (gores, jok, gol, g
 				jok += " "
 				multiple = true
 			}
-			if paramNameAsClojure(p.Name) == "" { // TODO: REMOVE TEST~~~
-				jok += "^" + joktype
-			}
+			jok += "^" + joktype
 			if gol != "" {
-				gol += " "
+				gol += ", "
 			}
 			if p == nil {
 				panic(fmt.Sprintf("ABEND414(nil name in pkg %s", pkg))
 			} else {
+				if joktype != "" {
+					jok += " "
+				}
 				jok += paramNameAsClojure(p.Name)
 				gol += paramNameAsGo(p.Name)
+				if goltype != "" {
+					gol += " "
+				}
 			}
-			if paramNameAsGo(p.Name) == "" { // TODO: REMOVE TEST~~~
-				gol += goltype
-			}
+			gol += goltype
 		}
 	}
 	if multiple {
@@ -705,10 +707,10 @@ func genFuncCode(pkg string, d *FuncDecl, goFname string) (fc funcCode) {
 	goResultAssign, fc.jokerReturnTypeForDoc, fc.goReturnTypeForDoc, goPostCode = genGoPost("\t", pkg, d)
 
 	if goPostCode == "" {
-		goPostCode = "\t...ABEND: TODO..."
+		goPostCode = "\t...ABEND676: TODO..."
 	}
 
-	if goResultAssign != "" || true {  // TODO: Restore test~~~
+	if goResultAssign != "" {
 		goResultAssign += " := "
 	}
 	fc.goCode = goPreCode + // Optional block of pre-code
