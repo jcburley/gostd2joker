@@ -548,6 +548,7 @@ func genGoPostElement(indent, pkg, tmp string, e Expr) (jok, gol string) {
 		jok, gol = genGoPostStruct(indent, pkg, tmp, v.Fields)
 	default:
 		jok = fmt.Sprintf("ABEND883(unrecognized Expr type %T at: %s)", e, whereAt(e.Pos()))
+		gol = "..."
 		return
 	}
 	return
@@ -570,22 +571,15 @@ func genGoPostItem(indent, pkg string, f *Field, idx *int, p *Ident, gores, jok,
 		*jok += " "
 		*multiple = true
 	}
-	*jok += joktype  // TODO: Someday '"^" + joktype + " " + rtn', but only after generate-std.joke supports it
+	*jok += joktype  // TODO: Someday '"^" + joktype', but only after generate-std.joke supports it
 	if *gol != "" {
 		*gol += ", "
 	}
-	if p == nil {
-	} else {
+	if p != nil {
 		if false {  // TODO: Someday enable this code, but only after generate-std.joke supports it
-			if joktype != "" {
-				*jok += " "
-			}
-			*jok += paramNameAsClojure(p.Name)
+			*jok += " " + paramNameAsClojure(p.Name)
 		}
-		*gol += paramNameAsGo(p.Name)
-		if goltype != "" {
-			*gol += " "
-		}
+		*gol += paramNameAsGo(p.Name) + " "
 	}
 	*gol += goltype
 }
@@ -596,9 +590,10 @@ func genGoPostList(indent string, pkg string, fl *FieldList) (gores, jok, gol, g
 	for _, f := range fl.List {
 		if f.Names == nil {
 			genGoPostItem(indent, pkg, f, &idx, nil, &gores, &jok, &gol, &goc, &multiple)
-		}
-		for _, p := range f.Names {
-			genGoPostItem(indent, pkg, f, &idx, p, &gores, &jok, &gol, &goc, &multiple)
+		} else {
+			for _, p := range f.Names {
+				genGoPostItem(indent, pkg, f, &idx, p, &gores, &jok, &gol, &goc, &multiple)
+			}
 		}
 	}
 	if multiple {

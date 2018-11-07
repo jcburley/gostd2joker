@@ -2802,14 +2802,14 @@ JOKER FUNC adler32.Checksum has:
 
 JOKER FUNC adler32.New has:
 ;; (defn New
-;;   "New returns a new hash.Hash32 computing the Adler-32 checksum. Its\nSum method will lay the value out in big-endian byte order. The\nreturned Hash32 also implements encoding.BinaryMarshaler and\nencoding.BinaryUnmarshaler to marshal and unmarshal the internal\nstate of the hash.\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/hash/adler32/adler32.go:43:12)"
+;;   "New returns a new hash.Hash32 computing the Adler-32 checksum. Its\nSum method will lay the value out in big-endian byte order. The\nreturned Hash32 also implements encoding.BinaryMarshaler and\nencoding.BinaryUnmarshaler to marshal and unmarshal the internal\nstate of the hash.\nGo return type: ...\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/hash/adler32/adler32.go:43:12)"
 ;;   {:added "1.0"
 ;;    :go "new()"}
 ;;   [])
 
 JOKER FUNC aes.NewCipher has:
 ;; (defn NewCipher
-;;   "NewCipher creates and returns a new cipher.Block.\nThe key argument should be the AES key,\neither 16, 24, or 32 bytes to select\nAES-128, AES-192, or AES-256.\nGo return type: (error)\nJoker return type: [ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/crypto/aes/cipher.go:32:29) Error]"
+;;   "NewCipher creates and returns a new cipher.Block.\nThe key argument should be the AES key,\neither 16, 24, or 32 bytes to select\nAES-128, AES-192, or AES-256.\nGo return type: (..., error)\nJoker return type: [ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/crypto/aes/cipher.go:32:29) Error]"
 ;;   {:added "1.0"
 ;;    :go "newCipher(key)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/crypto/aes/cipher.go:32:20) key])
@@ -2837,14 +2837,14 @@ JOKER FUNC ascii85.MaxEncodedLen has:
 
 JOKER FUNC ascii85.NewDecoder has:
 ;; (defn NewDecoder
-;;   "NewDecoder constructs a new ascii85 stream decoder.\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/encoding/ascii85/ascii85.go:246:30)"
+;;   "NewDecoder constructs a new ascii85 stream decoder.\nGo return type: ...\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/encoding/ascii85/ascii85.go:246:30)"
 ;;   {:added "1.0"
 ;;    :go "newDecoder(r)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/encoding/ascii85/ascii85.go:246:19) r])
 
 JOKER FUNC ascii85.NewEncoder has:
 ;; (defn NewEncoder
-;;   "NewEncoder returns a new ascii85 stream encoder. Data written to\nthe returned writer will be encoded and then written to w.\nAscii85 encodings operate in 32-bit blocks; when finished\nwriting, the caller must Close the returned encoder to flush any\ntrailing partial block.\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/encoding/ascii85/ascii85.go:93:30)"
+;;   "NewEncoder returns a new ascii85 stream encoder. Data written to\nthe returned writer will be encoded and then written to w.\nAscii85 encodings operate in 32-bit blocks; when finished\nwriting, the caller must Close the returned encoder to flush any\ntrailing partial block.\nGo return type: ...\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/encoding/ascii85/ascii85.go:93:30)"
 ;;   {:added "1.0"
 ;;    :go "newEncoder(w)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/encoding/ascii85/ascii85.go:93:19) w])
@@ -3096,7 +3096,7 @@ JOKER FUNC atomic.LoadInt64 has:
 
 JOKER FUNC atomic.LoadPointer has:
 ;; (defn LoadPointer
-;;   "LoadPointer atomically loads *addr.\nGo return type: val\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/sync/atomic/doc.go:126:45)"
+;;   "LoadPointer atomically loads *addr.\nGo return type: val ...\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/sync/atomic/doc.go:126:45)"
 ;;   {:added "1.0"
 ;;    :go "loadPointer(addr)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: ../GOSRC/sync/atomic/doc.go:126:23) addr])
@@ -3180,7 +3180,7 @@ JOKER FUNC atomic.SwapInt64 has:
 
 JOKER FUNC atomic.SwapPointer has:
 ;; (defn SwapPointer
-;;   "SwapPointer atomically stores new into *addr and returns the previous *addr value.\nGo return type: old\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/sync/atomic/doc.go:71:65)"
+;;   "SwapPointer atomically stores new into *addr and returns the previous *addr value.\nGo return type: old ...\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/sync/atomic/doc.go:71:65)"
 ;;   {:added "1.0"
 ;;    :go "swapPointer(addr, new)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: ../GOSRC/sync/atomic/doc.go:71:23) addr, ^ABEND881(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/sync/atomic/doc.go:71:44) new])
@@ -3208,14 +3208,14 @@ JOKER FUNC atomic.SwapUintptr has:
 
 JOKER FUNC base32.NewDecoder has:
 ;; (defn NewDecoder
-;;   "NewDecoder constructs a new base32 stream decoder.\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/encoding/base32/base32.go:530:45)"
+;;   "NewDecoder constructs a new base32 stream decoder.\nGo return type: ...\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/encoding/base32/base32.go:530:45)"
 ;;   {:added "1.0"
 ;;    :go "newDecoder(enc, r)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: ../GOSRC/encoding/base32/base32.go:530:21) enc, ^ABEND881(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/encoding/base32/base32.go:530:34) r])
 
 JOKER FUNC base32.NewEncoder has:
 ;; (defn NewEncoder
-;;   "NewEncoder returns a new base32 stream encoder. Data written to\nthe returned writer will be encoded using enc and then written to w.\nBase32 encodings operate in 5-byte blocks; when finished\nwriting, the caller must Close the returned encoder to flush any\npartially written blocks.\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/encoding/base32/base32.go:259:45)"
+;;   "NewEncoder returns a new base32 stream encoder. Data written to\nthe returned writer will be encoded using enc and then written to w.\nBase32 encodings operate in 5-byte blocks; when finished\nwriting, the caller must Close the returned encoder to flush any\npartially written blocks.\nGo return type: ...\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/encoding/base32/base32.go:259:45)"
 ;;   {:added "1.0"
 ;;    :go "newEncoder(enc, w)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: ../GOSRC/encoding/base32/base32.go:259:21) enc, ^ABEND881(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/encoding/base32/base32.go:259:34) w])
@@ -3229,14 +3229,14 @@ JOKER FUNC base32.NewEncoding has:
 
 JOKER FUNC base64.NewDecoder has:
 ;; (defn NewDecoder
-;;   "NewDecoder constructs a new base64 stream decoder.\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/encoding/base64/base64.go:603:45)"
+;;   "NewDecoder constructs a new base64 stream decoder.\nGo return type: ...\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/encoding/base64/base64.go:603:45)"
 ;;   {:added "1.0"
 ;;    :go "newDecoder(enc, r)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: ../GOSRC/encoding/base64/base64.go:603:21) enc, ^ABEND881(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/encoding/base64/base64.go:603:34) r])
 
 JOKER FUNC base64.NewEncoder has:
 ;; (defn NewEncoder
-;;   "NewEncoder returns a new base64 stream encoder. Data written to\nthe returned writer will be encoded using enc and then written to w.\nBase64 encodings operate in 4-byte blocks; when finished\nwriting, the caller must Close the returned encoder to flush any\npartially written blocks.\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/encoding/base64/base64.go:250:45)"
+;;   "NewEncoder returns a new base64 stream encoder. Data written to\nthe returned writer will be encoded using enc and then written to w.\nBase64 encodings operate in 4-byte blocks; when finished\nwriting, the caller must Close the returned encoder to flush any\npartially written blocks.\nGo return type: ...\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/encoding/base64/base64.go:250:45)"
 ;;   {:added "1.0"
 ;;    :go "newEncoder(enc, w)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: ../GOSRC/encoding/base64/base64.go:250:21) enc, ^ABEND881(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/encoding/base64/base64.go:250:34) w])
@@ -3292,14 +3292,14 @@ JOKER FUNC bidi.ReverseString has:
 
 JOKER FUNC bidirule.Direction has:
 ;; (defn Direction
-;;   "Direction reports the direction of the given label as defined by RFC 5893.\nThe Bidi Rule does not have to be applied to labels of the category\nLeftToRight.\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/vendor/golang_org/x/text/secure/bidirule/bidirule.go:137:26)"
+;;   "Direction reports the direction of the given label as defined by RFC 5893.\nThe Bidi Rule does not have to be applied to labels of the category\nLeftToRight.\nGo return type: ...\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/vendor/golang_org/x/text/secure/bidirule/bidirule.go:137:26)"
 ;;   {:added "1.0"
 ;;    :go "direction(b)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/vendor/golang_org/x/text/secure/bidirule/bidirule.go:137:18) b])
 
 JOKER FUNC bidirule.DirectionString has:
 ;; (defn DirectionString
-;;   "DirectionString reports the direction of the given label as defined by RFC\n5893. The Bidi Rule does not have to be applied to labels of the category\nLeftToRight.\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/vendor/golang_org/x/text/secure/bidirule/bidirule.go:155:32)"
+;;   "DirectionString reports the direction of the given label as defined by RFC\n5893. The Bidi Rule does not have to be applied to labels of the category\nLeftToRight.\nGo return type: ...\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/vendor/golang_org/x/text/secure/bidirule/bidirule.go:155:32)"
 ;;   {:added "1.0"
 ;;    :go "directionString(s)"}
 ;;   [^String s])
@@ -4097,21 +4097,21 @@ JOKER FUNC bytes.TrimSuffix has:
 
 JOKER FUNC bzip2.NewReader has:
 ;; (defn NewReader
-;;   "NewReader returns an io.Reader which decompresses bzip2 data from r.\nIf r does not also implement io.ByteReader,\nthe decompressor may read more data than necessary from r.\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/compress/bzip2/bzip2.go:46:29)"
+;;   "NewReader returns an io.Reader which decompresses bzip2 data from r.\nIf r does not also implement io.ByteReader,\nthe decompressor may read more data than necessary from r.\nGo return type: ...\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/compress/bzip2/bzip2.go:46:29)"
 ;;   {:added "1.0"
 ;;    :go "newReader(r)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/compress/bzip2/bzip2.go:46:18) r])
 
 JOKER FUNC cgi.Request has:
 ;; (defn Request
-;;   "Request returns the HTTP request as represented in the current\nenvironment. This assumes the current program is being run\nby a web server in a CGI environment.\nThe returned Request's Body is populated, if applicable.\nGo return type: (*, error)\nJoker return type: [ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/net/http/cgi/child.go:29:18) Error]"
+;;   "Request returns the HTTP request as represented in the current\nenvironment. This assumes the current program is being run\nby a web server in a CGI environment.\nThe returned Request's Body is populated, if applicable.\nGo return type: (*..., error)\nJoker return type: [ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/net/http/cgi/child.go:29:18) Error]"
 ;;   {:added "1.0"
 ;;    :go "request()"}
 ;;   [])
 
 JOKER FUNC cgi.RequestFromMap has:
 ;; (defn RequestFromMap
-;;   "RequestFromMap creates an http.Request from CGI variables.\nThe returned Request's Body field is not populated.\nGo return type: (*, error)\nJoker return type: [ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/net/http/cgi/child.go:52:49) Error]"
+;;   "RequestFromMap creates an http.Request from CGI variables.\nThe returned Request's Body field is not populated.\nGo return type: (*..., error)\nJoker return type: [ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/net/http/cgi/child.go:52:49) Error]"
 ;;   {:added "1.0"
 ;;    :go "requestFromMap(params)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.MapType at: ../GOSRC/net/http/cgi/child.go:52:28) params])
@@ -4139,7 +4139,7 @@ JOKER FUNC cgo._runtime_cgocallback has:
 
 JOKER FUNC chacha20poly1305.New has:
 ;; (defn New
-;;   "New returns a ChaCha20-Poly1305 AEAD that uses the given, 256-bit key.\nGo return type: (error)\nJoker return type: [ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/vendor/golang_org/x/crypto/chacha20poly1305/chacha20poly1305.go:26:23) Error]"
+;;   "New returns a ChaCha20-Poly1305 AEAD that uses the given, 256-bit key.\nGo return type: (..., error)\nJoker return type: [ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/vendor/golang_org/x/crypto/chacha20poly1305/chacha20poly1305.go:26:23) Error]"
 ;;   {:added "1.0"
 ;;    :go "new(key)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/vendor/golang_org/x/crypto/chacha20poly1305/chacha20poly1305.go:26:14) key])
@@ -4706,14 +4706,14 @@ JOKER FUNC crc32.MakeTable has:
 
 JOKER FUNC crc32.New has:
 ;; (defn New
-;;   "New creates a new hash.Hash32 computing the CRC-32 checksum using the\npolynomial represented by the Table. Its Sum method will lay the\nvalue out in big-endian byte order. The returned Hash32 also\nimplements encoding.BinaryMarshaler and encoding.BinaryUnmarshaler to\nmarshal and unmarshal the internal state of the hash.\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/hash/crc32/crc32.go:147:22)"
+;;   "New creates a new hash.Hash32 computing the CRC-32 checksum using the\npolynomial represented by the Table. Its Sum method will lay the\nvalue out in big-endian byte order. The returned Hash32 also\nimplements encoding.BinaryMarshaler and encoding.BinaryUnmarshaler to\nmarshal and unmarshal the internal state of the hash.\nGo return type: ...\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/hash/crc32/crc32.go:147:22)"
 ;;   {:added "1.0"
 ;;    :go "new(tab)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: ../GOSRC/hash/crc32/crc32.go:147:14) tab])
 
 JOKER FUNC crc32.NewIEEE has:
 ;; (defn NewIEEE
-;;   "NewIEEE creates a new hash.Hash32 computing the CRC-32 checksum using\nthe IEEE polynomial. Its Sum method will lay the value out in\nbig-endian byte order. The returned Hash32 also implements\nencoding.BinaryMarshaler and encoding.BinaryUnmarshaler to marshal\nand unmarshal the internal state of the hash.\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/hash/crc32/crc32.go:159:16)"
+;;   "NewIEEE creates a new hash.Hash32 computing the CRC-32 checksum using\nthe IEEE polynomial. Its Sum method will lay the value out in\nbig-endian byte order. The returned Hash32 also implements\nencoding.BinaryMarshaler and encoding.BinaryUnmarshaler to marshal\nand unmarshal the internal state of the hash.\nGo return type: ...\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/hash/crc32/crc32.go:159:16)"
 ;;   {:added "1.0"
 ;;    :go "newIEEE()"}
 ;;   [])
@@ -4741,7 +4741,7 @@ JOKER FUNC crc64.MakeTable has:
 
 JOKER FUNC crc64.New has:
 ;; (defn New
-;;   "New creates a new hash.Hash64 computing the CRC-64 checksum using the\npolynomial represented by the Table. Its Sum method will lay the\nvalue out in big-endian byte order. The returned Hash64 also\nimplements encoding.BinaryMarshaler and encoding.BinaryUnmarshaler to\nmarshal and unmarshal the internal state of the hash.\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/hash/crc64/crc64.go:88:22)"
+;;   "New creates a new hash.Hash64 computing the CRC-64 checksum using the\npolynomial represented by the Table. Its Sum method will lay the\nvalue out in big-endian byte order. The returned Hash64 also\nimplements encoding.BinaryMarshaler and encoding.BinaryUnmarshaler to\nmarshal and unmarshal the internal state of the hash.\nGo return type: ...\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/hash/crc64/crc64.go:88:22)"
 ;;   {:added "1.0"
 ;;    :go "new(tab)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: ../GOSRC/hash/crc64/crc64.go:88:14) tab])
@@ -4874,14 +4874,14 @@ JOKER FUNC debug.WriteHeapDump has:
 
 JOKER FUNC des.NewCipher has:
 ;; (defn NewCipher
-;;   "NewCipher creates and returns a new cipher.Block.\nGo return type: (error)\nJoker return type: [ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/crypto/des/cipher.go:29:29) Error]"
+;;   "NewCipher creates and returns a new cipher.Block.\nGo return type: (..., error)\nJoker return type: [ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/crypto/des/cipher.go:29:29) Error]"
 ;;   {:added "1.0"
 ;;    :go "newCipher(key)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/crypto/des/cipher.go:29:20) key])
 
 JOKER FUNC des.NewTripleDESCipher has:
 ;; (defn NewTripleDESCipher
-;;   "NewTripleDESCipher creates and returns a new cipher.Block.\nGo return type: (error)\nJoker return type: [ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/crypto/des/cipher.go:73:38) Error]"
+;;   "NewTripleDESCipher creates and returns a new cipher.Block.\nGo return type: (..., error)\nJoker return type: [ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/crypto/des/cipher.go:73:38) Error]"
 ;;   {:added "1.0"
 ;;    :go "newTripleDESCipher(key)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/crypto/des/cipher.go:73:29) key])
@@ -4986,7 +4986,7 @@ JOKER FUNC dsa.GenerateParameters has:
 
 JOKER FUNC dsa.Sign has:
 ;; (defn Sign
-;;   "Sign signs an arbitrary length hash (which should be the result of hashing a\nlarger message) using the private key, priv. It returns the signature as a\npair of integers. The security of the private key depends on the entropy of\nrand.\n\nNote that FIPS 186-3 section 4.6 specifies that the hash should be truncated\nto the byte-length of the subgroup. This function does not perform that\ntruncation itself.\n\nBe aware that calling Sign with an attacker-controlled PrivateKey may\nrequire an arbitrary amount of CPU.\nGo return type: (r *, s *, err error)\nJoker return type: [ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/crypto/dsa/dsa.go:199:65) ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/crypto/dsa/dsa.go:199:65) Error]"
+;;   "Sign signs an arbitrary length hash (which should be the result of hashing a\nlarger message) using the private key, priv. It returns the signature as a\npair of integers. The security of the private key depends on the entropy of\nrand.\n\nNote that FIPS 186-3 section 4.6 specifies that the hash should be truncated\nto the byte-length of the subgroup. This function does not perform that\ntruncation itself.\n\nBe aware that calling Sign with an attacker-controlled PrivateKey may\nrequire an arbitrary amount of CPU.\nGo return type: (r *..., s *..., err error)\nJoker return type: [ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/crypto/dsa/dsa.go:199:65) ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/crypto/dsa/dsa.go:199:65) Error]"
 ;;   {:added "1.0"
 ;;    :go "sign(rand, priv, hash)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/crypto/dsa/dsa.go:199:16) rand, ^ABEND881(unrecognized Expr type *ast.StarExpr at: ../GOSRC/crypto/dsa/dsa.go:199:32) priv, ^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/crypto/dsa/dsa.go:199:50) hash])
@@ -5014,7 +5014,7 @@ JOKER FUNC ecdsa.GenerateKey has:
 
 JOKER FUNC ecdsa.Sign has:
 ;; (defn Sign
-;;   "Sign signs a hash (which should be the result of hashing a larger message)\nusing the private key, priv. If the hash is longer than the bit-length of the\nprivate key's curve order, the hash will be truncated to that length.  It\nreturns the signature as a pair of integers. The security of the private key\ndepends on the entropy of rand.\nGo return type: (r *, s *, err error)\nJoker return type: [ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/crypto/ecdsa/ecdsa.go:156:65) ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/crypto/ecdsa/ecdsa.go:156:65) Error]"
+;;   "Sign signs a hash (which should be the result of hashing a larger message)\nusing the private key, priv. If the hash is longer than the bit-length of the\nprivate key's curve order, the hash will be truncated to that length.  It\nreturns the signature as a pair of integers. The security of the private key\ndepends on the entropy of rand.\nGo return type: (r *..., s *..., err error)\nJoker return type: [ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/crypto/ecdsa/ecdsa.go:156:65) ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/crypto/ecdsa/ecdsa.go:156:65) Error]"
 ;;   {:added "1.0"
 ;;    :go "sign(rand, priv, hash)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/crypto/ecdsa/ecdsa.go:156:16) rand, ^ABEND881(unrecognized Expr type *ast.StarExpr at: ../GOSRC/crypto/ecdsa/ecdsa.go:156:32) priv, ^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/crypto/ecdsa/ecdsa.go:156:50) hash])
@@ -5112,7 +5112,7 @@ JOKER FUNC elf.ST_VISIBILITY has:
 
 JOKER FUNC elliptic.GenerateKey has:
 ;; (defn GenerateKey
-;;   "GenerateKey returns a public/private key pair. The private key is\ngenerated using the given reader, which must return random data.\nGo return type: (priv []int, x *, y *, err error)\nJoker return type: [(vector-of Int) ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/crypto/elliptic/elliptic.go:276:67) ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/crypto/elliptic/elliptic.go:276:67) Error]"
+;;   "GenerateKey returns a public/private key pair. The private key is\ngenerated using the given reader, which must return random data.\nGo return type: (priv []int, x *..., y *..., err error)\nJoker return type: [(vector-of Int) ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/crypto/elliptic/elliptic.go:276:67) ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/crypto/elliptic/elliptic.go:276:67) Error]"
 ;;   {:added "1.0"
 ;;    :go "generateKey(curve, rand)"}
 ;;   [curve, ^ABEND881(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/crypto/elliptic/elliptic.go:276:36) rand])
@@ -5154,7 +5154,7 @@ JOKER FUNC elliptic.P521 has:
 
 JOKER FUNC elliptic.Unmarshal has:
 ;; (defn Unmarshal
-;;   "Unmarshal converts a point, serialized by Marshal, into an x, y pair.\nIt is an error if the point is not in uncompressed form or is not on the curve.\nOn error, x = nil.\nGo return type: (x *, y *)\nJoker return type: [ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/crypto/elliptic/elliptic.go:321:49) ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/crypto/elliptic/elliptic.go:321:49)]"
+;;   "Unmarshal converts a point, serialized by Marshal, into an x, y pair.\nIt is an error if the point is not in uncompressed form or is not on the curve.\nOn error, x = nil.\nGo return type: (x *..., y *...)\nJoker return type: [ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/crypto/elliptic/elliptic.go:321:49) ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/crypto/elliptic/elliptic.go:321:49)]"
 ;;   {:added "1.0"
 ;;    :go "unmarshal(curve, data)"}
 ;;   [curve, ^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/crypto/elliptic/elliptic.go:321:34) data])
@@ -5203,7 +5203,7 @@ JOKER FUNC expvar.Get has:
 
 JOKER FUNC expvar.Handler has:
 ;; (defn Handler
-;;   "Handler returns the expvar HTTP Handler.\n\nThis is only needed to install the handler in a non-standard location.\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/expvar/expvar.go:332:16)"
+;;   "Handler returns the expvar HTTP Handler.\n\nThis is only needed to install the handler in a non-standard location.\nGo return type: ...\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/expvar/expvar.go:332:16)"
 ;;   {:added "1.0"
 ;;    :go "handler()"}
 ;;   [])
@@ -5245,7 +5245,7 @@ JOKER FUNC expvar.Publish has:
 
 JOKER FUNC fcgi.ProcessEnv has:
 ;; (defn ProcessEnv
-;;   "ProcessEnv returns FastCGI environment variables associated with the request r\nfor which no effort was made to be included in the request itself - the data\nis hidden in the request's context. As an example, if REMOTE_USER is set for a\nrequest, it will not be found anywhere in r, but it will be included in\nProcessEnv's response (via r's context).\nJoker return type: ABEND883(unrecognized Expr type *ast.MapType at: ../GOSRC/net/http/fcgi/child.go:358:34)"
+;;   "ProcessEnv returns FastCGI environment variables associated with the request r\nfor which no effort was made to be included in the request itself - the data\nis hidden in the request's context. As an example, if REMOTE_USER is set for a\nrequest, it will not be found anywhere in r, but it will be included in\nProcessEnv's response (via r's context).\nGo return type: ...\nJoker return type: ABEND883(unrecognized Expr type *ast.MapType at: ../GOSRC/net/http/fcgi/child.go:358:34)"
 ;;   {:added "1.0"
 ;;    :go "processEnv(r)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: ../GOSRC/net/http/fcgi/child.go:358:19) r])
@@ -5413,7 +5413,7 @@ JOKER FUNC flag.BoolVar has:
 
 JOKER FUNC flag.Duration has:
 ;; (defn Duration
-;;   "Duration defines a time.Duration flag with specified name, default value, and usage string.\nThe return value is the address of a time.Duration variable that stores the value of the flag.\nThe flag accepts a value acceptable to time.ParseDuration.\nGo return type: *\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/flag/flag.go:783:64)"
+;;   "Duration defines a time.Duration flag with specified name, default value, and usage string.\nThe return value is the address of a time.Duration variable that stores the value of the flag.\nThe flag accepts a value acceptable to time.ParseDuration.\nGo return type: *...\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/flag/flag.go:783:64)"
 ;;   {:added "1.0"
 ;;    :go "duration(name, value, usage)"}
 ;;   [^String name, ^ABEND881(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/flag/flag.go:783:34) value, ^String usage])
@@ -5595,14 +5595,14 @@ JOKER FUNC flag.VisitAll has:
 
 JOKER FUNC flate.NewReader has:
 ;; (defn NewReader
-;;   "NewReader returns a new ReadCloser that can be used\nto read the uncompressed version of r.\nIf r does not also implement io.ByteReader,\nthe decompressor may read more data than necessary from r.\nIt is the caller's responsibility to call Close on the ReadCloser\nwhen finished reading.\n\nThe ReadCloser returned by NewReader also implements Resetter.\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/compress/flate/inflate.go:796:29)"
+;;   "NewReader returns a new ReadCloser that can be used\nto read the uncompressed version of r.\nIf r does not also implement io.ByteReader,\nthe decompressor may read more data than necessary from r.\nIt is the caller's responsibility to call Close on the ReadCloser\nwhen finished reading.\n\nThe ReadCloser returned by NewReader also implements Resetter.\nGo return type: ...\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/compress/flate/inflate.go:796:29)"
 ;;   {:added "1.0"
 ;;    :go "newReader(r)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/compress/flate/inflate.go:796:18) r])
 
 JOKER FUNC flate.NewReaderDict has:
 ;; (defn NewReaderDict
-;;   "NewReaderDict is like NewReader but initializes the reader\nwith a preset dictionary. The returned Reader behaves as if\nthe uncompressed data stream started with the given dictionary,\nwhich has already been read. NewReaderDict is typically used\nto read data compressed by NewWriterDict.\n\nThe ReadCloser returned by NewReader also implements Resetter.\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/compress/flate/inflate.go:815:46)"
+;;   "NewReaderDict is like NewReader but initializes the reader\nwith a preset dictionary. The returned Reader behaves as if\nthe uncompressed data stream started with the given dictionary,\nwhich has already been read. NewReaderDict is typically used\nto read data compressed by NewWriterDict.\n\nThe ReadCloser returned by NewReader also implements Resetter.\nGo return type: ...\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/compress/flate/inflate.go:815:46)"
 ;;   {:added "1.0"
 ;;    :go "newReaderDict(r, dict)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/compress/flate/inflate.go:815:22) r, ^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/compress/flate/inflate.go:815:38) dict])
@@ -5756,42 +5756,42 @@ JOKER FUNC fmt.Sscanln has:
 
 JOKER FUNC fnv.New128 has:
 ;; (defn New128
-;;   "New128 returns a new 128-bit FNV-1 hash.Hash.\nIts Sum method will lay the value out in big-endian byte order.\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/hash/fnv/fnv.go:70:15)"
+;;   "New128 returns a new 128-bit FNV-1 hash.Hash.\nIts Sum method will lay the value out in big-endian byte order.\nGo return type: ...\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/hash/fnv/fnv.go:70:15)"
 ;;   {:added "1.0"
 ;;    :go "new128()"}
 ;;   [])
 
 JOKER FUNC fnv.New128a has:
 ;; (defn New128a
-;;   "New128a returns a new 128-bit FNV-1a hash.Hash.\nIts Sum method will lay the value out in big-endian byte order.\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/hash/fnv/fnv.go:79:16)"
+;;   "New128a returns a new 128-bit FNV-1a hash.Hash.\nIts Sum method will lay the value out in big-endian byte order.\nGo return type: ...\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/hash/fnv/fnv.go:79:16)"
 ;;   {:added "1.0"
 ;;    :go "new128a()"}
 ;;   [])
 
 JOKER FUNC fnv.New32 has:
 ;; (defn New32
-;;   "New32 returns a new 32-bit FNV-1 hash.Hash.\nIts Sum method will lay the value out in big-endian byte order.\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/hash/fnv/fnv.go:42:14)"
+;;   "New32 returns a new 32-bit FNV-1 hash.Hash.\nIts Sum method will lay the value out in big-endian byte order.\nGo return type: ...\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/hash/fnv/fnv.go:42:14)"
 ;;   {:added "1.0"
 ;;    :go "new32()"}
 ;;   [])
 
 JOKER FUNC fnv.New32a has:
 ;; (defn New32a
-;;   "New32a returns a new 32-bit FNV-1a hash.Hash.\nIts Sum method will lay the value out in big-endian byte order.\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/hash/fnv/fnv.go:49:15)"
+;;   "New32a returns a new 32-bit FNV-1a hash.Hash.\nIts Sum method will lay the value out in big-endian byte order.\nGo return type: ...\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/hash/fnv/fnv.go:49:15)"
 ;;   {:added "1.0"
 ;;    :go "new32a()"}
 ;;   [])
 
 JOKER FUNC fnv.New64 has:
 ;; (defn New64
-;;   "New64 returns a new 64-bit FNV-1 hash.Hash.\nIts Sum method will lay the value out in big-endian byte order.\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/hash/fnv/fnv.go:56:14)"
+;;   "New64 returns a new 64-bit FNV-1 hash.Hash.\nIts Sum method will lay the value out in big-endian byte order.\nGo return type: ...\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/hash/fnv/fnv.go:56:14)"
 ;;   {:added "1.0"
 ;;    :go "new64()"}
 ;;   [])
 
 JOKER FUNC fnv.New64a has:
 ;; (defn New64a
-;;   "New64a returns a new 64-bit FNV-1a hash.Hash.\nIts Sum method will lay the value out in big-endian byte order.\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/hash/fnv/fnv.go:63:15)"
+;;   "New64a returns a new 64-bit FNV-1a hash.Hash.\nIts Sum method will lay the value out in big-endian byte order.\nGo return type: ...\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/hash/fnv/fnv.go:63:15)"
 ;;   {:added "1.0"
 ;;    :go "new64a()"}
 ;;   [])
@@ -5812,7 +5812,7 @@ JOKER FUNC format.Source has:
 
 JOKER FUNC gif.Decode has:
 ;; (defn Decode
-;;   "Decode reads a GIF image from r and returns the first embedded\nimage as an image.Image.\nGo return type: (error)\nJoker return type: [ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/image/gif/reader.go:561:27) Error]"
+;;   "Decode reads a GIF image from r and returns the first embedded\nimage as an image.Image.\nGo return type: (..., error)\nJoker return type: [ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/image/gif/reader.go:561:27) Error]"
 ;;   {:added "1.0"
 ;;    :go "decode(r)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/image/gif/reader.go:561:15) r])
@@ -5826,7 +5826,7 @@ JOKER FUNC gif.DecodeAll has:
 
 JOKER FUNC gif.DecodeConfig has:
 ;; (defn DecodeConfig
-;;   "DecodeConfig returns the global color model and dimensions of a GIF image\nwithout decoding the entire image.\nGo return type: (error)\nJoker return type: [ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/image/gif/reader.go:623:33) Error]"
+;;   "DecodeConfig returns the global color model and dimensions of a GIF image\nwithout decoding the entire image.\nGo return type: (..., error)\nJoker return type: [ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/image/gif/reader.go:623:33) Error]"
 ;;   {:added "1.0"
 ;;    :go "decodeConfig(r)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/image/gif/reader.go:623:21) r])
@@ -5924,7 +5924,7 @@ JOKER FUNC heap.Init has:
 
 JOKER FUNC heap.Pop has:
 ;; (defn Pop
-;;   "Pop removes the minimum element (according to Less) from the heap\nand returns it. The complexity is O(log(n)) where n = h.Len().\nIt is equivalent to Remove(h, 0).\nJoker return type: ABEND883(unrecognized Expr type *ast.InterfaceType at: ../GOSRC/container/heap/heap.go:62:23)"
+;;   "Pop removes the minimum element (according to Less) from the heap\nand returns it. The complexity is O(log(n)) where n = h.Len().\nIt is equivalent to Remove(h, 0).\nGo return type: ...\nJoker return type: ABEND883(unrecognized Expr type *ast.InterfaceType at: ../GOSRC/container/heap/heap.go:62:23)"
 ;;   {:added "1.0"
 ;;    :go "pop(h)"}
 ;;   [h])
@@ -5938,7 +5938,7 @@ JOKER FUNC heap.Push has:
 
 JOKER FUNC heap.Remove has:
 ;; (defn Remove
-;;   "Remove removes the element at index i from the heap.\nThe complexity is O(log(n)) where n = h.Len().\nJoker return type: ABEND883(unrecognized Expr type *ast.InterfaceType at: ../GOSRC/container/heap/heap.go:72:33)"
+;;   "Remove removes the element at index i from the heap.\nThe complexity is O(log(n)) where n = h.Len().\nGo return type: ...\nJoker return type: ABEND883(unrecognized Expr type *ast.InterfaceType at: ../GOSRC/container/heap/heap.go:72:33)"
 ;;   {:added "1.0"
 ;;    :go "remove(h, i)"}
 ;;   [h, ^Int i])
@@ -5973,7 +5973,7 @@ JOKER FUNC hex.Dump has:
 
 JOKER FUNC hex.Dumper has:
 ;; (defn Dumper
-;;   "Dumper returns a WriteCloser that writes a hex dump of all written data to\nw. The format of the dump matches the output of `hexdump -C` on the command\nline.\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/encoding/hex/hex.go:204:26)"
+;;   "Dumper returns a WriteCloser that writes a hex dump of all written data to\nw. The format of the dump matches the output of `hexdump -C` on the command\nline.\nGo return type: ...\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/encoding/hex/hex.go:204:26)"
 ;;   {:added "1.0"
 ;;    :go "dumper(w)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/encoding/hex/hex.go:204:15) w])
@@ -6001,14 +6001,14 @@ JOKER FUNC hex.EncodedLen has:
 
 JOKER FUNC hex.NewDecoder has:
 ;; (defn NewDecoder
-;;   "NewDecoder returns an io.Reader that decodes hexadecimal characters from r.\nNewDecoder expects that r contain only an even number of hexadecimal characters.\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/encoding/hex/hex.go:165:30)"
+;;   "NewDecoder returns an io.Reader that decodes hexadecimal characters from r.\nNewDecoder expects that r contain only an even number of hexadecimal characters.\nGo return type: ...\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/encoding/hex/hex.go:165:30)"
 ;;   {:added "1.0"
 ;;    :go "newDecoder(r)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/encoding/hex/hex.go:165:19) r])
 
 JOKER FUNC hex.NewEncoder has:
 ;; (defn NewEncoder
-;;   "NewEncoder returns an io.Writer that writes lowercase hexadecimal characters to w.\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/encoding/hex/hex.go:136:30)"
+;;   "NewEncoder returns an io.Writer that writes lowercase hexadecimal characters to w.\nGo return type: ...\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/encoding/hex/hex.go:136:30)"
 ;;   {:added "1.0"
 ;;    :go "newEncoder(w)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/encoding/hex/hex.go:136:19) w])
@@ -6022,7 +6022,7 @@ JOKER FUNC hmac.Equal has:
 
 JOKER FUNC hmac.New has:
 ;; (defn New
-;;   "New returns a new HMAC hash using the given hash.Hash type and key.\nNote that unlike other hash implementations in the standard library,\nthe returned Hash does not implement encoding.BinaryMarshaler\nor encoding.BinaryUnmarshaler.\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/crypto/hmac/hmac.go:70:42)"
+;;   "New returns a new HMAC hash using the given hash.Hash type and key.\nNote that unlike other hash implementations in the standard library,\nthe returned Hash does not implement encoding.BinaryMarshaler\nor encoding.BinaryUnmarshaler.\nGo return type: ...\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/crypto/hmac/hmac.go:70:42)"
 ;;   {:added "1.0"
 ;;    :go "new(h, key)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.FuncType at: ../GOSRC/crypto/hmac/hmac.go:70:12) h, ^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/crypto/hmac/hmac.go:70:34) key])
@@ -6155,7 +6155,7 @@ JOKER FUNC http.ListenAndServeTLS has:
 
 JOKER FUNC http.MaxBytesReader has:
 ;; (defn MaxBytesReader
-;;   "MaxBytesReader is similar to io.LimitReader but is intended for\nlimiting the size of incoming request bodies. In contrast to\nio.LimitReader, MaxBytesReader's result is a ReadCloser, returns a\nnon-EOF error for a Read beyond the limit, and closes the\nunderlying reader when its Close method is called.\n\nMaxBytesReader prevents clients from accidentally or maliciously\nsending a large request and wasting server resources.\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/net/http/request.go:1056:65)"
+;;   "MaxBytesReader is similar to io.LimitReader but is intended for\nlimiting the size of incoming request bodies. In contrast to\nio.LimitReader, MaxBytesReader's result is a ReadCloser, returns a\nnon-EOF error for a Read beyond the limit, and closes the\nunderlying reader when its Close method is called.\n\nMaxBytesReader prevents clients from accidentally or maliciously\nsending a large request and wasting server resources.\nGo return type: ...\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/net/http/request.go:1056:65)"
 ;;   {:added "1.0"
 ;;    :go "maxBytesReader(w, r, n)"}
 ;;   [w, ^ABEND881(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/net/http/request.go:1056:41) r, n])
@@ -6204,7 +6204,7 @@ JOKER FUNC http.ParseHTTPVersion has:
 
 JOKER FUNC http.ParseTime has:
 ;; (defn ParseTime
-;;   "ParseTime parses a time header (such as the Date: header),\ntrying each of the three formats allowed by HTTP/1.1:\nTimeFormat, time.RFC850, and time.ANSIC.\nGo return type: (t, err error)\nJoker return type: [ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/net/http/header.go:86:32) Error]"
+;;   "ParseTime parses a time header (such as the Date: header),\ntrying each of the three formats allowed by HTTP/1.1:\nTimeFormat, time.RFC850, and time.ANSIC.\nGo return type: (t ..., err error)\nJoker return type: [ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/net/http/header.go:86:32) Error]"
 ;;   {:added "1.0"
 ;;    :go "parseTime(text)"}
 ;;   [^String text])
@@ -6225,14 +6225,14 @@ JOKER FUNC http.PostForm has:
 
 JOKER FUNC http.ProxyFromEnvironment has:
 ;; (defn ProxyFromEnvironment
-;;   "ProxyFromEnvironment returns the URL of the proxy to use for a\ngiven request, as indicated by the environment variables\nHTTP_PROXY, HTTPS_PROXY and NO_PROXY (or the lowercase versions\nthereof). HTTPS_PROXY takes precedence over HTTP_PROXY for https\nrequests.\n\nThe environment values may be either a complete URL or a\n\"host[:port]\", in which case the \"http\" scheme is assumed.\nAn error is returned if the value is a different form.\n\nA nil URL and nil error are returned if no proxy is defined in the\nenvironment, or a proxy should not be used for the given request,\nas defined by NO_PROXY.\n\nAs a special case, if req.URL.Host is \"localhost\" (with or without\na port number), then a nil URL and nil error will be returned.\nGo return type: (*, error)\nJoker return type: [ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/net/http/transport.go:345:43) Error]"
+;;   "ProxyFromEnvironment returns the URL of the proxy to use for a\ngiven request, as indicated by the environment variables\nHTTP_PROXY, HTTPS_PROXY and NO_PROXY (or the lowercase versions\nthereof). HTTPS_PROXY takes precedence over HTTP_PROXY for https\nrequests.\n\nThe environment values may be either a complete URL or a\n\"host[:port]\", in which case the \"http\" scheme is assumed.\nAn error is returned if the value is a different form.\n\nA nil URL and nil error are returned if no proxy is defined in the\nenvironment, or a proxy should not be used for the given request,\nas defined by NO_PROXY.\n\nAs a special case, if req.URL.Host is \"localhost\" (with or without\na port number), then a nil URL and nil error will be returned.\nGo return type: (*..., error)\nJoker return type: [ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/net/http/transport.go:345:43) Error]"
 ;;   {:added "1.0"
 ;;    :go "proxyFromEnvironment(req)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: ../GOSRC/net/http/transport.go:345:31) req])
 
 JOKER FUNC http.ProxyURL has:
 ;; (defn ProxyURL
-;;   "ProxyURL returns a proxy function (for use in a Transport)\nthat always returns the same URL.\nJoker return type: ABEND883(unrecognized Expr type *ast.FuncType at: ../GOSRC/net/http/transport.go:351:34)"
+;;   "ProxyURL returns a proxy function (for use in a Transport)\nthat always returns the same URL.\nGo return type: ...\nJoker return type: ABEND883(unrecognized Expr type *ast.FuncType at: ../GOSRC/net/http/transport.go:351:34)"
 ;;   {:added "1.0"
 ;;    :go "proxyURL(fixedURL)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: ../GOSRC/net/http/transport.go:351:24) fixedURL])
@@ -6386,7 +6386,7 @@ JOKER FUNC httptest.NewRecorder has:
 
 JOKER FUNC httptest.NewRequest has:
 ;; (defn NewRequest
-;;   "NewRequest returns a new incoming server Request, suitable\nfor passing to an http.Handler for testing.\n\nThe target is the RFC 7230 \"request-target\": it may be either a\npath or an absolute URL. If target is an absolute URL, the host name\nfrom the URL is used. Otherwise, \"example.com\" is used.\n\nThe TLS field is set to a non-nil dummy value if target has scheme\n\"https\".\n\nThe Request.Proto is always HTTP/1.1.\n\nAn empty method means \"GET\".\n\nThe provided body may be nil. If the body is of type *bytes.Reader,\n*strings.Reader, or *bytes.Buffer, the Request.ContentLength is\nset.\n\nNewRequest panics on error for ease of use in testing, where a\npanic is acceptable.\n\nTo generate a client HTTP request instead of a server request, see\nthe NewRequest function in the net/http package.\nGo return type: *\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/net/http/httptest/httptest.go:41:57)"
+;;   "NewRequest returns a new incoming server Request, suitable\nfor passing to an http.Handler for testing.\n\nThe target is the RFC 7230 \"request-target\": it may be either a\npath or an absolute URL. If target is an absolute URL, the host name\nfrom the URL is used. Otherwise, \"example.com\" is used.\n\nThe TLS field is set to a non-nil dummy value if target has scheme\n\"https\".\n\nThe Request.Proto is always HTTP/1.1.\n\nAn empty method means \"GET\".\n\nThe provided body may be nil. If the body is of type *bytes.Reader,\n*strings.Reader, or *bytes.Buffer, the Request.ContentLength is\nset.\n\nNewRequest panics on error for ease of use in testing, where a\npanic is acceptable.\n\nTo generate a client HTTP request instead of a server request, see\nthe NewRequest function in the net/http package.\nGo return type: *...\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/net/http/httptest/httptest.go:41:57)"
 ;;   {:added "1.0"
 ;;    :go "newRequest(method, target, body)"}
 ;;   [^String method, ^String target, ^ABEND881(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/net/http/httptest/httptest.go:41:45) body])
@@ -6421,7 +6421,7 @@ JOKER FUNC httptrace.ContextClientTrace has:
 
 JOKER FUNC httptrace.WithClientTrace has:
 ;; (defn WithClientTrace
-;;   "WithClientTrace returns a new context based on the provided parent\nctx. HTTP client requests made with the returned context will use\nthe provided trace hooks, in addition to any previous hooks\nregistered with ctx. Any hooks defined in the provided trace will\nbe called first.\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/net/http/httptrace/trace.go:34:63)"
+;;   "WithClientTrace returns a new context based on the provided parent\nctx. HTTP client requests made with the returned context will use\nthe provided trace hooks, in addition to any previous hooks\nregistered with ctx. Any hooks defined in the provided trace will\nbe called first.\nGo return type: ...\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/net/http/httptrace/trace.go:34:63)"
 ;;   {:added "1.0"
 ;;    :go "withClientTrace(ctx, trace)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/net/http/httptrace/trace.go:34:26) ctx, ^ABEND881(unrecognized Expr type *ast.StarExpr at: ../GOSRC/net/http/httptrace/trace.go:34:49) trace])
@@ -6449,14 +6449,14 @@ JOKER FUNC httputil.DumpResponse has:
 
 JOKER FUNC httputil.NewChunkedReader has:
 ;; (defn NewChunkedReader
-;;   "NewChunkedReader returns a new chunkedReader that translates the data read from r\nout of HTTP \"chunked\" format before returning it.\nThe chunkedReader returns io.EOF when the final 0-length chunk is read.\n\nNewChunkedReader is not needed by normal applications. The http package\nautomatically decodes chunking when reading response bodies.\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/net/http/httputil/httputil.go:20:36)"
+;;   "NewChunkedReader returns a new chunkedReader that translates the data read from r\nout of HTTP \"chunked\" format before returning it.\nThe chunkedReader returns io.EOF when the final 0-length chunk is read.\n\nNewChunkedReader is not needed by normal applications. The http package\nautomatically decodes chunking when reading response bodies.\nGo return type: ...\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/net/http/httputil/httputil.go:20:36)"
 ;;   {:added "1.0"
 ;;    :go "newChunkedReader(r)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/net/http/httputil/httputil.go:20:25) r])
 
 JOKER FUNC httputil.NewChunkedWriter has:
 ;; (defn NewChunkedWriter
-;;   "NewChunkedWriter returns a new chunkedWriter that translates writes into HTTP\n\"chunked\" format before writing them to w. Closing the returned chunkedWriter\nsends the final 0-length chunk that marks the end of the stream but does\nnot send the final CRLF that appears after trailers; trailers and the last\nCRLF must be written separately.\n\nNewChunkedWriter is not needed by normal applications. The http\npackage adds chunking automatically if handlers don't set a\nContent-Length header. Using NewChunkedWriter inside a handler\nwould result in double chunking or chunking with a Content-Length\nlength, both of which are wrong.\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/net/http/httputil/httputil.go:35:36)"
+;;   "NewChunkedWriter returns a new chunkedWriter that translates writes into HTTP\n\"chunked\" format before writing them to w. Closing the returned chunkedWriter\nsends the final 0-length chunk that marks the end of the stream but does\nnot send the final CRLF that appears after trailers; trailers and the last\nCRLF must be written separately.\n\nNewChunkedWriter is not needed by normal applications. The http\npackage adds chunking automatically if handlers don't set a\nContent-Length header. Using NewChunkedWriter inside a handler\nwould result in double chunking or chunking with a Content-Length\nlength, both of which are wrong.\nGo return type: ...\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/net/http/httputil/httputil.go:35:36)"
 ;;   {:added "1.0"
 ;;    :go "newChunkedWriter(w)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/net/http/httputil/httputil.go:35:25) w])
@@ -6694,14 +6694,14 @@ JOKER FUNC image.RegisterFormat has:
 
 JOKER FUNC importer.Default has:
 ;; (defn Default
-;;   "Default returns an Importer for the compiler that built the running binary.\nIf available, the result implements types.ImporterFrom.\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/go/importer/importer.go:75:16)"
+;;   "Default returns an Importer for the compiler that built the running binary.\nIf available, the result implements types.ImporterFrom.\nGo return type: ...\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/go/importer/importer.go:75:16)"
 ;;   {:added "1.0"
 ;;    :go "default()"}
 ;;   [])
 
 JOKER FUNC importer.For has:
 ;; (defn For
-;;   "For returns an Importer for importing from installed packages\nfor the compilers \"gc\" and \"gccgo\", or for importing directly\nfrom the source if the compiler argument is \"source\". In this\nlatter case, importing may fail under circumstances where the\nexported API is not entirely defined in pure Go source code\n(if the package API depends on cgo-defined entities, the type\nchecker won't have access to those).\n\nIf lookup is nil, the default package lookup mechanism for the\ngiven compiler is used, and the resulting importer attempts\nto resolve relative and absolute import paths to canonical\nimport path IDs before finding the imported file.\n\nIf lookup is non-nil, then the returned importer calls lookup\neach time it needs to resolve an import path. In this mode\nthe importer can only be invoked with canonical import paths\n(not relative or absolute ones); it is assumed that the translation\nto canonical import paths is being done by the client of the\nimporter.\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/go/importer/importer.go:42:42)"
+;;   "For returns an Importer for importing from installed packages\nfor the compilers \"gc\" and \"gccgo\", or for importing directly\nfrom the source if the compiler argument is \"source\". In this\nlatter case, importing may fail under circumstances where the\nexported API is not entirely defined in pure Go source code\n(if the package API depends on cgo-defined entities, the type\nchecker won't have access to those).\n\nIf lookup is nil, the default package lookup mechanism for the\ngiven compiler is used, and the resulting importer attempts\nto resolve relative and absolute import paths to canonical\nimport path IDs before finding the imported file.\n\nIf lookup is non-nil, then the returned importer calls lookup\neach time it needs to resolve an import path. In this mode\nthe importer can only be invoked with canonical import paths\n(not relative or absolute ones); it is assumed that the translation\nto canonical import paths is being done by the client of the\nimporter.\nGo return type: ...\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/go/importer/importer.go:42:42)"
 ;;   {:added "1.0"
 ;;    :go "for(compiler, lookup)"}
 ;;   [^String compiler, lookup])
@@ -6792,56 +6792,56 @@ JOKER FUNC io.WriteString has:
 
 JOKER FUNC iotest.DataErrReader has:
 ;; (defn DataErrReader
-;;   "DataErrReader changes the way errors are handled by a Reader. Normally, a\nReader returns an error (typically EOF) from the first Read call after the\nlast piece of data is read. DataErrReader wraps a Reader and changes its\nbehavior so the final error is returned along with the final data, instead\nof in the first call after the final data.\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/testing/iotest/reader.go:45:33)"
+;;   "DataErrReader changes the way errors are handled by a Reader. Normally, a\nReader returns an error (typically EOF) from the first Read call after the\nlast piece of data is read. DataErrReader wraps a Reader and changes its\nbehavior so the final error is returned along with the final data, instead\nof in the first call after the final data.\nGo return type: ...\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/testing/iotest/reader.go:45:33)"
 ;;   {:added "1.0"
 ;;    :go "dataErrReader(r)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/testing/iotest/reader.go:45:22) r])
 
 JOKER FUNC iotest.HalfReader has:
 ;; (defn HalfReader
-;;   "HalfReader returns a Reader that implements Read\nby reading half as many requested bytes from r.\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/testing/iotest/reader.go:30:30)"
+;;   "HalfReader returns a Reader that implements Read\nby reading half as many requested bytes from r.\nGo return type: ...\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/testing/iotest/reader.go:30:30)"
 ;;   {:added "1.0"
 ;;    :go "halfReader(r)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/testing/iotest/reader.go:30:19) r])
 
 JOKER FUNC iotest.NewReadLogger has:
 ;; (defn NewReadLogger
-;;   "NewReadLogger returns a reader that behaves like r except\nthat it logs (using log.Printf) each read to standard error,\nprinting the prefix and the hexadecimal data read.\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/testing/iotest/logger.go:52:48)"
+;;   "NewReadLogger returns a reader that behaves like r except\nthat it logs (using log.Printf) each read to standard error,\nprinting the prefix and the hexadecimal data read.\nGo return type: ...\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/testing/iotest/logger.go:52:48)"
 ;;   {:added "1.0"
 ;;    :go "newReadLogger(prefix, r)"}
 ;;   [^String prefix, ^ABEND881(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/testing/iotest/logger.go:52:37) r])
 
 JOKER FUNC iotest.NewWriteLogger has:
 ;; (defn NewWriteLogger
-;;   "NewWriteLogger returns a writer that behaves like w except\nthat it logs (using log.Printf) each write to standard error,\nprinting the prefix and the hexadecimal data written.\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/testing/iotest/logger.go:30:49)"
+;;   "NewWriteLogger returns a writer that behaves like w except\nthat it logs (using log.Printf) each write to standard error,\nprinting the prefix and the hexadecimal data written.\nGo return type: ...\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/testing/iotest/logger.go:30:49)"
 ;;   {:added "1.0"
 ;;    :go "newWriteLogger(prefix, w)"}
 ;;   [^String prefix, ^ABEND881(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/testing/iotest/logger.go:30:38) w])
 
 JOKER FUNC iotest.OneByteReader has:
 ;; (defn OneByteReader
-;;   "OneByteReader returns a Reader that implements\neach non-empty Read by reading one byte from r.\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/testing/iotest/reader.go:15:33)"
+;;   "OneByteReader returns a Reader that implements\neach non-empty Read by reading one byte from r.\nGo return type: ...\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/testing/iotest/reader.go:15:33)"
 ;;   {:added "1.0"
 ;;    :go "oneByteReader(r)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/testing/iotest/reader.go:15:22) r])
 
 JOKER FUNC iotest.TimeoutReader has:
 ;; (defn TimeoutReader
-;;   "TimeoutReader returns ErrTimeout on the second read\nwith no data. Subsequent calls to read succeed.\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/testing/iotest/reader.go:75:33)"
+;;   "TimeoutReader returns ErrTimeout on the second read\nwith no data. Subsequent calls to read succeed.\nGo return type: ...\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/testing/iotest/reader.go:75:33)"
 ;;   {:added "1.0"
 ;;    :go "timeoutReader(r)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/testing/iotest/reader.go:75:22) r])
 
 JOKER FUNC iotest.TruncateWriter has:
 ;; (defn TruncateWriter
-;;   "TruncateWriter returns a Writer that writes to w\nbut stops silently after n bytes.\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/testing/iotest/writer.go:11:43)"
+;;   "TruncateWriter returns a Writer that writes to w\nbut stops silently after n bytes.\nGo return type: ...\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/testing/iotest/writer.go:11:43)"
 ;;   {:added "1.0"
 ;;    :go "truncateWriter(w, n)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/testing/iotest/writer.go:11:23) w, n])
 
 JOKER FUNC ioutil.NopCloser has:
 ;; (defn NopCloser
-;;   "NopCloser returns a ReadCloser with a no-op Close method wrapping\nthe provided Reader r.\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/io/ioutil/ioutil.go:118:29)"
+;;   "NopCloser returns a ReadCloser with a no-op Close method wrapping\nthe provided Reader r.\nGo return type: ...\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/io/ioutil/ioutil.go:118:29)"
 ;;   {:added "1.0"
 ;;    :go "nopCloser(r)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/io/ioutil/ioutil.go:118:18) r])
@@ -6855,7 +6855,7 @@ JOKER FUNC ioutil.ReadAll has:
 
 JOKER FUNC ioutil.ReadDir has:
 ;; (defn ReadDir
-;;   "ReadDir reads the directory named by dirname and returns\na list of directory entries sorted by filename.\nGo return type: ([], error)\nJoker return type: [(vector-of ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/io/ioutil/ioutil.go:96:33)) Error]"
+;;   "ReadDir reads the directory named by dirname and returns\na list of directory entries sorted by filename.\nGo return type: ([]..., error)\nJoker return type: [(vector-of ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/io/ioutil/ioutil.go:96:33)) Error]"
 ;;   {:added "1.0"
 ;;    :go "readDir(dirname)"}
 ;;   [^String dirname])
@@ -6876,7 +6876,7 @@ JOKER FUNC ioutil.TempDir has:
 
 JOKER FUNC ioutil.TempFile has:
 ;; (defn TempFile
-;;   "TempFile creates a new temporary file in the directory dir,\nopens the file for reading and writing, and returns the resulting *os.File.\nThe filename is generated by taking pattern and adding a random\nstring to the end. If pattern includes a \"*\", the random string\nreplaces the last \"*\".\nIf dir is the empty string, TempFile uses the default directory\nfor temporary files (see os.TempDir).\nMultiple programs calling TempFile simultaneously\nwill not choose the same file. The caller can use f.Name()\nto find the pathname of the file. It is the caller's responsibility\nto remove the file when no longer needed.\nGo return type: (f *, err error)\nJoker return type: [ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/io/ioutil/tempfile.go:50:40) Error]"
+;;   "TempFile creates a new temporary file in the directory dir,\nopens the file for reading and writing, and returns the resulting *os.File.\nThe filename is generated by taking pattern and adding a random\nstring to the end. If pattern includes a \"*\", the random string\nreplaces the last \"*\".\nIf dir is the empty string, TempFile uses the default directory\nfor temporary files (see os.TempDir).\nMultiple programs calling TempFile simultaneously\nwill not choose the same file. The caller can use f.Name()\nto find the pathname of the file. It is the caller's responsibility\nto remove the file when no longer needed.\nGo return type: (f *..., err error)\nJoker return type: [ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/io/ioutil/tempfile.go:50:40) Error]"
 ;;   {:added "1.0"
 ;;    :go "tempFile(dir, pattern)"}
 ;;   [^String dir, ^String pattern])
@@ -6890,14 +6890,14 @@ JOKER FUNC ioutil.WriteFile has:
 
 JOKER FUNC jpeg.Decode has:
 ;; (defn Decode
-;;   "Decode reads a JPEG image from r and returns it as an image.Image.\nGo return type: (error)\nJoker return type: [ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/image/jpeg/reader.go:777:27) Error]"
+;;   "Decode reads a JPEG image from r and returns it as an image.Image.\nGo return type: (..., error)\nJoker return type: [ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/image/jpeg/reader.go:777:27) Error]"
 ;;   {:added "1.0"
 ;;    :go "decode(r)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/image/jpeg/reader.go:777:15) r])
 
 JOKER FUNC jpeg.DecodeConfig has:
 ;; (defn DecodeConfig
-;;   "DecodeConfig returns the color model and dimensions of a JPEG image without\ndecoding the entire image.\nGo return type: (error)\nJoker return type: [ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/image/jpeg/reader.go:784:33) Error]"
+;;   "DecodeConfig returns the color model and dimensions of a JPEG image without\ndecoding the entire image.\nGo return type: (..., error)\nJoker return type: [ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/image/jpeg/reader.go:784:33) Error]"
 ;;   {:added "1.0"
 ;;    :go "decodeConfig(r)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/image/jpeg/reader.go:784:21) r])
@@ -6974,28 +6974,28 @@ JOKER FUNC json.Valid has:
 
 JOKER FUNC jsonrpc.Dial has:
 ;; (defn Dial
-;;   "Dial connects to a JSON-RPC server at the specified network address.\nGo return type: (*, error)\nJoker return type: [ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/net/rpc/jsonrpc/client.go:118:38) Error]"
+;;   "Dial connects to a JSON-RPC server at the specified network address.\nGo return type: (*..., error)\nJoker return type: [ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/net/rpc/jsonrpc/client.go:118:38) Error]"
 ;;   {:added "1.0"
 ;;    :go "dial(network, address)"}
 ;;   [^String network, ^String address])
 
 JOKER FUNC jsonrpc.NewClient has:
 ;; (defn NewClient
-;;   "NewClient returns a new rpc.Client to handle requests to the\nset of services at the other end of the connection.\nGo return type: *\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/net/rpc/jsonrpc/client.go:113:42)"
+;;   "NewClient returns a new rpc.Client to handle requests to the\nset of services at the other end of the connection.\nGo return type: *...\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/net/rpc/jsonrpc/client.go:113:42)"
 ;;   {:added "1.0"
 ;;    :go "newClient(conn)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/net/rpc/jsonrpc/client.go:113:21) conn])
 
 JOKER FUNC jsonrpc.NewClientCodec has:
 ;; (defn NewClientCodec
-;;   "NewClientCodec returns a new rpc.ClientCodec using JSON-RPC on conn.\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/net/rpc/jsonrpc/client.go:37:46)"
+;;   "NewClientCodec returns a new rpc.ClientCodec using JSON-RPC on conn.\nGo return type: ...\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/net/rpc/jsonrpc/client.go:37:46)"
 ;;   {:added "1.0"
 ;;    :go "newClientCodec(conn)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/net/rpc/jsonrpc/client.go:37:26) conn])
 
 JOKER FUNC jsonrpc.NewServerCodec has:
 ;; (defn NewServerCodec
-;;   "NewServerCodec returns a new rpc.ServerCodec using JSON-RPC on conn.\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/net/rpc/jsonrpc/server.go:37:46)"
+;;   "NewServerCodec returns a new rpc.ServerCodec using JSON-RPC on conn.\nGo return type: ...\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/net/rpc/jsonrpc/server.go:37:46)"
 ;;   {:added "1.0"
 ;;    :go "newServerCodec(conn)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/net/rpc/jsonrpc/server.go:37:26) conn])
@@ -7128,14 +7128,14 @@ JOKER FUNC log.SetPrefix has:
 
 JOKER FUNC lzw.NewReader has:
 ;; (defn NewReader
-;;   "NewReader creates a new io.ReadCloser.\nReads from the returned io.ReadCloser read and decompress data from r.\nIf r does not also implement io.ByteReader,\nthe decompressor may read more data than necessary from r.\nIt is the caller's responsibility to call Close on the ReadCloser when\nfinished reading.\nThe number of bits to use for literal codes, litWidth, must be in the\nrange [2,8] and is typically 8. It must equal the litWidth\nused during compression.\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/compress/lzw/reader.go:239:56)"
+;;   "NewReader creates a new io.ReadCloser.\nReads from the returned io.ReadCloser read and decompress data from r.\nIf r does not also implement io.ByteReader,\nthe decompressor may read more data than necessary from r.\nIt is the caller's responsibility to call Close on the ReadCloser when\nfinished reading.\nThe number of bits to use for literal codes, litWidth, must be in the\nrange [2,8] and is typically 8. It must equal the litWidth\nused during compression.\nGo return type: ...\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/compress/lzw/reader.go:239:56)"
 ;;   {:added "1.0"
 ;;    :go "newReader(r, order, litWidth)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/compress/lzw/reader.go:239:18) r, order, ^Int litWidth])
 
 JOKER FUNC lzw.NewWriter has:
 ;; (defn NewWriter
-;;   "NewWriter creates a new io.WriteCloser.\nWrites to the returned io.WriteCloser are compressed and written to w.\nIt is the caller's responsibility to call Close on the WriteCloser when\nfinished writing.\nThe number of bits to use for literal codes, litWidth, must be in the\nrange [2,8] and is typically 8. Input bytes must be less than 1<<litWidth.\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/compress/lzw/writer.go:241:56)"
+;;   "NewWriter creates a new io.WriteCloser.\nWrites to the returned io.WriteCloser are compressed and written to w.\nIt is the caller's responsibility to call Close on the WriteCloser when\nfinished writing.\nThe number of bits to use for literal codes, litWidth, must be in the\nrange [2,8] and is typically 8. Input bytes must be less than 1<<litWidth.\nGo return type: ...\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/compress/lzw/writer.go:241:56)"
 ;;   {:added "1.0"
 ;;    :go "newWriter(w, order, litWidth)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/compress/lzw/writer.go:241:18) w, order, ^Int litWidth])
@@ -7184,7 +7184,7 @@ JOKER FUNC mail.ParseAddressList has:
 
 JOKER FUNC mail.ParseDate has:
 ;; (defn ParseDate
-;;   "ParseDate parses an RFC 5322 date string.\nGo return type: (error)\nJoker return type: [ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/net/mail/message.go:95:30) Error]"
+;;   "ParseDate parses an RFC 5322 date string.\nGo return type: (..., error)\nJoker return type: [ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/net/mail/message.go:95:30) Error]"
 ;;   {:added "1.0"
 ;;    :go "parseDate(date)"}
 ;;   [^String date])
@@ -7660,7 +7660,7 @@ JOKER FUNC math.Yn has:
 
 JOKER FUNC md5.New has:
 ;; (defn New
-;;   "New returns a new hash.Hash computing the MD5 checksum. The Hash also\nimplements encoding.BinaryMarshaler and encoding.BinaryUnmarshaler to\nmarshal and unmarshal the internal state of the hash.\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/crypto/md5/md5.go:130:12)"
+;;   "New returns a new hash.Hash computing the MD5 checksum. The Hash also\nimplements encoding.BinaryMarshaler and encoding.BinaryUnmarshaler to\nmarshal and unmarshal the internal state of the hash.\nGo return type: ...\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/crypto/md5/md5.go:130:12)"
 ;;   {:added "1.0"
 ;;    :go "new()"}
 ;;   [])
@@ -7695,7 +7695,7 @@ JOKER FUNC mime.FormatMediaType has:
 
 JOKER FUNC mime.ParseMediaType has:
 ;; (defn ParseMediaType
-;;   "ParseMediaType parses a media type value and any optional\nparameters, per RFC 1521.  Media types are the values in\nContent-Type and Content-Disposition headers (RFC 2183).\nOn success, ParseMediaType returns the media type converted\nto lowercase and trimmed of white space and a non-nil map.\nIf there is an error parsing the optional parameter,\nthe media type will be returned along with the error\nErrInvalidMediaParameter.\nThe returned map, params, maps from the lowercase\nattribute to the attribute value with its case preserved.\nGo return type: (mediatype string, params, err error)\nJoker return type: [String ABEND883(unrecognized Expr type *ast.MapType at: ../GOSRC/mime/mediatype.go:111:57) Error]"
+;;   "ParseMediaType parses a media type value and any optional\nparameters, per RFC 1521.  Media types are the values in\nContent-Type and Content-Disposition headers (RFC 2183).\nOn success, ParseMediaType returns the media type converted\nto lowercase and trimmed of white space and a non-nil map.\nIf there is an error parsing the optional parameter,\nthe media type will be returned along with the error\nErrInvalidMediaParameter.\nThe returned map, params, maps from the lowercase\nattribute to the attribute value with its case preserved.\nGo return type: (mediatype string, params ..., err error)\nJoker return type: [String ABEND883(unrecognized Expr type *ast.MapType at: ../GOSRC/mime/mediatype.go:111:57) Error]"
 ;;   {:added "1.0"
 ;;    :go "parseMediaType(v)"}
 ;;   [^String v])
@@ -8416,35 +8416,35 @@ JOKER FUNC parse.NewIdentifier has:
 
 JOKER FUNC parse.Parse has:
 ;; (defn Parse
-;;   "Parse returns a map from template name to parse.Tree, created by parsing the\ntemplates described in the argument string. The top-level template will be\ngiven the specified name. If an error is encountered, parsing stops and an\nempty map is returned with the error.\nGo return type: (error)\nJoker return type: [ABEND883(unrecognized Expr type *ast.MapType at: ../GOSRC/text/template/parse/parse.go:51:88) Error]"
+;;   "Parse returns a map from template name to parse.Tree, created by parsing the\ntemplates described in the argument string. The top-level template will be\ngiven the specified name. If an error is encountered, parsing stops and an\nempty map is returned with the error.\nGo return type: (..., error)\nJoker return type: [ABEND883(unrecognized Expr type *ast.MapType at: ../GOSRC/text/template/parse/parse.go:51:88) Error]"
 ;;   {:added "1.0"
 ;;    :go "parse(name, text, leftDelim, rightDelim, funcs)"}
 ;;   [^String name, ^String text, ^String leftDelim, ^String rightDelim, ^ABEND881(unrecognized Expr type *ast.Ellipsis at: ../GOSRC/text/template/parse/parse.go:51:60) funcs])
 
 JOKER FUNC parser.ParseDir has:
 ;; (defn ParseDir
-;;   "ParseDir calls ParseFile for all files with names ending in \".go\" in the\ndirectory specified by path and returns a map of package name -> package\nAST with all the packages found.\n\nIf filter != nil, only the files with os.FileInfo entries passing through\nthe filter (and ending in \".go\") are considered. The mode bits are passed\nto ParseFile unchanged. Position information is recorded in fset, which\nmust not be nil.\n\nIf the directory couldn't be read, a nil map and the respective error are\nreturned. If a parse error occurred, a non-nil but incomplete map and the\nfirst error encountered are returned.\nGo return type: (pkgs, first error)\nJoker return type: [ABEND883(unrecognized Expr type *ast.MapType at: ../GOSRC/go/parser/interface.go:135:97) Error]"
+;;   "ParseDir calls ParseFile for all files with names ending in \".go\" in the\ndirectory specified by path and returns a map of package name -> package\nAST with all the packages found.\n\nIf filter != nil, only the files with os.FileInfo entries passing through\nthe filter (and ending in \".go\") are considered. The mode bits are passed\nto ParseFile unchanged. Position information is recorded in fset, which\nmust not be nil.\n\nIf the directory couldn't be read, a nil map and the respective error are\nreturned. If a parse error occurred, a non-nil but incomplete map and the\nfirst error encountered are returned.\nGo return type: (pkgs ..., first error)\nJoker return type: [ABEND883(unrecognized Expr type *ast.MapType at: ../GOSRC/go/parser/interface.go:135:97) Error]"
 ;;   {:added "1.0"
 ;;    :go "parseDir(fset, path, filter, mode)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: ../GOSRC/go/parser/interface.go:135:20) fset, ^String path, ^ABEND881(unrecognized Expr type *ast.FuncType at: ../GOSRC/go/parser/interface.go:135:56) filter, mode])
 
 JOKER FUNC parser.ParseExpr has:
 ;; (defn ParseExpr
-;;   "ParseExpr is a convenience function for obtaining the AST of an expression x.\nThe position information recorded in the AST is undefined. The filename used\nin error messages is the empty string.\nGo return type: (error)\nJoker return type: [ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/go/parser/interface.go:230:27) Error]"
+;;   "ParseExpr is a convenience function for obtaining the AST of an expression x.\nThe position information recorded in the AST is undefined. The filename used\nin error messages is the empty string.\nGo return type: (..., error)\nJoker return type: [ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/go/parser/interface.go:230:27) Error]"
 ;;   {:added "1.0"
 ;;    :go "parseExpr(x)"}
 ;;   [^String x])
 
 JOKER FUNC parser.ParseExprFrom has:
 ;; (defn ParseExprFrom
-;;   "ParseExprFrom is a convenience function for parsing an expression.\nThe arguments have the same meaning as for ParseFile, but the source must\nbe a valid Go (type or value) expression. Specifically, fset must not\nbe nil.\nGo return type: (error)\nJoker return type: [ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/go/parser/interface.go:176:87) Error]"
+;;   "ParseExprFrom is a convenience function for parsing an expression.\nThe arguments have the same meaning as for ParseFile, but the source must\nbe a valid Go (type or value) expression. Specifically, fset must not\nbe nil.\nGo return type: (..., error)\nJoker return type: [ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/go/parser/interface.go:176:87) Error]"
 ;;   {:added "1.0"
 ;;    :go "parseExprFrom(fset, filename, src, mode)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: ../GOSRC/go/parser/interface.go:176:25) fset, ^String filename, ^ABEND881(unrecognized Expr type *ast.InterfaceType at: ../GOSRC/go/parser/interface.go:176:62) src, mode])
 
 JOKER FUNC parser.ParseFile has:
 ;; (defn ParseFile
-;;   "ParseFile parses the source code of a single Go source file and returns\nthe corresponding ast.File node. The source code may be provided via\nthe filename of the source file, or via the src parameter.\n\nIf src != nil, ParseFile parses the source from src and the filename is\nonly used when recording position information. The type of the argument\nfor the src parameter must be string, []byte, or io.Reader.\nIf src == nil, ParseFile parses the file specified by filename.\n\nThe mode parameter controls the amount of source text parsed and other\noptional parser functionality. Position information is recorded in the\nfile set fset, which must not be nil.\n\nIf the source couldn't be read, the returned AST is nil and the error\nindicates the specific failure. If the source was read but syntax\nerrors were found, the result is a partial AST (with ast.Bad* nodes\nrepresenting the fragments of erroneous source code). Multiple errors\nare returned via a scanner.ErrorList which is sorted by file position.\nGo return type: (f *, err error)\nJoker return type: [ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/go/parser/interface.go:80:86) Error]"
+;;   "ParseFile parses the source code of a single Go source file and returns\nthe corresponding ast.File node. The source code may be provided via\nthe filename of the source file, or via the src parameter.\n\nIf src != nil, ParseFile parses the source from src and the filename is\nonly used when recording position information. The type of the argument\nfor the src parameter must be string, []byte, or io.Reader.\nIf src == nil, ParseFile parses the file specified by filename.\n\nThe mode parameter controls the amount of source text parsed and other\noptional parser functionality. Position information is recorded in the\nfile set fset, which must not be nil.\n\nIf the source couldn't be read, the returned AST is nil and the error\nindicates the specific failure. If the source was read but syntax\nerrors were found, the result is a partial AST (with ast.Bad* nodes\nrepresenting the fragments of erroneous source code). Multiple errors\nare returned via a scanner.ErrorList which is sorted by file position.\nGo return type: (f *..., err error)\nJoker return type: [ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/go/parser/interface.go:80:86) Error]"
 ;;   {:added "1.0"
 ;;    :go "parseFile(fset, filename, src, mode)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: ../GOSRC/go/parser/interface.go:80:21) fset, ^String filename, ^ABEND881(unrecognized Expr type *ast.InterfaceType at: ../GOSRC/go/parser/interface.go:80:58) src, mode])
@@ -8563,14 +8563,14 @@ JOKER FUNC plugin.Open has:
 
 JOKER FUNC png.Decode has:
 ;; (defn Decode
-;;   "Decode reads a PNG image from r and returns it as an image.Image.\nThe type of Image returned depends on the PNG contents.\nGo return type: (error)\nJoker return type: [ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/image/png/reader.go:952:27) Error]"
+;;   "Decode reads a PNG image from r and returns it as an image.Image.\nThe type of Image returned depends on the PNG contents.\nGo return type: (..., error)\nJoker return type: [ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/image/png/reader.go:952:27) Error]"
 ;;   {:added "1.0"
 ;;    :go "decode(r)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/image/png/reader.go:952:15) r])
 
 JOKER FUNC png.DecodeConfig has:
 ;; (defn DecodeConfig
-;;   "DecodeConfig returns the color model and dimensions of a PNG image without\ndecoding the entire image.\nGo return type: (error)\nJoker return type: [ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/image/png/reader.go:976:33) Error]"
+;;   "DecodeConfig returns the color model and dimensions of a PNG image without\ndecoding the entire image.\nGo return type: (..., error)\nJoker return type: [ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/image/png/reader.go:976:33) Error]"
 ;;   {:added "1.0"
 ;;    :go "decodeConfig(r)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/image/png/reader.go:976:21) r])
@@ -8619,7 +8619,7 @@ JOKER FUNC pprof.ForLabels has:
 
 JOKER FUNC pprof.Handler has:
 ;; (defn Handler
-;;   "Handler returns an HTTP handler that serves the named profile.\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/net/http/pprof/pprof.go:221:27)"
+;;   "Handler returns an HTTP handler that serves the named profile.\nGo return type: ...\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/net/http/pprof/pprof.go:221:27)"
 ;;   {:added "1.0"
 ;;    :go "handler(name)"}
 ;;   [^String name])
@@ -8710,7 +8710,7 @@ JOKER FUNC pprof.Trace has:
 
 JOKER FUNC pprof.WithLabels has:
 ;; (defn WithLabels
-;;   "WithLabels returns a new context.Context with the given labels added.\nA label overwrites a prior label with the same key.\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/runtime/pprof/label.go:39:55)"
+;;   "WithLabels returns a new context.Context with the given labels added.\nA label overwrites a prior label with the same key.\nGo return type: ...\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/runtime/pprof/label.go:39:55)"
 ;;   {:added "1.0"
 ;;    :go "withLabels(ctx, labels)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/runtime/pprof/label.go:39:21) ctx, labels])
@@ -8745,7 +8745,7 @@ JOKER FUNC quick.CheckEqual has:
 
 JOKER FUNC quick.Value has:
 ;; (defn Value
-;;   "Value returns an arbitrary value of the given type.\nIf the type implements the Generator interface, that will be used.\nNote: To create arbitrary values for structs, all the fields must be exported.\nGo return type: (value, ok bool)\nJoker return type: [ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/testing/quick/quick.go:59:52) Bool]"
+;;   "Value returns an arbitrary value of the given type.\nIf the type implements the Generator interface, that will be used.\nNote: To create arbitrary values for structs, all the fields must be exported.\nGo return type: (value ..., ok bool)\nJoker return type: [ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/testing/quick/quick.go:59:52) Bool]"
 ;;   {:added "1.0"
 ;;    :go "value(t, rand)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/testing/quick/quick.go:59:14) t, ^ABEND881(unrecognized Expr type *ast.StarExpr at: ../GOSRC/testing/quick/quick.go:59:33) rand])
@@ -8857,7 +8857,7 @@ JOKER FUNC rand.Perm has:
 
 JOKER FUNC rand.Prime has:
 ;; (defn Prime
-;;   "Prime returns a number, p, of the given size, such that p is prime\nwith high probability.\nPrime will return error for any error returned by rand.Read or if bits < 2.\nGo return type: (p *, err error)\nJoker return type: [ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/crypto/rand/util.go:31:42) Error]"
+;;   "Prime returns a number, p, of the given size, such that p is prime\nwith high probability.\nPrime will return error for any error returned by rand.Read or if bits < 2.\nGo return type: (p *..., err error)\nJoker return type: [ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/crypto/rand/util.go:31:42) Error]"
 ;;   {:added "1.0"
 ;;    :go "prime(rand, bits)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/crypto/rand/util.go:31:17) rand, ^Int bits])
@@ -9039,7 +9039,7 @@ JOKER FUNC reflect.StructOf has:
 
 JOKER FUNC reflect.Swapper has:
 ;; (defn Swapper
-;;   "Swapper returns a function that swaps the elements in the provided\nslice.\n\nSwapper panics if the provided interface is not a slice.\nJoker return type: ABEND883(unrecognized Expr type *ast.FuncType at: ../GOSRC/reflect/swapper.go:13:33)"
+;;   "Swapper returns a function that swaps the elements in the provided\nslice.\n\nSwapper panics if the provided interface is not a slice.\nGo return type: ...\nJoker return type: ABEND883(unrecognized Expr type *ast.FuncType at: ../GOSRC/reflect/swapper.go:13:33)"
 ;;   {:added "1.0"
 ;;    :go "swapper(slice)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.InterfaceType at: ../GOSRC/reflect/swapper.go:13:20) slice])
@@ -9606,7 +9606,7 @@ JOKER FUNC scanner.TokenString has:
 
 JOKER FUNC sha1.New has:
 ;; (defn New
-;;   "New returns a new hash.Hash computing the SHA1 checksum. The Hash also\nimplements encoding.BinaryMarshaler and encoding.BinaryUnmarshaler to\nmarshal and unmarshal the internal state of the hash.\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/crypto/sha1/sha1.go:120:12)"
+;;   "New returns a new hash.Hash computing the SHA1 checksum. The Hash also\nimplements encoding.BinaryMarshaler and encoding.BinaryUnmarshaler to\nmarshal and unmarshal the internal state of the hash.\nGo return type: ...\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/crypto/sha1/sha1.go:120:12)"
 ;;   {:added "1.0"
 ;;    :go "new()"}
 ;;   [])
@@ -9620,14 +9620,14 @@ JOKER FUNC sha1.Sum has:
 
 JOKER FUNC sha256.New has:
 ;; (defn New
-;;   "New returns a new hash.Hash computing the SHA256 checksum. The Hash\nalso implements encoding.BinaryMarshaler and\nencoding.BinaryUnmarshaler to marshal and unmarshal the internal\nstate of the hash.\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/crypto/sha256/sha256.go:180:12)"
+;;   "New returns a new hash.Hash computing the SHA256 checksum. The Hash\nalso implements encoding.BinaryMarshaler and\nencoding.BinaryUnmarshaler to marshal and unmarshal the internal\nstate of the hash.\nGo return type: ...\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/crypto/sha256/sha256.go:180:12)"
 ;;   {:added "1.0"
 ;;    :go "new()"}
 ;;   [])
 
 JOKER FUNC sha256.New224 has:
 ;; (defn New224
-;;   "New224 returns a new hash.Hash computing the SHA224 checksum.\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/crypto/sha256/sha256.go:187:15)"
+;;   "New224 returns a new hash.Hash computing the SHA224 checksum.\nGo return type: ...\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/crypto/sha256/sha256.go:187:15)"
 ;;   {:added "1.0"
 ;;    :go "new224()"}
 ;;   [])
@@ -9648,28 +9648,28 @@ JOKER FUNC sha256.Sum256 has:
 
 JOKER FUNC sha512.New has:
 ;; (defn New
-;;   "New returns a new hash.Hash computing the SHA-512 checksum.\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/crypto/sha512/sha512.go:224:12)"
+;;   "New returns a new hash.Hash computing the SHA-512 checksum.\nGo return type: ...\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/crypto/sha512/sha512.go:224:12)"
 ;;   {:added "1.0"
 ;;    :go "new()"}
 ;;   [])
 
 JOKER FUNC sha512.New384 has:
 ;; (defn New384
-;;   "New384 returns a new hash.Hash computing the SHA-384 checksum.\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/crypto/sha512/sha512.go:245:15)"
+;;   "New384 returns a new hash.Hash computing the SHA-384 checksum.\nGo return type: ...\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/crypto/sha512/sha512.go:245:15)"
 ;;   {:added "1.0"
 ;;    :go "new384()"}
 ;;   [])
 
 JOKER FUNC sha512.New512_224 has:
 ;; (defn New512_224
-;;   "New512_224 returns a new hash.Hash computing the SHA-512/224 checksum.\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/crypto/sha512/sha512.go:231:19)"
+;;   "New512_224 returns a new hash.Hash computing the SHA-512/224 checksum.\nGo return type: ...\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/crypto/sha512/sha512.go:231:19)"
 ;;   {:added "1.0"
 ;;    :go "new512_224()"}
 ;;   [])
 
 JOKER FUNC sha512.New512_256 has:
 ;; (defn New512_256
-;;   "New512_256 returns a new hash.Hash computing the SHA-512/256 checksum.\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/crypto/sha512/sha512.go:238:19)"
+;;   "New512_256 returns a new hash.Hash computing the SHA-512/256 checksum.\nGo return type: ...\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/crypto/sha512/sha512.go:238:19)"
 ;;   {:added "1.0"
 ;;    :go "new512_256()"}
 ;;   [])
@@ -12147,7 +12147,7 @@ JOKER FUNC syslog.New has:
 
 JOKER FUNC syslog.NewLogger has:
 ;; (defn NewLogger
-;;   "NewLogger creates a log.Logger whose output is written to the\nsystem log service with the specified priority, a combination of\nthe syslog facility and severity. The logFlag argument is the flag\nset passed through to log.New to create the Logger.\nGo return type: (*, error)\nJoker return type: [ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/log/syslog/syslog.go:309:43) Error]"
+;;   "NewLogger creates a log.Logger whose output is written to the\nsystem log service with the specified priority, a combination of\nthe syslog facility and severity. The logFlag argument is the flag\nset passed through to log.New to create the Logger.\nGo return type: (*..., error)\nJoker return type: [ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/log/syslog/syslog.go:309:43) Error]"
 ;;   {:added "1.0"
 ;;    :go "newLogger(p, logFlag)"}
 ;;   [p, ^Int logFlag])
@@ -12315,7 +12315,7 @@ JOKER FUNC textproto.TrimString has:
 
 JOKER FUNC time.After has:
 ;; (defn After
-;;   "After waits for the duration to elapse and then sends the current time\non the returned channel.\nIt is equivalent to NewTimer(d).C.\nThe underlying Timer is not recovered by the garbage collector\nuntil the timer fires. If efficiency is a concern, use NewTimer\ninstead and call Timer.Stop if the timer is no longer needed.\nJoker return type: ABEND883(unrecognized Expr type *ast.ChanType at: ../GOSRC/time/sleep.go:152:24)"
+;;   "After waits for the duration to elapse and then sends the current time\non the returned channel.\nIt is equivalent to NewTimer(d).C.\nThe underlying Timer is not recovered by the garbage collector\nuntil the timer fires. If efficiency is a concern, use NewTimer\ninstead and call Timer.Stop if the timer is no longer needed.\nGo return type: ...\nJoker return type: ABEND883(unrecognized Expr type *ast.ChanType at: ../GOSRC/time/sleep.go:152:24)"
 ;;   {:added "1.0"
 ;;    :go "after(d)"}
 ;;   [d])
@@ -12413,7 +12413,7 @@ JOKER FUNC time.Sleep has:
 
 JOKER FUNC time.Tick has:
 ;; (defn Tick
-;;   "Tick is a convenience wrapper for NewTicker providing access to the ticking\nchannel only. While Tick is useful for clients that have no need to shut down\nthe Ticker, be aware that without a way to shut it down the underlying\nTicker cannot be recovered by the garbage collector; it \"leaks\".\nUnlike NewTicker, Tick will return nil if d <= 0.\nJoker return type: ABEND883(unrecognized Expr type *ast.ChanType at: ../GOSRC/time/tick.go:54:23)"
+;;   "Tick is a convenience wrapper for NewTicker providing access to the ticking\nchannel only. While Tick is useful for clients that have no need to shut down\nthe Ticker, be aware that without a way to shut it down the underlying\nTicker cannot be recovered by the garbage collector; it \"leaks\".\nUnlike NewTicker, Tick will return nil if d <= 0.\nGo return type: ...\nJoker return type: ABEND883(unrecognized Expr type *ast.ChanType at: ../GOSRC/time/tick.go:54:23)"
 ;;   {:added "1.0"
 ;;    :go "tick(d)"}
 ;;   [d])
@@ -12455,7 +12455,7 @@ JOKER FUNC tls.DialWithDialer has:
 
 JOKER FUNC tls.Listen has:
 ;; (defn Listen
-;;   "Listen creates a TLS listener accepting connections on the\ngiven network address using net.Listen.\nThe configuration config must be non-nil and must include\nat least one certificate or else set GetCertificate.\nGo return type: (error)\nJoker return type: [ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/crypto/tls/tls.go:74:53) Error]"
+;;   "Listen creates a TLS listener accepting connections on the\ngiven network address using net.Listen.\nThe configuration config must be non-nil and must include\nat least one certificate or else set GetCertificate.\nGo return type: (..., error)\nJoker return type: [ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/crypto/tls/tls.go:74:53) Error]"
 ;;   {:added "1.0"
 ;;    :go "listen(network, laddr, config)"}
 ;;   [^String network, ^String laddr, ^ABEND881(unrecognized Expr type *ast.StarExpr at: ../GOSRC/crypto/tls/tls.go:74:43) config])
@@ -12476,7 +12476,7 @@ JOKER FUNC tls.NewLRUClientSessionCache has:
 
 JOKER FUNC tls.NewListener has:
 ;; (defn NewListener
-;;   "NewListener creates a Listener which accepts connections from an inner\nListener and wraps each connection with Server.\nThe configuration config must be non-nil and must include\nat least one certificate or else set GetCertificate.\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/crypto/tls/tls.go:63:54)"
+;;   "NewListener creates a Listener which accepts connections from an inner\nListener and wraps each connection with Server.\nThe configuration config must be non-nil and must include\nat least one certificate or else set GetCertificate.\nGo return type: ...\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/crypto/tls/tls.go:63:54)"
 ;;   {:added "1.0"
 ;;    :go "newListener(inner, config)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/crypto/tls/tls.go:63:24) inner, ^ABEND881(unrecognized Expr type *ast.StarExpr at: ../GOSRC/crypto/tls/tls.go:63:45) config])
@@ -12532,7 +12532,7 @@ JOKER FUNC trace.Logf has:
 
 JOKER FUNC trace.NewTask has:
 ;; (defn NewTask
-;;   "NewTask creates a task instance with the type taskType and returns\nit along with a Context that carries the task.\nIf the input context contains a task, the new task is its subtask.\n\nThe taskType is used to classify task instances. Analysis tools\nlike the Go execution tracer may assume there are only a bounded\nnumber of unique task types in the system.\n\nThe returned end function is used to mark the task's end.\nThe trace tool measures task latency as the time between task creation\nand when the end function is called, and provides the latency\ndistribution per task type.\nIf the end function is called multiple times, only the first\ncall is used in the latency measurement.\n\n  ctx, task := trace.NewTask(ctx, \"awesomeTask\")\n  trace.WithRegion(ctx, \"preparation\", prepWork)\n  // preparation of the task\n  go func() {  // continue processing the task in a separate goroutine.\n      defer task.End()\n      trace.WithRegion(ctx, \"remainingWork\", remainingWork)\n  }()\nGo return type: (ctx, task *Task)\nJoker return type: [ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/runtime/trace/annotation.go:34:58) {:id ^ABEND042(cannot find typename trace.uint64)}]"
+;;   "NewTask creates a task instance with the type taskType and returns\nit along with a Context that carries the task.\nIf the input context contains a task, the new task is its subtask.\n\nThe taskType is used to classify task instances. Analysis tools\nlike the Go execution tracer may assume there are only a bounded\nnumber of unique task types in the system.\n\nThe returned end function is used to mark the task's end.\nThe trace tool measures task latency as the time between task creation\nand when the end function is called, and provides the latency\ndistribution per task type.\nIf the end function is called multiple times, only the first\ncall is used in the latency measurement.\n\n  ctx, task := trace.NewTask(ctx, \"awesomeTask\")\n  trace.WithRegion(ctx, \"preparation\", prepWork)\n  // preparation of the task\n  go func() {  // continue processing the task in a separate goroutine.\n      defer task.End()\n      trace.WithRegion(ctx, \"remainingWork\", remainingWork)\n  }()\nGo return type: (ctx ..., task *Task)\nJoker return type: [ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/runtime/trace/annotation.go:34:58) {:id ^ABEND042(cannot find typename trace.uint64)}]"
 ;;   {:added "1.0"
 ;;    :go "newTask(pctx, taskType)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/runtime/trace/annotation.go:34:19) pctx, ^String taskType])
@@ -13358,7 +13358,7 @@ JOKER FUNC x509.DecryptPEMBlock has:
 
 JOKER FUNC x509.EncryptPEMBlock has:
 ;; (defn EncryptPEMBlock
-;;   "EncryptPEMBlock returns a PEM block of the specified type holding the\ngiven DER-encoded data encrypted with the specified algorithm and\npassword.\nGo return type: (*, error)\nJoker return type: [ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/crypto/x509/pem_decrypt.go:183:96) Error]"
+;;   "EncryptPEMBlock returns a PEM block of the specified type holding the\ngiven DER-encoded data encrypted with the specified algorithm and\npassword.\nGo return type: (*..., error)\nJoker return type: [ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/crypto/x509/pem_decrypt.go:183:96) Error]"
 ;;   {:added "1.0"
 ;;    :go "encryptPEMBlock(rand, blockType, data, password, alg)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/crypto/x509/pem_decrypt.go:183:27) rand, ^String blockType, ^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/crypto/x509/pem_decrypt.go:183:71) data, ^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/crypto/x509/pem_decrypt.go:183:71) password, alg])
@@ -13414,7 +13414,7 @@ JOKER FUNC x509.NewCertPool has:
 
 JOKER FUNC x509.ParseCRL has:
 ;; (defn ParseCRL
-;;   "ParseCRL parses a CRL from the given bytes. It's often the case that PEM\nencoded CRLs will appear where they should be DER encoded, so this function\nwill transparently handle PEM encoding as long as there isn't any leading\ngarbage.\nGo return type: (*, error)\nJoker return type: [ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/crypto/x509/x509.go:2179:34) Error]"
+;;   "ParseCRL parses a CRL from the given bytes. It's often the case that PEM\nencoded CRLs will appear where they should be DER encoded, so this function\nwill transparently handle PEM encoding as long as there isn't any leading\ngarbage.\nGo return type: (*..., error)\nJoker return type: [ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/crypto/x509/x509.go:2179:34) Error]"
 ;;   {:added "1.0"
 ;;    :go "parseCRL(crlBytes)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/crypto/x509/x509.go:2179:24) crlBytes])
@@ -13442,42 +13442,42 @@ JOKER FUNC x509.ParseCertificates has:
 
 JOKER FUNC x509.ParseDERCRL has:
 ;; (defn ParseDERCRL
-;;   "ParseDERCRL parses a DER encoded CRL from the given bytes.\nGo return type: (*, error)\nJoker return type: [ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/crypto/x509/x509.go:2190:37) Error]"
+;;   "ParseDERCRL parses a DER encoded CRL from the given bytes.\nGo return type: (*..., error)\nJoker return type: [ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/crypto/x509/x509.go:2190:37) Error]"
 ;;   {:added "1.0"
 ;;    :go "parseDERCRL(derBytes)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/crypto/x509/x509.go:2190:27) derBytes])
 
 JOKER FUNC x509.ParseECPrivateKey has:
 ;; (defn ParseECPrivateKey
-;;   "ParseECPrivateKey parses an ASN.1 Elliptic Curve Private Key Structure.\nGo return type: (*, error)\nJoker return type: [ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/crypto/x509/sec1.go:32:38) Error]"
+;;   "ParseECPrivateKey parses an ASN.1 Elliptic Curve Private Key Structure.\nGo return type: (*..., error)\nJoker return type: [ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/crypto/x509/sec1.go:32:38) Error]"
 ;;   {:added "1.0"
 ;;    :go "parseECPrivateKey(der)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/crypto/x509/sec1.go:32:28) der])
 
 JOKER FUNC x509.ParsePKCS1PrivateKey has:
 ;; (defn ParsePKCS1PrivateKey
-;;   "ParsePKCS1PrivateKey returns an RSA private key from its ASN.1 PKCS#1 DER encoded form.\nGo return type: (*, error)\nJoker return type: [ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/crypto/x509/pkcs1.go:45:41) Error]"
+;;   "ParsePKCS1PrivateKey returns an RSA private key from its ASN.1 PKCS#1 DER encoded form.\nGo return type: (*..., error)\nJoker return type: [ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/crypto/x509/pkcs1.go:45:41) Error]"
 ;;   {:added "1.0"
 ;;    :go "parsePKCS1PrivateKey(der)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/crypto/x509/pkcs1.go:45:31) der])
 
 JOKER FUNC x509.ParsePKCS1PublicKey has:
 ;; (defn ParsePKCS1PublicKey
-;;   "ParsePKCS1PublicKey parses a PKCS#1 public key in ASN.1 DER form.\nGo return type: (*, error)\nJoker return type: [ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/crypto/x509/pkcs1.go:124:40) Error]"
+;;   "ParsePKCS1PublicKey parses a PKCS#1 public key in ASN.1 DER form.\nGo return type: (*..., error)\nJoker return type: [ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/crypto/x509/pkcs1.go:124:40) Error]"
 ;;   {:added "1.0"
 ;;    :go "parsePKCS1PublicKey(der)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/crypto/x509/pkcs1.go:124:30) der])
 
 JOKER FUNC x509.ParsePKCS8PrivateKey has:
 ;; (defn ParsePKCS8PrivateKey
-;;   "ParsePKCS8PrivateKey parses an unencrypted, PKCS#8 private key.\nSee RFC 5208.\nGo return type: (key, err error)\nJoker return type: [ABEND883(unrecognized Expr type *ast.InterfaceType at: ../GOSRC/crypto/x509/pkcs8.go:28:44) Error]"
+;;   "ParsePKCS8PrivateKey parses an unencrypted, PKCS#8 private key.\nSee RFC 5208.\nGo return type: (key ..., err error)\nJoker return type: [ABEND883(unrecognized Expr type *ast.InterfaceType at: ../GOSRC/crypto/x509/pkcs8.go:28:44) Error]"
 ;;   {:added "1.0"
 ;;    :go "parsePKCS8PrivateKey(der)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/crypto/x509/pkcs8.go:28:31) der])
 
 JOKER FUNC x509.ParsePKIXPublicKey has:
 ;; (defn ParsePKIXPublicKey
-;;   "ParsePKIXPublicKey parses a DER encoded public key. These values are\ntypically found in PEM blocks with \"BEGIN PUBLIC KEY\".\n\nSupported key types include RSA, DSA, and ECDSA. Unknown key\ntypes result in an error.\n\nOn success, pub will be of type *rsa.PublicKey, *dsa.PublicKey,\nor *ecdsa.PublicKey.\nGo return type: (pub, err error)\nJoker return type: [ABEND883(unrecognized Expr type *ast.InterfaceType at: ../GOSRC/crypto/x509/x509.go:55:47) Error]"
+;;   "ParsePKIXPublicKey parses a DER encoded public key. These values are\ntypically found in PEM blocks with \"BEGIN PUBLIC KEY\".\n\nSupported key types include RSA, DSA, and ECDSA. Unknown key\ntypes result in an error.\n\nOn success, pub will be of type *rsa.PublicKey, *dsa.PublicKey,\nor *ecdsa.PublicKey.\nGo return type: (pub ..., err error)\nJoker return type: [ABEND883(unrecognized Expr type *ast.InterfaceType at: ../GOSRC/crypto/x509/x509.go:55:47) Error]"
 ;;   {:added "1.0"
 ;;    :go "parsePKIXPublicKey(derBytes)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/crypto/x509/x509.go:55:34) derBytes])
@@ -13596,14 +13596,14 @@ JOKER FUNC zip.RegisterDecompressor has:
 
 JOKER FUNC zlib.NewReader has:
 ;; (defn NewReader
-;;   "NewReader creates a new ReadCloser.\nReads from the returned ReadCloser read and decompress data from r.\nIf r does not implement io.ByteReader, the decompressor may read more\ndata than necessary from r.\nIt is the caller's responsibility to call Close on the ReadCloser when done.\n\nThe ReadCloser returned by NewReader also implements Resetter.\nGo return type: (error)\nJoker return type: [ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/compress/zlib/reader.go:70:30) Error]"
+;;   "NewReader creates a new ReadCloser.\nReads from the returned ReadCloser read and decompress data from r.\nIf r does not implement io.ByteReader, the decompressor may read more\ndata than necessary from r.\nIt is the caller's responsibility to call Close on the ReadCloser when done.\n\nThe ReadCloser returned by NewReader also implements Resetter.\nGo return type: (..., error)\nJoker return type: [ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/compress/zlib/reader.go:70:30) Error]"
 ;;   {:added "1.0"
 ;;    :go "newReader(r)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/compress/zlib/reader.go:70:18) r])
 
 JOKER FUNC zlib.NewReaderDict has:
 ;; (defn NewReaderDict
-;;   "NewReaderDict is like NewReader but uses a preset dictionary.\nNewReaderDict ignores the dictionary if the compressed data does not refer to it.\nIf the compressed data refers to a different dictionary, NewReaderDict returns ErrDictionary.\n\nThe ReadCloser returned by NewReaderDict also implements Resetter.\nGo return type: (error)\nJoker return type: [ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/compress/zlib/reader.go:79:47) Error]"
+;;   "NewReaderDict is like NewReader but uses a preset dictionary.\nNewReaderDict ignores the dictionary if the compressed data does not refer to it.\nIf the compressed data refers to a different dictionary, NewReaderDict returns ErrDictionary.\n\nThe ReadCloser returned by NewReaderDict also implements Resetter.\nGo return type: (..., error)\nJoker return type: [ABEND883(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/compress/zlib/reader.go:79:47) Error]"
 ;;   {:added "1.0"
 ;;    :go "newReaderDict(r, dict)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/compress/zlib/reader.go:79:22) r, ^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/compress/zlib/reader.go:79:38) dict])
