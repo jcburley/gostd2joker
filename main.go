@@ -570,20 +570,18 @@ func genGoPostItem(indent, pkg string, f *Field, idx *int, p *Ident, gores, jok,
 		*jok += " "
 		*multiple = true
 	}
-	if p == nil {  // Delete this arm of the test~~~
-		*jok += joktype
-	} else {
-		*jok += "^" + joktype  // "^" + joktype + " " + rtn  ~~~
-	}
+	*jok += joktype  // TODO: Someday '"^" + joktype + " " + rtn', but only after generate-std.joke supports it
 	if *gol != "" {
 		*gol += ", "
 	}
 	if p == nil {
 	} else {
-		if joktype != "" {
-			*jok += " "
+		if false {  // TODO: Someday enable this code, but only after generate-std.joke supports it
+			if joktype != "" {
+				*jok += " "
+			}
+			*jok += paramNameAsClojure(p.Name)
 		}
-		*jok += paramNameAsClojure(p.Name)
 		*gol += paramNameAsGo(p.Name)
 		if goltype != "" {
 			*gol += " "
