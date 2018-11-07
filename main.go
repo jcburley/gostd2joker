@@ -388,36 +388,6 @@ func paramListAsGo(fl *FieldList) string {
 	return s
 }
 
-func resultsAsGo(fl *FieldList) string {
-	if fl == nil {
-		return ""
-	}
-	s := ""
-	arg := 0
-	for _, rl := range fl.List {
-		if rl.Names == nil {
-			arg += 1
-			if (arg > 1) {
-				s += ", "
-			}
-			s += fmt.Sprintf("arg_%d", arg)
-		} else {
-			for _, r := range rl.Names {
-				arg += 1
-				if (arg > 1) {
-					s += ", "
-				}
-				if r == nil || r.Name == "" {
-					s += fmt.Sprintf("arg_%d", arg)
-				} else {
-					s += r.Name
-				}
-			}
-		}
-	}
-	return s
-}
-
 func argsAsGo(p *FieldList) string {
 	s := ""
 	for _, f := range p.List {
@@ -435,13 +405,46 @@ func argsAsGo(p *FieldList) string {
 	return s
 }
 
-func bodyAsGo(pkg string, f *FuncDecl) string {
-	callStr := resultsAsGo(f.Type.Results) + " := " + pkg + "." + f.Name.Name + "(" + argsAsGo(f.Type.Params) + ")"
+/* The transformation code, below, takes an approach that is new for me.
 
-	callStr += "\n...ABEND603: TODO..."
+   Instead of each transformation point having its own transform
+   routine(s), as is customary, I'm trying an approach in which the
+   transform is driven by the input and multiple outputs are
+   generated, where appropriate, for further processing and/or
+   insertion into the ultimate transformation points.
 
-	return "\t" + strings.Replace(callStr, "\n", "\n\t", -1)
-}
+   The primary reason for this is that the input is complicated and
+   (generally) being supported to a greater extent as enhancements are
+   made. I want to maintain coherence among the various transformation
+   insertions, so it's less likely that a change made for one
+   insertion point (to support a new input form, or modify an existing
+   one) won't have corresponding changes made to other forms relying
+   on the same essential input, which could lead to coding errors.
+
+   This approach also should make it easier to see how the different
+   snippets of code, relating to one particular aspect of the input,
+   relate to each other, because the code will be in the same place.
+
+   However, I'm concerned that the resulting code will be too
+   complicated for that to be sufficiently helpful. If I was
+   proficient in a constraint/unification-based transformation
+   language, I'd look at that instead, because it would allow me to
+   express that e.g. "func foo(args) (returns) { ...do things with
+   args...; call foo in some fashion; ...do things with returns... }"
+   not only have specific transformations for each of the variables
+   involved, but that they are also constrained in some fashion
+   (e.g. whatever names are picked for unnamed 'returns' values are
+   the same in both "returns" and "do things with returns"; whatever
+   types are involved in both "args" and "returns" are properly
+   processed in "do things with args" and "do things with returns",
+   respectively; and so on).
+
+   Now that I've refactored the code to achieve this, I'll start
+   adding transformations and see how it goes. Might revert to
+   old-fashioned use of custom transformation code per point (sharing
+   code where appropriate, of course) if it gets too hairy.
+
+ */
 
 func genGoPostNamed(indent, pkg, tmp, t string) (jok, gol string) {
 	qt := pkg + "." + t
@@ -671,7 +674,7 @@ type funcCode struct {
 	jokerParamList string  // fieldListAsClojure(d.Type.Params)
 	goParamList string  // paramListAsGo(d.Type.Params)
 	jokerGoCode string  // goFname + "(" + fieldListToGo(d.Type.Params) + ")"
-	goCode string  // bodyAsGo(pkg, d)
+	goCode string
 	jokerReturnTypeForDoc string  // genReturnType(pkg, d.Type.Results)
 	goReturnTypeForDoc string  // genReturnType(pkg, d.Type.Results)
 }
