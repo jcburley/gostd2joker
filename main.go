@@ -553,63 +553,54 @@ func genGoPostElement(indent, pkg, tmp string, e Expr) (jok, gol string) {
 	return
 }
 
+func genGoPostItem(indent, pkg string, f *Field, idx *int, p *Ident, gores, jok, gol, goc *string, multiple *bool) {
+	var rtn string
+	*idx += 1
+	if (*idx > 1) {
+		*gores += ", "
+	}
+	if p == nil || p.Name == "" {
+		rtn = fmt.Sprintf("arg_%d", *idx)
+	} else {
+		rtn = p.Name
+	}
+	*gores += rtn
+	joktype, goltype := genGoPostElement(indent, pkg, rtn, f.Type) // ~~~
+	if *jok != "" {
+		*jok += " "
+		*multiple = true
+	}
+	if p == nil {  // Delete this arm of the test~~~
+		*jok += joktype
+	} else {
+		*jok += "^" + joktype  // "^" + joktype + " " + rtn  ~~~
+	}
+	if *gol != "" {
+		*gol += ", "
+	}
+	if p == nil {
+	} else {
+		if joktype != "" {
+			*jok += " "
+		}
+		*jok += paramNameAsClojure(p.Name)
+		*gol += paramNameAsGo(p.Name)
+		if goltype != "" {
+			*gol += " "
+		}
+	}
+	*gol += goltype
+}
+
 func genGoPostList(indent string, pkg string, fl *FieldList) (gores, jok, gol, goc string) {
 	multiple := false
 	idx := 0
 	for _, f := range fl.List {
-		var rtn string // name of returned value(s)
 		if f.Names == nil {
-			idx += 1
-			if (idx > 1) {
-				gores += ", "
-			}
-			rtn = fmt.Sprintf("arg_%d", idx)
-			gores += rtn
-			joktype, goltype := genGoPostElement(indent, pkg, rtn, f.Type)  // ~~~
-			if jok != "" {
-				jok += " "
-				multiple = true
-			}
-			jok += joktype
-			if gol != "" {
-				gol += ", "
-			}
-			gol += goltype
-			continue
+			genGoPostItem(indent, pkg, f, &idx, nil, &gores, &jok, &gol, &goc, &multiple)
 		}
 		for _, p := range f.Names {
-			idx += 1
-			if (idx > 1) {
-				gores += ", "
-			}
-			if p == nil || p.Name == "" {
-				rtn = fmt.Sprintf("arg_%d", idx)
-			} else {
-				rtn = p.Name
-			}
-			gores += rtn
-			joktype, goltype := genGoPostElement(indent, pkg, rtn, f.Type) // ~~~
-			if jok != "" {
-				jok += " "
-				multiple = true
-			}
-			jok += "^" + joktype
-			if gol != "" {
-				gol += ", "
-			}
-			if p == nil {
-				panic(fmt.Sprintf("ABEND414(nil name in pkg %s", pkg))
-			} else {
-				if joktype != "" {
-					jok += " "
-				}
-				jok += paramNameAsClojure(p.Name)
-				gol += paramNameAsGo(p.Name)
-				if goltype != "" {
-					gol += " "
-				}
-			}
-			gol += goltype
+			genGoPostItem(indent, pkg, f, &idx, p, &gores, &jok, &gol, &goc, &multiple)
 		}
 	}
 	if multiple {
