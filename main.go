@@ -121,6 +121,7 @@ type typeInfo struct {
 	built bool
 	jok string
 	gol string
+	goc string
 }
 
 type typeInfoArray []*typeInfo
@@ -153,7 +154,7 @@ func processTypeSpec(pkg string, filename string, f *File, ts *TypeSpec) {
 	} else {
 		candidates = typeInfoArray {}
 	}
-	candidates = append(candidates, &typeInfo{ts, filename, false, false, "", ""})
+	candidates = append(candidates, &typeInfo{ts, filename, false, false, "", "", ""})
 	types[typename] = candidates
 }
 
@@ -446,29 +447,32 @@ func argsAsGo(p *FieldList) string {
 
  */
 
-func genGoPostNamed(indent, pkg, tmp, t string) (jok, gol string) {
+func genGoPostNamed(indent, pkg, in, t string) (jok, gol, goc, out string) {
 	qt := pkg + "." + t
 	if v, ok := types[qt]; ok {
 		if v[0].built { // Reuse already-built type info
 			jok = v[0].jok
 			gol = v[0].gol
+			goc = v[0].goc
+			out = in
 			return
 		}
 		if v[0].building { // Mutually-referring types currently not supported
 			jok = fmt.Sprintf("ABEND947(recursive type reference involving %s)", qt)  // TODO: handle these, e.g. http Request/Response
 			gol = jok
+			goc = jok
 		} else {
 			v[0].building = true
-			jok, gol = genGoPostElement(indent, pkg, tmp, v[0].td.Type)
+			jok, gol, goc, out = genGoPostExpr(indent, pkg, in, v[0].td.Type)
 		}
 		v[0].jok = jok
 		v[0].gol = gol
+		v[0].goc = goc
 		v[0].built = true
-		return
 	} else {
 		jok = fmt.Sprintf("ABEND042(cannot find typename %s)", qt)
-		return
 	}
+	return
 }
 
 // func tryThis(s string) struct { a int; b string } {
@@ -477,14 +481,17 @@ func genGoPostNamed(indent, pkg, tmp, t string) (jok, gol string) {
 
 // Joker: { :a ^Int, :b ^String }
 // Go: struct { a int; b string }
-func genGoPostStruct(indent, pkg, tmp string, fl *FieldList) (jok, gol string) {
+func genGoPostStruct(indent, pkg, in string, fl *FieldList) (jok, gol, goc, out string) {
 	if fl == nil {
 		jok = "{}"
 		gol = "struct {}"
+		out = in
 		return
 	}
 	for _, f := range fl.List {
-		joktype, goltype := genGoPostElement(indent, pkg, tmp, f.Type)
+		var joktype, goltype, more_goc string
+		joktype, goltype, more_goc, _ = genGoPostExpr(indent, pkg, in, f.Type)  // ~~~
+		goc += more_goc
 		for _, p := range f.Names {
 			if jok != "" {
 				jok += ", "
@@ -505,71 +512,84 @@ func genGoPostStruct(indent, pkg, tmp string, fl *FieldList) (jok, gol string) {
 				gol += goltype
 			}
 		}
+		goc = indent + "ABEND680: TODO\n"  // ~~~
 	}
 	jok = "{" + jok + "}"
 	gol = "struct {" + gol + "}"
 	return
 }
 
-func genGoPostElement(indent, pkg, tmp string, e Expr) (jok, gol string) {
+func genGoPostArray(indent, pkg, in string, e Expr) (jok, gol, goc, out string) {
+	jok, gol, _, out = genGoPostExpr(indent, pkg, in, e)
+	jok = "(vector-of " + jok + ")"
+	gol = "[]" + gol
+	goc = indent + "ABEND676: TODO\n"  // ~~~
+	//		goc += indent + out + ".Conjoin(" + in + ")\n"  // ~~~
+	return
+}
+
+func genGoPostExpr(indent, pkg, in string, e Expr) (jok, gol, goc, out string) {
 	switch v := e.(type) {
 	case *Ident:
 		switch v.Name {
 		case "string":
 			jok = "String"
 			gol = "string"
-			return
+			out = "MakeString(" + in + ")"
 		case "int", "int16", "uint", "uint16", "int32", "uint32", "int64", "byte":  // TODO: Does Joker always have 64-bit signed ints?
 			jok = "Int"
 			gol = "int"
-			return
+			out = "MakeInt(" + in + ")"
 		case "bool":
 			jok = "Bool"
 			gol = "bool"
-			return
+			out = "MakeBool(" + in + ")"
 		case "error":
 			jok = "Error"
 			gol = "error"
-			return
+			out = "string(" + in + ")"  // TODO: Test this, as I can't find a MakeError() in joker/core/object.go
 		default:
-			jok, _ = genGoPostNamed(indent, pkg, tmp, v.Name)
+			jok, _, goc, out = genGoPostNamed(indent, pkg, in, v.Name)
 			gol = v.Name  // This is as far as Go needs to go for a type signature
-			return
 		}
 	case *ArrayType:
-		jok, gol = genGoPostElement(indent, pkg, tmp, v.Elt)
-		jok = "(vector-of " + jok + ")"
-		gol = "[]" + gol
-		return
+		jok, gol, goc, out = genGoPostArray(indent, pkg, in, v.Elt)
 	case *StarExpr:
-		jok, gol = genGoPostElement(indent, pkg, tmp, v.X)  // TODO: Maybe return a ref or something Joker (someday) supports?
+		jok, gol, _, out = genGoPostExpr(indent, pkg, in, v.X)  // TODO: Maybe return a ref or something Joker (someday) supports?
 		gol = "*" + gol
+		goc = indent + "ABEND677: TODO\n"  // ~~~
 	case *StructType:
-		jok, gol = genGoPostStruct(indent, pkg, tmp, v.Fields)
+		jok, gol, _, out = genGoPostStruct(indent, pkg, in, v.Fields)
+		goc = indent + "ABEND678: TODO\n"  // ~~~
 	default:
 		jok = fmt.Sprintf("ABEND883(unrecognized Expr type %T at: %s)", e, whereAt(e.Pos()))
 		gol = "..."
-		return
+		goc = indent + "ABEND679: TODO\n"  // ~~~
+		out = in
 	}
 	return
 }
 
-func genGoPostItem(indent, pkg string, f *Field, idx *int, p *Ident, gores, jok, gol, goc *string, multiple *bool) {
+func genGoPostItem(indent, pkg string, f *Field, idx *int, p *Ident, gores, jok, gol, goc *string) string {
 	var rtn string
 	*idx += 1
 	if (*idx > 1) {
 		*gores += ", "
 	}
-	if p == nil || p.Name == "" {
-		rtn = fmt.Sprintf("res%d", *idx)
+	if gores == nil {
+		rtn = ""
 	} else {
-		rtn = p.Name
+		if p == nil || p.Name == "" {
+			rtn = fmt.Sprintf("res%d", *idx)
+		} else {
+			rtn = p.Name
+		}
+		*gores += rtn
 	}
-	*gores += rtn
-	joktype, goltype := genGoPostElement(indent, pkg, rtn, f.Type) // ~~~
+	joktype, goltype, goc_pre, val := genGoPostExpr(indent, pkg, rtn, f.Type)
+	*goc += goc_pre
 	if *jok != "" {
 		*jok += " "
-		*multiple = true
 	}
 	*jok += joktype  // TODO: Someday '"^" + joktype', but only after generate-std.joke supports it
 	if *gol != "" {
@@ -582,28 +602,34 @@ func genGoPostItem(indent, pkg string, f *Field, idx *int, p *Ident, gores, jok,
 		*gol += paramNameAsGo(p.Name) + " "
 	}
 	*gol += goltype
+	return val
 }
 
 func genGoPostList(indent string, pkg string, fl *FieldList) (gores, jok, gol, goc string) {
-	multiple := false
 	idx := 0
-	for _, f := range fl.List {
-		if f.Names == nil {
-			genGoPostItem(indent, pkg, f, &idx, nil, &gores, &jok, &gol, &goc, &multiple)
-		} else {
-			for _, p := range f.Names {
-				genGoPostItem(indent, pkg, f, &idx, p, &gores, &jok, &gol, &goc, &multiple)
+	multiple := len(fl.List) > 1 || (fl.List[0].Names != nil && len(fl.List[0].Names) > 1)
+	if multiple {
+		for _, f := range fl.List {
+			if f.Names == nil {
+				rtn := genGoPostItem(indent, pkg, f, &idx, nil, &gores, &jok, &gol, &goc)
+				goc += indent + "res.Conjoin(" + rtn + ")\n"
+			} else {
+				for _, p := range f.Names {
+					rtn := genGoPostItem(indent, pkg, f, &idx, p, &gores, &jok, &gol, &goc)
+					goc += indent + "res.Conjoin(" + rtn + ")\n"
+				}
 			}
 		}
-	}
-	if multiple {
 		jok = "[" + jok + "]"
 		if gol != "" {
 			gol = "(" + gol + ")"
 		}
-	}
-	if goc != "" {
-		goc = indent + goc
+		goc = indent + "res := EmptyVector\n" + goc + indent + "return res\n"
+		gores += " := "
+	} else {
+		rtn := genGoPostItem(indent, pkg, fl.List[0], &idx, nil,
+			nil, &jok, &gol, &goc)
+		gores = "return " + rtn
 	}
 	return
 }
@@ -688,18 +714,19 @@ func genGoPost(indent string, pkg string, d *FuncDecl) (goResultAssign, jokerRet
 func genFuncCode(pkg string, d *FuncDecl, goFname string) (fc funcCode) {
 	var goPreCode, goParams, goResultAssign, goPostCode string
 
+	if goFname == "iPv4Mask" {
+		fmt.Printf("Found IPv4Mask\n")
+	}
+
 	fc.jokerParamList, fc.jokerGoCode, fc.goParamList, goPreCode, goParams =
 		genGoPre("\t", d.Type.Params, goFname)
 	goCall := genGoCall(pkg, d.Name.Name, goParams)
 	goResultAssign, fc.jokerReturnTypeForDoc, fc.goReturnTypeForDoc, goPostCode = genGoPost("\t", pkg, d)
 
-	if goPostCode == "" {
-		goPostCode = "\t...ABEND676: TODO..."
+	if goPostCode == "" && goResultAssign == "" {
+		goPostCode = "\t...ABEND675: TODO...\n"
 	}
 
-	if goResultAssign != "" {
-		goResultAssign += " := "
-	}
 	fc.goCode = goPreCode + // Optional block of pre-code
 		"\t" + goResultAssign + goCall + // [results := ]fn-to-call([args...])
 		goPostCode // Optional block of post-code
@@ -727,8 +754,7 @@ func genFunction(f string, fn *funcInfo) {
 
 	gfmt := `
 func %s(%s) %s {
-%s
-}
+%s}
 `
 
 	goFn := ""
