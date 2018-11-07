@@ -30,21 +30,21 @@ TYPE url.Values:
   tests/small/net/url/url.go
 JOKER FUNC net.LookupAddr has:
 ;; (defn LookupAddr
-;;   "LookupAddr performs a reverse lookup for the given address, returning a list\nof names mapping to that address.\n\nWhen using the host C library resolver, at most one result will be\nreturned. To bypass the host resolver, use a custom Resolver.\nGo return type: (names err)\nJoker return type: [names err]"
+;;   "LookupAddr performs a reverse lookup for the given address, returning a list\nof names mapping to that address.\n\nWhen using the host C library resolver, at most one result will be\nreturned. To bypass the host resolver, use a custom Resolver.\nGo return type: (names []string, err error)\nJoker return type: [^(vector-of String) names ^Error err]"
 ;;   {:added "1.0"
 ;;    :go "lookupAddr(addr)"}
 ;;   [^String addr])
 
 JOKER FUNC net.LookupCNAME has:
 ;; (defn LookupCNAME
-;;   "LookupCNAME returns the canonical name for the given host.\nCallers that do not care about the canonical name can call\nLookupHost or LookupIP directly; both take care of resolving\nthe canonical name as part of the lookup.\n\nA canonical name is the final name after following zero\nor more CNAME records.\nLookupCNAME does not return an error if host does not\ncontain DNS \"CNAME\" records, as long as host resolves to\naddress records.\nGo return type: (cname err)\nJoker return type: [cname err]"
+;;   "LookupCNAME returns the canonical name for the given host.\nCallers that do not care about the canonical name can call\nLookupHost or LookupIP directly; both take care of resolving\nthe canonical name as part of the lookup.\n\nA canonical name is the final name after following zero\nor more CNAME records.\nLookupCNAME does not return an error if host does not\ncontain DNS \"CNAME\" records, as long as host resolves to\naddress records.\nGo return type: (cname string, err error)\nJoker return type: [^String cname ^Error err]"
 ;;   {:added "1.0"
 ;;    :go "lookupCNAME(host)"}
 ;;   [^String host])
 
 JOKER FUNC net.LookupHost has:
 ;; (defn LookupHost
-;;   "LookupHost looks up the given host using the local resolver.\nIt returns a slice of that host's addresses.\nGo return type: (addrs err)\nJoker return type: [addrs err]"
+;;   "LookupHost looks up the given host using the local resolver.\nIt returns a slice of that host's addresses.\nGo return type: (addrs []string, err error)\nJoker return type: [^(vector-of String) addrs ^Error err]"
 ;;   {:added "1.0"
 ;;    :go "lookupHost(host)"}
 ;;   [^String host])
@@ -72,14 +72,14 @@ JOKER FUNC net.LookupNS has:
 
 JOKER FUNC net.LookupPort has:
 ;; (defn LookupPort
-;;   "LookupPort looks up the port for the given network and service.\nGo return type: (port err)\nJoker return type: [port err]"
+;;   "LookupPort looks up the port for the given network and service.\nGo return type: (port int, err error)\nJoker return type: [^Int port ^Error err]"
 ;;   {:added "1.0"
 ;;    :go "lookupPort(network, service)"}
 ;;   [^String network, ^String service])
 
 JOKER FUNC net.LookupSRV has:
 ;; (defn LookupSRV
-;;   "LookupSRV tries to resolve an SRV query of the given service,\nprotocol, and domain name. The proto is \"tcp\" or \"udp\".\nThe returned records are sorted by priority and randomized\nby weight within a priority.\n\nLookupSRV constructs the DNS name to look up following RFC 2782.\nThat is, it looks up _service._proto.name. To accommodate services\npublishing SRV records under non-standard names, if both service\nand proto are empty strings, LookupSRV looks up name directly.\nGo return type: (cname addrs err)\nJoker return type: [cname addrs err]"
+;;   "LookupSRV tries to resolve an SRV query of the given service,\nprotocol, and domain name. The proto is \"tcp\" or \"udp\".\nThe returned records are sorted by priority and randomized\nby weight within a priority.\n\nLookupSRV constructs the DNS name to look up following RFC 2782.\nThat is, it looks up _service._proto.name. To accommodate services\npublishing SRV records under non-standard names, if both service\nand proto are empty strings, LookupSRV looks up name directly.\nGo return type: (cname string, addrs []*SRV, err error)\nJoker return type: [^String cname ^(vector-of {:Target ^String, :Port ^Int, :Priority ^Int, :Weight ^Int}) addrs ^Error err]"
 ;;   {:added "1.0"
 ;;    :go "lookupSRV(service, proto, name)"}
 ;;   [^String service, ^String proto, ^String name])
@@ -157,97 +157,97 @@ JOKER FUNC url.UserPassword has:
 GO FUNC net.LookupAddr has:
 // func lookupAddr(addr string) Object {
 // 	names, err := net.LookupAddr(addr)
-// 	...ABEND: TODO...
+// 	...ABEND676: TODO...
 // }
 
 GO FUNC net.LookupCNAME has:
 // func lookupCNAME(host string) Object {
 // 	cname, err := net.LookupCNAME(host)
-// 	...ABEND: TODO...
+// 	...ABEND676: TODO...
 // }
 
 GO FUNC net.LookupHost has:
 // func lookupHost(host string) Object {
 // 	addrs, err := net.LookupHost(host)
-// 	...ABEND: TODO...
+// 	...ABEND676: TODO...
 // }
 
 GO FUNC net.LookupIP has:
 // func lookupIP(host string) Object {
 // 	arg_1, arg_2 := net.LookupIP(host)
-// 	...ABEND: TODO...
+// 	...ABEND676: TODO...
 // }
 
 GO FUNC net.LookupMX has:
 // func lookupMX(name string) Object {
 // 	arg_1, arg_2 := net.LookupMX(name)
-// 	...ABEND: TODO...
+// 	...ABEND676: TODO...
 // }
 
 GO FUNC net.LookupNS has:
 // func lookupNS(name string) Object {
 // 	arg_1, arg_2 := net.LookupNS(name)
-// 	...ABEND: TODO...
+// 	...ABEND676: TODO...
 // }
 
 GO FUNC net.LookupPort has:
 // func lookupPort(network string, service string) Object {
 // 	port, err := net.LookupPort(network, service)
-// 	...ABEND: TODO...
+// 	...ABEND676: TODO...
 // }
 
 GO FUNC net.LookupSRV has:
 // func lookupSRV(service string, proto string, name string) Object {
 // 	cname, addrs, err := net.LookupSRV(service, proto, name)
-// 	...ABEND: TODO...
+// 	...ABEND676: TODO...
 // }
 
 GO FUNC net.LookupTXT has:
 // func lookupTXT(name string) Object {
 // 	arg_1, arg_2 := net.LookupTXT(name)
-// 	...ABEND: TODO...
+// 	...ABEND676: TODO...
 // }
 
 GO FUNC url.Parse has:
 // func parse(rawurl string) Object {
 // 	arg_1, arg_2 := url.Parse(rawurl)
-// 	...ABEND: TODO...
+// 	...ABEND676: TODO...
 // }
 
 GO FUNC url.ParseQuery has:
 // func parseQuery(query string) Object {
 // 	arg_1, arg_2 := url.ParseQuery(query)
-// 	...ABEND: TODO...
+// 	...ABEND676: TODO...
 // }
 
 GO FUNC url.ParseRequestURI has:
 // func parseRequestURI(rawurl string) Object {
 // 	arg_1, arg_2 := url.ParseRequestURI(rawurl)
-// 	...ABEND: TODO...
+// 	...ABEND676: TODO...
 // }
 
 GO FUNC url.PathUnescape has:
 // func pathUnescape(s string) Object {
 // 	arg_1, arg_2 := url.PathUnescape(s)
-// 	...ABEND: TODO...
+// 	...ABEND676: TODO...
 // }
 
 GO FUNC url.QueryUnescape has:
 // func queryUnescape(s string) Object {
 // 	arg_1, arg_2 := url.QueryUnescape(s)
-// 	...ABEND: TODO...
+// 	...ABEND676: TODO...
 // }
 
 GO FUNC url.User has:
 // func user(username string) Object {
 // 	arg_1 := url.User(username)
-// 	...ABEND: TODO...
+// 	...ABEND676: TODO...
 // }
 
 GO FUNC url.UserPassword has:
 // func userPassword(username string, password string) Object {
 // 	arg_1 := url.UserPassword(username, password)
-// 	...ABEND: TODO...
+// 	...ABEND676: TODO...
 // }
 
 Totals: types=10 functions=18 receivers=46
