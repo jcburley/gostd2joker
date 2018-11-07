@@ -1307,25 +1307,25 @@ JOKER FUNC url.UserPassword has:
 
 GO FUNC cgi.Request has:
 // func request() Object {
-// 	arg_1, arg_2 := cgi.Request()
+// 	res1, res2 := cgi.Request()
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC cgi.RequestFromMap has:
 // func requestFromMap(params ABEND882(unrecognized Expr type *ast.MapType at: tests/big/net/http/cgi/child.go:52:28)) Object {
-// 	arg_1, arg_2 := cgi.RequestFromMap(params)
+// 	res1, res2 := cgi.RequestFromMap(params)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC cookiejar.New has:
 // func new(o ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/http/cookiejar/jar.go:77:12)) Object {
-// 	arg_1, arg_2 := cookiejar.New(o)
+// 	res1, res2 := cookiejar.New(o)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC fcgi.ProcessEnv has:
 // func processEnv(r ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/http/fcgi/child.go:358:19)) Object {
-// 	arg_1 := fcgi.ProcessEnv(r)
+// 	res1 := fcgi.ProcessEnv(r)
 // 	...ABEND676: TODO...
 // }
 
@@ -1337,7 +1337,7 @@ GO FUNC http.Error has:
 
 GO FUNC http.FileServer has:
 // func fileServer(root Object) Object {
-// 	arg_1 := http.FileServer(root)
+// 	res1 := http.FileServer(root)
 // 	...ABEND676: TODO...
 // }
 
@@ -1367,25 +1367,25 @@ GO FUNC http.Head has:
 
 GO FUNC http.MaxBytesReader has:
 // func maxBytesReader(w Object, r ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/http/request.go:1056:41), n Object) Object {
-// 	arg_1 := http.MaxBytesReader(w, r, n)
+// 	res1 := http.MaxBytesReader(w, r, n)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC http.NewFileTransport has:
 // func newFileTransport(fs Object) Object {
-// 	arg_1 := http.NewFileTransport(fs)
+// 	res1 := http.NewFileTransport(fs)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC http.NewRequest has:
 // func newRequest(method string, url string, body ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/http/request.go:792:42)) Object {
-// 	arg_1, arg_2 := http.NewRequest(method, url, body)
+// 	res1, res2 := http.NewRequest(method, url, body)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC http.NewServeMux has:
 // func newServeMux() Object {
-// 	arg_1 := http.NewServeMux()
+// 	res1 := http.NewServeMux()
 // 	...ABEND676: TODO...
 // }
 
@@ -1397,7 +1397,7 @@ GO FUNC http.NotFound has:
 
 GO FUNC http.NotFoundHandler has:
 // func notFoundHandler() Object {
-// 	arg_1 := http.NotFoundHandler()
+// 	res1 := http.NotFoundHandler()
 // 	...ABEND676: TODO...
 // }
 
@@ -1427,25 +1427,25 @@ GO FUNC http.PostForm has:
 
 GO FUNC http.ProxyFromEnvironment has:
 // func proxyFromEnvironment(req ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/http/transport.go:345:31)) Object {
-// 	arg_1, arg_2 := http.ProxyFromEnvironment(req)
+// 	res1, res2 := http.ProxyFromEnvironment(req)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC http.ProxyURL has:
 // func proxyURL(fixedURL ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/http/transport.go:351:24)) Object {
-// 	arg_1 := http.ProxyURL(fixedURL)
+// 	res1 := http.ProxyURL(fixedURL)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC http.ReadRequest has:
 // func readRequest(b ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/http/request.go:942:20)) Object {
-// 	arg_1, arg_2 := http.ReadRequest(b)
+// 	res1, res2 := http.ReadRequest(b)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC http.ReadResponse has:
 // func readResponse(r ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/http/response.go:148:21), req ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/http/response.go:148:40)) Object {
-// 	arg_1, arg_2 := http.ReadResponse(r, req)
+// 	res1, res2 := http.ReadResponse(r, req)
 // 	...ABEND676: TODO...
 // }
 
@@ -1457,7 +1457,7 @@ GO FUNC http.Redirect has:
 
 GO FUNC http.RedirectHandler has:
 // func redirectHandler(url string, code int) Object {
-// 	arg_1 := http.RedirectHandler(url, code)
+// 	res1 := http.RedirectHandler(url, code)
 // 	...ABEND676: TODO...
 // }
 
@@ -1481,133 +1481,133 @@ GO FUNC http.SetCookie has:
 
 GO FUNC http.StripPrefix has:
 // func stripPrefix(prefix string, h Object) Object {
-// 	arg_1 := http.StripPrefix(prefix, h)
+// 	res1 := http.StripPrefix(prefix, h)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC http.TimeoutHandler has:
 // func timeoutHandler(h Object, dt ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/http/server.go:3106:35), msg string) Object {
-// 	arg_1 := http.TimeoutHandler(h, dt, msg)
+// 	res1 := http.TimeoutHandler(h, dt, msg)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC httptest.NewRecorder has:
 // func newRecorder() Object {
-// 	arg_1 := httptest.NewRecorder()
+// 	res1 := httptest.NewRecorder()
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC httptest.NewRequest has:
 // func newRequest(method string, target string, body ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/http/httptest/httptest.go:41:45)) Object {
-// 	arg_1 := httptest.NewRequest(method, target, body)
+// 	res1 := httptest.NewRequest(method, target, body)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC httptest.NewServer has:
 // func newServer(handler ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/http/httptest/server.go:80:24)) Object {
-// 	arg_1 := httptest.NewServer(handler)
+// 	res1 := httptest.NewServer(handler)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC httptest.NewTLSServer has:
 // func newTLSServer(handler ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/http/httptest/server.go:160:27)) Object {
-// 	arg_1 := httptest.NewTLSServer(handler)
+// 	res1 := httptest.NewTLSServer(handler)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC httptest.NewUnstartedServer has:
 // func newUnstartedServer(handler ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/http/httptest/server.go:92:33)) Object {
-// 	arg_1 := httptest.NewUnstartedServer(handler)
+// 	res1 := httptest.NewUnstartedServer(handler)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC httptrace.ContextClientTrace has:
 // func contextClientTrace(ctx ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/http/httptrace/trace.go:24:29)) Object {
-// 	arg_1 := httptrace.ContextClientTrace(ctx)
+// 	res1 := httptrace.ContextClientTrace(ctx)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC httptrace.WithClientTrace has:
 // func withClientTrace(ctx ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/http/httptrace/trace.go:34:26), trace ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/http/httptrace/trace.go:34:49)) Object {
-// 	arg_1 := httptrace.WithClientTrace(ctx, trace)
+// 	res1 := httptrace.WithClientTrace(ctx, trace)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC httputil.DumpRequest has:
 // func dumpRequest(req ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/http/httputil/dump.go:191:22), body Object) Object {
-// 	arg_1, arg_2 := httputil.DumpRequest(req, body)
+// 	res1, res2 := httputil.DumpRequest(req, body)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC httputil.DumpRequestOut has:
 // func dumpRequestOut(req ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/http/httputil/dump.go:66:25), body Object) Object {
-// 	arg_1, arg_2 := httputil.DumpRequestOut(req, body)
+// 	res1, res2 := httputil.DumpRequestOut(req, body)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC httputil.DumpResponse has:
 // func dumpResponse(resp ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/http/httputil/dump.go:281:24), body Object) Object {
-// 	arg_1, arg_2 := httputil.DumpResponse(resp, body)
+// 	res1, res2 := httputil.DumpResponse(resp, body)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC httputil.NewChunkedReader has:
 // func newChunkedReader(r ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/http/httputil/httputil.go:20:25)) Object {
-// 	arg_1 := httputil.NewChunkedReader(r)
+// 	res1 := httputil.NewChunkedReader(r)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC httputil.NewChunkedWriter has:
 // func newChunkedWriter(w ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/http/httputil/httputil.go:35:25)) Object {
-// 	arg_1 := httputil.NewChunkedWriter(w)
+// 	res1 := httputil.NewChunkedWriter(w)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC httputil.NewClientConn has:
 // func newClientConn(c ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/http/httputil/persist.go:248:22), r ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/http/httputil/persist.go:248:34)) Object {
-// 	arg_1 := httputil.NewClientConn(c, r)
+// 	res1 := httputil.NewClientConn(c, r)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC httputil.NewProxyClientConn has:
 // func newProxyClientConn(c ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/http/httputil/persist.go:265:27), r ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/http/httputil/persist.go:265:39)) Object {
-// 	arg_1 := httputil.NewProxyClientConn(c, r)
+// 	res1 := httputil.NewProxyClientConn(c, r)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC httputil.NewServerConn has:
 // func newServerConn(c ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/http/httputil/persist.go:54:22), r ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/http/httputil/persist.go:54:34)) Object {
-// 	arg_1 := httputil.NewServerConn(c, r)
+// 	res1 := httputil.NewServerConn(c, r)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC httputil.NewSingleHostReverseProxy has:
 // func newSingleHostReverseProxy(target ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/http/httputil/reverseproxy.go:103:39)) Object {
-// 	arg_1 := httputil.NewSingleHostReverseProxy(target)
+// 	res1 := httputil.NewSingleHostReverseProxy(target)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC jsonrpc.Dial has:
 // func dial(network string, address string) Object {
-// 	arg_1, arg_2 := jsonrpc.Dial(network, address)
+// 	res1, res2 := jsonrpc.Dial(network, address)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC jsonrpc.NewClient has:
 // func newClient(conn ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/rpc/jsonrpc/client.go:113:21)) Object {
-// 	arg_1 := jsonrpc.NewClient(conn)
+// 	res1 := jsonrpc.NewClient(conn)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC jsonrpc.NewClientCodec has:
 // func newClientCodec(conn ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/rpc/jsonrpc/client.go:37:26)) Object {
-// 	arg_1 := jsonrpc.NewClientCodec(conn)
+// 	res1 := jsonrpc.NewClientCodec(conn)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC jsonrpc.NewServerCodec has:
 // func newServerCodec(conn ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/rpc/jsonrpc/server.go:37:26)) Object {
-// 	arg_1 := jsonrpc.NewServerCodec(conn)
+// 	res1 := jsonrpc.NewServerCodec(conn)
 // 	...ABEND676: TODO...
 // }
 
@@ -1619,19 +1619,19 @@ GO FUNC jsonrpc.ServeConn has:
 
 GO FUNC mail.ParseAddress has:
 // func parseAddress(address string) Object {
-// 	arg_1, arg_2 := mail.ParseAddress(address)
+// 	res1, res2 := mail.ParseAddress(address)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC mail.ParseAddressList has:
 // func parseAddressList(list string) Object {
-// 	arg_1, arg_2 := mail.ParseAddressList(list)
+// 	res1, res2 := mail.ParseAddressList(list)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC mail.ParseDate has:
 // func parseDate(date string) Object {
-// 	arg_1, arg_2 := mail.ParseDate(date)
+// 	res1, res2 := mail.ParseDate(date)
 // 	...ABEND676: TODO...
 // }
 
@@ -1643,43 +1643,43 @@ GO FUNC mail.ReadMessage has:
 
 GO FUNC net.CIDRMask has:
 // func cIDRMask(ones int, bits int) Object {
-// 	arg_1 := net.CIDRMask(ones, bits)
+// 	res1 := net.CIDRMask(ones, bits)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC net.Dial has:
 // func dial(network string, address string) Object {
-// 	arg_1, arg_2 := net.Dial(network, address)
+// 	res1, res2 := net.Dial(network, address)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC net.DialIP has:
 // func dialIP(network string, laddr ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/iprawsock.go:211:42), raddr ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/iprawsock.go:211:42)) Object {
-// 	arg_1, arg_2 := net.DialIP(network, laddr, raddr)
+// 	res1, res2 := net.DialIP(network, laddr, raddr)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC net.DialTCP has:
 // func dialTCP(network string, laddr ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/tcpsock.go:206:43), raddr ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/tcpsock.go:206:43)) Object {
-// 	arg_1, arg_2 := net.DialTCP(network, laddr, raddr)
+// 	res1, res2 := net.DialTCP(network, laddr, raddr)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC net.DialTimeout has:
 // func dialTimeout(network string, address string, timeout ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/dial.go:313:51)) Object {
-// 	arg_1, arg_2 := net.DialTimeout(network, address, timeout)
+// 	res1, res2 := net.DialTimeout(network, address, timeout)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC net.DialUDP has:
 // func dialUDP(network string, laddr ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/udpsock.go:205:43), raddr ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/udpsock.go:205:43)) Object {
-// 	arg_1, arg_2 := net.DialUDP(network, laddr, raddr)
+// 	res1, res2 := net.DialUDP(network, laddr, raddr)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC net.DialUnix has:
 // func dialUnix(network string, laddr ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/unixsock.go:200:44), raddr ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/unixsock.go:200:44)) Object {
-// 	arg_1, arg_2 := net.DialUnix(network, laddr, raddr)
+// 	res1, res2 := net.DialUnix(network, laddr, raddr)
 // 	...ABEND676: TODO...
 // }
 
@@ -1703,85 +1703,85 @@ GO FUNC net.FilePacketConn has:
 
 GO FUNC net.IPv4 has:
 // func iPv4(a Object, b Object, c Object, d Object) Object {
-// 	arg_1 := net.IPv4(a, b, c, d)
+// 	res1 := net.IPv4(a, b, c, d)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC net.IPv4Mask has:
 // func iPv4Mask(a Object, b Object, c Object, d Object) Object {
-// 	arg_1 := net.IPv4Mask(a, b, c, d)
+// 	res1 := net.IPv4Mask(a, b, c, d)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC net.InterfaceAddrs has:
 // func interfaceAddrs() Object {
-// 	arg_1, arg_2 := net.InterfaceAddrs()
+// 	res1, res2 := net.InterfaceAddrs()
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC net.InterfaceByIndex has:
 // func interfaceByIndex(index int) Object {
-// 	arg_1, arg_2 := net.InterfaceByIndex(index)
+// 	res1, res2 := net.InterfaceByIndex(index)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC net.InterfaceByName has:
 // func interfaceByName(name string) Object {
-// 	arg_1, arg_2 := net.InterfaceByName(name)
+// 	res1, res2 := net.InterfaceByName(name)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC net.Interfaces has:
 // func interfaces() Object {
-// 	arg_1, arg_2 := net.Interfaces()
+// 	res1, res2 := net.Interfaces()
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC net.Listen has:
 // func listen(network string, address string) Object {
-// 	arg_1, arg_2 := net.Listen(network, address)
+// 	res1, res2 := net.Listen(network, address)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC net.ListenIP has:
 // func listenIP(network string, laddr ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/iprawsock.go:230:37)) Object {
-// 	arg_1, arg_2 := net.ListenIP(network, laddr)
+// 	res1, res2 := net.ListenIP(network, laddr)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC net.ListenMulticastUDP has:
 // func listenMulticastUDP(network string, ifi ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/udpsock.go:265:45), gaddr ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/udpsock.go:265:63)) Object {
-// 	arg_1, arg_2 := net.ListenMulticastUDP(network, ifi, gaddr)
+// 	res1, res2 := net.ListenMulticastUDP(network, ifi, gaddr)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC net.ListenPacket has:
 // func listenPacket(network string, address string) Object {
-// 	arg_1, arg_2 := net.ListenPacket(network, address)
+// 	res1, res2 := net.ListenPacket(network, address)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC net.ListenTCP has:
 // func listenTCP(network string, laddr ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/tcpsock.go:323:38)) Object {
-// 	arg_1, arg_2 := net.ListenTCP(network, laddr)
+// 	res1, res2 := net.ListenTCP(network, laddr)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC net.ListenUDP has:
 // func listenUDP(network string, laddr ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/udpsock.go:231:38)) Object {
-// 	arg_1, arg_2 := net.ListenUDP(network, laddr)
+// 	res1, res2 := net.ListenUDP(network, laddr)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC net.ListenUnix has:
 // func listenUnix(network string, laddr ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/unixsock.go:314:39)) Object {
-// 	arg_1, arg_2 := net.ListenUnix(network, laddr)
+// 	res1, res2 := net.ListenUnix(network, laddr)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC net.ListenUnixgram has:
 // func listenUnixgram(network string, laddr ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/unixsock.go:334:43)) Object {
-// 	arg_1, arg_2 := net.ListenUnixgram(network, laddr)
+// 	res1, res2 := net.ListenUnixgram(network, laddr)
 // 	...ABEND676: TODO...
 // }
 
@@ -1805,19 +1805,19 @@ GO FUNC net.LookupHost has:
 
 GO FUNC net.LookupIP has:
 // func lookupIP(host string) Object {
-// 	arg_1, arg_2 := net.LookupIP(host)
+// 	res1, res2 := net.LookupIP(host)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC net.LookupMX has:
 // func lookupMX(name string) Object {
-// 	arg_1, arg_2 := net.LookupMX(name)
+// 	res1, res2 := net.LookupMX(name)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC net.LookupNS has:
 // func lookupNS(name string) Object {
-// 	arg_1, arg_2 := net.LookupNS(name)
+// 	res1, res2 := net.LookupNS(name)
 // 	...ABEND676: TODO...
 // }
 
@@ -1835,19 +1835,19 @@ GO FUNC net.LookupSRV has:
 
 GO FUNC net.LookupTXT has:
 // func lookupTXT(name string) Object {
-// 	arg_1, arg_2 := net.LookupTXT(name)
+// 	res1, res2 := net.LookupTXT(name)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC net.ParseCIDR has:
 // func parseCIDR(s string) Object {
-// 	arg_1, arg_2, arg_3 := net.ParseCIDR(s)
+// 	res1, res2, res3 := net.ParseCIDR(s)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC net.ParseIP has:
 // func parseIP(s string) Object {
-// 	arg_1 := net.ParseIP(s)
+// 	res1 := net.ParseIP(s)
 // 	...ABEND676: TODO...
 // }
 
@@ -1859,31 +1859,31 @@ GO FUNC net.ParseMAC has:
 
 GO FUNC net.Pipe has:
 // func pipe() Object {
-// 	arg_1, arg_2 := net.Pipe()
+// 	res1, res2 := net.Pipe()
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC net.ResolveIPAddr has:
 // func resolveIPAddr(network string, address string) Object {
-// 	arg_1, arg_2 := net.ResolveIPAddr(network, address)
+// 	res1, res2 := net.ResolveIPAddr(network, address)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC net.ResolveTCPAddr has:
 // func resolveTCPAddr(network string, address string) Object {
-// 	arg_1, arg_2 := net.ResolveTCPAddr(network, address)
+// 	res1, res2 := net.ResolveTCPAddr(network, address)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC net.ResolveUDPAddr has:
 // func resolveUDPAddr(network string, address string) Object {
-// 	arg_1, arg_2 := net.ResolveUDPAddr(network, address)
+// 	res1, res2 := net.ResolveUDPAddr(network, address)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC net.ResolveUnixAddr has:
 // func resolveUnixAddr(network string, address string) Object {
-// 	arg_1, arg_2 := net.ResolveUnixAddr(network, address)
+// 	res1, res2 := net.ResolveUnixAddr(network, address)
 // 	...ABEND676: TODO...
 // }
 
@@ -1901,7 +1901,7 @@ GO FUNC pprof.Cmdline has:
 
 GO FUNC pprof.Handler has:
 // func handler(name string) Object {
-// 	arg_1 := pprof.Handler(name)
+// 	res1 := pprof.Handler(name)
 // 	...ABEND676: TODO...
 // }
 
@@ -1937,19 +1937,19 @@ GO FUNC rpc.Accept has:
 
 GO FUNC rpc.Dial has:
 // func dial(network string, address string) Object {
-// 	arg_1, arg_2 := rpc.Dial(network, address)
+// 	res1, res2 := rpc.Dial(network, address)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC rpc.DialHTTP has:
 // func dialHTTP(network string, address string) Object {
-// 	arg_1, arg_2 := rpc.DialHTTP(network, address)
+// 	res1, res2 := rpc.DialHTTP(network, address)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC rpc.DialHTTPPath has:
 // func dialHTTPPath(network string, address string, path string) Object {
-// 	arg_1, arg_2 := rpc.DialHTTPPath(network, address, path)
+// 	res1, res2 := rpc.DialHTTPPath(network, address, path)
 // 	...ABEND676: TODO...
 // }
 
@@ -1961,19 +1961,19 @@ GO FUNC rpc.HandleHTTP has:
 
 GO FUNC rpc.NewClient has:
 // func newClient(conn ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/rpc/client.go:193:21)) Object {
-// 	arg_1 := rpc.NewClient(conn)
+// 	res1 := rpc.NewClient(conn)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC rpc.NewClientWithCodec has:
 // func newClientWithCodec(codec Object) Object {
-// 	arg_1 := rpc.NewClientWithCodec(codec)
+// 	res1 := rpc.NewClientWithCodec(codec)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC rpc.NewServer has:
 // func newServer() Object {
-// 	arg_1 := rpc.NewServer()
+// 	res1 := rpc.NewServer()
 // 	...ABEND676: TODO...
 // }
 
@@ -1991,97 +1991,97 @@ GO FUNC rpc.ServeConn has:
 
 GO FUNC smtp.CRAMMD5Auth has:
 // func cRAMMD5Auth(username string, secret string) Object {
-// 	arg_1 := smtp.CRAMMD5Auth(username, secret)
+// 	res1 := smtp.CRAMMD5Auth(username, secret)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC smtp.Dial has:
 // func dial(addr string) Object {
-// 	arg_1, arg_2 := smtp.Dial(addr)
+// 	res1, res2 := smtp.Dial(addr)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC smtp.NewClient has:
 // func newClient(conn ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/smtp/smtp.go:62:21), host string) Object {
-// 	arg_1, arg_2 := smtp.NewClient(conn, host)
+// 	res1, res2 := smtp.NewClient(conn, host)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC smtp.PlainAuth has:
 // func plainAuth(identity string, username string, password string, host string) Object {
-// 	arg_1 := smtp.PlainAuth(identity, username, password, host)
+// 	res1 := smtp.PlainAuth(identity, username, password, host)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC textproto.Dial has:
 // func dial(network string, addr string) Object {
-// 	arg_1, arg_2 := textproto.Dial(network, addr)
+// 	res1, res2 := textproto.Dial(network, addr)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC textproto.NewConn has:
 // func newConn(conn ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/textproto/textproto.go:66:19)) Object {
-// 	arg_1 := textproto.NewConn(conn)
+// 	res1 := textproto.NewConn(conn)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC textproto.NewReader has:
 // func newReader(r ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/textproto/reader.go:29:18)) Object {
-// 	arg_1 := textproto.NewReader(r)
+// 	res1 := textproto.NewReader(r)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC textproto.NewWriter has:
 // func newWriter(w ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/textproto/writer.go:21:18)) Object {
-// 	arg_1 := textproto.NewWriter(w)
+// 	res1 := textproto.NewWriter(w)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC textproto.TrimBytes has:
 // func trimBytes(b ABEND882(unrecognized Expr type *ast.ArrayType at: tests/big/net/textproto/textproto.go:137:18)) Object {
-// 	arg_1 := textproto.TrimBytes(b)
+// 	res1 := textproto.TrimBytes(b)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC url.Parse has:
 // func parse(rawurl string) Object {
-// 	arg_1, arg_2 := url.Parse(rawurl)
+// 	res1, res2 := url.Parse(rawurl)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC url.ParseQuery has:
 // func parseQuery(query string) Object {
-// 	arg_1, arg_2 := url.ParseQuery(query)
+// 	res1, res2 := url.ParseQuery(query)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC url.ParseRequestURI has:
 // func parseRequestURI(rawurl string) Object {
-// 	arg_1, arg_2 := url.ParseRequestURI(rawurl)
+// 	res1, res2 := url.ParseRequestURI(rawurl)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC url.PathUnescape has:
 // func pathUnescape(s string) Object {
-// 	arg_1, arg_2 := url.PathUnescape(s)
+// 	res1, res2 := url.PathUnescape(s)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC url.QueryUnescape has:
 // func queryUnescape(s string) Object {
-// 	arg_1, arg_2 := url.QueryUnescape(s)
+// 	res1, res2 := url.QueryUnescape(s)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC url.User has:
 // func user(username string) Object {
-// 	arg_1 := url.User(username)
+// 	res1 := url.User(username)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC url.UserPassword has:
 // func userPassword(username string, password string) Object {
-// 	arg_1 := url.UserPassword(username, password)
+// 	res1 := url.UserPassword(username, password)
 // 	...ABEND676: TODO...
 // }
 

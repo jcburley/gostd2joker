@@ -561,7 +561,7 @@ func genGoPostItem(indent, pkg string, f *Field, idx *int, p *Ident, gores, jok,
 		*gores += ", "
 	}
 	if p == nil || p.Name == "" {
-		rtn = fmt.Sprintf("arg_%d", *idx)
+		rtn = fmt.Sprintf("res%d", *idx)
 	} else {
 		rtn = p.Name
 	}

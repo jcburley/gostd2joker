@@ -174,19 +174,19 @@ GO FUNC net.LookupHost has:
 
 GO FUNC net.LookupIP has:
 // func lookupIP(host string) Object {
-// 	arg_1, arg_2 := net.LookupIP(host)
+// 	res1, res2 := net.LookupIP(host)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC net.LookupMX has:
 // func lookupMX(name string) Object {
-// 	arg_1, arg_2 := net.LookupMX(name)
+// 	res1, res2 := net.LookupMX(name)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC net.LookupNS has:
 // func lookupNS(name string) Object {
-// 	arg_1, arg_2 := net.LookupNS(name)
+// 	res1, res2 := net.LookupNS(name)
 // 	...ABEND676: TODO...
 // }
 
@@ -204,49 +204,49 @@ GO FUNC net.LookupSRV has:
 
 GO FUNC net.LookupTXT has:
 // func lookupTXT(name string) Object {
-// 	arg_1, arg_2 := net.LookupTXT(name)
+// 	res1, res2 := net.LookupTXT(name)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC url.Parse has:
 // func parse(rawurl string) Object {
-// 	arg_1, arg_2 := url.Parse(rawurl)
+// 	res1, res2 := url.Parse(rawurl)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC url.ParseQuery has:
 // func parseQuery(query string) Object {
-// 	arg_1, arg_2 := url.ParseQuery(query)
+// 	res1, res2 := url.ParseQuery(query)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC url.ParseRequestURI has:
 // func parseRequestURI(rawurl string) Object {
-// 	arg_1, arg_2 := url.ParseRequestURI(rawurl)
+// 	res1, res2 := url.ParseRequestURI(rawurl)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC url.PathUnescape has:
 // func pathUnescape(s string) Object {
-// 	arg_1, arg_2 := url.PathUnescape(s)
+// 	res1, res2 := url.PathUnescape(s)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC url.QueryUnescape has:
 // func queryUnescape(s string) Object {
-// 	arg_1, arg_2 := url.QueryUnescape(s)
+// 	res1, res2 := url.QueryUnescape(s)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC url.User has:
 // func user(username string) Object {
-// 	arg_1 := url.User(username)
+// 	res1 := url.User(username)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC url.UserPassword has:
 // func userPassword(username string, password string) Object {
-// 	arg_1 := url.UserPassword(username, password)
+// 	res1 := url.UserPassword(username, password)
 // 	...ABEND676: TODO...
 // }
 

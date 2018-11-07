@@ -13631,13 +13631,13 @@ JOKER FUNC zlib.NewWriterLevelDict has:
 
 GO FUNC adler32.New has:
 // func new() Object {
-// 	arg_1 := adler32.New()
+// 	res1 := adler32.New()
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC aes.NewCipher has:
 // func newCipher(key ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/crypto/aes/cipher.go:32:20)) Object {
-// 	arg_1, arg_2 := aes.NewCipher(key)
+// 	res1, res2 := aes.NewCipher(key)
 // 	...ABEND676: TODO...
 // }
 
@@ -13649,25 +13649,25 @@ GO FUNC ascii85.Decode has:
 
 GO FUNC ascii85.NewDecoder has:
 // func newDecoder(r ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/encoding/ascii85/ascii85.go:246:19)) Object {
-// 	arg_1 := ascii85.NewDecoder(r)
+// 	res1 := ascii85.NewDecoder(r)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC ascii85.NewEncoder has:
 // func newEncoder(w ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/encoding/ascii85/ascii85.go:93:19)) Object {
-// 	arg_1 := ascii85.NewEncoder(w)
+// 	res1 := ascii85.NewEncoder(w)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC asn1.Marshal has:
 // func marshal(val ABEND882(unrecognized Expr type *ast.InterfaceType at: ../GOSRC/encoding/asn1/marshal.go:677:18)) Object {
-// 	arg_1, arg_2 := asn1.Marshal(val)
+// 	res1, res2 := asn1.Marshal(val)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC asn1.MarshalWithParams has:
 // func marshalWithParams(val ABEND882(unrecognized Expr type *ast.InterfaceType at: ../GOSRC/encoding/asn1/marshal.go:683:28), params string) Object {
-// 	arg_1, arg_2 := asn1.MarshalWithParams(val, params)
+// 	res1, res2 := asn1.MarshalWithParams(val, params)
 // 	...ABEND676: TODO...
 // }
 
@@ -13691,37 +13691,37 @@ GO FUNC ast.Inspect has:
 
 GO FUNC ast.MergePackageFiles has:
 // func mergePackageFiles(pkg ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/go/ast/filter.go:344:28), mode Object) Object {
-// 	arg_1 := ast.MergePackageFiles(pkg, mode)
+// 	res1 := ast.MergePackageFiles(pkg, mode)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC ast.NewCommentMap has:
 // func newCommentMap(fset ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/go/ast/commentmap.go:143:25), node Object, comments ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/go/ast/commentmap.go:143:61)) Object {
-// 	arg_1 := ast.NewCommentMap(fset, node, comments)
+// 	res1 := ast.NewCommentMap(fset, node, comments)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC ast.NewIdent has:
 // func newIdent(name string) Object {
-// 	arg_1 := ast.NewIdent(name)
+// 	res1 := ast.NewIdent(name)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC ast.NewObj has:
 // func newObj(kind Object, name string) Object {
-// 	arg_1 := ast.NewObj(kind, name)
+// 	res1 := ast.NewObj(kind, name)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC ast.NewPackage has:
 // func newPackage(fset ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/go/ast/resolve.go:74:22), files ABEND882(unrecognized Expr type *ast.MapType at: ../GOSRC/go/ast/resolve.go:74:44), importer Object, universe ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/go/ast/resolve.go:74:90)) Object {
-// 	arg_1, arg_2 := ast.NewPackage(fset, files, importer, universe)
+// 	res1, res2 := ast.NewPackage(fset, files, importer, universe)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC ast.NewScope has:
 // func newScope(outer ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/go/ast/scope.go:25:21)) Object {
-// 	arg_1 := ast.NewScope(outer)
+// 	res1 := ast.NewScope(outer)
 // 	...ABEND676: TODO...
 // }
 
@@ -13823,49 +13823,49 @@ GO FUNC atomic.SwapUintptr has:
 
 GO FUNC base32.NewDecoder has:
 // func newDecoder(enc ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/encoding/base32/base32.go:530:21), r ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/encoding/base32/base32.go:530:34)) Object {
-// 	arg_1 := base32.NewDecoder(enc, r)
+// 	res1 := base32.NewDecoder(enc, r)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC base32.NewEncoder has:
 // func newEncoder(enc ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/encoding/base32/base32.go:259:21), w ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/encoding/base32/base32.go:259:34)) Object {
-// 	arg_1 := base32.NewEncoder(enc, w)
+// 	res1 := base32.NewEncoder(enc, w)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC base32.NewEncoding has:
 // func newEncoding(encoder string) Object {
-// 	arg_1 := base32.NewEncoding(encoder)
+// 	res1 := base32.NewEncoding(encoder)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC base64.NewDecoder has:
 // func newDecoder(enc ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/encoding/base64/base64.go:603:21), r ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/encoding/base64/base64.go:603:34)) Object {
-// 	arg_1 := base64.NewDecoder(enc, r)
+// 	res1 := base64.NewDecoder(enc, r)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC base64.NewEncoder has:
 // func newEncoder(enc ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/encoding/base64/base64.go:250:21), w ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/encoding/base64/base64.go:250:34)) Object {
-// 	arg_1 := base64.NewEncoder(enc, w)
+// 	res1 := base64.NewEncoder(enc, w)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC base64.NewEncoding has:
 // func newEncoding(encoder string) Object {
-// 	arg_1 := base64.NewEncoding(encoder)
+// 	res1 := base64.NewEncoding(encoder)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC bidi.AppendReverse has:
 // func appendReverse(out ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/vendor/golang_org/x/text/unicode/bidi/bidi.go:189:28), in ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/vendor/golang_org/x/text/unicode/bidi/bidi.go:189:28)) Object {
-// 	arg_1 := bidi.AppendReverse(out, in)
+// 	res1 := bidi.AppendReverse(out, in)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC bidi.DefaultDirection has:
 // func defaultDirection(d Object) Object {
-// 	arg_1 := bidi.DefaultDirection(d)
+// 	res1 := bidi.DefaultDirection(d)
 // 	...ABEND676: TODO...
 // }
 
@@ -13889,37 +13889,37 @@ GO FUNC bidi.LookupString has:
 
 GO FUNC bidirule.Direction has:
 // func direction(b ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/vendor/golang_org/x/text/secure/bidirule/bidirule.go:137:18)) Object {
-// 	arg_1 := bidirule.Direction(b)
+// 	res1 := bidirule.Direction(b)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC bidirule.DirectionString has:
 // func directionString(s string) Object {
-// 	arg_1 := bidirule.DirectionString(s)
+// 	res1 := bidirule.DirectionString(s)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC bidirule.New has:
 // func new() Object {
-// 	arg_1 := bidirule.New()
+// 	res1 := bidirule.New()
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC big.NewFloat has:
 // func newFloat(x Object) Object {
-// 	arg_1 := big.NewFloat(x)
+// 	res1 := big.NewFloat(x)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC big.NewInt has:
 // func newInt(x Object) Object {
-// 	arg_1 := big.NewInt(x)
+// 	res1 := big.NewInt(x)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC big.NewRat has:
 // func newRat(a Object, b Object) Object {
-// 	arg_1 := big.NewRat(a, b)
+// 	res1 := big.NewRat(a, b)
 // 	...ABEND676: TODO...
 // }
 
@@ -13931,91 +13931,91 @@ GO FUNC big.ParseFloat has:
 
 GO FUNC binary.ReadUvarint has:
 // func readUvarint(r ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/encoding/binary/varint.go:106:20)) Object {
-// 	arg_1, arg_2 := binary.ReadUvarint(r)
+// 	res1, res2 := binary.ReadUvarint(r)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC binary.ReadVarint has:
 // func readVarint(r ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/encoding/binary/varint.go:126:19)) Object {
-// 	arg_1, arg_2 := binary.ReadVarint(r)
+// 	res1, res2 := binary.ReadVarint(r)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC binary.Uvarint has:
 // func uvarint(buf ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/encoding/binary/varint.go:60:18)) Object {
-// 	arg_1, arg_2 := binary.Uvarint(buf)
+// 	res1, res2 := binary.Uvarint(buf)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC binary.Varint has:
 // func varint(buf ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/encoding/binary/varint.go:94:17)) Object {
-// 	arg_1, arg_2 := binary.Varint(buf)
+// 	res1, res2 := binary.Varint(buf)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC bits.Reverse64 has:
 // func reverse64(x Object) Object {
-// 	arg_1 := bits.Reverse64(x)
+// 	res1 := bits.Reverse64(x)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC bits.Reverse8 has:
 // func reverse8(x Object) Object {
-// 	arg_1 := bits.Reverse8(x)
+// 	res1 := bits.Reverse8(x)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC bits.ReverseBytes64 has:
 // func reverseBytes64(x Object) Object {
-// 	arg_1 := bits.ReverseBytes64(x)
+// 	res1 := bits.ReverseBytes64(x)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC bits.RotateLeft64 has:
 // func rotateLeft64(x Object, k int) Object {
-// 	arg_1 := bits.RotateLeft64(x, k)
+// 	res1 := bits.RotateLeft64(x, k)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC bits.RotateLeft8 has:
 // func rotateLeft8(x Object, k int) Object {
-// 	arg_1 := bits.RotateLeft8(x, k)
+// 	res1 := bits.RotateLeft8(x, k)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC bufio.NewReadWriter has:
 // func newReadWriter(r ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/bufio/bufio.go:743:22), w ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/bufio/bufio.go:743:33)) Object {
-// 	arg_1 := bufio.NewReadWriter(r, w)
+// 	res1 := bufio.NewReadWriter(r, w)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC bufio.NewReader has:
 // func newReader(rd ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/bufio/bufio.go:61:19)) Object {
-// 	arg_1 := bufio.NewReader(rd)
+// 	res1 := bufio.NewReader(rd)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC bufio.NewReaderSize has:
 // func newReaderSize(rd ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/bufio/bufio.go:46:23), size int) Object {
-// 	arg_1 := bufio.NewReaderSize(rd, size)
+// 	res1 := bufio.NewReaderSize(rd, size)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC bufio.NewScanner has:
 // func newScanner(r ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/bufio/scan.go:86:19)) Object {
-// 	arg_1 := bufio.NewScanner(r)
+// 	res1 := bufio.NewScanner(r)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC bufio.NewWriter has:
 // func newWriter(w ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/bufio/bufio.go:552:18)) Object {
-// 	arg_1 := bufio.NewWriter(w)
+// 	res1 := bufio.NewWriter(w)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC bufio.NewWriterSize has:
 // func newWriterSize(w ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/bufio/bufio.go:536:22), size int) Object {
-// 	arg_1 := bufio.NewWriterSize(w, size)
+// 	res1 := bufio.NewWriterSize(w, size)
 // 	...ABEND676: TODO...
 // }
 
@@ -14045,217 +14045,217 @@ GO FUNC bufio.ScanWords has:
 
 GO FUNC build.ArchChar has:
 // func archChar(goarch string) Object {
-// 	arg_1, arg_2 := build.ArchChar(goarch)
+// 	res1, res2 := build.ArchChar(goarch)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC build.Import has:
 // func import(path string, srcDir string, mode Object) Object {
-// 	arg_1, arg_2 := build.Import(path, srcDir, mode)
+// 	res1, res2 := build.Import(path, srcDir, mode)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC build.ImportDir has:
 // func importDir(dir string, mode Object) Object {
-// 	arg_1, arg_2 := build.ImportDir(dir, mode)
+// 	res1, res2 := build.ImportDir(dir, mode)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC bytes.Fields has:
 // func fields(s ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/bytes/bytes.go:283:15)) Object {
-// 	arg_1 := bytes.Fields(s)
+// 	res1 := bytes.Fields(s)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC bytes.FieldsFunc has:
 // func fieldsFunc(s ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/bytes/bytes.go:339:19), f ABEND882(unrecognized Expr type *ast.FuncType at: ../GOSRC/bytes/bytes.go:339:29)) Object {
-// 	arg_1 := bytes.FieldsFunc(s, f)
+// 	res1 := bytes.FieldsFunc(s, f)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC bytes.Join has:
 // func join(s ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/bytes/bytes.go:387:13), sep ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/bytes/bytes.go:387:27)) Object {
-// 	arg_1 := bytes.Join(s, sep)
+// 	res1 := bytes.Join(s, sep)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC bytes.Map has:
 // func map(mapping ABEND882(unrecognized Expr type *ast.FuncType at: ../GOSRC/bytes/bytes.go:423:18), s ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/bytes/bytes.go:423:39)) Object {
-// 	arg_1 := bytes.Map(mapping, s)
+// 	res1 := bytes.Map(mapping, s)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC bytes.NewBuffer has:
 // func newBuffer(buf ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/bytes/buffer.go:450:20)) Object {
-// 	arg_1 := bytes.NewBuffer(buf)
+// 	res1 := bytes.NewBuffer(buf)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC bytes.NewBufferString has:
 // func newBufferString(s string) Object {
-// 	arg_1 := bytes.NewBufferString(s)
+// 	res1 := bytes.NewBufferString(s)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC bytes.NewReader has:
 // func newReader(b ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/bytes/reader.go:156:18)) Object {
-// 	arg_1 := bytes.NewReader(b)
+// 	res1 := bytes.NewReader(b)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC bytes.Repeat has:
 // func repeat(b ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/bytes/bytes.go:460:15), count int) Object {
-// 	arg_1 := bytes.Repeat(b, count)
+// 	res1 := bytes.Repeat(b, count)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC bytes.Replace has:
 // func replace(s ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/bytes/bytes.go:741:26), old ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/bytes/bytes.go:741:26), new ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/bytes/bytes.go:741:26), n int) Object {
-// 	arg_1 := bytes.Replace(s, old, new, n)
+// 	res1 := bytes.Replace(s, old, new, n)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC bytes.Runes has:
 // func runes(s ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/bytes/bytes.go:723:14)) Object {
-// 	arg_1 := bytes.Runes(s)
+// 	res1 := bytes.Runes(s)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC bytes.Split has:
 // func split(s ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/bytes/bytes.go:267:19), sep ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/bytes/bytes.go:267:19)) Object {
-// 	arg_1 := bytes.Split(s, sep)
+// 	res1 := bytes.Split(s, sep)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC bytes.SplitAfter has:
 // func splitAfter(s ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/bytes/bytes.go:273:24), sep ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/bytes/bytes.go:273:24)) Object {
-// 	arg_1 := bytes.SplitAfter(s, sep)
+// 	res1 := bytes.SplitAfter(s, sep)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC bytes.SplitAfterN has:
 // func splitAfterN(s ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/bytes/bytes.go:259:25), sep ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/bytes/bytes.go:259:25), n int) Object {
-// 	arg_1 := bytes.SplitAfterN(s, sep, n)
+// 	res1 := bytes.SplitAfterN(s, sep, n)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC bytes.SplitN has:
 // func splitN(s ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/bytes/bytes.go:250:20), sep ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/bytes/bytes.go:250:20), n int) Object {
-// 	arg_1 := bytes.SplitN(s, sep, n)
+// 	res1 := bytes.SplitN(s, sep, n)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC bytes.Title has:
 // func title(s ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/bytes/bytes.go:536:14)) Object {
-// 	arg_1 := bytes.Title(s)
+// 	res1 := bytes.Title(s)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC bytes.ToLower has:
 // func toLower(s ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/bytes/bytes.go:484:16)) Object {
-// 	arg_1 := bytes.ToLower(s)
+// 	res1 := bytes.ToLower(s)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC bytes.ToLowerSpecial has:
 // func toLowerSpecial(c ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/bytes/bytes.go:497:23), s ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/bytes/bytes.go:497:46)) Object {
-// 	arg_1 := bytes.ToLowerSpecial(c, s)
+// 	res1 := bytes.ToLowerSpecial(c, s)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC bytes.ToTitle has:
 // func toTitle(s ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/bytes/bytes.go:487:16)) Object {
-// 	arg_1 := bytes.ToTitle(s)
+// 	res1 := bytes.ToTitle(s)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC bytes.ToTitleSpecial has:
 // func toTitleSpecial(c ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/bytes/bytes.go:503:23), s ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/bytes/bytes.go:503:46)) Object {
-// 	arg_1 := bytes.ToTitleSpecial(c, s)
+// 	res1 := bytes.ToTitleSpecial(c, s)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC bytes.ToUpper has:
 // func toUpper(s ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/bytes/bytes.go:481:16)) Object {
-// 	arg_1 := bytes.ToUpper(s)
+// 	res1 := bytes.ToUpper(s)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC bytes.ToUpperSpecial has:
 // func toUpperSpecial(c ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/bytes/bytes.go:491:23), s ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/bytes/bytes.go:491:46)) Object {
-// 	arg_1 := bytes.ToUpperSpecial(c, s)
+// 	res1 := bytes.ToUpperSpecial(c, s)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC bytes.Trim has:
 // func trim(s ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/bytes/bytes.go:699:13), cutset string) Object {
-// 	arg_1 := bytes.Trim(s, cutset)
+// 	res1 := bytes.Trim(s, cutset)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC bytes.TrimFunc has:
 // func trimFunc(s ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/bytes/bytes.go:578:17), f ABEND882(unrecognized Expr type *ast.FuncType at: ../GOSRC/bytes/bytes.go:578:27)) Object {
-// 	arg_1 := bytes.TrimFunc(s, f)
+// 	res1 := bytes.TrimFunc(s, f)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC bytes.TrimLeft has:
 // func trimLeft(s ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/bytes/bytes.go:705:17), cutset string) Object {
-// 	arg_1 := bytes.TrimLeft(s, cutset)
+// 	res1 := bytes.TrimLeft(s, cutset)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC bytes.TrimLeftFunc has:
 // func trimLeftFunc(s ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/bytes/bytes.go:555:21), f ABEND882(unrecognized Expr type *ast.FuncType at: ../GOSRC/bytes/bytes.go:555:31)) Object {
-// 	arg_1 := bytes.TrimLeftFunc(s, f)
+// 	res1 := bytes.TrimLeftFunc(s, f)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC bytes.TrimPrefix has:
 // func trimPrefix(s ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/bytes/bytes.go:584:27), prefix ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/bytes/bytes.go:584:27)) Object {
-// 	arg_1 := bytes.TrimPrefix(s, prefix)
+// 	res1 := bytes.TrimPrefix(s, prefix)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC bytes.TrimRight has:
 // func trimRight(s ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/bytes/bytes.go:711:18), cutset string) Object {
-// 	arg_1 := bytes.TrimRight(s, cutset)
+// 	res1 := bytes.TrimRight(s, cutset)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC bytes.TrimRightFunc has:
 // func trimRightFunc(s ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/bytes/bytes.go:565:22), f ABEND882(unrecognized Expr type *ast.FuncType at: ../GOSRC/bytes/bytes.go:565:32)) Object {
-// 	arg_1 := bytes.TrimRightFunc(s, f)
+// 	res1 := bytes.TrimRightFunc(s, f)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC bytes.TrimSpace has:
 // func trimSpace(s ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/bytes/bytes.go:717:18)) Object {
-// 	arg_1 := bytes.TrimSpace(s)
+// 	res1 := bytes.TrimSpace(s)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC bytes.TrimSuffix has:
 // func trimSuffix(s ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/bytes/bytes.go:593:27), suffix ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/bytes/bytes.go:593:27)) Object {
-// 	arg_1 := bytes.TrimSuffix(s, suffix)
+// 	res1 := bytes.TrimSuffix(s, suffix)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC bzip2.NewReader has:
 // func newReader(r ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/compress/bzip2/bzip2.go:46:18)) Object {
-// 	arg_1 := bzip2.NewReader(r)
+// 	res1 := bzip2.NewReader(r)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC cgi.Request has:
 // func request() Object {
-// 	arg_1, arg_2 := cgi.Request()
+// 	res1, res2 := cgi.Request()
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC cgi.RequestFromMap has:
 // func requestFromMap(params ABEND882(unrecognized Expr type *ast.MapType at: ../GOSRC/net/http/cgi/child.go:52:28)) Object {
-// 	arg_1, arg_2 := cgi.RequestFromMap(params)
+// 	res1, res2 := cgi.RequestFromMap(params)
 // 	...ABEND676: TODO...
 // }
 
@@ -14273,163 +14273,163 @@ GO FUNC cgo._runtime_cgocallback has:
 
 GO FUNC chacha20poly1305.New has:
 // func new(key ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/vendor/golang_org/x/crypto/chacha20poly1305/chacha20poly1305.go:26:14)) Object {
-// 	arg_1, arg_2 := chacha20poly1305.New(key)
+// 	res1, res2 := chacha20poly1305.New(key)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC cipher.NewCBCDecrypter has:
 // func newCBCDecrypter(b Object, iv ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/crypto/cipher/cbc.go:105:34)) Object {
-// 	arg_1 := cipher.NewCBCDecrypter(b, iv)
+// 	res1 := cipher.NewCBCDecrypter(b, iv)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC cipher.NewCBCEncrypter has:
 // func newCBCEncrypter(b Object, iv ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/crypto/cipher/cbc.go:45:34)) Object {
-// 	arg_1 := cipher.NewCBCEncrypter(b, iv)
+// 	res1 := cipher.NewCBCEncrypter(b, iv)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC cipher.NewCFBDecrypter has:
 // func newCFBDecrypter(block Object, iv ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/crypto/cipher/cfb.go:60:38)) Object {
-// 	arg_1 := cipher.NewCFBDecrypter(block, iv)
+// 	res1 := cipher.NewCFBDecrypter(block, iv)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC cipher.NewCFBEncrypter has:
 // func newCFBEncrypter(block Object, iv ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/crypto/cipher/cfb.go:53:38)) Object {
-// 	arg_1 := cipher.NewCFBEncrypter(block, iv)
+// 	res1 := cipher.NewCFBEncrypter(block, iv)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC cipher.NewCTR has:
 // func newCTR(block Object, iv ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/crypto/cipher/ctr.go:35:29)) Object {
-// 	arg_1 := cipher.NewCTR(block, iv)
+// 	res1 := cipher.NewCTR(block, iv)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC cipher.NewGCM has:
 // func newGCM(cipher Object) Object {
-// 	arg_1, arg_2 := cipher.NewGCM(cipher)
+// 	res1, res2 := cipher.NewGCM(cipher)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC cipher.NewGCMWithNonceSize has:
 // func newGCMWithNonceSize(cipher Object, size int) Object {
-// 	arg_1, arg_2 := cipher.NewGCMWithNonceSize(cipher, size)
+// 	res1, res2 := cipher.NewGCMWithNonceSize(cipher, size)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC cipher.NewGCMWithTagSize has:
 // func newGCMWithTagSize(cipher Object, tagSize int) Object {
-// 	arg_1, arg_2 := cipher.NewGCMWithTagSize(cipher, tagSize)
+// 	res1, res2 := cipher.NewGCMWithTagSize(cipher, tagSize)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC cipher.NewOFB has:
 // func newOFB(b Object, iv ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/crypto/cipher/ofb.go:21:25)) Object {
-// 	arg_1 := cipher.NewOFB(b, iv)
+// 	res1 := cipher.NewOFB(b, iv)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC cmplx.Abs has:
 // func abs(x Object) Object {
-// 	arg_1 := cmplx.Abs(x)
+// 	res1 := cmplx.Abs(x)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC cmplx.Acos has:
 // func acos(x Object) Object {
-// 	arg_1 := cmplx.Acos(x)
+// 	res1 := cmplx.Acos(x)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC cmplx.Acosh has:
 // func acosh(x Object) Object {
-// 	arg_1 := cmplx.Acosh(x)
+// 	res1 := cmplx.Acosh(x)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC cmplx.Asin has:
 // func asin(x Object) Object {
-// 	arg_1 := cmplx.Asin(x)
+// 	res1 := cmplx.Asin(x)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC cmplx.Asinh has:
 // func asinh(x Object) Object {
-// 	arg_1 := cmplx.Asinh(x)
+// 	res1 := cmplx.Asinh(x)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC cmplx.Atan has:
 // func atan(x Object) Object {
-// 	arg_1 := cmplx.Atan(x)
+// 	res1 := cmplx.Atan(x)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC cmplx.Atanh has:
 // func atanh(x Object) Object {
-// 	arg_1 := cmplx.Atanh(x)
+// 	res1 := cmplx.Atanh(x)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC cmplx.Conj has:
 // func conj(x Object) Object {
-// 	arg_1 := cmplx.Conj(x)
+// 	res1 := cmplx.Conj(x)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC cmplx.Cos has:
 // func cos(x Object) Object {
-// 	arg_1 := cmplx.Cos(x)
+// 	res1 := cmplx.Cos(x)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC cmplx.Cosh has:
 // func cosh(x Object) Object {
-// 	arg_1 := cmplx.Cosh(x)
+// 	res1 := cmplx.Cosh(x)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC cmplx.Cot has:
 // func cot(x Object) Object {
-// 	arg_1 := cmplx.Cot(x)
+// 	res1 := cmplx.Cot(x)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC cmplx.Exp has:
 // func exp(x Object) Object {
-// 	arg_1 := cmplx.Exp(x)
+// 	res1 := cmplx.Exp(x)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC cmplx.Inf has:
 // func inf() Object {
-// 	arg_1 := cmplx.Inf()
+// 	res1 := cmplx.Inf()
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC cmplx.Log has:
 // func log(x Object) Object {
-// 	arg_1 := cmplx.Log(x)
+// 	res1 := cmplx.Log(x)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC cmplx.Log10 has:
 // func log10(x Object) Object {
-// 	arg_1 := cmplx.Log10(x)
+// 	res1 := cmplx.Log10(x)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC cmplx.NaN has:
 // func naN() Object {
-// 	arg_1 := cmplx.NaN()
+// 	res1 := cmplx.NaN()
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC cmplx.Phase has:
 // func phase(x Object) Object {
-// 	arg_1 := cmplx.Phase(x)
+// 	res1 := cmplx.Phase(x)
 // 	...ABEND676: TODO...
 // }
 
@@ -14441,229 +14441,229 @@ GO FUNC cmplx.Polar has:
 
 GO FUNC cmplx.Pow has:
 // func pow(x Object, y Object) Object {
-// 	arg_1 := cmplx.Pow(x, y)
+// 	res1 := cmplx.Pow(x, y)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC cmplx.Rect has:
 // func rect(r Object, θ Object) Object {
-// 	arg_1 := cmplx.Rect(r, θ)
+// 	res1 := cmplx.Rect(r, θ)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC cmplx.Sin has:
 // func sin(x Object) Object {
-// 	arg_1 := cmplx.Sin(x)
+// 	res1 := cmplx.Sin(x)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC cmplx.Sinh has:
 // func sinh(x Object) Object {
-// 	arg_1 := cmplx.Sinh(x)
+// 	res1 := cmplx.Sinh(x)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC cmplx.Sqrt has:
 // func sqrt(x Object) Object {
-// 	arg_1 := cmplx.Sqrt(x)
+// 	res1 := cmplx.Sqrt(x)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC cmplx.Tan has:
 // func tan(x Object) Object {
-// 	arg_1 := cmplx.Tan(x)
+// 	res1 := cmplx.Tan(x)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC cmplx.Tanh has:
 // func tanh(x Object) Object {
-// 	arg_1 := cmplx.Tanh(x)
+// 	res1 := cmplx.Tanh(x)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC color.CMYKToRGB has:
 // func cMYKToRGB(c Object, m Object, y Object, k Object) Object {
-// 	arg_1, arg_2, arg_3 := color.CMYKToRGB(c, m, y, k)
+// 	res1, res2, res3 := color.CMYKToRGB(c, m, y, k)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC color.ModelFunc has:
 // func modelFunc(f ABEND882(unrecognized Expr type *ast.FuncType at: ../GOSRC/image/color/color.go:147:18)) Object {
-// 	arg_1 := color.ModelFunc(f)
+// 	res1 := color.ModelFunc(f)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC color.RGBToCMYK has:
 // func rGBToCMYK(r Object, g Object, b Object) Object {
-// 	arg_1, arg_2, arg_3, arg_4 := color.RGBToCMYK(r, g, b)
+// 	res1, res2, res3, res4 := color.RGBToCMYK(r, g, b)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC color.RGBToYCbCr has:
 // func rGBToYCbCr(r Object, g Object, b Object) Object {
-// 	arg_1, arg_2, arg_3 := color.RGBToYCbCr(r, g, b)
+// 	res1, res2, res3 := color.RGBToYCbCr(r, g, b)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC color.YCbCrToRGB has:
 // func yCbCrToRGB(y Object, cb Object, cr Object) Object {
-// 	arg_1, arg_2, arg_3 := color.YCbCrToRGB(y, cb, cr)
+// 	res1, res2, res3 := color.YCbCrToRGB(y, cb, cr)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC constant.BinaryOp has:
 // func binaryOp(x_ Object, op ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/go/constant/value.go:1011:28), y_ Object) Object {
-// 	arg_1 := constant.BinaryOp(x_, op, y_)
+// 	res1 := constant.BinaryOp(x_, op, y_)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC constant.Bytes has:
 // func bytes(x Object) Object {
-// 	arg_1 := constant.Bytes(x)
+// 	res1 := constant.Bytes(x)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC constant.Denom has:
 // func denom(x Object) Object {
-// 	arg_1 := constant.Denom(x)
+// 	res1 := constant.Denom(x)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC constant.Float32Val has:
 // func float32Val(x Object) Object {
-// 	arg_1, arg_2 := constant.Float32Val(x)
+// 	res1, res2 := constant.Float32Val(x)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC constant.Float64Val has:
 // func float64Val(x Object) Object {
-// 	arg_1, arg_2 := constant.Float64Val(x)
+// 	res1, res2 := constant.Float64Val(x)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC constant.Imag has:
 // func imag(x Object) Object {
-// 	arg_1 := constant.Imag(x)
+// 	res1 := constant.Imag(x)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC constant.Int64Val has:
 // func int64Val(x Object) Object {
-// 	arg_1, arg_2 := constant.Int64Val(x)
+// 	res1, res2 := constant.Int64Val(x)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC constant.MakeBool has:
 // func makeBool(b Object) Object {
-// 	arg_1 := constant.MakeBool(b)
+// 	res1 := constant.MakeBool(b)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC constant.MakeFloat64 has:
 // func makeFloat64(x Object) Object {
-// 	arg_1 := constant.MakeFloat64(x)
+// 	res1 := constant.MakeFloat64(x)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC constant.MakeFromBytes has:
 // func makeFromBytes(bytes ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/go/constant/value.go:621:26)) Object {
-// 	arg_1 := constant.MakeFromBytes(bytes)
+// 	res1 := constant.MakeFromBytes(bytes)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC constant.MakeFromLiteral has:
 // func makeFromLiteral(lit string, tok ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/go/constant/value.go:378:38), zero Object) Object {
-// 	arg_1 := constant.MakeFromLiteral(lit, tok, zero)
+// 	res1 := constant.MakeFromLiteral(lit, tok, zero)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC constant.MakeImag has:
 // func makeImag(x Object) Object {
-// 	arg_1 := constant.MakeImag(x)
+// 	res1 := constant.MakeImag(x)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC constant.MakeInt64 has:
 // func makeInt64(x Object) Object {
-// 	arg_1 := constant.MakeInt64(x)
+// 	res1 := constant.MakeInt64(x)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC constant.MakeString has:
 // func makeString(s string) Object {
-// 	arg_1 := constant.MakeString(s)
+// 	res1 := constant.MakeString(s)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC constant.MakeUint64 has:
 // func makeUint64(x Object) Object {
-// 	arg_1 := constant.MakeUint64(x)
+// 	res1 := constant.MakeUint64(x)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC constant.MakeUnknown has:
 // func makeUnknown() Object {
-// 	arg_1 := constant.MakeUnknown()
+// 	res1 := constant.MakeUnknown()
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC constant.Num has:
 // func num(x Object) Object {
-// 	arg_1 := constant.Num(x)
+// 	res1 := constant.Num(x)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC constant.Real has:
 // func real(x Object) Object {
-// 	arg_1 := constant.Real(x)
+// 	res1 := constant.Real(x)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC constant.Shift has:
 // func shift(x Object, op ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/go/constant/value.go:1191:24), s Object) Object {
-// 	arg_1 := constant.Shift(x, op, s)
+// 	res1 := constant.Shift(x, op, s)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC constant.ToComplex has:
 // func toComplex(x Object) Object {
-// 	arg_1 := constant.ToComplex(x)
+// 	res1 := constant.ToComplex(x)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC constant.ToFloat has:
 // func toFloat(x Object) Object {
-// 	arg_1 := constant.ToFloat(x)
+// 	res1 := constant.ToFloat(x)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC constant.ToInt has:
 // func toInt(x Object) Object {
-// 	arg_1 := constant.ToInt(x)
+// 	res1 := constant.ToInt(x)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC constant.Uint64Val has:
 // func uint64Val(x Object) Object {
-// 	arg_1, arg_2 := constant.Uint64Val(x)
+// 	res1, res2 := constant.Uint64Val(x)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC constant.UnaryOp has:
 // func unaryOp(op ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/go/constant/value.go:850:17), y Object, prec Object) Object {
-// 	arg_1 := constant.UnaryOp(op, y, prec)
+// 	res1 := constant.UnaryOp(op, y, prec)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC context.Background has:
 // func background() Object {
-// 	arg_1 := context.Background()
+// 	res1 := context.Background()
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC context.TODO has:
 // func tODO() Object {
-// 	arg_1 := context.TODO()
+// 	res1 := context.TODO()
 // 	...ABEND676: TODO...
 // }
 
@@ -14675,67 +14675,67 @@ GO FUNC context.WithCancel has:
 
 GO FUNC context.WithDeadline has:
 // func withDeadline(parent Object, d ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/context/context.go:384:37)) Object {
-// 	arg_1, arg_2 := context.WithDeadline(parent, d)
+// 	res1, res2 := context.WithDeadline(parent, d)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC context.WithTimeout has:
 // func withTimeout(parent Object, timeout ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/context/context.go:451:42)) Object {
-// 	arg_1, arg_2 := context.WithTimeout(parent, timeout)
+// 	res1, res2 := context.WithTimeout(parent, timeout)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC context.WithValue has:
 // func withValue(parent Object, key ABEND882(unrecognized Expr type *ast.InterfaceType at: ../GOSRC/context/context.go:468:41), val ABEND882(unrecognized Expr type *ast.InterfaceType at: ../GOSRC/context/context.go:468:41)) Object {
-// 	arg_1 := context.WithValue(parent, key, val)
+// 	res1 := context.WithValue(parent, key, val)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC cookiejar.New has:
 // func new(o ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/net/http/cookiejar/jar.go:77:12)) Object {
-// 	arg_1, arg_2 := cookiejar.New(o)
+// 	res1, res2 := cookiejar.New(o)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC crc32.MakeTable has:
 // func makeTable(poly Object) Object {
-// 	arg_1 := crc32.MakeTable(poly)
+// 	res1 := crc32.MakeTable(poly)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC crc32.New has:
 // func new(tab ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/hash/crc32/crc32.go:147:14)) Object {
-// 	arg_1 := crc32.New(tab)
+// 	res1 := crc32.New(tab)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC crc32.NewIEEE has:
 // func newIEEE() Object {
-// 	arg_1 := crc32.NewIEEE()
+// 	res1 := crc32.NewIEEE()
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC crc64.Checksum has:
 // func checksum(data ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/hash/crc64/crc64.go:199:20), tab ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/hash/crc64/crc64.go:199:32)) Object {
-// 	arg_1 := crc64.Checksum(data, tab)
+// 	res1 := crc64.Checksum(data, tab)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC crc64.MakeTable has:
 // func makeTable(poly Object) Object {
-// 	arg_1 := crc64.MakeTable(poly)
+// 	res1 := crc64.MakeTable(poly)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC crc64.New has:
 // func new(tab ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/hash/crc64/crc64.go:88:14)) Object {
-// 	arg_1 := crc64.New(tab)
+// 	res1 := crc64.New(tab)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC crc64.Update has:
 // func update(crc Object, tab ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/hash/crc64/crc64.go:181:29), p ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/hash/crc64/crc64.go:181:39)) Object {
-// 	arg_1 := crc64.Update(crc, tab, p)
+// 	res1 := crc64.Update(crc, tab, p)
 // 	...ABEND676: TODO...
 // }
 
@@ -14747,25 +14747,25 @@ GO FUNC crypto.RegisterHash has:
 
 GO FUNC cryptobyte.NewBuilder has:
 // func newBuilder(buffer ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/vendor/golang_org/x/crypto/cryptobyte/builder.go:37:24)) Object {
-// 	arg_1 := cryptobyte.NewBuilder(buffer)
+// 	res1 := cryptobyte.NewBuilder(buffer)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC cryptobyte.NewFixedBuilder has:
 // func newFixedBuilder(buffer ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/vendor/golang_org/x/crypto/cryptobyte/builder.go:46:29)) Object {
-// 	arg_1 := cryptobyte.NewFixedBuilder(buffer)
+// 	res1 := cryptobyte.NewFixedBuilder(buffer)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC csv.NewReader has:
 // func newReader(r ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/encoding/csv/reader.go:168:18)) Object {
-// 	arg_1 := csv.NewReader(r)
+// 	res1 := csv.NewReader(r)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC csv.NewWriter has:
 // func newWriter(w ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/encoding/csv/writer.go:31:18)) Object {
-// 	arg_1 := csv.NewWriter(w)
+// 	res1 := csv.NewWriter(w)
 // 	...ABEND676: TODO...
 // }
 
@@ -14807,7 +14807,7 @@ GO FUNC debug.SetTraceback has:
 
 GO FUNC debug.Stack has:
 // func stack() Object {
-// 	arg_1 := debug.Stack()
+// 	res1 := debug.Stack()
 // 	...ABEND676: TODO...
 // }
 
@@ -14819,37 +14819,37 @@ GO FUNC debug.WriteHeapDump has:
 
 GO FUNC des.NewCipher has:
 // func newCipher(key ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/crypto/des/cipher.go:29:20)) Object {
-// 	arg_1, arg_2 := des.NewCipher(key)
+// 	res1, res2 := des.NewCipher(key)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC des.NewTripleDESCipher has:
 // func newTripleDESCipher(key ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/crypto/des/cipher.go:73:29)) Object {
-// 	arg_1, arg_2 := des.NewTripleDESCipher(key)
+// 	res1, res2 := des.NewTripleDESCipher(key)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC dnsmessage.NewBuilder has:
 // func newBuilder(buf ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/vendor/golang_org/x/net/dns/dnsmessage/message.go:939:21), h Object) Object {
-// 	arg_1 := dnsmessage.NewBuilder(buf, h)
+// 	res1 := dnsmessage.NewBuilder(buf, h)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC dnsmessage.NewName has:
 // func newName(name string) Object {
-// 	arg_1, arg_2 := dnsmessage.NewName(name)
+// 	res1, res2 := dnsmessage.NewName(name)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC doc.Examples has:
 // func examples(files ABEND882(unrecognized Expr type *ast.Ellipsis at: ../GOSRC/go/doc/example.go:47:21)) Object {
-// 	arg_1 := doc.Examples(files)
+// 	res1 := doc.Examples(files)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC doc.New has:
 // func new(pkg ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/go/doc/doc.go:94:14), importPath string, mode Object) Object {
-// 	arg_1 := doc.New(pkg, importPath, mode)
+// 	res1 := doc.New(pkg, importPath, mode)
 // 	...ABEND676: TODO...
 // }
 
@@ -14885,13 +14885,13 @@ GO FUNC dsa.Sign has:
 
 GO FUNC dwarf.New has:
 // func new(abbrev ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/debug/dwarf/open.go:41:68), aranges ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/debug/dwarf/open.go:41:68), frame ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/debug/dwarf/open.go:41:68), info ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/debug/dwarf/open.go:41:68), line ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/debug/dwarf/open.go:41:68), pubnames ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/debug/dwarf/open.go:41:68), ranges ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/debug/dwarf/open.go:41:68), str ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/debug/dwarf/open.go:41:68)) Object {
-// 	arg_1, arg_2 := dwarf.New(abbrev, aranges, frame, info, line, pubnames, ranges, str)
+// 	res1, res2 := dwarf.New(abbrev, aranges, frame, info, line, pubnames, ranges, str)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC ecdsa.GenerateKey has:
 // func generateKey(c ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/crypto/ecdsa/ecdsa.go:105:20), rand ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/crypto/ecdsa/ecdsa.go:105:41)) Object {
-// 	arg_1, arg_2 := ecdsa.GenerateKey(c, rand)
+// 	res1, res2 := ecdsa.GenerateKey(c, rand)
 // 	...ABEND676: TODO...
 // }
 
@@ -14903,25 +14903,25 @@ GO FUNC ecdsa.Sign has:
 
 GO FUNC elf.NewFile has:
 // func newFile(r ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/debug/elf/file.go:235:16)) Object {
-// 	arg_1, arg_2 := elf.NewFile(r)
+// 	res1, res2 := elf.NewFile(r)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC elf.Open has:
 // func open(name string) Object {
-// 	arg_1, arg_2 := elf.Open(name)
+// 	res1, res2 := elf.Open(name)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC elf.R_INFO has:
 // func r_INFO(sym Object, typ Object) Object {
-// 	arg_1 := elf.R_INFO(sym, typ)
+// 	res1 := elf.R_INFO(sym, typ)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC elf.ST_INFO has:
 // func sT_INFO(bind Object, typ Object) Object {
-// 	arg_1 := elf.ST_INFO(bind, typ)
+// 	res1 := elf.ST_INFO(bind, typ)
 // 	...ABEND676: TODO...
 // }
 
@@ -14933,31 +14933,31 @@ GO FUNC elliptic.GenerateKey has:
 
 GO FUNC elliptic.Marshal has:
 // func marshal(curve Object, x ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/crypto/elliptic/elliptic.go:305:32), y ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/crypto/elliptic/elliptic.go:305:32)) Object {
-// 	arg_1 := elliptic.Marshal(curve, x, y)
+// 	res1 := elliptic.Marshal(curve, x, y)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC elliptic.P224 has:
 // func p224() Object {
-// 	arg_1 := elliptic.P224()
+// 	res1 := elliptic.P224()
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC elliptic.P256 has:
 // func p256() Object {
-// 	arg_1 := elliptic.P256()
+// 	res1 := elliptic.P256()
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC elliptic.P384 has:
 // func p384() Object {
-// 	arg_1 := elliptic.P384()
+// 	res1 := elliptic.P384()
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC elliptic.P521 has:
 // func p521() Object {
-// 	arg_1 := elliptic.P521()
+// 	res1 := elliptic.P521()
 // 	...ABEND676: TODO...
 // }
 
@@ -14969,19 +14969,19 @@ GO FUNC elliptic.Unmarshal has:
 
 GO FUNC exec.Command has:
 // func command(name string, arg ABEND882(unrecognized Expr type *ast.Ellipsis at: ../GOSRC/os/exec/exec.go:155:31)) Object {
-// 	arg_1 := exec.Command(name, arg)
+// 	res1 := exec.Command(name, arg)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC exec.CommandContext has:
 // func commandContext(ctx ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/os/exec/exec.go:175:25), name string, arg ABEND882(unrecognized Expr type *ast.Ellipsis at: ../GOSRC/os/exec/exec.go:175:59)) Object {
-// 	arg_1 := exec.CommandContext(ctx, name, arg)
+// 	res1 := exec.CommandContext(ctx, name, arg)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC exec.LookPath has:
 // func lookPath(file string) Object {
-// 	arg_1, arg_2 := exec.LookPath(file)
+// 	res1, res2 := exec.LookPath(file)
 // 	...ABEND676: TODO...
 // }
 
@@ -14993,37 +14993,37 @@ GO FUNC expvar.Do has:
 
 GO FUNC expvar.Get has:
 // func get(name string) Object {
-// 	arg_1 := expvar.Get(name)
+// 	res1 := expvar.Get(name)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC expvar.Handler has:
 // func handler() Object {
-// 	arg_1 := expvar.Handler()
+// 	res1 := expvar.Handler()
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC expvar.NewFloat has:
 // func newFloat(name string) Object {
-// 	arg_1 := expvar.NewFloat(name)
+// 	res1 := expvar.NewFloat(name)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC expvar.NewInt has:
 // func newInt(name string) Object {
-// 	arg_1 := expvar.NewInt(name)
+// 	res1 := expvar.NewInt(name)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC expvar.NewMap has:
 // func newMap(name string) Object {
-// 	arg_1 := expvar.NewMap(name)
+// 	res1 := expvar.NewMap(name)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC expvar.NewString has:
 // func newString(name string) Object {
-// 	arg_1 := expvar.NewString(name)
+// 	res1 := expvar.NewString(name)
 // 	...ABEND676: TODO...
 // }
 
@@ -15035,19 +15035,19 @@ GO FUNC expvar.Publish has:
 
 GO FUNC fcgi.ProcessEnv has:
 // func processEnv(r ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/net/http/fcgi/child.go:358:19)) Object {
-// 	arg_1 := fcgi.ProcessEnv(r)
+// 	res1 := fcgi.ProcessEnv(r)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC filepath.Abs has:
 // func abs(path string) Object {
-// 	arg_1, arg_2 := filepath.Abs(path)
+// 	res1, res2 := filepath.Abs(path)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC filepath.EvalSymlinks has:
 // func evalSymlinks(path string) Object {
-// 	arg_1, arg_2 := filepath.EvalSymlinks(path)
+// 	res1, res2 := filepath.EvalSymlinks(path)
 // 	...ABEND676: TODO...
 // }
 
@@ -15065,7 +15065,7 @@ GO FUNC filepath.Match has:
 
 GO FUNC filepath.Rel has:
 // func rel(basepath string, targpath string) Object {
-// 	arg_1, arg_2 := filepath.Rel(basepath, targpath)
+// 	res1, res2 := filepath.Rel(basepath, targpath)
 // 	...ABEND676: TODO...
 // }
 
@@ -15077,13 +15077,13 @@ GO FUNC filepath.Split has:
 
 GO FUNC filepath.SplitList has:
 // func splitList(path string) Object {
-// 	arg_1 := filepath.SplitList(path)
+// 	res1 := filepath.SplitList(path)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC flag.Args has:
 // func args() Object {
-// 	arg_1 := flag.Args()
+// 	res1 := flag.Args()
 // 	...ABEND676: TODO...
 // }
 
@@ -15095,7 +15095,7 @@ GO FUNC flag.BoolVar has:
 
 GO FUNC flag.Duration has:
 // func duration(name string, value ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/flag/flag.go:783:34), usage string) Object {
-// 	arg_1 := flag.Duration(name, value, usage)
+// 	res1 := flag.Duration(name, value, usage)
 // 	...ABEND676: TODO...
 // }
 
@@ -15107,7 +15107,7 @@ GO FUNC flag.DurationVar has:
 
 GO FUNC flag.Float64 has:
 // func float64(name string, value Object, usage string) Object {
-// 	arg_1 := flag.Float64(name, value, usage)
+// 	res1 := flag.Float64(name, value, usage)
 // 	...ABEND676: TODO...
 // }
 
@@ -15131,13 +15131,13 @@ GO FUNC flag.IntVar has:
 
 GO FUNC flag.Lookup has:
 // func lookup(name string) Object {
-// 	arg_1 := flag.Lookup(name)
+// 	res1 := flag.Lookup(name)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC flag.NewFlagSet has:
 // func newFlagSet(name string, errorHandling Object) Object {
-// 	arg_1 := flag.NewFlagSet(name, errorHandling)
+// 	res1 := flag.NewFlagSet(name, errorHandling)
 // 	...ABEND676: TODO...
 // }
 
@@ -15161,7 +15161,7 @@ GO FUNC flag.StringVar has:
 
 GO FUNC flag.Uint64 has:
 // func uint64(name string, value Object, usage string) Object {
-// 	arg_1 := flag.Uint64(name, value, usage)
+// 	res1 := flag.Uint64(name, value, usage)
 // 	...ABEND676: TODO...
 // }
 
@@ -15203,25 +15203,25 @@ GO FUNC flag.VisitAll has:
 
 GO FUNC flate.NewReader has:
 // func newReader(r ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/compress/flate/inflate.go:796:18)) Object {
-// 	arg_1 := flate.NewReader(r)
+// 	res1 := flate.NewReader(r)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC flate.NewReaderDict has:
 // func newReaderDict(r ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/compress/flate/inflate.go:815:22), dict ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/compress/flate/inflate.go:815:38)) Object {
-// 	arg_1 := flate.NewReaderDict(r, dict)
+// 	res1 := flate.NewReaderDict(r, dict)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC flate.NewWriter has:
 // func newWriter(w ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/compress/flate/deflate.go:666:18), level int) Object {
-// 	arg_1, arg_2 := flate.NewWriter(w, level)
+// 	res1, res2 := flate.NewWriter(w, level)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC flate.NewWriterDict has:
 // func newWriterDict(w ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/compress/flate/deflate.go:680:22), level int, dict ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/compress/flate/deflate.go:680:49)) Object {
-// 	arg_1, arg_2 := flate.NewWriterDict(w, level, dict)
+// 	res1, res2 := flate.NewWriterDict(w, level, dict)
 // 	...ABEND676: TODO...
 // }
 
@@ -15317,73 +15317,73 @@ GO FUNC fmt.Sscanln has:
 
 GO FUNC fnv.New128 has:
 // func new128() Object {
-// 	arg_1 := fnv.New128()
+// 	res1 := fnv.New128()
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC fnv.New128a has:
 // func new128a() Object {
-// 	arg_1 := fnv.New128a()
+// 	res1 := fnv.New128a()
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC fnv.New32 has:
 // func new32() Object {
-// 	arg_1 := fnv.New32()
+// 	res1 := fnv.New32()
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC fnv.New32a has:
 // func new32a() Object {
-// 	arg_1 := fnv.New32a()
+// 	res1 := fnv.New32a()
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC fnv.New64 has:
 // func new64() Object {
-// 	arg_1 := fnv.New64()
+// 	res1 := fnv.New64()
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC fnv.New64a has:
 // func new64a() Object {
-// 	arg_1 := fnv.New64a()
+// 	res1 := fnv.New64a()
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC format.Source has:
 // func source(src ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/go/format/format.go:91:17)) Object {
-// 	arg_1, arg_2 := format.Source(src)
+// 	res1, res2 := format.Source(src)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC gif.Decode has:
 // func decode(r ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/image/gif/reader.go:561:15)) Object {
-// 	arg_1, arg_2 := gif.Decode(r)
+// 	res1, res2 := gif.Decode(r)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC gif.DecodeAll has:
 // func decodeAll(r ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/image/gif/reader.go:601:18)) Object {
-// 	arg_1, arg_2 := gif.DecodeAll(r)
+// 	res1, res2 := gif.DecodeAll(r)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC gif.DecodeConfig has:
 // func decodeConfig(r ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/image/gif/reader.go:623:21)) Object {
-// 	arg_1, arg_2 := gif.DecodeConfig(r)
+// 	res1, res2 := gif.DecodeConfig(r)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC gob.NewDecoder has:
 // func newDecoder(r ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/encoding/gob/decoder.go:41:19)) Object {
-// 	arg_1 := gob.NewDecoder(r)
+// 	res1 := gob.NewDecoder(r)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC gob.NewEncoder has:
 // func newEncoder(w ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/encoding/gob/encoder.go:33:19)) Object {
-// 	arg_1 := gob.NewEncoder(w)
+// 	res1 := gob.NewEncoder(w)
 // 	...ABEND676: TODO...
 // }
 
@@ -15401,31 +15401,31 @@ GO FUNC gob.RegisterName has:
 
 GO FUNC gosym.NewLineTable has:
 // func newLineTable(data ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/debug/gosym/pclntab.go:124:24), text Object) Object {
-// 	arg_1 := gosym.NewLineTable(data, text)
+// 	res1 := gosym.NewLineTable(data, text)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC gosym.NewTable has:
 // func newTable(symtab ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/debug/gosym/symtab.go:283:22), pcln ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/debug/gosym/symtab.go:283:35)) Object {
-// 	arg_1, arg_2 := gosym.NewTable(symtab, pcln)
+// 	res1, res2 := gosym.NewTable(symtab, pcln)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC gzip.NewReader has:
 // func newReader(r ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/compress/gzip/gunzip.go:92:18)) Object {
-// 	arg_1, arg_2 := gzip.NewReader(r)
+// 	res1, res2 := gzip.NewReader(r)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC gzip.NewWriter has:
 // func newWriter(w ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/compress/gzip/gzip.go:49:18)) Object {
-// 	arg_1 := gzip.NewWriter(w)
+// 	res1 := gzip.NewWriter(w)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC gzip.NewWriterLevel has:
 // func newWriterLevel(w ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/compress/gzip/gzip.go:60:23), level int) Object {
-// 	arg_1, arg_2 := gzip.NewWriterLevel(w, level)
+// 	res1, res2 := gzip.NewWriterLevel(w, level)
 // 	...ABEND676: TODO...
 // }
 
@@ -15443,7 +15443,7 @@ GO FUNC heap.Init has:
 
 GO FUNC heap.Pop has:
 // func pop(h Object) Object {
-// 	arg_1 := heap.Pop(h)
+// 	res1 := heap.Pop(h)
 // 	...ABEND676: TODO...
 // }
 
@@ -15455,79 +15455,79 @@ GO FUNC heap.Push has:
 
 GO FUNC heap.Remove has:
 // func remove(h Object, i int) Object {
-// 	arg_1 := heap.Remove(h, i)
+// 	res1 := heap.Remove(h, i)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC hex.Decode has:
 // func decode(dst ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/encoding/hex/hex.go:57:22), src ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/encoding/hex/hex.go:57:22)) Object {
-// 	arg_1, arg_2 := hex.Decode(dst, src)
+// 	res1, res2 := hex.Decode(dst, src)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC hex.DecodeString has:
 // func decodeString(s string) Object {
-// 	arg_1, arg_2 := hex.DecodeString(s)
+// 	res1, res2 := hex.DecodeString(s)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC hex.Dumper has:
 // func dumper(w ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/encoding/hex/hex.go:204:15)) Object {
-// 	arg_1 := hex.Dumper(w)
+// 	res1 := hex.Dumper(w)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC hex.NewDecoder has:
 // func newDecoder(r ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/encoding/hex/hex.go:165:19)) Object {
-// 	arg_1 := hex.NewDecoder(r)
+// 	res1 := hex.NewDecoder(r)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC hex.NewEncoder has:
 // func newEncoder(w ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/encoding/hex/hex.go:136:19)) Object {
-// 	arg_1 := hex.NewEncoder(w)
+// 	res1 := hex.NewEncoder(w)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC hmac.New has:
 // func new(h ABEND882(unrecognized Expr type *ast.FuncType at: ../GOSRC/crypto/hmac/hmac.go:70:12), key ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/crypto/hmac/hmac.go:70:34)) Object {
-// 	arg_1 := hmac.New(h, key)
+// 	res1 := hmac.New(h, key)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC hpack.AppendHuffmanString has:
 // func appendHuffmanString(dst ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/vendor/golang_org/x/net/http2/hpack/huffman.go:160:30), s string) Object {
-// 	arg_1 := hpack.AppendHuffmanString(dst, s)
+// 	res1 := hpack.AppendHuffmanString(dst, s)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC hpack.HuffmanDecode has:
 // func huffmanDecode(w ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/vendor/golang_org/x/net/http2/hpack/huffman.go:21:22), v ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/vendor/golang_org/x/net/http2/hpack/huffman.go:21:35)) Object {
-// 	arg_1, arg_2 := hpack.HuffmanDecode(w, v)
+// 	res1, res2 := hpack.HuffmanDecode(w, v)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC hpack.HuffmanDecodeToString has:
 // func huffmanDecodeToString(v ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/vendor/golang_org/x/net/http2/hpack/huffman.go:32:30)) Object {
-// 	arg_1, arg_2 := hpack.HuffmanDecodeToString(v)
+// 	res1, res2 := hpack.HuffmanDecodeToString(v)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC hpack.HuffmanEncodeLength has:
 // func huffmanEncodeLength(s string) Object {
-// 	arg_1 := hpack.HuffmanEncodeLength(s)
+// 	res1 := hpack.HuffmanEncodeLength(s)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC hpack.NewDecoder has:
 // func newDecoder(maxDynamicTableSize Object, emitFunc ABEND882(unrecognized Expr type *ast.FuncType at: ../GOSRC/vendor/golang_org/x/net/http2/hpack/hpack.go:100:54)) Object {
-// 	arg_1 := hpack.NewDecoder(maxDynamicTableSize, emitFunc)
+// 	res1 := hpack.NewDecoder(maxDynamicTableSize, emitFunc)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC hpack.NewEncoder has:
 // func newEncoder(w ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/vendor/golang_org/x/net/http2/hpack/encode.go:35:19)) Object {
-// 	arg_1 := hpack.NewEncoder(w)
+// 	res1 := hpack.NewEncoder(w)
 // 	...ABEND676: TODO...
 // }
 
@@ -15539,7 +15539,7 @@ GO FUNC http.Error has:
 
 GO FUNC http.FileServer has:
 // func fileServer(root Object) Object {
-// 	arg_1 := http.FileServer(root)
+// 	res1 := http.FileServer(root)
 // 	...ABEND676: TODO...
 // }
 
@@ -15569,25 +15569,25 @@ GO FUNC http.Head has:
 
 GO FUNC http.MaxBytesReader has:
 // func maxBytesReader(w Object, r ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/net/http/request.go:1056:41), n Object) Object {
-// 	arg_1 := http.MaxBytesReader(w, r, n)
+// 	res1 := http.MaxBytesReader(w, r, n)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC http.NewFileTransport has:
 // func newFileTransport(fs Object) Object {
-// 	arg_1 := http.NewFileTransport(fs)
+// 	res1 := http.NewFileTransport(fs)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC http.NewRequest has:
 // func newRequest(method string, url string, body ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/net/http/request.go:792:42)) Object {
-// 	arg_1, arg_2 := http.NewRequest(method, url, body)
+// 	res1, res2 := http.NewRequest(method, url, body)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC http.NewServeMux has:
 // func newServeMux() Object {
-// 	arg_1 := http.NewServeMux()
+// 	res1 := http.NewServeMux()
 // 	...ABEND676: TODO...
 // }
 
@@ -15599,7 +15599,7 @@ GO FUNC http.NotFound has:
 
 GO FUNC http.NotFoundHandler has:
 // func notFoundHandler() Object {
-// 	arg_1 := http.NotFoundHandler()
+// 	res1 := http.NotFoundHandler()
 // 	...ABEND676: TODO...
 // }
 
@@ -15629,25 +15629,25 @@ GO FUNC http.PostForm has:
 
 GO FUNC http.ProxyFromEnvironment has:
 // func proxyFromEnvironment(req ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/net/http/transport.go:345:31)) Object {
-// 	arg_1, arg_2 := http.ProxyFromEnvironment(req)
+// 	res1, res2 := http.ProxyFromEnvironment(req)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC http.ProxyURL has:
 // func proxyURL(fixedURL ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/net/http/transport.go:351:24)) Object {
-// 	arg_1 := http.ProxyURL(fixedURL)
+// 	res1 := http.ProxyURL(fixedURL)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC http.ReadRequest has:
 // func readRequest(b ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/net/http/request.go:942:20)) Object {
-// 	arg_1, arg_2 := http.ReadRequest(b)
+// 	res1, res2 := http.ReadRequest(b)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC http.ReadResponse has:
 // func readResponse(r ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/net/http/response.go:148:21), req ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/net/http/response.go:148:40)) Object {
-// 	arg_1, arg_2 := http.ReadResponse(r, req)
+// 	res1, res2 := http.ReadResponse(r, req)
 // 	...ABEND676: TODO...
 // }
 
@@ -15659,7 +15659,7 @@ GO FUNC http.Redirect has:
 
 GO FUNC http.RedirectHandler has:
 // func redirectHandler(url string, code int) Object {
-// 	arg_1 := http.RedirectHandler(url, code)
+// 	res1 := http.RedirectHandler(url, code)
 // 	...ABEND676: TODO...
 // }
 
@@ -15683,289 +15683,289 @@ GO FUNC http.SetCookie has:
 
 GO FUNC http.StripPrefix has:
 // func stripPrefix(prefix string, h Object) Object {
-// 	arg_1 := http.StripPrefix(prefix, h)
+// 	res1 := http.StripPrefix(prefix, h)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC http.TimeoutHandler has:
 // func timeoutHandler(h Object, dt ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/net/http/server.go:3106:35), msg string) Object {
-// 	arg_1 := http.TimeoutHandler(h, dt, msg)
+// 	res1 := http.TimeoutHandler(h, dt, msg)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC httpguts.PunycodeHostPort has:
 // func punycodeHostPort(v string) Object {
-// 	arg_1, arg_2 := httpguts.PunycodeHostPort(v)
+// 	res1, res2 := httpguts.PunycodeHostPort(v)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC httpproxy.FromEnvironment has:
 // func fromEnvironment() Object {
-// 	arg_1 := httpproxy.FromEnvironment()
+// 	res1 := httpproxy.FromEnvironment()
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC httptest.NewRecorder has:
 // func newRecorder() Object {
-// 	arg_1 := httptest.NewRecorder()
+// 	res1 := httptest.NewRecorder()
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC httptest.NewRequest has:
 // func newRequest(method string, target string, body ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/net/http/httptest/httptest.go:41:45)) Object {
-// 	arg_1 := httptest.NewRequest(method, target, body)
+// 	res1 := httptest.NewRequest(method, target, body)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC httptest.NewServer has:
 // func newServer(handler ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/net/http/httptest/server.go:80:24)) Object {
-// 	arg_1 := httptest.NewServer(handler)
+// 	res1 := httptest.NewServer(handler)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC httptest.NewTLSServer has:
 // func newTLSServer(handler ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/net/http/httptest/server.go:160:27)) Object {
-// 	arg_1 := httptest.NewTLSServer(handler)
+// 	res1 := httptest.NewTLSServer(handler)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC httptest.NewUnstartedServer has:
 // func newUnstartedServer(handler ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/net/http/httptest/server.go:92:33)) Object {
-// 	arg_1 := httptest.NewUnstartedServer(handler)
+// 	res1 := httptest.NewUnstartedServer(handler)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC httptrace.ContextClientTrace has:
 // func contextClientTrace(ctx ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/net/http/httptrace/trace.go:24:29)) Object {
-// 	arg_1 := httptrace.ContextClientTrace(ctx)
+// 	res1 := httptrace.ContextClientTrace(ctx)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC httptrace.WithClientTrace has:
 // func withClientTrace(ctx ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/net/http/httptrace/trace.go:34:26), trace ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/net/http/httptrace/trace.go:34:49)) Object {
-// 	arg_1 := httptrace.WithClientTrace(ctx, trace)
+// 	res1 := httptrace.WithClientTrace(ctx, trace)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC httputil.DumpRequest has:
 // func dumpRequest(req ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/net/http/httputil/dump.go:191:22), body Object) Object {
-// 	arg_1, arg_2 := httputil.DumpRequest(req, body)
+// 	res1, res2 := httputil.DumpRequest(req, body)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC httputil.DumpRequestOut has:
 // func dumpRequestOut(req ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/net/http/httputil/dump.go:66:25), body Object) Object {
-// 	arg_1, arg_2 := httputil.DumpRequestOut(req, body)
+// 	res1, res2 := httputil.DumpRequestOut(req, body)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC httputil.DumpResponse has:
 // func dumpResponse(resp ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/net/http/httputil/dump.go:281:24), body Object) Object {
-// 	arg_1, arg_2 := httputil.DumpResponse(resp, body)
+// 	res1, res2 := httputil.DumpResponse(resp, body)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC httputil.NewChunkedReader has:
 // func newChunkedReader(r ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/net/http/httputil/httputil.go:20:25)) Object {
-// 	arg_1 := httputil.NewChunkedReader(r)
+// 	res1 := httputil.NewChunkedReader(r)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC httputil.NewChunkedWriter has:
 // func newChunkedWriter(w ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/net/http/httputil/httputil.go:35:25)) Object {
-// 	arg_1 := httputil.NewChunkedWriter(w)
+// 	res1 := httputil.NewChunkedWriter(w)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC httputil.NewClientConn has:
 // func newClientConn(c ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/net/http/httputil/persist.go:248:22), r ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/net/http/httputil/persist.go:248:34)) Object {
-// 	arg_1 := httputil.NewClientConn(c, r)
+// 	res1 := httputil.NewClientConn(c, r)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC httputil.NewProxyClientConn has:
 // func newProxyClientConn(c ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/net/http/httputil/persist.go:265:27), r ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/net/http/httputil/persist.go:265:39)) Object {
-// 	arg_1 := httputil.NewProxyClientConn(c, r)
+// 	res1 := httputil.NewProxyClientConn(c, r)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC httputil.NewServerConn has:
 // func newServerConn(c ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/net/http/httputil/persist.go:54:22), r ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/net/http/httputil/persist.go:54:34)) Object {
-// 	arg_1 := httputil.NewServerConn(c, r)
+// 	res1 := httputil.NewServerConn(c, r)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC httputil.NewSingleHostReverseProxy has:
 // func newSingleHostReverseProxy(target ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/net/http/httputil/reverseproxy.go:103:39)) Object {
-// 	arg_1 := httputil.NewSingleHostReverseProxy(target)
+// 	res1 := httputil.NewSingleHostReverseProxy(target)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC idna.BidiRule has:
 // func bidiRule() Object {
-// 	arg_1 := idna.BidiRule()
+// 	res1 := idna.BidiRule()
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC idna.MapForLookup has:
 // func mapForLookup() Object {
-// 	arg_1 := idna.MapForLookup()
+// 	res1 := idna.MapForLookup()
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC idna.New has:
 // func new(o ABEND882(unrecognized Expr type *ast.Ellipsis at: ../GOSRC/vendor/golang_org/x/net/idna/idna.go:189:12)) Object {
-// 	arg_1 := idna.New(o)
+// 	res1 := idna.New(o)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC idna.RemoveLeadingDots has:
 // func removeLeadingDots(remove Object) Object {
-// 	arg_1 := idna.RemoveLeadingDots(remove)
+// 	res1 := idna.RemoveLeadingDots(remove)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC idna.StrictDomainName has:
 // func strictDomainName(use Object) Object {
-// 	arg_1 := idna.StrictDomainName(use)
+// 	res1 := idna.StrictDomainName(use)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC idna.ToASCII has:
 // func toASCII(s string) Object {
-// 	arg_1, arg_2 := idna.ToASCII(s)
+// 	res1, res2 := idna.ToASCII(s)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC idna.ToUnicode has:
 // func toUnicode(s string) Object {
-// 	arg_1, arg_2 := idna.ToUnicode(s)
+// 	res1, res2 := idna.ToUnicode(s)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC idna.Transitional has:
 // func transitional(transitional Object) Object {
-// 	arg_1 := idna.Transitional(transitional)
+// 	res1 := idna.Transitional(transitional)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC idna.ValidateForRegistration has:
 // func validateForRegistration() Object {
-// 	arg_1 := idna.ValidateForRegistration()
+// 	res1 := idna.ValidateForRegistration()
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC idna.ValidateLabels has:
 // func validateLabels(enable Object) Object {
-// 	arg_1 := idna.ValidateLabels(enable)
+// 	res1 := idna.ValidateLabels(enable)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC idna.VerifyDNSLength has:
 // func verifyDNSLength(verify Object) Object {
-// 	arg_1 := idna.VerifyDNSLength(verify)
+// 	res1 := idna.VerifyDNSLength(verify)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC image.Decode has:
 // func decode(r ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/image/format.go:78:15)) Object {
-// 	arg_1, arg_2, arg_3 := image.Decode(r)
+// 	res1, res2, res3 := image.Decode(r)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC image.DecodeConfig has:
 // func decodeConfig(r ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/image/format.go:92:21)) Object {
-// 	arg_1, arg_2, arg_3 := image.DecodeConfig(r)
+// 	res1, res2, res3 := image.DecodeConfig(r)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC image.NewAlpha has:
 // func newAlpha(r Object) Object {
-// 	arg_1 := image.NewAlpha(r)
+// 	res1 := image.NewAlpha(r)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC image.NewAlpha16 has:
 // func newAlpha16(r Object) Object {
-// 	arg_1 := image.NewAlpha16(r)
+// 	res1 := image.NewAlpha16(r)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC image.NewCMYK has:
 // func newCMYK(r Object) Object {
-// 	arg_1 := image.NewCMYK(r)
+// 	res1 := image.NewCMYK(r)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC image.NewGray has:
 // func newGray(r Object) Object {
-// 	arg_1 := image.NewGray(r)
+// 	res1 := image.NewGray(r)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC image.NewGray16 has:
 // func newGray16(r Object) Object {
-// 	arg_1 := image.NewGray16(r)
+// 	res1 := image.NewGray16(r)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC image.NewNRGBA has:
 // func newNRGBA(r Object) Object {
-// 	arg_1 := image.NewNRGBA(r)
+// 	res1 := image.NewNRGBA(r)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC image.NewNRGBA64 has:
 // func newNRGBA64(r Object) Object {
-// 	arg_1 := image.NewNRGBA64(r)
+// 	res1 := image.NewNRGBA64(r)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC image.NewNYCbCrA has:
 // func newNYCbCrA(r Object, subsampleRatio Object) Object {
-// 	arg_1 := image.NewNYCbCrA(r, subsampleRatio)
+// 	res1 := image.NewNYCbCrA(r, subsampleRatio)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC image.NewPaletted has:
 // func newPaletted(r Object, p ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/image/image.go:1019:33)) Object {
-// 	arg_1 := image.NewPaletted(r, p)
+// 	res1 := image.NewPaletted(r, p)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC image.NewRGBA has:
 // func newRGBA(r Object) Object {
-// 	arg_1 := image.NewRGBA(r)
+// 	res1 := image.NewRGBA(r)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC image.NewRGBA64 has:
 // func newRGBA64(r Object) Object {
-// 	arg_1 := image.NewRGBA64(r)
+// 	res1 := image.NewRGBA64(r)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC image.NewUniform has:
 // func newUniform(c ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/image/names.go:50:19)) Object {
-// 	arg_1 := image.NewUniform(c)
+// 	res1 := image.NewUniform(c)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC image.NewYCbCr has:
 // func newYCbCr(r Object, subsampleRatio Object) Object {
-// 	arg_1 := image.NewYCbCr(r, subsampleRatio)
+// 	res1 := image.NewYCbCr(r, subsampleRatio)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC image.Pt has:
 // func pt(X int, Y int) Object {
-// 	arg_1 := image.Pt(X, Y)
+// 	res1 := image.Pt(X, Y)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC image.Rect has:
 // func rect(x0 int, y0 int, x1 int, y1 int) Object {
-// 	arg_1 := image.Rect(x0, y0, x1, y1)
+// 	res1 := image.Rect(x0, y0, x1, y1)
 // 	...ABEND676: TODO...
 // }
 
@@ -15977,13 +15977,13 @@ GO FUNC image.RegisterFormat has:
 
 GO FUNC importer.Default has:
 // func default() Object {
-// 	arg_1 := importer.Default()
+// 	res1 := importer.Default()
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC importer.For has:
 // func for(compiler string, lookup Object) Object {
-// 	arg_1 := importer.For(compiler, lookup)
+// 	res1 := importer.For(compiler, lookup)
 // 	...ABEND676: TODO...
 // }
 
@@ -16007,31 +16007,31 @@ GO FUNC io.CopyN has:
 
 GO FUNC io.LimitReader has:
 // func limitReader(r Object, n Object) Object {
-// 	arg_1 := io.LimitReader(r, n)
+// 	res1 := io.LimitReader(r, n)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC io.MultiReader has:
 // func multiReader(readers ABEND882(unrecognized Expr type *ast.Ellipsis at: ../GOSRC/io/multi.go:48:26)) Object {
-// 	arg_1 := io.MultiReader(readers)
+// 	res1 := io.MultiReader(readers)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC io.MultiWriter has:
 // func multiWriter(writers ABEND882(unrecognized Expr type *ast.Ellipsis at: ../GOSRC/io/multi.go:102:26)) Object {
-// 	arg_1 := io.MultiWriter(writers)
+// 	res1 := io.MultiWriter(writers)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC io.NewSectionReader has:
 // func newSectionReader(r Object, off Object, n Object) Object {
-// 	arg_1 := io.NewSectionReader(r, off, n)
+// 	res1 := io.NewSectionReader(r, off, n)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC io.Pipe has:
 // func pipe() Object {
-// 	arg_1, arg_2 := io.Pipe()
+// 	res1, res2 := io.Pipe()
 // 	...ABEND676: TODO...
 // }
 
@@ -16049,7 +16049,7 @@ GO FUNC io.ReadFull has:
 
 GO FUNC io.TeeReader has:
 // func teeReader(r Object, w Object) Object {
-// 	arg_1 := io.TeeReader(r, w)
+// 	res1 := io.TeeReader(r, w)
 // 	...ABEND676: TODO...
 // }
 
@@ -16061,67 +16061,67 @@ GO FUNC io.WriteString has:
 
 GO FUNC iotest.DataErrReader has:
 // func dataErrReader(r ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/testing/iotest/reader.go:45:22)) Object {
-// 	arg_1 := iotest.DataErrReader(r)
+// 	res1 := iotest.DataErrReader(r)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC iotest.HalfReader has:
 // func halfReader(r ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/testing/iotest/reader.go:30:19)) Object {
-// 	arg_1 := iotest.HalfReader(r)
+// 	res1 := iotest.HalfReader(r)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC iotest.NewReadLogger has:
 // func newReadLogger(prefix string, r ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/testing/iotest/logger.go:52:37)) Object {
-// 	arg_1 := iotest.NewReadLogger(prefix, r)
+// 	res1 := iotest.NewReadLogger(prefix, r)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC iotest.NewWriteLogger has:
 // func newWriteLogger(prefix string, w ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/testing/iotest/logger.go:30:38)) Object {
-// 	arg_1 := iotest.NewWriteLogger(prefix, w)
+// 	res1 := iotest.NewWriteLogger(prefix, w)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC iotest.OneByteReader has:
 // func oneByteReader(r ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/testing/iotest/reader.go:15:22)) Object {
-// 	arg_1 := iotest.OneByteReader(r)
+// 	res1 := iotest.OneByteReader(r)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC iotest.TimeoutReader has:
 // func timeoutReader(r ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/testing/iotest/reader.go:75:22)) Object {
-// 	arg_1 := iotest.TimeoutReader(r)
+// 	res1 := iotest.TimeoutReader(r)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC iotest.TruncateWriter has:
 // func truncateWriter(w ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/testing/iotest/writer.go:11:23), n Object) Object {
-// 	arg_1 := iotest.TruncateWriter(w, n)
+// 	res1 := iotest.TruncateWriter(w, n)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC ioutil.NopCloser has:
 // func nopCloser(r ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/io/ioutil/ioutil.go:118:18)) Object {
-// 	arg_1 := ioutil.NopCloser(r)
+// 	res1 := ioutil.NopCloser(r)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC ioutil.ReadAll has:
 // func readAll(r ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/io/ioutil/ioutil.go:44:16)) Object {
-// 	arg_1, arg_2 := ioutil.ReadAll(r)
+// 	res1, res2 := ioutil.ReadAll(r)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC ioutil.ReadDir has:
 // func readDir(dirname string) Object {
-// 	arg_1, arg_2 := ioutil.ReadDir(dirname)
+// 	res1, res2 := ioutil.ReadDir(dirname)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC ioutil.ReadFile has:
 // func readFile(filename string) Object {
-// 	arg_1, arg_2 := ioutil.ReadFile(filename)
+// 	res1, res2 := ioutil.ReadFile(filename)
 // 	...ABEND676: TODO...
 // }
 
@@ -16139,13 +16139,13 @@ GO FUNC ioutil.TempFile has:
 
 GO FUNC jpeg.Decode has:
 // func decode(r ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/image/jpeg/reader.go:777:15)) Object {
-// 	arg_1, arg_2 := jpeg.Decode(r)
+// 	res1, res2 := jpeg.Decode(r)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC jpeg.DecodeConfig has:
 // func decodeConfig(r ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/image/jpeg/reader.go:784:21)) Object {
-// 	arg_1, arg_2 := jpeg.DecodeConfig(r)
+// 	res1, res2 := jpeg.DecodeConfig(r)
 // 	...ABEND676: TODO...
 // }
 
@@ -16157,49 +16157,49 @@ GO FUNC json.HTMLEscape has:
 
 GO FUNC json.Marshal has:
 // func marshal(v ABEND882(unrecognized Expr type *ast.InterfaceType at: ../GOSRC/encoding/json/encode.go:157:16)) Object {
-// 	arg_1, arg_2 := json.Marshal(v)
+// 	res1, res2 := json.Marshal(v)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC json.MarshalIndent has:
 // func marshalIndent(v ABEND882(unrecognized Expr type *ast.InterfaceType at: ../GOSRC/encoding/json/encode.go:175:22), prefix string, indent string) Object {
-// 	arg_1, arg_2 := json.MarshalIndent(v, prefix, indent)
+// 	res1, res2 := json.MarshalIndent(v, prefix, indent)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC json.NewDecoder has:
 // func newDecoder(r ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/encoding/json/stream.go:31:19)) Object {
-// 	arg_1 := json.NewDecoder(r)
+// 	res1 := json.NewDecoder(r)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC json.NewEncoder has:
 // func newEncoder(w ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/encoding/json/stream.go:186:19)) Object {
-// 	arg_1 := json.NewEncoder(w)
+// 	res1 := json.NewEncoder(w)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC jsonrpc.Dial has:
 // func dial(network string, address string) Object {
-// 	arg_1, arg_2 := jsonrpc.Dial(network, address)
+// 	res1, res2 := jsonrpc.Dial(network, address)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC jsonrpc.NewClient has:
 // func newClient(conn ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/net/rpc/jsonrpc/client.go:113:21)) Object {
-// 	arg_1 := jsonrpc.NewClient(conn)
+// 	res1 := jsonrpc.NewClient(conn)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC jsonrpc.NewClientCodec has:
 // func newClientCodec(conn ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/net/rpc/jsonrpc/client.go:37:26)) Object {
-// 	arg_1 := jsonrpc.NewClientCodec(conn)
+// 	res1 := jsonrpc.NewClientCodec(conn)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC jsonrpc.NewServerCodec has:
 // func newServerCodec(conn ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/net/rpc/jsonrpc/server.go:37:26)) Object {
-// 	arg_1 := jsonrpc.NewServerCodec(conn)
+// 	res1 := jsonrpc.NewServerCodec(conn)
 // 	...ABEND676: TODO...
 // }
 
@@ -16211,7 +16211,7 @@ GO FUNC jsonrpc.ServeConn has:
 
 GO FUNC list.New has:
 // func new() Object {
-// 	arg_1 := list.New()
+// 	res1 := list.New()
 // 	...ABEND676: TODO...
 // }
 
@@ -16235,7 +16235,7 @@ GO FUNC log.Fatalln has:
 
 GO FUNC log.New has:
 // func new(out ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/log/log.go:62:14), prefix string, flag int) Object {
-// 	arg_1 := log.New(out, prefix, flag)
+// 	res1 := log.New(out, prefix, flag)
 // 	...ABEND676: TODO...
 // }
 
@@ -16295,55 +16295,55 @@ GO FUNC log.SetPrefix has:
 
 GO FUNC lzw.NewReader has:
 // func newReader(r ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/compress/lzw/reader.go:239:18), order Object, litWidth int) Object {
-// 	arg_1 := lzw.NewReader(r, order, litWidth)
+// 	res1 := lzw.NewReader(r, order, litWidth)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC lzw.NewWriter has:
 // func newWriter(w ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/compress/lzw/writer.go:241:18), order Object, litWidth int) Object {
-// 	arg_1 := lzw.NewWriter(w, order, litWidth)
+// 	res1 := lzw.NewWriter(w, order, litWidth)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC macho.NewFatFile has:
 // func newFatFile(r ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/debug/macho/fat.go:45:19)) Object {
-// 	arg_1, arg_2 := macho.NewFatFile(r)
+// 	res1, res2 := macho.NewFatFile(r)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC macho.NewFile has:
 // func newFile(r ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/debug/macho/file.go:228:16)) Object {
-// 	arg_1, arg_2 := macho.NewFile(r)
+// 	res1, res2 := macho.NewFile(r)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC macho.Open has:
 // func open(name string) Object {
-// 	arg_1, arg_2 := macho.Open(name)
+// 	res1, res2 := macho.Open(name)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC macho.OpenFat has:
 // func openFat(name string) Object {
-// 	arg_1, arg_2 := macho.OpenFat(name)
+// 	res1, res2 := macho.OpenFat(name)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC mail.ParseAddress has:
 // func parseAddress(address string) Object {
-// 	arg_1, arg_2 := mail.ParseAddress(address)
+// 	res1, res2 := mail.ParseAddress(address)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC mail.ParseAddressList has:
 // func parseAddressList(list string) Object {
-// 	arg_1, arg_2 := mail.ParseAddressList(list)
+// 	res1, res2 := mail.ParseAddressList(list)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC mail.ParseDate has:
 // func parseDate(date string) Object {
-// 	arg_1, arg_2 := mail.ParseDate(date)
+// 	res1, res2 := mail.ParseDate(date)
 // 	...ABEND676: TODO...
 // }
 
@@ -16355,151 +16355,151 @@ GO FUNC mail.ReadMessage has:
 
 GO FUNC math.Abs has:
 // func abs(x Object) Object {
-// 	arg_1 := math.Abs(x)
+// 	res1 := math.Abs(x)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC math.Acos has:
 // func acos(x Object) Object {
-// 	arg_1 := math.Acos(x)
+// 	res1 := math.Acos(x)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC math.Acosh has:
 // func acosh(x Object) Object {
-// 	arg_1 := math.Acosh(x)
+// 	res1 := math.Acosh(x)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC math.Asin has:
 // func asin(x Object) Object {
-// 	arg_1 := math.Asin(x)
+// 	res1 := math.Asin(x)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC math.Asinh has:
 // func asinh(x Object) Object {
-// 	arg_1 := math.Asinh(x)
+// 	res1 := math.Asinh(x)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC math.Atan has:
 // func atan(x Object) Object {
-// 	arg_1 := math.Atan(x)
+// 	res1 := math.Atan(x)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC math.Atan2 has:
 // func atan2(y Object, x Object) Object {
-// 	arg_1 := math.Atan2(y, x)
+// 	res1 := math.Atan2(y, x)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC math.Atanh has:
 // func atanh(x Object) Object {
-// 	arg_1 := math.Atanh(x)
+// 	res1 := math.Atanh(x)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC math.Cbrt has:
 // func cbrt(x Object) Object {
-// 	arg_1 := math.Cbrt(x)
+// 	res1 := math.Cbrt(x)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC math.Ceil has:
 // func ceil(x Object) Object {
-// 	arg_1 := math.Ceil(x)
+// 	res1 := math.Ceil(x)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC math.Copysign has:
 // func copysign(x Object, y Object) Object {
-// 	arg_1 := math.Copysign(x, y)
+// 	res1 := math.Copysign(x, y)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC math.Cos has:
 // func cos(x Object) Object {
-// 	arg_1 := math.Cos(x)
+// 	res1 := math.Cos(x)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC math.Cosh has:
 // func cosh(x Object) Object {
-// 	arg_1 := math.Cosh(x)
+// 	res1 := math.Cosh(x)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC math.Dim has:
 // func dim(x Object, y Object) Object {
-// 	arg_1 := math.Dim(x, y)
+// 	res1 := math.Dim(x, y)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC math.Erf has:
 // func erf(x Object) Object {
-// 	arg_1 := math.Erf(x)
+// 	res1 := math.Erf(x)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC math.Erfc has:
 // func erfc(x Object) Object {
-// 	arg_1 := math.Erfc(x)
+// 	res1 := math.Erfc(x)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC math.Erfcinv has:
 // func erfcinv(x Object) Object {
-// 	arg_1 := math.Erfcinv(x)
+// 	res1 := math.Erfcinv(x)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC math.Erfinv has:
 // func erfinv(x Object) Object {
-// 	arg_1 := math.Erfinv(x)
+// 	res1 := math.Erfinv(x)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC math.Exp has:
 // func exp(x Object) Object {
-// 	arg_1 := math.Exp(x)
+// 	res1 := math.Exp(x)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC math.Exp2 has:
 // func exp2(x Object) Object {
-// 	arg_1 := math.Exp2(x)
+// 	res1 := math.Exp2(x)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC math.Expm1 has:
 // func expm1(x Object) Object {
-// 	arg_1 := math.Expm1(x)
+// 	res1 := math.Expm1(x)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC math.Float32frombits has:
 // func float32frombits(b Object) Object {
-// 	arg_1 := math.Float32frombits(b)
+// 	res1 := math.Float32frombits(b)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC math.Float64bits has:
 // func float64bits(f Object) Object {
-// 	arg_1 := math.Float64bits(f)
+// 	res1 := math.Float64bits(f)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC math.Float64frombits has:
 // func float64frombits(b Object) Object {
-// 	arg_1 := math.Float64frombits(b)
+// 	res1 := math.Float64frombits(b)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC math.Floor has:
 // func floor(x Object) Object {
-// 	arg_1 := math.Floor(x)
+// 	res1 := math.Floor(x)
 // 	...ABEND676: TODO...
 // }
 
@@ -16511,43 +16511,43 @@ GO FUNC math.Frexp has:
 
 GO FUNC math.Gamma has:
 // func gamma(x Object) Object {
-// 	arg_1 := math.Gamma(x)
+// 	res1 := math.Gamma(x)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC math.Hypot has:
 // func hypot(p Object, q Object) Object {
-// 	arg_1 := math.Hypot(p, q)
+// 	res1 := math.Hypot(p, q)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC math.Inf has:
 // func inf(sign int) Object {
-// 	arg_1 := math.Inf(sign)
+// 	res1 := math.Inf(sign)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC math.J0 has:
 // func j0(x Object) Object {
-// 	arg_1 := math.J0(x)
+// 	res1 := math.J0(x)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC math.J1 has:
 // func j1(x Object) Object {
-// 	arg_1 := math.J1(x)
+// 	res1 := math.J1(x)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC math.Jn has:
 // func jn(n int, x Object) Object {
-// 	arg_1 := math.Jn(n, x)
+// 	res1 := math.Jn(n, x)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC math.Ldexp has:
 // func ldexp(frac Object, exp int) Object {
-// 	arg_1 := math.Ldexp(frac, exp)
+// 	res1 := math.Ldexp(frac, exp)
 // 	...ABEND676: TODO...
 // }
 
@@ -16559,49 +16559,49 @@ GO FUNC math.Lgamma has:
 
 GO FUNC math.Log has:
 // func log(x Object) Object {
-// 	arg_1 := math.Log(x)
+// 	res1 := math.Log(x)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC math.Log10 has:
 // func log10(x Object) Object {
-// 	arg_1 := math.Log10(x)
+// 	res1 := math.Log10(x)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC math.Log1p has:
 // func log1p(x Object) Object {
-// 	arg_1 := math.Log1p(x)
+// 	res1 := math.Log1p(x)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC math.Log2 has:
 // func log2(x Object) Object {
-// 	arg_1 := math.Log2(x)
+// 	res1 := math.Log2(x)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC math.Logb has:
 // func logb(x Object) Object {
-// 	arg_1 := math.Logb(x)
+// 	res1 := math.Logb(x)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC math.Max has:
 // func max(x Object, y Object) Object {
-// 	arg_1 := math.Max(x, y)
+// 	res1 := math.Max(x, y)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC math.Min has:
 // func min(x Object, y Object) Object {
-// 	arg_1 := math.Min(x, y)
+// 	res1 := math.Min(x, y)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC math.Mod has:
 // func mod(x Object, y Object) Object {
-// 	arg_1 := math.Mod(x, y)
+// 	res1 := math.Mod(x, y)
 // 	...ABEND676: TODO...
 // }
 
@@ -16613,7 +16613,7 @@ GO FUNC math.Modf has:
 
 GO FUNC math.NaN has:
 // func naN() Object {
-// 	arg_1 := math.NaN()
+// 	res1 := math.NaN()
 // 	...ABEND676: TODO...
 // }
 
@@ -16631,37 +16631,37 @@ GO FUNC math.Nextafter32 has:
 
 GO FUNC math.Pow has:
 // func pow(x Object, y Object) Object {
-// 	arg_1 := math.Pow(x, y)
+// 	res1 := math.Pow(x, y)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC math.Pow10 has:
 // func pow10(n int) Object {
-// 	arg_1 := math.Pow10(n)
+// 	res1 := math.Pow10(n)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC math.Remainder has:
 // func remainder(x Object, y Object) Object {
-// 	arg_1 := math.Remainder(x, y)
+// 	res1 := math.Remainder(x, y)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC math.Round has:
 // func round(x Object) Object {
-// 	arg_1 := math.Round(x)
+// 	res1 := math.Round(x)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC math.RoundToEven has:
 // func roundToEven(x Object) Object {
-// 	arg_1 := math.RoundToEven(x)
+// 	res1 := math.RoundToEven(x)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC math.Sin has:
 // func sin(x Object) Object {
-// 	arg_1 := math.Sin(x)
+// 	res1 := math.Sin(x)
 // 	...ABEND676: TODO...
 // }
 
@@ -16673,67 +16673,67 @@ GO FUNC math.Sincos has:
 
 GO FUNC math.Sinh has:
 // func sinh(x Object) Object {
-// 	arg_1 := math.Sinh(x)
+// 	res1 := math.Sinh(x)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC math.Sqrt has:
 // func sqrt(x Object) Object {
-// 	arg_1 := math.Sqrt(x)
+// 	res1 := math.Sqrt(x)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC math.Tan has:
 // func tan(x Object) Object {
-// 	arg_1 := math.Tan(x)
+// 	res1 := math.Tan(x)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC math.Tanh has:
 // func tanh(x Object) Object {
-// 	arg_1 := math.Tanh(x)
+// 	res1 := math.Tanh(x)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC math.Trunc has:
 // func trunc(x Object) Object {
-// 	arg_1 := math.Trunc(x)
+// 	res1 := math.Trunc(x)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC math.Y0 has:
 // func y0(x Object) Object {
-// 	arg_1 := math.Y0(x)
+// 	res1 := math.Y0(x)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC math.Y1 has:
 // func y1(x Object) Object {
-// 	arg_1 := math.Y1(x)
+// 	res1 := math.Y1(x)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC math.Yn has:
 // func yn(n int, x Object) Object {
-// 	arg_1 := math.Yn(n, x)
+// 	res1 := math.Yn(n, x)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC md5.New has:
 // func new() Object {
-// 	arg_1 := md5.New()
+// 	res1 := md5.New()
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC md5.Sum has:
 // func sum(data ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/crypto/md5/md5.go:204:15)) Object {
-// 	arg_1 := md5.Sum(data)
+// 	res1 := md5.Sum(data)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC mime.ExtensionsByType has:
 // func extensionsByType(typ string) Object {
-// 	arg_1, arg_2 := mime.ExtensionsByType(typ)
+// 	res1, res2 := mime.ExtensionsByType(typ)
 // 	...ABEND676: TODO...
 // }
 
@@ -16745,55 +16745,55 @@ GO FUNC mime.ParseMediaType has:
 
 GO FUNC multipart.NewReader has:
 // func newReader(r ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/mime/multipart/multipart.go:99:18), boundary string) Object {
-// 	arg_1 := multipart.NewReader(r, boundary)
+// 	res1 := multipart.NewReader(r, boundary)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC multipart.NewWriter has:
 // func newWriter(w ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/mime/multipart/writer.go:27:18)) Object {
-// 	arg_1 := multipart.NewWriter(w)
+// 	res1 := multipart.NewWriter(w)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC net.CIDRMask has:
 // func cIDRMask(ones int, bits int) Object {
-// 	arg_1 := net.CIDRMask(ones, bits)
+// 	res1 := net.CIDRMask(ones, bits)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC net.Dial has:
 // func dial(network string, address string) Object {
-// 	arg_1, arg_2 := net.Dial(network, address)
+// 	res1, res2 := net.Dial(network, address)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC net.DialIP has:
 // func dialIP(network string, laddr ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/net/iprawsock.go:211:42), raddr ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/net/iprawsock.go:211:42)) Object {
-// 	arg_1, arg_2 := net.DialIP(network, laddr, raddr)
+// 	res1, res2 := net.DialIP(network, laddr, raddr)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC net.DialTCP has:
 // func dialTCP(network string, laddr ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/net/tcpsock.go:206:43), raddr ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/net/tcpsock.go:206:43)) Object {
-// 	arg_1, arg_2 := net.DialTCP(network, laddr, raddr)
+// 	res1, res2 := net.DialTCP(network, laddr, raddr)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC net.DialTimeout has:
 // func dialTimeout(network string, address string, timeout ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/net/dial.go:313:51)) Object {
-// 	arg_1, arg_2 := net.DialTimeout(network, address, timeout)
+// 	res1, res2 := net.DialTimeout(network, address, timeout)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC net.DialUDP has:
 // func dialUDP(network string, laddr ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/net/udpsock.go:205:43), raddr ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/net/udpsock.go:205:43)) Object {
-// 	arg_1, arg_2 := net.DialUDP(network, laddr, raddr)
+// 	res1, res2 := net.DialUDP(network, laddr, raddr)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC net.DialUnix has:
 // func dialUnix(network string, laddr ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/net/unixsock.go:200:44), raddr ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/net/unixsock.go:200:44)) Object {
-// 	arg_1, arg_2 := net.DialUnix(network, laddr, raddr)
+// 	res1, res2 := net.DialUnix(network, laddr, raddr)
 // 	...ABEND676: TODO...
 // }
 
@@ -16817,85 +16817,85 @@ GO FUNC net.FilePacketConn has:
 
 GO FUNC net.IPv4 has:
 // func iPv4(a Object, b Object, c Object, d Object) Object {
-// 	arg_1 := net.IPv4(a, b, c, d)
+// 	res1 := net.IPv4(a, b, c, d)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC net.IPv4Mask has:
 // func iPv4Mask(a Object, b Object, c Object, d Object) Object {
-// 	arg_1 := net.IPv4Mask(a, b, c, d)
+// 	res1 := net.IPv4Mask(a, b, c, d)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC net.InterfaceAddrs has:
 // func interfaceAddrs() Object {
-// 	arg_1, arg_2 := net.InterfaceAddrs()
+// 	res1, res2 := net.InterfaceAddrs()
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC net.InterfaceByIndex has:
 // func interfaceByIndex(index int) Object {
-// 	arg_1, arg_2 := net.InterfaceByIndex(index)
+// 	res1, res2 := net.InterfaceByIndex(index)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC net.InterfaceByName has:
 // func interfaceByName(name string) Object {
-// 	arg_1, arg_2 := net.InterfaceByName(name)
+// 	res1, res2 := net.InterfaceByName(name)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC net.Interfaces has:
 // func interfaces() Object {
-// 	arg_1, arg_2 := net.Interfaces()
+// 	res1, res2 := net.Interfaces()
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC net.Listen has:
 // func listen(network string, address string) Object {
-// 	arg_1, arg_2 := net.Listen(network, address)
+// 	res1, res2 := net.Listen(network, address)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC net.ListenIP has:
 // func listenIP(network string, laddr ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/net/iprawsock.go:230:37)) Object {
-// 	arg_1, arg_2 := net.ListenIP(network, laddr)
+// 	res1, res2 := net.ListenIP(network, laddr)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC net.ListenMulticastUDP has:
 // func listenMulticastUDP(network string, ifi ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/net/udpsock.go:265:45), gaddr ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/net/udpsock.go:265:63)) Object {
-// 	arg_1, arg_2 := net.ListenMulticastUDP(network, ifi, gaddr)
+// 	res1, res2 := net.ListenMulticastUDP(network, ifi, gaddr)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC net.ListenPacket has:
 // func listenPacket(network string, address string) Object {
-// 	arg_1, arg_2 := net.ListenPacket(network, address)
+// 	res1, res2 := net.ListenPacket(network, address)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC net.ListenTCP has:
 // func listenTCP(network string, laddr ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/net/tcpsock.go:323:38)) Object {
-// 	arg_1, arg_2 := net.ListenTCP(network, laddr)
+// 	res1, res2 := net.ListenTCP(network, laddr)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC net.ListenUDP has:
 // func listenUDP(network string, laddr ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/net/udpsock.go:231:38)) Object {
-// 	arg_1, arg_2 := net.ListenUDP(network, laddr)
+// 	res1, res2 := net.ListenUDP(network, laddr)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC net.ListenUnix has:
 // func listenUnix(network string, laddr ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/net/unixsock.go:314:39)) Object {
-// 	arg_1, arg_2 := net.ListenUnix(network, laddr)
+// 	res1, res2 := net.ListenUnix(network, laddr)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC net.ListenUnixgram has:
 // func listenUnixgram(network string, laddr ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/net/unixsock.go:334:43)) Object {
-// 	arg_1, arg_2 := net.ListenUnixgram(network, laddr)
+// 	res1, res2 := net.ListenUnixgram(network, laddr)
 // 	...ABEND676: TODO...
 // }
 
@@ -16919,19 +16919,19 @@ GO FUNC net.LookupHost has:
 
 GO FUNC net.LookupIP has:
 // func lookupIP(host string) Object {
-// 	arg_1, arg_2 := net.LookupIP(host)
+// 	res1, res2 := net.LookupIP(host)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC net.LookupMX has:
 // func lookupMX(name string) Object {
-// 	arg_1, arg_2 := net.LookupMX(name)
+// 	res1, res2 := net.LookupMX(name)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC net.LookupNS has:
 // func lookupNS(name string) Object {
-// 	arg_1, arg_2 := net.LookupNS(name)
+// 	res1, res2 := net.LookupNS(name)
 // 	...ABEND676: TODO...
 // }
 
@@ -16949,19 +16949,19 @@ GO FUNC net.LookupSRV has:
 
 GO FUNC net.LookupTXT has:
 // func lookupTXT(name string) Object {
-// 	arg_1, arg_2 := net.LookupTXT(name)
+// 	res1, res2 := net.LookupTXT(name)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC net.ParseCIDR has:
 // func parseCIDR(s string) Object {
-// 	arg_1, arg_2, arg_3 := net.ParseCIDR(s)
+// 	res1, res2, res3 := net.ParseCIDR(s)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC net.ParseIP has:
 // func parseIP(s string) Object {
-// 	arg_1 := net.ParseIP(s)
+// 	res1 := net.ParseIP(s)
 // 	...ABEND676: TODO...
 // }
 
@@ -16973,31 +16973,31 @@ GO FUNC net.ParseMAC has:
 
 GO FUNC net.Pipe has:
 // func pipe() Object {
-// 	arg_1, arg_2 := net.Pipe()
+// 	res1, res2 := net.Pipe()
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC net.ResolveIPAddr has:
 // func resolveIPAddr(network string, address string) Object {
-// 	arg_1, arg_2 := net.ResolveIPAddr(network, address)
+// 	res1, res2 := net.ResolveIPAddr(network, address)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC net.ResolveTCPAddr has:
 // func resolveTCPAddr(network string, address string) Object {
-// 	arg_1, arg_2 := net.ResolveTCPAddr(network, address)
+// 	res1, res2 := net.ResolveTCPAddr(network, address)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC net.ResolveUDPAddr has:
 // func resolveUDPAddr(network string, address string) Object {
-// 	arg_1, arg_2 := net.ResolveUDPAddr(network, address)
+// 	res1, res2 := net.ResolveUDPAddr(network, address)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC net.ResolveUnixAddr has:
 // func resolveUnixAddr(network string, address string) Object {
-// 	arg_1, arg_2 := net.ResolveUnixAddr(network, address)
+// 	res1, res2 := net.ResolveUnixAddr(network, address)
 // 	...ABEND676: TODO...
 // }
 
@@ -17021,19 +17021,19 @@ GO FUNC os.Clearenv has:
 
 GO FUNC os.Create has:
 // func create(name string) Object {
-// 	arg_1, arg_2 := os.Create(name)
+// 	res1, res2 := os.Create(name)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC os.Environ has:
 // func environ() Object {
-// 	arg_1 := os.Environ()
+// 	res1 := os.Environ()
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC os.Executable has:
 // func executable() Object {
-// 	arg_1, arg_2 := os.Executable()
+// 	res1, res2 := os.Executable()
 // 	...ABEND676: TODO...
 // }
 
@@ -17045,13 +17045,13 @@ GO FUNC os.Exit has:
 
 GO FUNC os.FindProcess has:
 // func findProcess(pid int) Object {
-// 	arg_1, arg_2 := os.FindProcess(pid)
+// 	res1, res2 := os.FindProcess(pid)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC os.Getgroups has:
 // func getgroups() Object {
-// 	arg_1, arg_2 := os.Getgroups()
+// 	res1, res2 := os.Getgroups()
 // 	...ABEND676: TODO...
 // }
 
@@ -17069,31 +17069,31 @@ GO FUNC os.Hostname has:
 
 GO FUNC os.LookupEnv has:
 // func lookupEnv(key string) Object {
-// 	arg_1, arg_2 := os.LookupEnv(key)
+// 	res1, res2 := os.LookupEnv(key)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC os.Lstat has:
 // func lstat(name string) Object {
-// 	arg_1, arg_2 := os.Lstat(name)
+// 	res1, res2 := os.Lstat(name)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC os.NewFile has:
 // func newFile(fd Object, name string) Object {
-// 	arg_1 := os.NewFile(fd, name)
+// 	res1 := os.NewFile(fd, name)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC os.Open has:
 // func open(name string) Object {
-// 	arg_1, arg_2 := os.Open(name)
+// 	res1, res2 := os.Open(name)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC os.OpenFile has:
 // func openFile(name string, flag int, perm Object) Object {
-// 	arg_1, arg_2 := os.OpenFile(name, flag, perm)
+// 	res1, res2 := os.OpenFile(name, flag, perm)
 // 	...ABEND676: TODO...
 // }
 
@@ -17105,43 +17105,43 @@ GO FUNC os.Pipe has:
 
 GO FUNC os.Readlink has:
 // func readlink(name string) Object {
-// 	arg_1, arg_2 := os.Readlink(name)
+// 	res1, res2 := os.Readlink(name)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC os.StartProcess has:
 // func startProcess(name string, argv ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/os/exec.go:100:37), attr ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/os/exec.go:100:52)) Object {
-// 	arg_1, arg_2 := os.StartProcess(name, argv, attr)
+// 	res1, res2 := os.StartProcess(name, argv, attr)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC os.Stat has:
 // func stat(name string) Object {
-// 	arg_1, arg_2 := os.Stat(name)
+// 	res1, res2 := os.Stat(name)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC os.UserCacheDir has:
 // func userCacheDir() Object {
-// 	arg_1, arg_2 := os.UserCacheDir()
+// 	res1, res2 := os.UserCacheDir()
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC parse.New has:
 // func new(name string, funcs ABEND882(unrecognized Expr type *ast.Ellipsis at: ../GOSRC/text/template/parse/parse.go:125:29)) Object {
-// 	arg_1 := parse.New(name, funcs)
+// 	res1 := parse.New(name, funcs)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC parse.NewIdentifier has:
 // func newIdentifier(ident string) Object {
-// 	arg_1 := parse.NewIdentifier(ident)
+// 	res1 := parse.NewIdentifier(ident)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC parse.Parse has:
 // func parse(name string, text string, leftDelim string, rightDelim string, funcs ABEND882(unrecognized Expr type *ast.Ellipsis at: ../GOSRC/text/template/parse/parse.go:51:60)) Object {
-// 	arg_1, arg_2 := parse.Parse(name, text, leftDelim, rightDelim, funcs)
+// 	res1, res2 := parse.Parse(name, text, leftDelim, rightDelim, funcs)
 // 	...ABEND676: TODO...
 // }
 
@@ -17153,13 +17153,13 @@ GO FUNC parser.ParseDir has:
 
 GO FUNC parser.ParseExpr has:
 // func parseExpr(x string) Object {
-// 	arg_1, arg_2 := parser.ParseExpr(x)
+// 	res1, res2 := parser.ParseExpr(x)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC parser.ParseExprFrom has:
 // func parseExprFrom(fset ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/go/parser/interface.go:176:25), filename string, src ABEND882(unrecognized Expr type *ast.InterfaceType at: ../GOSRC/go/parser/interface.go:176:62), mode Object) Object {
-// 	arg_1, arg_2 := parser.ParseExprFrom(fset, filename, src, mode)
+// 	res1, res2 := parser.ParseExprFrom(fset, filename, src, mode)
 // 	...ABEND676: TODO...
 // }
 
@@ -17183,13 +17183,13 @@ GO FUNC path.Split has:
 
 GO FUNC pe.NewFile has:
 // func newFile(r ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/debug/pe/file.go:69:16)) Object {
-// 	arg_1, arg_2 := pe.NewFile(r)
+// 	res1, res2 := pe.NewFile(r)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC pe.Open has:
 // func open(name string) Object {
-// 	arg_1, arg_2 := pe.Open(name)
+// 	res1, res2 := pe.Open(name)
 // 	...ABEND676: TODO...
 // }
 
@@ -17201,37 +17201,37 @@ GO FUNC pem.Decode has:
 
 GO FUNC pem.EncodeToMemory has:
 // func encodeToMemory(b ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/encoding/pem/pem.go:326:23)) Object {
-// 	arg_1 := pem.EncodeToMemory(b)
+// 	res1 := pem.EncodeToMemory(b)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC plan9obj.NewFile has:
 // func newFile(r ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/debug/plan9obj/file.go:135:16)) Object {
-// 	arg_1, arg_2 := plan9obj.NewFile(r)
+// 	res1, res2 := plan9obj.NewFile(r)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC plan9obj.Open has:
 // func open(name string) Object {
-// 	arg_1, arg_2 := plan9obj.Open(name)
+// 	res1, res2 := plan9obj.Open(name)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC plugin.Open has:
 // func open(path string) Object {
-// 	arg_1, arg_2 := plugin.Open(path)
+// 	res1, res2 := plugin.Open(path)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC png.Decode has:
 // func decode(r ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/image/png/reader.go:952:15)) Object {
-// 	arg_1, arg_2 := png.Decode(r)
+// 	res1, res2 := png.Decode(r)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC png.DecodeConfig has:
 // func decodeConfig(r ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/image/png/reader.go:976:21)) Object {
-// 	arg_1, arg_2 := png.DecodeConfig(r)
+// 	res1, res2 := png.DecodeConfig(r)
 // 	...ABEND676: TODO...
 // }
 
@@ -17261,7 +17261,7 @@ GO FUNC pprof.ForLabels has:
 
 GO FUNC pprof.Handler has:
 // func handler(name string) Object {
-// 	arg_1 := pprof.Handler(name)
+// 	res1 := pprof.Handler(name)
 // 	...ABEND676: TODO...
 // }
 
@@ -17273,25 +17273,25 @@ GO FUNC pprof.Index has:
 
 GO FUNC pprof.Label has:
 // func label(ctx ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/runtime/pprof/label.go:70:16), key string) Object {
-// 	arg_1, arg_2 := pprof.Label(ctx, key)
+// 	res1, res2 := pprof.Label(ctx, key)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC pprof.Labels has:
 // func labels(args ABEND882(unrecognized Expr type *ast.Ellipsis at: ../GOSRC/runtime/pprof/label.go:57:18)) Object {
-// 	arg_1 := pprof.Labels(args)
+// 	res1 := pprof.Labels(args)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC pprof.Lookup has:
 // func lookup(name string) Object {
-// 	arg_1 := pprof.Lookup(name)
+// 	res1 := pprof.Lookup(name)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC pprof.NewProfile has:
 // func newProfile(name string) Object {
-// 	arg_1 := pprof.NewProfile(name)
+// 	res1 := pprof.NewProfile(name)
 // 	...ABEND676: TODO...
 // }
 
@@ -17303,7 +17303,7 @@ GO FUNC pprof.Profile has:
 
 GO FUNC pprof.Profiles has:
 // func profiles() Object {
-// 	arg_1 := pprof.Profiles()
+// 	res1 := pprof.Profiles()
 // 	...ABEND676: TODO...
 // }
 
@@ -17333,7 +17333,7 @@ GO FUNC pprof.Trace has:
 
 GO FUNC pprof.WithLabels has:
 // func withLabels(ctx ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/runtime/pprof/label.go:39:21), labels Object) Object {
-// 	arg_1 := pprof.WithLabels(ctx, labels)
+// 	res1 := pprof.WithLabels(ctx, labels)
 // 	...ABEND676: TODO...
 // }
 
@@ -17345,61 +17345,61 @@ GO FUNC quick.Value has:
 
 GO FUNC quotedprintable.NewReader has:
 // func newReader(r ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/mime/quotedprintable/reader.go:24:18)) Object {
-// 	arg_1 := quotedprintable.NewReader(r)
+// 	res1 := quotedprintable.NewReader(r)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC quotedprintable.NewWriter has:
 // func newWriter(w ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/mime/quotedprintable/writer.go:24:18)) Object {
-// 	arg_1 := quotedprintable.NewWriter(w)
+// 	res1 := quotedprintable.NewWriter(w)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC rand.ExpFloat64 has:
 // func expFloat64() Object {
-// 	arg_1 := rand.ExpFloat64()
+// 	res1 := rand.ExpFloat64()
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC rand.Float32 has:
 // func float32() Object {
-// 	arg_1 := rand.Float32()
+// 	res1 := rand.Float32()
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC rand.Float64 has:
 // func float64() Object {
-// 	arg_1 := rand.Float64()
+// 	res1 := rand.Float64()
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC rand.New has:
 // func new(src Object) Object {
-// 	arg_1 := rand.New(src)
+// 	res1 := rand.New(src)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC rand.NewSource has:
 // func newSource(seed Object) Object {
-// 	arg_1 := rand.NewSource(seed)
+// 	res1 := rand.NewSource(seed)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC rand.NewZipf has:
 // func newZipf(r ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/math/rand/zipf.go:39:16), s Object, v Object, imax Object) Object {
-// 	arg_1 := rand.NewZipf(r, s, v, imax)
+// 	res1 := rand.NewZipf(r, s, v, imax)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC rand.NormFloat64 has:
 // func normFloat64() Object {
-// 	arg_1 := rand.NormFloat64()
+// 	res1 := rand.NormFloat64()
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC rand.Perm has:
 // func perm(n int) Object {
-// 	arg_1 := rand.Perm(n)
+// 	res1 := rand.Perm(n)
 // 	...ABEND676: TODO...
 // }
 
@@ -17423,103 +17423,103 @@ GO FUNC rand.Shuffle has:
 
 GO FUNC rand.Uint64 has:
 // func uint64() Object {
-// 	arg_1 := rand.Uint64()
+// 	res1 := rand.Uint64()
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC rc4.NewCipher has:
 // func newCipher(key ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/crypto/rc4/rc4.go:31:20)) Object {
-// 	arg_1, arg_2 := rc4.NewCipher(key)
+// 	res1, res2 := rc4.NewCipher(key)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC reflect.Append has:
 // func append(s Object, x ABEND882(unrecognized Expr type *ast.Ellipsis at: ../GOSRC/reflect/value.go:1890:24)) Object {
-// 	arg_1 := reflect.Append(s, x)
+// 	res1 := reflect.Append(s, x)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC reflect.AppendSlice has:
 // func appendSlice(s Object, t Object) Object {
-// 	arg_1 := reflect.AppendSlice(s, t)
+// 	res1 := reflect.AppendSlice(s, t)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC reflect.ArrayOf has:
 // func arrayOf(count int, elem Object) Object {
-// 	arg_1 := reflect.ArrayOf(count, elem)
+// 	res1 := reflect.ArrayOf(count, elem)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC reflect.ChanOf has:
 // func chanOf(dir Object, t Object) Object {
-// 	arg_1 := reflect.ChanOf(dir, t)
+// 	res1 := reflect.ChanOf(dir, t)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC reflect.FuncOf has:
 // func funcOf(in ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/reflect/type.go:1924:21), out ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/reflect/type.go:1924:21), variadic Object) Object {
-// 	arg_1 := reflect.FuncOf(in, out, variadic)
+// 	res1 := reflect.FuncOf(in, out, variadic)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC reflect.Indirect has:
 // func indirect(v Object) Object {
-// 	arg_1 := reflect.Indirect(v)
+// 	res1 := reflect.Indirect(v)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC reflect.MakeChan has:
 // func makeChan(typ Object, buffer int) Object {
-// 	arg_1 := reflect.MakeChan(typ, buffer)
+// 	res1 := reflect.MakeChan(typ, buffer)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC reflect.MakeFunc has:
 // func makeFunc(typ Object, fn ABEND882(unrecognized Expr type *ast.FuncType at: ../GOSRC/reflect/makefunc.go:48:28)) Object {
-// 	arg_1 := reflect.MakeFunc(typ, fn)
+// 	res1 := reflect.MakeFunc(typ, fn)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC reflect.MakeMap has:
 // func makeMap(typ Object) Object {
-// 	arg_1 := reflect.MakeMap(typ)
+// 	res1 := reflect.MakeMap(typ)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC reflect.MakeMapWithSize has:
 // func makeMapWithSize(typ Object, n int) Object {
-// 	arg_1 := reflect.MakeMapWithSize(typ, n)
+// 	res1 := reflect.MakeMapWithSize(typ, n)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC reflect.MakeSlice has:
 // func makeSlice(typ Object, len int, cap int) Object {
-// 	arg_1 := reflect.MakeSlice(typ, len, cap)
+// 	res1 := reflect.MakeSlice(typ, len, cap)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC reflect.MapOf has:
 // func mapOf(key Object, elem Object) Object {
-// 	arg_1 := reflect.MapOf(key, elem)
+// 	res1 := reflect.MapOf(key, elem)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC reflect.New has:
 // func new(typ Object) Object {
-// 	arg_1 := reflect.New(typ)
+// 	res1 := reflect.New(typ)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC reflect.NewAt has:
 // func newAt(typ Object, p ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/reflect/value.go:2227:24)) Object {
-// 	arg_1 := reflect.NewAt(typ, p)
+// 	res1 := reflect.NewAt(typ, p)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC reflect.PtrTo has:
 // func ptrTo(t Object) Object {
-// 	arg_1 := reflect.PtrTo(t)
+// 	res1 := reflect.PtrTo(t)
 // 	...ABEND676: TODO...
 // }
 
@@ -17531,49 +17531,49 @@ GO FUNC reflect.Select has:
 
 GO FUNC reflect.SliceOf has:
 // func sliceOf(t Object) Object {
-// 	arg_1 := reflect.SliceOf(t)
+// 	res1 := reflect.SliceOf(t)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC reflect.StructOf has:
 // func structOf(fields ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/reflect/type.go:2349:22)) Object {
-// 	arg_1 := reflect.StructOf(fields)
+// 	res1 := reflect.StructOf(fields)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC reflect.Swapper has:
 // func swapper(slice ABEND882(unrecognized Expr type *ast.InterfaceType at: ../GOSRC/reflect/swapper.go:13:20)) Object {
-// 	arg_1 := reflect.Swapper(slice)
+// 	res1 := reflect.Swapper(slice)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC reflect.TypeOf has:
 // func typeOf(i ABEND882(unrecognized Expr type *ast.InterfaceType at: ../GOSRC/reflect/type.go:1376:15)) Object {
-// 	arg_1 := reflect.TypeOf(i)
+// 	res1 := reflect.TypeOf(i)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC reflect.ValueOf has:
 // func valueOf(i ABEND882(unrecognized Expr type *ast.InterfaceType at: ../GOSRC/reflect/value.go:2182:16)) Object {
-// 	arg_1 := reflect.ValueOf(i)
+// 	res1 := reflect.ValueOf(i)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC reflect.Zero has:
 // func zero(typ Object) Object {
-// 	arg_1 := reflect.Zero(typ)
+// 	res1 := reflect.Zero(typ)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC regexp.Compile has:
 // func compile(expr string) Object {
-// 	arg_1, arg_2 := regexp.Compile(expr)
+// 	res1, res2 := regexp.Compile(expr)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC regexp.CompilePOSIX has:
 // func compilePOSIX(expr string) Object {
-// 	arg_1, arg_2 := regexp.CompilePOSIX(expr)
+// 	res1, res2 := regexp.CompilePOSIX(expr)
 // 	...ABEND676: TODO...
 // }
 
@@ -17597,19 +17597,19 @@ GO FUNC regexp.MatchString has:
 
 GO FUNC regexp.MustCompile has:
 // func mustCompile(str string) Object {
-// 	arg_1 := regexp.MustCompile(str)
+// 	res1 := regexp.MustCompile(str)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC regexp.MustCompilePOSIX has:
 // func mustCompilePOSIX(str string) Object {
-// 	arg_1 := regexp.MustCompilePOSIX(str)
+// 	res1 := regexp.MustCompilePOSIX(str)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC ring.New has:
 // func new(n int) Object {
-// 	arg_1 := ring.New(n)
+// 	res1 := ring.New(n)
 // 	...ABEND676: TODO...
 // }
 
@@ -17621,19 +17621,19 @@ GO FUNC rpc.Accept has:
 
 GO FUNC rpc.Dial has:
 // func dial(network string, address string) Object {
-// 	arg_1, arg_2 := rpc.Dial(network, address)
+// 	res1, res2 := rpc.Dial(network, address)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC rpc.DialHTTP has:
 // func dialHTTP(network string, address string) Object {
-// 	arg_1, arg_2 := rpc.DialHTTP(network, address)
+// 	res1, res2 := rpc.DialHTTP(network, address)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC rpc.DialHTTPPath has:
 // func dialHTTPPath(network string, address string, path string) Object {
-// 	arg_1, arg_2 := rpc.DialHTTPPath(network, address, path)
+// 	res1, res2 := rpc.DialHTTPPath(network, address, path)
 // 	...ABEND676: TODO...
 // }
 
@@ -17645,19 +17645,19 @@ GO FUNC rpc.HandleHTTP has:
 
 GO FUNC rpc.NewClient has:
 // func newClient(conn ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/net/rpc/client.go:193:21)) Object {
-// 	arg_1 := rpc.NewClient(conn)
+// 	res1 := rpc.NewClient(conn)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC rpc.NewClientWithCodec has:
 // func newClientWithCodec(codec Object) Object {
-// 	arg_1 := rpc.NewClientWithCodec(codec)
+// 	res1 := rpc.NewClientWithCodec(codec)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC rpc.NewServer has:
 // func newServer() Object {
-// 	arg_1 := rpc.NewServer()
+// 	res1 := rpc.NewServer()
 // 	...ABEND676: TODO...
 // }
 
@@ -17675,49 +17675,49 @@ GO FUNC rpc.ServeConn has:
 
 GO FUNC rsa.DecryptOAEP has:
 // func decryptOAEP(hash ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/crypto/rsa/rsa.go:569:23), random ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/crypto/rsa/rsa.go:569:41), priv ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/crypto/rsa/rsa.go:569:57), ciphertext ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/crypto/rsa/rsa.go:569:81), label ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/crypto/rsa/rsa.go:569:95)) Object {
-// 	arg_1, arg_2 := rsa.DecryptOAEP(hash, random, priv, ciphertext, label)
+// 	res1, res2 := rsa.DecryptOAEP(hash, random, priv, ciphertext, label)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC rsa.DecryptPKCS1v15 has:
 // func decryptPKCS1v15(rand ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/crypto/rsa/pkcs1v15.go:76:27), priv ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/crypto/rsa/pkcs1v15.go:76:43), ciphertext ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/crypto/rsa/pkcs1v15.go:76:67)) Object {
-// 	arg_1, arg_2 := rsa.DecryptPKCS1v15(rand, priv, ciphertext)
+// 	res1, res2 := rsa.DecryptPKCS1v15(rand, priv, ciphertext)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC rsa.EncryptOAEP has:
 // func encryptOAEP(hash ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/crypto/rsa/rsa.go:376:23), random ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/crypto/rsa/rsa.go:376:41), pub ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/crypto/rsa/rsa.go:376:56), msg ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/crypto/rsa/rsa.go:376:72), label ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/crypto/rsa/rsa.go:376:86)) Object {
-// 	arg_1, arg_2 := rsa.EncryptOAEP(hash, random, pub, msg, label)
+// 	res1, res2 := rsa.EncryptOAEP(hash, random, pub, msg, label)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC rsa.EncryptPKCS1v15 has:
 // func encryptPKCS1v15(rand ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/crypto/rsa/pkcs1v15.go:39:27), pub ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/crypto/rsa/pkcs1v15.go:39:42), msg ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/crypto/rsa/pkcs1v15.go:39:58)) Object {
-// 	arg_1, arg_2 := rsa.EncryptPKCS1v15(rand, pub, msg)
+// 	res1, res2 := rsa.EncryptPKCS1v15(rand, pub, msg)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC rsa.GenerateKey has:
 // func generateKey(random ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/crypto/rsa/rsa.go:207:25), bits int) Object {
-// 	arg_1, arg_2 := rsa.GenerateKey(random, bits)
+// 	res1, res2 := rsa.GenerateKey(random, bits)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC rsa.GenerateMultiPrimeKey has:
 // func generateMultiPrimeKey(random ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/crypto/rsa/rsa.go:222:35), nprimes int, bits int) Object {
-// 	arg_1, arg_2 := rsa.GenerateMultiPrimeKey(random, nprimes, bits)
+// 	res1, res2 := rsa.GenerateMultiPrimeKey(random, nprimes, bits)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC rsa.SignPKCS1v15 has:
 // func signPKCS1v15(rand ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/crypto/rsa/pkcs1v15.go:232:24), priv ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/crypto/rsa/pkcs1v15.go:232:40), hash ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/crypto/rsa/pkcs1v15.go:232:58), hashed ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/crypto/rsa/pkcs1v15.go:232:78)) Object {
-// 	arg_1, arg_2 := rsa.SignPKCS1v15(rand, priv, hash, hashed)
+// 	res1, res2 := rsa.SignPKCS1v15(rand, priv, hash, hashed)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC rsa.SignPSS has:
 // func signPSS(rand ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/crypto/rsa/pss.go:249:19), priv ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/crypto/rsa/pss.go:249:35), hash ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/crypto/rsa/pss.go:249:53), hashed ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/crypto/rsa/pss.go:249:73), opts ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/crypto/rsa/pss.go:249:86)) Object {
-// 	arg_1, arg_2 := rsa.SignPSS(rand, priv, hash, hashed, opts)
+// 	res1, res2 := rsa.SignPSS(rand, priv, hash, hashed, opts)
 // 	...ABEND676: TODO...
 // }
 
@@ -17735,7 +17735,7 @@ GO FUNC runtime.Breakpoint has:
 
 GO FUNC runtime.CPUProfile has:
 // func cPUProfile() Object {
-// 	arg_1 := runtime.CPUProfile()
+// 	res1 := runtime.CPUProfile()
 // 	...ABEND676: TODO...
 // }
 
@@ -17747,13 +17747,13 @@ GO FUNC runtime.Caller has:
 
 GO FUNC runtime.CallersFrames has:
 // func callersFrames(callers ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/runtime/symtab.go:91:28)) Object {
-// 	arg_1 := runtime.CallersFrames(callers)
+// 	res1 := runtime.CallersFrames(callers)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC runtime.FuncForPC has:
 // func funcForPC(pc Object) Object {
-// 	arg_1 := runtime.FuncForPC(pc)
+// 	res1 := runtime.FuncForPC(pc)
 // 	...ABEND676: TODO...
 // }
 
@@ -17813,7 +17813,7 @@ GO FUNC runtime.ReadMemStats has:
 
 GO FUNC runtime.ReadTrace has:
 // func readTrace() Object {
-// 	arg_1 := runtime.ReadTrace()
+// 	res1 := runtime.ReadTrace()
 // 	...ABEND676: TODO...
 // }
 
@@ -17909,25 +17909,25 @@ GO FUNC scanner.PrintError has:
 
 GO FUNC sha1.New has:
 // func new() Object {
-// 	arg_1 := sha1.New()
+// 	res1 := sha1.New()
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC sha1.Sum has:
 // func sum(data ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/crypto/sha1/sha1.go:260:15)) Object {
-// 	arg_1 := sha1.Sum(data)
+// 	res1 := sha1.Sum(data)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC sha256.New has:
 // func new() Object {
-// 	arg_1 := sha256.New()
+// 	res1 := sha256.New()
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC sha256.New224 has:
 // func new224() Object {
-// 	arg_1 := sha256.New224()
+// 	res1 := sha256.New224()
 // 	...ABEND676: TODO...
 // }
 
@@ -17939,31 +17939,31 @@ GO FUNC sha256.Sum224 has:
 
 GO FUNC sha256.Sum256 has:
 // func sum256(data ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/crypto/sha256/sha256.go:273:18)) Object {
-// 	arg_1 := sha256.Sum256(data)
+// 	res1 := sha256.Sum256(data)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC sha512.New has:
 // func new() Object {
-// 	arg_1 := sha512.New()
+// 	res1 := sha512.New()
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC sha512.New384 has:
 // func new384() Object {
-// 	arg_1 := sha512.New384()
+// 	res1 := sha512.New384()
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC sha512.New512_224 has:
 // func new512_224() Object {
-// 	arg_1 := sha512.New512_224()
+// 	res1 := sha512.New512_224()
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC sha512.New512_256 has:
 // func new512_256() Object {
-// 	arg_1 := sha512.New512_256()
+// 	res1 := sha512.New512_256()
 // 	...ABEND676: TODO...
 // }
 
@@ -17975,7 +17975,7 @@ GO FUNC sha512.Sum384 has:
 
 GO FUNC sha512.Sum512 has:
 // func sum512(data ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/crypto/sha512/sha512.go:343:18)) Object {
-// 	arg_1 := sha512.Sum512(data)
+// 	res1 := sha512.Sum512(data)
 // 	...ABEND676: TODO...
 // }
 
@@ -18017,25 +18017,25 @@ GO FUNC signal.Stop has:
 
 GO FUNC smtp.CRAMMD5Auth has:
 // func cRAMMD5Auth(username string, secret string) Object {
-// 	arg_1 := smtp.CRAMMD5Auth(username, secret)
+// 	res1 := smtp.CRAMMD5Auth(username, secret)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC smtp.Dial has:
 // func dial(addr string) Object {
-// 	arg_1, arg_2 := smtp.Dial(addr)
+// 	res1, res2 := smtp.Dial(addr)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC smtp.NewClient has:
 // func newClient(conn ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/net/smtp/smtp.go:62:21), host string) Object {
-// 	arg_1, arg_2 := smtp.NewClient(conn, host)
+// 	res1, res2 := smtp.NewClient(conn, host)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC smtp.PlainAuth has:
 // func plainAuth(identity string, username string, password string, host string) Object {
-// 	arg_1 := smtp.PlainAuth(identity, username, password, host)
+// 	res1 := smtp.PlainAuth(identity, username, password, host)
 // 	...ABEND676: TODO...
 // }
 
@@ -18053,7 +18053,7 @@ GO FUNC sort.Ints has:
 
 GO FUNC sort.Reverse has:
 // func reverse(data Object) Object {
-// 	arg_1 := sort.Reverse(data)
+// 	res1 := sort.Reverse(data)
 // 	...ABEND676: TODO...
 // }
 
@@ -18089,25 +18089,25 @@ GO FUNC sort.Strings has:
 
 GO FUNC sql.Drivers has:
 // func drivers() Object {
-// 	arg_1 := sql.Drivers()
+// 	res1 := sql.Drivers()
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC sql.Named has:
 // func named(name string, value ABEND882(unrecognized Expr type *ast.InterfaceType at: ../GOSRC/database/sql/sql.go:110:31)) Object {
-// 	arg_1 := sql.Named(name, value)
+// 	res1 := sql.Named(name, value)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC sql.Open has:
 // func open(driverName string, dataSourceName string) Object {
-// 	arg_1, arg_2 := sql.Open(driverName, dataSourceName)
+// 	res1, res2 := sql.Open(driverName, dataSourceName)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC sql.OpenDB has:
 // func openDB(c ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/database/sql/sql.go:660:15)) Object {
-// 	arg_1 := sql.OpenDB(c)
+// 	res1 := sql.OpenDB(c)
 // 	...ABEND676: TODO...
 // }
 
@@ -18119,79 +18119,79 @@ GO FUNC sql.Register has:
 
 GO FUNC strconv.AppendBool has:
 // func appendBool(dst ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/strconv/atob.go:30:21), b Object) Object {
-// 	arg_1 := strconv.AppendBool(dst, b)
+// 	res1 := strconv.AppendBool(dst, b)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC strconv.AppendFloat has:
 // func appendFloat(dst ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/strconv/ftoa.go:51:22), f Object, fmt Object, prec int, bitSize int) Object {
-// 	arg_1 := strconv.AppendFloat(dst, f, fmt, prec, bitSize)
+// 	res1 := strconv.AppendFloat(dst, f, fmt, prec, bitSize)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC strconv.AppendInt has:
 // func appendInt(dst ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/strconv/itoa.go:40:20), i Object, base int) Object {
-// 	arg_1 := strconv.AppendInt(dst, i, base)
+// 	res1 := strconv.AppendInt(dst, i, base)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC strconv.AppendQuote has:
 // func appendQuote(dst ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/strconv/quote.go:117:22), s string) Object {
-// 	arg_1 := strconv.AppendQuote(dst, s)
+// 	res1 := strconv.AppendQuote(dst, s)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC strconv.AppendQuoteRune has:
 // func appendQuoteRune(dst ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/strconv/quote.go:156:26), r Object) Object {
-// 	arg_1 := strconv.AppendQuoteRune(dst, r)
+// 	res1 := strconv.AppendQuoteRune(dst, r)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC strconv.AppendQuoteRuneToASCII has:
 // func appendQuoteRuneToASCII(dst ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/strconv/quote.go:170:33), r Object) Object {
-// 	arg_1 := strconv.AppendQuoteRuneToASCII(dst, r)
+// 	res1 := strconv.AppendQuoteRuneToASCII(dst, r)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC strconv.AppendQuoteRuneToGraphic has:
 // func appendQuoteRuneToGraphic(dst ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/strconv/quote.go:184:35), r Object) Object {
-// 	arg_1 := strconv.AppendQuoteRuneToGraphic(dst, r)
+// 	res1 := strconv.AppendQuoteRuneToGraphic(dst, r)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC strconv.AppendQuoteToASCII has:
 // func appendQuoteToASCII(dst ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/strconv/quote.go:130:29), s string) Object {
-// 	arg_1 := strconv.AppendQuoteToASCII(dst, s)
+// 	res1 := strconv.AppendQuoteToASCII(dst, s)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC strconv.AppendQuoteToGraphic has:
 // func appendQuoteToGraphic(dst ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/strconv/quote.go:143:31), s string) Object {
-// 	arg_1 := strconv.AppendQuoteToGraphic(dst, s)
+// 	res1 := strconv.AppendQuoteToGraphic(dst, s)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC strconv.AppendUint has:
 // func appendUint(dst ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/strconv/itoa.go:50:21), i Object, base int) Object {
-// 	arg_1 := strconv.AppendUint(dst, i, base)
+// 	res1 := strconv.AppendUint(dst, i, base)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC strconv.Atoi has:
 // func atoi(s string) Object {
-// 	arg_1, arg_2 := strconv.Atoi(s)
+// 	res1, res2 := strconv.Atoi(s)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC strconv.ParseBool has:
 // func parseBool(str string) Object {
-// 	arg_1, arg_2 := strconv.ParseBool(str)
+// 	res1, res2 := strconv.ParseBool(str)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC strconv.ParseFloat has:
 // func parseFloat(s string, bitSize int) Object {
-// 	arg_1, arg_2 := strconv.ParseFloat(s, bitSize)
+// 	res1, res2 := strconv.ParseFloat(s, bitSize)
 // 	...ABEND676: TODO...
 // }
 
@@ -18203,13 +18203,13 @@ GO FUNC strconv.ParseInt has:
 
 GO FUNC strconv.ParseUint has:
 // func parseUint(s string, base int, bitSize int) Object {
-// 	arg_1, arg_2 := strconv.ParseUint(s, base, bitSize)
+// 	res1, res2 := strconv.ParseUint(s, base, bitSize)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC strconv.Unquote has:
 // func unquote(s string) Object {
-// 	arg_1, arg_2 := strconv.Unquote(s)
+// 	res1, res2 := strconv.Unquote(s)
 // 	...ABEND676: TODO...
 // }
 
@@ -18221,49 +18221,49 @@ GO FUNC strconv.UnquoteChar has:
 
 GO FUNC strings.Fields has:
 // func fields(s string) Object {
-// 	arg_1 := strings.Fields(s)
+// 	res1 := strings.Fields(s)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC strings.FieldsFunc has:
 // func fieldsFunc(s string, f ABEND882(unrecognized Expr type *ast.FuncType at: ../GOSRC/strings/strings.go:378:29)) Object {
-// 	arg_1 := strings.FieldsFunc(s, f)
+// 	res1 := strings.FieldsFunc(s, f)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC strings.NewReader has:
 // func newReader(s string) Object {
-// 	arg_1 := strings.NewReader(s)
+// 	res1 := strings.NewReader(s)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC strings.NewReplacer has:
 // func newReplacer(oldnew ABEND882(unrecognized Expr type *ast.Ellipsis at: ../GOSRC/strings/replace.go:24:25)) Object {
-// 	arg_1 := strings.NewReplacer(oldnew)
+// 	res1 := strings.NewReplacer(oldnew)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC strings.Split has:
 // func split(s string, sep string) Object {
-// 	arg_1 := strings.Split(s, sep)
+// 	res1 := strings.Split(s, sep)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC strings.SplitAfter has:
 // func splitAfter(s string, sep string) Object {
-// 	arg_1 := strings.SplitAfter(s, sep)
+// 	res1 := strings.SplitAfter(s, sep)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC strings.SplitAfterN has:
 // func splitAfterN(s string, sep string, n int) Object {
-// 	arg_1 := strings.SplitAfterN(s, sep, n)
+// 	res1 := strings.SplitAfterN(s, sep, n)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC strings.SplitN has:
 // func splitN(s string, sep string, n int) Object {
-// 	arg_1 := strings.SplitN(s, sep, n)
+// 	res1 := strings.SplitN(s, sep, n)
 // 	...ABEND676: TODO...
 // }
 
@@ -18275,31 +18275,31 @@ GO FUNC subtle.ConstantTimeCopy has:
 
 GO FUNC suffixarray.New has:
 // func new(data ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/index/suffixarray/suffixarray.go:35:15)) Object {
-// 	arg_1 := suffixarray.New(data)
+// 	res1 := suffixarray.New(data)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC sync.NewCond has:
 // func newCond(l Object) Object {
-// 	arg_1 := sync.NewCond(l)
+// 	res1 := sync.NewCond(l)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC syntax.Compile has:
 // func compile(re ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/regexp/syntax/compile.go:80:17)) Object {
-// 	arg_1, arg_2 := syntax.Compile(re)
+// 	res1, res2 := syntax.Compile(re)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC syntax.EmptyOpContext has:
 // func emptyOpContext(r1 Object, r2 Object) Object {
-// 	arg_1 := syntax.EmptyOpContext(r1, r2)
+// 	res1 := syntax.EmptyOpContext(r1, r2)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC syntax.Parse has:
 // func parse(s string, flags Object) Object {
-// 	arg_1, arg_2 := syntax.Parse(s, flags)
+// 	res1, res2 := syntax.Parse(s, flags)
 // 	...ABEND676: TODO...
 // }
 
@@ -18323,13 +18323,13 @@ GO FUNC syscall.Adjtimex has:
 
 GO FUNC syscall.BytePtrFromString has:
 // func bytePtrFromString(s string) Object {
-// 	arg_1, arg_2 := syscall.BytePtrFromString(s)
+// 	res1, res2 := syscall.BytePtrFromString(s)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC syscall.ByteSliceFromString has:
 // func byteSliceFromString(s string) Object {
-// 	arg_1, arg_2 := syscall.ByteSliceFromString(s)
+// 	res1, res2 := syscall.ByteSliceFromString(s)
 // 	...ABEND676: TODO...
 // }
 
@@ -18359,7 +18359,7 @@ GO FUNC syscall.Dup has:
 
 GO FUNC syscall.Environ has:
 // func environ() Object {
-// 	arg_1 := syscall.Environ()
+// 	res1 := syscall.Environ()
 // 	...ABEND676: TODO...
 // }
 
@@ -18443,31 +18443,31 @@ GO FUNC syscall.Getsockname has:
 
 GO FUNC syscall.GetsockoptICMPv6Filter has:
 // func getsockoptICMPv6Filter(fd int, level int, opt int) Object {
-// 	arg_1, arg_2 := syscall.GetsockoptICMPv6Filter(fd, level, opt)
+// 	res1, res2 := syscall.GetsockoptICMPv6Filter(fd, level, opt)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC syscall.GetsockoptIPMreq has:
 // func getsockoptIPMreq(fd int, level int, opt int) Object {
-// 	arg_1, arg_2 := syscall.GetsockoptIPMreq(fd, level, opt)
+// 	res1, res2 := syscall.GetsockoptIPMreq(fd, level, opt)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC syscall.GetsockoptIPMreqn has:
 // func getsockoptIPMreqn(fd int, level int, opt int) Object {
-// 	arg_1, arg_2 := syscall.GetsockoptIPMreqn(fd, level, opt)
+// 	res1, res2 := syscall.GetsockoptIPMreqn(fd, level, opt)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC syscall.GetsockoptIPv6MTUInfo has:
 // func getsockoptIPv6MTUInfo(fd int, level int, opt int) Object {
-// 	arg_1, arg_2 := syscall.GetsockoptIPv6MTUInfo(fd, level, opt)
+// 	res1, res2 := syscall.GetsockoptIPv6MTUInfo(fd, level, opt)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC syscall.GetsockoptIPv6Mreq has:
 // func getsockoptIPv6Mreq(fd int, level int, opt int) Object {
-// 	arg_1, arg_2 := syscall.GetsockoptIPv6Mreq(fd, level, opt)
+// 	res1, res2 := syscall.GetsockoptIPv6Mreq(fd, level, opt)
 // 	...ABEND676: TODO...
 // }
 
@@ -18485,7 +18485,7 @@ GO FUNC syscall.GetsockoptInt has:
 
 GO FUNC syscall.GetsockoptUcred has:
 // func getsockoptUcred(fd int, level int, opt int) Object {
-// 	arg_1, arg_2 := syscall.GetsockoptUcred(fd, level, opt)
+// 	res1, res2 := syscall.GetsockoptUcred(fd, level, opt)
 // 	...ABEND676: TODO...
 // }
 
@@ -18539,19 +18539,19 @@ GO FUNC syscall.Listxattr has:
 
 GO FUNC syscall.LsfJump has:
 // func lsfJump(code int, k int, jt int, jf int) Object {
-// 	arg_1 := syscall.LsfJump(code, k, jt, jf)
+// 	res1 := syscall.LsfJump(code, k, jt, jf)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC syscall.LsfSocket has:
 // func lsfSocket(ifindex int, proto int) Object {
-// 	arg_1, arg_2 := syscall.LsfSocket(ifindex, proto)
+// 	res1, res2 := syscall.LsfSocket(ifindex, proto)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC syscall.LsfStmt has:
 // func lsfStmt(code int, k int) Object {
-// 	arg_1 := syscall.LsfStmt(code, k)
+// 	res1 := syscall.LsfStmt(code, k)
 // 	...ABEND676: TODO...
 // }
 
@@ -18563,19 +18563,19 @@ GO FUNC syscall.Mmap has:
 
 GO FUNC syscall.NetlinkRIB has:
 // func netlinkRIB(proto int, family int) Object {
-// 	arg_1, arg_2 := syscall.NetlinkRIB(proto, family)
+// 	res1, res2 := syscall.NetlinkRIB(proto, family)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC syscall.NsecToTimespec has:
 // func nsecToTimespec(nsec Object) Object {
-// 	arg_1 := syscall.NsecToTimespec(nsec)
+// 	res1 := syscall.NsecToTimespec(nsec)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC syscall.NsecToTimeval has:
 // func nsecToTimeval(nsec Object) Object {
-// 	arg_1 := syscall.NsecToTimeval(nsec)
+// 	res1 := syscall.NsecToTimeval(nsec)
 // 	...ABEND676: TODO...
 // }
 
@@ -18599,31 +18599,31 @@ GO FUNC syscall.ParseDirent has:
 
 GO FUNC syscall.ParseNetlinkMessage has:
 // func parseNetlinkMessage(b ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/syscall/netlink_linux.go:116:28)) Object {
-// 	arg_1, arg_2 := syscall.ParseNetlinkMessage(b)
+// 	res1, res2 := syscall.ParseNetlinkMessage(b)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC syscall.ParseNetlinkRouteAttr has:
 // func parseNetlinkRouteAttr(m ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/syscall/netlink_linux.go:148:30)) Object {
-// 	arg_1, arg_2 := syscall.ParseNetlinkRouteAttr(m)
+// 	res1, res2 := syscall.ParseNetlinkRouteAttr(m)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC syscall.ParseSocketControlMessage has:
 // func parseSocketControlMessage(b ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/syscall/sockcmsg_unix.go:49:34)) Object {
-// 	arg_1, arg_2 := syscall.ParseSocketControlMessage(b)
+// 	res1, res2 := syscall.ParseSocketControlMessage(b)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC syscall.ParseUnixCredentials has:
 // func parseUnixCredentials(m ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/syscall/sockcmsg_linux.go:27:29)) Object {
-// 	arg_1, arg_2 := syscall.ParseUnixCredentials(m)
+// 	res1, res2 := syscall.ParseUnixCredentials(m)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC syscall.ParseUnixRights has:
 // func parseUnixRights(m ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/syscall/sockcmsg_unix.go:91:24)) Object {
-// 	arg_1, arg_2 := syscall.ParseUnixRights(m)
+// 	res1, res2 := syscall.ParseUnixRights(m)
 // 	...ABEND676: TODO...
 // }
 
@@ -18743,7 +18743,7 @@ GO FUNC syscall.Setsid has:
 
 GO FUNC syscall.SlicePtrFromStrings has:
 // func slicePtrFromStrings(ss ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/syscall/exec_unix.go:83:29)) Object {
-// 	arg_1, arg_2 := syscall.SlicePtrFromStrings(ss)
+// 	res1, res2 := syscall.SlicePtrFromStrings(ss)
 // 	...ABEND676: TODO...
 // }
 
@@ -18773,13 +18773,13 @@ GO FUNC syscall.StartProcess has:
 
 GO FUNC syscall.StringByteSlice has:
 // func stringByteSlice(s string) Object {
-// 	arg_1 := syscall.StringByteSlice(s)
+// 	res1 := syscall.StringByteSlice(s)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC syscall.StringSlicePtr has:
 // func stringSlicePtr(ss ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/syscall/exec_unix.go:71:24)) Object {
-// 	arg_1 := syscall.StringSlicePtr(ss)
+// 	res1 := syscall.StringSlicePtr(ss)
 // 	...ABEND676: TODO...
 // }
 
@@ -18821,13 +18821,13 @@ GO FUNC syscall.Times has:
 
 GO FUNC syscall.UnixCredentials has:
 // func unixCredentials(ucred ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/syscall/sockcmsg_linux.go:14:28)) Object {
-// 	arg_1 := syscall.UnixCredentials(ucred)
+// 	res1 := syscall.UnixCredentials(ucred)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC syscall.UnixRights has:
 // func unixRights(fds ABEND882(unrecognized Expr type *ast.Ellipsis at: ../GOSRC/syscall/sockcmsg_unix.go:74:21)) Object {
-// 	arg_1 := syscall.UnixRights(fds)
+// 	res1 := syscall.UnixRights(fds)
 // 	...ABEND676: TODO...
 // }
 
@@ -18845,43 +18845,43 @@ GO FUNC syscall.Write has:
 
 GO FUNC syslog.Dial has:
 // func dial(network string, raddr string, priority Object, tag string) Object {
-// 	arg_1, arg_2 := syslog.Dial(network, raddr, priority, tag)
+// 	res1, res2 := syslog.Dial(network, raddr, priority, tag)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC syslog.New has:
 // func new(priority Object, tag string) Object {
-// 	arg_1, arg_2 := syslog.New(priority, tag)
+// 	res1, res2 := syslog.New(priority, tag)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC syslog.NewLogger has:
 // func newLogger(p Object, logFlag int) Object {
-// 	arg_1, arg_2 := syslog.NewLogger(p, logFlag)
+// 	res1, res2 := syslog.NewLogger(p, logFlag)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC tabwriter.NewWriter has:
 // func newWriter(output ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/text/tabwriter/tabwriter.go:597:23), minwidth int, tabwidth int, padding int, padchar Object, flags Object) Object {
-// 	arg_1 := tabwriter.NewWriter(output, minwidth, tabwidth, padding, padchar, flags)
+// 	res1 := tabwriter.NewWriter(output, minwidth, tabwidth, padding, padchar, flags)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC tar.FileInfoHeader has:
 // func fileInfoHeader(fi ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/archive/tar/common.go:629:24), link string) Object {
-// 	arg_1, arg_2 := tar.FileInfoHeader(fi, link)
+// 	res1, res2 := tar.FileInfoHeader(fi, link)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC tar.NewReader has:
 // func newReader(r ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/archive/tar/reader.go:39:18)) Object {
-// 	arg_1 := tar.NewReader(r)
+// 	res1 := tar.NewReader(r)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC tar.NewWriter has:
 // func newWriter(w ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/archive/tar/writer.go:33:18)) Object {
-// 	arg_1 := tar.NewWriter(w)
+// 	res1 := tar.NewWriter(w)
 // 	...ABEND676: TODO...
 // }
 
@@ -18893,13 +18893,13 @@ GO FUNC testing.AllocsPerRun has:
 
 GO FUNC testing.Benchmark has:
 // func benchmark(f ABEND882(unrecognized Expr type *ast.FuncType at: ../GOSRC/testing/benchmark.go:649:18)) Object {
-// 	arg_1 := testing.Benchmark(f)
+// 	res1 := testing.Benchmark(f)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC testing.Coverage has:
 // func coverage() Object {
-// 	arg_1 := testing.Coverage()
+// 	res1 := testing.Coverage()
 // 	...ABEND676: TODO...
 // }
 
@@ -18911,7 +18911,7 @@ GO FUNC testing.Main has:
 
 GO FUNC testing.MainStart has:
 // func mainStart(deps Object, tests ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/testing/testing.go:995:37), benchmarks ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/testing/testing.go:995:64), examples ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/testing/testing.go:995:94)) Object {
-// 	arg_1 := testing.MainStart(deps, tests, benchmarks, examples)
+// 	res1 := testing.MainStart(deps, tests, benchmarks, examples)
 // 	...ABEND676: TODO...
 // }
 
@@ -18929,103 +18929,103 @@ GO FUNC testing.RunBenchmarks has:
 
 GO FUNC textproto.Dial has:
 // func dial(network string, addr string) Object {
-// 	arg_1, arg_2 := textproto.Dial(network, addr)
+// 	res1, res2 := textproto.Dial(network, addr)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC textproto.NewConn has:
 // func newConn(conn ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/net/textproto/textproto.go:66:19)) Object {
-// 	arg_1 := textproto.NewConn(conn)
+// 	res1 := textproto.NewConn(conn)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC textproto.NewReader has:
 // func newReader(r ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/net/textproto/reader.go:29:18)) Object {
-// 	arg_1 := textproto.NewReader(r)
+// 	res1 := textproto.NewReader(r)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC textproto.NewWriter has:
 // func newWriter(w ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/net/textproto/writer.go:21:18)) Object {
-// 	arg_1 := textproto.NewWriter(w)
+// 	res1 := textproto.NewWriter(w)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC textproto.TrimBytes has:
 // func trimBytes(b ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/net/textproto/textproto.go:137:18)) Object {
-// 	arg_1 := textproto.TrimBytes(b)
+// 	res1 := textproto.TrimBytes(b)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC time.After has:
 // func after(d Object) Object {
-// 	arg_1 := time.After(d)
+// 	res1 := time.After(d)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC time.AfterFunc has:
 // func afterFunc(d Object, f ABEND882(unrecognized Expr type *ast.FuncType at: ../GOSRC/time/sleep.go:159:30)) Object {
-// 	arg_1 := time.AfterFunc(d, f)
+// 	res1 := time.AfterFunc(d, f)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC time.Date has:
 // func date(year int, month Object, day int, hour int, min int, sec int, nsec int, loc ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/time/time.go:1326:69)) Object {
-// 	arg_1 := time.Date(year, month, day, hour, min, sec, nsec, loc)
+// 	res1 := time.Date(year, month, day, hour, min, sec, nsec, loc)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC time.FixedZone has:
 // func fixedZone(name string, offset int) Object {
-// 	arg_1 := time.FixedZone(name, offset)
+// 	res1 := time.FixedZone(name, offset)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC time.LoadLocation has:
 // func loadLocation(name string) Object {
-// 	arg_1, arg_2 := time.LoadLocation(name)
+// 	res1, res2 := time.LoadLocation(name)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC time.LoadLocationFromTZData has:
 // func loadLocationFromTZData(name string, data ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/time/zoneinfo_read.go:86:47)) Object {
-// 	arg_1, arg_2 := time.LoadLocationFromTZData(name, data)
+// 	res1, res2 := time.LoadLocationFromTZData(name, data)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC time.NewTicker has:
 // func newTicker(d Object) Object {
-// 	arg_1 := time.NewTicker(d)
+// 	res1 := time.NewTicker(d)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC time.NewTimer has:
 // func newTimer(d Object) Object {
-// 	arg_1 := time.NewTimer(d)
+// 	res1 := time.NewTimer(d)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC time.Now has:
 // func now() Object {
-// 	arg_1 := time.Now()
+// 	res1 := time.Now()
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC time.Parse has:
 // func parse(layout string, value string) Object {
-// 	arg_1, arg_2 := time.Parse(layout, value)
+// 	res1, res2 := time.Parse(layout, value)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC time.ParseDuration has:
 // func parseDuration(s string) Object {
-// 	arg_1, arg_2 := time.ParseDuration(s)
+// 	res1, res2 := time.ParseDuration(s)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC time.ParseInLocation has:
 // func parseInLocation(layout string, value string, loc ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/time/format.go:782:48)) Object {
-// 	arg_1, arg_2 := time.ParseInLocation(layout, value, loc)
+// 	res1, res2 := time.ParseInLocation(layout, value, loc)
 // 	...ABEND676: TODO...
 // }
 
@@ -19037,73 +19037,73 @@ GO FUNC time.Sleep has:
 
 GO FUNC time.Tick has:
 // func tick(d Object) Object {
-// 	arg_1 := time.Tick(d)
+// 	res1 := time.Tick(d)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC time.Unix has:
 // func unix(sec Object, nsec Object) Object {
-// 	arg_1 := time.Unix(sec, nsec)
+// 	res1 := time.Unix(sec, nsec)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC tls.Client has:
 // func client(conn ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/crypto/tls/tls.go:39:18), config ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/crypto/tls/tls.go:39:35)) Object {
-// 	arg_1 := tls.Client(conn, config)
+// 	res1 := tls.Client(conn, config)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC tls.Dial has:
 // func dial(network string, addr string, config ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/crypto/tls/tls.go:169:40)) Object {
-// 	arg_1, arg_2 := tls.Dial(network, addr, config)
+// 	res1, res2 := tls.Dial(network, addr, config)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC tls.DialWithDialer has:
 // func dialWithDialer(dialer ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/crypto/tls/tls.go:98:28), network string, addr string, config ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/crypto/tls/tls.go:98:70)) Object {
-// 	arg_1, arg_2 := tls.DialWithDialer(dialer, network, addr, config)
+// 	res1, res2 := tls.DialWithDialer(dialer, network, addr, config)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC tls.Listen has:
 // func listen(network string, laddr string, config ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/crypto/tls/tls.go:74:43)) Object {
-// 	arg_1, arg_2 := tls.Listen(network, laddr, config)
+// 	res1, res2 := tls.Listen(network, laddr, config)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC tls.LoadX509KeyPair has:
 // func loadX509KeyPair(certFile string, keyFile string) Object {
-// 	arg_1, arg_2 := tls.LoadX509KeyPair(certFile, keyFile)
+// 	res1, res2 := tls.LoadX509KeyPair(certFile, keyFile)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC tls.NewLRUClientSessionCache has:
 // func newLRUClientSessionCache(capacity int) Object {
-// 	arg_1 := tls.NewLRUClientSessionCache(capacity)
+// 	res1 := tls.NewLRUClientSessionCache(capacity)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC tls.NewListener has:
 // func newListener(inner ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/crypto/tls/tls.go:63:24), config ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/crypto/tls/tls.go:63:45)) Object {
-// 	arg_1 := tls.NewListener(inner, config)
+// 	res1 := tls.NewListener(inner, config)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC tls.Server has:
 // func server(conn ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/crypto/tls/tls.go:31:18), config ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/crypto/tls/tls.go:31:35)) Object {
-// 	arg_1 := tls.Server(conn, config)
+// 	res1 := tls.Server(conn, config)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC tls.X509KeyPair has:
 // func x509KeyPair(certPEMBlock ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/crypto/tls/tls.go:193:44), keyPEMBlock ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/crypto/tls/tls.go:193:44)) Object {
-// 	arg_1, arg_2 := tls.X509KeyPair(certPEMBlock, keyPEMBlock)
+// 	res1, res2 := tls.X509KeyPair(certPEMBlock, keyPEMBlock)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC token.NewFileSet has:
 // func newFileSet() Object {
-// 	arg_1 := token.NewFileSet()
+// 	res1 := token.NewFileSet()
 // 	...ABEND676: TODO...
 // }
 
@@ -19127,7 +19127,7 @@ GO FUNC trace.NewTask has:
 
 GO FUNC trace.StartRegion has:
 // func startRegion(ctx ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/runtime/trace/annotation.go:149:22), regionType string) Object {
-// 	arg_1 := trace.StartRegion(ctx, regionType)
+// 	res1 := trace.StartRegion(ctx, regionType)
 // 	...ABEND676: TODO...
 // }
 
@@ -19157,25 +19157,25 @@ GO FUNC transform.Bytes has:
 
 GO FUNC transform.Chain has:
 // func chain(t ABEND882(unrecognized Expr type *ast.Ellipsis at: ../GOSRC/vendor/golang_org/x/text/transform/transform.go:380:14)) Object {
-// 	arg_1 := transform.Chain(t)
+// 	res1 := transform.Chain(t)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC transform.NewReader has:
 // func newReader(r ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/vendor/golang_org/x/text/transform/transform.go:136:18), t Object) Object {
-// 	arg_1 := transform.NewReader(r, t)
+// 	res1 := transform.NewReader(r, t)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC transform.NewWriter has:
 // func newWriter(w ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/vendor/golang_org/x/text/transform/transform.go:223:18), t Object) Object {
-// 	arg_1 := transform.NewWriter(w, t)
+// 	res1 := transform.NewWriter(w, t)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC transform.RemoveFunc has:
 // func removeFunc(f ABEND882(unrecognized Expr type *ast.FuncType at: ../GOSRC/vendor/golang_org/x/text/transform/transform.go:499:19)) Object {
-// 	arg_1 := transform.RemoveFunc(f)
+// 	res1 := transform.RemoveFunc(f)
 // 	...ABEND676: TODO...
 // }
 
@@ -19193,7 +19193,7 @@ GO FUNC types.DefPredeclaredTestFuncs has:
 
 GO FUNC types.Default has:
 // func default(typ Object) Object {
-// 	arg_1 := types.Default(typ)
+// 	res1 := types.Default(typ)
 // 	...ABEND676: TODO...
 // }
 
@@ -19217,151 +19217,151 @@ GO FUNC types.MissingMethod has:
 
 GO FUNC types.NewArray has:
 // func newArray(elem Object, len Object) Object {
-// 	arg_1 := types.NewArray(elem, len)
+// 	res1 := types.NewArray(elem, len)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC types.NewChan has:
 // func newChan(dir Object, elem Object) Object {
-// 	arg_1 := types.NewChan(dir, elem)
+// 	res1 := types.NewChan(dir, elem)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC types.NewChecker has:
 // func newChecker(conf ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/go/types/check.go:170:22), fset ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/go/types/check.go:170:36), pkg ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/go/types/check.go:170:56), info ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/go/types/check.go:170:71)) Object {
-// 	arg_1 := types.NewChecker(conf, fset, pkg, info)
+// 	res1 := types.NewChecker(conf, fset, pkg, info)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC types.NewConst has:
 // func newConst(pos ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/go/types/object.go:205:19), pkg ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/go/types/object.go:205:34), name string, typ Object, val ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/go/types/object.go:205:71)) Object {
-// 	arg_1 := types.NewConst(pos, pkg, name, typ, val)
+// 	res1 := types.NewConst(pos, pkg, name, typ, val)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC types.NewField has:
 // func newField(pos ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/go/types/object.go:276:19), pkg ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/go/types/object.go:276:34), name string, typ Object, embedded Object) Object {
-// 	arg_1 := types.NewField(pos, pkg, name, typ, embedded)
+// 	res1 := types.NewField(pos, pkg, name, typ, embedded)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC types.NewFunc has:
 // func newFunc(pos ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/go/types/object.go:301:18), pkg ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/go/types/object.go:301:33), name string, sig ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/go/types/object.go:301:60)) Object {
-// 	arg_1 := types.NewFunc(pos, pkg, name, sig)
+// 	res1 := types.NewFunc(pos, pkg, name, sig)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC types.NewInterface has:
 // func newInterface(methods ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/go/types/type.go:266:27), embeddeds ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/go/types/type.go:266:46)) Object {
-// 	arg_1 := types.NewInterface(methods, embeddeds)
+// 	res1 := types.NewInterface(methods, embeddeds)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC types.NewInterfaceType has:
 // func newInterfaceType(methods ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/go/types/type.go:280:31), embeddeds ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/go/types/type.go:280:50)) Object {
-// 	arg_1 := types.NewInterfaceType(methods, embeddeds)
+// 	res1 := types.NewInterfaceType(methods, embeddeds)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC types.NewLabel has:
 // func newLabel(pos ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/go/types/object.go:331:19), pkg ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/go/types/object.go:331:34), name string) Object {
-// 	arg_1 := types.NewLabel(pos, pkg, name)
+// 	res1 := types.NewLabel(pos, pkg, name)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC types.NewMap has:
 // func newMap(key Object, elem Object) Object {
-// 	arg_1 := types.NewMap(key, elem)
+// 	res1 := types.NewMap(key, elem)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC types.NewMethodSet has:
 // func newMethodSet(T Object) Object {
-// 	arg_1 := types.NewMethodSet(T)
+// 	res1 := types.NewMethodSet(T)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC types.NewNamed has:
 // func newNamed(obj ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/go/types/type.go:433:19), underlying Object, methods ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/go/types/type.go:433:55)) Object {
-// 	arg_1 := types.NewNamed(obj, underlying, methods)
+// 	res1 := types.NewNamed(obj, underlying, methods)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC types.NewPackage has:
 // func newPackage(path string, name string) Object {
-// 	arg_1 := types.NewPackage(path, name)
+// 	res1 := types.NewPackage(path, name)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC types.NewParam has:
 // func newParam(pos ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/go/types/object.go:269:19), pkg ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/go/types/object.go:269:34), name string, typ Object) Object {
-// 	arg_1 := types.NewParam(pos, pkg, name, typ)
+// 	res1 := types.NewParam(pos, pkg, name, typ)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC types.NewPkgName has:
 // func newPkgName(pos ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/go/types/object.go:189:21), pkg ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/go/types/object.go:189:36), name string, imported ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/go/types/object.go:189:68)) Object {
-// 	arg_1 := types.NewPkgName(pos, pkg, name, imported)
+// 	res1 := types.NewPkgName(pos, pkg, name, imported)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC types.NewPointer has:
 // func newPointer(elem Object) Object {
-// 	arg_1 := types.NewPointer(elem)
+// 	res1 := types.NewPointer(elem)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC types.NewScope has:
 // func newScope(parent ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/go/types/scope.go:36:22), pos ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/go/types/scope.go:36:39), end ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/go/types/scope.go:36:39), comment string) Object {
-// 	arg_1 := types.NewScope(parent, pos, end, comment)
+// 	res1 := types.NewScope(parent, pos, end, comment)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC types.NewSignature has:
 // func newSignature(recv ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/go/types/type.go:213:24), params ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/go/types/type.go:213:46), results ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/go/types/type.go:213:46), variadic Object) Object {
-// 	arg_1 := types.NewSignature(recv, params, results, variadic)
+// 	res1 := types.NewSignature(recv, params, results, variadic)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC types.NewSlice has:
 // func newSlice(elem Object) Object {
-// 	arg_1 := types.NewSlice(elem)
+// 	res1 := types.NewSlice(elem)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC types.NewStruct has:
 // func newStruct(fields ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/go/types/type.go:131:23), tags ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/go/types/type.go:131:36)) Object {
-// 	arg_1 := types.NewStruct(fields, tags)
+// 	res1 := types.NewStruct(fields, tags)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC types.NewTuple has:
 // func newTuple(x ABEND882(unrecognized Expr type *ast.Ellipsis at: ../GOSRC/go/types/type.go:177:17)) Object {
-// 	arg_1 := types.NewTuple(x)
+// 	res1 := types.NewTuple(x)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC types.NewTypeName has:
 // func newTypeName(pos ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/go/types/object.go:226:22), pkg ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/go/types/object.go:226:37), name string, typ Object) Object {
-// 	arg_1 := types.NewTypeName(pos, pkg, name, typ)
+// 	res1 := types.NewTypeName(pos, pkg, name, typ)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC types.NewVar has:
 // func newVar(pos ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/go/types/object.go:264:17), pkg ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/go/types/object.go:264:32), name string, typ Object) Object {
-// 	arg_1 := types.NewVar(pos, pkg, name, typ)
+// 	res1 := types.NewVar(pos, pkg, name, typ)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC types.RelativeTo has:
 // func relativeTo(pkg ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/go/types/typestring.go:29:21)) Object {
-// 	arg_1 := types.RelativeTo(pkg)
+// 	res1 := types.RelativeTo(pkg)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC types.SizesFor has:
 // func sizesFor(compiler string, arch string) Object {
-// 	arg_1 := types.SizesFor(compiler, arch)
+// 	res1 := types.SizesFor(compiler, arch)
 // 	...ABEND676: TODO...
 // }
 
@@ -19385,139 +19385,139 @@ GO FUNC types.WriteType has:
 
 GO FUNC unicode.SimpleFold has:
 // func simpleFold(r Object) Object {
-// 	arg_1 := unicode.SimpleFold(r)
+// 	res1 := unicode.SimpleFold(r)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC unicode.To has:
 // func to(_case int, r Object) Object {
-// 	arg_1 := unicode.To(_case, r)
+// 	res1 := unicode.To(_case, r)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC unicode.ToLower has:
 // func toLower(r Object) Object {
-// 	arg_1 := unicode.ToLower(r)
+// 	res1 := unicode.ToLower(r)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC unicode.ToTitle has:
 // func toTitle(r Object) Object {
-// 	arg_1 := unicode.ToTitle(r)
+// 	res1 := unicode.ToTitle(r)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC unicode.ToUpper has:
 // func toUpper(r Object) Object {
-// 	arg_1 := unicode.ToUpper(r)
+// 	res1 := unicode.ToUpper(r)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC unsafe.Alignof has:
 // func alignof(x Object) Object {
-// 	arg_1 := unsafe.Alignof(x)
+// 	res1 := unsafe.Alignof(x)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC unsafe.Offsetof has:
 // func offsetof(x Object) Object {
-// 	arg_1 := unsafe.Offsetof(x)
+// 	res1 := unsafe.Offsetof(x)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC unsafe.Sizeof has:
 // func sizeof(x Object) Object {
-// 	arg_1 := unsafe.Sizeof(x)
+// 	res1 := unsafe.Sizeof(x)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC url.Parse has:
 // func parse(rawurl string) Object {
-// 	arg_1, arg_2 := url.Parse(rawurl)
+// 	res1, res2 := url.Parse(rawurl)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC url.ParseQuery has:
 // func parseQuery(query string) Object {
-// 	arg_1, arg_2 := url.ParseQuery(query)
+// 	res1, res2 := url.ParseQuery(query)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC url.ParseRequestURI has:
 // func parseRequestURI(rawurl string) Object {
-// 	arg_1, arg_2 := url.ParseRequestURI(rawurl)
+// 	res1, res2 := url.ParseRequestURI(rawurl)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC url.PathUnescape has:
 // func pathUnescape(s string) Object {
-// 	arg_1, arg_2 := url.PathUnescape(s)
+// 	res1, res2 := url.PathUnescape(s)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC url.QueryUnescape has:
 // func queryUnescape(s string) Object {
-// 	arg_1, arg_2 := url.QueryUnescape(s)
+// 	res1, res2 := url.QueryUnescape(s)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC url.User has:
 // func user(username string) Object {
-// 	arg_1 := url.User(username)
+// 	res1 := url.User(username)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC url.UserPassword has:
 // func userPassword(username string, password string) Object {
-// 	arg_1 := url.UserPassword(username, password)
+// 	res1 := url.UserPassword(username, password)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC user.Current has:
 // func current() Object {
-// 	arg_1, arg_2 := user.Current()
+// 	res1, res2 := user.Current()
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC user.Lookup has:
 // func lookup(username string) Object {
-// 	arg_1, arg_2 := user.Lookup(username)
+// 	res1, res2 := user.Lookup(username)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC user.LookupGroup has:
 // func lookupGroup(name string) Object {
-// 	arg_1, arg_2 := user.LookupGroup(name)
+// 	res1, res2 := user.LookupGroup(name)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC user.LookupGroupId has:
 // func lookupGroupId(gid string) Object {
-// 	arg_1, arg_2 := user.LookupGroupId(gid)
+// 	res1, res2 := user.LookupGroupId(gid)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC user.LookupId has:
 // func lookupId(uid string) Object {
-// 	arg_1, arg_2 := user.LookupId(uid)
+// 	res1, res2 := user.LookupId(uid)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC utf16.Decode has:
 // func decode(s ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/unicode/utf16/utf16.go:88:15)) Object {
-// 	arg_1 := utf16.Decode(s)
+// 	res1 := utf16.Decode(s)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC utf16.DecodeRune has:
 // func decodeRune(r1 Object, r2 Object) Object {
-// 	arg_1 := utf16.DecodeRune(r1, r2)
+// 	res1 := utf16.DecodeRune(r1, r2)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC utf16.Encode has:
 // func encode(s ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/unicode/utf16/utf16.go:56:15)) Object {
-// 	arg_1 := utf16.Encode(s)
+// 	res1 := utf16.Encode(s)
 // 	...ABEND676: TODO...
 // }
 
@@ -19565,97 +19565,97 @@ GO FUNC x509.CreateCertificateRequest has:
 
 GO FUNC x509.DecryptPEMBlock has:
 // func decryptPEMBlock(b ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/crypto/x509/pem_decrypt.go:115:24), password ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/crypto/x509/pem_decrypt.go:115:45)) Object {
-// 	arg_1, arg_2 := x509.DecryptPEMBlock(b, password)
+// 	res1, res2 := x509.DecryptPEMBlock(b, password)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC x509.EncryptPEMBlock has:
 // func encryptPEMBlock(rand ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/crypto/x509/pem_decrypt.go:183:27), blockType string, data ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/crypto/x509/pem_decrypt.go:183:71), password ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/crypto/x509/pem_decrypt.go:183:71), alg Object) Object {
-// 	arg_1, arg_2 := x509.EncryptPEMBlock(rand, blockType, data, password, alg)
+// 	res1, res2 := x509.EncryptPEMBlock(rand, blockType, data, password, alg)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC x509.MarshalECPrivateKey has:
 // func marshalECPrivateKey(key ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/crypto/x509/sec1.go:37:30)) Object {
-// 	arg_1, arg_2 := x509.MarshalECPrivateKey(key)
+// 	res1, res2 := x509.MarshalECPrivateKey(key)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC x509.MarshalPKCS1PrivateKey has:
 // func marshalPKCS1PrivateKey(key ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/crypto/x509/pkcs1.go:92:33)) Object {
-// 	arg_1 := x509.MarshalPKCS1PrivateKey(key)
+// 	res1 := x509.MarshalPKCS1PrivateKey(key)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC x509.MarshalPKCS1PublicKey has:
 // func marshalPKCS1PublicKey(key ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/crypto/x509/pkcs1.go:148:32)) Object {
-// 	arg_1 := x509.MarshalPKCS1PublicKey(key)
+// 	res1 := x509.MarshalPKCS1PublicKey(key)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC x509.MarshalPKCS8PrivateKey has:
 // func marshalPKCS8PrivateKey(key ABEND882(unrecognized Expr type *ast.InterfaceType at: ../GOSRC/crypto/x509/pkcs8.go:63:33)) Object {
-// 	arg_1, arg_2 := x509.MarshalPKCS8PrivateKey(key)
+// 	res1, res2 := x509.MarshalPKCS8PrivateKey(key)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC x509.MarshalPKIXPublicKey has:
 // func marshalPKIXPublicKey(pub ABEND882(unrecognized Expr type *ast.InterfaceType at: ../GOSRC/crypto/x509/x509.go:104:31)) Object {
-// 	arg_1, arg_2 := x509.MarshalPKIXPublicKey(pub)
+// 	res1, res2 := x509.MarshalPKIXPublicKey(pub)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC x509.NewCertPool has:
 // func newCertPool() Object {
-// 	arg_1 := x509.NewCertPool()
+// 	res1 := x509.NewCertPool()
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC x509.ParseCRL has:
 // func parseCRL(crlBytes ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/crypto/x509/x509.go:2179:24)) Object {
-// 	arg_1, arg_2 := x509.ParseCRL(crlBytes)
+// 	res1, res2 := x509.ParseCRL(crlBytes)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC x509.ParseCertificate has:
 // func parseCertificate(asn1Data ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/crypto/x509/x509.go:1562:32)) Object {
-// 	arg_1, arg_2 := x509.ParseCertificate(asn1Data)
+// 	res1, res2 := x509.ParseCertificate(asn1Data)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC x509.ParseCertificateRequest has:
 // func parseCertificateRequest(asn1Data ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/crypto/x509/x509.go:2575:39)) Object {
-// 	arg_1, arg_2 := x509.ParseCertificateRequest(asn1Data)
+// 	res1, res2 := x509.ParseCertificateRequest(asn1Data)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC x509.ParseCertificates has:
 // func parseCertificates(asn1Data ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/crypto/x509/x509.go:1577:33)) Object {
-// 	arg_1, arg_2 := x509.ParseCertificates(asn1Data)
+// 	res1, res2 := x509.ParseCertificates(asn1Data)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC x509.ParseDERCRL has:
 // func parseDERCRL(derBytes ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/crypto/x509/x509.go:2190:27)) Object {
-// 	arg_1, arg_2 := x509.ParseDERCRL(derBytes)
+// 	res1, res2 := x509.ParseDERCRL(derBytes)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC x509.ParseECPrivateKey has:
 // func parseECPrivateKey(der ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/crypto/x509/sec1.go:32:28)) Object {
-// 	arg_1, arg_2 := x509.ParseECPrivateKey(der)
+// 	res1, res2 := x509.ParseECPrivateKey(der)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC x509.ParsePKCS1PrivateKey has:
 // func parsePKCS1PrivateKey(der ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/crypto/x509/pkcs1.go:45:31)) Object {
-// 	arg_1, arg_2 := x509.ParsePKCS1PrivateKey(der)
+// 	res1, res2 := x509.ParsePKCS1PrivateKey(der)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC x509.ParsePKCS1PublicKey has:
 // func parsePKCS1PublicKey(der ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/crypto/x509/pkcs1.go:124:30)) Object {
-// 	arg_1, arg_2 := x509.ParsePKCS1PublicKey(der)
+// 	res1, res2 := x509.ParsePKCS1PublicKey(der)
 // 	...ABEND676: TODO...
 // }
 
@@ -19673,13 +19673,13 @@ GO FUNC x509.ParsePKIXPublicKey has:
 
 GO FUNC x509.SystemCertPool has:
 // func systemCertPool() Object {
-// 	arg_1, arg_2 := x509.SystemCertPool()
+// 	res1, res2 := x509.SystemCertPool()
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC xml.CopyToken has:
 // func copyToken(t Object) Object {
-// 	arg_1 := xml.CopyToken(t)
+// 	res1 := xml.CopyToken(t)
 // 	...ABEND676: TODO...
 // }
 
@@ -19691,55 +19691,55 @@ GO FUNC xml.Escape has:
 
 GO FUNC xml.Marshal has:
 // func marshal(v ABEND882(unrecognized Expr type *ast.InterfaceType at: ../GOSRC/encoding/xml/marshal.go:75:16)) Object {
-// 	arg_1, arg_2 := xml.Marshal(v)
+// 	res1, res2 := xml.Marshal(v)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC xml.MarshalIndent has:
 // func marshalIndent(v ABEND882(unrecognized Expr type *ast.InterfaceType at: ../GOSRC/encoding/xml/marshal.go:121:22), prefix string, indent string) Object {
-// 	arg_1, arg_2 := xml.MarshalIndent(v, prefix, indent)
+// 	res1, res2 := xml.MarshalIndent(v, prefix, indent)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC xml.NewDecoder has:
 // func newDecoder(r ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/encoding/xml/xml.go:229:19)) Object {
-// 	arg_1 := xml.NewDecoder(r)
+// 	res1 := xml.NewDecoder(r)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC xml.NewEncoder has:
 // func newEncoder(w ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/encoding/xml/marshal.go:137:19)) Object {
-// 	arg_1 := xml.NewEncoder(w)
+// 	res1 := xml.NewEncoder(w)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC xml.NewTokenDecoder has:
 // func newTokenDecoder(t Object) Object {
-// 	arg_1 := xml.NewTokenDecoder(t)
+// 	res1 := xml.NewTokenDecoder(t)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC zip.FileInfoHeader has:
 // func fileInfoHeader(fi ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/archive/zip/struct.go:169:24)) Object {
-// 	arg_1, arg_2 := zip.FileInfoHeader(fi)
+// 	res1, res2 := zip.FileInfoHeader(fi)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC zip.NewReader has:
 // func newReader(r ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/archive/zip/reader.go:71:18), size Object) Object {
-// 	arg_1, arg_2 := zip.NewReader(r, size)
+// 	res1, res2 := zip.NewReader(r, size)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC zip.NewWriter has:
 // func newWriter(w ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/archive/zip/writer.go:43:18)) Object {
-// 	arg_1 := zip.NewWriter(w)
+// 	res1 := zip.NewWriter(w)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC zip.OpenReader has:
 // func openReader(name string) Object {
-// 	arg_1, arg_2 := zip.OpenReader(name)
+// 	res1, res2 := zip.OpenReader(name)
 // 	...ABEND676: TODO...
 // }
 
@@ -19757,31 +19757,31 @@ GO FUNC zip.RegisterDecompressor has:
 
 GO FUNC zlib.NewReader has:
 // func newReader(r ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/compress/zlib/reader.go:70:18)) Object {
-// 	arg_1, arg_2 := zlib.NewReader(r)
+// 	res1, res2 := zlib.NewReader(r)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC zlib.NewReaderDict has:
 // func newReaderDict(r ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/compress/zlib/reader.go:79:22), dict ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/compress/zlib/reader.go:79:38)) Object {
-// 	arg_1, arg_2 := zlib.NewReaderDict(r, dict)
+// 	res1, res2 := zlib.NewReaderDict(r, dict)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC zlib.NewWriter has:
 // func newWriter(w ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/compress/zlib/writer.go:43:18)) Object {
-// 	arg_1 := zlib.NewWriter(w)
+// 	res1 := zlib.NewWriter(w)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC zlib.NewWriterLevel has:
 // func newWriterLevel(w ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/compress/zlib/writer.go:54:23), level int) Object {
-// 	arg_1, arg_2 := zlib.NewWriterLevel(w, level)
+// 	res1, res2 := zlib.NewWriterLevel(w, level)
 // 	...ABEND676: TODO...
 // }
 
 GO FUNC zlib.NewWriterLevelDict has:
 // func newWriterLevelDict(w ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/compress/zlib/writer.go:63:27), level int, dict ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/compress/zlib/writer.go:63:54)) Object {
-// 	arg_1, arg_2 := zlib.NewWriterLevelDict(w, level, dict)
+// 	res1, res2 := zlib.NewWriterLevelDict(w, level, dict)
 // 	...ABEND676: TODO...
 // }
 
