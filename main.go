@@ -590,19 +590,21 @@ func genGoPostList(indent string, pkg string, fl *FieldList) (gores, jok, gol, g
 				jok += " "
 				multiple = true
 			}
-			jok += "^" + joktype
+			if paramNameAsClojure(p.Name) == "" { // TODO: REMOVE TEST~~~
+				jok += "^" + joktype
+			}
 			if gol != "" {
-				gol += ", "
+				gol += " "
 			}
 			if p == nil {
 				panic(fmt.Sprintf("ABEND414(nil name in pkg %s", pkg))
 			} else {
-				jok += " " + paramNameAsClojure(p.Name)
-				if goltype == "" {  // REMOVE TEST
-					gol += paramNameAsGo(p.Name)
-				}
+				jok += paramNameAsClojure(p.Name)
+				gol += paramNameAsGo(p.Name)
 			}
-			gol += goltype
+			if paramNameAsGo(p.Name) == "" { // TODO: REMOVE TEST~~~
+				gol += goltype
+			}
 		}
 	}
 	if multiple {
@@ -699,14 +701,14 @@ func genFuncCode(pkg string, d *FuncDecl, goFname string) (fc funcCode) {
 
 	fc.jokerParamList, fc.jokerGoCode, fc.goParamList, goPreCode, goParams =
 		genGoPre("\t", d.Type.Params, goFname)
-	goCall := genGoCall(pkg, goFname, goParams)
+	goCall := genGoCall(pkg, d.Name.Name, goParams)
 	goResultAssign, fc.jokerReturnTypeForDoc, fc.goReturnTypeForDoc, goPostCode = genGoPost("\t", pkg, d)
 
 	if goPostCode == "" {
 		goPostCode = "\t...ABEND: TODO..."
 	}
 
-	if goResultAssign != "" {
+	if goResultAssign != "" || true {  // TODO: Restore test~~~
 		goResultAssign += " := "
 	}
 	fc.goCode = goPreCode + // Optional block of pre-code
