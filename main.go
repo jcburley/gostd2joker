@@ -449,12 +449,12 @@ func argsAsGo(p *FieldList) string {
 func genGoPostNamed(indent, pkg, tmp, t string) (jok, gol string) {
 	qt := pkg + "." + t
 	if v, ok := types[qt]; ok {
-		if v[0].built {
+		if v[0].built { // Reuse already-built type info
 			jok = v[0].jok
 			gol = v[0].gol
 			return
 		}
-		if v[0].building {
+		if v[0].building { // Mutually-referring types currently not supported
 			jok = fmt.Sprintf("ABEND947(recursive type reference involving %s)", qt)  // TODO: handle these, e.g. http Request/Response
 			gol = jok
 		} else {

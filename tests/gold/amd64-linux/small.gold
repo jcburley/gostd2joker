@@ -157,97 +157,97 @@ JOKER FUNC url.UserPassword has:
 GO FUNC net.LookupAddr has:
 // func lookupAddr(addr string) Object {
 // 	names, err := net.LookupAddr(addr)
-// 	...ABEND: TODO...
+// 	...ABEND676: TODO...
 // }
 
 GO FUNC net.LookupCNAME has:
 // func lookupCNAME(host string) Object {
 // 	cname, err := net.LookupCNAME(host)
-// 	...ABEND: TODO...
+// 	...ABEND676: TODO...
 // }
 
 GO FUNC net.LookupHost has:
 // func lookupHost(host string) Object {
 // 	addrs, err := net.LookupHost(host)
-// 	...ABEND: TODO...
+// 	...ABEND676: TODO...
 // }
 
 GO FUNC net.LookupIP has:
 // func lookupIP(host string) Object {
 // 	arg_1, arg_2 := net.LookupIP(host)
-// 	...ABEND: TODO...
+// 	...ABEND676: TODO...
 // }
 
 GO FUNC net.LookupMX has:
 // func lookupMX(name string) Object {
 // 	arg_1, arg_2 := net.LookupMX(name)
-// 	...ABEND: TODO...
+// 	...ABEND676: TODO...
 // }
 
 GO FUNC net.LookupNS has:
 // func lookupNS(name string) Object {
 // 	arg_1, arg_2 := net.LookupNS(name)
-// 	...ABEND: TODO...
+// 	...ABEND676: TODO...
 // }
 
 GO FUNC net.LookupPort has:
 // func lookupPort(network string, service string) Object {
 // 	port, err := net.LookupPort(network, service)
-// 	...ABEND: TODO...
+// 	...ABEND676: TODO...
 // }
 
 GO FUNC net.LookupSRV has:
 // func lookupSRV(service string, proto string, name string) Object {
 // 	cname, addrs, err := net.LookupSRV(service, proto, name)
-// 	...ABEND: TODO...
+// 	...ABEND676: TODO...
 // }
 
 GO FUNC net.LookupTXT has:
 // func lookupTXT(name string) Object {
 // 	arg_1, arg_2 := net.LookupTXT(name)
-// 	...ABEND: TODO...
+// 	...ABEND676: TODO...
 // }
 
 GO FUNC url.Parse has:
 // func parse(rawurl string) Object {
 // 	arg_1, arg_2 := url.Parse(rawurl)
-// 	...ABEND: TODO...
+// 	...ABEND676: TODO...
 // }
 
 GO FUNC url.ParseQuery has:
 // func parseQuery(query string) Object {
 // 	arg_1, arg_2 := url.ParseQuery(query)
-// 	...ABEND: TODO...
+// 	...ABEND676: TODO...
 // }
 
 GO FUNC url.ParseRequestURI has:
 // func parseRequestURI(rawurl string) Object {
 // 	arg_1, arg_2 := url.ParseRequestURI(rawurl)
-// 	...ABEND: TODO...
+// 	...ABEND676: TODO...
 // }
 
 GO FUNC url.PathUnescape has:
 // func pathUnescape(s string) Object {
 // 	arg_1, arg_2 := url.PathUnescape(s)
-// 	...ABEND: TODO...
+// 	...ABEND676: TODO...
 // }
 
 GO FUNC url.QueryUnescape has:
 // func queryUnescape(s string) Object {
 // 	arg_1, arg_2 := url.QueryUnescape(s)
-// 	...ABEND: TODO...
+// 	...ABEND676: TODO...
 // }
 
 GO FUNC url.User has:
 // func user(username string) Object {
 // 	arg_1 := url.User(username)
-// 	...ABEND: TODO...
+// 	...ABEND676: TODO...
 // }
 
 GO FUNC url.UserPassword has:
 // func userPassword(username string, password string) Object {
 // 	arg_1 := url.UserPassword(username, password)
-// 	...ABEND: TODO...
+// 	...ABEND676: TODO...
 // }
 
 Totals: types=10 functions=18 receivers=46
