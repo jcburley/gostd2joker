@@ -490,11 +490,15 @@ func genGoPostStruct(indent, pkg, in string, fl *FieldList) (jok, gol, goc, out 
 		out = in
 		return
 	}
+	tmpmap := genSym("map")
+	goc += indent + tmpmap + " := EmptyArrayMap()\n"
 	for _, f := range fl.List {
-		var joktype, goltype, more_goc string
-		joktype, goltype, more_goc, _ = genGoPostExpr(indent, pkg, in, f.Type)  // ~~~
-		goc += more_goc
 		for _, p := range f.Names {
+			var joktype, goltype, more_goc string
+			joktype, goltype, more_goc, out =
+				genGoPostExpr(indent, pkg, in + "." + p.Name, f.Type)
+			goc += more_goc
+			goc += indent + tmpmap + ".Add(MakeKeyword(\"" + p.Name + "\"), " + out + ")\n"
 			if jok != "" {
 				jok += ", "
 			}
@@ -514,10 +518,10 @@ func genGoPostStruct(indent, pkg, in string, fl *FieldList) (jok, gol, goc, out 
 				gol += goltype
 			}
 		}
-		out = "(ABEND680:TODO)"  // ~~~
 	}
 	jok = "{" + jok + "}"
 	gol = "struct {" + gol + "}"
+	out = tmpmap
 	return
 }
 
@@ -543,8 +547,8 @@ func genGoPostArray(indent, pkg, in string, el Expr) (jok, gol, goc, out string)
 // TODO: Maybe return a ref or something Joker (someday) supports?
 func genGoPostStar(indent, pkg, in string, e Expr) (jok, gol, goc, out string) {
 	var new_out string
-	jok, gol, goc, new_out = genGoPostExpr(indent, pkg, in, e)
-	out = "*" + new_out
+	jok, gol, goc, new_out = genGoPostExpr(indent, pkg, "(*" + in + ")", e)
+	out = new_out
 	gol = "*" + gol
 	return
 }

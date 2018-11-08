@@ -57,18 +57,18 @@ JOKER FUNC net.LookupIP has:
 ;;   [^String host])
 
 JOKER FUNC net.LookupMX has:
-;; (defn LookupMX
-;;   "LookupMX returns the DNS MX records for the given domain name sorted by preference.\nGo return type: ([]*MX, error)\nJoker return type: [(vector-of {:Host ^String, :Pref ^Int}) Error]"
-;;   {:added "1.0"
-;;    :go "lookupMX(name)"}
-;;   [^String name])
+(defn LookupMX
+  "LookupMX returns the DNS MX records for the given domain name sorted by preference.\nGo return type: ([]*MX, error)\nJoker return type: [(vector-of {:Host ^String, :Pref ^Int}) Error]"
+  {:added "1.0"
+   :go "lookupMX(name)"}
+  [^String name])
 
 JOKER FUNC net.LookupNS has:
-;; (defn LookupNS
-;;   "LookupNS returns the DNS NS records for the given domain name.\nGo return type: ([]*NS, error)\nJoker return type: [(vector-of {:Host ^String}) Error]"
-;;   {:added "1.0"
-;;    :go "lookupNS(name)"}
-;;   [^String name])
+(defn LookupNS
+  "LookupNS returns the DNS NS records for the given domain name.\nGo return type: ([]*NS, error)\nJoker return type: [(vector-of {:Host ^String}) Error]"
+  {:added "1.0"
+   :go "lookupNS(name)"}
+  [^String name])
 
 JOKER FUNC net.LookupPort has:
 (defn LookupPort
@@ -78,11 +78,11 @@ JOKER FUNC net.LookupPort has:
   [^String network, ^String service])
 
 JOKER FUNC net.LookupSRV has:
-;; (defn LookupSRV
-;;   "LookupSRV tries to resolve an SRV query of the given service,\nprotocol, and domain name. The proto is \"tcp\" or \"udp\".\nThe returned records are sorted by priority and randomized\nby weight within a priority.\n\nLookupSRV constructs the DNS name to look up following RFC 2782.\nThat is, it looks up _service._proto.name. To accommodate services\npublishing SRV records under non-standard names, if both service\nand proto are empty strings, LookupSRV looks up name directly.\nGo return type: (cname string, addrs []*SRV, err error)\nJoker return type: [String (vector-of {:Target ^String, :Port ^Int, :Priority ^Int, :Weight ^Int}) Error]"
-;;   {:added "1.0"
-;;    :go "lookupSRV(service, proto, name)"}
-;;   [^String service, ^String proto, ^String name])
+(defn LookupSRV
+  "LookupSRV tries to resolve an SRV query of the given service,\nprotocol, and domain name. The proto is \"tcp\" or \"udp\".\nThe returned records are sorted by priority and randomized\nby weight within a priority.\n\nLookupSRV constructs the DNS name to look up following RFC 2782.\nThat is, it looks up _service._proto.name. To accommodate services\npublishing SRV records under non-standard names, if both service\nand proto are empty strings, LookupSRV looks up name directly.\nGo return type: (cname string, addrs []*SRV, err error)\nJoker return type: [String (vector-of {:Target ^String, :Port ^Int, :Priority ^Int, :Weight ^Int}) Error]"
+  {:added "1.0"
+   :go "lookupSRV(service, proto, name)"}
+  [^String service, ^String proto, ^String name])
 
 JOKER FUNC net.LookupTXT has:
 (defn LookupTXT
@@ -92,11 +92,11 @@ JOKER FUNC net.LookupTXT has:
   [^String name])
 
 JOKER FUNC url.Parse has:
-;; (defn Parse
-;;   "Parse parses rawurl into a URL structure.\n\nThe rawurl may be relative (a path, without a host) or absolute\n(starting with a scheme). Trying to parse a hostname and path\nwithout a scheme is invalid but may not necessarily return an\nerror, due to parsing ambiguities.\nGo return type: (*URL, error)\nJoker return type: [{:Scheme ^String, :Opaque ^String, :User ^{:username ^String, :password ^String, :passwordSet ^Bool}, :Host ^String, :Path ^String, :RawPath ^String, :ForceQuery ^Bool, :RawQuery ^String, :Fragment ^String} Error]"
-;;   {:added "1.0"
-;;    :go "parse(rawurl)"}
-;;   [^String rawurl])
+(defn Parse
+  "Parse parses rawurl into a URL structure.\n\nThe rawurl may be relative (a path, without a host) or absolute\n(starting with a scheme). Trying to parse a hostname and path\nwithout a scheme is invalid but may not necessarily return an\nerror, due to parsing ambiguities.\nGo return type: (*URL, error)\nJoker return type: [{:Scheme ^String, :Opaque ^String, :User ^{:username ^String, :password ^String, :passwordSet ^Bool}, :Host ^String, :Path ^String, :RawPath ^String, :ForceQuery ^Bool, :RawQuery ^String, :Fragment ^String} Error]"
+  {:added "1.0"
+   :go "parse(rawurl)"}
+  [^String rawurl])
 
 JOKER FUNC url.ParseQuery has:
 ;; (defn ParseQuery
@@ -106,11 +106,11 @@ JOKER FUNC url.ParseQuery has:
 ;;   [^String query])
 
 JOKER FUNC url.ParseRequestURI has:
-;; (defn ParseRequestURI
-;;   "ParseRequestURI parses rawurl into a URL structure. It assumes that\nrawurl was received in an HTTP request, so the rawurl is interpreted\nonly as an absolute URI or an absolute path.\nThe string rawurl is assumed not to have a #fragment suffix.\n(Web browsers strip #fragment before sending the URL to a web server.)\nGo return type: (*URL, error)\nJoker return type: [{:Scheme ^String, :Opaque ^String, :User ^{:username ^String, :password ^String, :passwordSet ^Bool}, :Host ^String, :Path ^String, :RawPath ^String, :ForceQuery ^Bool, :RawQuery ^String, :Fragment ^String} Error]"
-;;   {:added "1.0"
-;;    :go "parseRequestURI(rawurl)"}
-;;   [^String rawurl])
+(defn ParseRequestURI
+  "ParseRequestURI parses rawurl into a URL structure. It assumes that\nrawurl was received in an HTTP request, so the rawurl is interpreted\nonly as an absolute URI or an absolute path.\nThe string rawurl is assumed not to have a #fragment suffix.\n(Web browsers strip #fragment before sending the URL to a web server.)\nGo return type: (*URL, error)\nJoker return type: [{:Scheme ^String, :Opaque ^String, :User ^{:username ^String, :password ^String, :passwordSet ^Bool}, :Host ^String, :Path ^String, :RawPath ^String, :ForceQuery ^Bool, :RawQuery ^String, :Fragment ^String} Error]"
+  {:added "1.0"
+   :go "parseRequestURI(rawurl)"}
+  [^String rawurl])
 
 JOKER FUNC url.PathEscape has:
 (defn ^String PathEscape
@@ -203,30 +203,35 @@ GO FUNC net.LookupIP has:
 // }
 
 GO FUNC net.LookupMX has:
-// func lookupMX(name string) Object {
-// 	res1, res2 := net.LookupMX(name)
-// 	res := EmptyVector
-// 	vec1 := EmptyVector
-// 	for _, el1 := range res1 {
-// 		vec1 = vec1.Conjoin(*(ABEND680:TODO))
-// 	}
-// 	res.Conjoin(vec1)
-// 	res.Conjoin(string(res2))
-// 	return res
-// }
+func lookupMX(name string) Object {
+	res1, res2 := net.LookupMX(name)
+	res := EmptyVector
+	vec1 := EmptyVector
+	for _, el1 := range res1 {
+		map2 := EmptyArrayMap()
+		map2.Add(MakeKeyword("Host"), MakeString((*el1).Host))
+		map2.Add(MakeKeyword("Pref"), MakeInt((*el1).Pref))
+		vec1 = vec1.Conjoin(map2)
+	}
+	res.Conjoin(vec1)
+	res.Conjoin(string(res2))
+	return res
+}
 
 GO FUNC net.LookupNS has:
-// func lookupNS(name string) Object {
-// 	res1, res2 := net.LookupNS(name)
-// 	res := EmptyVector
-// 	vec1 := EmptyVector
-// 	for _, el1 := range res1 {
-// 		vec1 = vec1.Conjoin(*(ABEND680:TODO))
-// 	}
-// 	res.Conjoin(vec1)
-// 	res.Conjoin(string(res2))
-// 	return res
-// }
+func lookupNS(name string) Object {
+	res1, res2 := net.LookupNS(name)
+	res := EmptyVector
+	vec1 := EmptyVector
+	for _, el1 := range res1 {
+		map2 := EmptyArrayMap()
+		map2.Add(MakeKeyword("Host"), MakeString((*el1).Host))
+		vec1 = vec1.Conjoin(map2)
+	}
+	res.Conjoin(vec1)
+	res.Conjoin(string(res2))
+	return res
+}
 
 GO FUNC net.LookupPort has:
 func lookupPort(network string, service string) Object {
@@ -238,18 +243,23 @@ func lookupPort(network string, service string) Object {
 }
 
 GO FUNC net.LookupSRV has:
-// func lookupSRV(service string, proto string, name string) Object {
-// 	cname, addrs, err := net.LookupSRV(service, proto, name)
-// 	res := EmptyVector
-// 	vec1 := EmptyVector
-// 	for _, el1 := range addrs {
-// 		vec1 = vec1.Conjoin(*(ABEND680:TODO))
-// 	}
-// 	res.Conjoin(MakeString(cname))
-// 	res.Conjoin(vec1)
-// 	res.Conjoin(string(err))
-// 	return res
-// }
+func lookupSRV(service string, proto string, name string) Object {
+	cname, addrs, err := net.LookupSRV(service, proto, name)
+	res := EmptyVector
+	vec1 := EmptyVector
+	for _, el1 := range addrs {
+		map2 := EmptyArrayMap()
+		map2.Add(MakeKeyword("Target"), MakeString((*el1).Target))
+		map2.Add(MakeKeyword("Port"), MakeInt((*el1).Port))
+		map2.Add(MakeKeyword("Priority"), MakeInt((*el1).Priority))
+		map2.Add(MakeKeyword("Weight"), MakeInt((*el1).Weight))
+		vec1 = vec1.Conjoin(map2)
+	}
+	res.Conjoin(MakeString(cname))
+	res.Conjoin(vec1)
+	res.Conjoin(string(err))
+	return res
+}
 
 GO FUNC net.LookupTXT has:
 func lookupTXT(name string) Object {
@@ -265,13 +275,27 @@ func lookupTXT(name string) Object {
 }
 
 GO FUNC url.Parse has:
-// func parse(rawurl string) Object {
-// 	res1, res2 := url.Parse(rawurl)
-// 	res := EmptyVector
-// 	res.Conjoin(*(ABEND680:TODO))
-// 	res.Conjoin(string(res2))
-// 	return res
-// }
+func parse(rawurl string) Object {
+	res1, res2 := url.Parse(rawurl)
+	res := EmptyVector
+	map1 := EmptyArrayMap()
+	map1.Add(MakeKeyword("Scheme"), MakeString((*res1).Scheme))
+	map1.Add(MakeKeyword("Opaque"), MakeString((*res1).Opaque))
+	map2 := EmptyArrayMap()
+	map2.Add(MakeKeyword("username"), MakeString((*(*res1).User).username))
+	map2.Add(MakeKeyword("password"), MakeString((*(*res1).User).password))
+	map2.Add(MakeKeyword("passwordSet"), MakeBool((*(*res1).User).passwordSet))
+	map1.Add(MakeKeyword("User"), map2)
+	map1.Add(MakeKeyword("Host"), MakeString((*res1).Host))
+	map1.Add(MakeKeyword("Path"), MakeString((*res1).Path))
+	map1.Add(MakeKeyword("RawPath"), MakeString((*res1).RawPath))
+	map1.Add(MakeKeyword("ForceQuery"), MakeBool((*res1).ForceQuery))
+	map1.Add(MakeKeyword("RawQuery"), MakeString((*res1).RawQuery))
+	map1.Add(MakeKeyword("Fragment"), MakeString((*res1).Fragment))
+	res.Conjoin(map1)
+	res.Conjoin(string(res2))
+	return res
+}
 
 GO FUNC url.ParseQuery has:
 // func parseQuery(query string) Object {
@@ -283,13 +307,27 @@ GO FUNC url.ParseQuery has:
 // }
 
 GO FUNC url.ParseRequestURI has:
-// func parseRequestURI(rawurl string) Object {
-// 	res1, res2 := url.ParseRequestURI(rawurl)
-// 	res := EmptyVector
-// 	res.Conjoin(*(ABEND680:TODO))
-// 	res.Conjoin(string(res2))
-// 	return res
-// }
+func parseRequestURI(rawurl string) Object {
+	res1, res2 := url.ParseRequestURI(rawurl)
+	res := EmptyVector
+	map1 := EmptyArrayMap()
+	map1.Add(MakeKeyword("Scheme"), MakeString((*res1).Scheme))
+	map1.Add(MakeKeyword("Opaque"), MakeString((*res1).Opaque))
+	map2 := EmptyArrayMap()
+	map2.Add(MakeKeyword("username"), MakeString((*(*res1).User).username))
+	map2.Add(MakeKeyword("password"), MakeString((*(*res1).User).password))
+	map2.Add(MakeKeyword("passwordSet"), MakeBool((*(*res1).User).passwordSet))
+	map1.Add(MakeKeyword("User"), map2)
+	map1.Add(MakeKeyword("Host"), MakeString((*res1).Host))
+	map1.Add(MakeKeyword("Path"), MakeString((*res1).Path))
+	map1.Add(MakeKeyword("RawPath"), MakeString((*res1).RawPath))
+	map1.Add(MakeKeyword("ForceQuery"), MakeBool((*res1).ForceQuery))
+	map1.Add(MakeKeyword("RawQuery"), MakeString((*res1).RawQuery))
+	map1.Add(MakeKeyword("Fragment"), MakeString((*res1).Fragment))
+	res.Conjoin(map1)
+	res.Conjoin(string(res2))
+	return res
+}
 
 GO FUNC url.PathUnescape has:
 func pathUnescape(s string) Object {
@@ -311,12 +349,22 @@ func queryUnescape(s string) Object {
 
 GO FUNC url.User has:
 func user(username string) Object {
-	return url.User(username)
+	res := url.User(username)
+	map1 := EmptyArrayMap()
+	map1.Add(MakeKeyword("username"), MakeString((*res).username))
+	map1.Add(MakeKeyword("password"), MakeString((*res).password))
+	map1.Add(MakeKeyword("passwordSet"), MakeBool((*res).passwordSet))
+	return map1
 }
 
 GO FUNC url.UserPassword has:
 func userPassword(username string, password string) Object {
-	return url.UserPassword(username, password)
+	res := url.UserPassword(username, password)
+	map1 := EmptyArrayMap()
+	map1.Add(MakeKeyword("username"), MakeString((*res).username))
+	map1.Add(MakeKeyword("password"), MakeString((*res).password))
+	map1.Add(MakeKeyword("passwordSet"), MakeBool((*res).passwordSet))
+	return map1
 }
 
 Totals: types=10 functions=18 receivers=46

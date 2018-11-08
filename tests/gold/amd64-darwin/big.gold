@@ -697,18 +697,18 @@ JOKER FUNC jsonrpc.ServeConn has:
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/rpc/jsonrpc/server.go:132:21) conn])
 
 JOKER FUNC mail.ParseAddress has:
-;; (defn ParseAddress
-;;   "Parses a single RFC 5322 address, e.g. \"Barry Gibbs <bg@example.com>\"\nGo return type: (*Address, error)\nJoker return type: [{:Name ^String, :Address ^String} Error]"
-;;   {:added "1.0"
-;;    :go "parseAddress(address)"}
-;;   [^String address])
+(defn ParseAddress
+  "Parses a single RFC 5322 address, e.g. \"Barry Gibbs <bg@example.com>\"\nGo return type: (*Address, error)\nJoker return type: [{:Name ^String, :Address ^String} Error]"
+  {:added "1.0"
+   :go "parseAddress(address)"}
+  [^String address])
 
 JOKER FUNC mail.ParseAddressList has:
-;; (defn ParseAddressList
-;;   "ParseAddressList parses the given string as a list of addresses.\nGo return type: ([]*Address, error)\nJoker return type: [(vector-of {:Name ^String, :Address ^String}) Error]"
-;;   {:added "1.0"
-;;    :go "parseAddressList(list)"}
-;;   [^String list])
+(defn ParseAddressList
+  "ParseAddressList parses the given string as a list of addresses.\nGo return type: ([]*Address, error)\nJoker return type: [(vector-of {:Name ^String, :Address ^String}) Error]"
+  {:added "1.0"
+   :go "parseAddressList(list)"}
+  [^String list])
 
 JOKER FUNC mail.ParseDate has:
 ;; (defn ParseDate
@@ -816,25 +816,25 @@ JOKER FUNC net.InterfaceAddrs has:
 ;;   [])
 
 JOKER FUNC net.InterfaceByIndex has:
-;; (defn InterfaceByIndex
-;;   "InterfaceByIndex returns the interface specified by index.\n\nOn Solaris, it returns one of the logical network interfaces\nsharing the logical data link; for more precision use\nInterfaceByName.\nGo return type: (*Interface, error)\nJoker return type: [{:Index ^Int, :MTU ^Int, :Name ^String, :HardwareAddr ^(vector-of Int), :Flags ^Int} Error]"
-;;   {:added "1.0"
-;;    :go "interfaceByIndex(index)"}
-;;   [^Int index])
+(defn InterfaceByIndex
+  "InterfaceByIndex returns the interface specified by index.\n\nOn Solaris, it returns one of the logical network interfaces\nsharing the logical data link; for more precision use\nInterfaceByName.\nGo return type: (*Interface, error)\nJoker return type: [{:Index ^Int, :MTU ^Int, :Name ^String, :HardwareAddr ^(vector-of Int), :Flags ^Int} Error]"
+  {:added "1.0"
+   :go "interfaceByIndex(index)"}
+  [^Int index])
 
 JOKER FUNC net.InterfaceByName has:
-;; (defn InterfaceByName
-;;   "InterfaceByName returns the interface specified by name.\nGo return type: (*Interface, error)\nJoker return type: [{:Index ^Int, :MTU ^Int, :Name ^String, :HardwareAddr ^(vector-of Int), :Flags ^Int} Error]"
-;;   {:added "1.0"
-;;    :go "interfaceByName(name)"}
-;;   [^String name])
+(defn InterfaceByName
+  "InterfaceByName returns the interface specified by name.\nGo return type: (*Interface, error)\nJoker return type: [{:Index ^Int, :MTU ^Int, :Name ^String, :HardwareAddr ^(vector-of Int), :Flags ^Int} Error]"
+  {:added "1.0"
+   :go "interfaceByName(name)"}
+  [^String name])
 
 JOKER FUNC net.Interfaces has:
-;; (defn Interfaces
-;;   "Interfaces returns a list of the system's network interfaces.\nGo return type: ([]Interface, error)\nJoker return type: [(vector-of {:Index ^Int, :MTU ^Int, :Name ^String, :HardwareAddr ^(vector-of Int), :Flags ^Int}) Error]"
-;;   {:added "1.0"
-;;    :go "interfaces()"}
-;;   [])
+(defn Interfaces
+  "Interfaces returns a list of the system's network interfaces.\nGo return type: ([]Interface, error)\nJoker return type: [(vector-of {:Index ^Int, :MTU ^Int, :Name ^String, :HardwareAddr ^(vector-of Int), :Flags ^Int}) Error]"
+  {:added "1.0"
+   :go "interfaces()"}
+  [])
 
 JOKER FUNC net.JoinHostPort has:
 (defn ^String JoinHostPort
@@ -928,18 +928,18 @@ JOKER FUNC net.LookupIP has:
   [^String host])
 
 JOKER FUNC net.LookupMX has:
-;; (defn LookupMX
-;;   "LookupMX returns the DNS MX records for the given domain name sorted by preference.\nGo return type: ([]*MX, error)\nJoker return type: [(vector-of {:Host ^String, :Pref ^Int}) Error]"
-;;   {:added "1.0"
-;;    :go "lookupMX(name)"}
-;;   [^String name])
+(defn LookupMX
+  "LookupMX returns the DNS MX records for the given domain name sorted by preference.\nGo return type: ([]*MX, error)\nJoker return type: [(vector-of {:Host ^String, :Pref ^Int}) Error]"
+  {:added "1.0"
+   :go "lookupMX(name)"}
+  [^String name])
 
 JOKER FUNC net.LookupNS has:
-;; (defn LookupNS
-;;   "LookupNS returns the DNS NS records for the given domain name.\nGo return type: ([]*NS, error)\nJoker return type: [(vector-of {:Host ^String}) Error]"
-;;   {:added "1.0"
-;;    :go "lookupNS(name)"}
-;;   [^String name])
+(defn LookupNS
+  "LookupNS returns the DNS NS records for the given domain name.\nGo return type: ([]*NS, error)\nJoker return type: [(vector-of {:Host ^String}) Error]"
+  {:added "1.0"
+   :go "lookupNS(name)"}
+  [^String name])
 
 JOKER FUNC net.LookupPort has:
 (defn LookupPort
@@ -949,11 +949,11 @@ JOKER FUNC net.LookupPort has:
   [^String network, ^String service])
 
 JOKER FUNC net.LookupSRV has:
-;; (defn LookupSRV
-;;   "LookupSRV tries to resolve an SRV query of the given service,\nprotocol, and domain name. The proto is \"tcp\" or \"udp\".\nThe returned records are sorted by priority and randomized\nby weight within a priority.\n\nLookupSRV constructs the DNS name to look up following RFC 2782.\nThat is, it looks up _service._proto.name. To accommodate services\npublishing SRV records under non-standard names, if both service\nand proto are empty strings, LookupSRV looks up name directly.\nGo return type: (cname string, addrs []*SRV, err error)\nJoker return type: [String (vector-of {:Target ^String, :Port ^Int, :Priority ^Int, :Weight ^Int}) Error]"
-;;   {:added "1.0"
-;;    :go "lookupSRV(service, proto, name)"}
-;;   [^String service, ^String proto, ^String name])
+(defn LookupSRV
+  "LookupSRV tries to resolve an SRV query of the given service,\nprotocol, and domain name. The proto is \"tcp\" or \"udp\".\nThe returned records are sorted by priority and randomized\nby weight within a priority.\n\nLookupSRV constructs the DNS name to look up following RFC 2782.\nThat is, it looks up _service._proto.name. To accommodate services\npublishing SRV records under non-standard names, if both service\nand proto are empty strings, LookupSRV looks up name directly.\nGo return type: (cname string, addrs []*SRV, err error)\nJoker return type: [String (vector-of {:Target ^String, :Port ^Int, :Priority ^Int, :Weight ^Int}) Error]"
+  {:added "1.0"
+   :go "lookupSRV(service, proto, name)"}
+  [^String service, ^String proto, ^String name])
 
 JOKER FUNC net.LookupTXT has:
 (defn LookupTXT
@@ -963,11 +963,11 @@ JOKER FUNC net.LookupTXT has:
   [^String name])
 
 JOKER FUNC net.ParseCIDR has:
-;; (defn ParseCIDR
-;;   "ParseCIDR parses s as a CIDR notation IP address and prefix length,\nlike \"192.0.2.0/24\" or \"2001:db8::/32\", as defined in\nRFC 4632 and RFC 4291.\n\nIt returns the IP address and the network implied by the IP and\nprefix length.\nFor example, ParseCIDR(\"192.0.2.1/24\") returns the IP address\n192.0.2.1 and the network 192.0.2.0/24.\nGo return type: (IP, *IPNet, error)\nJoker return type: [(vector-of Int) {:IP ^(vector-of Int), :Mask ^(vector-of Int)} Error]"
-;;   {:added "1.0"
-;;    :go "parseCIDR(s)"}
-;;   [^String s])
+(defn ParseCIDR
+  "ParseCIDR parses s as a CIDR notation IP address and prefix length,\nlike \"192.0.2.0/24\" or \"2001:db8::/32\", as defined in\nRFC 4632 and RFC 4291.\n\nIt returns the IP address and the network implied by the IP and\nprefix length.\nFor example, ParseCIDR(\"192.0.2.1/24\") returns the IP address\n192.0.2.1 and the network 192.0.2.0/24.\nGo return type: (IP, *IPNet, error)\nJoker return type: [(vector-of Int) {:IP ^(vector-of Int), :Mask ^(vector-of Int)} Error]"
+  {:added "1.0"
+   :go "parseCIDR(s)"}
+  [^String s])
 
 JOKER FUNC net.ParseIP has:
 (defn ParseIP
@@ -991,32 +991,32 @@ JOKER FUNC net.Pipe has:
 ;;   [])
 
 JOKER FUNC net.ResolveIPAddr has:
-;; (defn ResolveIPAddr
-;;   "ResolveIPAddr returns an address of IP end point.\n\nThe network must be an IP network name.\n\nIf the host in the address parameter is not a literal IP address,\nResolveIPAddr resolves the address to an address of IP end point.\nOtherwise, it parses the address as a literal IP address.\nThe address parameter can use a host name, but this is not\nrecommended, because it will return at most one of the host name's\nIP addresses.\n\nSee func Dial for a description of the network and address\nparameters.\nGo return type: (*IPAddr, error)\nJoker return type: [{:IP ^(vector-of Int), :Zone ^String} Error]"
-;;   {:added "1.0"
-;;    :go "resolveIPAddr(network, address)"}
-;;   [^String network, ^String address])
+(defn ResolveIPAddr
+  "ResolveIPAddr returns an address of IP end point.\n\nThe network must be an IP network name.\n\nIf the host in the address parameter is not a literal IP address,\nResolveIPAddr resolves the address to an address of IP end point.\nOtherwise, it parses the address as a literal IP address.\nThe address parameter can use a host name, but this is not\nrecommended, because it will return at most one of the host name's\nIP addresses.\n\nSee func Dial for a description of the network and address\nparameters.\nGo return type: (*IPAddr, error)\nJoker return type: [{:IP ^(vector-of Int), :Zone ^String} Error]"
+  {:added "1.0"
+   :go "resolveIPAddr(network, address)"}
+  [^String network, ^String address])
 
 JOKER FUNC net.ResolveTCPAddr has:
-;; (defn ResolveTCPAddr
-;;   "ResolveTCPAddr returns an address of TCP end point.\n\nThe network must be a TCP network name.\n\nIf the host in the address parameter is not a literal IP address or\nthe port is not a literal port number, ResolveTCPAddr resolves the\naddress to an address of TCP end point.\nOtherwise, it parses the address as a pair of literal IP address\nand port number.\nThe address parameter can use a host name, but this is not\nrecommended, because it will return at most one of the host name's\nIP addresses.\n\nSee func Dial for a description of the network and address\nparameters.\nGo return type: (*TCPAddr, error)\nJoker return type: [{:IP ^(vector-of Int), :Port ^Int, :Zone ^String} Error]"
-;;   {:added "1.0"
-;;    :go "resolveTCPAddr(network, address)"}
-;;   [^String network, ^String address])
+(defn ResolveTCPAddr
+  "ResolveTCPAddr returns an address of TCP end point.\n\nThe network must be a TCP network name.\n\nIf the host in the address parameter is not a literal IP address or\nthe port is not a literal port number, ResolveTCPAddr resolves the\naddress to an address of TCP end point.\nOtherwise, it parses the address as a pair of literal IP address\nand port number.\nThe address parameter can use a host name, but this is not\nrecommended, because it will return at most one of the host name's\nIP addresses.\n\nSee func Dial for a description of the network and address\nparameters.\nGo return type: (*TCPAddr, error)\nJoker return type: [{:IP ^(vector-of Int), :Port ^Int, :Zone ^String} Error]"
+  {:added "1.0"
+   :go "resolveTCPAddr(network, address)"}
+  [^String network, ^String address])
 
 JOKER FUNC net.ResolveUDPAddr has:
-;; (defn ResolveUDPAddr
-;;   "ResolveUDPAddr returns an address of UDP end point.\n\nThe network must be a UDP network name.\n\nIf the host in the address parameter is not a literal IP address or\nthe port is not a literal port number, ResolveUDPAddr resolves the\naddress to an address of UDP end point.\nOtherwise, it parses the address as a pair of literal IP address\nand port number.\nThe address parameter can use a host name, but this is not\nrecommended, because it will return at most one of the host name's\nIP addresses.\n\nSee func Dial for a description of the network and address\nparameters.\nGo return type: (*UDPAddr, error)\nJoker return type: [{:IP ^(vector-of Int), :Port ^Int, :Zone ^String} Error]"
-;;   {:added "1.0"
-;;    :go "resolveUDPAddr(network, address)"}
-;;   [^String network, ^String address])
+(defn ResolveUDPAddr
+  "ResolveUDPAddr returns an address of UDP end point.\n\nThe network must be a UDP network name.\n\nIf the host in the address parameter is not a literal IP address or\nthe port is not a literal port number, ResolveUDPAddr resolves the\naddress to an address of UDP end point.\nOtherwise, it parses the address as a pair of literal IP address\nand port number.\nThe address parameter can use a host name, but this is not\nrecommended, because it will return at most one of the host name's\nIP addresses.\n\nSee func Dial for a description of the network and address\nparameters.\nGo return type: (*UDPAddr, error)\nJoker return type: [{:IP ^(vector-of Int), :Port ^Int, :Zone ^String} Error]"
+  {:added "1.0"
+   :go "resolveUDPAddr(network, address)"}
+  [^String network, ^String address])
 
 JOKER FUNC net.ResolveUnixAddr has:
-;; (defn ResolveUnixAddr
-;;   "ResolveUnixAddr returns an address of Unix domain socket end point.\n\nThe network must be a Unix network name.\n\nSee func Dial for a description of the network and address\nparameters.\nGo return type: (*UnixAddr, error)\nJoker return type: [{:Name ^String, :Net ^String} Error]"
-;;   {:added "1.0"
-;;    :go "resolveUnixAddr(network, address)"}
-;;   [^String network, ^String address])
+(defn ResolveUnixAddr
+  "ResolveUnixAddr returns an address of Unix domain socket end point.\n\nThe network must be a Unix network name.\n\nSee func Dial for a description of the network and address\nparameters.\nGo return type: (*UnixAddr, error)\nJoker return type: [{:Name ^String, :Net ^String} Error]"
+  {:added "1.0"
+   :go "resolveUnixAddr(network, address)"}
+  [^String network, ^String address])
 
 JOKER FUNC net.SplitHostPort has:
 (defn SplitHostPort
@@ -1243,11 +1243,11 @@ JOKER FUNC textproto.TrimString has:
   [^String s])
 
 JOKER FUNC url.Parse has:
-;; (defn Parse
-;;   "Parse parses rawurl into a URL structure.\n\nThe rawurl may be relative (a path, without a host) or absolute\n(starting with a scheme). Trying to parse a hostname and path\nwithout a scheme is invalid but may not necessarily return an\nerror, due to parsing ambiguities.\nGo return type: (*URL, error)\nJoker return type: [{:Scheme ^String, :Opaque ^String, :User ^{:username ^String, :password ^String, :passwordSet ^Bool}, :Host ^String, :Path ^String, :RawPath ^String, :ForceQuery ^Bool, :RawQuery ^String, :Fragment ^String} Error]"
-;;   {:added "1.0"
-;;    :go "parse(rawurl)"}
-;;   [^String rawurl])
+(defn Parse
+  "Parse parses rawurl into a URL structure.\n\nThe rawurl may be relative (a path, without a host) or absolute\n(starting with a scheme). Trying to parse a hostname and path\nwithout a scheme is invalid but may not necessarily return an\nerror, due to parsing ambiguities.\nGo return type: (*URL, error)\nJoker return type: [{:Scheme ^String, :Opaque ^String, :User ^{:username ^String, :password ^String, :passwordSet ^Bool}, :Host ^String, :Path ^String, :RawPath ^String, :ForceQuery ^Bool, :RawQuery ^String, :Fragment ^String} Error]"
+  {:added "1.0"
+   :go "parse(rawurl)"}
+  [^String rawurl])
 
 JOKER FUNC url.ParseQuery has:
 ;; (defn ParseQuery
@@ -1257,11 +1257,11 @@ JOKER FUNC url.ParseQuery has:
 ;;   [^String query])
 
 JOKER FUNC url.ParseRequestURI has:
-;; (defn ParseRequestURI
-;;   "ParseRequestURI parses rawurl into a URL structure. It assumes that\nrawurl was received in an HTTP request, so the rawurl is interpreted\nonly as an absolute URI or an absolute path.\nThe string rawurl is assumed not to have a #fragment suffix.\n(Web browsers strip #fragment before sending the URL to a web server.)\nGo return type: (*URL, error)\nJoker return type: [{:Scheme ^String, :Opaque ^String, :User ^{:username ^String, :password ^String, :passwordSet ^Bool}, :Host ^String, :Path ^String, :RawPath ^String, :ForceQuery ^Bool, :RawQuery ^String, :Fragment ^String} Error]"
-;;   {:added "1.0"
-;;    :go "parseRequestURI(rawurl)"}
-;;   [^String rawurl])
+(defn ParseRequestURI
+  "ParseRequestURI parses rawurl into a URL structure. It assumes that\nrawurl was received in an HTTP request, so the rawurl is interpreted\nonly as an absolute URI or an absolute path.\nThe string rawurl is assumed not to have a #fragment suffix.\n(Web browsers strip #fragment before sending the URL to a web server.)\nGo return type: (*URL, error)\nJoker return type: [{:Scheme ^String, :Opaque ^String, :User ^{:username ^String, :password ^String, :passwordSet ^Bool}, :Host ^String, :Path ^String, :RawPath ^String, :ForceQuery ^Bool, :RawQuery ^String, :Fragment ^String} Error]"
+  {:added "1.0"
+   :go "parseRequestURI(rawurl)"}
+  [^String rawurl])
 
 JOKER FUNC url.PathEscape has:
 (defn ^String PathEscape
@@ -1309,7 +1309,7 @@ GO FUNC cgi.Request has:
 // func request() Object {
 // 	res1, res2 := cgi.Request()
 // 	res := EmptyVector
-// 	res.Conjoin(*res1)
+// 	res.Conjoin((*res1))
 // 	res.Conjoin(string(res2))
 // 	return res
 // }
@@ -1318,7 +1318,7 @@ GO FUNC cgi.RequestFromMap has:
 // func requestFromMap(params ABEND882(unrecognized Expr type *ast.MapType at: tests/big/net/http/cgi/child.go:52:28)) Object {
 // 	res1, res2 := cgi.RequestFromMap(params)
 // 	res := EmptyVector
-// 	res.Conjoin(*res1)
+// 	res.Conjoin((*res1))
 // 	res.Conjoin(string(res2))
 // 	return res
 // }
@@ -1327,7 +1327,12 @@ GO FUNC cookiejar.New has:
 // func new(o ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/http/cookiejar/jar.go:77:12)) Object {
 // 	res1, res2 := cookiejar.New(o)
 // 	res := EmptyVector
-// 	res.Conjoin(*(ABEND680:TODO))
+// 	map1 := EmptyArrayMap()
+// 	map1.Add(MakeKeyword("psList"), (*res1).psList)
+// 	map1.Add(MakeKeyword("mu"), (*res1).mu)
+// 	map1.Add(MakeKeyword("entries"), (*res1).entries)
+// 	map1.Add(MakeKeyword("nextSeqNum"), )
+// 	res.Conjoin(map1)
 // 	res.Conjoin(string(res2))
 // 	return res
 // }
@@ -1352,15 +1357,53 @@ GO FUNC http.Get has:
 // func get(url string) Object {
 // 	resp, err := http.Get(url)
 // 	res := EmptyVector
-// 	vec1 := EmptyVector
-// 	for _, el1 := range resp {
-// 		vec1 = vec1.Conjoin(MakeString(el1))
-// 	}
+// 	map1 := EmptyArrayMap()
+// 	map1.Add(MakeKeyword("Status"), MakeString((*resp).Status))
+// 	map1.Add(MakeKeyword("StatusCode"), MakeInt((*resp).StatusCode))
+// 	map1.Add(MakeKeyword("Proto"), MakeString((*resp).Proto))
+// 	map1.Add(MakeKeyword("ProtoMajor"), MakeInt((*resp).ProtoMajor))
+// 	map1.Add(MakeKeyword("ProtoMinor"), MakeInt((*resp).ProtoMinor))
+// 	map1.Add(MakeKeyword("Header"), (*resp).Header)
+// 	map1.Add(MakeKeyword("Body"), (*resp).Body)
+// 	map1.Add(MakeKeyword("ContentLength"), MakeInt((*resp).ContentLength))
 // 	vec2 := EmptyVector
-// 	for _, el2 := range resp {
+// 	for _, el2 := range (*resp).TransferEncoding {
 // 		vec2 = vec2.Conjoin(MakeString(el2))
 // 	}
-// 	res.Conjoin(*(ABEND680:TODO))
+// 	map1.Add(MakeKeyword("TransferEncoding"), vec2)
+// 	map1.Add(MakeKeyword("Close"), MakeBool((*resp).Close))
+// 	map1.Add(MakeKeyword("Uncompressed"), MakeBool((*resp).Uncompressed))
+// 	map1.Add(MakeKeyword("Trailer"), (*resp).Trailer)
+// 	map3 := EmptyArrayMap()
+// 	map3.Add(MakeKeyword("Method"), MakeString((*(*resp).Request).Method))
+// 	map3.Add(MakeKeyword("URL"), (*(*(*resp).Request).URL))
+// 	map3.Add(MakeKeyword("Proto"), MakeString((*(*resp).Request).Proto))
+// 	map3.Add(MakeKeyword("ProtoMajor"), MakeInt((*(*resp).Request).ProtoMajor))
+// 	map3.Add(MakeKeyword("ProtoMinor"), MakeInt((*(*resp).Request).ProtoMinor))
+// 	map3.Add(MakeKeyword("Header"), (*(*resp).Request).Header)
+// 	map3.Add(MakeKeyword("Body"), (*(*resp).Request).Body)
+// 	map3.Add(MakeKeyword("GetBody"), (*(*resp).Request).GetBody)
+// 	map3.Add(MakeKeyword("ContentLength"), MakeInt((*(*resp).Request).ContentLength))
+// 	vec4 := EmptyVector
+// 	for _, el4 := range (*(*resp).Request).TransferEncoding {
+// 		vec4 = vec4.Conjoin(MakeString(el4))
+// 	}
+// 	map3.Add(MakeKeyword("TransferEncoding"), vec4)
+// 	map3.Add(MakeKeyword("Close"), MakeBool((*(*resp).Request).Close))
+// 	map3.Add(MakeKeyword("Host"), MakeString((*(*resp).Request).Host))
+// 	map3.Add(MakeKeyword("Form"), (*(*resp).Request).Form)
+// 	map3.Add(MakeKeyword("PostForm"), (*(*resp).Request).PostForm)
+// 	map3.Add(MakeKeyword("MultipartForm"), (*(*(*resp).Request).MultipartForm))
+// 	map3.Add(MakeKeyword("Trailer"), (*(*resp).Request).Trailer)
+// 	map3.Add(MakeKeyword("RemoteAddr"), MakeString((*(*resp).Request).RemoteAddr))
+// 	map3.Add(MakeKeyword("RequestURI"), MakeString((*(*resp).Request).RequestURI))
+// 	map3.Add(MakeKeyword("TLS"), (*(*(*resp).Request).TLS))
+// 	map3.Add(MakeKeyword("Cancel"), (*(*resp).Request).Cancel)
+// 	map3.Add(MakeKeyword("Response"), )
+// 	map3.Add(MakeKeyword("ctx"), (*(*resp).Request).ctx)
+// 	map1.Add(MakeKeyword("Request"), map3)
+// 	map1.Add(MakeKeyword("TLS"), (*(*resp).TLS))
+// 	res.Conjoin(map1)
 // 	res.Conjoin(string(err))
 // 	return res
 // }
@@ -1381,15 +1424,53 @@ GO FUNC http.Head has:
 // func head(url string) Object {
 // 	resp, err := http.Head(url)
 // 	res := EmptyVector
-// 	vec1 := EmptyVector
-// 	for _, el1 := range resp {
-// 		vec1 = vec1.Conjoin(MakeString(el1))
-// 	}
+// 	map1 := EmptyArrayMap()
+// 	map1.Add(MakeKeyword("Status"), MakeString((*resp).Status))
+// 	map1.Add(MakeKeyword("StatusCode"), MakeInt((*resp).StatusCode))
+// 	map1.Add(MakeKeyword("Proto"), MakeString((*resp).Proto))
+// 	map1.Add(MakeKeyword("ProtoMajor"), MakeInt((*resp).ProtoMajor))
+// 	map1.Add(MakeKeyword("ProtoMinor"), MakeInt((*resp).ProtoMinor))
+// 	map1.Add(MakeKeyword("Header"), (*resp).Header)
+// 	map1.Add(MakeKeyword("Body"), (*resp).Body)
+// 	map1.Add(MakeKeyword("ContentLength"), MakeInt((*resp).ContentLength))
 // 	vec2 := EmptyVector
-// 	for _, el2 := range resp {
+// 	for _, el2 := range (*resp).TransferEncoding {
 // 		vec2 = vec2.Conjoin(MakeString(el2))
 // 	}
-// 	res.Conjoin(*(ABEND680:TODO))
+// 	map1.Add(MakeKeyword("TransferEncoding"), vec2)
+// 	map1.Add(MakeKeyword("Close"), MakeBool((*resp).Close))
+// 	map1.Add(MakeKeyword("Uncompressed"), MakeBool((*resp).Uncompressed))
+// 	map1.Add(MakeKeyword("Trailer"), (*resp).Trailer)
+// 	map3 := EmptyArrayMap()
+// 	map3.Add(MakeKeyword("Method"), MakeString((*(*resp).Request).Method))
+// 	map3.Add(MakeKeyword("URL"), (*(*(*resp).Request).URL))
+// 	map3.Add(MakeKeyword("Proto"), MakeString((*(*resp).Request).Proto))
+// 	map3.Add(MakeKeyword("ProtoMajor"), MakeInt((*(*resp).Request).ProtoMajor))
+// 	map3.Add(MakeKeyword("ProtoMinor"), MakeInt((*(*resp).Request).ProtoMinor))
+// 	map3.Add(MakeKeyword("Header"), (*(*resp).Request).Header)
+// 	map3.Add(MakeKeyword("Body"), (*(*resp).Request).Body)
+// 	map3.Add(MakeKeyword("GetBody"), (*(*resp).Request).GetBody)
+// 	map3.Add(MakeKeyword("ContentLength"), MakeInt((*(*resp).Request).ContentLength))
+// 	vec4 := EmptyVector
+// 	for _, el4 := range (*(*resp).Request).TransferEncoding {
+// 		vec4 = vec4.Conjoin(MakeString(el4))
+// 	}
+// 	map3.Add(MakeKeyword("TransferEncoding"), vec4)
+// 	map3.Add(MakeKeyword("Close"), MakeBool((*(*resp).Request).Close))
+// 	map3.Add(MakeKeyword("Host"), MakeString((*(*resp).Request).Host))
+// 	map3.Add(MakeKeyword("Form"), (*(*resp).Request).Form)
+// 	map3.Add(MakeKeyword("PostForm"), (*(*resp).Request).PostForm)
+// 	map3.Add(MakeKeyword("MultipartForm"), (*(*(*resp).Request).MultipartForm))
+// 	map3.Add(MakeKeyword("Trailer"), (*(*resp).Request).Trailer)
+// 	map3.Add(MakeKeyword("RemoteAddr"), MakeString((*(*resp).Request).RemoteAddr))
+// 	map3.Add(MakeKeyword("RequestURI"), MakeString((*(*resp).Request).RequestURI))
+// 	map3.Add(MakeKeyword("TLS"), (*(*(*resp).Request).TLS))
+// 	map3.Add(MakeKeyword("Cancel"), (*(*resp).Request).Cancel)
+// 	map3.Add(MakeKeyword("Response"), )
+// 	map3.Add(MakeKeyword("ctx"), (*(*resp).Request).ctx)
+// 	map1.Add(MakeKeyword("Request"), map3)
+// 	map1.Add(MakeKeyword("TLS"), (*(*resp).TLS))
+// 	res.Conjoin(map1)
 // 	res.Conjoin(string(err))
 // 	return res
 // }
@@ -1408,22 +1489,65 @@ GO FUNC http.NewRequest has:
 // func newRequest(method string, url string, body ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/http/request.go:792:42)) Object {
 // 	res1, res2 := http.NewRequest(method, url, body)
 // 	res := EmptyVector
-// 	vec1 := EmptyVector
-// 	for _, el1 := range res1 {
-// 		vec1 = vec1.Conjoin(MakeString(el1))
-// 	}
+// 	map1 := EmptyArrayMap()
+// 	map1.Add(MakeKeyword("Method"), MakeString((*res1).Method))
+// 	map1.Add(MakeKeyword("URL"), (*(*res1).URL))
+// 	map1.Add(MakeKeyword("Proto"), MakeString((*res1).Proto))
+// 	map1.Add(MakeKeyword("ProtoMajor"), MakeInt((*res1).ProtoMajor))
+// 	map1.Add(MakeKeyword("ProtoMinor"), MakeInt((*res1).ProtoMinor))
+// 	map1.Add(MakeKeyword("Header"), (*res1).Header)
+// 	map1.Add(MakeKeyword("Body"), (*res1).Body)
+// 	map1.Add(MakeKeyword("GetBody"), (*res1).GetBody)
+// 	map1.Add(MakeKeyword("ContentLength"), MakeInt((*res1).ContentLength))
 // 	vec2 := EmptyVector
-// 	for _, el2 := range res1 {
+// 	for _, el2 := range (*res1).TransferEncoding {
 // 		vec2 = vec2.Conjoin(MakeString(el2))
 // 	}
-// 	res.Conjoin(*(ABEND680:TODO))
+// 	map1.Add(MakeKeyword("TransferEncoding"), vec2)
+// 	map1.Add(MakeKeyword("Close"), MakeBool((*res1).Close))
+// 	map1.Add(MakeKeyword("Host"), MakeString((*res1).Host))
+// 	map1.Add(MakeKeyword("Form"), (*res1).Form)
+// 	map1.Add(MakeKeyword("PostForm"), (*res1).PostForm)
+// 	map1.Add(MakeKeyword("MultipartForm"), (*(*res1).MultipartForm))
+// 	map1.Add(MakeKeyword("Trailer"), (*res1).Trailer)
+// 	map1.Add(MakeKeyword("RemoteAddr"), MakeString((*res1).RemoteAddr))
+// 	map1.Add(MakeKeyword("RequestURI"), MakeString((*res1).RequestURI))
+// 	map1.Add(MakeKeyword("TLS"), (*(*res1).TLS))
+// 	map1.Add(MakeKeyword("Cancel"), (*res1).Cancel)
+// 	map3 := EmptyArrayMap()
+// 	map3.Add(MakeKeyword("Status"), MakeString((*(*res1).Response).Status))
+// 	map3.Add(MakeKeyword("StatusCode"), MakeInt((*(*res1).Response).StatusCode))
+// 	map3.Add(MakeKeyword("Proto"), MakeString((*(*res1).Response).Proto))
+// 	map3.Add(MakeKeyword("ProtoMajor"), MakeInt((*(*res1).Response).ProtoMajor))
+// 	map3.Add(MakeKeyword("ProtoMinor"), MakeInt((*(*res1).Response).ProtoMinor))
+// 	map3.Add(MakeKeyword("Header"), (*(*res1).Response).Header)
+// 	map3.Add(MakeKeyword("Body"), (*(*res1).Response).Body)
+// 	map3.Add(MakeKeyword("ContentLength"), MakeInt((*(*res1).Response).ContentLength))
+// 	vec4 := EmptyVector
+// 	for _, el4 := range (*(*res1).Response).TransferEncoding {
+// 		vec4 = vec4.Conjoin(MakeString(el4))
+// 	}
+// 	map3.Add(MakeKeyword("TransferEncoding"), vec4)
+// 	map3.Add(MakeKeyword("Close"), MakeBool((*(*res1).Response).Close))
+// 	map3.Add(MakeKeyword("Uncompressed"), MakeBool((*(*res1).Response).Uncompressed))
+// 	map3.Add(MakeKeyword("Trailer"), (*(*res1).Response).Trailer)
+// 	map3.Add(MakeKeyword("Request"), )
+// 	map3.Add(MakeKeyword("TLS"), (*(*(*res1).Response).TLS))
+// 	map1.Add(MakeKeyword("Response"), map3)
+// 	map1.Add(MakeKeyword("ctx"), (*res1).ctx)
+// 	res.Conjoin(map1)
 // 	res.Conjoin(string(res2))
 // 	return res
 // }
 
 GO FUNC http.NewServeMux has:
 // func newServeMux() Object {
-// 	return http.NewServeMux()
+// 	res := http.NewServeMux()
+// 	map1 := EmptyArrayMap()
+// 	map1.Add(MakeKeyword("mu"), (*res).mu)
+// 	map1.Add(MakeKeyword("m"), (*res).m)
+// 	map1.Add(MakeKeyword("hosts"), MakeBool((*res).hosts))
+// 	return map1
 // }
 
 GO FUNC http.NotFound has:
@@ -1460,15 +1584,53 @@ GO FUNC http.Post has:
 // func post(url string, contentType string, body ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/http/client.go:748:41)) Object {
 // 	resp, err := http.Post(url, contentType, body)
 // 	res := EmptyVector
-// 	vec1 := EmptyVector
-// 	for _, el1 := range resp {
-// 		vec1 = vec1.Conjoin(MakeString(el1))
-// 	}
+// 	map1 := EmptyArrayMap()
+// 	map1.Add(MakeKeyword("Status"), MakeString((*resp).Status))
+// 	map1.Add(MakeKeyword("StatusCode"), MakeInt((*resp).StatusCode))
+// 	map1.Add(MakeKeyword("Proto"), MakeString((*resp).Proto))
+// 	map1.Add(MakeKeyword("ProtoMajor"), MakeInt((*resp).ProtoMajor))
+// 	map1.Add(MakeKeyword("ProtoMinor"), MakeInt((*resp).ProtoMinor))
+// 	map1.Add(MakeKeyword("Header"), (*resp).Header)
+// 	map1.Add(MakeKeyword("Body"), (*resp).Body)
+// 	map1.Add(MakeKeyword("ContentLength"), MakeInt((*resp).ContentLength))
 // 	vec2 := EmptyVector
-// 	for _, el2 := range resp {
+// 	for _, el2 := range (*resp).TransferEncoding {
 // 		vec2 = vec2.Conjoin(MakeString(el2))
 // 	}
-// 	res.Conjoin(*(ABEND680:TODO))
+// 	map1.Add(MakeKeyword("TransferEncoding"), vec2)
+// 	map1.Add(MakeKeyword("Close"), MakeBool((*resp).Close))
+// 	map1.Add(MakeKeyword("Uncompressed"), MakeBool((*resp).Uncompressed))
+// 	map1.Add(MakeKeyword("Trailer"), (*resp).Trailer)
+// 	map3 := EmptyArrayMap()
+// 	map3.Add(MakeKeyword("Method"), MakeString((*(*resp).Request).Method))
+// 	map3.Add(MakeKeyword("URL"), (*(*(*resp).Request).URL))
+// 	map3.Add(MakeKeyword("Proto"), MakeString((*(*resp).Request).Proto))
+// 	map3.Add(MakeKeyword("ProtoMajor"), MakeInt((*(*resp).Request).ProtoMajor))
+// 	map3.Add(MakeKeyword("ProtoMinor"), MakeInt((*(*resp).Request).ProtoMinor))
+// 	map3.Add(MakeKeyword("Header"), (*(*resp).Request).Header)
+// 	map3.Add(MakeKeyword("Body"), (*(*resp).Request).Body)
+// 	map3.Add(MakeKeyword("GetBody"), (*(*resp).Request).GetBody)
+// 	map3.Add(MakeKeyword("ContentLength"), MakeInt((*(*resp).Request).ContentLength))
+// 	vec4 := EmptyVector
+// 	for _, el4 := range (*(*resp).Request).TransferEncoding {
+// 		vec4 = vec4.Conjoin(MakeString(el4))
+// 	}
+// 	map3.Add(MakeKeyword("TransferEncoding"), vec4)
+// 	map3.Add(MakeKeyword("Close"), MakeBool((*(*resp).Request).Close))
+// 	map3.Add(MakeKeyword("Host"), MakeString((*(*resp).Request).Host))
+// 	map3.Add(MakeKeyword("Form"), (*(*resp).Request).Form)
+// 	map3.Add(MakeKeyword("PostForm"), (*(*resp).Request).PostForm)
+// 	map3.Add(MakeKeyword("MultipartForm"), (*(*(*resp).Request).MultipartForm))
+// 	map3.Add(MakeKeyword("Trailer"), (*(*resp).Request).Trailer)
+// 	map3.Add(MakeKeyword("RemoteAddr"), MakeString((*(*resp).Request).RemoteAddr))
+// 	map3.Add(MakeKeyword("RequestURI"), MakeString((*(*resp).Request).RequestURI))
+// 	map3.Add(MakeKeyword("TLS"), (*(*(*resp).Request).TLS))
+// 	map3.Add(MakeKeyword("Cancel"), (*(*resp).Request).Cancel)
+// 	map3.Add(MakeKeyword("Response"), )
+// 	map3.Add(MakeKeyword("ctx"), (*(*resp).Request).ctx)
+// 	map1.Add(MakeKeyword("Request"), map3)
+// 	map1.Add(MakeKeyword("TLS"), (*(*resp).TLS))
+// 	res.Conjoin(map1)
 // 	res.Conjoin(string(err))
 // 	return res
 // }
@@ -1477,15 +1639,53 @@ GO FUNC http.PostForm has:
 // func postForm(url string, data ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/http/client.go:785:32)) Object {
 // 	resp, err := http.PostForm(url, data)
 // 	res := EmptyVector
-// 	vec1 := EmptyVector
-// 	for _, el1 := range resp {
-// 		vec1 = vec1.Conjoin(MakeString(el1))
-// 	}
+// 	map1 := EmptyArrayMap()
+// 	map1.Add(MakeKeyword("Status"), MakeString((*resp).Status))
+// 	map1.Add(MakeKeyword("StatusCode"), MakeInt((*resp).StatusCode))
+// 	map1.Add(MakeKeyword("Proto"), MakeString((*resp).Proto))
+// 	map1.Add(MakeKeyword("ProtoMajor"), MakeInt((*resp).ProtoMajor))
+// 	map1.Add(MakeKeyword("ProtoMinor"), MakeInt((*resp).ProtoMinor))
+// 	map1.Add(MakeKeyword("Header"), (*resp).Header)
+// 	map1.Add(MakeKeyword("Body"), (*resp).Body)
+// 	map1.Add(MakeKeyword("ContentLength"), MakeInt((*resp).ContentLength))
 // 	vec2 := EmptyVector
-// 	for _, el2 := range resp {
+// 	for _, el2 := range (*resp).TransferEncoding {
 // 		vec2 = vec2.Conjoin(MakeString(el2))
 // 	}
-// 	res.Conjoin(*(ABEND680:TODO))
+// 	map1.Add(MakeKeyword("TransferEncoding"), vec2)
+// 	map1.Add(MakeKeyword("Close"), MakeBool((*resp).Close))
+// 	map1.Add(MakeKeyword("Uncompressed"), MakeBool((*resp).Uncompressed))
+// 	map1.Add(MakeKeyword("Trailer"), (*resp).Trailer)
+// 	map3 := EmptyArrayMap()
+// 	map3.Add(MakeKeyword("Method"), MakeString((*(*resp).Request).Method))
+// 	map3.Add(MakeKeyword("URL"), (*(*(*resp).Request).URL))
+// 	map3.Add(MakeKeyword("Proto"), MakeString((*(*resp).Request).Proto))
+// 	map3.Add(MakeKeyword("ProtoMajor"), MakeInt((*(*resp).Request).ProtoMajor))
+// 	map3.Add(MakeKeyword("ProtoMinor"), MakeInt((*(*resp).Request).ProtoMinor))
+// 	map3.Add(MakeKeyword("Header"), (*(*resp).Request).Header)
+// 	map3.Add(MakeKeyword("Body"), (*(*resp).Request).Body)
+// 	map3.Add(MakeKeyword("GetBody"), (*(*resp).Request).GetBody)
+// 	map3.Add(MakeKeyword("ContentLength"), MakeInt((*(*resp).Request).ContentLength))
+// 	vec4 := EmptyVector
+// 	for _, el4 := range (*(*resp).Request).TransferEncoding {
+// 		vec4 = vec4.Conjoin(MakeString(el4))
+// 	}
+// 	map3.Add(MakeKeyword("TransferEncoding"), vec4)
+// 	map3.Add(MakeKeyword("Close"), MakeBool((*(*resp).Request).Close))
+// 	map3.Add(MakeKeyword("Host"), MakeString((*(*resp).Request).Host))
+// 	map3.Add(MakeKeyword("Form"), (*(*resp).Request).Form)
+// 	map3.Add(MakeKeyword("PostForm"), (*(*resp).Request).PostForm)
+// 	map3.Add(MakeKeyword("MultipartForm"), (*(*(*resp).Request).MultipartForm))
+// 	map3.Add(MakeKeyword("Trailer"), (*(*resp).Request).Trailer)
+// 	map3.Add(MakeKeyword("RemoteAddr"), MakeString((*(*resp).Request).RemoteAddr))
+// 	map3.Add(MakeKeyword("RequestURI"), MakeString((*(*resp).Request).RequestURI))
+// 	map3.Add(MakeKeyword("TLS"), (*(*(*resp).Request).TLS))
+// 	map3.Add(MakeKeyword("Cancel"), (*(*resp).Request).Cancel)
+// 	map3.Add(MakeKeyword("Response"), )
+// 	map3.Add(MakeKeyword("ctx"), (*(*resp).Request).ctx)
+// 	map1.Add(MakeKeyword("Request"), map3)
+// 	map1.Add(MakeKeyword("TLS"), (*(*resp).TLS))
+// 	res.Conjoin(map1)
 // 	res.Conjoin(string(err))
 // 	return res
 // }
@@ -1494,7 +1694,7 @@ GO FUNC http.ProxyFromEnvironment has:
 // func proxyFromEnvironment(req ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/http/transport.go:345:31)) Object {
 // 	res1, res2 := http.ProxyFromEnvironment(req)
 // 	res := EmptyVector
-// 	res.Conjoin(*res1)
+// 	res.Conjoin((*res1))
 // 	res.Conjoin(string(res2))
 // 	return res
 // }
@@ -1508,15 +1708,53 @@ GO FUNC http.ReadRequest has:
 // func readRequest(b ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/http/request.go:942:20)) Object {
 // 	res1, res2 := http.ReadRequest(b)
 // 	res := EmptyVector
-// 	vec1 := EmptyVector
-// 	for _, el1 := range res1 {
-// 		vec1 = vec1.Conjoin(MakeString(el1))
-// 	}
+// 	map1 := EmptyArrayMap()
+// 	map1.Add(MakeKeyword("Method"), MakeString((*res1).Method))
+// 	map1.Add(MakeKeyword("URL"), (*(*res1).URL))
+// 	map1.Add(MakeKeyword("Proto"), MakeString((*res1).Proto))
+// 	map1.Add(MakeKeyword("ProtoMajor"), MakeInt((*res1).ProtoMajor))
+// 	map1.Add(MakeKeyword("ProtoMinor"), MakeInt((*res1).ProtoMinor))
+// 	map1.Add(MakeKeyword("Header"), (*res1).Header)
+// 	map1.Add(MakeKeyword("Body"), (*res1).Body)
+// 	map1.Add(MakeKeyword("GetBody"), (*res1).GetBody)
+// 	map1.Add(MakeKeyword("ContentLength"), MakeInt((*res1).ContentLength))
 // 	vec2 := EmptyVector
-// 	for _, el2 := range res1 {
+// 	for _, el2 := range (*res1).TransferEncoding {
 // 		vec2 = vec2.Conjoin(MakeString(el2))
 // 	}
-// 	res.Conjoin(*(ABEND680:TODO))
+// 	map1.Add(MakeKeyword("TransferEncoding"), vec2)
+// 	map1.Add(MakeKeyword("Close"), MakeBool((*res1).Close))
+// 	map1.Add(MakeKeyword("Host"), MakeString((*res1).Host))
+// 	map1.Add(MakeKeyword("Form"), (*res1).Form)
+// 	map1.Add(MakeKeyword("PostForm"), (*res1).PostForm)
+// 	map1.Add(MakeKeyword("MultipartForm"), (*(*res1).MultipartForm))
+// 	map1.Add(MakeKeyword("Trailer"), (*res1).Trailer)
+// 	map1.Add(MakeKeyword("RemoteAddr"), MakeString((*res1).RemoteAddr))
+// 	map1.Add(MakeKeyword("RequestURI"), MakeString((*res1).RequestURI))
+// 	map1.Add(MakeKeyword("TLS"), (*(*res1).TLS))
+// 	map1.Add(MakeKeyword("Cancel"), (*res1).Cancel)
+// 	map3 := EmptyArrayMap()
+// 	map3.Add(MakeKeyword("Status"), MakeString((*(*res1).Response).Status))
+// 	map3.Add(MakeKeyword("StatusCode"), MakeInt((*(*res1).Response).StatusCode))
+// 	map3.Add(MakeKeyword("Proto"), MakeString((*(*res1).Response).Proto))
+// 	map3.Add(MakeKeyword("ProtoMajor"), MakeInt((*(*res1).Response).ProtoMajor))
+// 	map3.Add(MakeKeyword("ProtoMinor"), MakeInt((*(*res1).Response).ProtoMinor))
+// 	map3.Add(MakeKeyword("Header"), (*(*res1).Response).Header)
+// 	map3.Add(MakeKeyword("Body"), (*(*res1).Response).Body)
+// 	map3.Add(MakeKeyword("ContentLength"), MakeInt((*(*res1).Response).ContentLength))
+// 	vec4 := EmptyVector
+// 	for _, el4 := range (*(*res1).Response).TransferEncoding {
+// 		vec4 = vec4.Conjoin(MakeString(el4))
+// 	}
+// 	map3.Add(MakeKeyword("TransferEncoding"), vec4)
+// 	map3.Add(MakeKeyword("Close"), MakeBool((*(*res1).Response).Close))
+// 	map3.Add(MakeKeyword("Uncompressed"), MakeBool((*(*res1).Response).Uncompressed))
+// 	map3.Add(MakeKeyword("Trailer"), (*(*res1).Response).Trailer)
+// 	map3.Add(MakeKeyword("Request"), )
+// 	map3.Add(MakeKeyword("TLS"), (*(*(*res1).Response).TLS))
+// 	map1.Add(MakeKeyword("Response"), map3)
+// 	map1.Add(MakeKeyword("ctx"), (*res1).ctx)
+// 	res.Conjoin(map1)
 // 	res.Conjoin(string(res2))
 // 	return res
 // }
@@ -1525,15 +1763,53 @@ GO FUNC http.ReadResponse has:
 // func readResponse(r ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/http/response.go:148:21), req ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/http/response.go:148:40)) Object {
 // 	res1, res2 := http.ReadResponse(r, req)
 // 	res := EmptyVector
-// 	vec1 := EmptyVector
-// 	for _, el1 := range res1 {
-// 		vec1 = vec1.Conjoin(MakeString(el1))
-// 	}
+// 	map1 := EmptyArrayMap()
+// 	map1.Add(MakeKeyword("Status"), MakeString((*res1).Status))
+// 	map1.Add(MakeKeyword("StatusCode"), MakeInt((*res1).StatusCode))
+// 	map1.Add(MakeKeyword("Proto"), MakeString((*res1).Proto))
+// 	map1.Add(MakeKeyword("ProtoMajor"), MakeInt((*res1).ProtoMajor))
+// 	map1.Add(MakeKeyword("ProtoMinor"), MakeInt((*res1).ProtoMinor))
+// 	map1.Add(MakeKeyword("Header"), (*res1).Header)
+// 	map1.Add(MakeKeyword("Body"), (*res1).Body)
+// 	map1.Add(MakeKeyword("ContentLength"), MakeInt((*res1).ContentLength))
 // 	vec2 := EmptyVector
-// 	for _, el2 := range res1 {
+// 	for _, el2 := range (*res1).TransferEncoding {
 // 		vec2 = vec2.Conjoin(MakeString(el2))
 // 	}
-// 	res.Conjoin(*(ABEND680:TODO))
+// 	map1.Add(MakeKeyword("TransferEncoding"), vec2)
+// 	map1.Add(MakeKeyword("Close"), MakeBool((*res1).Close))
+// 	map1.Add(MakeKeyword("Uncompressed"), MakeBool((*res1).Uncompressed))
+// 	map1.Add(MakeKeyword("Trailer"), (*res1).Trailer)
+// 	map3 := EmptyArrayMap()
+// 	map3.Add(MakeKeyword("Method"), MakeString((*(*res1).Request).Method))
+// 	map3.Add(MakeKeyword("URL"), (*(*(*res1).Request).URL))
+// 	map3.Add(MakeKeyword("Proto"), MakeString((*(*res1).Request).Proto))
+// 	map3.Add(MakeKeyword("ProtoMajor"), MakeInt((*(*res1).Request).ProtoMajor))
+// 	map3.Add(MakeKeyword("ProtoMinor"), MakeInt((*(*res1).Request).ProtoMinor))
+// 	map3.Add(MakeKeyword("Header"), (*(*res1).Request).Header)
+// 	map3.Add(MakeKeyword("Body"), (*(*res1).Request).Body)
+// 	map3.Add(MakeKeyword("GetBody"), (*(*res1).Request).GetBody)
+// 	map3.Add(MakeKeyword("ContentLength"), MakeInt((*(*res1).Request).ContentLength))
+// 	vec4 := EmptyVector
+// 	for _, el4 := range (*(*res1).Request).TransferEncoding {
+// 		vec4 = vec4.Conjoin(MakeString(el4))
+// 	}
+// 	map3.Add(MakeKeyword("TransferEncoding"), vec4)
+// 	map3.Add(MakeKeyword("Close"), MakeBool((*(*res1).Request).Close))
+// 	map3.Add(MakeKeyword("Host"), MakeString((*(*res1).Request).Host))
+// 	map3.Add(MakeKeyword("Form"), (*(*res1).Request).Form)
+// 	map3.Add(MakeKeyword("PostForm"), (*(*res1).Request).PostForm)
+// 	map3.Add(MakeKeyword("MultipartForm"), (*(*(*res1).Request).MultipartForm))
+// 	map3.Add(MakeKeyword("Trailer"), (*(*res1).Request).Trailer)
+// 	map3.Add(MakeKeyword("RemoteAddr"), MakeString((*(*res1).Request).RemoteAddr))
+// 	map3.Add(MakeKeyword("RequestURI"), MakeString((*(*res1).Request).RequestURI))
+// 	map3.Add(MakeKeyword("TLS"), (*(*(*res1).Request).TLS))
+// 	map3.Add(MakeKeyword("Cancel"), (*(*res1).Request).Cancel)
+// 	map3.Add(MakeKeyword("Response"), )
+// 	map3.Add(MakeKeyword("ctx"), (*(*res1).Request).ctx)
+// 	map1.Add(MakeKeyword("Request"), map3)
+// 	map1.Add(MakeKeyword("TLS"), (*(*res1).TLS))
+// 	res.Conjoin(map1)
 // 	res.Conjoin(string(res2))
 // 	return res
 // }
@@ -1579,7 +1855,16 @@ GO FUNC http.TimeoutHandler has:
 
 GO FUNC httptest.NewRecorder has:
 // func newRecorder() Object {
-// 	return httptest.NewRecorder()
+// 	res := httptest.NewRecorder()
+// 	map1 := EmptyArrayMap()
+// 	map1.Add(MakeKeyword("Code"), MakeInt((*res).Code))
+// 	map1.Add(MakeKeyword("HeaderMap"), (*res).HeaderMap)
+// 	map1.Add(MakeKeyword("Body"), (*(*res).Body))
+// 	map1.Add(MakeKeyword("Flushed"), MakeBool((*res).Flushed))
+// 	map1.Add(MakeKeyword("result"), (*(*res).result))
+// 	map1.Add(MakeKeyword("snapHeader"), (*res).snapHeader)
+// 	map1.Add(MakeKeyword("wroteHeader"), MakeBool((*res).wroteHeader))
+// 	return map1
 // }
 
 GO FUNC httptest.NewRequest has:
@@ -1589,22 +1874,76 @@ GO FUNC httptest.NewRequest has:
 
 GO FUNC httptest.NewServer has:
 // func newServer(handler ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/http/httptest/server.go:80:24)) Object {
-// 	return httptest.NewServer(handler)
+// 	res := httptest.NewServer(handler)
+// 	map1 := EmptyArrayMap()
+// 	map1.Add(MakeKeyword("URL"), MakeString((*res).URL))
+// 	map1.Add(MakeKeyword("Listener"), (*res).Listener)
+// 	map1.Add(MakeKeyword("TLS"), (*(*res).TLS))
+// 	map1.Add(MakeKeyword("Config"), (*(*res).Config))
+// 	map1.Add(MakeKeyword("certificate"), (*(*res).certificate))
+// 	map1.Add(MakeKeyword("wg"), (*res).wg)
+// 	map1.Add(MakeKeyword("mu"), (*res).mu)
+// 	map1.Add(MakeKeyword("closed"), MakeBool((*res).closed))
+// 	map1.Add(MakeKeyword("conns"), (*res).conns)
+// 	map1.Add(MakeKeyword("client"), (*(*res).client))
+// 	return map1
 // }
 
 GO FUNC httptest.NewTLSServer has:
 // func newTLSServer(handler ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/http/httptest/server.go:160:27)) Object {
-// 	return httptest.NewTLSServer(handler)
+// 	res := httptest.NewTLSServer(handler)
+// 	map1 := EmptyArrayMap()
+// 	map1.Add(MakeKeyword("URL"), MakeString((*res).URL))
+// 	map1.Add(MakeKeyword("Listener"), (*res).Listener)
+// 	map1.Add(MakeKeyword("TLS"), (*(*res).TLS))
+// 	map1.Add(MakeKeyword("Config"), (*(*res).Config))
+// 	map1.Add(MakeKeyword("certificate"), (*(*res).certificate))
+// 	map1.Add(MakeKeyword("wg"), (*res).wg)
+// 	map1.Add(MakeKeyword("mu"), (*res).mu)
+// 	map1.Add(MakeKeyword("closed"), MakeBool((*res).closed))
+// 	map1.Add(MakeKeyword("conns"), (*res).conns)
+// 	map1.Add(MakeKeyword("client"), (*(*res).client))
+// 	return map1
 // }
 
 GO FUNC httptest.NewUnstartedServer has:
 // func newUnstartedServer(handler ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/http/httptest/server.go:92:33)) Object {
-// 	return httptest.NewUnstartedServer(handler)
+// 	res := httptest.NewUnstartedServer(handler)
+// 	map1 := EmptyArrayMap()
+// 	map1.Add(MakeKeyword("URL"), MakeString((*res).URL))
+// 	map1.Add(MakeKeyword("Listener"), (*res).Listener)
+// 	map1.Add(MakeKeyword("TLS"), (*(*res).TLS))
+// 	map1.Add(MakeKeyword("Config"), (*(*res).Config))
+// 	map1.Add(MakeKeyword("certificate"), (*(*res).certificate))
+// 	map1.Add(MakeKeyword("wg"), (*res).wg)
+// 	map1.Add(MakeKeyword("mu"), (*res).mu)
+// 	map1.Add(MakeKeyword("closed"), MakeBool((*res).closed))
+// 	map1.Add(MakeKeyword("conns"), (*res).conns)
+// 	map1.Add(MakeKeyword("client"), (*(*res).client))
+// 	return map1
 // }
 
 GO FUNC httptrace.ContextClientTrace has:
 // func contextClientTrace(ctx ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/http/httptrace/trace.go:24:29)) Object {
-// 	return httptrace.ContextClientTrace(ctx)
+// 	res := httptrace.ContextClientTrace(ctx)
+// 	map1 := EmptyArrayMap()
+// 	map1.Add(MakeKeyword("GetConn"), (*res).GetConn)
+// 	map1.Add(MakeKeyword("GotConn"), (*res).GotConn)
+// 	map1.Add(MakeKeyword("PutIdleConn"), (*res).PutIdleConn)
+// 	map1.Add(MakeKeyword("GotFirstResponseByte"), (*res).GotFirstResponseByte)
+// 	map1.Add(MakeKeyword("Got100Continue"), (*res).Got100Continue)
+// 	map1.Add(MakeKeyword("Got1xxResponse"), (*res).Got1xxResponse)
+// 	map1.Add(MakeKeyword("DNSStart"), (*res).DNSStart)
+// 	map1.Add(MakeKeyword("DNSDone"), (*res).DNSDone)
+// 	map1.Add(MakeKeyword("ConnectStart"), (*res).ConnectStart)
+// 	map1.Add(MakeKeyword("ConnectDone"), (*res).ConnectDone)
+// 	map1.Add(MakeKeyword("TLSHandshakeStart"), (*res).TLSHandshakeStart)
+// 	map1.Add(MakeKeyword("TLSHandshakeDone"), (*res).TLSHandshakeDone)
+// 	map1.Add(MakeKeyword("WroteHeaderField"), (*res).WroteHeaderField)
+// 	map1.Add(MakeKeyword("WroteHeaders"), (*res).WroteHeaders)
+// 	map1.Add(MakeKeyword("Wait100Continue"), (*res).Wait100Continue)
+// 	map1.Add(MakeKeyword("WroteRequest"), (*res).WroteRequest)
+// 	return map1
 // }
 
 GO FUNC httptrace.WithClientTrace has:
@@ -1663,29 +2002,76 @@ GO FUNC httputil.NewChunkedWriter has:
 
 GO FUNC httputil.NewClientConn has:
 // func newClientConn(c ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/http/httputil/persist.go:248:22), r ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/http/httputil/persist.go:248:34)) Object {
-// 	return httputil.NewClientConn(c, r)
+// 	res := httputil.NewClientConn(c, r)
+// 	map1 := EmptyArrayMap()
+// 	map1.Add(MakeKeyword("mu"), (*res).mu)
+// 	map1.Add(MakeKeyword("c"), (*res).c)
+// 	map1.Add(MakeKeyword("r"), (*(*res).r))
+// 	map1.Add(MakeKeyword("re"), string((*res).re))
+// 	map1.Add(MakeKeyword("we"), string((*res).we))
+// 	map1.Add(MakeKeyword("lastbody"), (*res).lastbody)
+// 	map1.Add(MakeKeyword("nread"), MakeInt((*res).nread))
+// 	map1.Add(MakeKeyword("nwritten"), MakeInt((*res).nwritten))
+// 	map1.Add(MakeKeyword("pipereq"), (*res).pipereq)
+// 	map1.Add(MakeKeyword("pipe"), (*res).pipe)
+// 	map1.Add(MakeKeyword("writeReq"), (*res).writeReq)
+// 	return map1
 // }
 
 GO FUNC httputil.NewProxyClientConn has:
 // func newProxyClientConn(c ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/http/httputil/persist.go:265:27), r ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/http/httputil/persist.go:265:39)) Object {
-// 	return httputil.NewProxyClientConn(c, r)
+// 	res := httputil.NewProxyClientConn(c, r)
+// 	map1 := EmptyArrayMap()
+// 	map1.Add(MakeKeyword("mu"), (*res).mu)
+// 	map1.Add(MakeKeyword("c"), (*res).c)
+// 	map1.Add(MakeKeyword("r"), (*(*res).r))
+// 	map1.Add(MakeKeyword("re"), string((*res).re))
+// 	map1.Add(MakeKeyword("we"), string((*res).we))
+// 	map1.Add(MakeKeyword("lastbody"), (*res).lastbody)
+// 	map1.Add(MakeKeyword("nread"), MakeInt((*res).nread))
+// 	map1.Add(MakeKeyword("nwritten"), MakeInt((*res).nwritten))
+// 	map1.Add(MakeKeyword("pipereq"), (*res).pipereq)
+// 	map1.Add(MakeKeyword("pipe"), (*res).pipe)
+// 	map1.Add(MakeKeyword("writeReq"), (*res).writeReq)
+// 	return map1
 // }
 
 GO FUNC httputil.NewServerConn has:
 // func newServerConn(c ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/http/httputil/persist.go:54:22), r ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/http/httputil/persist.go:54:34)) Object {
-// 	return httputil.NewServerConn(c, r)
+// 	res := httputil.NewServerConn(c, r)
+// 	map1 := EmptyArrayMap()
+// 	map1.Add(MakeKeyword("mu"), (*res).mu)
+// 	map1.Add(MakeKeyword("c"), (*res).c)
+// 	map1.Add(MakeKeyword("r"), (*(*res).r))
+// 	map1.Add(MakeKeyword("re"), string((*res).re))
+// 	map1.Add(MakeKeyword("we"), string((*res).we))
+// 	map1.Add(MakeKeyword("lastbody"), (*res).lastbody)
+// 	map1.Add(MakeKeyword("nread"), MakeInt((*res).nread))
+// 	map1.Add(MakeKeyword("nwritten"), MakeInt((*res).nwritten))
+// 	map1.Add(MakeKeyword("pipereq"), (*res).pipereq)
+// 	map1.Add(MakeKeyword("pipe"), (*res).pipe)
+// 	return map1
 // }
 
 GO FUNC httputil.NewSingleHostReverseProxy has:
 // func newSingleHostReverseProxy(target ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/http/httputil/reverseproxy.go:103:39)) Object {
-// 	return httputil.NewSingleHostReverseProxy(target)
+// 	res := httputil.NewSingleHostReverseProxy(target)
+// 	map1 := EmptyArrayMap()
+// 	map1.Add(MakeKeyword("Director"), (*res).Director)
+// 	map1.Add(MakeKeyword("Transport"), (*res).Transport)
+// 	map1.Add(MakeKeyword("FlushInterval"), (*res).FlushInterval)
+// 	map1.Add(MakeKeyword("ErrorLog"), (*(*res).ErrorLog))
+// 	map1.Add(MakeKeyword("BufferPool"), (*res).BufferPool)
+// 	map1.Add(MakeKeyword("ModifyResponse"), (*res).ModifyResponse)
+// 	map1.Add(MakeKeyword("ErrorHandler"), (*res).ErrorHandler)
+// 	return map1
 // }
 
 GO FUNC jsonrpc.Dial has:
 // func dial(network string, address string) Object {
 // 	res1, res2 := jsonrpc.Dial(network, address)
 // 	res := EmptyVector
-// 	res.Conjoin(*res1)
+// 	res.Conjoin((*res1))
 // 	res.Conjoin(string(res2))
 // 	return res
 // }
@@ -1712,26 +2098,32 @@ GO FUNC jsonrpc.ServeConn has:
 // }
 
 GO FUNC mail.ParseAddress has:
-// func parseAddress(address string) Object {
-// 	res1, res2 := mail.ParseAddress(address)
-// 	res := EmptyVector
-// 	res.Conjoin(*(ABEND680:TODO))
-// 	res.Conjoin(string(res2))
-// 	return res
-// }
+func parseAddress(address string) Object {
+	res1, res2 := mail.ParseAddress(address)
+	res := EmptyVector
+	map1 := EmptyArrayMap()
+	map1.Add(MakeKeyword("Name"), MakeString((*res1).Name))
+	map1.Add(MakeKeyword("Address"), MakeString((*res1).Address))
+	res.Conjoin(map1)
+	res.Conjoin(string(res2))
+	return res
+}
 
 GO FUNC mail.ParseAddressList has:
-// func parseAddressList(list string) Object {
-// 	res1, res2 := mail.ParseAddressList(list)
-// 	res := EmptyVector
-// 	vec1 := EmptyVector
-// 	for _, el1 := range res1 {
-// 		vec1 = vec1.Conjoin(*(ABEND680:TODO))
-// 	}
-// 	res.Conjoin(vec1)
-// 	res.Conjoin(string(res2))
-// 	return res
-// }
+func parseAddressList(list string) Object {
+	res1, res2 := mail.ParseAddressList(list)
+	res := EmptyVector
+	vec1 := EmptyVector
+	for _, el1 := range res1 {
+		map2 := EmptyArrayMap()
+		map2.Add(MakeKeyword("Name"), MakeString((*el1).Name))
+		map2.Add(MakeKeyword("Address"), MakeString((*el1).Address))
+		vec1 = vec1.Conjoin(map2)
+	}
+	res.Conjoin(vec1)
+	res.Conjoin(string(res2))
+	return res
+}
 
 GO FUNC mail.ParseDate has:
 // func parseDate(date string) Object {
@@ -1746,7 +2138,10 @@ GO FUNC mail.ReadMessage has:
 // func readMessage(r ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/mail/message.go:52:20)) Object {
 // 	msg, err := mail.ReadMessage(r)
 // 	res := EmptyVector
-// 	res.Conjoin(*(ABEND680:TODO))
+// 	map1 := EmptyArrayMap()
+// 	map1.Add(MakeKeyword("Header"), (*msg).Header)
+// 	map1.Add(MakeKeyword("Body"), (*msg).Body)
+// 	res.Conjoin(map1)
 // 	res.Conjoin(string(err))
 // 	return res
 // }
@@ -1774,7 +2169,8 @@ GO FUNC net.DialIP has:
 // func dialIP(network string, laddr ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/iprawsock.go:211:42), raddr ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/iprawsock.go:211:42)) Object {
 // 	res1, res2 := net.DialIP(network, laddr, raddr)
 // 	res := EmptyVector
-// 	res.Conjoin(*(ABEND680:TODO))
+// 	map1 := EmptyArrayMap()
+// 	res.Conjoin(map1)
 // 	res.Conjoin(string(res2))
 // 	return res
 // }
@@ -1783,7 +2179,8 @@ GO FUNC net.DialTCP has:
 // func dialTCP(network string, laddr ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/tcpsock.go:206:43), raddr ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/tcpsock.go:206:43)) Object {
 // 	res1, res2 := net.DialTCP(network, laddr, raddr)
 // 	res := EmptyVector
-// 	res.Conjoin(*(ABEND680:TODO))
+// 	map1 := EmptyArrayMap()
+// 	res.Conjoin(map1)
 // 	res.Conjoin(string(res2))
 // 	return res
 // }
@@ -1801,7 +2198,8 @@ GO FUNC net.DialUDP has:
 // func dialUDP(network string, laddr ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/udpsock.go:205:43), raddr ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/udpsock.go:205:43)) Object {
 // 	res1, res2 := net.DialUDP(network, laddr, raddr)
 // 	res := EmptyVector
-// 	res.Conjoin(*(ABEND680:TODO))
+// 	map1 := EmptyArrayMap()
+// 	res.Conjoin(map1)
 // 	res.Conjoin(string(res2))
 // 	return res
 // }
@@ -1810,7 +2208,8 @@ GO FUNC net.DialUnix has:
 // func dialUnix(network string, laddr ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/unixsock.go:200:44), raddr ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/unixsock.go:200:44)) Object {
 // 	res1, res2 := net.DialUnix(network, laddr, raddr)
 // 	res := EmptyVector
-// 	res.Conjoin(*(ABEND680:TODO))
+// 	map1 := EmptyArrayMap()
+// 	res.Conjoin(map1)
 // 	res.Conjoin(string(res2))
 // 	return res
 // }
@@ -1876,47 +2275,65 @@ GO FUNC net.InterfaceAddrs has:
 // }
 
 GO FUNC net.InterfaceByIndex has:
-// func interfaceByIndex(index int) Object {
-// 	res1, res2 := net.InterfaceByIndex(index)
-// 	res := EmptyVector
-// 	vec1 := EmptyVector
-// 	for _, el1 := range res1 {
-// 		vec1 = vec1.Conjoin(MakeInt(el1))
-// 	}
-// 	res.Conjoin(*(ABEND680:TODO))
-// 	res.Conjoin(string(res2))
-// 	return res
-// }
+func interfaceByIndex(index int) Object {
+	res1, res2 := net.InterfaceByIndex(index)
+	res := EmptyVector
+	map1 := EmptyArrayMap()
+	map1.Add(MakeKeyword("Index"), MakeInt((*res1).Index))
+	map1.Add(MakeKeyword("MTU"), MakeInt((*res1).MTU))
+	map1.Add(MakeKeyword("Name"), MakeString((*res1).Name))
+	vec2 := EmptyVector
+	for _, el2 := range (*res1).HardwareAddr {
+		vec2 = vec2.Conjoin(MakeInt(el2))
+	}
+	map1.Add(MakeKeyword("HardwareAddr"), vec2)
+	map1.Add(MakeKeyword("Flags"), MakeInt((*res1).Flags))
+	res.Conjoin(map1)
+	res.Conjoin(string(res2))
+	return res
+}
 
 GO FUNC net.InterfaceByName has:
-// func interfaceByName(name string) Object {
-// 	res1, res2 := net.InterfaceByName(name)
-// 	res := EmptyVector
-// 	vec1 := EmptyVector
-// 	for _, el1 := range res1 {
-// 		vec1 = vec1.Conjoin(MakeInt(el1))
-// 	}
-// 	res.Conjoin(*(ABEND680:TODO))
-// 	res.Conjoin(string(res2))
-// 	return res
-// }
+func interfaceByName(name string) Object {
+	res1, res2 := net.InterfaceByName(name)
+	res := EmptyVector
+	map1 := EmptyArrayMap()
+	map1.Add(MakeKeyword("Index"), MakeInt((*res1).Index))
+	map1.Add(MakeKeyword("MTU"), MakeInt((*res1).MTU))
+	map1.Add(MakeKeyword("Name"), MakeString((*res1).Name))
+	vec2 := EmptyVector
+	for _, el2 := range (*res1).HardwareAddr {
+		vec2 = vec2.Conjoin(MakeInt(el2))
+	}
+	map1.Add(MakeKeyword("HardwareAddr"), vec2)
+	map1.Add(MakeKeyword("Flags"), MakeInt((*res1).Flags))
+	res.Conjoin(map1)
+	res.Conjoin(string(res2))
+	return res
+}
 
 GO FUNC net.Interfaces has:
-// func interfaces() Object {
-// 	res1, res2 := net.Interfaces()
-// 	res := EmptyVector
-// 	vec1 := EmptyVector
-// 	for _, el1 := range res1 {
-// 		vec2 := EmptyVector
-// 		for _, el2 := range el1 {
-// 			vec2 = vec2.Conjoin(MakeInt(el2))
-// 		}
-// 		vec1 = vec1.Conjoin((ABEND680:TODO))
-// 	}
-// 	res.Conjoin(vec1)
-// 	res.Conjoin(string(res2))
-// 	return res
-// }
+func interfaces() Object {
+	res1, res2 := net.Interfaces()
+	res := EmptyVector
+	vec1 := EmptyVector
+	for _, el1 := range res1 {
+		map2 := EmptyArrayMap()
+		map2.Add(MakeKeyword("Index"), MakeInt(el1.Index))
+		map2.Add(MakeKeyword("MTU"), MakeInt(el1.MTU))
+		map2.Add(MakeKeyword("Name"), MakeString(el1.Name))
+		vec3 := EmptyVector
+		for _, el3 := range el1.HardwareAddr {
+			vec3 = vec3.Conjoin(MakeInt(el3))
+		}
+		map2.Add(MakeKeyword("HardwareAddr"), vec3)
+		map2.Add(MakeKeyword("Flags"), MakeInt(el1.Flags))
+		vec1 = vec1.Conjoin(map2)
+	}
+	res.Conjoin(vec1)
+	res.Conjoin(string(res2))
+	return res
+}
 
 GO FUNC net.Listen has:
 // func listen(network string, address string) Object {
@@ -1931,7 +2348,8 @@ GO FUNC net.ListenIP has:
 // func listenIP(network string, laddr ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/iprawsock.go:230:37)) Object {
 // 	res1, res2 := net.ListenIP(network, laddr)
 // 	res := EmptyVector
-// 	res.Conjoin(*(ABEND680:TODO))
+// 	map1 := EmptyArrayMap()
+// 	res.Conjoin(map1)
 // 	res.Conjoin(string(res2))
 // 	return res
 // }
@@ -1940,7 +2358,8 @@ GO FUNC net.ListenMulticastUDP has:
 // func listenMulticastUDP(network string, ifi ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/udpsock.go:265:45), gaddr ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/udpsock.go:265:63)) Object {
 // 	res1, res2 := net.ListenMulticastUDP(network, ifi, gaddr)
 // 	res := EmptyVector
-// 	res.Conjoin(*(ABEND680:TODO))
+// 	map1 := EmptyArrayMap()
+// 	res.Conjoin(map1)
 // 	res.Conjoin(string(res2))
 // 	return res
 // }
@@ -1958,7 +2377,9 @@ GO FUNC net.ListenTCP has:
 // func listenTCP(network string, laddr ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/tcpsock.go:323:38)) Object {
 // 	res1, res2 := net.ListenTCP(network, laddr)
 // 	res := EmptyVector
-// 	res.Conjoin(*(ABEND680:TODO))
+// 	map1 := EmptyArrayMap()
+// 	map1.Add(MakeKeyword("fd"), )
+// 	res.Conjoin(map1)
 // 	res.Conjoin(string(res2))
 // 	return res
 // }
@@ -1967,7 +2388,8 @@ GO FUNC net.ListenUDP has:
 // func listenUDP(network string, laddr ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/udpsock.go:231:38)) Object {
 // 	res1, res2 := net.ListenUDP(network, laddr)
 // 	res := EmptyVector
-// 	res.Conjoin(*(ABEND680:TODO))
+// 	map1 := EmptyArrayMap()
+// 	res.Conjoin(map1)
 // 	res.Conjoin(string(res2))
 // 	return res
 // }
@@ -1976,7 +2398,12 @@ GO FUNC net.ListenUnix has:
 // func listenUnix(network string, laddr ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/unixsock.go:314:39)) Object {
 // 	res1, res2 := net.ListenUnix(network, laddr)
 // 	res := EmptyVector
-// 	res.Conjoin(*(ABEND680:TODO))
+// 	map1 := EmptyArrayMap()
+// 	map1.Add(MakeKeyword("fd"), )
+// 	map1.Add(MakeKeyword("path"), MakeString((*res1).path))
+// 	map1.Add(MakeKeyword("unlink"), MakeBool((*res1).unlink))
+// 	map1.Add(MakeKeyword("unlinkOnce"), (*res1).unlinkOnce)
+// 	res.Conjoin(map1)
 // 	res.Conjoin(string(res2))
 // 	return res
 // }
@@ -1985,7 +2412,8 @@ GO FUNC net.ListenUnixgram has:
 // func listenUnixgram(network string, laddr ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/unixsock.go:334:43)) Object {
 // 	res1, res2 := net.ListenUnixgram(network, laddr)
 // 	res := EmptyVector
-// 	res.Conjoin(*(ABEND680:TODO))
+// 	map1 := EmptyArrayMap()
+// 	res.Conjoin(map1)
 // 	res.Conjoin(string(res2))
 // 	return res
 // }
@@ -2043,30 +2471,35 @@ func lookupIP(host string) Object {
 }
 
 GO FUNC net.LookupMX has:
-// func lookupMX(name string) Object {
-// 	res1, res2 := net.LookupMX(name)
-// 	res := EmptyVector
-// 	vec1 := EmptyVector
-// 	for _, el1 := range res1 {
-// 		vec1 = vec1.Conjoin(*(ABEND680:TODO))
-// 	}
-// 	res.Conjoin(vec1)
-// 	res.Conjoin(string(res2))
-// 	return res
-// }
+func lookupMX(name string) Object {
+	res1, res2 := net.LookupMX(name)
+	res := EmptyVector
+	vec1 := EmptyVector
+	for _, el1 := range res1 {
+		map2 := EmptyArrayMap()
+		map2.Add(MakeKeyword("Host"), MakeString((*el1).Host))
+		map2.Add(MakeKeyword("Pref"), MakeInt((*el1).Pref))
+		vec1 = vec1.Conjoin(map2)
+	}
+	res.Conjoin(vec1)
+	res.Conjoin(string(res2))
+	return res
+}
 
 GO FUNC net.LookupNS has:
-// func lookupNS(name string) Object {
-// 	res1, res2 := net.LookupNS(name)
-// 	res := EmptyVector
-// 	vec1 := EmptyVector
-// 	for _, el1 := range res1 {
-// 		vec1 = vec1.Conjoin(*(ABEND680:TODO))
-// 	}
-// 	res.Conjoin(vec1)
-// 	res.Conjoin(string(res2))
-// 	return res
-// }
+func lookupNS(name string) Object {
+	res1, res2 := net.LookupNS(name)
+	res := EmptyVector
+	vec1 := EmptyVector
+	for _, el1 := range res1 {
+		map2 := EmptyArrayMap()
+		map2.Add(MakeKeyword("Host"), MakeString((*el1).Host))
+		vec1 = vec1.Conjoin(map2)
+	}
+	res.Conjoin(vec1)
+	res.Conjoin(string(res2))
+	return res
+}
 
 GO FUNC net.LookupPort has:
 func lookupPort(network string, service string) Object {
@@ -2078,18 +2511,23 @@ func lookupPort(network string, service string) Object {
 }
 
 GO FUNC net.LookupSRV has:
-// func lookupSRV(service string, proto string, name string) Object {
-// 	cname, addrs, err := net.LookupSRV(service, proto, name)
-// 	res := EmptyVector
-// 	vec1 := EmptyVector
-// 	for _, el1 := range addrs {
-// 		vec1 = vec1.Conjoin(*(ABEND680:TODO))
-// 	}
-// 	res.Conjoin(MakeString(cname))
-// 	res.Conjoin(vec1)
-// 	res.Conjoin(string(err))
-// 	return res
-// }
+func lookupSRV(service string, proto string, name string) Object {
+	cname, addrs, err := net.LookupSRV(service, proto, name)
+	res := EmptyVector
+	vec1 := EmptyVector
+	for _, el1 := range addrs {
+		map2 := EmptyArrayMap()
+		map2.Add(MakeKeyword("Target"), MakeString((*el1).Target))
+		map2.Add(MakeKeyword("Port"), MakeInt((*el1).Port))
+		map2.Add(MakeKeyword("Priority"), MakeInt((*el1).Priority))
+		map2.Add(MakeKeyword("Weight"), MakeInt((*el1).Weight))
+		vec1 = vec1.Conjoin(map2)
+	}
+	res.Conjoin(MakeString(cname))
+	res.Conjoin(vec1)
+	res.Conjoin(string(err))
+	return res
+}
 
 GO FUNC net.LookupTXT has:
 func lookupTXT(name string) Object {
@@ -2105,26 +2543,29 @@ func lookupTXT(name string) Object {
 }
 
 GO FUNC net.ParseCIDR has:
-// func parseCIDR(s string) Object {
-// 	res1, res2, res3 := net.ParseCIDR(s)
-// 	res := EmptyVector
-// 	vec2 := EmptyVector
-// 	for _, el2 := range res2 {
-// 		vec2 = vec2.Conjoin(MakeInt(el2))
-// 	}
-// 	vec3 := EmptyVector
-// 	for _, el3 := range res2 {
-// 		vec3 = vec3.Conjoin(MakeInt(el3))
-// 	}
-// 	vec1 := EmptyVector
-// 	for _, el1 := range res1 {
-// 		vec1 = vec1.Conjoin(MakeInt(el1))
-// 	}
-// 	res.Conjoin(vec1)
-// 	res.Conjoin(*(ABEND680:TODO))
-// 	res.Conjoin(string(res3))
-// 	return res
-// }
+func parseCIDR(s string) Object {
+	res1, res2, res3 := net.ParseCIDR(s)
+	res := EmptyVector
+	map2 := EmptyArrayMap()
+	vec3 := EmptyVector
+	for _, el3 := range (*res2).IP {
+		vec3 = vec3.Conjoin(MakeInt(el3))
+	}
+	map2.Add(MakeKeyword("IP"), vec3)
+	vec4 := EmptyVector
+	for _, el4 := range (*res2).Mask {
+		vec4 = vec4.Conjoin(MakeInt(el4))
+	}
+	map2.Add(MakeKeyword("Mask"), vec4)
+	vec1 := EmptyVector
+	for _, el1 := range res1 {
+		vec1 = vec1.Conjoin(MakeInt(el1))
+	}
+	res.Conjoin(vec1)
+	res.Conjoin(map2)
+	res.Conjoin(string(res3))
+	return res
+}
 
 GO FUNC net.ParseIP has:
 func parseIP(s string) Object {
@@ -2159,52 +2600,66 @@ GO FUNC net.Pipe has:
 // }
 
 GO FUNC net.ResolveIPAddr has:
-// func resolveIPAddr(network string, address string) Object {
-// 	res1, res2 := net.ResolveIPAddr(network, address)
-// 	res := EmptyVector
-// 	vec1 := EmptyVector
-// 	for _, el1 := range res1 {
-// 		vec1 = vec1.Conjoin(MakeInt(el1))
-// 	}
-// 	res.Conjoin(*(ABEND680:TODO))
-// 	res.Conjoin(string(res2))
-// 	return res
-// }
+func resolveIPAddr(network string, address string) Object {
+	res1, res2 := net.ResolveIPAddr(network, address)
+	res := EmptyVector
+	map1 := EmptyArrayMap()
+	vec2 := EmptyVector
+	for _, el2 := range (*res1).IP {
+		vec2 = vec2.Conjoin(MakeInt(el2))
+	}
+	map1.Add(MakeKeyword("IP"), vec2)
+	map1.Add(MakeKeyword("Zone"), MakeString((*res1).Zone))
+	res.Conjoin(map1)
+	res.Conjoin(string(res2))
+	return res
+}
 
 GO FUNC net.ResolveTCPAddr has:
-// func resolveTCPAddr(network string, address string) Object {
-// 	res1, res2 := net.ResolveTCPAddr(network, address)
-// 	res := EmptyVector
-// 	vec1 := EmptyVector
-// 	for _, el1 := range res1 {
-// 		vec1 = vec1.Conjoin(MakeInt(el1))
-// 	}
-// 	res.Conjoin(*(ABEND680:TODO))
-// 	res.Conjoin(string(res2))
-// 	return res
-// }
+func resolveTCPAddr(network string, address string) Object {
+	res1, res2 := net.ResolveTCPAddr(network, address)
+	res := EmptyVector
+	map1 := EmptyArrayMap()
+	vec2 := EmptyVector
+	for _, el2 := range (*res1).IP {
+		vec2 = vec2.Conjoin(MakeInt(el2))
+	}
+	map1.Add(MakeKeyword("IP"), vec2)
+	map1.Add(MakeKeyword("Port"), MakeInt((*res1).Port))
+	map1.Add(MakeKeyword("Zone"), MakeString((*res1).Zone))
+	res.Conjoin(map1)
+	res.Conjoin(string(res2))
+	return res
+}
 
 GO FUNC net.ResolveUDPAddr has:
-// func resolveUDPAddr(network string, address string) Object {
-// 	res1, res2 := net.ResolveUDPAddr(network, address)
-// 	res := EmptyVector
-// 	vec1 := EmptyVector
-// 	for _, el1 := range res1 {
-// 		vec1 = vec1.Conjoin(MakeInt(el1))
-// 	}
-// 	res.Conjoin(*(ABEND680:TODO))
-// 	res.Conjoin(string(res2))
-// 	return res
-// }
+func resolveUDPAddr(network string, address string) Object {
+	res1, res2 := net.ResolveUDPAddr(network, address)
+	res := EmptyVector
+	map1 := EmptyArrayMap()
+	vec2 := EmptyVector
+	for _, el2 := range (*res1).IP {
+		vec2 = vec2.Conjoin(MakeInt(el2))
+	}
+	map1.Add(MakeKeyword("IP"), vec2)
+	map1.Add(MakeKeyword("Port"), MakeInt((*res1).Port))
+	map1.Add(MakeKeyword("Zone"), MakeString((*res1).Zone))
+	res.Conjoin(map1)
+	res.Conjoin(string(res2))
+	return res
+}
 
 GO FUNC net.ResolveUnixAddr has:
-// func resolveUnixAddr(network string, address string) Object {
-// 	res1, res2 := net.ResolveUnixAddr(network, address)
-// 	res := EmptyVector
-// 	res.Conjoin(*(ABEND680:TODO))
-// 	res.Conjoin(string(res2))
-// 	return res
-// }
+func resolveUnixAddr(network string, address string) Object {
+	res1, res2 := net.ResolveUnixAddr(network, address)
+	res := EmptyVector
+	map1 := EmptyArrayMap()
+	map1.Add(MakeKeyword("Name"), MakeString((*res1).Name))
+	map1.Add(MakeKeyword("Net"), MakeString((*res1).Net))
+	res.Conjoin(map1)
+	res.Conjoin(string(res2))
+	return res
+}
 
 GO FUNC net.SplitHostPort has:
 func splitHostPort(hostport string) Object {
@@ -2261,7 +2716,20 @@ GO FUNC rpc.Dial has:
 // func dial(network string, address string) Object {
 // 	res1, res2 := rpc.Dial(network, address)
 // 	res := EmptyVector
-// 	res.Conjoin(*(ABEND680:TODO))
+// 	map1 := EmptyArrayMap()
+// 	map1.Add(MakeKeyword("codec"), (*res1).codec)
+// 	map1.Add(MakeKeyword("reqMutex"), (*res1).reqMutex)
+// 	map2 := EmptyArrayMap()
+// 	map2.Add(MakeKeyword("ServiceMethod"), MakeString((*res1).request.ServiceMethod))
+// 	map2.Add(MakeKeyword("Seq"), )
+// 	map2.Add(MakeKeyword("next"), )
+// 	map1.Add(MakeKeyword("request"), map2)
+// 	map1.Add(MakeKeyword("mutex"), (*res1).mutex)
+// 	map1.Add(MakeKeyword("seq"), )
+// 	map1.Add(MakeKeyword("pending"), (*res1).pending)
+// 	map1.Add(MakeKeyword("closing"), MakeBool((*res1).closing))
+// 	map1.Add(MakeKeyword("shutdown"), MakeBool((*res1).shutdown))
+// 	res.Conjoin(map1)
 // 	res.Conjoin(string(res2))
 // 	return res
 // }
@@ -2270,7 +2738,20 @@ GO FUNC rpc.DialHTTP has:
 // func dialHTTP(network string, address string) Object {
 // 	res1, res2 := rpc.DialHTTP(network, address)
 // 	res := EmptyVector
-// 	res.Conjoin(*(ABEND680:TODO))
+// 	map1 := EmptyArrayMap()
+// 	map1.Add(MakeKeyword("codec"), (*res1).codec)
+// 	map1.Add(MakeKeyword("reqMutex"), (*res1).reqMutex)
+// 	map2 := EmptyArrayMap()
+// 	map2.Add(MakeKeyword("ServiceMethod"), MakeString((*res1).request.ServiceMethod))
+// 	map2.Add(MakeKeyword("Seq"), )
+// 	map2.Add(MakeKeyword("next"), )
+// 	map1.Add(MakeKeyword("request"), map2)
+// 	map1.Add(MakeKeyword("mutex"), (*res1).mutex)
+// 	map1.Add(MakeKeyword("seq"), )
+// 	map1.Add(MakeKeyword("pending"), (*res1).pending)
+// 	map1.Add(MakeKeyword("closing"), MakeBool((*res1).closing))
+// 	map1.Add(MakeKeyword("shutdown"), MakeBool((*res1).shutdown))
+// 	res.Conjoin(map1)
 // 	res.Conjoin(string(res2))
 // 	return res
 // }
@@ -2279,7 +2760,20 @@ GO FUNC rpc.DialHTTPPath has:
 // func dialHTTPPath(network string, address string, path string) Object {
 // 	res1, res2 := rpc.DialHTTPPath(network, address, path)
 // 	res := EmptyVector
-// 	res.Conjoin(*(ABEND680:TODO))
+// 	map1 := EmptyArrayMap()
+// 	map1.Add(MakeKeyword("codec"), (*res1).codec)
+// 	map1.Add(MakeKeyword("reqMutex"), (*res1).reqMutex)
+// 	map2 := EmptyArrayMap()
+// 	map2.Add(MakeKeyword("ServiceMethod"), MakeString((*res1).request.ServiceMethod))
+// 	map2.Add(MakeKeyword("Seq"), )
+// 	map2.Add(MakeKeyword("next"), )
+// 	map1.Add(MakeKeyword("request"), map2)
+// 	map1.Add(MakeKeyword("mutex"), (*res1).mutex)
+// 	map1.Add(MakeKeyword("seq"), )
+// 	map1.Add(MakeKeyword("pending"), (*res1).pending)
+// 	map1.Add(MakeKeyword("closing"), MakeBool((*res1).closing))
+// 	map1.Add(MakeKeyword("shutdown"), MakeBool((*res1).shutdown))
+// 	res.Conjoin(map1)
 // 	res.Conjoin(string(res2))
 // 	return res
 // }
@@ -2292,17 +2786,61 @@ GO FUNC rpc.HandleHTTP has:
 
 GO FUNC rpc.NewClient has:
 // func newClient(conn ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/rpc/client.go:193:21)) Object {
-// 	return rpc.NewClient(conn)
+// 	res := rpc.NewClient(conn)
+// 	map1 := EmptyArrayMap()
+// 	map1.Add(MakeKeyword("codec"), (*res).codec)
+// 	map1.Add(MakeKeyword("reqMutex"), (*res).reqMutex)
+// 	map2 := EmptyArrayMap()
+// 	map2.Add(MakeKeyword("ServiceMethod"), MakeString((*res).request.ServiceMethod))
+// 	map2.Add(MakeKeyword("Seq"), )
+// 	map2.Add(MakeKeyword("next"), )
+// 	map1.Add(MakeKeyword("request"), map2)
+// 	map1.Add(MakeKeyword("mutex"), (*res).mutex)
+// 	map1.Add(MakeKeyword("seq"), )
+// 	map1.Add(MakeKeyword("pending"), (*res).pending)
+// 	map1.Add(MakeKeyword("closing"), MakeBool((*res).closing))
+// 	map1.Add(MakeKeyword("shutdown"), MakeBool((*res).shutdown))
+// 	return map1
 // }
 
 GO FUNC rpc.NewClientWithCodec has:
 // func newClientWithCodec(codec Object) Object {
-// 	return rpc.NewClientWithCodec(codec)
+// 	res := rpc.NewClientWithCodec(codec)
+// 	map1 := EmptyArrayMap()
+// 	map1.Add(MakeKeyword("codec"), (*res).codec)
+// 	map1.Add(MakeKeyword("reqMutex"), (*res).reqMutex)
+// 	map2 := EmptyArrayMap()
+// 	map2.Add(MakeKeyword("ServiceMethod"), MakeString((*res).request.ServiceMethod))
+// 	map2.Add(MakeKeyword("Seq"), )
+// 	map2.Add(MakeKeyword("next"), )
+// 	map1.Add(MakeKeyword("request"), map2)
+// 	map1.Add(MakeKeyword("mutex"), (*res).mutex)
+// 	map1.Add(MakeKeyword("seq"), )
+// 	map1.Add(MakeKeyword("pending"), (*res).pending)
+// 	map1.Add(MakeKeyword("closing"), MakeBool((*res).closing))
+// 	map1.Add(MakeKeyword("shutdown"), MakeBool((*res).shutdown))
+// 	return map1
 // }
 
 GO FUNC rpc.NewServer has:
 // func newServer() Object {
-// 	return rpc.NewServer()
+// 	res := rpc.NewServer()
+// 	map1 := EmptyArrayMap()
+// 	map1.Add(MakeKeyword("serviceMap"), (*res).serviceMap)
+// 	map1.Add(MakeKeyword("reqLock"), (*res).reqLock)
+// 	map2 := EmptyArrayMap()
+// 	map2.Add(MakeKeyword("ServiceMethod"), MakeString((*(*res).freeReq).ServiceMethod))
+// 	map2.Add(MakeKeyword("Seq"), )
+// 	map2.Add(MakeKeyword("next"), )
+// 	map1.Add(MakeKeyword("freeReq"), map2)
+// 	map1.Add(MakeKeyword("respLock"), (*res).respLock)
+// 	map3 := EmptyArrayMap()
+// 	map3.Add(MakeKeyword("ServiceMethod"), MakeString((*(*res).freeResp).ServiceMethod))
+// 	map3.Add(MakeKeyword("Seq"), )
+// 	map3.Add(MakeKeyword("Error"), MakeString((*(*res).freeResp).Error))
+// 	map3.Add(MakeKeyword("next"), )
+// 	map1.Add(MakeKeyword("freeResp"), map3)
+// 	return map1
 // }
 
 GO FUNC rpc.ServeCodec has:
@@ -2326,11 +2864,21 @@ GO FUNC smtp.Dial has:
 // func dial(addr string) Object {
 // 	res1, res2 := smtp.Dial(addr)
 // 	res := EmptyVector
-// 	vec1 := EmptyVector
-// 	for _, el1 := range res1 {
-// 		vec1 = vec1.Conjoin(MakeString(el1))
+// 	map1 := EmptyArrayMap()
+// 	map1.Add(MakeKeyword("Text"), (*(*res1).Text))
+// 	map1.Add(MakeKeyword("conn"), (*res1).conn)
+// 	map1.Add(MakeKeyword("tls"), MakeBool((*res1).tls))
+// 	map1.Add(MakeKeyword("serverName"), MakeString((*res1).serverName))
+// 	map1.Add(MakeKeyword("ext"), (*res1).ext)
+// 	vec2 := EmptyVector
+// 	for _, el2 := range (*res1).auth {
+// 		vec2 = vec2.Conjoin(MakeString(el2))
 // 	}
-// 	res.Conjoin(*(ABEND680:TODO))
+// 	map1.Add(MakeKeyword("auth"), vec2)
+// 	map1.Add(MakeKeyword("localName"), MakeString((*res1).localName))
+// 	map1.Add(MakeKeyword("didHello"), MakeBool((*res1).didHello))
+// 	map1.Add(MakeKeyword("helloError"), string((*res1).helloError))
+// 	res.Conjoin(map1)
 // 	res.Conjoin(string(res2))
 // 	return res
 // }
@@ -2339,11 +2887,21 @@ GO FUNC smtp.NewClient has:
 // func newClient(conn ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/smtp/smtp.go:62:21), host string) Object {
 // 	res1, res2 := smtp.NewClient(conn, host)
 // 	res := EmptyVector
-// 	vec1 := EmptyVector
-// 	for _, el1 := range res1 {
-// 		vec1 = vec1.Conjoin(MakeString(el1))
+// 	map1 := EmptyArrayMap()
+// 	map1.Add(MakeKeyword("Text"), (*(*res1).Text))
+// 	map1.Add(MakeKeyword("conn"), (*res1).conn)
+// 	map1.Add(MakeKeyword("tls"), MakeBool((*res1).tls))
+// 	map1.Add(MakeKeyword("serverName"), MakeString((*res1).serverName))
+// 	map1.Add(MakeKeyword("ext"), (*res1).ext)
+// 	vec2 := EmptyVector
+// 	for _, el2 := range (*res1).auth {
+// 		vec2 = vec2.Conjoin(MakeString(el2))
 // 	}
-// 	res.Conjoin(*(ABEND680:TODO))
+// 	map1.Add(MakeKeyword("auth"), vec2)
+// 	map1.Add(MakeKeyword("localName"), MakeString((*res1).localName))
+// 	map1.Add(MakeKeyword("didHello"), MakeBool((*res1).didHello))
+// 	map1.Add(MakeKeyword("helloError"), string((*res1).helloError))
+// 	res.Conjoin(map1)
 // 	res.Conjoin(string(res2))
 // 	return res
 // }
@@ -2357,11 +2915,9 @@ GO FUNC textproto.Dial has:
 // func dial(network string, addr string) Object {
 // 	res1, res2 := textproto.Dial(network, addr)
 // 	res := EmptyVector
-// 	vec1 := EmptyVector
-// 	for _, el1 := range res1 {
-// 		vec1 = vec1.Conjoin(MakeInt(el1))
-// 	}
-// 	res.Conjoin(*(ABEND680:TODO))
+// 	map1 := EmptyArrayMap()
+// 	map1.Add(MakeKeyword("conn"), (*res1).conn)
+// 	res.Conjoin(map1)
 // 	res.Conjoin(string(res2))
 // 	return res
 // }
@@ -2369,26 +2925,32 @@ GO FUNC textproto.Dial has:
 GO FUNC textproto.NewConn has:
 // func newConn(conn ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/textproto/textproto.go:66:19)) Object {
 // 	res := textproto.NewConn(conn)
-// 	vec1 := EmptyVector
-// 	for _, el1 := range res {
-// 		vec1 = vec1.Conjoin(MakeInt(el1))
-// 	}
-// 	return *(ABEND680:TODO)
+// 	map1 := EmptyArrayMap()
+// 	map1.Add(MakeKeyword("conn"), (*res).conn)
+// 	return map1
 // }
 
 GO FUNC textproto.NewReader has:
 // func newReader(r ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/textproto/reader.go:29:18)) Object {
 // 	res := textproto.NewReader(r)
-// 	vec1 := EmptyVector
-// 	for _, el1 := range res {
-// 		vec1 = vec1.Conjoin(MakeInt(el1))
+// 	map1 := EmptyArrayMap()
+// 	map1.Add(MakeKeyword("R"), (*(*res).R))
+// 	map1.Add(MakeKeyword("dot"), )
+// 	vec2 := EmptyVector
+// 	for _, el2 := range (*res).buf {
+// 		vec2 = vec2.Conjoin(MakeInt(el2))
 // 	}
-// 	return *(ABEND680:TODO)
+// 	map1.Add(MakeKeyword("buf"), vec2)
+// 	return map1
 // }
 
 GO FUNC textproto.NewWriter has:
 // func newWriter(w ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/textproto/writer.go:21:18)) Object {
-// 	return textproto.NewWriter(w)
+// 	res := textproto.NewWriter(w)
+// 	map1 := EmptyArrayMap()
+// 	map1.Add(MakeKeyword("W"), (*(*res).W))
+// 	map1.Add(MakeKeyword("dot"), )
+// 	return map1
 // }
 
 GO FUNC textproto.TrimBytes has:
@@ -2402,13 +2964,27 @@ GO FUNC textproto.TrimBytes has:
 // }
 
 GO FUNC url.Parse has:
-// func parse(rawurl string) Object {
-// 	res1, res2 := url.Parse(rawurl)
-// 	res := EmptyVector
-// 	res.Conjoin(*(ABEND680:TODO))
-// 	res.Conjoin(string(res2))
-// 	return res
-// }
+func parse(rawurl string) Object {
+	res1, res2 := url.Parse(rawurl)
+	res := EmptyVector
+	map1 := EmptyArrayMap()
+	map1.Add(MakeKeyword("Scheme"), MakeString((*res1).Scheme))
+	map1.Add(MakeKeyword("Opaque"), MakeString((*res1).Opaque))
+	map2 := EmptyArrayMap()
+	map2.Add(MakeKeyword("username"), MakeString((*(*res1).User).username))
+	map2.Add(MakeKeyword("password"), MakeString((*(*res1).User).password))
+	map2.Add(MakeKeyword("passwordSet"), MakeBool((*(*res1).User).passwordSet))
+	map1.Add(MakeKeyword("User"), map2)
+	map1.Add(MakeKeyword("Host"), MakeString((*res1).Host))
+	map1.Add(MakeKeyword("Path"), MakeString((*res1).Path))
+	map1.Add(MakeKeyword("RawPath"), MakeString((*res1).RawPath))
+	map1.Add(MakeKeyword("ForceQuery"), MakeBool((*res1).ForceQuery))
+	map1.Add(MakeKeyword("RawQuery"), MakeString((*res1).RawQuery))
+	map1.Add(MakeKeyword("Fragment"), MakeString((*res1).Fragment))
+	res.Conjoin(map1)
+	res.Conjoin(string(res2))
+	return res
+}
 
 GO FUNC url.ParseQuery has:
 // func parseQuery(query string) Object {
@@ -2420,13 +2996,27 @@ GO FUNC url.ParseQuery has:
 // }
 
 GO FUNC url.ParseRequestURI has:
-// func parseRequestURI(rawurl string) Object {
-// 	res1, res2 := url.ParseRequestURI(rawurl)
-// 	res := EmptyVector
-// 	res.Conjoin(*(ABEND680:TODO))
-// 	res.Conjoin(string(res2))
-// 	return res
-// }
+func parseRequestURI(rawurl string) Object {
+	res1, res2 := url.ParseRequestURI(rawurl)
+	res := EmptyVector
+	map1 := EmptyArrayMap()
+	map1.Add(MakeKeyword("Scheme"), MakeString((*res1).Scheme))
+	map1.Add(MakeKeyword("Opaque"), MakeString((*res1).Opaque))
+	map2 := EmptyArrayMap()
+	map2.Add(MakeKeyword("username"), MakeString((*(*res1).User).username))
+	map2.Add(MakeKeyword("password"), MakeString((*(*res1).User).password))
+	map2.Add(MakeKeyword("passwordSet"), MakeBool((*(*res1).User).passwordSet))
+	map1.Add(MakeKeyword("User"), map2)
+	map1.Add(MakeKeyword("Host"), MakeString((*res1).Host))
+	map1.Add(MakeKeyword("Path"), MakeString((*res1).Path))
+	map1.Add(MakeKeyword("RawPath"), MakeString((*res1).RawPath))
+	map1.Add(MakeKeyword("ForceQuery"), MakeBool((*res1).ForceQuery))
+	map1.Add(MakeKeyword("RawQuery"), MakeString((*res1).RawQuery))
+	map1.Add(MakeKeyword("Fragment"), MakeString((*res1).Fragment))
+	res.Conjoin(map1)
+	res.Conjoin(string(res2))
+	return res
+}
 
 GO FUNC url.PathUnescape has:
 func pathUnescape(s string) Object {
@@ -2448,12 +3038,22 @@ func queryUnescape(s string) Object {
 
 GO FUNC url.User has:
 func user(username string) Object {
-	return url.User(username)
+	res := url.User(username)
+	map1 := EmptyArrayMap()
+	map1.Add(MakeKeyword("username"), MakeString((*res).username))
+	map1.Add(MakeKeyword("password"), MakeString((*res).password))
+	map1.Add(MakeKeyword("passwordSet"), MakeBool((*res).passwordSet))
+	return map1
 }
 
 GO FUNC url.UserPassword has:
 func userPassword(username string, password string) Object {
-	return url.UserPassword(username, password)
+	res := url.UserPassword(username, password)
+	map1 := EmptyArrayMap()
+	map1.Add(MakeKeyword("username"), MakeString((*res).username))
+	map1.Add(MakeKeyword("password"), MakeString((*res).password))
+	map1.Add(MakeKeyword("passwordSet"), MakeBool((*res).passwordSet))
+	return map1
 }
 
 Totals: types=102 functions=148 receivers=1200
