@@ -723,15 +723,15 @@ var nonEmptyLineRegexp *regexp.Regexp
 type funcCode struct {
 	jokerParamList string  // fieldListAsClojure(d.Type.Params)
 	goParamList string  // paramListAsGo(d.Type.Params)
-	jokerGoCode string  // goFname + "(" + fieldListToGo(d.Type.Params) + ")"
+	jokerGoParams string  // "(" + fieldListToGo(d.Type.Params) + ")"
 	goCode string
 	jokerReturnTypeForDoc string  // genReturnType(pkg, d.Type.Results)
 	goReturnTypeForDoc string  // genReturnType(pkg, d.Type.Results)
 }
 
-func genGoPre(indent string, fl *FieldList, goFname string) (jok, jok2gol, gol, code, params string) {
+func genGoPre(indent string, fl *FieldList, goFname string) (jok, jok2golParams, gol, code, params string) {
 	jok = fieldListAsClojure(fl)
-	jok2gol = goFname + "(" + fieldListToGo(fl) + ")"
+	jok2golParams = "(" + fieldListToGo(fl) + ")"
 	code = "" // TODO: enhance to support composites
 	gol = paramListAsGo(fl)
 	params = argsAsGo(fl)
@@ -754,7 +754,7 @@ func genGoPost(indent string, pkg string, d *FuncDecl) (goResultAssign, jokerRet
 func genFuncCode(pkg string, d *FuncDecl, goFname string) (fc funcCode) {
 	var goPreCode, goParams, goResultAssign, goPostCode string
 
-	fc.jokerParamList, fc.jokerGoCode, fc.goParamList, goPreCode, goParams =
+	fc.jokerParamList, fc.jokerGoParams, fc.goParamList, goPreCode, goParams =
 		genGoPre("\t", d.Type.Params, goFname)
 	goCall := genGoCall(pkg, d.Name.Name, goParams)
 	goResultAssign, fc.jokerReturnTypeForDoc, fc.goReturnTypeForDoc, goPostCode = genGoPost("\t", pkg, d)
@@ -776,18 +776,24 @@ func genFunction(f string, fn *funcInfo) {
 	jfmt := `
 (defn %s%s
 %s  {:added "1.0"
-   :go "%s"}
+   :go "%s%s"}
   [%s])
 `
 	goFname := funcNameAsGoPrivate(d.Name.Name)
 	fc := genFuncCode(pkg, d, goFname)
 	jokerReturnType, goReturnType := jokerReturnTypeForGenerateSTD(fc.jokerReturnTypeForDoc, fc.goReturnTypeForDoc)
-	if jokerReturnType != "" {
+
+	var jok2gol string
+	if jokerReturnType == "" {
+		jok2gol = goFname
+	} else {
 		jokerReturnType += " "
+		jok2gol = pkg + "." + d.Name.Name
 	}
+
 	jokerFn := fmt.Sprintf(jfmt, jokerReturnType, d.Name.Name,
 		commentGroupInQuotes(d.Doc, fc.jokerReturnTypeForDoc, fc.goReturnTypeForDoc),
-		fc.jokerGoCode, fc.jokerParamList)
+		jok2gol, fc.jokerGoParams, fc.jokerParamList)
 
 	gfmt := `
 func %s(%s) %s {
