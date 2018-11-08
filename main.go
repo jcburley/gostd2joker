@@ -528,12 +528,12 @@ func genGoPostStruct(indent, pkg, in string, fl *FieldList) (jok, gol, goc, out 
 func genGoPostArray(indent, pkg, in string, el Expr) (jok, gol, goc, out string) {
 	tmp := genSym("")
 	tmpvec := "vec" + tmp
-	tmpel := "el" + tmp
+	tmpelem := "elem" + tmp
 	goc += indent + tmpvec + " := EmptyVector\n"
-	goc += indent + "for _, " + tmpel + " := range " + in + " {\n"
+	goc += indent + "for _, " + tmpelem + " := range " + in + " {\n"
 
 	var goc_pre string
-	jok, gol, goc_pre, out = genGoPostExpr(indent + "\t", pkg, tmpel, el)
+	jok, gol, goc_pre, out = genGoPostExpr(indent + "\t", pkg, tmpelem, el)
 	jok = "(vector-of " + jok + ")"
 	gol = "[]" + gol
 
