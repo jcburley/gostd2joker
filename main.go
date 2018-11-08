@@ -121,7 +121,6 @@ type typeInfo struct {
 	built bool
 	jok string
 	gol string
-	goc string
 }
 
 type typeInfoArray []*typeInfo
@@ -154,7 +153,7 @@ func processTypeSpec(pkg string, filename string, f *File, ts *TypeSpec) {
 	} else {
 		candidates = typeInfoArray {}
 	}
-	candidates = append(candidates, &typeInfo{ts, filename, false, false, "", "", ""})
+	candidates = append(candidates, &typeInfo{ts, filename, false, false, "", ""})
 	types[typename] = candidates
 }
 
@@ -447,28 +446,31 @@ func argsAsGo(p *FieldList) string {
 
  */
 
+var genSymIndex = 0
+
+func genSym(pre string) string {
+	genSymIndex += 1
+	return fmt.Sprintf("%s%d", pre, genSymIndex)
+}
+
+func genSymReset() {
+	genSymIndex = 0
+}
+
 func genGoPostNamed(indent, pkg, in, t string) (jok, gol, goc, out string) {
 	qt := pkg + "." + t
 	if v, ok := types[qt]; ok {
-		if v[0].built { // Reuse already-built type info
-			jok = v[0].jok
-			gol = v[0].gol
-			goc = v[0].goc
-			out = in
-			return
-		}
 		if v[0].building { // Mutually-referring types currently not supported
 			jok = fmt.Sprintf("ABEND947(recursive type reference involving %s)", qt)  // TODO: handle these, e.g. http Request/Response
 			gol = jok
-			goc = jok
+			goc = ""
 		} else {
 			v[0].building = true
 			jok, gol, goc, out = genGoPostExpr(indent, pkg, in, v[0].td.Type)
+			v[0].jok = jok
+			v[0].gol = gol
+			v[0].building = false
 		}
-		v[0].jok = jok
-		v[0].gol = gol
-		v[0].goc = goc
-		v[0].built = true
 	} else {
 		jok = fmt.Sprintf("ABEND042(cannot find typename %s)", qt)
 	}
@@ -512,19 +514,38 @@ func genGoPostStruct(indent, pkg, in string, fl *FieldList) (jok, gol, goc, out 
 				gol += goltype
 			}
 		}
-		goc = indent + "ABEND680: TODO\n"  // ~~~
+		out = "(ABEND680:TODO)"  // ~~~
 	}
 	jok = "{" + jok + "}"
 	gol = "struct {" + gol + "}"
 	return
 }
 
-func genGoPostArray(indent, pkg, in string, e Expr) (jok, gol, goc, out string) {
-	jok, gol, _, out = genGoPostExpr(indent, pkg, in, e)
+func genGoPostArray(indent, pkg, in string, el Expr) (jok, gol, goc, out string) {
+	tmp := genSym("")
+	tmpvec := "vec" + tmp
+	tmpel := "el" + tmp
+	goc += indent + tmpvec + " := EmptyVector\n"
+	goc += indent + "for _, " + tmpel + " := range " + in + " {\n"
+
+	var goc_pre string
+	jok, gol, goc_pre, out = genGoPostExpr(indent + "\t", pkg, tmpel, el)
 	jok = "(vector-of " + jok + ")"
 	gol = "[]" + gol
-	goc = indent + "ABEND676: TODO\n"  // ~~~
-	//		goc += indent + out + ".Conjoin(" + in + ")\n"  // ~~~
+
+	goc += goc_pre
+	goc += indent + "\t" + tmpvec + " = " + tmpvec + ".Conjoin(" + out + ")\n"
+	goc += indent + "}\n"
+	out = tmpvec
+	return
+}
+
+// TODO: Maybe return a ref or something Joker (someday) supports?
+func genGoPostStar(indent, pkg, in string, e Expr) (jok, gol, goc, out string) {
+	var new_out string
+	jok, gol, goc, new_out = genGoPostExpr(indent, pkg, in, e)
+	out = "*" + new_out
+	gol = "*" + gol
 	return
 }
 
@@ -555,16 +576,12 @@ func genGoPostExpr(indent, pkg, in string, e Expr) (jok, gol, goc, out string) {
 	case *ArrayType:
 		jok, gol, goc, out = genGoPostArray(indent, pkg, in, v.Elt)
 	case *StarExpr:
-		jok, gol, _, out = genGoPostExpr(indent, pkg, in, v.X)  // TODO: Maybe return a ref or something Joker (someday) supports?
-		gol = "*" + gol
-		goc = indent + "ABEND677: TODO\n"  // ~~~
+		jok, gol, goc, out = genGoPostStar(indent, pkg, in, v.X)
 	case *StructType:
-		jok, gol, _, out = genGoPostStruct(indent, pkg, in, v.Fields)
-		goc = indent + "ABEND678: TODO\n"  // ~~~
+		jok, gol, goc, out = genGoPostStruct(indent, pkg, in, v.Fields)
 	default:
 		jok = fmt.Sprintf("ABEND883(unrecognized Expr type %T at: %s)", e, whereAt(e.Pos()))
 		gol = "..."
-		goc = indent + "ABEND679: TODO\n"  // ~~~
 		out = in
 	}
 	return
@@ -587,7 +604,7 @@ func genGoPostItem(indent, pkg string, f *Field, idx *int, p *Ident, gores, jok,
 		*gores += rtn
 	}
 	joktype, goltype, goc_pre, val := genGoPostExpr(indent, pkg, rtn, f.Type)
-	*goc += goc_pre
+	*goc = goc_pre + *goc
 	if *jok != "" {
 		*jok += " "
 	}
@@ -629,7 +646,11 @@ func genGoPostList(indent string, pkg string, fl *FieldList) (gores, jok, gol, g
 	} else {
 		rtn := genGoPostItem(indent, pkg, fl.List[0], &idx, nil,
 			nil, &jok, &gol, &goc)
-		gores = "return " + rtn
+		if goc == "" {
+			gores = "return " + rtn
+		} else {
+			goc += indent + "return res\n"
+		}
 	}
 	return
 }
@@ -714,10 +735,6 @@ func genGoPost(indent string, pkg string, d *FuncDecl) (goResultAssign, jokerRet
 func genFuncCode(pkg string, d *FuncDecl, goFname string) (fc funcCode) {
 	var goPreCode, goParams, goResultAssign, goPostCode string
 
-	if goFname == "iPv4Mask" {
-		fmt.Printf("Found IPv4Mask\n")
-	}
-
 	fc.jokerParamList, fc.jokerGoCode, fc.goParamList, goPreCode, goParams =
 		genGoPre("\t", d.Type.Params, goFname)
 	goCall := genGoCall(pkg, d.Name.Name, goParams)
@@ -734,6 +751,7 @@ func genFuncCode(pkg string, d *FuncDecl, goFname string) (fc funcCode) {
 }
 
 func genFunction(f string, fn *funcInfo) {
+	genSymReset()
 	d := fn.fd
 	pkg := filepath.Base(fn.pkg)
 	jfmt := `

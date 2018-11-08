@@ -29,11 +29,11 @@ TYPE url.Userinfo:
 TYPE url.Values:
   tests/small/net/url/url.go
 JOKER FUNC net.LookupAddr has:
-;; (defn LookupAddr
-;;   "LookupAddr performs a reverse lookup for the given address, returning a list\nof names mapping to that address.\n\nWhen using the host C library resolver, at most one result will be\nreturned. To bypass the host resolver, use a custom Resolver.\nGo return type: (names []string, err error)\nJoker return type: [(vector-of String) Error]"
-;;   {:added "1.0"
-;;    :go "lookupAddr(addr)"}
-;;   [^String addr])
+(defn LookupAddr
+  "LookupAddr performs a reverse lookup for the given address, returning a list\nof names mapping to that address.\n\nWhen using the host C library resolver, at most one result will be\nreturned. To bypass the host resolver, use a custom Resolver.\nGo return type: (names []string, err error)\nJoker return type: [(vector-of String) Error]"
+  {:added "1.0"
+   :go "lookupAddr(addr)"}
+  [^String addr])
 
 JOKER FUNC net.LookupCNAME has:
 (defn LookupCNAME
@@ -43,11 +43,11 @@ JOKER FUNC net.LookupCNAME has:
   [^String host])
 
 JOKER FUNC net.LookupHost has:
-;; (defn LookupHost
-;;   "LookupHost looks up the given host using the local resolver.\nIt returns a slice of that host's addresses.\nGo return type: (addrs []string, err error)\nJoker return type: [(vector-of String) Error]"
-;;   {:added "1.0"
-;;    :go "lookupHost(host)"}
-;;   [^String host])
+(defn LookupHost
+  "LookupHost looks up the given host using the local resolver.\nIt returns a slice of that host's addresses.\nGo return type: (addrs []string, err error)\nJoker return type: [(vector-of String) Error]"
+  {:added "1.0"
+   :go "lookupHost(host)"}
+  [^String host])
 
 JOKER FUNC net.LookupIP has:
 ;; (defn LookupIP
@@ -85,11 +85,11 @@ JOKER FUNC net.LookupSRV has:
 ;;   [^String service, ^String proto, ^String name])
 
 JOKER FUNC net.LookupTXT has:
-;; (defn LookupTXT
-;;   "LookupTXT returns the DNS TXT records for the given domain name.\nGo return type: ([]string, error)\nJoker return type: [(vector-of String) Error]"
-;;   {:added "1.0"
-;;    :go "lookupTXT(name)"}
-;;   [^String name])
+(defn LookupTXT
+  "LookupTXT returns the DNS TXT records for the given domain name.\nGo return type: ([]string, error)\nJoker return type: [(vector-of String) Error]"
+  {:added "1.0"
+   :go "lookupTXT(name)"}
+  [^String name])
 
 JOKER FUNC url.Parse has:
 ;; (defn Parse
@@ -155,14 +155,17 @@ JOKER FUNC url.UserPassword has:
 ;;   [^String username, ^String password])
 
 GO FUNC net.LookupAddr has:
-// func lookupAddr(addr string) Object {
-// 	names, err := net.LookupAddr(addr)
-// 	res := EmptyVector
-// 	ABEND676: TODO
-// 	res.Conjoin(MakeString(names))
-// 	res.Conjoin(string(err))
-// 	return res
-// }
+func lookupAddr(addr string) Object {
+	names, err := net.LookupAddr(addr)
+	res := EmptyVector
+	vec1 := EmptyVector
+	for _, el1 := range names {
+		vec1 = vec1.Conjoin(MakeString(el1))
+	}
+	res.Conjoin(vec1)
+	res.Conjoin(string(err))
+	return res
+}
 
 GO FUNC net.LookupCNAME has:
 func lookupCNAME(host string) Object {
@@ -174,21 +177,27 @@ func lookupCNAME(host string) Object {
 }
 
 GO FUNC net.LookupHost has:
-// func lookupHost(host string) Object {
-// 	addrs, err := net.LookupHost(host)
-// 	res := EmptyVector
-// 	ABEND676: TODO
-// 	res.Conjoin(MakeString(addrs))
-// 	res.Conjoin(string(err))
-// 	return res
-// }
+func lookupHost(host string) Object {
+	addrs, err := net.LookupHost(host)
+	res := EmptyVector
+	vec1 := EmptyVector
+	for _, el1 := range addrs {
+		vec1 = vec1.Conjoin(MakeString(el1))
+	}
+	res.Conjoin(vec1)
+	res.Conjoin(string(err))
+	return res
+}
 
 GO FUNC net.LookupIP has:
 // func lookupIP(host string) Object {
 // 	res1, res2 := net.LookupIP(host)
 // 	res := EmptyVector
-// 	ABEND676: TODO
-// 	res.Conjoin()
+// 	vec1 := EmptyVector
+// 	for _, el1 := range res1 {
+// 		vec1 = vec1.Conjoin()
+// 	}
+// 	res.Conjoin(vec1)
 // 	res.Conjoin(string(res2))
 // 	return res
 // }
@@ -197,8 +206,11 @@ GO FUNC net.LookupMX has:
 // func lookupMX(name string) Object {
 // 	res1, res2 := net.LookupMX(name)
 // 	res := EmptyVector
-// 	ABEND676: TODO
-// 	res.Conjoin()
+// 	vec1 := EmptyVector
+// 	for _, el1 := range res1 {
+// 		vec1 = vec1.Conjoin(*(ABEND680:TODO))
+// 	}
+// 	res.Conjoin(vec1)
 // 	res.Conjoin(string(res2))
 // 	return res
 // }
@@ -207,8 +219,11 @@ GO FUNC net.LookupNS has:
 // func lookupNS(name string) Object {
 // 	res1, res2 := net.LookupNS(name)
 // 	res := EmptyVector
-// 	ABEND676: TODO
-// 	res.Conjoin()
+// 	vec1 := EmptyVector
+// 	for _, el1 := range res1 {
+// 		vec1 = vec1.Conjoin(*(ABEND680:TODO))
+// 	}
+// 	res.Conjoin(vec1)
 // 	res.Conjoin(string(res2))
 // 	return res
 // }
@@ -226,29 +241,34 @@ GO FUNC net.LookupSRV has:
 // func lookupSRV(service string, proto string, name string) Object {
 // 	cname, addrs, err := net.LookupSRV(service, proto, name)
 // 	res := EmptyVector
+// 	vec1 := EmptyVector
+// 	for _, el1 := range addrs {
+// 		vec1 = vec1.Conjoin(*(ABEND680:TODO))
+// 	}
 // 	res.Conjoin(MakeString(cname))
-// 	ABEND676: TODO
-// 	res.Conjoin()
+// 	res.Conjoin(vec1)
 // 	res.Conjoin(string(err))
 // 	return res
 // }
 
 GO FUNC net.LookupTXT has:
-// func lookupTXT(name string) Object {
-// 	res1, res2 := net.LookupTXT(name)
-// 	res := EmptyVector
-// 	ABEND676: TODO
-// 	res.Conjoin(MakeString(res1))
-// 	res.Conjoin(string(res2))
-// 	return res
-// }
+func lookupTXT(name string) Object {
+	res1, res2 := net.LookupTXT(name)
+	res := EmptyVector
+	vec1 := EmptyVector
+	for _, el1 := range res1 {
+		vec1 = vec1.Conjoin(MakeString(el1))
+	}
+	res.Conjoin(vec1)
+	res.Conjoin(string(res2))
+	return res
+}
 
 GO FUNC url.Parse has:
 // func parse(rawurl string) Object {
 // 	res1, res2 := url.Parse(rawurl)
 // 	res := EmptyVector
-// 	ABEND677: TODO
-// 	res.Conjoin()
+// 	res.Conjoin(*(ABEND680:TODO))
 // 	res.Conjoin(string(res2))
 // 	return res
 // }
@@ -257,7 +277,6 @@ GO FUNC url.ParseQuery has:
 // func parseQuery(query string) Object {
 // 	res1, res2 := url.ParseQuery(query)
 // 	res := EmptyVector
-// 	ABEND679: TODO
 // 	res.Conjoin(res1)
 // 	res.Conjoin(string(res2))
 // 	return res
@@ -267,8 +286,7 @@ GO FUNC url.ParseRequestURI has:
 // func parseRequestURI(rawurl string) Object {
 // 	res1, res2 := url.ParseRequestURI(rawurl)
 // 	res := EmptyVector
-// 	ABEND677: TODO
-// 	res.Conjoin(res1)
+// 	res.Conjoin(*(ABEND680:TODO))
 // 	res.Conjoin(string(res2))
 // 	return res
 // }
@@ -293,14 +311,12 @@ func queryUnescape(s string) Object {
 
 GO FUNC url.User has:
 // func user(username string) Object {
-// 	return url.User(username)
-// 	ABEND677: TODO
+// 	return *(ABEND680:TODO)url.User(username)
 // }
 
 GO FUNC url.UserPassword has:
 // func userPassword(username string, password string) Object {
-// 	return url.UserPassword(username, password)
-// 	ABEND677: TODO
+// 	return *(ABEND680:TODO)url.UserPassword(username, password)
 // }
 
 Totals: types=10 functions=18 receivers=46
