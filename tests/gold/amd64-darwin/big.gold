@@ -269,7 +269,6 @@ TYPE url.Userinfo:
   tests/big/net/url/url.go
 TYPE url.Values:
   tests/big/net/url/url.go
-Found IPv4Mask
 JOKER FUNC cgi.Request has:
 ;; (defn Request
 ;;   "Request returns the HTTP request as represented in the current\nenvironment. This assumes the current program is being run\nby a web server in a CGI environment.\nThe returned Request's Body is populated, if applicable.\nGo return type: (*..., error)\nJoker return type: [ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/http/cgi/child.go:29:18) Error]"
@@ -398,7 +397,7 @@ JOKER FUNC http.NewFileTransport has:
 
 JOKER FUNC http.NewRequest has:
 ;; (defn NewRequest
-;;   "NewRequest returns a new Request given a method, URL, and optional body.\n\nIf the provided body is also an io.Closer, the returned\nRequest.Body is set to body and will be closed by the Client\nmethods Do, Post, and PostForm, and Transport.RoundTrip.\n\nNewRequest returns a Request suitable for use with Client.Do or\nTransport.RoundTrip. To create a request for use with testing a\nServer Handler, either use the NewRequest function in the\nnet/http/httptest package, use ReadRequest, or manually update the\nRequest fields. See the Request type's documentation for the\ndifference between inbound and outbound request fields.\n\nIf body is of type *bytes.Buffer, *bytes.Reader, or\n*strings.Reader, the returned request's ContentLength is set to its\nexact value (instead of -1), GetBody is populated (so 307 and 308\nredirects can replay the body), and Body is set to NoBody if the\nContentLength is 0.\nGo return type: (*Request, error)\nJoker return type: [{:Method ^String, :URL ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/http/request.go:127:7), :Proto ^String, :ProtoMajor ^Int, :ProtoMinor ^Int, :Header ^ABEND883(unrecognized Expr type *ast.MapType at: tests/big/net/http/header.go:20:13), :Body ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/http/request.go:181:7), :GetBody ^ABEND883(unrecognized Expr type *ast.FuncType at: tests/big/net/http/request.go:189:10), :ContentLength ^Int, :TransferEncoding ^(vector-of String), :Close ^Bool, :Host ^String, :Form ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/http/request.go:241:7), :PostForm ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/http/request.go:248:11), :MultipartForm ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/http/request.go:253:17), :Trailer ^ABEND883(unrecognized Expr type *ast.MapType at: tests/big/net/http/header.go:20:13), :RemoteAddr ^String, :RequestURI ^String, :TLS ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/http/request.go:297:7), :Cancel ^ABEND883(unrecognized Expr type *ast.ChanType at: tests/big/net/http/request.go:308:9), :Response ^ABEND947(recursive type reference involving http.Response), :ctx ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/http/request.go:319:6)} Error]"
+;;   "NewRequest returns a new Request given a method, URL, and optional body.\n\nIf the provided body is also an io.Closer, the returned\nRequest.Body is set to body and will be closed by the Client\nmethods Do, Post, and PostForm, and Transport.RoundTrip.\n\nNewRequest returns a Request suitable for use with Client.Do or\nTransport.RoundTrip. To create a request for use with testing a\nServer Handler, either use the NewRequest function in the\nnet/http/httptest package, use ReadRequest, or manually update the\nRequest fields. See the Request type's documentation for the\ndifference between inbound and outbound request fields.\n\nIf body is of type *bytes.Buffer, *bytes.Reader, or\n*strings.Reader, the returned request's ContentLength is set to its\nexact value (instead of -1), GetBody is populated (so 307 and 308\nredirects can replay the body), and Body is set to NoBody if the\nContentLength is 0.\nGo return type: (*Request, error)\nJoker return type: [{:Method ^String, :URL ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/http/request.go:127:7), :Proto ^String, :ProtoMajor ^Int, :ProtoMinor ^Int, :Header ^ABEND883(unrecognized Expr type *ast.MapType at: tests/big/net/http/header.go:20:13), :Body ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/http/request.go:181:7), :GetBody ^ABEND883(unrecognized Expr type *ast.FuncType at: tests/big/net/http/request.go:189:10), :ContentLength ^Int, :TransferEncoding ^(vector-of String), :Close ^Bool, :Host ^String, :Form ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/http/request.go:241:7), :PostForm ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/http/request.go:248:11), :MultipartForm ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/http/request.go:253:17), :Trailer ^ABEND883(unrecognized Expr type *ast.MapType at: tests/big/net/http/header.go:20:13), :RemoteAddr ^String, :RequestURI ^String, :TLS ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/http/request.go:297:7), :Cancel ^ABEND883(unrecognized Expr type *ast.ChanType at: tests/big/net/http/request.go:308:9), :Response ^{:Status ^String, :StatusCode ^Int, :Proto ^String, :ProtoMajor ^Int, :ProtoMinor ^Int, :Header ^ABEND883(unrecognized Expr type *ast.MapType at: tests/big/net/http/header.go:20:13), :Body ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/http/response.go:66:7), :ContentLength ^Int, :TransferEncoding ^(vector-of String), :Close ^Bool, :Uncompressed ^Bool, :Trailer ^ABEND883(unrecognized Expr type *ast.MapType at: tests/big/net/http/header.go:20:13), :Request ^ABEND947(recursive type reference involving http.Request), :TLS ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/http/response.go:115:7)}, :ctx ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/http/request.go:319:6)} Error]"
 ;;   {:added "1.0"
 ;;    :go "newRequest(method, url, body)"}
 ;;   [^String method, ^String url, ^ABEND881(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/http/request.go:792:42) body])
@@ -468,7 +467,7 @@ JOKER FUNC http.ProxyURL has:
 
 JOKER FUNC http.ReadRequest has:
 ;; (defn ReadRequest
-;;   "ReadRequest reads and parses an incoming request from b.\n\nReadRequest is a low-level function and should only be used for\nspecialized applications; most code should use the Server to read\nrequests and handle them via the Handler interface. ReadRequest\nonly supports HTTP/1.x requests. For HTTP/2, use golang.org/x/net/http2.\nGo return type: (*Request, error)\nJoker return type: [{:Method ^String, :URL ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/http/request.go:127:7), :Proto ^String, :ProtoMajor ^Int, :ProtoMinor ^Int, :Header ^ABEND883(unrecognized Expr type *ast.MapType at: tests/big/net/http/header.go:20:13), :Body ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/http/request.go:181:7), :GetBody ^ABEND883(unrecognized Expr type *ast.FuncType at: tests/big/net/http/request.go:189:10), :ContentLength ^Int, :TransferEncoding ^(vector-of String), :Close ^Bool, :Host ^String, :Form ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/http/request.go:241:7), :PostForm ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/http/request.go:248:11), :MultipartForm ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/http/request.go:253:17), :Trailer ^ABEND883(unrecognized Expr type *ast.MapType at: tests/big/net/http/header.go:20:13), :RemoteAddr ^String, :RequestURI ^String, :TLS ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/http/request.go:297:7), :Cancel ^ABEND883(unrecognized Expr type *ast.ChanType at: tests/big/net/http/request.go:308:9), :Response ^ABEND947(recursive type reference involving http.Response), :ctx ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/http/request.go:319:6)} Error]"
+;;   "ReadRequest reads and parses an incoming request from b.\n\nReadRequest is a low-level function and should only be used for\nspecialized applications; most code should use the Server to read\nrequests and handle them via the Handler interface. ReadRequest\nonly supports HTTP/1.x requests. For HTTP/2, use golang.org/x/net/http2.\nGo return type: (*Request, error)\nJoker return type: [{:Method ^String, :URL ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/http/request.go:127:7), :Proto ^String, :ProtoMajor ^Int, :ProtoMinor ^Int, :Header ^ABEND883(unrecognized Expr type *ast.MapType at: tests/big/net/http/header.go:20:13), :Body ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/http/request.go:181:7), :GetBody ^ABEND883(unrecognized Expr type *ast.FuncType at: tests/big/net/http/request.go:189:10), :ContentLength ^Int, :TransferEncoding ^(vector-of String), :Close ^Bool, :Host ^String, :Form ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/http/request.go:241:7), :PostForm ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/http/request.go:248:11), :MultipartForm ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/http/request.go:253:17), :Trailer ^ABEND883(unrecognized Expr type *ast.MapType at: tests/big/net/http/header.go:20:13), :RemoteAddr ^String, :RequestURI ^String, :TLS ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/http/request.go:297:7), :Cancel ^ABEND883(unrecognized Expr type *ast.ChanType at: tests/big/net/http/request.go:308:9), :Response ^{:Status ^String, :StatusCode ^Int, :Proto ^String, :ProtoMajor ^Int, :ProtoMinor ^Int, :Header ^ABEND883(unrecognized Expr type *ast.MapType at: tests/big/net/http/header.go:20:13), :Body ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/http/response.go:66:7), :ContentLength ^Int, :TransferEncoding ^(vector-of String), :Close ^Bool, :Uncompressed ^Bool, :Trailer ^ABEND883(unrecognized Expr type *ast.MapType at: tests/big/net/http/header.go:20:13), :Request ^ABEND947(recursive type reference involving http.Request), :TLS ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/http/response.go:115:7)}, :ctx ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/http/request.go:319:6)} Error]"
 ;;   {:added "1.0"
 ;;    :go "readRequest(b)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: tests/big/net/http/request.go:942:20) b])
@@ -726,11 +725,11 @@ JOKER FUNC mail.ReadMessage has:
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/mail/message.go:52:20) r])
 
 JOKER FUNC net.CIDRMask has:
-;; (defn CIDRMask
-;;   "CIDRMask returns an IPMask consisting of `ones' 1 bits\nfollowed by 0s up to a total length of `bits' bits.\nFor a mask of this form, CIDRMask is the inverse of IPMask.Size.\nGo return type: IPMask\nJoker return type: (vector-of Int)"
-;;   {:added "1.0"
-;;    :go "cIDRMask(ones, bits)"}
-;;   [^Int ones, ^Int bits])
+(defn CIDRMask
+  "CIDRMask returns an IPMask consisting of `ones' 1 bits\nfollowed by 0s up to a total length of `bits' bits.\nFor a mask of this form, CIDRMask is the inverse of IPMask.Size.\nGo return type: IPMask\nJoker return type: (vector-of Int)"
+  {:added "1.0"
+   :go "cIDRMask(ones, bits)"}
+  [^Int ones, ^Int bits])
 
 JOKER FUNC net.Dial has:
 ;; (defn Dial
@@ -796,18 +795,18 @@ JOKER FUNC net.FilePacketConn has:
 ;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: tests/big/net/file.go:45:23) f])
 
 JOKER FUNC net.IPv4 has:
-;; (defn IPv4
-;;   "IPv4 returns the IP address (in 16-byte form) of the\nIPv4 address a.b.c.d.\nGo return type: IP\nJoker return type: (vector-of Int)"
-;;   {:added "1.0"
-;;    :go "iPv4(a, b, c, d)"}
-;;   [a, b, c, d])
+(defn IPv4
+  "IPv4 returns the IP address (in 16-byte form) of the\nIPv4 address a.b.c.d.\nGo return type: IP\nJoker return type: (vector-of Int)"
+  {:added "1.0"
+   :go "iPv4(a, b, c, d)"}
+  [a, b, c, d])
 
 JOKER FUNC net.IPv4Mask has:
-;; (defn IPv4Mask
-;;   "IPv4Mask returns the IP mask (in 4-byte form) of the\nIPv4 mask a.b.c.d.\nGo return type: IPMask\nJoker return type: (vector-of Int)"
-;;   {:added "1.0"
-;;    :go "iPv4Mask(a, b, c, d)"}
-;;   [a, b, c, d])
+(defn IPv4Mask
+  "IPv4Mask returns the IP mask (in 4-byte form) of the\nIPv4 mask a.b.c.d.\nGo return type: IPMask\nJoker return type: (vector-of Int)"
+  {:added "1.0"
+   :go "iPv4Mask(a, b, c, d)"}
+  [a, b, c, d])
 
 JOKER FUNC net.InterfaceAddrs has:
 ;; (defn InterfaceAddrs
@@ -901,11 +900,11 @@ JOKER FUNC net.ListenUnixgram has:
 ;;   [^String network, ^ABEND881(unrecognized Expr type *ast.StarExpr at: tests/big/net/unixsock.go:334:43) laddr])
 
 JOKER FUNC net.LookupAddr has:
-;; (defn LookupAddr
-;;   "LookupAddr performs a reverse lookup for the given address, returning a list\nof names mapping to that address.\n\nWhen using the host C library resolver, at most one result will be\nreturned. To bypass the host resolver, use a custom Resolver.\nGo return type: (names []string, err error)\nJoker return type: [(vector-of String) Error]"
-;;   {:added "1.0"
-;;    :go "lookupAddr(addr)"}
-;;   [^String addr])
+(defn LookupAddr
+  "LookupAddr performs a reverse lookup for the given address, returning a list\nof names mapping to that address.\n\nWhen using the host C library resolver, at most one result will be\nreturned. To bypass the host resolver, use a custom Resolver.\nGo return type: (names []string, err error)\nJoker return type: [(vector-of String) Error]"
+  {:added "1.0"
+   :go "lookupAddr(addr)"}
+  [^String addr])
 
 JOKER FUNC net.LookupCNAME has:
 (defn LookupCNAME
@@ -915,18 +914,18 @@ JOKER FUNC net.LookupCNAME has:
   [^String host])
 
 JOKER FUNC net.LookupHost has:
-;; (defn LookupHost
-;;   "LookupHost looks up the given host using the local resolver.\nIt returns a slice of that host's addresses.\nGo return type: (addrs []string, err error)\nJoker return type: [(vector-of String) Error]"
-;;   {:added "1.0"
-;;    :go "lookupHost(host)"}
-;;   [^String host])
+(defn LookupHost
+  "LookupHost looks up the given host using the local resolver.\nIt returns a slice of that host's addresses.\nGo return type: (addrs []string, err error)\nJoker return type: [(vector-of String) Error]"
+  {:added "1.0"
+   :go "lookupHost(host)"}
+  [^String host])
 
 JOKER FUNC net.LookupIP has:
-;; (defn LookupIP
-;;   "LookupIP looks up host using the local resolver.\nIt returns a slice of that host's IPv4 and IPv6 addresses.\nGo return type: ([]IP, error)\nJoker return type: [(vector-of (vector-of Int)) Error]"
-;;   {:added "1.0"
-;;    :go "lookupIP(host)"}
-;;   [^String host])
+(defn LookupIP
+  "LookupIP looks up host using the local resolver.\nIt returns a slice of that host's IPv4 and IPv6 addresses.\nGo return type: ([]IP, error)\nJoker return type: [(vector-of (vector-of Int)) Error]"
+  {:added "1.0"
+   :go "lookupIP(host)"}
+  [^String host])
 
 JOKER FUNC net.LookupMX has:
 ;; (defn LookupMX
@@ -957,11 +956,11 @@ JOKER FUNC net.LookupSRV has:
 ;;   [^String service, ^String proto, ^String name])
 
 JOKER FUNC net.LookupTXT has:
-;; (defn LookupTXT
-;;   "LookupTXT returns the DNS TXT records for the given domain name.\nGo return type: ([]string, error)\nJoker return type: [(vector-of String) Error]"
-;;   {:added "1.0"
-;;    :go "lookupTXT(name)"}
-;;   [^String name])
+(defn LookupTXT
+  "LookupTXT returns the DNS TXT records for the given domain name.\nGo return type: ([]string, error)\nJoker return type: [(vector-of String) Error]"
+  {:added "1.0"
+   :go "lookupTXT(name)"}
+  [^String name])
 
 JOKER FUNC net.ParseCIDR has:
 ;; (defn ParseCIDR
@@ -971,18 +970,18 @@ JOKER FUNC net.ParseCIDR has:
 ;;   [^String s])
 
 JOKER FUNC net.ParseIP has:
-;; (defn ParseIP
-;;   "ParseIP parses s as an IP address, returning the result.\nThe string s can be in dotted decimal (\"192.0.2.1\")\nor IPv6 (\"2001:db8::68\") form.\nIf s is not a valid textual representation of an IP address,\nParseIP returns nil.\nGo return type: IP\nJoker return type: (vector-of Int)"
-;;   {:added "1.0"
-;;    :go "parseIP(s)"}
-;;   [^String s])
+(defn ParseIP
+  "ParseIP parses s as an IP address, returning the result.\nThe string s can be in dotted decimal (\"192.0.2.1\")\nor IPv6 (\"2001:db8::68\") form.\nIf s is not a valid textual representation of an IP address,\nParseIP returns nil.\nGo return type: IP\nJoker return type: (vector-of Int)"
+  {:added "1.0"
+   :go "parseIP(s)"}
+  [^String s])
 
 JOKER FUNC net.ParseMAC has:
-;; (defn ParseMAC
-;;   "ParseMAC parses s as an IEEE 802 MAC-48, EUI-48, EUI-64, or a 20-octet\nIP over InfiniBand link-layer address using one of the following formats:\n  01:23:45:67:89:ab\n  01:23:45:67:89:ab:cd:ef\n  01:23:45:67:89:ab:cd:ef:00:00:01:23:45:67:89:ab:cd:ef:00:00\n  01-23-45-67-89-ab\n  01-23-45-67-89-ab-cd-ef\n  01-23-45-67-89-ab-cd-ef-00-00-01-23-45-67-89-ab-cd-ef-00-00\n  0123.4567.89ab\n  0123.4567.89ab.cdef\n  0123.4567.89ab.cdef.0000.0123.4567.89ab.cdef.0000\nGo return type: (hw HardwareAddr, err error)\nJoker return type: [(vector-of Int) Error]"
-;;   {:added "1.0"
-;;    :go "parseMAC(s)"}
-;;   [^String s])
+(defn ParseMAC
+  "ParseMAC parses s as an IEEE 802 MAC-48, EUI-48, EUI-64, or a 20-octet\nIP over InfiniBand link-layer address using one of the following formats:\n  01:23:45:67:89:ab\n  01:23:45:67:89:ab:cd:ef\n  01:23:45:67:89:ab:cd:ef:00:00:01:23:45:67:89:ab:cd:ef:00:00\n  01-23-45-67-89-ab\n  01-23-45-67-89-ab-cd-ef\n  01-23-45-67-89-ab-cd-ef-00-00-01-23-45-67-89-ab-cd-ef-00-00\n  0123.4567.89ab\n  0123.4567.89ab.cdef\n  0123.4567.89ab.cdef.0000.0123.4567.89ab.cdef.0000\nGo return type: (hw HardwareAddr, err error)\nJoker return type: [(vector-of Int) Error]"
+  {:added "1.0"
+   :go "parseMAC(s)"}
+  [^String s])
 
 JOKER FUNC net.Pipe has:
 ;; (defn Pipe
@@ -1310,8 +1309,7 @@ GO FUNC cgi.Request has:
 // func request() Object {
 // 	res1, res2 := cgi.Request()
 // 	res := EmptyVector
-// 	ABEND677: TODO
-// 	res.Conjoin(res1)
+// 	res.Conjoin(*res1)
 // 	res.Conjoin(string(res2))
 // 	return res
 // }
@@ -1320,8 +1318,7 @@ GO FUNC cgi.RequestFromMap has:
 // func requestFromMap(params ABEND882(unrecognized Expr type *ast.MapType at: tests/big/net/http/cgi/child.go:52:28)) Object {
 // 	res1, res2 := cgi.RequestFromMap(params)
 // 	res := EmptyVector
-// 	ABEND677: TODO
-// 	res.Conjoin(res1)
+// 	res.Conjoin(*res1)
 // 	res.Conjoin(string(res2))
 // 	return res
 // }
@@ -1330,8 +1327,7 @@ GO FUNC cookiejar.New has:
 // func new(o ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/http/cookiejar/jar.go:77:12)) Object {
 // 	res1, res2 := cookiejar.New(o)
 // 	res := EmptyVector
-// 	ABEND677: TODO
-// 	res.Conjoin()
+// 	res.Conjoin(*(ABEND680:TODO))
 // 	res.Conjoin(string(res2))
 // 	return res
 // }
@@ -1339,7 +1335,6 @@ GO FUNC cookiejar.New has:
 GO FUNC fcgi.ProcessEnv has:
 // func processEnv(r ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/http/fcgi/child.go:358:19)) Object {
 // 	return fcgi.ProcessEnv(r)
-// 	ABEND679: TODO
 // }
 
 GO FUNC http.Error has:
@@ -1351,15 +1346,21 @@ GO FUNC http.Error has:
 GO FUNC http.FileServer has:
 // func fileServer(root Object) Object {
 // 	return http.FileServer(root)
-// 	ABEND679: TODO
 // }
 
 GO FUNC http.Get has:
 // func get(url string) Object {
 // 	resp, err := http.Get(url)
 // 	res := EmptyVector
-// 	ABEND677: TODO
-// 	res.Conjoin()
+// 	vec1 := EmptyVector
+// 	for _, el1 := range resp {
+// 		vec1 = vec1.Conjoin(MakeString(el1))
+// 	}
+// 	vec2 := EmptyVector
+// 	for _, el2 := range resp {
+// 		vec2 = vec2.Conjoin(MakeString(el2))
+// 	}
+// 	res.Conjoin(*(ABEND680:TODO))
 // 	res.Conjoin(string(err))
 // 	return res
 // }
@@ -1380,8 +1381,15 @@ GO FUNC http.Head has:
 // func head(url string) Object {
 // 	resp, err := http.Head(url)
 // 	res := EmptyVector
-// 	ABEND677: TODO
-// 	res.Conjoin(resp)
+// 	vec1 := EmptyVector
+// 	for _, el1 := range resp {
+// 		vec1 = vec1.Conjoin(MakeString(el1))
+// 	}
+// 	vec2 := EmptyVector
+// 	for _, el2 := range resp {
+// 		vec2 = vec2.Conjoin(MakeString(el2))
+// 	}
+// 	res.Conjoin(*(ABEND680:TODO))
 // 	res.Conjoin(string(err))
 // 	return res
 // }
@@ -1389,29 +1397,33 @@ GO FUNC http.Head has:
 GO FUNC http.MaxBytesReader has:
 // func maxBytesReader(w Object, r ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/http/request.go:1056:41), n Object) Object {
 // 	return http.MaxBytesReader(w, r, n)
-// 	ABEND679: TODO
 // }
 
 GO FUNC http.NewFileTransport has:
 // func newFileTransport(fs Object) Object {
 // 	return http.NewFileTransport(fs)
-// 	ABEND679: TODO
 // }
 
 GO FUNC http.NewRequest has:
 // func newRequest(method string, url string, body ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/http/request.go:792:42)) Object {
 // 	res1, res2 := http.NewRequest(method, url, body)
 // 	res := EmptyVector
-// 	ABEND677: TODO
-// 	res.Conjoin(res1)
+// 	vec1 := EmptyVector
+// 	for _, el1 := range res1 {
+// 		vec1 = vec1.Conjoin(MakeString(el1))
+// 	}
+// 	vec2 := EmptyVector
+// 	for _, el2 := range res1 {
+// 		vec2 = vec2.Conjoin(MakeString(el2))
+// 	}
+// 	res.Conjoin(*(ABEND680:TODO))
 // 	res.Conjoin(string(res2))
 // 	return res
 // }
 
 GO FUNC http.NewServeMux has:
 // func newServeMux() Object {
-// 	return http.NewServeMux()
-// 	ABEND677: TODO
+// 	return *(ABEND680:TODO)http.NewServeMux()
 // }
 
 GO FUNC http.NotFound has:
@@ -1423,7 +1435,6 @@ GO FUNC http.NotFound has:
 GO FUNC http.NotFoundHandler has:
 // func notFoundHandler() Object {
 // 	return http.NotFoundHandler()
-// 	ABEND679: TODO
 // }
 
 GO FUNC http.ParseHTTPVersion has:
@@ -1440,7 +1451,6 @@ GO FUNC http.ParseTime has:
 // func parseTime(text string) Object {
 // 	t, err := http.ParseTime(text)
 // 	res := EmptyVector
-// 	ABEND679: TODO
 // 	res.Conjoin(t)
 // 	res.Conjoin(string(err))
 // 	return res
@@ -1450,8 +1460,15 @@ GO FUNC http.Post has:
 // func post(url string, contentType string, body ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/http/client.go:748:41)) Object {
 // 	resp, err := http.Post(url, contentType, body)
 // 	res := EmptyVector
-// 	ABEND677: TODO
-// 	res.Conjoin(resp)
+// 	vec1 := EmptyVector
+// 	for _, el1 := range resp {
+// 		vec1 = vec1.Conjoin(MakeString(el1))
+// 	}
+// 	vec2 := EmptyVector
+// 	for _, el2 := range resp {
+// 		vec2 = vec2.Conjoin(MakeString(el2))
+// 	}
+// 	res.Conjoin(*(ABEND680:TODO))
 // 	res.Conjoin(string(err))
 // 	return res
 // }
@@ -1460,8 +1477,15 @@ GO FUNC http.PostForm has:
 // func postForm(url string, data ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/http/client.go:785:32)) Object {
 // 	resp, err := http.PostForm(url, data)
 // 	res := EmptyVector
-// 	ABEND677: TODO
-// 	res.Conjoin(resp)
+// 	vec1 := EmptyVector
+// 	for _, el1 := range resp {
+// 		vec1 = vec1.Conjoin(MakeString(el1))
+// 	}
+// 	vec2 := EmptyVector
+// 	for _, el2 := range resp {
+// 		vec2 = vec2.Conjoin(MakeString(el2))
+// 	}
+// 	res.Conjoin(*(ABEND680:TODO))
 // 	res.Conjoin(string(err))
 // 	return res
 // }
@@ -1470,8 +1494,7 @@ GO FUNC http.ProxyFromEnvironment has:
 // func proxyFromEnvironment(req ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/http/transport.go:345:31)) Object {
 // 	res1, res2 := http.ProxyFromEnvironment(req)
 // 	res := EmptyVector
-// 	ABEND677: TODO
-// 	res.Conjoin(res1)
+// 	res.Conjoin(*res1)
 // 	res.Conjoin(string(res2))
 // 	return res
 // }
@@ -1479,15 +1502,21 @@ GO FUNC http.ProxyFromEnvironment has:
 GO FUNC http.ProxyURL has:
 // func proxyURL(fixedURL ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/http/transport.go:351:24)) Object {
 // 	return http.ProxyURL(fixedURL)
-// 	ABEND679: TODO
 // }
 
 GO FUNC http.ReadRequest has:
 // func readRequest(b ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/http/request.go:942:20)) Object {
 // 	res1, res2 := http.ReadRequest(b)
 // 	res := EmptyVector
-// 	ABEND677: TODO
-// 	res.Conjoin(res1)
+// 	vec1 := EmptyVector
+// 	for _, el1 := range res1 {
+// 		vec1 = vec1.Conjoin(MakeString(el1))
+// 	}
+// 	vec2 := EmptyVector
+// 	for _, el2 := range res1 {
+// 		vec2 = vec2.Conjoin(MakeString(el2))
+// 	}
+// 	res.Conjoin(*(ABEND680:TODO))
 // 	res.Conjoin(string(res2))
 // 	return res
 // }
@@ -1496,8 +1525,15 @@ GO FUNC http.ReadResponse has:
 // func readResponse(r ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/http/response.go:148:21), req ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/http/response.go:148:40)) Object {
 // 	res1, res2 := http.ReadResponse(r, req)
 // 	res := EmptyVector
-// 	ABEND677: TODO
-// 	res.Conjoin(res1)
+// 	vec1 := EmptyVector
+// 	for _, el1 := range res1 {
+// 		vec1 = vec1.Conjoin(MakeString(el1))
+// 	}
+// 	vec2 := EmptyVector
+// 	for _, el2 := range res1 {
+// 		vec2 = vec2.Conjoin(MakeString(el2))
+// 	}
+// 	res.Conjoin(*(ABEND680:TODO))
 // 	res.Conjoin(string(res2))
 // 	return res
 // }
@@ -1511,7 +1547,6 @@ GO FUNC http.Redirect has:
 GO FUNC http.RedirectHandler has:
 // func redirectHandler(url string, code int) Object {
 // 	return http.RedirectHandler(url, code)
-// 	ABEND679: TODO
 // }
 
 GO FUNC http.ServeContent has:
@@ -1535,63 +1570,57 @@ GO FUNC http.SetCookie has:
 GO FUNC http.StripPrefix has:
 // func stripPrefix(prefix string, h Object) Object {
 // 	return http.StripPrefix(prefix, h)
-// 	ABEND679: TODO
 // }
 
 GO FUNC http.TimeoutHandler has:
 // func timeoutHandler(h Object, dt ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/http/server.go:3106:35), msg string) Object {
 // 	return http.TimeoutHandler(h, dt, msg)
-// 	ABEND679: TODO
 // }
 
 GO FUNC httptest.NewRecorder has:
 // func newRecorder() Object {
-// 	return httptest.NewRecorder()
-// 	ABEND677: TODO
+// 	return *(ABEND680:TODO)httptest.NewRecorder()
 // }
 
 GO FUNC httptest.NewRequest has:
 // func newRequest(method string, target string, body ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/http/httptest/httptest.go:41:45)) Object {
-// 	return httptest.NewRequest(method, target, body)
-// 	ABEND677: TODO
+// 	return *httptest.NewRequest(method, target, body)
 // }
 
 GO FUNC httptest.NewServer has:
 // func newServer(handler ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/http/httptest/server.go:80:24)) Object {
-// 	return httptest.NewServer(handler)
-// 	ABEND677: TODO
+// 	return *(ABEND680:TODO)httptest.NewServer(handler)
 // }
 
 GO FUNC httptest.NewTLSServer has:
 // func newTLSServer(handler ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/http/httptest/server.go:160:27)) Object {
-// 	return httptest.NewTLSServer(handler)
-// 	ABEND677: TODO
+// 	return *(ABEND680:TODO)httptest.NewTLSServer(handler)
 // }
 
 GO FUNC httptest.NewUnstartedServer has:
 // func newUnstartedServer(handler ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/http/httptest/server.go:92:33)) Object {
-// 	return httptest.NewUnstartedServer(handler)
-// 	ABEND677: TODO
+// 	return *(ABEND680:TODO)httptest.NewUnstartedServer(handler)
 // }
 
 GO FUNC httptrace.ContextClientTrace has:
 // func contextClientTrace(ctx ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/http/httptrace/trace.go:24:29)) Object {
-// 	return httptrace.ContextClientTrace(ctx)
-// 	ABEND677: TODO
+// 	return *(ABEND680:TODO)httptrace.ContextClientTrace(ctx)
 // }
 
 GO FUNC httptrace.WithClientTrace has:
 // func withClientTrace(ctx ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/http/httptrace/trace.go:34:26), trace ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/http/httptrace/trace.go:34:49)) Object {
 // 	return httptrace.WithClientTrace(ctx, trace)
-// 	ABEND679: TODO
 // }
 
 GO FUNC httputil.DumpRequest has:
 // func dumpRequest(req ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/http/httputil/dump.go:191:22), body Object) Object {
 // 	res1, res2 := httputil.DumpRequest(req, body)
 // 	res := EmptyVector
-// 	ABEND676: TODO
-// 	res.Conjoin(MakeInt(res1))
+// 	vec1 := EmptyVector
+// 	for _, el1 := range res1 {
+// 		vec1 = vec1.Conjoin(MakeInt(el1))
+// 	}
+// 	res.Conjoin(vec1)
 // 	res.Conjoin(string(res2))
 // 	return res
 // }
@@ -1600,8 +1629,11 @@ GO FUNC httputil.DumpRequestOut has:
 // func dumpRequestOut(req ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/http/httputil/dump.go:66:25), body Object) Object {
 // 	res1, res2 := httputil.DumpRequestOut(req, body)
 // 	res := EmptyVector
-// 	ABEND676: TODO
-// 	res.Conjoin(MakeInt(res1))
+// 	vec1 := EmptyVector
+// 	for _, el1 := range res1 {
+// 		vec1 = vec1.Conjoin(MakeInt(el1))
+// 	}
+// 	res.Conjoin(vec1)
 // 	res.Conjoin(string(res2))
 // 	return res
 // }
@@ -1610,8 +1642,11 @@ GO FUNC httputil.DumpResponse has:
 // func dumpResponse(resp ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/http/httputil/dump.go:281:24), body Object) Object {
 // 	res1, res2 := httputil.DumpResponse(resp, body)
 // 	res := EmptyVector
-// 	ABEND676: TODO
-// 	res.Conjoin(MakeInt(res1))
+// 	vec1 := EmptyVector
+// 	for _, el1 := range res1 {
+// 		vec1 = vec1.Conjoin(MakeInt(el1))
+// 	}
+// 	res.Conjoin(vec1)
 // 	res.Conjoin(string(res2))
 // 	return res
 // }
@@ -1619,65 +1654,55 @@ GO FUNC httputil.DumpResponse has:
 GO FUNC httputil.NewChunkedReader has:
 // func newChunkedReader(r ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/http/httputil/httputil.go:20:25)) Object {
 // 	return httputil.NewChunkedReader(r)
-// 	ABEND679: TODO
 // }
 
 GO FUNC httputil.NewChunkedWriter has:
 // func newChunkedWriter(w ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/http/httputil/httputil.go:35:25)) Object {
 // 	return httputil.NewChunkedWriter(w)
-// 	ABEND679: TODO
 // }
 
 GO FUNC httputil.NewClientConn has:
 // func newClientConn(c ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/http/httputil/persist.go:248:22), r ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/http/httputil/persist.go:248:34)) Object {
-// 	return httputil.NewClientConn(c, r)
-// 	ABEND677: TODO
+// 	return *(ABEND680:TODO)httputil.NewClientConn(c, r)
 // }
 
 GO FUNC httputil.NewProxyClientConn has:
 // func newProxyClientConn(c ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/http/httputil/persist.go:265:27), r ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/http/httputil/persist.go:265:39)) Object {
-// 	return httputil.NewProxyClientConn(c, r)
-// 	ABEND677: TODO
+// 	return *(ABEND680:TODO)httputil.NewProxyClientConn(c, r)
 // }
 
 GO FUNC httputil.NewServerConn has:
 // func newServerConn(c ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/http/httputil/persist.go:54:22), r ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/http/httputil/persist.go:54:34)) Object {
-// 	return httputil.NewServerConn(c, r)
-// 	ABEND677: TODO
+// 	return *(ABEND680:TODO)httputil.NewServerConn(c, r)
 // }
 
 GO FUNC httputil.NewSingleHostReverseProxy has:
 // func newSingleHostReverseProxy(target ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/http/httputil/reverseproxy.go:103:39)) Object {
-// 	return httputil.NewSingleHostReverseProxy(target)
-// 	ABEND677: TODO
+// 	return *(ABEND680:TODO)httputil.NewSingleHostReverseProxy(target)
 // }
 
 GO FUNC jsonrpc.Dial has:
 // func dial(network string, address string) Object {
 // 	res1, res2 := jsonrpc.Dial(network, address)
 // 	res := EmptyVector
-// 	ABEND677: TODO
-// 	res.Conjoin(res1)
+// 	res.Conjoin(*res1)
 // 	res.Conjoin(string(res2))
 // 	return res
 // }
 
 GO FUNC jsonrpc.NewClient has:
 // func newClient(conn ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/rpc/jsonrpc/client.go:113:21)) Object {
-// 	return jsonrpc.NewClient(conn)
-// 	ABEND677: TODO
+// 	return *jsonrpc.NewClient(conn)
 // }
 
 GO FUNC jsonrpc.NewClientCodec has:
 // func newClientCodec(conn ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/rpc/jsonrpc/client.go:37:26)) Object {
 // 	return jsonrpc.NewClientCodec(conn)
-// 	ABEND679: TODO
 // }
 
 GO FUNC jsonrpc.NewServerCodec has:
 // func newServerCodec(conn ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/rpc/jsonrpc/server.go:37:26)) Object {
 // 	return jsonrpc.NewServerCodec(conn)
-// 	ABEND679: TODO
 // }
 
 GO FUNC jsonrpc.ServeConn has:
@@ -1690,8 +1715,7 @@ GO FUNC mail.ParseAddress has:
 // func parseAddress(address string) Object {
 // 	res1, res2 := mail.ParseAddress(address)
 // 	res := EmptyVector
-// 	ABEND677: TODO
-// 	res.Conjoin()
+// 	res.Conjoin(*(ABEND680:TODO))
 // 	res.Conjoin(string(res2))
 // 	return res
 // }
@@ -1700,8 +1724,11 @@ GO FUNC mail.ParseAddressList has:
 // func parseAddressList(list string) Object {
 // 	res1, res2 := mail.ParseAddressList(list)
 // 	res := EmptyVector
-// 	ABEND676: TODO
-// 	res.Conjoin(res1)
+// 	vec1 := EmptyVector
+// 	for _, el1 := range res1 {
+// 		vec1 = vec1.Conjoin(*(ABEND680:TODO))
+// 	}
+// 	res.Conjoin(vec1)
 // 	res.Conjoin(string(res2))
 // 	return res
 // }
@@ -1710,7 +1737,6 @@ GO FUNC mail.ParseDate has:
 // func parseDate(date string) Object {
 // 	res1, res2 := mail.ParseDate(date)
 // 	res := EmptyVector
-// 	ABEND679: TODO
 // 	res.Conjoin(res1)
 // 	res.Conjoin(string(res2))
 // 	return res
@@ -1720,23 +1746,25 @@ GO FUNC mail.ReadMessage has:
 // func readMessage(r ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/mail/message.go:52:20)) Object {
 // 	msg, err := mail.ReadMessage(r)
 // 	res := EmptyVector
-// 	ABEND677: TODO
-// 	res.Conjoin()
+// 	res.Conjoin(*(ABEND680:TODO))
 // 	res.Conjoin(string(err))
 // 	return res
 // }
 
 GO FUNC net.CIDRMask has:
-// func cIDRMask(ones int, bits int) Object {
-// 	return MakeInt()net.CIDRMask(ones, bits)
-// 	ABEND676: TODO
-// }
+func cIDRMask(ones int, bits int) Object {
+	net.CIDRMask(ones, bits)
+	vec1 := EmptyVector
+	for _, el1 := range  {
+		vec1 = vec1.Conjoin(MakeInt(el1))
+	}
+	return res
+}
 
 GO FUNC net.Dial has:
 // func dial(network string, address string) Object {
 // 	res1, res2 := net.Dial(network, address)
 // 	res := EmptyVector
-// 	ABEND679: TODO
 // 	res.Conjoin(res1)
 // 	res.Conjoin(string(res2))
 // 	return res
@@ -1746,8 +1774,7 @@ GO FUNC net.DialIP has:
 // func dialIP(network string, laddr ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/iprawsock.go:211:42), raddr ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/iprawsock.go:211:42)) Object {
 // 	res1, res2 := net.DialIP(network, laddr, raddr)
 // 	res := EmptyVector
-// 	ABEND677: TODO
-// 	res.Conjoin()
+// 	res.Conjoin(*(ABEND680:TODO))
 // 	res.Conjoin(string(res2))
 // 	return res
 // }
@@ -1756,8 +1783,7 @@ GO FUNC net.DialTCP has:
 // func dialTCP(network string, laddr ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/tcpsock.go:206:43), raddr ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/tcpsock.go:206:43)) Object {
 // 	res1, res2 := net.DialTCP(network, laddr, raddr)
 // 	res := EmptyVector
-// 	ABEND677: TODO
-// 	res.Conjoin()
+// 	res.Conjoin(*(ABEND680:TODO))
 // 	res.Conjoin(string(res2))
 // 	return res
 // }
@@ -1766,7 +1792,6 @@ GO FUNC net.DialTimeout has:
 // func dialTimeout(network string, address string, timeout ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/dial.go:313:51)) Object {
 // 	res1, res2 := net.DialTimeout(network, address, timeout)
 // 	res := EmptyVector
-// 	ABEND679: TODO
 // 	res.Conjoin(res1)
 // 	res.Conjoin(string(res2))
 // 	return res
@@ -1776,8 +1801,7 @@ GO FUNC net.DialUDP has:
 // func dialUDP(network string, laddr ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/udpsock.go:205:43), raddr ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/udpsock.go:205:43)) Object {
 // 	res1, res2 := net.DialUDP(network, laddr, raddr)
 // 	res := EmptyVector
-// 	ABEND677: TODO
-// 	res.Conjoin()
+// 	res.Conjoin(*(ABEND680:TODO))
 // 	res.Conjoin(string(res2))
 // 	return res
 // }
@@ -1786,8 +1810,7 @@ GO FUNC net.DialUnix has:
 // func dialUnix(network string, laddr ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/unixsock.go:200:44), raddr ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/unixsock.go:200:44)) Object {
 // 	res1, res2 := net.DialUnix(network, laddr, raddr)
 // 	res := EmptyVector
-// 	ABEND677: TODO
-// 	res.Conjoin()
+// 	res.Conjoin(*(ABEND680:TODO))
 // 	res.Conjoin(string(res2))
 // 	return res
 // }
@@ -1796,7 +1819,6 @@ GO FUNC net.FileConn has:
 // func fileConn(f ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/file.go:21:17)) Object {
 // 	c, err := net.FileConn(f)
 // 	res := EmptyVector
-// 	ABEND679: TODO
 // 	res.Conjoin(c)
 // 	res.Conjoin(string(err))
 // 	return res
@@ -1806,7 +1828,6 @@ GO FUNC net.FileListener has:
 // func fileListener(f ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/file.go:33:21)) Object {
 // 	ln, err := net.FileListener(f)
 // 	res := EmptyVector
-// 	ABEND679: TODO
 // 	res.Conjoin(ln)
 // 	res.Conjoin(string(err))
 // 	return res
@@ -1816,30 +1837,40 @@ GO FUNC net.FilePacketConn has:
 // func filePacketConn(f ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/file.go:45:23)) Object {
 // 	c, err := net.FilePacketConn(f)
 // 	res := EmptyVector
-// 	ABEND679: TODO
 // 	res.Conjoin(c)
 // 	res.Conjoin(string(err))
 // 	return res
 // }
 
 GO FUNC net.IPv4 has:
-// func iPv4(a Object, b Object, c Object, d Object) Object {
-// 	return MakeInt()net.IPv4(a, b, c, d)
-// 	ABEND676: TODO
-// }
+func iPv4(a Object, b Object, c Object, d Object) Object {
+	net.IPv4(a, b, c, d)
+	vec1 := EmptyVector
+	for _, el1 := range  {
+		vec1 = vec1.Conjoin(MakeInt(el1))
+	}
+	return res
+}
 
 GO FUNC net.IPv4Mask has:
-// func iPv4Mask(a Object, b Object, c Object, d Object) Object {
-// 	return net.IPv4Mask(a, b, c, d)
-// 	ABEND676: TODO
-// }
+func iPv4Mask(a Object, b Object, c Object, d Object) Object {
+	net.IPv4Mask(a, b, c, d)
+	vec1 := EmptyVector
+	for _, el1 := range  {
+		vec1 = vec1.Conjoin(MakeInt(el1))
+	}
+	return res
+}
 
 GO FUNC net.InterfaceAddrs has:
 // func interfaceAddrs() Object {
 // 	res1, res2 := net.InterfaceAddrs()
 // 	res := EmptyVector
-// 	ABEND676: TODO
-// 	res.Conjoin(res1)
+// 	vec1 := EmptyVector
+// 	for _, el1 := range res1 {
+// 		vec1 = vec1.Conjoin(el1)
+// 	}
+// 	res.Conjoin(vec1)
 // 	res.Conjoin(string(res2))
 // 	return res
 // }
@@ -1848,8 +1879,11 @@ GO FUNC net.InterfaceByIndex has:
 // func interfaceByIndex(index int) Object {
 // 	res1, res2 := net.InterfaceByIndex(index)
 // 	res := EmptyVector
-// 	ABEND677: TODO
-// 	res.Conjoin()
+// 	vec1 := EmptyVector
+// 	for _, el1 := range res1 {
+// 		vec1 = vec1.Conjoin(MakeInt(el1))
+// 	}
+// 	res.Conjoin(*(ABEND680:TODO))
 // 	res.Conjoin(string(res2))
 // 	return res
 // }
@@ -1858,8 +1892,11 @@ GO FUNC net.InterfaceByName has:
 // func interfaceByName(name string) Object {
 // 	res1, res2 := net.InterfaceByName(name)
 // 	res := EmptyVector
-// 	ABEND677: TODO
-// 	res.Conjoin(res1)
+// 	vec1 := EmptyVector
+// 	for _, el1 := range res1 {
+// 		vec1 = vec1.Conjoin(MakeInt(el1))
+// 	}
+// 	res.Conjoin(*(ABEND680:TODO))
 // 	res.Conjoin(string(res2))
 // 	return res
 // }
@@ -1868,8 +1905,15 @@ GO FUNC net.Interfaces has:
 // func interfaces() Object {
 // 	res1, res2 := net.Interfaces()
 // 	res := EmptyVector
-// 	ABEND676: TODO
-// 	res.Conjoin(res1)
+// 	vec1 := EmptyVector
+// 	for _, el1 := range res1 {
+// 		vec2 := EmptyVector
+// 		for _, el2 := range el1 {
+// 			vec2 = vec2.Conjoin(MakeInt(el2))
+// 		}
+// 		vec1 = vec1.Conjoin((ABEND680:TODO))
+// 	}
+// 	res.Conjoin(vec1)
 // 	res.Conjoin(string(res2))
 // 	return res
 // }
@@ -1878,7 +1922,6 @@ GO FUNC net.Listen has:
 // func listen(network string, address string) Object {
 // 	res1, res2 := net.Listen(network, address)
 // 	res := EmptyVector
-// 	ABEND679: TODO
 // 	res.Conjoin(res1)
 // 	res.Conjoin(string(res2))
 // 	return res
@@ -1888,8 +1931,7 @@ GO FUNC net.ListenIP has:
 // func listenIP(network string, laddr ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/iprawsock.go:230:37)) Object {
 // 	res1, res2 := net.ListenIP(network, laddr)
 // 	res := EmptyVector
-// 	ABEND677: TODO
-// 	res.Conjoin(res1)
+// 	res.Conjoin(*(ABEND680:TODO))
 // 	res.Conjoin(string(res2))
 // 	return res
 // }
@@ -1898,8 +1940,7 @@ GO FUNC net.ListenMulticastUDP has:
 // func listenMulticastUDP(network string, ifi ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/udpsock.go:265:45), gaddr ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/udpsock.go:265:63)) Object {
 // 	res1, res2 := net.ListenMulticastUDP(network, ifi, gaddr)
 // 	res := EmptyVector
-// 	ABEND677: TODO
-// 	res.Conjoin(res1)
+// 	res.Conjoin(*(ABEND680:TODO))
 // 	res.Conjoin(string(res2))
 // 	return res
 // }
@@ -1908,7 +1949,6 @@ GO FUNC net.ListenPacket has:
 // func listenPacket(network string, address string) Object {
 // 	res1, res2 := net.ListenPacket(network, address)
 // 	res := EmptyVector
-// 	ABEND679: TODO
 // 	res.Conjoin(res1)
 // 	res.Conjoin(string(res2))
 // 	return res
@@ -1918,8 +1958,7 @@ GO FUNC net.ListenTCP has:
 // func listenTCP(network string, laddr ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/tcpsock.go:323:38)) Object {
 // 	res1, res2 := net.ListenTCP(network, laddr)
 // 	res := EmptyVector
-// 	ABEND677: TODO
-// 	res.Conjoin()
+// 	res.Conjoin(*(ABEND680:TODO))
 // 	res.Conjoin(string(res2))
 // 	return res
 // }
@@ -1928,8 +1967,7 @@ GO FUNC net.ListenUDP has:
 // func listenUDP(network string, laddr ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/udpsock.go:231:38)) Object {
 // 	res1, res2 := net.ListenUDP(network, laddr)
 // 	res := EmptyVector
-// 	ABEND677: TODO
-// 	res.Conjoin(res1)
+// 	res.Conjoin(*(ABEND680:TODO))
 // 	res.Conjoin(string(res2))
 // 	return res
 // }
@@ -1938,8 +1976,7 @@ GO FUNC net.ListenUnix has:
 // func listenUnix(network string, laddr ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/unixsock.go:314:39)) Object {
 // 	res1, res2 := net.ListenUnix(network, laddr)
 // 	res := EmptyVector
-// 	ABEND677: TODO
-// 	res.Conjoin()
+// 	res.Conjoin(*(ABEND680:TODO))
 // 	res.Conjoin(string(res2))
 // 	return res
 // }
@@ -1948,21 +1985,23 @@ GO FUNC net.ListenUnixgram has:
 // func listenUnixgram(network string, laddr ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/unixsock.go:334:43)) Object {
 // 	res1, res2 := net.ListenUnixgram(network, laddr)
 // 	res := EmptyVector
-// 	ABEND677: TODO
-// 	res.Conjoin(res1)
+// 	res.Conjoin(*(ABEND680:TODO))
 // 	res.Conjoin(string(res2))
 // 	return res
 // }
 
 GO FUNC net.LookupAddr has:
-// func lookupAddr(addr string) Object {
-// 	names, err := net.LookupAddr(addr)
-// 	res := EmptyVector
-// 	ABEND676: TODO
-// 	res.Conjoin(MakeString(names))
-// 	res.Conjoin(string(err))
-// 	return res
-// }
+func lookupAddr(addr string) Object {
+	names, err := net.LookupAddr(addr)
+	res := EmptyVector
+	vec1 := EmptyVector
+	for _, el1 := range names {
+		vec1 = vec1.Conjoin(MakeString(el1))
+	}
+	res.Conjoin(vec1)
+	res.Conjoin(string(err))
+	return res
+}
 
 GO FUNC net.LookupCNAME has:
 func lookupCNAME(host string) Object {
@@ -1974,31 +2013,44 @@ func lookupCNAME(host string) Object {
 }
 
 GO FUNC net.LookupHost has:
-// func lookupHost(host string) Object {
-// 	addrs, err := net.LookupHost(host)
-// 	res := EmptyVector
-// 	ABEND676: TODO
-// 	res.Conjoin(MakeString(addrs))
-// 	res.Conjoin(string(err))
-// 	return res
-// }
+func lookupHost(host string) Object {
+	addrs, err := net.LookupHost(host)
+	res := EmptyVector
+	vec1 := EmptyVector
+	for _, el1 := range addrs {
+		vec1 = vec1.Conjoin(MakeString(el1))
+	}
+	res.Conjoin(vec1)
+	res.Conjoin(string(err))
+	return res
+}
 
 GO FUNC net.LookupIP has:
-// func lookupIP(host string) Object {
-// 	res1, res2 := net.LookupIP(host)
-// 	res := EmptyVector
-// 	ABEND676: TODO
-// 	res.Conjoin(res1)
-// 	res.Conjoin(string(res2))
-// 	return res
-// }
+func lookupIP(host string) Object {
+	res1, res2 := net.LookupIP(host)
+	res := EmptyVector
+	vec1 := EmptyVector
+	for _, el1 := range res1 {
+		vec2 := EmptyVector
+		for _, el2 := range el1 {
+			vec2 = vec2.Conjoin(MakeInt(el2))
+		}
+		vec1 = vec1.Conjoin(vec2)
+	}
+	res.Conjoin(vec1)
+	res.Conjoin(string(res2))
+	return res
+}
 
 GO FUNC net.LookupMX has:
 // func lookupMX(name string) Object {
 // 	res1, res2 := net.LookupMX(name)
 // 	res := EmptyVector
-// 	ABEND676: TODO
-// 	res.Conjoin()
+// 	vec1 := EmptyVector
+// 	for _, el1 := range res1 {
+// 		vec1 = vec1.Conjoin(*(ABEND680:TODO))
+// 	}
+// 	res.Conjoin(vec1)
 // 	res.Conjoin(string(res2))
 // 	return res
 // }
@@ -2007,8 +2059,11 @@ GO FUNC net.LookupNS has:
 // func lookupNS(name string) Object {
 // 	res1, res2 := net.LookupNS(name)
 // 	res := EmptyVector
-// 	ABEND676: TODO
-// 	res.Conjoin()
+// 	vec1 := EmptyVector
+// 	for _, el1 := range res1 {
+// 		vec1 = vec1.Conjoin(*(ABEND680:TODO))
+// 	}
+// 	res.Conjoin(vec1)
 // 	res.Conjoin(string(res2))
 // 	return res
 // }
@@ -2026,58 +2081,79 @@ GO FUNC net.LookupSRV has:
 // func lookupSRV(service string, proto string, name string) Object {
 // 	cname, addrs, err := net.LookupSRV(service, proto, name)
 // 	res := EmptyVector
+// 	vec1 := EmptyVector
+// 	for _, el1 := range addrs {
+// 		vec1 = vec1.Conjoin(*(ABEND680:TODO))
+// 	}
 // 	res.Conjoin(MakeString(cname))
-// 	ABEND676: TODO
-// 	res.Conjoin()
+// 	res.Conjoin(vec1)
 // 	res.Conjoin(string(err))
 // 	return res
 // }
 
 GO FUNC net.LookupTXT has:
-// func lookupTXT(name string) Object {
-// 	res1, res2 := net.LookupTXT(name)
-// 	res := EmptyVector
-// 	ABEND676: TODO
-// 	res.Conjoin(MakeString(res1))
-// 	res.Conjoin(string(res2))
-// 	return res
-// }
+func lookupTXT(name string) Object {
+	res1, res2 := net.LookupTXT(name)
+	res := EmptyVector
+	vec1 := EmptyVector
+	for _, el1 := range res1 {
+		vec1 = vec1.Conjoin(MakeString(el1))
+	}
+	res.Conjoin(vec1)
+	res.Conjoin(string(res2))
+	return res
+}
 
 GO FUNC net.ParseCIDR has:
 // func parseCIDR(s string) Object {
 // 	res1, res2, res3 := net.ParseCIDR(s)
 // 	res := EmptyVector
-// 	ABEND676: TODO
-// 	res.Conjoin(res1)
-// 	ABEND677: TODO
-// 	res.Conjoin()
+// 	vec2 := EmptyVector
+// 	for _, el2 := range res2 {
+// 		vec2 = vec2.Conjoin(MakeInt(el2))
+// 	}
+// 	vec3 := EmptyVector
+// 	for _, el3 := range res2 {
+// 		vec3 = vec3.Conjoin(MakeInt(el3))
+// 	}
+// 	vec1 := EmptyVector
+// 	for _, el1 := range res1 {
+// 		vec1 = vec1.Conjoin(MakeInt(el1))
+// 	}
+// 	res.Conjoin(vec1)
+// 	res.Conjoin(*(ABEND680:TODO))
 // 	res.Conjoin(string(res3))
 // 	return res
 // }
 
 GO FUNC net.ParseIP has:
-// func parseIP(s string) Object {
-// 	return net.ParseIP(s)
-// 	ABEND676: TODO
-// }
+func parseIP(s string) Object {
+	net.ParseIP(s)
+	vec1 := EmptyVector
+	for _, el1 := range  {
+		vec1 = vec1.Conjoin(MakeInt(el1))
+	}
+	return res
+}
 
 GO FUNC net.ParseMAC has:
-// func parseMAC(s string) Object {
-// 	hw, err := net.ParseMAC(s)
-// 	res := EmptyVector
-// 	ABEND676: TODO
-// 	res.Conjoin(hw)
-// 	res.Conjoin(string(err))
-// 	return res
-// }
+func parseMAC(s string) Object {
+	hw, err := net.ParseMAC(s)
+	res := EmptyVector
+	vec1 := EmptyVector
+	for _, el1 := range hw {
+		vec1 = vec1.Conjoin(MakeInt(el1))
+	}
+	res.Conjoin(vec1)
+	res.Conjoin(string(err))
+	return res
+}
 
 GO FUNC net.Pipe has:
 // func pipe() Object {
 // 	res1, res2 := net.Pipe()
 // 	res := EmptyVector
-// 	ABEND679: TODO
 // 	res.Conjoin(res1)
-// 	ABEND679: TODO
 // 	res.Conjoin(res2)
 // 	return res
 // }
@@ -2086,8 +2162,11 @@ GO FUNC net.ResolveIPAddr has:
 // func resolveIPAddr(network string, address string) Object {
 // 	res1, res2 := net.ResolveIPAddr(network, address)
 // 	res := EmptyVector
-// 	ABEND677: TODO
-// 	res.Conjoin()
+// 	vec1 := EmptyVector
+// 	for _, el1 := range res1 {
+// 		vec1 = vec1.Conjoin(MakeInt(el1))
+// 	}
+// 	res.Conjoin(*(ABEND680:TODO))
 // 	res.Conjoin(string(res2))
 // 	return res
 // }
@@ -2096,8 +2175,11 @@ GO FUNC net.ResolveTCPAddr has:
 // func resolveTCPAddr(network string, address string) Object {
 // 	res1, res2 := net.ResolveTCPAddr(network, address)
 // 	res := EmptyVector
-// 	ABEND677: TODO
-// 	res.Conjoin()
+// 	vec1 := EmptyVector
+// 	for _, el1 := range res1 {
+// 		vec1 = vec1.Conjoin(MakeInt(el1))
+// 	}
+// 	res.Conjoin(*(ABEND680:TODO))
 // 	res.Conjoin(string(res2))
 // 	return res
 // }
@@ -2106,8 +2188,11 @@ GO FUNC net.ResolveUDPAddr has:
 // func resolveUDPAddr(network string, address string) Object {
 // 	res1, res2 := net.ResolveUDPAddr(network, address)
 // 	res := EmptyVector
-// 	ABEND677: TODO
-// 	res.Conjoin()
+// 	vec1 := EmptyVector
+// 	for _, el1 := range res1 {
+// 		vec1 = vec1.Conjoin(MakeInt(el1))
+// 	}
+// 	res.Conjoin(*(ABEND680:TODO))
 // 	res.Conjoin(string(res2))
 // 	return res
 // }
@@ -2116,8 +2201,7 @@ GO FUNC net.ResolveUnixAddr has:
 // func resolveUnixAddr(network string, address string) Object {
 // 	res1, res2 := net.ResolveUnixAddr(network, address)
 // 	res := EmptyVector
-// 	ABEND677: TODO
-// 	res.Conjoin()
+// 	res.Conjoin(*(ABEND680:TODO))
 // 	res.Conjoin(string(res2))
 // 	return res
 // }
@@ -2141,7 +2225,6 @@ GO FUNC pprof.Cmdline has:
 GO FUNC pprof.Handler has:
 // func handler(name string) Object {
 // 	return pprof.Handler(name)
-// 	ABEND679: TODO
 // }
 
 GO FUNC pprof.Index has:
@@ -2178,8 +2261,7 @@ GO FUNC rpc.Dial has:
 // func dial(network string, address string) Object {
 // 	res1, res2 := rpc.Dial(network, address)
 // 	res := EmptyVector
-// 	ABEND677: TODO
-// 	res.Conjoin()
+// 	res.Conjoin(*(ABEND680:TODO))
 // 	res.Conjoin(string(res2))
 // 	return res
 // }
@@ -2188,8 +2270,7 @@ GO FUNC rpc.DialHTTP has:
 // func dialHTTP(network string, address string) Object {
 // 	res1, res2 := rpc.DialHTTP(network, address)
 // 	res := EmptyVector
-// 	ABEND677: TODO
-// 	res.Conjoin(res1)
+// 	res.Conjoin(*(ABEND680:TODO))
 // 	res.Conjoin(string(res2))
 // 	return res
 // }
@@ -2198,8 +2279,7 @@ GO FUNC rpc.DialHTTPPath has:
 // func dialHTTPPath(network string, address string, path string) Object {
 // 	res1, res2 := rpc.DialHTTPPath(network, address, path)
 // 	res := EmptyVector
-// 	ABEND677: TODO
-// 	res.Conjoin(res1)
+// 	res.Conjoin(*(ABEND680:TODO))
 // 	res.Conjoin(string(res2))
 // 	return res
 // }
@@ -2212,20 +2292,17 @@ GO FUNC rpc.HandleHTTP has:
 
 GO FUNC rpc.NewClient has:
 // func newClient(conn ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/rpc/client.go:193:21)) Object {
-// 	return rpc.NewClient(conn)
-// 	ABEND677: TODO
+// 	return *(ABEND680:TODO)rpc.NewClient(conn)
 // }
 
 GO FUNC rpc.NewClientWithCodec has:
 // func newClientWithCodec(codec Object) Object {
-// 	return rpc.NewClientWithCodec(codec)
-// 	ABEND677: TODO
+// 	return *(ABEND680:TODO)rpc.NewClientWithCodec(codec)
 // }
 
 GO FUNC rpc.NewServer has:
 // func newServer() Object {
-// 	return rpc.NewServer()
-// 	ABEND677: TODO
+// 	return *(ABEND680:TODO)rpc.NewServer()
 // }
 
 GO FUNC rpc.ServeCodec has:
@@ -2243,15 +2320,17 @@ GO FUNC rpc.ServeConn has:
 GO FUNC smtp.CRAMMD5Auth has:
 // func cRAMMD5Auth(username string, secret string) Object {
 // 	return smtp.CRAMMD5Auth(username, secret)
-// 	ABEND679: TODO
 // }
 
 GO FUNC smtp.Dial has:
 // func dial(addr string) Object {
 // 	res1, res2 := smtp.Dial(addr)
 // 	res := EmptyVector
-// 	ABEND677: TODO
-// 	res.Conjoin()
+// 	vec1 := EmptyVector
+// 	for _, el1 := range res1 {
+// 		vec1 = vec1.Conjoin(MakeString(el1))
+// 	}
+// 	res.Conjoin(*(ABEND680:TODO))
 // 	res.Conjoin(string(res2))
 // 	return res
 // }
@@ -2260,8 +2339,11 @@ GO FUNC smtp.NewClient has:
 // func newClient(conn ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/smtp/smtp.go:62:21), host string) Object {
 // 	res1, res2 := smtp.NewClient(conn, host)
 // 	res := EmptyVector
-// 	ABEND677: TODO
-// 	res.Conjoin(res1)
+// 	vec1 := EmptyVector
+// 	for _, el1 := range res1 {
+// 		vec1 = vec1.Conjoin(MakeString(el1))
+// 	}
+// 	res.Conjoin(*(ABEND680:TODO))
 // 	res.Conjoin(string(res2))
 // 	return res
 // }
@@ -2269,49 +2351,61 @@ GO FUNC smtp.NewClient has:
 GO FUNC smtp.PlainAuth has:
 // func plainAuth(identity string, username string, password string, host string) Object {
 // 	return smtp.PlainAuth(identity, username, password, host)
-// 	ABEND679: TODO
 // }
 
 GO FUNC textproto.Dial has:
 // func dial(network string, addr string) Object {
 // 	res1, res2 := textproto.Dial(network, addr)
 // 	res := EmptyVector
-// 	ABEND677: TODO
-// 	res.Conjoin()
+// 	vec1 := EmptyVector
+// 	for _, el1 := range res1 {
+// 		vec1 = vec1.Conjoin(MakeInt(el1))
+// 	}
+// 	res.Conjoin(*(ABEND680:TODO))
 // 	res.Conjoin(string(res2))
 // 	return res
 // }
 
 GO FUNC textproto.NewConn has:
 // func newConn(conn ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/textproto/textproto.go:66:19)) Object {
-// 	return textproto.NewConn(conn)
-// 	ABEND677: TODO
+// 	textproto.NewConn(conn)
+// 	vec1 := EmptyVector
+// 	for _, el1 := range  {
+// 		vec1 = vec1.Conjoin(MakeInt(el1))
+// 	}
+// 	return res
 // }
 
 GO FUNC textproto.NewReader has:
 // func newReader(r ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/textproto/reader.go:29:18)) Object {
-// 	return textproto.NewReader(r)
-// 	ABEND677: TODO
+// 	textproto.NewReader(r)
+// 	vec1 := EmptyVector
+// 	for _, el1 := range  {
+// 		vec1 = vec1.Conjoin(MakeInt(el1))
+// 	}
+// 	return res
 // }
 
 GO FUNC textproto.NewWriter has:
 // func newWriter(w ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/textproto/writer.go:21:18)) Object {
-// 	return textproto.NewWriter(w)
-// 	ABEND677: TODO
+// 	return *(ABEND680:TODO)textproto.NewWriter(w)
 // }
 
 GO FUNC textproto.TrimBytes has:
 // func trimBytes(b ABEND882(unrecognized Expr type *ast.ArrayType at: tests/big/net/textproto/textproto.go:137:18)) Object {
-// 	return MakeInt()textproto.TrimBytes(b)
-// 	ABEND676: TODO
+// 	textproto.TrimBytes(b)
+// 	vec1 := EmptyVector
+// 	for _, el1 := range  {
+// 		vec1 = vec1.Conjoin(MakeInt(el1))
+// 	}
+// 	return res
 // }
 
 GO FUNC url.Parse has:
 // func parse(rawurl string) Object {
 // 	res1, res2 := url.Parse(rawurl)
 // 	res := EmptyVector
-// 	ABEND677: TODO
-// 	res.Conjoin()
+// 	res.Conjoin(*(ABEND680:TODO))
 // 	res.Conjoin(string(res2))
 // 	return res
 // }
@@ -2320,7 +2414,6 @@ GO FUNC url.ParseQuery has:
 // func parseQuery(query string) Object {
 // 	res1, res2 := url.ParseQuery(query)
 // 	res := EmptyVector
-// 	ABEND679: TODO
 // 	res.Conjoin(res1)
 // 	res.Conjoin(string(res2))
 // 	return res
@@ -2330,8 +2423,7 @@ GO FUNC url.ParseRequestURI has:
 // func parseRequestURI(rawurl string) Object {
 // 	res1, res2 := url.ParseRequestURI(rawurl)
 // 	res := EmptyVector
-// 	ABEND677: TODO
-// 	res.Conjoin(res1)
+// 	res.Conjoin(*(ABEND680:TODO))
 // 	res.Conjoin(string(res2))
 // 	return res
 // }
@@ -2356,14 +2448,12 @@ func queryUnescape(s string) Object {
 
 GO FUNC url.User has:
 // func user(username string) Object {
-// 	return url.User(username)
-// 	ABEND677: TODO
+// 	return *(ABEND680:TODO)url.User(username)
 // }
 
 GO FUNC url.UserPassword has:
 // func userPassword(username string, password string) Object {
-// 	return url.UserPassword(username, password)
-// 	ABEND677: TODO
+// 	return *(ABEND680:TODO)url.UserPassword(username, password)
 // }
 
 Totals: types=102 functions=148 receivers=1200
