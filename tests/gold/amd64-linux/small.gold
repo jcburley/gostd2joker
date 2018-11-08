@@ -159,8 +159,8 @@ func lookupAddr(addr string) Object {
 	names, err := net.LookupAddr(addr)
 	res := EmptyVector
 	vec1 := EmptyVector
-	for _, el1 := range names {
-		vec1 = vec1.Conjoin(MakeString(el1))
+	for _, elem1 := range names {
+		vec1 = vec1.Conjoin(MakeString(elem1))
 	}
 	res.Conjoin(vec1)
 	res.Conjoin(string(err))
@@ -181,8 +181,8 @@ func lookupHost(host string) Object {
 	addrs, err := net.LookupHost(host)
 	res := EmptyVector
 	vec1 := EmptyVector
-	for _, el1 := range addrs {
-		vec1 = vec1.Conjoin(MakeString(el1))
+	for _, elem1 := range addrs {
+		vec1 = vec1.Conjoin(MakeString(elem1))
 	}
 	res.Conjoin(vec1)
 	res.Conjoin(string(err))
@@ -194,7 +194,7 @@ GO FUNC net.LookupIP has:
 // 	res1, res2 := net.LookupIP(host)
 // 	res := EmptyVector
 // 	vec1 := EmptyVector
-// 	for _, el1 := range res1 {
+// 	for _, elem1 := range res1 {
 // 		vec1 = vec1.Conjoin()
 // 	}
 // 	res.Conjoin(vec1)
@@ -207,10 +207,10 @@ func lookupMX(name string) Object {
 	res1, res2 := net.LookupMX(name)
 	res := EmptyVector
 	vec1 := EmptyVector
-	for _, el1 := range res1 {
+	for _, elem1 := range res1 {
 		map2 := EmptyArrayMap()
-		map2.Add(MakeKeyword("Host"), MakeString((*el1).Host))
-		map2.Add(MakeKeyword("Pref"), MakeInt((*el1).Pref))
+		map2.Add(MakeKeyword("Host"), MakeString((*elem1).Host))
+		map2.Add(MakeKeyword("Pref"), MakeInt((*elem1).Pref))
 		vec1 = vec1.Conjoin(map2)
 	}
 	res.Conjoin(vec1)
@@ -223,9 +223,9 @@ func lookupNS(name string) Object {
 	res1, res2 := net.LookupNS(name)
 	res := EmptyVector
 	vec1 := EmptyVector
-	for _, el1 := range res1 {
+	for _, elem1 := range res1 {
 		map2 := EmptyArrayMap()
-		map2.Add(MakeKeyword("Host"), MakeString((*el1).Host))
+		map2.Add(MakeKeyword("Host"), MakeString((*elem1).Host))
 		vec1 = vec1.Conjoin(map2)
 	}
 	res.Conjoin(vec1)
@@ -247,12 +247,12 @@ func lookupSRV(service string, proto string, name string) Object {
 	cname, addrs, err := net.LookupSRV(service, proto, name)
 	res := EmptyVector
 	vec1 := EmptyVector
-	for _, el1 := range addrs {
+	for _, elem1 := range addrs {
 		map2 := EmptyArrayMap()
-		map2.Add(MakeKeyword("Target"), MakeString((*el1).Target))
-		map2.Add(MakeKeyword("Port"), MakeInt((*el1).Port))
-		map2.Add(MakeKeyword("Priority"), MakeInt((*el1).Priority))
-		map2.Add(MakeKeyword("Weight"), MakeInt((*el1).Weight))
+		map2.Add(MakeKeyword("Target"), MakeString((*elem1).Target))
+		map2.Add(MakeKeyword("Port"), MakeInt((*elem1).Port))
+		map2.Add(MakeKeyword("Priority"), MakeInt((*elem1).Priority))
+		map2.Add(MakeKeyword("Weight"), MakeInt((*elem1).Weight))
 		vec1 = vec1.Conjoin(map2)
 	}
 	res.Conjoin(MakeString(cname))
@@ -266,8 +266,8 @@ func lookupTXT(name string) Object {
 	res1, res2 := net.LookupTXT(name)
 	res := EmptyVector
 	vec1 := EmptyVector
-	for _, el1 := range res1 {
-		vec1 = vec1.Conjoin(MakeString(el1))
+	for _, elem1 := range res1 {
+		vec1 = vec1.Conjoin(MakeString(elem1))
 	}
 	res.Conjoin(vec1)
 	res.Conjoin(string(res2))
