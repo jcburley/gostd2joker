@@ -209,9 +209,15 @@ func processDir(d string, path string, mode parser.Mode) error {
 		// Walk only *.go files that meet default (target) build constraints, e.g. per "// build ..."
 		func (info os.FileInfo) bool {
 			if strings.HasSuffix(info.Name(), "_test.go") {
+				if verbose {
+					fmt.Printf("Ignoring test code in %s\n", info.Name())
+				}
 				return false
 			}
 			b, e := build.Default.MatchFile(path, info.Name());
+			if verbose {
+				fmt.Printf("Matchfile(%s) => %v %v\n", filepath.Join(path, info.Name()), b, e)
+			}
 			return b && e == nil
 		},
 		mode)
@@ -288,8 +294,12 @@ func exprAsClojure(e Expr) string {
 		switch v.Name {
 		case "string":
 			return "String"
-		case "int", "uint", "int16", "uint16":
+		case "int", "uint", "int16", "uint16", "int32", "uint32", "int64":
 			return "Int"
+		case "byte":
+			return "Byte"
+		case "bool":
+			return "Bool"
 		default:
 			return ""
 		}
@@ -302,12 +312,10 @@ func exprAsGo(e Expr) string {
 	switch v := e.(type) {
 	case *Ident:
 		switch v.Name {
-		case "string":
-			return "string"
-		case "int":
-			return "int"
+		case "string", "int", "int16", "uint", "uint16", "int32", "uint32", "int64", "byte", "bool", "error":
+			return v.Name
 		default:
-			return "Object"
+			return fmt.Sprintf("ABEND884(unrecognized type %s at: %s)", v.Name, whereAt(e.Pos()))
 		}
 	default:
 		return fmt.Sprintf("ABEND882(unrecognized Expr type %T at: %s)", e, whereAt(e.Pos()))
@@ -564,7 +572,7 @@ func genGoPostExpr(indent, pkg, in string, e Expr) (jok, gol, goc, out string) {
 		case "int", "int16", "uint", "uint16", "int32", "uint32", "int64", "byte":  // TODO: Does Joker always have 64-bit signed ints?
 			jok = "Int"
 			gol = "int"
-			out = "MakeInt(" + in + ")"
+			out = "MakeInt(int(" + in + "))"
 		case "bool":
 			jok = "Bool"
 			gol = "bool"
@@ -572,7 +580,7 @@ func genGoPostExpr(indent, pkg, in string, e Expr) (jok, gol, goc, out string) {
 		case "error":
 			jok = "Error"
 			gol = "error"
-			out = "string(" + in + ")"  // TODO: Test this, as I can't find a MakeError() in joker/core/object.go
+			out = "MakeString(" + in + ".Error())"  // TODO: Test this, as I can't find a MakeError() in joker/core/object.go
 		default:
 			jok, _, goc, out = genGoPostNamed(indent, pkg, in, v.Name)
 			gol = v.Name  // This is as far as Go needs to go for a type signature
@@ -672,7 +680,7 @@ func genGoPostList(indent string, pkg string, fl *FieldList) (gores, jok, gol, g
 // through or "Object" is returned for it if jok is returned as empty.
 func jokerReturnTypeForGenerateSTD(in_jok, in_gol string) (jok, gol string) {
 	switch in_jok {
-	case "String", "Int", "Double", "Bool", "Time", "Error":  // TODO: Have tested only String so far
+	case "String", "Int", "Byte", "Double", "Bool", "Time", "Error":  // TODO: Have tested only String so far
 		jok = "^" + in_jok
 	default:
 		jok = ""

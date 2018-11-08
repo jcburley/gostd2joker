@@ -2,67 +2,352 @@ Walking from tests/big to tests/big/go
 Processing sourceDir=tests/big dump=false:
 Walking from tests/big to tests/big/net
 Processing sourceDir=tests/big dump=false:
+Matchfile(tests/big/net/conf_netcgo.go) => false <nil>
+Ignoring test code in main_cloexec_test.go
+Ignoring test code in example_test.go
+Matchfile(tests/big/net/sockopt_bsd.go) => false <nil>
+Matchfile(tests/big/net/sock_bsd.go) => false <nil>
+Matchfile(tests/big/net/error_windows.go) => false <nil>
+Ignoring test code in unixsock_test.go
+Matchfile(tests/big/net/interface_darwin.go) => false <nil>
+Matchfile(tests/big/net/sendfile_windows.go) => false <nil>
+Matchfile(tests/big/net/iprawsock.go) => true <nil>
+Matchfile(tests/big/net/tcpsockopt_darwin.go) => false <nil>
+Ignoring test code in main_test.go
+Matchfile(tests/big/net/tcpsockopt_dragonfly.go) => false <nil>
+Matchfile(tests/big/net/file_plan9.go) => false <nil>
+Matchfile(tests/big/net/tcpsockopt_plan9.go) => false <nil>
+Matchfile(tests/big/net/sock_plan9.go) => false <nil>
+Matchfile(tests/big/net/net.go) => true <nil>
+Matchfile(tests/big/net/sendfile_linux.go) => true <nil>
+Ignoring test code in udpsock_plan9_test.go
+Matchfile(tests/big/net/cgo_resnew.go) => true <nil>
+Matchfile(tests/big/net/splice_stub.go) => false <nil>
+Ignoring test code in error_plan9_test.go
+Ignoring test code in iprawsock_test.go
+Matchfile(tests/big/net/sockaddr_posix.go) => true <nil>
+Matchfile(tests/big/net/cgo_openbsd.go) => false <nil>
+Matchfile(tests/big/net/dnsclient_unix.go) => true <nil>
+Matchfile(tests/big/net/sock_cloexec.go) => true <nil>
+Ignoring test code in timeout_test.go
+Ignoring test code in lookup_windows_test.go
+Ignoring test code in udpsock_test.go
+Ignoring test code in rawconn_unix_test.go
+Matchfile(tests/big/net/sockopt_linux.go) => true <nil>
+Matchfile(tests/big/net/sock_linux.go) => true <nil>
+Ignoring test code in hosts_test.go
+Matchfile(tests/big/net/lookup_fake.go) => false <nil>
+Matchfile(tests/big/net/lookup_windows.go) => false <nil>
+Matchfile(tests/big/net/tcpsockopt_openbsd.go) => false <nil>
+Matchfile(tests/big/net/unixsock.go) => true <nil>
+Matchfile(tests/big/net/sockopt_posix.go) => true <nil>
+Matchfile(tests/big/net/cgo_bsd.go) => false <nil>
+Matchfile(tests/big/net/sockopt_solaris.go) => false <nil>
+Matchfile(tests/big/net/interface_stub.go) => false <nil>
+Matchfile(tests/big/net/hook.go) => true <nil>
+Matchfile(tests/big/net/cgo_linux.go) => true <nil>
+Matchfile(tests/big/net/addrselect.go) => true <nil>
+Matchfile(tests/big/net/mac.go) => true <nil>
+Ignoring test code in dnsclient_unix_test.go
+Matchfile(tests/big/net/iprawsock_plan9.go) => false <nil>
+Matchfile(tests/big/net/cgo_unix.go) => true <nil>
+Ignoring test code in dnsname_test.go
+Ignoring test code in conf_test.go
+Matchfile(tests/big/net/sockopt_plan9.go) => false <nil>
+Ignoring test code in interface_test.go
+Ignoring test code in sendfile_test.go
+Matchfile(tests/big/net/sockoptip_windows.go) => false <nil>
+Matchfile(tests/big/net/error_unix.go) => true <nil>
+Matchfile(tests/big/net/fd_windows.go) => false <nil>
+Matchfile(tests/big/net/error_nacl.go) => false <nil>
+Ignoring test code in dnsclient_test.go
+Matchfile(tests/big/net/tcpsockopt_solaris.go) => false <nil>
+Ignoring test code in net_windows_test.go
+Matchfile(tests/big/net/sockoptip_linux.go) => true <nil>
+Matchfile(tests/big/net/lookup_unix.go) => true <nil>
+Matchfile(tests/big/net/interface_solaris.go) => false <nil>
+Matchfile(tests/big/net/net_fake.go) => false <nil>
+Matchfile(tests/big/net/tcpsock_posix.go) => true <nil>
+Matchfile(tests/big/net/parse.go) => true <nil>
+Ignoring test code in parse_test.go
+Ignoring test code in lookup_test.go
+Ignoring test code in main_windows_test.go
+Matchfile(tests/big/net/interface_bsdvar.go) => false <nil>
+Matchfile(tests/big/net/interface.go) => true <nil>
+Ignoring test code in ipsock_test.go
+Matchfile(tests/big/net/tcpsock_plan9.go) => false <nil>
+Matchfile(tests/big/net/file.go) => true <nil>
+Ignoring test code in net_test.go
+Ignoring test code in server_test.go
+Matchfile(tests/big/net/cgo_solaris.go) => false <nil>
+Ignoring test code in splice_test.go
+Ignoring test code in error_unix_test.go
+Ignoring test code in platform_test.go
+Ignoring test code in dnsconfig_unix_test.go
+Matchfile(tests/big/net/cgo_android.go) => false <nil>
+Matchfile(tests/big/net/sockoptip_bsdvar.go) => false <nil>
+Ignoring test code in rawconn_windows_test.go
+Matchfile(tests/big/net/unixsock_posix.go) => true <nil>
+Matchfile(tests/big/net/lookup_plan9.go) => false <nil>
+Matchfile(tests/big/net/sockopt_stub.go) => false <nil>
+Matchfile(tests/big/net/rawconn.go) => true <nil>
+Matchfile(tests/big/net/sock_posix.go) => true <nil>
+Matchfile(tests/big/net/sockoptip_posix.go) => true <nil>
+Ignoring test code in write_unix_test.go
+Matchfile(tests/big/net/splice_linux.go) => true <nil>
+Ignoring test code in unixsock_linux_test.go
+Ignoring test code in error_posix_test.go
+Ignoring test code in listen_test.go
+Matchfile(tests/big/net/dnsclient.go) => true <nil>
+Matchfile(tests/big/net/fd_plan9.go) => false <nil>
+Matchfile(tests/big/net/sendfile_stub.go) => false <nil>
+Ignoring test code in dial_test.go
+Ignoring test code in interface_linux_test.go
+Ignoring test code in tcpsock_test.go
+Matchfile(tests/big/net/hook_windows.go) => false <nil>
+Ignoring test code in ip_test.go
+Matchfile(tests/big/net/file_stub.go) => false <nil>
+Matchfile(tests/big/net/fd_unix.go) => true <nil>
+Matchfile(tests/big/net/ipsock.go) => true <nil>
+Ignoring test code in netgo_unix_test.go
+Ignoring test code in addrselect_test.go
+Matchfile(tests/big/net/lookup.go) => true <nil>
+Matchfile(tests/big/net/tcpsock.go) => true <nil>
+Matchfile(tests/big/net/pipe.go) => true <nil>
+Matchfile(tests/big/net/cgo_resold.go) => false <nil>
+Matchfile(tests/big/net/tcpsockopt_stub.go) => false <nil>
+Matchfile(tests/big/net/dial.go) => true <nil>
+Matchfile(tests/big/net/interface_bsd.go) => false <nil>
+Ignoring test code in main_unix_test.go
+Matchfile(tests/big/net/hosts.go) => true <nil>
+Ignoring test code in file_test.go
+Matchfile(tests/big/net/dnsconfig_unix.go) => true <nil>
+Matchfile(tests/big/net/interface_plan9.go) => false <nil>
+Matchfile(tests/big/net/interface_windows.go) => false <nil>
+Ignoring test code in packetconn_test.go
+Matchfile(tests/big/net/writev_unix.go) => true <nil>
+Matchfile(tests/big/net/interface_freebsd.go) => false <nil>
+Matchfile(tests/big/net/tcpsockopt_windows.go) => false <nil>
+Ignoring test code in protoconn_test.go
+Ignoring test code in nss_test.go
+Ignoring test code in rawconn_test.go
+Matchfile(tests/big/net/sys_cloexec.go) => false <nil>
+Matchfile(tests/big/net/tcpsockopt_posix.go) => true <nil>
+Matchfile(tests/big/net/ip.go) => true <nil>
+Matchfile(tests/big/net/sendfile_unix_alt.go) => false <nil>
+Ignoring test code in dial_unix_test.go
+Ignoring test code in main_conf_test.go
+Matchfile(tests/big/net/interface_linux.go) => true <nil>
+Matchfile(tests/big/net/error_posix.go) => true <nil>
+Matchfile(tests/big/net/hook_plan9.go) => false <nil>
+Ignoring test code in main_posix_test.go
+Matchfile(tests/big/net/cgo_sockold.go) => false <nil>
+Ignoring test code in cgo_unix_test.go
+Matchfile(tests/big/net/file_unix.go) => true <nil>
+Ignoring test code in mac_test.go
+Matchfile(tests/big/net/udpsock_posix.go) => true <nil>
+Matchfile(tests/big/net/file_windows.go) => false <nil>
+Matchfile(tests/big/net/udpsock_plan9.go) => false <nil>
+Matchfile(tests/big/net/cgo_windows.go) => false <nil>
+Matchfile(tests/big/net/sock_windows.go) => false <nil>
+Ignoring test code in pipe_test.go
+Ignoring test code in main_plan9_test.go
+Matchfile(tests/big/net/udpsock.go) => true <nil>
+Matchfile(tests/big/net/nss.go) => true <nil>
+Matchfile(tests/big/net/conf.go) => true <nil>
+Matchfile(tests/big/net/iprawsock_posix.go) => true <nil>
+Ignoring test code in interface_unix_test.go
+Matchfile(tests/big/net/sockopt_windows.go) => false <nil>
+Matchfile(tests/big/net/ipsock_plan9.go) => false <nil>
+Matchfile(tests/big/net/cgo_socknew.go) => true <nil>
+Matchfile(tests/big/net/port_unix.go) => true <nil>
+Matchfile(tests/big/net/sock_stub.go) => false <nil>
+Ignoring test code in error_test.go
+Matchfile(tests/big/net/port.go) => true <nil>
+Ignoring test code in rawconn_stub_test.go
+Ignoring test code in mockserver_test.go
+Matchfile(tests/big/net/unixsock_plan9.go) => false <nil>
+Matchfile(tests/big/net/cgo_netbsd.go) => false <nil>
+Ignoring test code in port_test.go
+Ignoring test code in conn_test.go
+Ignoring test code in external_test.go
+Matchfile(tests/big/net/cgo_stub.go) => false <nil>
+Ignoring test code in error_windows_test.go
+Matchfile(tests/big/net/ipsock_posix.go) => true <nil>
+Matchfile(tests/big/net/hook_unix.go) => true <nil>
+Ignoring test code in tcpsock_unix_test.go
+Matchfile(tests/big/net/sockoptip_stub.go) => false <nil>
+Ignoring test code in main_noconf_test.go
+Matchfile(tests/big/net/tcpsockopt_unix.go) => true <nil>
+Matchfile(tests/big/net/error_plan9.go) => false <nil>
+Ignoring test code in writev_test.go
+Ignoring test code in interface_bsd_test.go
 Package net:
 Processing package=net:
 Walking from tests/big to tests/big/net/http
 Processing sourceDir=tests/big dump=false:
+Matchfile(tests/big/net/http/header.go) => true <nil>
+Ignoring test code in response_test.go
+Ignoring test code in transport_internal_test.go
+Ignoring test code in example_test.go
+Matchfile(tests/big/net/http/request.go) => true <nil>
+Ignoring test code in main_test.go
+Ignoring test code in request_test.go
+Ignoring test code in cookie_test.go
+Ignoring test code in header_test.go
+Matchfile(tests/big/net/http/roundtrip.go) => true <nil>
+Ignoring test code in responsewrite_test.go
+Ignoring test code in export_test.go
+Ignoring test code in fs_test.go
+Matchfile(tests/big/net/http/client.go) => true <nil>
+Matchfile(tests/big/net/http/transport.go) => true <nil>
+Matchfile(tests/big/net/http/fs.go) => true <nil>
+Matchfile(tests/big/net/http/triv.go) => false <nil>
+Ignoring test code in requestwrite_test.go
+Matchfile(tests/big/net/http/method.go) => true <nil>
+Ignoring test code in sniff_test.go
+Ignoring test code in npn_test.go
+Matchfile(tests/big/net/http/cookie.go) => true <nil>
+Ignoring test code in transport_test.go
+Matchfile(tests/big/net/http/filetransport.go) => true <nil>
+Matchfile(tests/big/net/http/race.go) => false <nil>
+Ignoring test code in filetransport_test.go
+Ignoring test code in range_test.go
+Matchfile(tests/big/net/http/status.go) => true <nil>
+Matchfile(tests/big/net/http/socks_bundle.go) => true <nil>
+Ignoring test code in client_test.go
+Matchfile(tests/big/net/http/jar.go) => true <nil>
+Matchfile(tests/big/net/http/sniff.go) => true <nil>
+Ignoring test code in transfer_test.go
+Matchfile(tests/big/net/http/doc.go) => true <nil>
+Matchfile(tests/big/net/http/h2_bundle.go) => true <nil>
+Ignoring test code in http_test.go
+Matchfile(tests/big/net/http/http.go) => true <nil>
+Matchfile(tests/big/net/http/transfer.go) => true <nil>
+Ignoring test code in clientserver_test.go
+Ignoring test code in readrequest_test.go
+Ignoring test code in serve_test.go
+Matchfile(tests/big/net/http/roundtrip_js.go) => false <nil>
+Ignoring test code in proxy_test.go
+Matchfile(tests/big/net/http/server.go) => true <nil>
+Matchfile(tests/big/net/http/response.go) => true <nil>
 Package http:
 Processing package=http:
 Walking from tests/big to tests/big/net/http/cgi
 Processing sourceDir=tests/big dump=false:
+Ignoring test code in child_test.go
+Ignoring test code in host_test.go
+Ignoring test code in matryoshka_test.go
+Ignoring test code in posix_test.go
+Ignoring test code in plan9_test.go
+Matchfile(tests/big/net/http/cgi/host.go) => true <nil>
+Matchfile(tests/big/net/http/cgi/child.go) => true <nil>
 Package cgi:
 Processing package=cgi:
 Excluding tests/big/net/http/cgi/testdata
 Walking from tests/big to tests/big/net/http/cookiejar
 Processing sourceDir=tests/big dump=false:
+Ignoring test code in example_test.go
+Matchfile(tests/big/net/http/cookiejar/punycode.go) => true <nil>
+Ignoring test code in punycode_test.go
+Ignoring test code in jar_test.go
+Ignoring test code in dummy_publicsuffix_test.go
+Matchfile(tests/big/net/http/cookiejar/jar.go) => true <nil>
 Package cookiejar:
 Processing package=cookiejar:
 Walking from tests/big to tests/big/net/http/fcgi
 Processing sourceDir=tests/big dump=false:
+Matchfile(tests/big/net/http/fcgi/fcgi.go) => true <nil>
+Ignoring test code in fcgi_test.go
+Matchfile(tests/big/net/http/fcgi/child.go) => true <nil>
 Package fcgi:
 Processing package=fcgi:
 Walking from tests/big to tests/big/net/http/httptest
 Processing sourceDir=tests/big dump=false:
+Matchfile(tests/big/net/http/httptest/recorder.go) => true <nil>
+Ignoring test code in example_test.go
+Ignoring test code in server_test.go
+Matchfile(tests/big/net/http/httptest/httptest.go) => true <nil>
+Ignoring test code in httptest_test.go
+Ignoring test code in recorder_test.go
+Matchfile(tests/big/net/http/httptest/server.go) => true <nil>
 Package httptest:
 Processing package=httptest:
 Walking from tests/big to tests/big/net/http/httptrace
 Processing sourceDir=tests/big dump=false:
+Ignoring test code in example_test.go
+Matchfile(tests/big/net/http/httptrace/trace.go) => true <nil>
+Ignoring test code in trace_test.go
 Package httptrace:
 Processing package=httptrace:
 Walking from tests/big to tests/big/net/http/httputil
 Processing sourceDir=tests/big dump=false:
+Ignoring test code in example_test.go
+Matchfile(tests/big/net/http/httputil/httputil.go) => true <nil>
+Matchfile(tests/big/net/http/httputil/dump.go) => true <nil>
+Ignoring test code in dump_test.go
+Matchfile(tests/big/net/http/httputil/reverseproxy.go) => true <nil>
+Ignoring test code in reverseproxy_test.go
+Matchfile(tests/big/net/http/httputil/persist.go) => true <nil>
 Package httputil:
 Processing package=httputil:
 Excluding tests/big/net/http/internal
 Walking from tests/big to tests/big/net/http/pprof
 Processing sourceDir=tests/big dump=false:
+Ignoring test code in pprof_test.go
+Matchfile(tests/big/net/http/pprof/pprof.go) => true <nil>
 Package pprof:
 Processing package=pprof:
 Excluding tests/big/net/http/testdata
 Excluding tests/big/net/internal
 Walking from tests/big to tests/big/net/mail
 Processing sourceDir=tests/big dump=false:
+Ignoring test code in example_test.go
+Ignoring test code in message_test.go
+Matchfile(tests/big/net/mail/message.go) => true <nil>
 Package mail:
 Processing package=mail:
 Walking from tests/big to tests/big/net/rpc
 Processing sourceDir=tests/big dump=false:
+Matchfile(tests/big/net/rpc/debug.go) => true <nil>
+Matchfile(tests/big/net/rpc/client.go) => true <nil>
+Ignoring test code in server_test.go
+Ignoring test code in client_test.go
+Matchfile(tests/big/net/rpc/server.go) => true <nil>
 Package rpc:
 Processing package=rpc:
 Walking from tests/big to tests/big/net/rpc/jsonrpc
 Processing sourceDir=tests/big dump=false:
+Matchfile(tests/big/net/rpc/jsonrpc/client.go) => true <nil>
+Ignoring test code in all_test.go
+Matchfile(tests/big/net/rpc/jsonrpc/server.go) => true <nil>
 Package jsonrpc:
 Processing package=jsonrpc:
 Walking from tests/big to tests/big/net/smtp
 Processing sourceDir=tests/big dump=false:
+Ignoring test code in example_test.go
+Ignoring test code in smtp_test.go
+Matchfile(tests/big/net/smtp/auth.go) => true <nil>
+Matchfile(tests/big/net/smtp/smtp.go) => true <nil>
 Package smtp:
 Processing package=smtp:
 Excluding tests/big/net/testdata
 Walking from tests/big to tests/big/net/textproto
 Processing sourceDir=tests/big dump=false:
+Matchfile(tests/big/net/textproto/header.go) => true <nil>
+Ignoring test code in writer_test.go
+Matchfile(tests/big/net/textproto/reader.go) => true <nil>
+Ignoring test code in reader_test.go
+Matchfile(tests/big/net/textproto/pipeline.go) => true <nil>
+Matchfile(tests/big/net/textproto/writer.go) => true <nil>
+Matchfile(tests/big/net/textproto/textproto.go) => true <nil>
 Package textproto:
 Processing package=textproto:
 Walking from tests/big to tests/big/net/url
 Processing sourceDir=tests/big dump=false:
+Ignoring test code in example_test.go
+Ignoring test code in url_test.go
+Matchfile(tests/big/net/url/url.go) => true <nil>
 Package url:
 Processing package=url:
 TYPE cgi.Handler:
@@ -386,7 +671,7 @@ JOKER FUNC http.MaxBytesReader has:
 ;;   "MaxBytesReader is similar to io.LimitReader but is intended for\nlimiting the size of incoming request bodies. In contrast to\nio.LimitReader, MaxBytesReader's result is a ReadCloser, returns a\nnon-EOF error for a Read beyond the limit, and closes the\nunderlying reader when its Close method is called.\n\nMaxBytesReader prevents clients from accidentally or maliciously\nsending a large request and wasting server resources.\nGo return type: ...\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/http/request.go:1056:65)"
 ;;   {:added "1.0"
 ;;    :go "maxBytesReader(w, r, n)"}
-;;   [w, ^ABEND881(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/http/request.go:1056:41) r, n])
+;;   [w, ^ABEND881(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/http/request.go:1056:41) r, ^Int n])
 
 JOKER FUNC http.NewFileTransport has:
 ;; (defn NewFileTransport
@@ -603,21 +888,21 @@ JOKER FUNC httputil.DumpRequest has:
 ;;   "DumpRequest returns the given request in its HTTP/1.x wire\nrepresentation. It should only be used by servers to debug client\nrequests. The returned representation is an approximation only;\nsome details of the initial request are lost while parsing it into\nan http.Request. In particular, the order and case of header field\nnames are lost. The order of values in multi-valued headers is kept\nintact. HTTP/2 requests are dumped in HTTP/1.x form, not in their\noriginal binary representations.\n\nIf body is true, DumpRequest also returns the body. To do so, it\nconsumes req.Body and then replaces it with a new io.ReadCloser\nthat yields the same bytes. If DumpRequest returns an error,\nthe state of req is undefined.\n\nThe documentation for http.Request.Write details which fields\nof req are included in the dump.\nGo return type: ([]int, error)\nJoker return type: [(vector-of Int) Error]"
 ;;   {:added "1.0"
 ;;    :go "dumpRequest(req, body)"}
-;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: tests/big/net/http/httputil/dump.go:191:22) req, body])
+;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: tests/big/net/http/httputil/dump.go:191:22) req, ^Bool body])
 
 JOKER FUNC httputil.DumpRequestOut has:
 ;; (defn DumpRequestOut
 ;;   "DumpRequestOut is like DumpRequest but for outgoing client requests. It\nincludes any headers that the standard http.Transport adds, such as\nUser-Agent.\nGo return type: ([]int, error)\nJoker return type: [(vector-of Int) Error]"
 ;;   {:added "1.0"
 ;;    :go "dumpRequestOut(req, body)"}
-;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: tests/big/net/http/httputil/dump.go:66:25) req, body])
+;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: tests/big/net/http/httputil/dump.go:66:25) req, ^Bool body])
 
 JOKER FUNC httputil.DumpResponse has:
 ;; (defn DumpResponse
 ;;   "DumpResponse is like DumpRequest but dumps a response.\nGo return type: ([]int, error)\nJoker return type: [(vector-of Int) Error]"
 ;;   {:added "1.0"
 ;;    :go "dumpResponse(resp, body)"}
-;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: tests/big/net/http/httputil/dump.go:281:24) resp, body])
+;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: tests/big/net/http/httputil/dump.go:281:24) resp, ^Bool body])
 
 JOKER FUNC httputil.NewChunkedReader has:
 ;; (defn NewChunkedReader
@@ -799,14 +1084,14 @@ JOKER FUNC net.IPv4 has:
   "IPv4 returns the IP address (in 16-byte form) of the\nIPv4 address a.b.c.d.\nGo return type: IP\nJoker return type: (vector-of Int)"
   {:added "1.0"
    :go "iPv4(a, b, c, d)"}
-  [a, b, c, d])
+  [^Byte a, ^Byte b, ^Byte c, ^Byte d])
 
 JOKER FUNC net.IPv4Mask has:
 (defn IPv4Mask
   "IPv4Mask returns the IP mask (in 4-byte form) of the\nIPv4 mask a.b.c.d.\nGo return type: IPMask\nJoker return type: (vector-of Int)"
   {:added "1.0"
    :go "iPv4Mask(a, b, c, d)"}
-  [a, b, c, d])
+  [^Byte a, ^Byte b, ^Byte c, ^Byte d])
 
 JOKER FUNC net.InterfaceAddrs has:
 ;; (defn InterfaceAddrs
@@ -1310,7 +1595,7 @@ GO FUNC cgi.Request has:
 // 	res1, res2 := cgi.Request()
 // 	res := EmptyVector
 // 	res.Conjoin((*res1))
-// 	res.Conjoin(string(res2))
+// 	res.Conjoin(MakeString(res2.Error()))
 // 	return res
 // }
 
@@ -1319,7 +1604,7 @@ GO FUNC cgi.RequestFromMap has:
 // 	res1, res2 := cgi.RequestFromMap(params)
 // 	res := EmptyVector
 // 	res.Conjoin((*res1))
-// 	res.Conjoin(string(res2))
+// 	res.Conjoin(MakeString(res2.Error()))
 // 	return res
 // }
 
@@ -1333,7 +1618,7 @@ GO FUNC cookiejar.New has:
 // 	map1.Add(MakeKeyword("entries"), (*res1).entries)
 // 	map1.Add(MakeKeyword("nextSeqNum"), )
 // 	res.Conjoin(map1)
-// 	res.Conjoin(string(res2))
+// 	res.Conjoin(MakeString(res2.Error()))
 // 	return res
 // }
 
@@ -1343,13 +1628,13 @@ GO FUNC fcgi.ProcessEnv has:
 // }
 
 GO FUNC http.Error has:
-// func error(w Object, error string, code int) Object {
+// func error(w ABEND884(unrecognized type ResponseWriter at: tests/big/net/http/server.go:1973:14), error string, code int) Object {
 // 	http.Error(w, error, code)
 // 	...ABEND675: TODO...
 // }
 
 GO FUNC http.FileServer has:
-// func fileServer(root Object) Object {
+// func fileServer(root ABEND884(unrecognized type FileSystem at: tests/big/net/http/fs.go:713:22)) Object {
 // 	return http.FileServer(root)
 // }
 
@@ -1359,13 +1644,13 @@ GO FUNC http.Get has:
 // 	res := EmptyVector
 // 	map1 := EmptyArrayMap()
 // 	map1.Add(MakeKeyword("Status"), MakeString((*resp).Status))
-// 	map1.Add(MakeKeyword("StatusCode"), MakeInt((*resp).StatusCode))
+// 	map1.Add(MakeKeyword("StatusCode"), MakeInt(int((*resp).StatusCode)))
 // 	map1.Add(MakeKeyword("Proto"), MakeString((*resp).Proto))
-// 	map1.Add(MakeKeyword("ProtoMajor"), MakeInt((*resp).ProtoMajor))
-// 	map1.Add(MakeKeyword("ProtoMinor"), MakeInt((*resp).ProtoMinor))
+// 	map1.Add(MakeKeyword("ProtoMajor"), MakeInt(int((*resp).ProtoMajor)))
+// 	map1.Add(MakeKeyword("ProtoMinor"), MakeInt(int((*resp).ProtoMinor)))
 // 	map1.Add(MakeKeyword("Header"), (*resp).Header)
 // 	map1.Add(MakeKeyword("Body"), (*resp).Body)
-// 	map1.Add(MakeKeyword("ContentLength"), MakeInt((*resp).ContentLength))
+// 	map1.Add(MakeKeyword("ContentLength"), MakeInt(int((*resp).ContentLength)))
 // 	vec2 := EmptyVector
 // 	for _, elem2 := range (*resp).TransferEncoding {
 // 		vec2 = vec2.Conjoin(MakeString(elem2))
@@ -1378,12 +1663,12 @@ GO FUNC http.Get has:
 // 	map3.Add(MakeKeyword("Method"), MakeString((*(*resp).Request).Method))
 // 	map3.Add(MakeKeyword("URL"), (*(*(*resp).Request).URL))
 // 	map3.Add(MakeKeyword("Proto"), MakeString((*(*resp).Request).Proto))
-// 	map3.Add(MakeKeyword("ProtoMajor"), MakeInt((*(*resp).Request).ProtoMajor))
-// 	map3.Add(MakeKeyword("ProtoMinor"), MakeInt((*(*resp).Request).ProtoMinor))
+// 	map3.Add(MakeKeyword("ProtoMajor"), MakeInt(int((*(*resp).Request).ProtoMajor)))
+// 	map3.Add(MakeKeyword("ProtoMinor"), MakeInt(int((*(*resp).Request).ProtoMinor)))
 // 	map3.Add(MakeKeyword("Header"), (*(*resp).Request).Header)
 // 	map3.Add(MakeKeyword("Body"), (*(*resp).Request).Body)
 // 	map3.Add(MakeKeyword("GetBody"), (*(*resp).Request).GetBody)
-// 	map3.Add(MakeKeyword("ContentLength"), MakeInt((*(*resp).Request).ContentLength))
+// 	map3.Add(MakeKeyword("ContentLength"), MakeInt(int((*(*resp).Request).ContentLength)))
 // 	vec4 := EmptyVector
 // 	for _, elem4 := range (*(*resp).Request).TransferEncoding {
 // 		vec4 = vec4.Conjoin(MakeString(elem4))
@@ -1404,12 +1689,12 @@ GO FUNC http.Get has:
 // 	map1.Add(MakeKeyword("Request"), map3)
 // 	map1.Add(MakeKeyword("TLS"), (*(*resp).TLS))
 // 	res.Conjoin(map1)
-// 	res.Conjoin(string(err))
+// 	res.Conjoin(MakeString(err.Error()))
 // 	return res
 // }
 
 GO FUNC http.Handle has:
-// func handle(pattern string, handler Object) Object {
+// func handle(pattern string, handler ABEND884(unrecognized type Handler at: tests/big/net/http/server.go:2401:37)) Object {
 // 	http.Handle(pattern, handler)
 // 	...ABEND675: TODO...
 // }
@@ -1426,13 +1711,13 @@ GO FUNC http.Head has:
 // 	res := EmptyVector
 // 	map1 := EmptyArrayMap()
 // 	map1.Add(MakeKeyword("Status"), MakeString((*resp).Status))
-// 	map1.Add(MakeKeyword("StatusCode"), MakeInt((*resp).StatusCode))
+// 	map1.Add(MakeKeyword("StatusCode"), MakeInt(int((*resp).StatusCode)))
 // 	map1.Add(MakeKeyword("Proto"), MakeString((*resp).Proto))
-// 	map1.Add(MakeKeyword("ProtoMajor"), MakeInt((*resp).ProtoMajor))
-// 	map1.Add(MakeKeyword("ProtoMinor"), MakeInt((*resp).ProtoMinor))
+// 	map1.Add(MakeKeyword("ProtoMajor"), MakeInt(int((*resp).ProtoMajor)))
+// 	map1.Add(MakeKeyword("ProtoMinor"), MakeInt(int((*resp).ProtoMinor)))
 // 	map1.Add(MakeKeyword("Header"), (*resp).Header)
 // 	map1.Add(MakeKeyword("Body"), (*resp).Body)
-// 	map1.Add(MakeKeyword("ContentLength"), MakeInt((*resp).ContentLength))
+// 	map1.Add(MakeKeyword("ContentLength"), MakeInt(int((*resp).ContentLength)))
 // 	vec2 := EmptyVector
 // 	for _, elem2 := range (*resp).TransferEncoding {
 // 		vec2 = vec2.Conjoin(MakeString(elem2))
@@ -1445,12 +1730,12 @@ GO FUNC http.Head has:
 // 	map3.Add(MakeKeyword("Method"), MakeString((*(*resp).Request).Method))
 // 	map3.Add(MakeKeyword("URL"), (*(*(*resp).Request).URL))
 // 	map3.Add(MakeKeyword("Proto"), MakeString((*(*resp).Request).Proto))
-// 	map3.Add(MakeKeyword("ProtoMajor"), MakeInt((*(*resp).Request).ProtoMajor))
-// 	map3.Add(MakeKeyword("ProtoMinor"), MakeInt((*(*resp).Request).ProtoMinor))
+// 	map3.Add(MakeKeyword("ProtoMajor"), MakeInt(int((*(*resp).Request).ProtoMajor)))
+// 	map3.Add(MakeKeyword("ProtoMinor"), MakeInt(int((*(*resp).Request).ProtoMinor)))
 // 	map3.Add(MakeKeyword("Header"), (*(*resp).Request).Header)
 // 	map3.Add(MakeKeyword("Body"), (*(*resp).Request).Body)
 // 	map3.Add(MakeKeyword("GetBody"), (*(*resp).Request).GetBody)
-// 	map3.Add(MakeKeyword("ContentLength"), MakeInt((*(*resp).Request).ContentLength))
+// 	map3.Add(MakeKeyword("ContentLength"), MakeInt(int((*(*resp).Request).ContentLength)))
 // 	vec4 := EmptyVector
 // 	for _, elem4 := range (*(*resp).Request).TransferEncoding {
 // 		vec4 = vec4.Conjoin(MakeString(elem4))
@@ -1471,17 +1756,17 @@ GO FUNC http.Head has:
 // 	map1.Add(MakeKeyword("Request"), map3)
 // 	map1.Add(MakeKeyword("TLS"), (*(*resp).TLS))
 // 	res.Conjoin(map1)
-// 	res.Conjoin(string(err))
+// 	res.Conjoin(MakeString(err.Error()))
 // 	return res
 // }
 
 GO FUNC http.MaxBytesReader has:
-// func maxBytesReader(w Object, r ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/http/request.go:1056:41), n Object) Object {
+// func maxBytesReader(w ABEND884(unrecognized type ResponseWriter at: tests/big/net/http/request.go:1056:23), r ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/http/request.go:1056:41), n int64) Object {
 // 	return http.MaxBytesReader(w, r, n)
 // }
 
 GO FUNC http.NewFileTransport has:
-// func newFileTransport(fs Object) Object {
+// func newFileTransport(fs ABEND884(unrecognized type FileSystem at: tests/big/net/http/filetransport.go:30:26)) Object {
 // 	return http.NewFileTransport(fs)
 // }
 
@@ -1493,12 +1778,12 @@ GO FUNC http.NewRequest has:
 // 	map1.Add(MakeKeyword("Method"), MakeString((*res1).Method))
 // 	map1.Add(MakeKeyword("URL"), (*(*res1).URL))
 // 	map1.Add(MakeKeyword("Proto"), MakeString((*res1).Proto))
-// 	map1.Add(MakeKeyword("ProtoMajor"), MakeInt((*res1).ProtoMajor))
-// 	map1.Add(MakeKeyword("ProtoMinor"), MakeInt((*res1).ProtoMinor))
+// 	map1.Add(MakeKeyword("ProtoMajor"), MakeInt(int((*res1).ProtoMajor)))
+// 	map1.Add(MakeKeyword("ProtoMinor"), MakeInt(int((*res1).ProtoMinor)))
 // 	map1.Add(MakeKeyword("Header"), (*res1).Header)
 // 	map1.Add(MakeKeyword("Body"), (*res1).Body)
 // 	map1.Add(MakeKeyword("GetBody"), (*res1).GetBody)
-// 	map1.Add(MakeKeyword("ContentLength"), MakeInt((*res1).ContentLength))
+// 	map1.Add(MakeKeyword("ContentLength"), MakeInt(int((*res1).ContentLength)))
 // 	vec2 := EmptyVector
 // 	for _, elem2 := range (*res1).TransferEncoding {
 // 		vec2 = vec2.Conjoin(MakeString(elem2))
@@ -1516,13 +1801,13 @@ GO FUNC http.NewRequest has:
 // 	map1.Add(MakeKeyword("Cancel"), (*res1).Cancel)
 // 	map3 := EmptyArrayMap()
 // 	map3.Add(MakeKeyword("Status"), MakeString((*(*res1).Response).Status))
-// 	map3.Add(MakeKeyword("StatusCode"), MakeInt((*(*res1).Response).StatusCode))
+// 	map3.Add(MakeKeyword("StatusCode"), MakeInt(int((*(*res1).Response).StatusCode)))
 // 	map3.Add(MakeKeyword("Proto"), MakeString((*(*res1).Response).Proto))
-// 	map3.Add(MakeKeyword("ProtoMajor"), MakeInt((*(*res1).Response).ProtoMajor))
-// 	map3.Add(MakeKeyword("ProtoMinor"), MakeInt((*(*res1).Response).ProtoMinor))
+// 	map3.Add(MakeKeyword("ProtoMajor"), MakeInt(int((*(*res1).Response).ProtoMajor)))
+// 	map3.Add(MakeKeyword("ProtoMinor"), MakeInt(int((*(*res1).Response).ProtoMinor)))
 // 	map3.Add(MakeKeyword("Header"), (*(*res1).Response).Header)
 // 	map3.Add(MakeKeyword("Body"), (*(*res1).Response).Body)
-// 	map3.Add(MakeKeyword("ContentLength"), MakeInt((*(*res1).Response).ContentLength))
+// 	map3.Add(MakeKeyword("ContentLength"), MakeInt(int((*(*res1).Response).ContentLength)))
 // 	vec4 := EmptyVector
 // 	for _, elem4 := range (*(*res1).Response).TransferEncoding {
 // 		vec4 = vec4.Conjoin(MakeString(elem4))
@@ -1536,7 +1821,7 @@ GO FUNC http.NewRequest has:
 // 	map1.Add(MakeKeyword("Response"), map3)
 // 	map1.Add(MakeKeyword("ctx"), (*res1).ctx)
 // 	res.Conjoin(map1)
-// 	res.Conjoin(string(res2))
+// 	res.Conjoin(MakeString(res2.Error()))
 // 	return res
 // }
 
@@ -1551,7 +1836,7 @@ GO FUNC http.NewServeMux has:
 // }
 
 GO FUNC http.NotFound has:
-// func notFound(w Object, r ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/http/server.go:1981:35)) Object {
+// func notFound(w ABEND884(unrecognized type ResponseWriter at: tests/big/net/http/server.go:1981:17), r ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/http/server.go:1981:35)) Object {
 // 	http.NotFound(w, r)
 // 	...ABEND675: TODO...
 // }
@@ -1565,8 +1850,8 @@ GO FUNC http.ParseHTTPVersion has:
 func parseHTTPVersion(vers string) Object {
 	major, minor, ok := http.ParseHTTPVersion(vers)
 	res := EmptyVector
-	res.Conjoin(MakeInt(major))
-	res.Conjoin(MakeInt(minor))
+	res.Conjoin(MakeInt(int(major)))
+	res.Conjoin(MakeInt(int(minor)))
 	res.Conjoin(MakeBool(ok))
 	return res
 }
@@ -1576,7 +1861,7 @@ GO FUNC http.ParseTime has:
 // 	t, err := http.ParseTime(text)
 // 	res := EmptyVector
 // 	res.Conjoin(t)
-// 	res.Conjoin(string(err))
+// 	res.Conjoin(MakeString(err.Error()))
 // 	return res
 // }
 
@@ -1586,13 +1871,13 @@ GO FUNC http.Post has:
 // 	res := EmptyVector
 // 	map1 := EmptyArrayMap()
 // 	map1.Add(MakeKeyword("Status"), MakeString((*resp).Status))
-// 	map1.Add(MakeKeyword("StatusCode"), MakeInt((*resp).StatusCode))
+// 	map1.Add(MakeKeyword("StatusCode"), MakeInt(int((*resp).StatusCode)))
 // 	map1.Add(MakeKeyword("Proto"), MakeString((*resp).Proto))
-// 	map1.Add(MakeKeyword("ProtoMajor"), MakeInt((*resp).ProtoMajor))
-// 	map1.Add(MakeKeyword("ProtoMinor"), MakeInt((*resp).ProtoMinor))
+// 	map1.Add(MakeKeyword("ProtoMajor"), MakeInt(int((*resp).ProtoMajor)))
+// 	map1.Add(MakeKeyword("ProtoMinor"), MakeInt(int((*resp).ProtoMinor)))
 // 	map1.Add(MakeKeyword("Header"), (*resp).Header)
 // 	map1.Add(MakeKeyword("Body"), (*resp).Body)
-// 	map1.Add(MakeKeyword("ContentLength"), MakeInt((*resp).ContentLength))
+// 	map1.Add(MakeKeyword("ContentLength"), MakeInt(int((*resp).ContentLength)))
 // 	vec2 := EmptyVector
 // 	for _, elem2 := range (*resp).TransferEncoding {
 // 		vec2 = vec2.Conjoin(MakeString(elem2))
@@ -1605,12 +1890,12 @@ GO FUNC http.Post has:
 // 	map3.Add(MakeKeyword("Method"), MakeString((*(*resp).Request).Method))
 // 	map3.Add(MakeKeyword("URL"), (*(*(*resp).Request).URL))
 // 	map3.Add(MakeKeyword("Proto"), MakeString((*(*resp).Request).Proto))
-// 	map3.Add(MakeKeyword("ProtoMajor"), MakeInt((*(*resp).Request).ProtoMajor))
-// 	map3.Add(MakeKeyword("ProtoMinor"), MakeInt((*(*resp).Request).ProtoMinor))
+// 	map3.Add(MakeKeyword("ProtoMajor"), MakeInt(int((*(*resp).Request).ProtoMajor)))
+// 	map3.Add(MakeKeyword("ProtoMinor"), MakeInt(int((*(*resp).Request).ProtoMinor)))
 // 	map3.Add(MakeKeyword("Header"), (*(*resp).Request).Header)
 // 	map3.Add(MakeKeyword("Body"), (*(*resp).Request).Body)
 // 	map3.Add(MakeKeyword("GetBody"), (*(*resp).Request).GetBody)
-// 	map3.Add(MakeKeyword("ContentLength"), MakeInt((*(*resp).Request).ContentLength))
+// 	map3.Add(MakeKeyword("ContentLength"), MakeInt(int((*(*resp).Request).ContentLength)))
 // 	vec4 := EmptyVector
 // 	for _, elem4 := range (*(*resp).Request).TransferEncoding {
 // 		vec4 = vec4.Conjoin(MakeString(elem4))
@@ -1631,7 +1916,7 @@ GO FUNC http.Post has:
 // 	map1.Add(MakeKeyword("Request"), map3)
 // 	map1.Add(MakeKeyword("TLS"), (*(*resp).TLS))
 // 	res.Conjoin(map1)
-// 	res.Conjoin(string(err))
+// 	res.Conjoin(MakeString(err.Error()))
 // 	return res
 // }
 
@@ -1641,13 +1926,13 @@ GO FUNC http.PostForm has:
 // 	res := EmptyVector
 // 	map1 := EmptyArrayMap()
 // 	map1.Add(MakeKeyword("Status"), MakeString((*resp).Status))
-// 	map1.Add(MakeKeyword("StatusCode"), MakeInt((*resp).StatusCode))
+// 	map1.Add(MakeKeyword("StatusCode"), MakeInt(int((*resp).StatusCode)))
 // 	map1.Add(MakeKeyword("Proto"), MakeString((*resp).Proto))
-// 	map1.Add(MakeKeyword("ProtoMajor"), MakeInt((*resp).ProtoMajor))
-// 	map1.Add(MakeKeyword("ProtoMinor"), MakeInt((*resp).ProtoMinor))
+// 	map1.Add(MakeKeyword("ProtoMajor"), MakeInt(int((*resp).ProtoMajor)))
+// 	map1.Add(MakeKeyword("ProtoMinor"), MakeInt(int((*resp).ProtoMinor)))
 // 	map1.Add(MakeKeyword("Header"), (*resp).Header)
 // 	map1.Add(MakeKeyword("Body"), (*resp).Body)
-// 	map1.Add(MakeKeyword("ContentLength"), MakeInt((*resp).ContentLength))
+// 	map1.Add(MakeKeyword("ContentLength"), MakeInt(int((*resp).ContentLength)))
 // 	vec2 := EmptyVector
 // 	for _, elem2 := range (*resp).TransferEncoding {
 // 		vec2 = vec2.Conjoin(MakeString(elem2))
@@ -1660,12 +1945,12 @@ GO FUNC http.PostForm has:
 // 	map3.Add(MakeKeyword("Method"), MakeString((*(*resp).Request).Method))
 // 	map3.Add(MakeKeyword("URL"), (*(*(*resp).Request).URL))
 // 	map3.Add(MakeKeyword("Proto"), MakeString((*(*resp).Request).Proto))
-// 	map3.Add(MakeKeyword("ProtoMajor"), MakeInt((*(*resp).Request).ProtoMajor))
-// 	map3.Add(MakeKeyword("ProtoMinor"), MakeInt((*(*resp).Request).ProtoMinor))
+// 	map3.Add(MakeKeyword("ProtoMajor"), MakeInt(int((*(*resp).Request).ProtoMajor)))
+// 	map3.Add(MakeKeyword("ProtoMinor"), MakeInt(int((*(*resp).Request).ProtoMinor)))
 // 	map3.Add(MakeKeyword("Header"), (*(*resp).Request).Header)
 // 	map3.Add(MakeKeyword("Body"), (*(*resp).Request).Body)
 // 	map3.Add(MakeKeyword("GetBody"), (*(*resp).Request).GetBody)
-// 	map3.Add(MakeKeyword("ContentLength"), MakeInt((*(*resp).Request).ContentLength))
+// 	map3.Add(MakeKeyword("ContentLength"), MakeInt(int((*(*resp).Request).ContentLength)))
 // 	vec4 := EmptyVector
 // 	for _, elem4 := range (*(*resp).Request).TransferEncoding {
 // 		vec4 = vec4.Conjoin(MakeString(elem4))
@@ -1686,7 +1971,7 @@ GO FUNC http.PostForm has:
 // 	map1.Add(MakeKeyword("Request"), map3)
 // 	map1.Add(MakeKeyword("TLS"), (*(*resp).TLS))
 // 	res.Conjoin(map1)
-// 	res.Conjoin(string(err))
+// 	res.Conjoin(MakeString(err.Error()))
 // 	return res
 // }
 
@@ -1695,7 +1980,7 @@ GO FUNC http.ProxyFromEnvironment has:
 // 	res1, res2 := http.ProxyFromEnvironment(req)
 // 	res := EmptyVector
 // 	res.Conjoin((*res1))
-// 	res.Conjoin(string(res2))
+// 	res.Conjoin(MakeString(res2.Error()))
 // 	return res
 // }
 
@@ -1712,12 +1997,12 @@ GO FUNC http.ReadRequest has:
 // 	map1.Add(MakeKeyword("Method"), MakeString((*res1).Method))
 // 	map1.Add(MakeKeyword("URL"), (*(*res1).URL))
 // 	map1.Add(MakeKeyword("Proto"), MakeString((*res1).Proto))
-// 	map1.Add(MakeKeyword("ProtoMajor"), MakeInt((*res1).ProtoMajor))
-// 	map1.Add(MakeKeyword("ProtoMinor"), MakeInt((*res1).ProtoMinor))
+// 	map1.Add(MakeKeyword("ProtoMajor"), MakeInt(int((*res1).ProtoMajor)))
+// 	map1.Add(MakeKeyword("ProtoMinor"), MakeInt(int((*res1).ProtoMinor)))
 // 	map1.Add(MakeKeyword("Header"), (*res1).Header)
 // 	map1.Add(MakeKeyword("Body"), (*res1).Body)
 // 	map1.Add(MakeKeyword("GetBody"), (*res1).GetBody)
-// 	map1.Add(MakeKeyword("ContentLength"), MakeInt((*res1).ContentLength))
+// 	map1.Add(MakeKeyword("ContentLength"), MakeInt(int((*res1).ContentLength)))
 // 	vec2 := EmptyVector
 // 	for _, elem2 := range (*res1).TransferEncoding {
 // 		vec2 = vec2.Conjoin(MakeString(elem2))
@@ -1735,13 +2020,13 @@ GO FUNC http.ReadRequest has:
 // 	map1.Add(MakeKeyword("Cancel"), (*res1).Cancel)
 // 	map3 := EmptyArrayMap()
 // 	map3.Add(MakeKeyword("Status"), MakeString((*(*res1).Response).Status))
-// 	map3.Add(MakeKeyword("StatusCode"), MakeInt((*(*res1).Response).StatusCode))
+// 	map3.Add(MakeKeyword("StatusCode"), MakeInt(int((*(*res1).Response).StatusCode)))
 // 	map3.Add(MakeKeyword("Proto"), MakeString((*(*res1).Response).Proto))
-// 	map3.Add(MakeKeyword("ProtoMajor"), MakeInt((*(*res1).Response).ProtoMajor))
-// 	map3.Add(MakeKeyword("ProtoMinor"), MakeInt((*(*res1).Response).ProtoMinor))
+// 	map3.Add(MakeKeyword("ProtoMajor"), MakeInt(int((*(*res1).Response).ProtoMajor)))
+// 	map3.Add(MakeKeyword("ProtoMinor"), MakeInt(int((*(*res1).Response).ProtoMinor)))
 // 	map3.Add(MakeKeyword("Header"), (*(*res1).Response).Header)
 // 	map3.Add(MakeKeyword("Body"), (*(*res1).Response).Body)
-// 	map3.Add(MakeKeyword("ContentLength"), MakeInt((*(*res1).Response).ContentLength))
+// 	map3.Add(MakeKeyword("ContentLength"), MakeInt(int((*(*res1).Response).ContentLength)))
 // 	vec4 := EmptyVector
 // 	for _, elem4 := range (*(*res1).Response).TransferEncoding {
 // 		vec4 = vec4.Conjoin(MakeString(elem4))
@@ -1755,7 +2040,7 @@ GO FUNC http.ReadRequest has:
 // 	map1.Add(MakeKeyword("Response"), map3)
 // 	map1.Add(MakeKeyword("ctx"), (*res1).ctx)
 // 	res.Conjoin(map1)
-// 	res.Conjoin(string(res2))
+// 	res.Conjoin(MakeString(res2.Error()))
 // 	return res
 // }
 
@@ -1765,13 +2050,13 @@ GO FUNC http.ReadResponse has:
 // 	res := EmptyVector
 // 	map1 := EmptyArrayMap()
 // 	map1.Add(MakeKeyword("Status"), MakeString((*res1).Status))
-// 	map1.Add(MakeKeyword("StatusCode"), MakeInt((*res1).StatusCode))
+// 	map1.Add(MakeKeyword("StatusCode"), MakeInt(int((*res1).StatusCode)))
 // 	map1.Add(MakeKeyword("Proto"), MakeString((*res1).Proto))
-// 	map1.Add(MakeKeyword("ProtoMajor"), MakeInt((*res1).ProtoMajor))
-// 	map1.Add(MakeKeyword("ProtoMinor"), MakeInt((*res1).ProtoMinor))
+// 	map1.Add(MakeKeyword("ProtoMajor"), MakeInt(int((*res1).ProtoMajor)))
+// 	map1.Add(MakeKeyword("ProtoMinor"), MakeInt(int((*res1).ProtoMinor)))
 // 	map1.Add(MakeKeyword("Header"), (*res1).Header)
 // 	map1.Add(MakeKeyword("Body"), (*res1).Body)
-// 	map1.Add(MakeKeyword("ContentLength"), MakeInt((*res1).ContentLength))
+// 	map1.Add(MakeKeyword("ContentLength"), MakeInt(int((*res1).ContentLength)))
 // 	vec2 := EmptyVector
 // 	for _, elem2 := range (*res1).TransferEncoding {
 // 		vec2 = vec2.Conjoin(MakeString(elem2))
@@ -1784,12 +2069,12 @@ GO FUNC http.ReadResponse has:
 // 	map3.Add(MakeKeyword("Method"), MakeString((*(*res1).Request).Method))
 // 	map3.Add(MakeKeyword("URL"), (*(*(*res1).Request).URL))
 // 	map3.Add(MakeKeyword("Proto"), MakeString((*(*res1).Request).Proto))
-// 	map3.Add(MakeKeyword("ProtoMajor"), MakeInt((*(*res1).Request).ProtoMajor))
-// 	map3.Add(MakeKeyword("ProtoMinor"), MakeInt((*(*res1).Request).ProtoMinor))
+// 	map3.Add(MakeKeyword("ProtoMajor"), MakeInt(int((*(*res1).Request).ProtoMajor)))
+// 	map3.Add(MakeKeyword("ProtoMinor"), MakeInt(int((*(*res1).Request).ProtoMinor)))
 // 	map3.Add(MakeKeyword("Header"), (*(*res1).Request).Header)
 // 	map3.Add(MakeKeyword("Body"), (*(*res1).Request).Body)
 // 	map3.Add(MakeKeyword("GetBody"), (*(*res1).Request).GetBody)
-// 	map3.Add(MakeKeyword("ContentLength"), MakeInt((*(*res1).Request).ContentLength))
+// 	map3.Add(MakeKeyword("ContentLength"), MakeInt(int((*(*res1).Request).ContentLength)))
 // 	vec4 := EmptyVector
 // 	for _, elem4 := range (*(*res1).Request).TransferEncoding {
 // 		vec4 = vec4.Conjoin(MakeString(elem4))
@@ -1810,12 +2095,12 @@ GO FUNC http.ReadResponse has:
 // 	map1.Add(MakeKeyword("Request"), map3)
 // 	map1.Add(MakeKeyword("TLS"), (*(*res1).TLS))
 // 	res.Conjoin(map1)
-// 	res.Conjoin(string(res2))
+// 	res.Conjoin(MakeString(res2.Error()))
 // 	return res
 // }
 
 GO FUNC http.Redirect has:
-// func redirect(w Object, r ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/http/server.go:2020:35), url string, code int) Object {
+// func redirect(w ABEND884(unrecognized type ResponseWriter at: tests/big/net/http/server.go:2020:17), r ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/http/server.go:2020:35), url string, code int) Object {
 // 	http.Redirect(w, r, url, code)
 // 	...ABEND675: TODO...
 // }
@@ -1826,30 +2111,30 @@ GO FUNC http.RedirectHandler has:
 // }
 
 GO FUNC http.ServeContent has:
-// func serveContent(w Object, req ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/http/fs.go:151:41), name string, modtime ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/http/fs.go:151:72), content ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/http/fs.go:151:91)) Object {
+// func serveContent(w ABEND884(unrecognized type ResponseWriter at: tests/big/net/http/fs.go:151:21), req ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/http/fs.go:151:41), name string, modtime ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/http/fs.go:151:72), content ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/http/fs.go:151:91)) Object {
 // 	http.ServeContent(w, req, name, modtime, content)
 // 	...ABEND675: TODO...
 // }
 
 GO FUNC http.ServeFile has:
-// func serveFile(w Object, r ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/http/fs.go:670:36), name string) Object {
+// func serveFile(w ABEND884(unrecognized type ResponseWriter at: tests/big/net/http/fs.go:670:18), r ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/http/fs.go:670:36), name string) Object {
 // 	http.ServeFile(w, r, name)
 // 	...ABEND675: TODO...
 // }
 
 GO FUNC http.SetCookie has:
-// func setCookie(w Object, cookie ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/http/cookie.go:157:41)) Object {
+// func setCookie(w ABEND884(unrecognized type ResponseWriter at: tests/big/net/http/cookie.go:157:18), cookie ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/http/cookie.go:157:41)) Object {
 // 	http.SetCookie(w, cookie)
 // 	...ABEND675: TODO...
 // }
 
 GO FUNC http.StripPrefix has:
-// func stripPrefix(prefix string, h Object) Object {
+// func stripPrefix(prefix string, h ABEND884(unrecognized type Handler at: tests/big/net/http/server.go:1992:35)) Object {
 // 	return http.StripPrefix(prefix, h)
 // }
 
 GO FUNC http.TimeoutHandler has:
-// func timeoutHandler(h Object, dt ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/http/server.go:3106:35), msg string) Object {
+// func timeoutHandler(h ABEND884(unrecognized type Handler at: tests/big/net/http/server.go:3106:23), dt ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/http/server.go:3106:35), msg string) Object {
 // 	return http.TimeoutHandler(h, dt, msg)
 // }
 
@@ -1857,7 +2142,7 @@ GO FUNC httptest.NewRecorder has:
 // func newRecorder() Object {
 // 	res := httptest.NewRecorder()
 // 	map1 := EmptyArrayMap()
-// 	map1.Add(MakeKeyword("Code"), MakeInt((*res).Code))
+// 	map1.Add(MakeKeyword("Code"), MakeInt(int((*res).Code)))
 // 	map1.Add(MakeKeyword("HeaderMap"), (*res).HeaderMap)
 // 	map1.Add(MakeKeyword("Body"), (*(*res).Body))
 // 	map1.Add(MakeKeyword("Flushed"), MakeBool((*res).Flushed))
@@ -1952,41 +2237,41 @@ GO FUNC httptrace.WithClientTrace has:
 // }
 
 GO FUNC httputil.DumpRequest has:
-// func dumpRequest(req ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/http/httputil/dump.go:191:22), body Object) Object {
+// func dumpRequest(req ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/http/httputil/dump.go:191:22), body bool) Object {
 // 	res1, res2 := httputil.DumpRequest(req, body)
 // 	res := EmptyVector
 // 	vec1 := EmptyVector
 // 	for _, elem1 := range res1 {
-// 		vec1 = vec1.Conjoin(MakeInt(elem1))
+// 		vec1 = vec1.Conjoin(MakeInt(int(elem1)))
 // 	}
 // 	res.Conjoin(vec1)
-// 	res.Conjoin(string(res2))
+// 	res.Conjoin(MakeString(res2.Error()))
 // 	return res
 // }
 
 GO FUNC httputil.DumpRequestOut has:
-// func dumpRequestOut(req ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/http/httputil/dump.go:66:25), body Object) Object {
+// func dumpRequestOut(req ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/http/httputil/dump.go:66:25), body bool) Object {
 // 	res1, res2 := httputil.DumpRequestOut(req, body)
 // 	res := EmptyVector
 // 	vec1 := EmptyVector
 // 	for _, elem1 := range res1 {
-// 		vec1 = vec1.Conjoin(MakeInt(elem1))
+// 		vec1 = vec1.Conjoin(MakeInt(int(elem1)))
 // 	}
 // 	res.Conjoin(vec1)
-// 	res.Conjoin(string(res2))
+// 	res.Conjoin(MakeString(res2.Error()))
 // 	return res
 // }
 
 GO FUNC httputil.DumpResponse has:
-// func dumpResponse(resp ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/http/httputil/dump.go:281:24), body Object) Object {
+// func dumpResponse(resp ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/http/httputil/dump.go:281:24), body bool) Object {
 // 	res1, res2 := httputil.DumpResponse(resp, body)
 // 	res := EmptyVector
 // 	vec1 := EmptyVector
 // 	for _, elem1 := range res1 {
-// 		vec1 = vec1.Conjoin(MakeInt(elem1))
+// 		vec1 = vec1.Conjoin(MakeInt(int(elem1)))
 // 	}
 // 	res.Conjoin(vec1)
-// 	res.Conjoin(string(res2))
+// 	res.Conjoin(MakeString(res2.Error()))
 // 	return res
 // }
 
@@ -2007,11 +2292,11 @@ GO FUNC httputil.NewClientConn has:
 // 	map1.Add(MakeKeyword("mu"), (*res).mu)
 // 	map1.Add(MakeKeyword("c"), (*res).c)
 // 	map1.Add(MakeKeyword("r"), (*(*res).r))
-// 	map1.Add(MakeKeyword("re"), string((*res).re))
-// 	map1.Add(MakeKeyword("we"), string((*res).we))
+// 	map1.Add(MakeKeyword("re"), MakeString((*res).re.Error()))
+// 	map1.Add(MakeKeyword("we"), MakeString((*res).we.Error()))
 // 	map1.Add(MakeKeyword("lastbody"), (*res).lastbody)
-// 	map1.Add(MakeKeyword("nread"), MakeInt((*res).nread))
-// 	map1.Add(MakeKeyword("nwritten"), MakeInt((*res).nwritten))
+// 	map1.Add(MakeKeyword("nread"), MakeInt(int((*res).nread)))
+// 	map1.Add(MakeKeyword("nwritten"), MakeInt(int((*res).nwritten)))
 // 	map1.Add(MakeKeyword("pipereq"), (*res).pipereq)
 // 	map1.Add(MakeKeyword("pipe"), (*res).pipe)
 // 	map1.Add(MakeKeyword("writeReq"), (*res).writeReq)
@@ -2025,11 +2310,11 @@ GO FUNC httputil.NewProxyClientConn has:
 // 	map1.Add(MakeKeyword("mu"), (*res).mu)
 // 	map1.Add(MakeKeyword("c"), (*res).c)
 // 	map1.Add(MakeKeyword("r"), (*(*res).r))
-// 	map1.Add(MakeKeyword("re"), string((*res).re))
-// 	map1.Add(MakeKeyword("we"), string((*res).we))
+// 	map1.Add(MakeKeyword("re"), MakeString((*res).re.Error()))
+// 	map1.Add(MakeKeyword("we"), MakeString((*res).we.Error()))
 // 	map1.Add(MakeKeyword("lastbody"), (*res).lastbody)
-// 	map1.Add(MakeKeyword("nread"), MakeInt((*res).nread))
-// 	map1.Add(MakeKeyword("nwritten"), MakeInt((*res).nwritten))
+// 	map1.Add(MakeKeyword("nread"), MakeInt(int((*res).nread)))
+// 	map1.Add(MakeKeyword("nwritten"), MakeInt(int((*res).nwritten)))
 // 	map1.Add(MakeKeyword("pipereq"), (*res).pipereq)
 // 	map1.Add(MakeKeyword("pipe"), (*res).pipe)
 // 	map1.Add(MakeKeyword("writeReq"), (*res).writeReq)
@@ -2043,11 +2328,11 @@ GO FUNC httputil.NewServerConn has:
 // 	map1.Add(MakeKeyword("mu"), (*res).mu)
 // 	map1.Add(MakeKeyword("c"), (*res).c)
 // 	map1.Add(MakeKeyword("r"), (*(*res).r))
-// 	map1.Add(MakeKeyword("re"), string((*res).re))
-// 	map1.Add(MakeKeyword("we"), string((*res).we))
+// 	map1.Add(MakeKeyword("re"), MakeString((*res).re.Error()))
+// 	map1.Add(MakeKeyword("we"), MakeString((*res).we.Error()))
 // 	map1.Add(MakeKeyword("lastbody"), (*res).lastbody)
-// 	map1.Add(MakeKeyword("nread"), MakeInt((*res).nread))
-// 	map1.Add(MakeKeyword("nwritten"), MakeInt((*res).nwritten))
+// 	map1.Add(MakeKeyword("nread"), MakeInt(int((*res).nread)))
+// 	map1.Add(MakeKeyword("nwritten"), MakeInt(int((*res).nwritten)))
 // 	map1.Add(MakeKeyword("pipereq"), (*res).pipereq)
 // 	map1.Add(MakeKeyword("pipe"), (*res).pipe)
 // 	return map1
@@ -2072,7 +2357,7 @@ GO FUNC jsonrpc.Dial has:
 // 	res1, res2 := jsonrpc.Dial(network, address)
 // 	res := EmptyVector
 // 	res.Conjoin((*res1))
-// 	res.Conjoin(string(res2))
+// 	res.Conjoin(MakeString(res2.Error()))
 // 	return res
 // }
 
@@ -2105,7 +2390,7 @@ func parseAddress(address string) Object {
 	map1.Add(MakeKeyword("Name"), MakeString((*res1).Name))
 	map1.Add(MakeKeyword("Address"), MakeString((*res1).Address))
 	res.Conjoin(map1)
-	res.Conjoin(string(res2))
+	res.Conjoin(MakeString(res2.Error()))
 	return res
 }
 
@@ -2121,7 +2406,7 @@ func parseAddressList(list string) Object {
 		vec1 = vec1.Conjoin(map2)
 	}
 	res.Conjoin(vec1)
-	res.Conjoin(string(res2))
+	res.Conjoin(MakeString(res2.Error()))
 	return res
 }
 
@@ -2130,7 +2415,7 @@ GO FUNC mail.ParseDate has:
 // 	res1, res2 := mail.ParseDate(date)
 // 	res := EmptyVector
 // 	res.Conjoin(res1)
-// 	res.Conjoin(string(res2))
+// 	res.Conjoin(MakeString(res2.Error()))
 // 	return res
 // }
 
@@ -2142,7 +2427,7 @@ GO FUNC mail.ReadMessage has:
 // 	map1.Add(MakeKeyword("Header"), (*msg).Header)
 // 	map1.Add(MakeKeyword("Body"), (*msg).Body)
 // 	res.Conjoin(map1)
-// 	res.Conjoin(string(err))
+// 	res.Conjoin(MakeString(err.Error()))
 // 	return res
 // }
 
@@ -2151,7 +2436,7 @@ func cIDRMask(ones int, bits int) Object {
 	res := net.CIDRMask(ones, bits)
 	vec1 := EmptyVector
 	for _, elem1 := range res {
-		vec1 = vec1.Conjoin(MakeInt(elem1))
+		vec1 = vec1.Conjoin(MakeInt(int(elem1)))
 	}
 	return vec1
 }
@@ -2161,7 +2446,7 @@ GO FUNC net.Dial has:
 // 	res1, res2 := net.Dial(network, address)
 // 	res := EmptyVector
 // 	res.Conjoin(res1)
-// 	res.Conjoin(string(res2))
+// 	res.Conjoin(MakeString(res2.Error()))
 // 	return res
 // }
 
@@ -2171,7 +2456,7 @@ GO FUNC net.DialIP has:
 // 	res := EmptyVector
 // 	map1 := EmptyArrayMap()
 // 	res.Conjoin(map1)
-// 	res.Conjoin(string(res2))
+// 	res.Conjoin(MakeString(res2.Error()))
 // 	return res
 // }
 
@@ -2181,7 +2466,7 @@ GO FUNC net.DialTCP has:
 // 	res := EmptyVector
 // 	map1 := EmptyArrayMap()
 // 	res.Conjoin(map1)
-// 	res.Conjoin(string(res2))
+// 	res.Conjoin(MakeString(res2.Error()))
 // 	return res
 // }
 
@@ -2190,7 +2475,7 @@ GO FUNC net.DialTimeout has:
 // 	res1, res2 := net.DialTimeout(network, address, timeout)
 // 	res := EmptyVector
 // 	res.Conjoin(res1)
-// 	res.Conjoin(string(res2))
+// 	res.Conjoin(MakeString(res2.Error()))
 // 	return res
 // }
 
@@ -2200,7 +2485,7 @@ GO FUNC net.DialUDP has:
 // 	res := EmptyVector
 // 	map1 := EmptyArrayMap()
 // 	res.Conjoin(map1)
-// 	res.Conjoin(string(res2))
+// 	res.Conjoin(MakeString(res2.Error()))
 // 	return res
 // }
 
@@ -2210,7 +2495,7 @@ GO FUNC net.DialUnix has:
 // 	res := EmptyVector
 // 	map1 := EmptyArrayMap()
 // 	res.Conjoin(map1)
-// 	res.Conjoin(string(res2))
+// 	res.Conjoin(MakeString(res2.Error()))
 // 	return res
 // }
 
@@ -2219,7 +2504,7 @@ GO FUNC net.FileConn has:
 // 	c, err := net.FileConn(f)
 // 	res := EmptyVector
 // 	res.Conjoin(c)
-// 	res.Conjoin(string(err))
+// 	res.Conjoin(MakeString(err.Error()))
 // 	return res
 // }
 
@@ -2228,7 +2513,7 @@ GO FUNC net.FileListener has:
 // 	ln, err := net.FileListener(f)
 // 	res := EmptyVector
 // 	res.Conjoin(ln)
-// 	res.Conjoin(string(err))
+// 	res.Conjoin(MakeString(err.Error()))
 // 	return res
 // }
 
@@ -2237,26 +2522,26 @@ GO FUNC net.FilePacketConn has:
 // 	c, err := net.FilePacketConn(f)
 // 	res := EmptyVector
 // 	res.Conjoin(c)
-// 	res.Conjoin(string(err))
+// 	res.Conjoin(MakeString(err.Error()))
 // 	return res
 // }
 
 GO FUNC net.IPv4 has:
-func iPv4(a Object, b Object, c Object, d Object) Object {
+func iPv4(a byte, b byte, c byte, d byte) Object {
 	res := net.IPv4(a, b, c, d)
 	vec1 := EmptyVector
 	for _, elem1 := range res {
-		vec1 = vec1.Conjoin(MakeInt(elem1))
+		vec1 = vec1.Conjoin(MakeInt(int(elem1)))
 	}
 	return vec1
 }
 
 GO FUNC net.IPv4Mask has:
-func iPv4Mask(a Object, b Object, c Object, d Object) Object {
+func iPv4Mask(a byte, b byte, c byte, d byte) Object {
 	res := net.IPv4Mask(a, b, c, d)
 	vec1 := EmptyVector
 	for _, elem1 := range res {
-		vec1 = vec1.Conjoin(MakeInt(elem1))
+		vec1 = vec1.Conjoin(MakeInt(int(elem1)))
 	}
 	return vec1
 }
@@ -2270,7 +2555,7 @@ GO FUNC net.InterfaceAddrs has:
 // 		vec1 = vec1.Conjoin(elem1)
 // 	}
 // 	res.Conjoin(vec1)
-// 	res.Conjoin(string(res2))
+// 	res.Conjoin(MakeString(res2.Error()))
 // 	return res
 // }
 
@@ -2279,17 +2564,17 @@ func interfaceByIndex(index int) Object {
 	res1, res2 := net.InterfaceByIndex(index)
 	res := EmptyVector
 	map1 := EmptyArrayMap()
-	map1.Add(MakeKeyword("Index"), MakeInt((*res1).Index))
-	map1.Add(MakeKeyword("MTU"), MakeInt((*res1).MTU))
+	map1.Add(MakeKeyword("Index"), MakeInt(int((*res1).Index)))
+	map1.Add(MakeKeyword("MTU"), MakeInt(int((*res1).MTU)))
 	map1.Add(MakeKeyword("Name"), MakeString((*res1).Name))
 	vec2 := EmptyVector
 	for _, elem2 := range (*res1).HardwareAddr {
-		vec2 = vec2.Conjoin(MakeInt(elem2))
+		vec2 = vec2.Conjoin(MakeInt(int(elem2)))
 	}
 	map1.Add(MakeKeyword("HardwareAddr"), vec2)
-	map1.Add(MakeKeyword("Flags"), MakeInt((*res1).Flags))
+	map1.Add(MakeKeyword("Flags"), MakeInt(int((*res1).Flags)))
 	res.Conjoin(map1)
-	res.Conjoin(string(res2))
+	res.Conjoin(MakeString(res2.Error()))
 	return res
 }
 
@@ -2298,17 +2583,17 @@ func interfaceByName(name string) Object {
 	res1, res2 := net.InterfaceByName(name)
 	res := EmptyVector
 	map1 := EmptyArrayMap()
-	map1.Add(MakeKeyword("Index"), MakeInt((*res1).Index))
-	map1.Add(MakeKeyword("MTU"), MakeInt((*res1).MTU))
+	map1.Add(MakeKeyword("Index"), MakeInt(int((*res1).Index)))
+	map1.Add(MakeKeyword("MTU"), MakeInt(int((*res1).MTU)))
 	map1.Add(MakeKeyword("Name"), MakeString((*res1).Name))
 	vec2 := EmptyVector
 	for _, elem2 := range (*res1).HardwareAddr {
-		vec2 = vec2.Conjoin(MakeInt(elem2))
+		vec2 = vec2.Conjoin(MakeInt(int(elem2)))
 	}
 	map1.Add(MakeKeyword("HardwareAddr"), vec2)
-	map1.Add(MakeKeyword("Flags"), MakeInt((*res1).Flags))
+	map1.Add(MakeKeyword("Flags"), MakeInt(int((*res1).Flags)))
 	res.Conjoin(map1)
-	res.Conjoin(string(res2))
+	res.Conjoin(MakeString(res2.Error()))
 	return res
 }
 
@@ -2319,19 +2604,19 @@ func interfaces() Object {
 	vec1 := EmptyVector
 	for _, elem1 := range res1 {
 		map2 := EmptyArrayMap()
-		map2.Add(MakeKeyword("Index"), MakeInt(elem1.Index))
-		map2.Add(MakeKeyword("MTU"), MakeInt(elem1.MTU))
+		map2.Add(MakeKeyword("Index"), MakeInt(int(elem1.Index)))
+		map2.Add(MakeKeyword("MTU"), MakeInt(int(elem1.MTU)))
 		map2.Add(MakeKeyword("Name"), MakeString(elem1.Name))
 		vec3 := EmptyVector
 		for _, elem3 := range elem1.HardwareAddr {
-			vec3 = vec3.Conjoin(MakeInt(elem3))
+			vec3 = vec3.Conjoin(MakeInt(int(elem3)))
 		}
 		map2.Add(MakeKeyword("HardwareAddr"), vec3)
-		map2.Add(MakeKeyword("Flags"), MakeInt(elem1.Flags))
+		map2.Add(MakeKeyword("Flags"), MakeInt(int(elem1.Flags)))
 		vec1 = vec1.Conjoin(map2)
 	}
 	res.Conjoin(vec1)
-	res.Conjoin(string(res2))
+	res.Conjoin(MakeString(res2.Error()))
 	return res
 }
 
@@ -2340,7 +2625,7 @@ GO FUNC net.Listen has:
 // 	res1, res2 := net.Listen(network, address)
 // 	res := EmptyVector
 // 	res.Conjoin(res1)
-// 	res.Conjoin(string(res2))
+// 	res.Conjoin(MakeString(res2.Error()))
 // 	return res
 // }
 
@@ -2350,7 +2635,7 @@ GO FUNC net.ListenIP has:
 // 	res := EmptyVector
 // 	map1 := EmptyArrayMap()
 // 	res.Conjoin(map1)
-// 	res.Conjoin(string(res2))
+// 	res.Conjoin(MakeString(res2.Error()))
 // 	return res
 // }
 
@@ -2360,7 +2645,7 @@ GO FUNC net.ListenMulticastUDP has:
 // 	res := EmptyVector
 // 	map1 := EmptyArrayMap()
 // 	res.Conjoin(map1)
-// 	res.Conjoin(string(res2))
+// 	res.Conjoin(MakeString(res2.Error()))
 // 	return res
 // }
 
@@ -2369,7 +2654,7 @@ GO FUNC net.ListenPacket has:
 // 	res1, res2 := net.ListenPacket(network, address)
 // 	res := EmptyVector
 // 	res.Conjoin(res1)
-// 	res.Conjoin(string(res2))
+// 	res.Conjoin(MakeString(res2.Error()))
 // 	return res
 // }
 
@@ -2380,7 +2665,7 @@ GO FUNC net.ListenTCP has:
 // 	map1 := EmptyArrayMap()
 // 	map1.Add(MakeKeyword("fd"), )
 // 	res.Conjoin(map1)
-// 	res.Conjoin(string(res2))
+// 	res.Conjoin(MakeString(res2.Error()))
 // 	return res
 // }
 
@@ -2390,7 +2675,7 @@ GO FUNC net.ListenUDP has:
 // 	res := EmptyVector
 // 	map1 := EmptyArrayMap()
 // 	res.Conjoin(map1)
-// 	res.Conjoin(string(res2))
+// 	res.Conjoin(MakeString(res2.Error()))
 // 	return res
 // }
 
@@ -2404,7 +2689,7 @@ GO FUNC net.ListenUnix has:
 // 	map1.Add(MakeKeyword("unlink"), MakeBool((*res1).unlink))
 // 	map1.Add(MakeKeyword("unlinkOnce"), (*res1).unlinkOnce)
 // 	res.Conjoin(map1)
-// 	res.Conjoin(string(res2))
+// 	res.Conjoin(MakeString(res2.Error()))
 // 	return res
 // }
 
@@ -2414,7 +2699,7 @@ GO FUNC net.ListenUnixgram has:
 // 	res := EmptyVector
 // 	map1 := EmptyArrayMap()
 // 	res.Conjoin(map1)
-// 	res.Conjoin(string(res2))
+// 	res.Conjoin(MakeString(res2.Error()))
 // 	return res
 // }
 
@@ -2427,7 +2712,7 @@ func lookupAddr(addr string) Object {
 		vec1 = vec1.Conjoin(MakeString(elem1))
 	}
 	res.Conjoin(vec1)
-	res.Conjoin(string(err))
+	res.Conjoin(MakeString(err.Error()))
 	return res
 }
 
@@ -2436,7 +2721,7 @@ func lookupCNAME(host string) Object {
 	cname, err := net.LookupCNAME(host)
 	res := EmptyVector
 	res.Conjoin(MakeString(cname))
-	res.Conjoin(string(err))
+	res.Conjoin(MakeString(err.Error()))
 	return res
 }
 
@@ -2449,7 +2734,7 @@ func lookupHost(host string) Object {
 		vec1 = vec1.Conjoin(MakeString(elem1))
 	}
 	res.Conjoin(vec1)
-	res.Conjoin(string(err))
+	res.Conjoin(MakeString(err.Error()))
 	return res
 }
 
@@ -2461,12 +2746,12 @@ func lookupIP(host string) Object {
 	for _, elem1 := range res1 {
 		vec2 := EmptyVector
 		for _, elem2 := range elem1 {
-			vec2 = vec2.Conjoin(MakeInt(elem2))
+			vec2 = vec2.Conjoin(MakeInt(int(elem2)))
 		}
 		vec1 = vec1.Conjoin(vec2)
 	}
 	res.Conjoin(vec1)
-	res.Conjoin(string(res2))
+	res.Conjoin(MakeString(res2.Error()))
 	return res
 }
 
@@ -2478,11 +2763,11 @@ func lookupMX(name string) Object {
 	for _, elem1 := range res1 {
 		map2 := EmptyArrayMap()
 		map2.Add(MakeKeyword("Host"), MakeString((*elem1).Host))
-		map2.Add(MakeKeyword("Pref"), MakeInt((*elem1).Pref))
+		map2.Add(MakeKeyword("Pref"), MakeInt(int((*elem1).Pref)))
 		vec1 = vec1.Conjoin(map2)
 	}
 	res.Conjoin(vec1)
-	res.Conjoin(string(res2))
+	res.Conjoin(MakeString(res2.Error()))
 	return res
 }
 
@@ -2497,7 +2782,7 @@ func lookupNS(name string) Object {
 		vec1 = vec1.Conjoin(map2)
 	}
 	res.Conjoin(vec1)
-	res.Conjoin(string(res2))
+	res.Conjoin(MakeString(res2.Error()))
 	return res
 }
 
@@ -2505,8 +2790,8 @@ GO FUNC net.LookupPort has:
 func lookupPort(network string, service string) Object {
 	port, err := net.LookupPort(network, service)
 	res := EmptyVector
-	res.Conjoin(MakeInt(port))
-	res.Conjoin(string(err))
+	res.Conjoin(MakeInt(int(port)))
+	res.Conjoin(MakeString(err.Error()))
 	return res
 }
 
@@ -2518,14 +2803,14 @@ func lookupSRV(service string, proto string, name string) Object {
 	for _, elem1 := range addrs {
 		map2 := EmptyArrayMap()
 		map2.Add(MakeKeyword("Target"), MakeString((*elem1).Target))
-		map2.Add(MakeKeyword("Port"), MakeInt((*elem1).Port))
-		map2.Add(MakeKeyword("Priority"), MakeInt((*elem1).Priority))
-		map2.Add(MakeKeyword("Weight"), MakeInt((*elem1).Weight))
+		map2.Add(MakeKeyword("Port"), MakeInt(int((*elem1).Port)))
+		map2.Add(MakeKeyword("Priority"), MakeInt(int((*elem1).Priority)))
+		map2.Add(MakeKeyword("Weight"), MakeInt(int((*elem1).Weight)))
 		vec1 = vec1.Conjoin(map2)
 	}
 	res.Conjoin(MakeString(cname))
 	res.Conjoin(vec1)
-	res.Conjoin(string(err))
+	res.Conjoin(MakeString(err.Error()))
 	return res
 }
 
@@ -2538,7 +2823,7 @@ func lookupTXT(name string) Object {
 		vec1 = vec1.Conjoin(MakeString(elem1))
 	}
 	res.Conjoin(vec1)
-	res.Conjoin(string(res2))
+	res.Conjoin(MakeString(res2.Error()))
 	return res
 }
 
@@ -2549,21 +2834,21 @@ func parseCIDR(s string) Object {
 	map2 := EmptyArrayMap()
 	vec3 := EmptyVector
 	for _, elem3 := range (*res2).IP {
-		vec3 = vec3.Conjoin(MakeInt(elem3))
+		vec3 = vec3.Conjoin(MakeInt(int(elem3)))
 	}
 	map2.Add(MakeKeyword("IP"), vec3)
 	vec4 := EmptyVector
 	for _, elem4 := range (*res2).Mask {
-		vec4 = vec4.Conjoin(MakeInt(elem4))
+		vec4 = vec4.Conjoin(MakeInt(int(elem4)))
 	}
 	map2.Add(MakeKeyword("Mask"), vec4)
 	vec1 := EmptyVector
 	for _, elem1 := range res1 {
-		vec1 = vec1.Conjoin(MakeInt(elem1))
+		vec1 = vec1.Conjoin(MakeInt(int(elem1)))
 	}
 	res.Conjoin(vec1)
 	res.Conjoin(map2)
-	res.Conjoin(string(res3))
+	res.Conjoin(MakeString(res3.Error()))
 	return res
 }
 
@@ -2572,7 +2857,7 @@ func parseIP(s string) Object {
 	res := net.ParseIP(s)
 	vec1 := EmptyVector
 	for _, elem1 := range res {
-		vec1 = vec1.Conjoin(MakeInt(elem1))
+		vec1 = vec1.Conjoin(MakeInt(int(elem1)))
 	}
 	return vec1
 }
@@ -2583,10 +2868,10 @@ func parseMAC(s string) Object {
 	res := EmptyVector
 	vec1 := EmptyVector
 	for _, elem1 := range hw {
-		vec1 = vec1.Conjoin(MakeInt(elem1))
+		vec1 = vec1.Conjoin(MakeInt(int(elem1)))
 	}
 	res.Conjoin(vec1)
-	res.Conjoin(string(err))
+	res.Conjoin(MakeString(err.Error()))
 	return res
 }
 
@@ -2606,12 +2891,12 @@ func resolveIPAddr(network string, address string) Object {
 	map1 := EmptyArrayMap()
 	vec2 := EmptyVector
 	for _, elem2 := range (*res1).IP {
-		vec2 = vec2.Conjoin(MakeInt(elem2))
+		vec2 = vec2.Conjoin(MakeInt(int(elem2)))
 	}
 	map1.Add(MakeKeyword("IP"), vec2)
 	map1.Add(MakeKeyword("Zone"), MakeString((*res1).Zone))
 	res.Conjoin(map1)
-	res.Conjoin(string(res2))
+	res.Conjoin(MakeString(res2.Error()))
 	return res
 }
 
@@ -2622,13 +2907,13 @@ func resolveTCPAddr(network string, address string) Object {
 	map1 := EmptyArrayMap()
 	vec2 := EmptyVector
 	for _, elem2 := range (*res1).IP {
-		vec2 = vec2.Conjoin(MakeInt(elem2))
+		vec2 = vec2.Conjoin(MakeInt(int(elem2)))
 	}
 	map1.Add(MakeKeyword("IP"), vec2)
-	map1.Add(MakeKeyword("Port"), MakeInt((*res1).Port))
+	map1.Add(MakeKeyword("Port"), MakeInt(int((*res1).Port)))
 	map1.Add(MakeKeyword("Zone"), MakeString((*res1).Zone))
 	res.Conjoin(map1)
-	res.Conjoin(string(res2))
+	res.Conjoin(MakeString(res2.Error()))
 	return res
 }
 
@@ -2639,13 +2924,13 @@ func resolveUDPAddr(network string, address string) Object {
 	map1 := EmptyArrayMap()
 	vec2 := EmptyVector
 	for _, elem2 := range (*res1).IP {
-		vec2 = vec2.Conjoin(MakeInt(elem2))
+		vec2 = vec2.Conjoin(MakeInt(int(elem2)))
 	}
 	map1.Add(MakeKeyword("IP"), vec2)
-	map1.Add(MakeKeyword("Port"), MakeInt((*res1).Port))
+	map1.Add(MakeKeyword("Port"), MakeInt(int((*res1).Port)))
 	map1.Add(MakeKeyword("Zone"), MakeString((*res1).Zone))
 	res.Conjoin(map1)
-	res.Conjoin(string(res2))
+	res.Conjoin(MakeString(res2.Error()))
 	return res
 }
 
@@ -2657,7 +2942,7 @@ func resolveUnixAddr(network string, address string) Object {
 	map1.Add(MakeKeyword("Name"), MakeString((*res1).Name))
 	map1.Add(MakeKeyword("Net"), MakeString((*res1).Net))
 	res.Conjoin(map1)
-	res.Conjoin(string(res2))
+	res.Conjoin(MakeString(res2.Error()))
 	return res
 }
 
@@ -2667,7 +2952,7 @@ func splitHostPort(hostport string) Object {
 	res := EmptyVector
 	res.Conjoin(MakeString(host))
 	res.Conjoin(MakeString(port))
-	res.Conjoin(string(err))
+	res.Conjoin(MakeString(err.Error()))
 	return res
 }
 
@@ -2730,7 +3015,7 @@ GO FUNC rpc.Dial has:
 // 	map1.Add(MakeKeyword("closing"), MakeBool((*res1).closing))
 // 	map1.Add(MakeKeyword("shutdown"), MakeBool((*res1).shutdown))
 // 	res.Conjoin(map1)
-// 	res.Conjoin(string(res2))
+// 	res.Conjoin(MakeString(res2.Error()))
 // 	return res
 // }
 
@@ -2752,7 +3037,7 @@ GO FUNC rpc.DialHTTP has:
 // 	map1.Add(MakeKeyword("closing"), MakeBool((*res1).closing))
 // 	map1.Add(MakeKeyword("shutdown"), MakeBool((*res1).shutdown))
 // 	res.Conjoin(map1)
-// 	res.Conjoin(string(res2))
+// 	res.Conjoin(MakeString(res2.Error()))
 // 	return res
 // }
 
@@ -2774,7 +3059,7 @@ GO FUNC rpc.DialHTTPPath has:
 // 	map1.Add(MakeKeyword("closing"), MakeBool((*res1).closing))
 // 	map1.Add(MakeKeyword("shutdown"), MakeBool((*res1).shutdown))
 // 	res.Conjoin(map1)
-// 	res.Conjoin(string(res2))
+// 	res.Conjoin(MakeString(res2.Error()))
 // 	return res
 // }
 
@@ -2804,7 +3089,7 @@ GO FUNC rpc.NewClient has:
 // }
 
 GO FUNC rpc.NewClientWithCodec has:
-// func newClientWithCodec(codec Object) Object {
+// func newClientWithCodec(codec ABEND884(unrecognized type ClientCodec at: tests/big/net/rpc/client.go:201:31)) Object {
 // 	res := rpc.NewClientWithCodec(codec)
 // 	map1 := EmptyArrayMap()
 // 	map1.Add(MakeKeyword("codec"), (*res).codec)
@@ -2844,7 +3129,7 @@ GO FUNC rpc.NewServer has:
 // }
 
 GO FUNC rpc.ServeCodec has:
-// func serveCodec(codec Object) Object {
+// func serveCodec(codec ABEND884(unrecognized type ServerCodec at: tests/big/net/rpc/server.go:679:23)) Object {
 // 	rpc.ServeCodec(codec)
 // 	...ABEND675: TODO...
 // }
@@ -2877,9 +3162,9 @@ GO FUNC smtp.Dial has:
 // 	map1.Add(MakeKeyword("auth"), vec2)
 // 	map1.Add(MakeKeyword("localName"), MakeString((*res1).localName))
 // 	map1.Add(MakeKeyword("didHello"), MakeBool((*res1).didHello))
-// 	map1.Add(MakeKeyword("helloError"), string((*res1).helloError))
+// 	map1.Add(MakeKeyword("helloError"), MakeString((*res1).helloError.Error()))
 // 	res.Conjoin(map1)
-// 	res.Conjoin(string(res2))
+// 	res.Conjoin(MakeString(res2.Error()))
 // 	return res
 // }
 
@@ -2900,9 +3185,9 @@ GO FUNC smtp.NewClient has:
 // 	map1.Add(MakeKeyword("auth"), vec2)
 // 	map1.Add(MakeKeyword("localName"), MakeString((*res1).localName))
 // 	map1.Add(MakeKeyword("didHello"), MakeBool((*res1).didHello))
-// 	map1.Add(MakeKeyword("helloError"), string((*res1).helloError))
+// 	map1.Add(MakeKeyword("helloError"), MakeString((*res1).helloError.Error()))
 // 	res.Conjoin(map1)
-// 	res.Conjoin(string(res2))
+// 	res.Conjoin(MakeString(res2.Error()))
 // 	return res
 // }
 
@@ -2918,7 +3203,7 @@ GO FUNC textproto.Dial has:
 // 	map1 := EmptyArrayMap()
 // 	map1.Add(MakeKeyword("conn"), (*res1).conn)
 // 	res.Conjoin(map1)
-// 	res.Conjoin(string(res2))
+// 	res.Conjoin(MakeString(res2.Error()))
 // 	return res
 // }
 
@@ -2938,7 +3223,7 @@ GO FUNC textproto.NewReader has:
 // 	map1.Add(MakeKeyword("dot"), )
 // 	vec2 := EmptyVector
 // 	for _, elem2 := range (*res).buf {
-// 		vec2 = vec2.Conjoin(MakeInt(elem2))
+// 		vec2 = vec2.Conjoin(MakeInt(int(elem2)))
 // 	}
 // 	map1.Add(MakeKeyword("buf"), vec2)
 // 	return map1
@@ -2958,7 +3243,7 @@ GO FUNC textproto.TrimBytes has:
 // 	res := textproto.TrimBytes(b)
 // 	vec1 := EmptyVector
 // 	for _, elem1 := range res {
-// 		vec1 = vec1.Conjoin(MakeInt(elem1))
+// 		vec1 = vec1.Conjoin(MakeInt(int(elem1)))
 // 	}
 // 	return vec1
 // }
@@ -2982,7 +3267,7 @@ func parse(rawurl string) Object {
 	map1.Add(MakeKeyword("RawQuery"), MakeString((*res1).RawQuery))
 	map1.Add(MakeKeyword("Fragment"), MakeString((*res1).Fragment))
 	res.Conjoin(map1)
-	res.Conjoin(string(res2))
+	res.Conjoin(MakeString(res2.Error()))
 	return res
 }
 
@@ -2991,7 +3276,7 @@ GO FUNC url.ParseQuery has:
 // 	res1, res2 := url.ParseQuery(query)
 // 	res := EmptyVector
 // 	res.Conjoin(res1)
-// 	res.Conjoin(string(res2))
+// 	res.Conjoin(MakeString(res2.Error()))
 // 	return res
 // }
 
@@ -3014,7 +3299,7 @@ func parseRequestURI(rawurl string) Object {
 	map1.Add(MakeKeyword("RawQuery"), MakeString((*res1).RawQuery))
 	map1.Add(MakeKeyword("Fragment"), MakeString((*res1).Fragment))
 	res.Conjoin(map1)
-	res.Conjoin(string(res2))
+	res.Conjoin(MakeString(res2.Error()))
 	return res
 }
 
@@ -3023,7 +3308,7 @@ func pathUnescape(s string) Object {
 	res1, res2 := url.PathUnescape(s)
 	res := EmptyVector
 	res.Conjoin(MakeString(res1))
-	res.Conjoin(string(res2))
+	res.Conjoin(MakeString(res2.Error()))
 	return res
 }
 
@@ -3032,7 +3317,7 @@ func queryUnescape(s string) Object {
 	res1, res2 := url.QueryUnescape(s)
 	res := EmptyVector
 	res.Conjoin(MakeString(res1))
-	res.Conjoin(string(res2))
+	res.Conjoin(MakeString(res2.Error()))
 	return res
 }
 
