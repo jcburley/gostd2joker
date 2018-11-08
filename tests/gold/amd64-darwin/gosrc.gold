@@ -5236,11 +5236,11 @@ JOKER FUNC expvar.NewFloat has:
 ;;   [^String name])
 
 JOKER FUNC expvar.NewInt has:
-;; (defn NewInt
-;;   "Go return type: *Int\nJoker return type: {:i ^Int}"
-;;   {:added "1.0"
-;;    :go "newInt(name)"}
-;;   [^String name])
+(defn NewInt
+  "Go return type: *Int\nJoker return type: {:i ^Int}"
+  {:added "1.0"
+   :go "newInt(name)"}
+  [^String name])
 
 JOKER FUNC expvar.NewMap has:
 ;; (defn NewMap
@@ -6391,11 +6391,11 @@ JOKER FUNC httpguts.ValidTrailerHeader has:
   [^String name])
 
 JOKER FUNC httpproxy.FromEnvironment has:
-;; (defn FromEnvironment
-;;   "FromEnvironment returns a Config instance populated from the\nenvironment variables HTTP_PROXY, HTTPS_PROXY and NO_PROXY (or the\nlowercase versions thereof). HTTPS_PROXY takes precedence over\nHTTP_PROXY for https requests.\n\nThe environment values may be either a complete URL or a\n\"host[:port]\", in which case the \"http\" scheme is assumed. An error\nis returned if the value is a different form.\nGo return type: *Config\nJoker return type: {:HTTPProxy ^String, :HTTPSProxy ^String, :NoProxy ^String, :CGI ^Bool}"
-;;   {:added "1.0"
-;;    :go "fromEnvironment()"}
-;;   [])
+(defn FromEnvironment
+  "FromEnvironment returns a Config instance populated from the\nenvironment variables HTTP_PROXY, HTTPS_PROXY and NO_PROXY (or the\nlowercase versions thereof). HTTPS_PROXY takes precedence over\nHTTP_PROXY for https requests.\n\nThe environment values may be either a complete URL or a\n\"host[:port]\", in which case the \"http\" scheme is assumed. An error\nis returned if the value is a different form.\nGo return type: *Config\nJoker return type: {:HTTPProxy ^String, :HTTPSProxy ^String, :NoProxy ^String, :CGI ^Bool}"
+  {:added "1.0"
+   :go "fromEnvironment()"}
+  [])
 
 JOKER FUNC httptest.NewRecorder has:
 ;; (defn NewRecorder
@@ -6692,18 +6692,18 @@ JOKER FUNC image.NewYCbCr has:
 ;;   [r, subsampleRatio])
 
 JOKER FUNC image.Pt has:
-;; (defn Pt
-;;   "Pt is shorthand for Point{X, Y}.\nGo return type: Point\nJoker return type: {:X ^Int, :Y ^Int}"
-;;   {:added "1.0"
-;;    :go "pt(X, Y)"}
-;;   [^Int X, ^Int Y])
+(defn Pt
+  "Pt is shorthand for Point{X, Y}.\nGo return type: Point\nJoker return type: {:X ^Int, :Y ^Int}"
+  {:added "1.0"
+   :go "pt(X, Y)"}
+  [^Int X, ^Int Y])
 
 JOKER FUNC image.Rect has:
-;; (defn Rect
-;;   "Rect is shorthand for Rectangle{Pt(x0, y0), Pt(x1, y1)}. The returned\nrectangle has minimum and maximum coordinates swapped if necessary so that\nit is well-formed.\nGo return type: Rectangle\nJoker return type: {:Min ^{:X ^Int, :Y ^Int}, :Max ^{:X ^Int, :Y ^Int}}"
-;;   {:added "1.0"
-;;    :go "rect(x0, y0, x1, y1)"}
-;;   [^Int x0, ^Int y0, ^Int x1, ^Int y1])
+(defn Rect
+  "Rect is shorthand for Rectangle{Pt(x0, y0), Pt(x1, y1)}. The returned\nrectangle has minimum and maximum coordinates swapped if necessary so that\nit is well-formed.\nGo return type: Rectangle\nJoker return type: {:Min ^{:X ^Int, :Y ^Int}, :Max ^{:X ^Int, :Y ^Int}}"
+  {:added "1.0"
+   :go "rect(x0, y0, x1, y1)"}
+  [^Int x0, ^Int y0, ^Int x1, ^Int y1])
 
 JOKER FUNC image.RegisterFormat has:
 ;; (defn RegisterFormat
@@ -8288,11 +8288,11 @@ JOKER FUNC os.MkdirAll has:
   [^String path, perm])
 
 JOKER FUNC os.NewFile has:
-;; (defn NewFile
-;;   "NewFile returns a new File with the given file descriptor and\nname. The returned value will be nil if fd is not a valid file\ndescriptor. On Unix systems, if the file descriptor is in\nnon-blocking mode, NewFile will attempt to return a pollable File\n(one for which the SetDeadline methods work).\nGo return type: *File\nJoker return type: {}"
-;;   {:added "1.0"
-;;    :go "newFile(fd, name)"}
-;;   [fd, ^String name])
+(defn NewFile
+  "NewFile returns a new File with the given file descriptor and\nname. The returned value will be nil if fd is not a valid file\ndescriptor. On Unix systems, if the file descriptor is in\nnon-blocking mode, NewFile will attempt to return a pollable File\n(one for which the SetDeadline methods work).\nGo return type: *File\nJoker return type: {}"
+  {:added "1.0"
+   :go "newFile(fd, name)"}
+  [fd, ^String name])
 
 JOKER FUNC os.NewSyscallError has:
 (defn ^Error NewSyscallError
@@ -9373,11 +9373,11 @@ JOKER FUNC runtime.CallersFrames has:
 ;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/runtime/symtab.go:91:28) callers])
 
 JOKER FUNC runtime.FuncForPC has:
-;; (defn FuncForPC
-;;   "FuncForPC returns a *Func describing the function that contains the\ngiven program counter address, or else nil.\n\nIf pc represents multiple functions because of inlining, it returns\nthe *Func describing the outermost function.\nGo return type: *Func\nJoker return type: {:opaque ^{}}"
-;;   {:added "1.0"
-;;    :go "funcForPC(pc)"}
-;;   [pc])
+(defn FuncForPC
+  "FuncForPC returns a *Func describing the function that contains the\ngiven program counter address, or else nil.\n\nIf pc represents multiple functions because of inlining, it returns\nthe *Func describing the outermost function.\nGo return type: *Func\nJoker return type: {:opaque ^{}}"
+  {:added "1.0"
+   :go "funcForPC(pc)"}
+  [pc])
 
 JOKER FUNC runtime.GC has:
 ;; (defn GC
@@ -10311,11 +10311,11 @@ JOKER FUNC strings.Map has:
 ;;   [^ABEND881(unrecognized Expr type *ast.FuncType at: ../GOSRC/strings/strings.go:462:18) mapping, ^String s])
 
 JOKER FUNC strings.NewReader has:
-;; (defn NewReader
-;;   "NewReader returns a new Reader reading from s.\nIt is similar to bytes.NewBufferString but more efficient and read-only.\nGo return type: *Reader\nJoker return type: {:s ^String, :i ^Int, :prevRune ^Int}"
-;;   {:added "1.0"
-;;    :go "newReader(s)"}
-;;   [^String s])
+(defn NewReader
+  "NewReader returns a new Reader reading from s.\nIt is similar to bytes.NewBufferString but more efficient and read-only.\nGo return type: *Reader\nJoker return type: {:s ^String, :i ^Int, :prevRune ^Int}"
+  {:added "1.0"
+   :go "newReader(s)"}
+  [^String s])
 
 JOKER FUNC strings.NewReplacer has:
 ;; (defn NewReplacer
@@ -11214,18 +11214,18 @@ JOKER FUNC syscall.Munmap has:
 ;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: ../GOSRC/syscall/syscall_bsd.go:552:15) b])
 
 JOKER FUNC syscall.NsecToTimespec has:
-;; (defn NsecToTimespec
-;;   "NsecToTimespec takes a number of nanoseconds since the Unix epoch\nand returns the corresponding Timespec value.\nGo return type: Timespec\nJoker return type: {:Sec ^Int, :Nsec ^Int}"
-;;   {:added "1.0"
-;;    :go "nsecToTimespec(nsec)"}
-;;   [nsec])
+(defn NsecToTimespec
+  "NsecToTimespec takes a number of nanoseconds since the Unix epoch\nand returns the corresponding Timespec value.\nGo return type: Timespec\nJoker return type: {:Sec ^Int, :Nsec ^Int}"
+  {:added "1.0"
+   :go "nsecToTimespec(nsec)"}
+  [nsec])
 
 JOKER FUNC syscall.NsecToTimeval has:
-(defn NsecToTimeval
-  "NsecToTimeval takes a number of nanoseconds since the Unix epoch\nand returns the corresponding Timeval value.\nGo return type: Timeval\nJoker return type: {:Sec ^Int, :Usec ^Int, :Pad_cgo_0 ^(vector-of Int)}"
-  {:added "1.0"
-   :go "nsecToTimeval(nsec)"}
-  [nsec])
+;; (defn NsecToTimeval
+;;   "NsecToTimeval takes a number of nanoseconds since the Unix epoch\nand returns the corresponding Timeval value.\nGo return type: Timeval\nJoker return type: {:Sec ^Int, :Usec ^Int, :Pad_cgo_0 ^(vector-of Int)}"
+;;   {:added "1.0"
+;;    :go "nsecToTimeval(nsec)"}
+;;   [nsec])
 
 JOKER FUNC syscall.Open has:
 (defn Open
@@ -12901,18 +12901,18 @@ JOKER FUNC url.QueryUnescape has:
   [^String s])
 
 JOKER FUNC url.User has:
-;; (defn User
-;;   "User returns a Userinfo containing the provided username\nand no password set.\nGo return type: *Userinfo\nJoker return type: {:username ^String, :password ^String, :passwordSet ^Bool}"
-;;   {:added "1.0"
-;;    :go "user(username)"}
-;;   [^String username])
+(defn User
+  "User returns a Userinfo containing the provided username\nand no password set.\nGo return type: *Userinfo\nJoker return type: {:username ^String, :password ^String, :passwordSet ^Bool}"
+  {:added "1.0"
+   :go "user(username)"}
+  [^String username])
 
 JOKER FUNC url.UserPassword has:
-;; (defn UserPassword
-;;   "UserPassword returns a Userinfo containing the provided username\nand password.\n\nThis functionality should only be used with legacy web sites.\nRFC 2396 warns that interpreting Userinfo this way\n``is NOT RECOMMENDED, because the passing of authentication\ninformation in clear text (such as URI) has proven to be a\nsecurity risk in almost every case where it has been used.''\nGo return type: *Userinfo\nJoker return type: {:username ^String, :password ^String, :passwordSet ^Bool}"
-;;   {:added "1.0"
-;;    :go "userPassword(username, password)"}
-;;   [^String username, ^String password])
+(defn UserPassword
+  "UserPassword returns a Userinfo containing the provided username\nand password.\n\nThis functionality should only be used with legacy web sites.\nRFC 2396 warns that interpreting Userinfo this way\n``is NOT RECOMMENDED, because the passing of authentication\ninformation in clear text (such as URI) has proven to be a\nsecurity risk in almost every case where it has been used.''\nGo return type: *Userinfo\nJoker return type: {:username ^String, :password ^String, :passwordSet ^Bool}"
+  {:added "1.0"
+   :go "userPassword(username, password)"}
+  [^String username, ^String password])
 
 JOKER FUNC user.Current has:
 ;; (defn Current
@@ -13470,17 +13470,17 @@ GO FUNC ast.Inspect has:
 
 GO FUNC ast.MergePackageFiles has:
 // func mergePackageFiles(pkg ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/go/ast/filter.go:344:28), mode Object) Object {
-// 	ast.MergePackageFiles(pkg, mode)
+// 	res := ast.MergePackageFiles(pkg, mode)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin(*(ABEND680:TODO))
 // 	}
 // 	vec2 := EmptyVector
-// 	for _, el2 := range  {
+// 	for _, el2 := range res {
 // 		vec2 = vec2.Conjoin(el2)
 // 	}
 // 	vec3 := EmptyVector
-// 	for _, el3 := range  {
+// 	for _, el3 := range res {
 // 		vec4 := EmptyVector
 // 		for _, el4 := range el3 {
 // 			vec4 = vec4.Conjoin(*(ABEND680:TODO))
@@ -13492,18 +13492,18 @@ GO FUNC ast.MergePackageFiles has:
 // 		vec3 = vec3.Conjoin(*(ABEND680:TODO))
 // 	}
 // 	vec6 := EmptyVector
-// 	for _, el6 := range  {
+// 	for _, el6 := range res {
 // 		vec6 = vec6.Conjoin(*(ABEND680:TODO))
 // 	}
 // 	vec7 := EmptyVector
-// 	for _, el7 := range  {
+// 	for _, el7 := range res {
 // 		vec8 := EmptyVector
 // 		for _, el8 := range el7 {
 // 			vec8 = vec8.Conjoin(*(ABEND680:TODO))
 // 		}
 // 		vec7 = vec7.Conjoin(*(ABEND680:TODO))
 // 	}
-// 	return res
+// 	return *(ABEND680:TODO)
 // }
 
 GO FUNC ast.NewCommentMap has:
@@ -13513,12 +13513,12 @@ GO FUNC ast.NewCommentMap has:
 
 GO FUNC ast.NewIdent has:
 // func newIdent(name string) Object {
-// 	return *(ABEND680:TODO)ast.NewIdent(name)
+// 	return ast.NewIdent(name)
 // }
 
 GO FUNC ast.NewObj has:
 // func newObj(kind Object, name string) Object {
-// 	return *(ABEND680:TODO)ast.NewObj(kind, name)
+// 	return ast.NewObj(kind, name)
 // }
 
 GO FUNC ast.NewPackage has:
@@ -13532,7 +13532,7 @@ GO FUNC ast.NewPackage has:
 
 GO FUNC ast.NewScope has:
 // func newScope(outer ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/go/ast/scope.go:25:21)) Object {
-// 	return *(ABEND680:TODO)ast.NewScope(outer)
+// 	return ast.NewScope(outer)
 // }
 
 GO FUNC ast.SortImports has:
@@ -13635,16 +13635,16 @@ GO FUNC base32.NewEncoder has:
 
 GO FUNC base32.NewEncoding has:
 // func newEncoding(encoder string) Object {
-// 	base32.NewEncoding(encoder)
+// 	res := base32.NewEncoding(encoder)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin(MakeInt(el1))
 // 	}
 // 	vec2 := EmptyVector
-// 	for _, el2 := range  {
+// 	for _, el2 := range res {
 // 		vec2 = vec2.Conjoin(MakeInt(el2))
 // 	}
-// 	return res
+// 	return *(ABEND680:TODO)
 // }
 
 GO FUNC base64.NewDecoder has:
@@ -13659,26 +13659,26 @@ GO FUNC base64.NewEncoder has:
 
 GO FUNC base64.NewEncoding has:
 // func newEncoding(encoder string) Object {
-// 	base64.NewEncoding(encoder)
+// 	res := base64.NewEncoding(encoder)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin(MakeInt(el1))
 // 	}
 // 	vec2 := EmptyVector
-// 	for _, el2 := range  {
+// 	for _, el2 := range res {
 // 		vec2 = vec2.Conjoin(MakeInt(el2))
 // 	}
-// 	return res
+// 	return *(ABEND680:TODO)
 // }
 
 GO FUNC bidi.AppendReverse has:
 // func appendReverse(out ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/vendor/golang_org/x/text/unicode/bidi/bidi.go:189:28), in ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/vendor/golang_org/x/text/unicode/bidi/bidi.go:189:28)) Object {
-// 	bidi.AppendReverse(out, in)
+// 	res := bidi.AppendReverse(out, in)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin(MakeInt(el1))
 // 	}
-// 	return res
+// 	return vec1
 // }
 
 GO FUNC bidi.DefaultDirection has:
@@ -13725,22 +13725,22 @@ GO FUNC bidirule.DirectionString has:
 
 GO FUNC bidirule.New has:
 // func new() Object {
-// 	return *(ABEND680:TODO)bidirule.New()
+// 	return bidirule.New()
 // }
 
 GO FUNC big.NewFloat has:
 // func newFloat(x Object) Object {
-// 	return *(ABEND680:TODO)big.NewFloat(x)
+// 	return big.NewFloat(x)
 // }
 
 GO FUNC big.NewInt has:
 // func newInt(x Object) Object {
-// 	return *(ABEND680:TODO)big.NewInt(x)
+// 	return big.NewInt(x)
 // }
 
 GO FUNC big.NewRat has:
 // func newRat(a Object, b Object) Object {
-// 	return *(ABEND680:TODO)big.NewRat(a, b)
+// 	return big.NewRat(a, b)
 // }
 
 GO FUNC big.ParseFloat has:
@@ -13816,70 +13816,70 @@ GO FUNC bits.RotateLeft8 has:
 
 GO FUNC bufio.NewReadWriter has:
 // func newReadWriter(r ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/bufio/bufio.go:743:22), w ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/bufio/bufio.go:743:33)) Object {
-// 	bufio.NewReadWriter(r, w)
+// 	res := bufio.NewReadWriter(r, w)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin(MakeInt(el1))
 // 	}
 // 	vec2 := EmptyVector
-// 	for _, el2 := range  {
+// 	for _, el2 := range res {
 // 		vec2 = vec2.Conjoin(MakeInt(el2))
 // 	}
-// 	return res
+// 	return *(ABEND680:TODO)
 // }
 
 GO FUNC bufio.NewReader has:
 // func newReader(rd ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/bufio/bufio.go:61:19)) Object {
-// 	bufio.NewReader(rd)
+// 	res := bufio.NewReader(rd)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin(MakeInt(el1))
 // 	}
-// 	return res
+// 	return *(ABEND680:TODO)
 // }
 
 GO FUNC bufio.NewReaderSize has:
 // func newReaderSize(rd ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/bufio/bufio.go:46:23), size int) Object {
-// 	bufio.NewReaderSize(rd, size)
+// 	res := bufio.NewReaderSize(rd, size)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin(MakeInt(el1))
 // 	}
-// 	return res
+// 	return *(ABEND680:TODO)
 // }
 
 GO FUNC bufio.NewScanner has:
 // func newScanner(r ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/bufio/scan.go:86:19)) Object {
-// 	bufio.NewScanner(r)
+// 	res := bufio.NewScanner(r)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin(MakeInt(el1))
 // 	}
 // 	vec2 := EmptyVector
-// 	for _, el2 := range  {
+// 	for _, el2 := range res {
 // 		vec2 = vec2.Conjoin(MakeInt(el2))
 // 	}
-// 	return res
+// 	return *(ABEND680:TODO)
 // }
 
 GO FUNC bufio.NewWriter has:
 // func newWriter(w ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/bufio/bufio.go:552:18)) Object {
-// 	bufio.NewWriter(w)
+// 	res := bufio.NewWriter(w)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin(MakeInt(el1))
 // 	}
-// 	return res
+// 	return *(ABEND680:TODO)
 // }
 
 GO FUNC bufio.NewWriterSize has:
 // func newWriterSize(w ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/bufio/bufio.go:536:22), size int) Object {
-// 	bufio.NewWriterSize(w, size)
+// 	res := bufio.NewWriterSize(w, size)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin(MakeInt(el1))
 // 	}
-// 	return res
+// 	return *(ABEND680:TODO)
 // }
 
 GO FUNC bufio.ScanBytes has:
@@ -14167,334 +14167,334 @@ GO FUNC build.ImportDir has:
 
 GO FUNC bytes.Fields has:
 // func fields(s ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/bytes/bytes.go:283:15)) Object {
-// 	bytes.Fields(s)
+// 	res := bytes.Fields(s)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec2 := EmptyVector
 // 		for _, el2 := range el1 {
 // 			vec2 = vec2.Conjoin(MakeInt(el2))
 // 		}
 // 		vec1 = vec1.Conjoin(vec2)
 // 	}
-// 	return res
+// 	return vec1
 // }
 
 GO FUNC bytes.FieldsFunc has:
 // func fieldsFunc(s ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/bytes/bytes.go:339:19), f ABEND882(unrecognized Expr type *ast.FuncType at: ../GOSRC/bytes/bytes.go:339:29)) Object {
-// 	bytes.FieldsFunc(s, f)
+// 	res := bytes.FieldsFunc(s, f)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec2 := EmptyVector
 // 		for _, el2 := range el1 {
 // 			vec2 = vec2.Conjoin(MakeInt(el2))
 // 		}
 // 		vec1 = vec1.Conjoin(vec2)
 // 	}
-// 	return res
+// 	return vec1
 // }
 
 GO FUNC bytes.Join has:
 // func join(s ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/bytes/bytes.go:387:13), sep ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/bytes/bytes.go:387:27)) Object {
-// 	bytes.Join(s, sep)
+// 	res := bytes.Join(s, sep)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin(MakeInt(el1))
 // 	}
-// 	return res
+// 	return vec1
 // }
 
 GO FUNC bytes.Map has:
 // func map(mapping ABEND882(unrecognized Expr type *ast.FuncType at: ../GOSRC/bytes/bytes.go:423:18), s ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/bytes/bytes.go:423:39)) Object {
-// 	bytes.Map(mapping, s)
+// 	res := bytes.Map(mapping, s)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin(MakeInt(el1))
 // 	}
-// 	return res
+// 	return vec1
 // }
 
 GO FUNC bytes.NewBuffer has:
 // func newBuffer(buf ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/bytes/buffer.go:450:20)) Object {
-// 	bytes.NewBuffer(buf)
+// 	res := bytes.NewBuffer(buf)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin(MakeInt(el1))
 // 	}
 // 	vec2 := EmptyVector
-// 	for _, el2 := range  {
+// 	for _, el2 := range res {
 // 		vec2 = vec2.Conjoin(MakeInt(el2))
 // 	}
-// 	return res
+// 	return *(ABEND680:TODO)
 // }
 
 GO FUNC bytes.NewBufferString has:
 // func newBufferString(s string) Object {
-// 	bytes.NewBufferString(s)
+// 	res := bytes.NewBufferString(s)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin(MakeInt(el1))
 // 	}
 // 	vec2 := EmptyVector
-// 	for _, el2 := range  {
+// 	for _, el2 := range res {
 // 		vec2 = vec2.Conjoin(MakeInt(el2))
 // 	}
-// 	return res
+// 	return *(ABEND680:TODO)
 // }
 
 GO FUNC bytes.NewReader has:
 // func newReader(b ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/bytes/reader.go:156:18)) Object {
-// 	bytes.NewReader(b)
+// 	res := bytes.NewReader(b)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin(MakeInt(el1))
 // 	}
-// 	return res
+// 	return *(ABEND680:TODO)
 // }
 
 GO FUNC bytes.Repeat has:
 // func repeat(b ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/bytes/bytes.go:460:15), count int) Object {
-// 	bytes.Repeat(b, count)
+// 	res := bytes.Repeat(b, count)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin(MakeInt(el1))
 // 	}
-// 	return res
+// 	return vec1
 // }
 
 GO FUNC bytes.Replace has:
 // func replace(s ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/bytes/bytes.go:741:26), old ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/bytes/bytes.go:741:26), new ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/bytes/bytes.go:741:26), n int) Object {
-// 	bytes.Replace(s, old, new, n)
+// 	res := bytes.Replace(s, old, new, n)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin(MakeInt(el1))
 // 	}
-// 	return res
+// 	return vec1
 // }
 
 GO FUNC bytes.Runes has:
 // func runes(s ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/bytes/bytes.go:723:14)) Object {
-// 	bytes.Runes(s)
+// 	res := bytes.Runes(s)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin()
 // 	}
-// 	return res
+// 	return vec1
 // }
 
 GO FUNC bytes.Split has:
 // func split(s ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/bytes/bytes.go:267:19), sep ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/bytes/bytes.go:267:19)) Object {
-// 	bytes.Split(s, sep)
+// 	res := bytes.Split(s, sep)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec2 := EmptyVector
 // 		for _, el2 := range el1 {
 // 			vec2 = vec2.Conjoin(MakeInt(el2))
 // 		}
 // 		vec1 = vec1.Conjoin(vec2)
 // 	}
-// 	return res
+// 	return vec1
 // }
 
 GO FUNC bytes.SplitAfter has:
 // func splitAfter(s ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/bytes/bytes.go:273:24), sep ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/bytes/bytes.go:273:24)) Object {
-// 	bytes.SplitAfter(s, sep)
+// 	res := bytes.SplitAfter(s, sep)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec2 := EmptyVector
 // 		for _, el2 := range el1 {
 // 			vec2 = vec2.Conjoin(MakeInt(el2))
 // 		}
 // 		vec1 = vec1.Conjoin(vec2)
 // 	}
-// 	return res
+// 	return vec1
 // }
 
 GO FUNC bytes.SplitAfterN has:
 // func splitAfterN(s ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/bytes/bytes.go:259:25), sep ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/bytes/bytes.go:259:25), n int) Object {
-// 	bytes.SplitAfterN(s, sep, n)
+// 	res := bytes.SplitAfterN(s, sep, n)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec2 := EmptyVector
 // 		for _, el2 := range el1 {
 // 			vec2 = vec2.Conjoin(MakeInt(el2))
 // 		}
 // 		vec1 = vec1.Conjoin(vec2)
 // 	}
-// 	return res
+// 	return vec1
 // }
 
 GO FUNC bytes.SplitN has:
 // func splitN(s ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/bytes/bytes.go:250:20), sep ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/bytes/bytes.go:250:20), n int) Object {
-// 	bytes.SplitN(s, sep, n)
+// 	res := bytes.SplitN(s, sep, n)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec2 := EmptyVector
 // 		for _, el2 := range el1 {
 // 			vec2 = vec2.Conjoin(MakeInt(el2))
 // 		}
 // 		vec1 = vec1.Conjoin(vec2)
 // 	}
-// 	return res
+// 	return vec1
 // }
 
 GO FUNC bytes.Title has:
 // func title(s ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/bytes/bytes.go:536:14)) Object {
-// 	bytes.Title(s)
+// 	res := bytes.Title(s)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin(MakeInt(el1))
 // 	}
-// 	return res
+// 	return vec1
 // }
 
 GO FUNC bytes.ToLower has:
 // func toLower(s ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/bytes/bytes.go:484:16)) Object {
-// 	bytes.ToLower(s)
+// 	res := bytes.ToLower(s)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin(MakeInt(el1))
 // 	}
-// 	return res
+// 	return vec1
 // }
 
 GO FUNC bytes.ToLowerSpecial has:
 // func toLowerSpecial(c ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/bytes/bytes.go:497:23), s ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/bytes/bytes.go:497:46)) Object {
-// 	bytes.ToLowerSpecial(c, s)
+// 	res := bytes.ToLowerSpecial(c, s)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin(MakeInt(el1))
 // 	}
-// 	return res
+// 	return vec1
 // }
 
 GO FUNC bytes.ToTitle has:
 // func toTitle(s ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/bytes/bytes.go:487:16)) Object {
-// 	bytes.ToTitle(s)
+// 	res := bytes.ToTitle(s)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin(MakeInt(el1))
 // 	}
-// 	return res
+// 	return vec1
 // }
 
 GO FUNC bytes.ToTitleSpecial has:
 // func toTitleSpecial(c ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/bytes/bytes.go:503:23), s ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/bytes/bytes.go:503:46)) Object {
-// 	bytes.ToTitleSpecial(c, s)
+// 	res := bytes.ToTitleSpecial(c, s)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin(MakeInt(el1))
 // 	}
-// 	return res
+// 	return vec1
 // }
 
 GO FUNC bytes.ToUpper has:
 // func toUpper(s ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/bytes/bytes.go:481:16)) Object {
-// 	bytes.ToUpper(s)
+// 	res := bytes.ToUpper(s)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin(MakeInt(el1))
 // 	}
-// 	return res
+// 	return vec1
 // }
 
 GO FUNC bytes.ToUpperSpecial has:
 // func toUpperSpecial(c ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/bytes/bytes.go:491:23), s ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/bytes/bytes.go:491:46)) Object {
-// 	bytes.ToUpperSpecial(c, s)
+// 	res := bytes.ToUpperSpecial(c, s)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin(MakeInt(el1))
 // 	}
-// 	return res
+// 	return vec1
 // }
 
 GO FUNC bytes.Trim has:
 // func trim(s ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/bytes/bytes.go:699:13), cutset string) Object {
-// 	bytes.Trim(s, cutset)
+// 	res := bytes.Trim(s, cutset)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin(MakeInt(el1))
 // 	}
-// 	return res
+// 	return vec1
 // }
 
 GO FUNC bytes.TrimFunc has:
 // func trimFunc(s ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/bytes/bytes.go:578:17), f ABEND882(unrecognized Expr type *ast.FuncType at: ../GOSRC/bytes/bytes.go:578:27)) Object {
-// 	bytes.TrimFunc(s, f)
+// 	res := bytes.TrimFunc(s, f)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin(MakeInt(el1))
 // 	}
-// 	return res
+// 	return vec1
 // }
 
 GO FUNC bytes.TrimLeft has:
 // func trimLeft(s ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/bytes/bytes.go:705:17), cutset string) Object {
-// 	bytes.TrimLeft(s, cutset)
+// 	res := bytes.TrimLeft(s, cutset)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin(MakeInt(el1))
 // 	}
-// 	return res
+// 	return vec1
 // }
 
 GO FUNC bytes.TrimLeftFunc has:
 // func trimLeftFunc(s ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/bytes/bytes.go:555:21), f ABEND882(unrecognized Expr type *ast.FuncType at: ../GOSRC/bytes/bytes.go:555:31)) Object {
-// 	bytes.TrimLeftFunc(s, f)
+// 	res := bytes.TrimLeftFunc(s, f)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin(MakeInt(el1))
 // 	}
-// 	return res
+// 	return vec1
 // }
 
 GO FUNC bytes.TrimPrefix has:
 // func trimPrefix(s ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/bytes/bytes.go:584:27), prefix ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/bytes/bytes.go:584:27)) Object {
-// 	bytes.TrimPrefix(s, prefix)
+// 	res := bytes.TrimPrefix(s, prefix)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin(MakeInt(el1))
 // 	}
-// 	return res
+// 	return vec1
 // }
 
 GO FUNC bytes.TrimRight has:
 // func trimRight(s ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/bytes/bytes.go:711:18), cutset string) Object {
-// 	bytes.TrimRight(s, cutset)
+// 	res := bytes.TrimRight(s, cutset)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin(MakeInt(el1))
 // 	}
-// 	return res
+// 	return vec1
 // }
 
 GO FUNC bytes.TrimRightFunc has:
 // func trimRightFunc(s ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/bytes/bytes.go:565:22), f ABEND882(unrecognized Expr type *ast.FuncType at: ../GOSRC/bytes/bytes.go:565:32)) Object {
-// 	bytes.TrimRightFunc(s, f)
+// 	res := bytes.TrimRightFunc(s, f)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin(MakeInt(el1))
 // 	}
-// 	return res
+// 	return vec1
 // }
 
 GO FUNC bytes.TrimSpace has:
 // func trimSpace(s ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/bytes/bytes.go:717:18)) Object {
-// 	bytes.TrimSpace(s)
+// 	res := bytes.TrimSpace(s)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin(MakeInt(el1))
 // 	}
-// 	return res
+// 	return vec1
 // }
 
 GO FUNC bytes.TrimSuffix has:
 // func trimSuffix(s ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/bytes/bytes.go:593:27), suffix ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/bytes/bytes.go:593:27)) Object {
-// 	bytes.TrimSuffix(s, suffix)
+// 	res := bytes.TrimSuffix(s, suffix)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin(MakeInt(el1))
 // 	}
-// 	return res
+// 	return vec1
 // }
 
 GO FUNC bzip2.NewReader has:
@@ -14780,12 +14780,12 @@ GO FUNC constant.BinaryOp has:
 
 GO FUNC constant.Bytes has:
 func bytes(x Object) Object {
-	constant.Bytes(x)
+	res := constant.Bytes(x)
 	vec1 := EmptyVector
-	for _, el1 := range  {
+	for _, el1 := range res {
 		vec1 = vec1.Conjoin(MakeInt(el1))
 	}
-	return res
+	return vec1
 }
 
 GO FUNC constant.Denom has:
@@ -14967,12 +14967,12 @@ GO FUNC cookiejar.New has:
 
 GO FUNC crc32.MakeTable has:
 func makeTable(poly Object) Object {
-	crc32.MakeTable(poly)
+	res := crc32.MakeTable(poly)
 	vec1 := EmptyVector
-	for _, el1 := range  {
+	for _, el1 := range res {
 		vec1 = vec1.Conjoin(MakeInt(el1))
 	}
-	return res
+	return *vec1
 }
 
 GO FUNC crc32.New has:
@@ -14992,12 +14992,12 @@ GO FUNC crc64.Checksum has:
 
 GO FUNC crc64.MakeTable has:
 // func makeTable(poly Object) Object {
-// 	crc64.MakeTable(poly)
+// 	res := crc64.MakeTable(poly)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin()
 // 	}
-// 	return res
+// 	return *vec1
 // }
 
 GO FUNC crc64.New has:
@@ -15018,49 +15018,49 @@ GO FUNC crypto.RegisterHash has:
 
 GO FUNC cryptobyte.NewBuilder has:
 // func newBuilder(buffer ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/vendor/golang_org/x/crypto/cryptobyte/builder.go:37:24)) Object {
-// 	cryptobyte.NewBuilder(buffer)
+// 	res := cryptobyte.NewBuilder(buffer)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin(MakeInt(el1))
 // 	}
-// 	return res
+// 	return *(ABEND680:TODO)
 // }
 
 GO FUNC cryptobyte.NewFixedBuilder has:
 // func newFixedBuilder(buffer ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/vendor/golang_org/x/crypto/cryptobyte/builder.go:46:29)) Object {
-// 	cryptobyte.NewFixedBuilder(buffer)
+// 	res := cryptobyte.NewFixedBuilder(buffer)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin(MakeInt(el1))
 // 	}
-// 	return res
+// 	return *(ABEND680:TODO)
 // }
 
 GO FUNC csv.NewReader has:
 // func newReader(r ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/encoding/csv/reader.go:168:18)) Object {
-// 	csv.NewReader(r)
+// 	res := csv.NewReader(r)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin(MakeInt(el1))
 // 	}
 // 	vec2 := EmptyVector
-// 	for _, el2 := range  {
+// 	for _, el2 := range res {
 // 		vec2 = vec2.Conjoin(MakeInt(el2))
 // 	}
 // 	vec3 := EmptyVector
-// 	for _, el3 := range  {
+// 	for _, el3 := range res {
 // 		vec3 = vec3.Conjoin(MakeInt(el3))
 // 	}
 // 	vec4 := EmptyVector
-// 	for _, el4 := range  {
+// 	for _, el4 := range res {
 // 		vec4 = vec4.Conjoin(MakeString(el4))
 // 	}
-// 	return res
+// 	return *(ABEND680:TODO)
 // }
 
 GO FUNC csv.NewWriter has:
 // func newWriter(w ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/encoding/csv/writer.go:31:18)) Object {
-// 	return *(ABEND680:TODO)csv.NewWriter(w)
+// 	return csv.NewWriter(w)
 // }
 
 GO FUNC curve25519.ScalarBaseMult has:
@@ -15101,12 +15101,12 @@ GO FUNC debug.SetTraceback has:
 
 GO FUNC debug.Stack has:
 func stack() Object {
-	debug.Stack()
+	res := debug.Stack()
 	vec1 := EmptyVector
-	for _, el1 := range  {
+	for _, el1 := range res {
 		vec1 = vec1.Conjoin(MakeInt(el1))
 	}
-	return res
+	return vec1
 }
 
 GO FUNC debug.WriteHeapDump has:
@@ -15135,12 +15135,12 @@ GO FUNC des.NewTripleDESCipher has:
 
 GO FUNC dnsmessage.NewBuilder has:
 // func newBuilder(buf ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/vendor/golang_org/x/net/dns/dnsmessage/message.go:939:21), h Object) Object {
-// 	dnsmessage.NewBuilder(buf, h)
+// 	res := dnsmessage.NewBuilder(buf, h)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin(MakeInt(el1))
 // 	}
-// 	return res
+// 	return (ABEND680:TODO)
 // }
 
 GO FUNC dnsmessage.NewName has:
@@ -15158,35 +15158,35 @@ GO FUNC dnsmessage.NewName has:
 
 GO FUNC doc.Examples has:
 // func examples(files ABEND882(unrecognized Expr type *ast.Ellipsis at: ../GOSRC/go/doc/example.go:47:21)) Object {
-// 	doc.Examples(files)
+// 	res := doc.Examples(files)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec2 := EmptyVector
 // 		for _, el2 := range el1 {
 // 			vec2 = vec2.Conjoin(*el2)
 // 		}
 // 		vec1 = vec1.Conjoin(*(ABEND680:TODO))
 // 	}
-// 	return res
+// 	return vec1
 // }
 
 GO FUNC doc.New has:
 // func new(pkg ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/go/doc/doc.go:94:14), importPath string, mode Object) Object {
-// 	doc.New(pkg, importPath, mode)
+// 	res := doc.New(pkg, importPath, mode)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin(MakeString(el1))
 // 	}
 // 	vec2 := EmptyVector
-// 	for _, el2 := range  {
+// 	for _, el2 := range res {
 // 		vec2 = vec2.Conjoin(MakeString(el2))
 // 	}
 // 	vec3 := EmptyVector
-// 	for _, el3 := range  {
+// 	for _, el3 := range res {
 // 		vec3 = vec3.Conjoin(MakeString(el3))
 // 	}
 // 	vec4 := EmptyVector
-// 	for _, el4 := range  {
+// 	for _, el4 := range res {
 // 		vec5 := EmptyVector
 // 		for _, el5 := range el4 {
 // 			vec5 = vec5.Conjoin(MakeString(el5))
@@ -15194,7 +15194,7 @@ GO FUNC doc.New has:
 // 		vec4 = vec4.Conjoin(*(ABEND680:TODO))
 // 	}
 // 	vec6 := EmptyVector
-// 	for _, el6 := range  {
+// 	for _, el6 := range res {
 // 		vec7 := EmptyVector
 // 		for _, el7 := range el6 {
 // 			vec8 := EmptyVector
@@ -15222,7 +15222,7 @@ GO FUNC doc.New has:
 // 		vec6 = vec6.Conjoin(*(ABEND680:TODO))
 // 	}
 // 	vec13 := EmptyVector
-// 	for _, el13 := range  {
+// 	for _, el13 := range res {
 // 		vec14 := EmptyVector
 // 		for _, el14 := range el13 {
 // 			vec14 = vec14.Conjoin(MakeString(el14))
@@ -15230,10 +15230,10 @@ GO FUNC doc.New has:
 // 		vec13 = vec13.Conjoin(*(ABEND680:TODO))
 // 	}
 // 	vec15 := EmptyVector
-// 	for _, el15 := range  {
+// 	for _, el15 := range res {
 // 		vec15 = vec15.Conjoin(*(ABEND680:TODO))
 // 	}
-// 	return res
+// 	return *(ABEND680:TODO)
 // }
 
 GO FUNC doc.ToHTML has:
@@ -15411,12 +15411,12 @@ GO FUNC elliptic.GenerateKey has:
 
 GO FUNC elliptic.Marshal has:
 // func marshal(curve Object, x ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/crypto/elliptic/elliptic.go:305:32), y ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/crypto/elliptic/elliptic.go:305:32)) Object {
-// 	elliptic.Marshal(curve, x, y)
+// 	res := elliptic.Marshal(curve, x, y)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin(MakeInt(el1))
 // 	}
-// 	return res
+// 	return vec1
 // }
 
 GO FUNC elliptic.P224 has:
@@ -15450,70 +15450,70 @@ GO FUNC elliptic.Unmarshal has:
 
 GO FUNC exec.Command has:
 // func command(name string, arg ABEND882(unrecognized Expr type *ast.Ellipsis at: ../GOSRC/os/exec/exec.go:155:31)) Object {
-// 	exec.Command(name, arg)
+// 	res := exec.Command(name, arg)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin(MakeString(el1))
 // 	}
 // 	vec2 := EmptyVector
-// 	for _, el2 := range  {
+// 	for _, el2 := range res {
 // 		vec2 = vec2.Conjoin(MakeString(el2))
 // 	}
 // 	vec3 := EmptyVector
-// 	for _, el3 := range  {
+// 	for _, el3 := range res {
 // 		vec3 = vec3.Conjoin(*el3)
 // 	}
 // 	vec4 := EmptyVector
-// 	for _, el4 := range  {
+// 	for _, el4 := range res {
 // 		vec4 = vec4.Conjoin(*el4)
 // 	}
 // 	vec5 := EmptyVector
-// 	for _, el5 := range  {
+// 	for _, el5 := range res {
 // 		vec5 = vec5.Conjoin(el5)
 // 	}
 // 	vec6 := EmptyVector
-// 	for _, el6 := range  {
+// 	for _, el6 := range res {
 // 		vec6 = vec6.Conjoin(el6)
 // 	}
 // 	vec7 := EmptyVector
-// 	for _, el7 := range  {
+// 	for _, el7 := range res {
 // 		vec7 = vec7.Conjoin(el7)
 // 	}
-// 	return res
+// 	return *(ABEND680:TODO)
 // }
 
 GO FUNC exec.CommandContext has:
 // func commandContext(ctx ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/os/exec/exec.go:175:25), name string, arg ABEND882(unrecognized Expr type *ast.Ellipsis at: ../GOSRC/os/exec/exec.go:175:59)) Object {
-// 	exec.CommandContext(ctx, name, arg)
+// 	res := exec.CommandContext(ctx, name, arg)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin(MakeString(el1))
 // 	}
 // 	vec2 := EmptyVector
-// 	for _, el2 := range  {
+// 	for _, el2 := range res {
 // 		vec2 = vec2.Conjoin(MakeString(el2))
 // 	}
 // 	vec3 := EmptyVector
-// 	for _, el3 := range  {
+// 	for _, el3 := range res {
 // 		vec3 = vec3.Conjoin(*el3)
 // 	}
 // 	vec4 := EmptyVector
-// 	for _, el4 := range  {
+// 	for _, el4 := range res {
 // 		vec4 = vec4.Conjoin(*el4)
 // 	}
 // 	vec5 := EmptyVector
-// 	for _, el5 := range  {
+// 	for _, el5 := range res {
 // 		vec5 = vec5.Conjoin(el5)
 // 	}
 // 	vec6 := EmptyVector
-// 	for _, el6 := range  {
+// 	for _, el6 := range res {
 // 		vec6 = vec6.Conjoin(el6)
 // 	}
 // 	vec7 := EmptyVector
-// 	for _, el7 := range  {
+// 	for _, el7 := range res {
 // 		vec7 = vec7.Conjoin(el7)
 // 	}
-// 	return res
+// 	return *(ABEND680:TODO)
 // }
 
 GO FUNC exec.LookPath has:
@@ -15543,27 +15543,27 @@ GO FUNC expvar.Handler has:
 
 GO FUNC expvar.NewFloat has:
 // func newFloat(name string) Object {
-// 	return *(ABEND680:TODO)expvar.NewFloat(name)
+// 	return expvar.NewFloat(name)
 // }
 
 GO FUNC expvar.NewInt has:
-// func newInt(name string) Object {
-// 	return *(ABEND680:TODO)expvar.NewInt(name)
-// }
+func newInt(name string) Object {
+	return expvar.NewInt(name)
+}
 
 GO FUNC expvar.NewMap has:
 // func newMap(name string) Object {
-// 	expvar.NewMap(name)
+// 	res := expvar.NewMap(name)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin(MakeString(el1))
 // 	}
-// 	return res
+// 	return *(ABEND680:TODO)
 // }
 
 GO FUNC expvar.NewString has:
 // func newString(name string) Object {
-// 	return *(ABEND680:TODO)expvar.NewString(name)
+// 	return expvar.NewString(name)
 // }
 
 GO FUNC expvar.Publish has:
@@ -15637,22 +15637,22 @@ func split(path string) Object {
 
 GO FUNC filepath.SplitList has:
 func splitList(path string) Object {
-	filepath.SplitList(path)
+	res := filepath.SplitList(path)
 	vec1 := EmptyVector
-	for _, el1 := range  {
+	for _, el1 := range res {
 		vec1 = vec1.Conjoin(MakeString(el1))
 	}
-	return res
+	return vec1
 }
 
 GO FUNC flag.Args has:
 func args() Object {
-	flag.Args()
+	res := flag.Args()
 	vec1 := EmptyVector
-	for _, el1 := range  {
+	for _, el1 := range res {
 		vec1 = vec1.Conjoin(MakeString(el1))
 	}
-	return res
+	return vec1
 }
 
 GO FUNC flag.BoolVar has:
@@ -15663,7 +15663,7 @@ GO FUNC flag.BoolVar has:
 
 GO FUNC flag.Duration has:
 // func duration(name string, value ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/flag/flag.go:783:34), usage string) Object {
-// 	return *flag.Duration(name, value, usage)
+// 	return flag.Duration(name, value, usage)
 // }
 
 GO FUNC flag.DurationVar has:
@@ -15674,7 +15674,7 @@ GO FUNC flag.DurationVar has:
 
 GO FUNC flag.Float64 has:
 // func float64(name string, value Object, usage string) Object {
-// 	return *flag.Float64(name, value, usage)
+// 	return flag.Float64(name, value, usage)
 // }
 
 GO FUNC flag.Float64Var has:
@@ -15697,17 +15697,17 @@ GO FUNC flag.IntVar has:
 
 GO FUNC flag.Lookup has:
 // func lookup(name string) Object {
-// 	return *(ABEND680:TODO)flag.Lookup(name)
+// 	return flag.Lookup(name)
 // }
 
 GO FUNC flag.NewFlagSet has:
 // func newFlagSet(name string, errorHandling Object) Object {
-// 	flag.NewFlagSet(name, errorHandling)
+// 	res := flag.NewFlagSet(name, errorHandling)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin(MakeString(el1))
 // 	}
-// 	return res
+// 	return *(ABEND680:TODO)
 // }
 
 GO FUNC flag.Parse has:
@@ -15730,7 +15730,7 @@ GO FUNC flag.StringVar has:
 
 GO FUNC flag.Uint64 has:
 // func uint64(name string, value Object, usage string) Object {
-// 	return *flag.Uint64(name, value, usage)
+// 	return flag.Uint64(name, value, usage)
 // }
 
 GO FUNC flag.Uint64Var has:
@@ -16027,22 +16027,22 @@ GO FUNC gif.DecodeConfig has:
 
 GO FUNC gob.NewDecoder has:
 // func newDecoder(r ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/encoding/gob/decoder.go:41:19)) Object {
-// 	gob.NewDecoder(r)
+// 	res := gob.NewDecoder(r)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin(MakeInt(el1))
 // 	}
-// 	return res
+// 	return *(ABEND680:TODO)
 // }
 
 GO FUNC gob.NewEncoder has:
 // func newEncoder(w ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/encoding/gob/encoder.go:33:19)) Object {
-// 	gob.NewEncoder(w)
+// 	res := gob.NewEncoder(w)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin(el1)
 // 	}
-// 	return res
+// 	return *(ABEND680:TODO)
 // }
 
 GO FUNC gob.Register has:
@@ -16059,20 +16059,20 @@ GO FUNC gob.RegisterName has:
 
 GO FUNC gosym.NewLineTable has:
 // func newLineTable(data ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/debug/gosym/pclntab.go:124:24), text Object) Object {
-// 	gosym.NewLineTable(data, text)
+// 	res := gosym.NewLineTable(data, text)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin(MakeInt(el1))
 // 	}
 // 	vec2 := EmptyVector
-// 	for _, el2 := range  {
+// 	for _, el2 := range res {
 // 		vec2 = vec2.Conjoin(MakeInt(el2))
 // 	}
 // 	vec3 := EmptyVector
-// 	for _, el3 := range  {
+// 	for _, el3 := range res {
 // 		vec3 = vec3.Conjoin(MakeInt(el3))
 // 	}
-// 	return res
+// 	return *(ABEND680:TODO)
 // }
 
 GO FUNC gosym.NewTable has:
@@ -16231,16 +16231,16 @@ GO FUNC gzip.NewReader has:
 
 GO FUNC gzip.NewWriter has:
 // func newWriter(w ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/compress/gzip/gzip.go:49:18)) Object {
-// 	gzip.NewWriter(w)
+// 	res := gzip.NewWriter(w)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin(MakeInt(el1))
 // 	}
 // 	vec2 := EmptyVector
-// 	for _, el2 := range  {
+// 	for _, el2 := range res {
 // 		vec2 = vec2.Conjoin(MakeInt(el2))
 // 	}
-// 	return res
+// 	return *(ABEND680:TODO)
 // }
 
 GO FUNC gzip.NewWriterLevel has:
@@ -16332,12 +16332,12 @@ GO FUNC hmac.New has:
 
 GO FUNC hpack.AppendHuffmanString has:
 // func appendHuffmanString(dst ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/vendor/golang_org/x/net/http2/hpack/huffman.go:160:30), s string) Object {
-// 	hpack.AppendHuffmanString(dst, s)
+// 	res := hpack.AppendHuffmanString(dst, s)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin(MakeInt(el1))
 // 	}
-// 	return res
+// 	return vec1
 // }
 
 GO FUNC hpack.HuffmanDecode has:
@@ -16365,22 +16365,22 @@ GO FUNC hpack.HuffmanEncodeLength has:
 
 GO FUNC hpack.NewDecoder has:
 // func newDecoder(maxDynamicTableSize Object, emitFunc ABEND882(unrecognized Expr type *ast.FuncType at: ../GOSRC/vendor/golang_org/x/net/http2/hpack/hpack.go:100:54)) Object {
-// 	hpack.NewDecoder(maxDynamicTableSize, emitFunc)
+// 	res := hpack.NewDecoder(maxDynamicTableSize, emitFunc)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin(MakeInt(el1))
 // 	}
-// 	return res
+// 	return *(ABEND680:TODO)
 // }
 
 GO FUNC hpack.NewEncoder has:
 // func newEncoder(w ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/vendor/golang_org/x/net/http2/hpack/encode.go:35:19)) Object {
-// 	hpack.NewEncoder(w)
+// 	res := hpack.NewEncoder(w)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin(MakeInt(el1))
 // 	}
-// 	return res
+// 	return *(ABEND680:TODO)
 // }
 
 GO FUNC http.Error has:
@@ -16469,7 +16469,7 @@ GO FUNC http.NewRequest has:
 
 GO FUNC http.NewServeMux has:
 // func newServeMux() Object {
-// 	return *(ABEND680:TODO)http.NewServeMux()
+// 	return http.NewServeMux()
 // }
 
 GO FUNC http.NotFound has:
@@ -16633,38 +16633,38 @@ func punycodeHostPort(v string) Object {
 }
 
 GO FUNC httpproxy.FromEnvironment has:
-// func fromEnvironment() Object {
-// 	return *(ABEND680:TODO)httpproxy.FromEnvironment()
-// }
+func fromEnvironment() Object {
+	return httpproxy.FromEnvironment()
+}
 
 GO FUNC httptest.NewRecorder has:
 // func newRecorder() Object {
-// 	return *(ABEND680:TODO)httptest.NewRecorder()
+// 	return httptest.NewRecorder()
 // }
 
 GO FUNC httptest.NewRequest has:
 // func newRequest(method string, target string, body ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/net/http/httptest/httptest.go:41:45)) Object {
-// 	return *httptest.NewRequest(method, target, body)
+// 	return httptest.NewRequest(method, target, body)
 // }
 
 GO FUNC httptest.NewServer has:
 // func newServer(handler ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/net/http/httptest/server.go:80:24)) Object {
-// 	return *(ABEND680:TODO)httptest.NewServer(handler)
+// 	return httptest.NewServer(handler)
 // }
 
 GO FUNC httptest.NewTLSServer has:
 // func newTLSServer(handler ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/net/http/httptest/server.go:160:27)) Object {
-// 	return *(ABEND680:TODO)httptest.NewTLSServer(handler)
+// 	return httptest.NewTLSServer(handler)
 // }
 
 GO FUNC httptest.NewUnstartedServer has:
 // func newUnstartedServer(handler ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/net/http/httptest/server.go:92:33)) Object {
-// 	return *(ABEND680:TODO)httptest.NewUnstartedServer(handler)
+// 	return httptest.NewUnstartedServer(handler)
 // }
 
 GO FUNC httptrace.ContextClientTrace has:
 // func contextClientTrace(ctx ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/net/http/httptrace/trace.go:24:29)) Object {
-// 	return *(ABEND680:TODO)httptrace.ContextClientTrace(ctx)
+// 	return httptrace.ContextClientTrace(ctx)
 // }
 
 GO FUNC httptrace.WithClientTrace has:
@@ -16723,22 +16723,22 @@ GO FUNC httputil.NewChunkedWriter has:
 
 GO FUNC httputil.NewClientConn has:
 // func newClientConn(c ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/net/http/httputil/persist.go:248:22), r ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/net/http/httputil/persist.go:248:34)) Object {
-// 	return *(ABEND680:TODO)httputil.NewClientConn(c, r)
+// 	return httputil.NewClientConn(c, r)
 // }
 
 GO FUNC httputil.NewProxyClientConn has:
 // func newProxyClientConn(c ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/net/http/httputil/persist.go:265:27), r ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/net/http/httputil/persist.go:265:39)) Object {
-// 	return *(ABEND680:TODO)httputil.NewProxyClientConn(c, r)
+// 	return httputil.NewProxyClientConn(c, r)
 // }
 
 GO FUNC httputil.NewServerConn has:
 // func newServerConn(c ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/net/http/httputil/persist.go:54:22), r ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/net/http/httputil/persist.go:54:34)) Object {
-// 	return *(ABEND680:TODO)httputil.NewServerConn(c, r)
+// 	return httputil.NewServerConn(c, r)
 // }
 
 GO FUNC httputil.NewSingleHostReverseProxy has:
 // func newSingleHostReverseProxy(target ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/net/http/httputil/reverseproxy.go:103:39)) Object {
-// 	return *(ABEND680:TODO)httputil.NewSingleHostReverseProxy(target)
+// 	return httputil.NewSingleHostReverseProxy(target)
 // }
 
 GO FUNC idna.BidiRule has:
@@ -16753,7 +16753,7 @@ GO FUNC idna.MapForLookup has:
 
 GO FUNC idna.New has:
 // func new(o ABEND882(unrecognized Expr type *ast.Ellipsis at: ../GOSRC/vendor/golang_org/x/net/idna/idna.go:189:12)) Object {
-// 	return *(ABEND680:TODO)idna.New(o)
+// 	return idna.New(o)
 // }
 
 GO FUNC idna.RemoveLeadingDots has:
@@ -16826,142 +16826,142 @@ GO FUNC image.DecodeConfig has:
 
 GO FUNC image.NewAlpha has:
 // func newAlpha(r Object) Object {
-// 	image.NewAlpha(r)
+// 	res := image.NewAlpha(r)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin()
 // 	}
-// 	return res
+// 	return *(ABEND680:TODO)
 // }
 
 GO FUNC image.NewAlpha16 has:
 // func newAlpha16(r Object) Object {
-// 	image.NewAlpha16(r)
+// 	res := image.NewAlpha16(r)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin()
 // 	}
-// 	return res
+// 	return *(ABEND680:TODO)
 // }
 
 GO FUNC image.NewCMYK has:
 // func newCMYK(r Object) Object {
-// 	image.NewCMYK(r)
+// 	res := image.NewCMYK(r)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin()
 // 	}
-// 	return res
+// 	return *(ABEND680:TODO)
 // }
 
 GO FUNC image.NewGray has:
 // func newGray(r Object) Object {
-// 	image.NewGray(r)
+// 	res := image.NewGray(r)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin()
 // 	}
-// 	return res
+// 	return *(ABEND680:TODO)
 // }
 
 GO FUNC image.NewGray16 has:
 // func newGray16(r Object) Object {
-// 	image.NewGray16(r)
+// 	res := image.NewGray16(r)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin()
 // 	}
-// 	return res
+// 	return *(ABEND680:TODO)
 // }
 
 GO FUNC image.NewNRGBA has:
 // func newNRGBA(r Object) Object {
-// 	image.NewNRGBA(r)
+// 	res := image.NewNRGBA(r)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin()
 // 	}
-// 	return res
+// 	return *(ABEND680:TODO)
 // }
 
 GO FUNC image.NewNRGBA64 has:
 // func newNRGBA64(r Object) Object {
-// 	image.NewNRGBA64(r)
+// 	res := image.NewNRGBA64(r)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin()
 // 	}
-// 	return res
+// 	return *(ABEND680:TODO)
 // }
 
 GO FUNC image.NewNYCbCrA has:
 // func newNYCbCrA(r Object, subsampleRatio Object) Object {
-// 	image.NewNYCbCrA(r, subsampleRatio)
+// 	res := image.NewNYCbCrA(r, subsampleRatio)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin()
 // 	}
 // 	vec2 := EmptyVector
-// 	for _, el2 := range  {
+// 	for _, el2 := range res {
 // 		vec2 = vec2.Conjoin()
 // 	}
-// 	return res
+// 	return *(ABEND680:TODO)
 // }
 
 GO FUNC image.NewPaletted has:
 // func newPaletted(r Object, p ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/image/image.go:1019:33)) Object {
-// 	image.NewPaletted(r, p)
+// 	res := image.NewPaletted(r, p)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin()
 // 	}
-// 	return res
+// 	return *(ABEND680:TODO)
 // }
 
 GO FUNC image.NewRGBA has:
 // func newRGBA(r Object) Object {
-// 	image.NewRGBA(r)
+// 	res := image.NewRGBA(r)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin()
 // 	}
-// 	return res
+// 	return *(ABEND680:TODO)
 // }
 
 GO FUNC image.NewRGBA64 has:
 // func newRGBA64(r Object) Object {
-// 	image.NewRGBA64(r)
+// 	res := image.NewRGBA64(r)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin()
 // 	}
-// 	return res
+// 	return *(ABEND680:TODO)
 // }
 
 GO FUNC image.NewUniform has:
 // func newUniform(c ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/image/names.go:50:19)) Object {
-// 	return *(ABEND680:TODO)image.NewUniform(c)
+// 	return image.NewUniform(c)
 // }
 
 GO FUNC image.NewYCbCr has:
 // func newYCbCr(r Object, subsampleRatio Object) Object {
-// 	image.NewYCbCr(r, subsampleRatio)
+// 	res := image.NewYCbCr(r, subsampleRatio)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin()
 // 	}
-// 	return res
+// 	return *(ABEND680:TODO)
 // }
 
 GO FUNC image.Pt has:
-// func pt(X int, Y int) Object {
-// 	return (ABEND680:TODO)image.Pt(X, Y)
-// }
+func pt(X int, Y int) Object {
+	return image.Pt(X, Y)
+}
 
 GO FUNC image.Rect has:
-// func rect(x0 int, y0 int, x1 int, y1 int) Object {
-// 	return (ABEND680:TODO)image.Rect(x0, y0, x1, y1)
-// }
+func rect(x0 int, y0 int, x1 int, y1 int) Object {
+	return image.Rect(x0, y0, x1, y1)
+}
 
 GO FUNC image.RegisterFormat has:
 // func registerFormat(name string, magic string, decode ABEND882(unrecognized Expr type *ast.FuncType at: ../GOSRC/image/format.go:32:48), decodeConfig ABEND882(unrecognized Expr type *ast.FuncType at: ../GOSRC/image/format.go:32:93)) Object {
@@ -17023,7 +17023,7 @@ GO FUNC io.MultiWriter has:
 
 GO FUNC io.NewSectionReader has:
 // func newSectionReader(r Object, off Object, n Object) Object {
-// 	return *(ABEND680:TODO)io.NewSectionReader(r, off, n)
+// 	return io.NewSectionReader(r, off, n)
 // }
 
 GO FUNC io.Pipe has:
@@ -17216,21 +17216,21 @@ GO FUNC json.MarshalIndent has:
 
 GO FUNC json.NewDecoder has:
 // func newDecoder(r ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/encoding/json/stream.go:31:19)) Object {
-// 	json.NewDecoder(r)
+// 	res := json.NewDecoder(r)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin(MakeInt(el1))
 // 	}
 // 	vec2 := EmptyVector
-// 	for _, el2 := range  {
+// 	for _, el2 := range res {
 // 		vec2 = vec2.Conjoin(MakeInt(el2))
 // 	}
-// 	return res
+// 	return *(ABEND680:TODO)
 // }
 
 GO FUNC json.NewEncoder has:
 // func newEncoder(w ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/encoding/json/stream.go:186:19)) Object {
-// 	return *(ABEND680:TODO)json.NewEncoder(w)
+// 	return json.NewEncoder(w)
 // }
 
 GO FUNC jsonrpc.Dial has:
@@ -17244,7 +17244,7 @@ GO FUNC jsonrpc.Dial has:
 
 GO FUNC jsonrpc.NewClient has:
 // func newClient(conn ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/net/rpc/jsonrpc/client.go:113:21)) Object {
-// 	return *jsonrpc.NewClient(conn)
+// 	return jsonrpc.NewClient(conn)
 // }
 
 GO FUNC jsonrpc.NewClientCodec has:
@@ -17265,7 +17265,7 @@ GO FUNC jsonrpc.ServeConn has:
 
 GO FUNC list.New has:
 // func new() Object {
-// 	return *(ABEND680:TODO)list.New()
+// 	return list.New()
 // }
 
 GO FUNC log.Fatal has:
@@ -17288,12 +17288,12 @@ GO FUNC log.Fatalln has:
 
 GO FUNC log.New has:
 // func new(out ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/log/log.go:62:14), prefix string, flag int) Object {
-// 	log.New(out, prefix, flag)
+// 	res := log.New(out, prefix, flag)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin(MakeInt(el1))
 // 	}
-// 	return res
+// 	return *(ABEND680:TODO)
 // }
 
 GO FUNC log.Panic has:
@@ -17884,12 +17884,12 @@ GO FUNC md5.New has:
 
 GO FUNC md5.Sum has:
 // func sum(data ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/crypto/md5/md5.go:204:15)) Object {
-// 	md5.Sum(data)
+// 	res := md5.Sum(data)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin(MakeInt(el1))
 // 	}
-// 	return res
+// 	return vec1
 // }
 
 GO FUNC mime.ExtensionsByType has:
@@ -17917,39 +17917,39 @@ GO FUNC mime.ParseMediaType has:
 
 GO FUNC multipart.NewReader has:
 // func newReader(r ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/mime/multipart/multipart.go:99:18), boundary string) Object {
-// 	multipart.NewReader(r, boundary)
+// 	res := multipart.NewReader(r, boundary)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin(MakeInt(el1))
 // 	}
 // 	vec2 := EmptyVector
-// 	for _, el2 := range  {
+// 	for _, el2 := range res {
 // 		vec2 = vec2.Conjoin(MakeInt(el2))
 // 	}
 // 	vec3 := EmptyVector
-// 	for _, el3 := range  {
+// 	for _, el3 := range res {
 // 		vec3 = vec3.Conjoin(MakeInt(el3))
 // 	}
 // 	vec4 := EmptyVector
-// 	for _, el4 := range  {
+// 	for _, el4 := range res {
 // 		vec4 = vec4.Conjoin(MakeInt(el4))
 // 	}
-// 	return res
+// 	return *(ABEND680:TODO)
 // }
 
 GO FUNC multipart.NewWriter has:
 // func newWriter(w ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/mime/multipart/writer.go:27:18)) Object {
-// 	return *(ABEND680:TODO)multipart.NewWriter(w)
+// 	return multipart.NewWriter(w)
 // }
 
 GO FUNC net.CIDRMask has:
 func cIDRMask(ones int, bits int) Object {
-	net.CIDRMask(ones, bits)
+	res := net.CIDRMask(ones, bits)
 	vec1 := EmptyVector
-	for _, el1 := range  {
+	for _, el1 := range res {
 		vec1 = vec1.Conjoin(MakeInt(el1))
 	}
-	return res
+	return vec1
 }
 
 GO FUNC net.Dial has:
@@ -18035,22 +18035,22 @@ GO FUNC net.FilePacketConn has:
 
 GO FUNC net.IPv4 has:
 func iPv4(a Object, b Object, c Object, d Object) Object {
-	net.IPv4(a, b, c, d)
+	res := net.IPv4(a, b, c, d)
 	vec1 := EmptyVector
-	for _, el1 := range  {
+	for _, el1 := range res {
 		vec1 = vec1.Conjoin(MakeInt(el1))
 	}
-	return res
+	return vec1
 }
 
 GO FUNC net.IPv4Mask has:
 func iPv4Mask(a Object, b Object, c Object, d Object) Object {
-	net.IPv4Mask(a, b, c, d)
+	res := net.IPv4Mask(a, b, c, d)
 	vec1 := EmptyVector
-	for _, el1 := range  {
+	for _, el1 := range res {
 		vec1 = vec1.Conjoin(MakeInt(el1))
 	}
-	return res
+	return vec1
 }
 
 GO FUNC net.InterfaceAddrs has:
@@ -18319,12 +18319,12 @@ GO FUNC net.ParseCIDR has:
 
 GO FUNC net.ParseIP has:
 func parseIP(s string) Object {
-	net.ParseIP(s)
+	res := net.ParseIP(s)
 	vec1 := EmptyVector
-	for _, el1 := range  {
+	for _, el1 := range res {
 		vec1 = vec1.Conjoin(MakeInt(el1))
 	}
-	return res
+	return vec1
 }
 
 GO FUNC net.ParseMAC has:
@@ -18430,12 +18430,12 @@ GO FUNC os.Create has:
 
 GO FUNC os.Environ has:
 func environ() Object {
-	os.Environ()
+	res := os.Environ()
 	vec1 := EmptyVector
-	for _, el1 := range  {
+	for _, el1 := range res {
 		vec1 = vec1.Conjoin(MakeString(el1))
 	}
-	return res
+	return vec1
 }
 
 GO FUNC os.Executable has:
@@ -18512,9 +18512,9 @@ GO FUNC os.Lstat has:
 // }
 
 GO FUNC os.NewFile has:
-// func newFile(fd Object, name string) Object {
-// 	return *(ABEND680:TODO)os.NewFile(fd, name)
-// }
+func newFile(fd Object, name string) Object {
+	return os.NewFile(fd, name)
+}
 
 GO FUNC os.Open has:
 // func open(name string) Object {
@@ -18582,46 +18582,46 @@ func userCacheDir() Object {
 
 GO FUNC parse.New has:
 // func new(name string, funcs ABEND882(unrecognized Expr type *ast.Ellipsis at: ../GOSRC/text/template/parse/parse.go:125:29)) Object {
-// 	parse.New(name, funcs)
+// 	res := parse.New(name, funcs)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin(el1)
 // 	}
 // 	vec2 := EmptyVector
-// 	for _, el2 := range  {
+// 	for _, el2 := range res {
 // 		vec2 = vec2.Conjoin(el2)
 // 	}
 // 	vec3 := EmptyVector
-// 	for _, el3 := range  {
+// 	for _, el3 := range res {
 // 		vec3 = vec3.Conjoin()
 // 	}
 // 	vec4 := EmptyVector
-// 	for _, el4 := range  {
+// 	for _, el4 := range res {
 // 		vec4 = vec4.Conjoin(MakeString(el4))
 // 	}
-// 	return res
+// 	return *(ABEND680:TODO)
 // }
 
 GO FUNC parse.NewIdentifier has:
 // func newIdentifier(ident string) Object {
-// 	parse.NewIdentifier(ident)
+// 	res := parse.NewIdentifier(ident)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin(el1)
 // 	}
 // 	vec2 := EmptyVector
-// 	for _, el2 := range  {
+// 	for _, el2 := range res {
 // 		vec2 = vec2.Conjoin(el2)
 // 	}
 // 	vec3 := EmptyVector
-// 	for _, el3 := range  {
+// 	for _, el3 := range res {
 // 		vec3 = vec3.Conjoin()
 // 	}
 // 	vec4 := EmptyVector
-// 	for _, el4 := range  {
+// 	for _, el4 := range res {
 // 		vec4 = vec4.Conjoin(MakeString(el4))
 // 	}
-// 	return res
+// 	return *(ABEND680:TODO)
 // }
 
 GO FUNC parse.Parse has:
@@ -18772,12 +18772,12 @@ GO FUNC pem.Decode has:
 
 GO FUNC pem.EncodeToMemory has:
 // func encodeToMemory(b ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/encoding/pem/pem.go:326:23)) Object {
-// 	pem.EncodeToMemory(b)
+// 	res := pem.EncodeToMemory(b)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin(MakeInt(el1))
 // 	}
-// 	return res
+// 	return vec1
 // }
 
 GO FUNC plan9obj.NewFile has:
@@ -18879,22 +18879,22 @@ GO FUNC pprof.Label has:
 
 GO FUNC pprof.Labels has:
 // func labels(args ABEND882(unrecognized Expr type *ast.Ellipsis at: ../GOSRC/runtime/pprof/label.go:57:18)) Object {
-// 	pprof.Labels(args)
+// 	res := pprof.Labels(args)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin()
 // 	}
-// 	return res
+// 	return (ABEND680:TODO)
 // }
 
 GO FUNC pprof.Lookup has:
 // func lookup(name string) Object {
-// 	return *(ABEND680:TODO)pprof.Lookup(name)
+// 	return pprof.Lookup(name)
 // }
 
 GO FUNC pprof.NewProfile has:
 // func newProfile(name string) Object {
-// 	return *(ABEND680:TODO)pprof.NewProfile(name)
+// 	return pprof.NewProfile(name)
 // }
 
 GO FUNC pprof.Profile has:
@@ -18905,12 +18905,12 @@ GO FUNC pprof.Profile has:
 
 GO FUNC pprof.Profiles has:
 // func profiles() Object {
-// 	pprof.Profiles()
+// 	res := pprof.Profiles()
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin(*(ABEND680:TODO))
 // 	}
-// 	return res
+// 	return vec1
 // }
 
 GO FUNC pprof.SetGoroutineLabels has:
@@ -18953,22 +18953,22 @@ GO FUNC quick.Value has:
 
 GO FUNC quotedprintable.NewReader has:
 // func newReader(r ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/mime/quotedprintable/reader.go:24:18)) Object {
-// 	quotedprintable.NewReader(r)
+// 	res := quotedprintable.NewReader(r)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin(MakeInt(el1))
 // 	}
-// 	return res
+// 	return *(ABEND680:TODO)
 // }
 
 GO FUNC quotedprintable.NewWriter has:
 // func newWriter(w ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/mime/quotedprintable/writer.go:24:18)) Object {
-// 	quotedprintable.NewWriter(w)
+// 	res := quotedprintable.NewWriter(w)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin(MakeInt(el1))
 // 	}
-// 	return res
+// 	return *(ABEND680:TODO)
 // }
 
 GO FUNC rand.ExpFloat64 has:
@@ -18988,7 +18988,7 @@ GO FUNC rand.Float64 has:
 
 GO FUNC rand.New has:
 // func new(src Object) Object {
-// 	return *(ABEND680:TODO)rand.New(src)
+// 	return rand.New(src)
 // }
 
 GO FUNC rand.NewSource has:
@@ -18998,7 +18998,7 @@ GO FUNC rand.NewSource has:
 
 GO FUNC rand.NewZipf has:
 // func newZipf(r ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/math/rand/zipf.go:39:16), s Object, v Object, imax Object) Object {
-// 	return *(ABEND680:TODO)rand.NewZipf(r, s, v, imax)
+// 	return rand.NewZipf(r, s, v, imax)
 // }
 
 GO FUNC rand.NormFloat64 has:
@@ -19008,12 +19008,12 @@ GO FUNC rand.NormFloat64 has:
 
 GO FUNC rand.Perm has:
 func perm(n int) Object {
-	rand.Perm(n)
+	res := rand.Perm(n)
 	vec1 := EmptyVector
-	for _, el1 := range  {
+	for _, el1 := range res {
 		vec1 = vec1.Conjoin(MakeInt(el1))
 	}
-	return res
+	return vec1
 }
 
 GO FUNC rand.Prime has:
@@ -19057,12 +19057,12 @@ GO FUNC rc4.NewCipher has:
 
 GO FUNC reflect.Append has:
 // func append(s Object, x ABEND882(unrecognized Expr type *ast.Ellipsis at: ../GOSRC/reflect/value.go:1890:24)) Object {
-// 	return (ABEND680:TODO)reflect.Append(s, x)
+// 	return reflect.Append(s, x)
 // }
 
 GO FUNC reflect.AppendSlice has:
 // func appendSlice(s Object, t Object) Object {
-// 	return (ABEND680:TODO)reflect.AppendSlice(s, t)
+// 	return reflect.AppendSlice(s, t)
 // }
 
 GO FUNC reflect.ArrayOf has:
@@ -19082,32 +19082,32 @@ GO FUNC reflect.FuncOf has:
 
 GO FUNC reflect.Indirect has:
 // func indirect(v Object) Object {
-// 	return (ABEND680:TODO)reflect.Indirect(v)
+// 	return reflect.Indirect(v)
 // }
 
 GO FUNC reflect.MakeChan has:
 // func makeChan(typ Object, buffer int) Object {
-// 	return (ABEND680:TODO)reflect.MakeChan(typ, buffer)
+// 	return reflect.MakeChan(typ, buffer)
 // }
 
 GO FUNC reflect.MakeFunc has:
 // func makeFunc(typ Object, fn ABEND882(unrecognized Expr type *ast.FuncType at: ../GOSRC/reflect/makefunc.go:48:28)) Object {
-// 	return (ABEND680:TODO)reflect.MakeFunc(typ, fn)
+// 	return reflect.MakeFunc(typ, fn)
 // }
 
 GO FUNC reflect.MakeMap has:
 // func makeMap(typ Object) Object {
-// 	return (ABEND680:TODO)reflect.MakeMap(typ)
+// 	return reflect.MakeMap(typ)
 // }
 
 GO FUNC reflect.MakeMapWithSize has:
 // func makeMapWithSize(typ Object, n int) Object {
-// 	return (ABEND680:TODO)reflect.MakeMapWithSize(typ, n)
+// 	return reflect.MakeMapWithSize(typ, n)
 // }
 
 GO FUNC reflect.MakeSlice has:
 // func makeSlice(typ Object, len int, cap int) Object {
-// 	return (ABEND680:TODO)reflect.MakeSlice(typ, len, cap)
+// 	return reflect.MakeSlice(typ, len, cap)
 // }
 
 GO FUNC reflect.MapOf has:
@@ -19117,12 +19117,12 @@ GO FUNC reflect.MapOf has:
 
 GO FUNC reflect.New has:
 // func new(typ Object) Object {
-// 	return (ABEND680:TODO)reflect.New(typ)
+// 	return reflect.New(typ)
 // }
 
 GO FUNC reflect.NewAt has:
 // func newAt(typ Object, p ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/reflect/value.go:2227:24)) Object {
-// 	return (ABEND680:TODO)reflect.NewAt(typ, p)
+// 	return reflect.NewAt(typ, p)
 // }
 
 GO FUNC reflect.PtrTo has:
@@ -19162,12 +19162,12 @@ GO FUNC reflect.TypeOf has:
 
 GO FUNC reflect.ValueOf has:
 // func valueOf(i ABEND882(unrecognized Expr type *ast.InterfaceType at: ../GOSRC/reflect/value.go:2182:16)) Object {
-// 	return (ABEND680:TODO)reflect.ValueOf(i)
+// 	return reflect.ValueOf(i)
 // }
 
 GO FUNC reflect.Zero has:
 // func zero(typ Object) Object {
-// 	return (ABEND680:TODO)reflect.Zero(typ)
+// 	return reflect.Zero(typ)
 // }
 
 GO FUNC regexp.Compile has:
@@ -19225,27 +19225,27 @@ func matchString(pattern string, s string) Object {
 
 GO FUNC regexp.MustCompile has:
 // func mustCompile(str string) Object {
-// 	regexp.MustCompile(str)
+// 	res := regexp.MustCompile(str)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin(*)
 // 	}
-// 	return res
+// 	return *(ABEND680:TODO)
 // }
 
 GO FUNC regexp.MustCompilePOSIX has:
 // func mustCompilePOSIX(str string) Object {
-// 	regexp.MustCompilePOSIX(str)
+// 	res := regexp.MustCompilePOSIX(str)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin(*)
 // 	}
-// 	return res
+// 	return *(ABEND680:TODO)
 // }
 
 GO FUNC ring.New has:
 // func new(n int) Object {
-// 	return *(ABEND680:TODO)ring.New(n)
+// 	return ring.New(n)
 // }
 
 GO FUNC route.FetchRIB has:
@@ -19315,17 +19315,17 @@ GO FUNC rpc.HandleHTTP has:
 
 GO FUNC rpc.NewClient has:
 // func newClient(conn ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/net/rpc/client.go:193:21)) Object {
-// 	return *(ABEND680:TODO)rpc.NewClient(conn)
+// 	return rpc.NewClient(conn)
 // }
 
 GO FUNC rpc.NewClientWithCodec has:
 // func newClientWithCodec(codec Object) Object {
-// 	return *(ABEND680:TODO)rpc.NewClientWithCodec(codec)
+// 	return rpc.NewClientWithCodec(codec)
 // }
 
 GO FUNC rpc.NewServer has:
 // func newServer() Object {
-// 	return *(ABEND680:TODO)rpc.NewServer()
+// 	return rpc.NewServer()
 // }
 
 GO FUNC rpc.ServeCodec has:
@@ -19469,12 +19469,12 @@ GO FUNC runtime.Breakpoint has:
 
 GO FUNC runtime.CPUProfile has:
 func cPUProfile() Object {
-	runtime.CPUProfile()
+	res := runtime.CPUProfile()
 	vec1 := EmptyVector
-	for _, el1 := range  {
+	for _, el1 := range res {
 		vec1 = vec1.Conjoin(MakeInt(el1))
 	}
-	return res
+	return vec1
 }
 
 GO FUNC runtime.Caller has:
@@ -19490,18 +19490,18 @@ GO FUNC runtime.Caller has:
 
 GO FUNC runtime.CallersFrames has:
 // func callersFrames(callers ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/runtime/symtab.go:91:28)) Object {
-// 	runtime.CallersFrames(callers)
+// 	res := runtime.CallersFrames(callers)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin()
 // 	}
-// 	return res
+// 	return *(ABEND680:TODO)
 // }
 
 GO FUNC runtime.FuncForPC has:
-// func funcForPC(pc Object) Object {
-// 	return *(ABEND680:TODO)runtime.FuncForPC(pc)
-// }
+func funcForPC(pc Object) Object {
+	return runtime.FuncForPC(pc)
+}
 
 GO FUNC runtime.GC has:
 // func gC() Object {
@@ -19568,12 +19568,12 @@ GO FUNC runtime.ReadMemStats has:
 
 GO FUNC runtime.ReadTrace has:
 func readTrace() Object {
-	runtime.ReadTrace()
+	res := runtime.ReadTrace()
 	vec1 := EmptyVector
-	for _, el1 := range  {
+	for _, el1 := range res {
 		vec1 = vec1.Conjoin(MakeInt(el1))
 	}
-	return res
+	return vec1
 }
 
 GO FUNC runtime.SetBlockProfileRate has:
@@ -19676,12 +19676,12 @@ GO FUNC sha1.New has:
 
 GO FUNC sha1.Sum has:
 // func sum(data ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/crypto/sha1/sha1.go:260:15)) Object {
-// 	sha1.Sum(data)
+// 	res := sha1.Sum(data)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin(MakeInt(el1))
 // 	}
-// 	return res
+// 	return vec1
 // }
 
 GO FUNC sha256.New has:
@@ -19696,22 +19696,22 @@ GO FUNC sha256.New224 has:
 
 GO FUNC sha256.Sum224 has:
 // func sum224(data ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/crypto/sha256/sha256.go:281:18)) Object {
-// 	sha256.Sum224(data)
+// 	res := sha256.Sum224(data)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin(MakeInt(el1))
 // 	}
-// 	return res
+// 	return vec1
 // }
 
 GO FUNC sha256.Sum256 has:
 // func sum256(data ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/crypto/sha256/sha256.go:273:18)) Object {
-// 	sha256.Sum256(data)
+// 	res := sha256.Sum256(data)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin(MakeInt(el1))
 // 	}
-// 	return res
+// 	return vec1
 // }
 
 GO FUNC sha512.New has:
@@ -19736,42 +19736,42 @@ GO FUNC sha512.New512_256 has:
 
 GO FUNC sha512.Sum384 has:
 // func sum384(data ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/crypto/sha512/sha512.go:351:18)) Object {
-// 	sha512.Sum384(data)
+// 	res := sha512.Sum384(data)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin(MakeInt(el1))
 // 	}
-// 	return res
+// 	return vec1
 // }
 
 GO FUNC sha512.Sum512 has:
 // func sum512(data ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/crypto/sha512/sha512.go:343:18)) Object {
-// 	sha512.Sum512(data)
+// 	res := sha512.Sum512(data)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin(MakeInt(el1))
 // 	}
-// 	return res
+// 	return vec1
 // }
 
 GO FUNC sha512.Sum512_224 has:
 // func sum512_224(data ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/crypto/sha512/sha512.go:361:22)) Object {
-// 	sha512.Sum512_224(data)
+// 	res := sha512.Sum512_224(data)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin(MakeInt(el1))
 // 	}
-// 	return res
+// 	return vec1
 // }
 
 GO FUNC sha512.Sum512_256 has:
 // func sum512_256(data ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/crypto/sha512/sha512.go:371:22)) Object {
-// 	sha512.Sum512_256(data)
+// 	res := sha512.Sum512_256(data)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin(MakeInt(el1))
 // 	}
-// 	return res
+// 	return vec1
 // }
 
 GO FUNC signal.Ignore has:
@@ -19883,17 +19883,17 @@ GO FUNC sort.Strings has:
 
 GO FUNC sql.Drivers has:
 func drivers() Object {
-	sql.Drivers()
+	res := sql.Drivers()
 	vec1 := EmptyVector
-	for _, el1 := range  {
+	for _, el1 := range res {
 		vec1 = vec1.Conjoin(MakeString(el1))
 	}
-	return res
+	return vec1
 }
 
 GO FUNC sql.Named has:
 // func named(name string, value ABEND882(unrecognized Expr type *ast.InterfaceType at: ../GOSRC/database/sql/sql.go:110:31)) Object {
-// 	return (ABEND680:TODO)sql.Named(name, value)
+// 	return sql.Named(name, value)
 // }
 
 GO FUNC sql.Open has:
@@ -19911,12 +19911,12 @@ GO FUNC sql.Open has:
 
 GO FUNC sql.OpenDB has:
 // func openDB(c ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/database/sql/sql.go:660:15)) Object {
-// 	sql.OpenDB(c)
+// 	res := sql.OpenDB(c)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin(*)
 // 	}
-// 	return res
+// 	return *(ABEND680:TODO)
 // }
 
 GO FUNC sql.Register has:
@@ -19927,102 +19927,102 @@ GO FUNC sql.Register has:
 
 GO FUNC strconv.AppendBool has:
 // func appendBool(dst ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/strconv/atob.go:30:21), b Object) Object {
-// 	strconv.AppendBool(dst, b)
+// 	res := strconv.AppendBool(dst, b)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin(MakeInt(el1))
 // 	}
-// 	return res
+// 	return vec1
 // }
 
 GO FUNC strconv.AppendFloat has:
 // func appendFloat(dst ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/strconv/ftoa.go:51:22), f Object, fmt Object, prec int, bitSize int) Object {
-// 	strconv.AppendFloat(dst, f, fmt, prec, bitSize)
+// 	res := strconv.AppendFloat(dst, f, fmt, prec, bitSize)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin(MakeInt(el1))
 // 	}
-// 	return res
+// 	return vec1
 // }
 
 GO FUNC strconv.AppendInt has:
 // func appendInt(dst ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/strconv/itoa.go:40:20), i Object, base int) Object {
-// 	strconv.AppendInt(dst, i, base)
+// 	res := strconv.AppendInt(dst, i, base)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin(MakeInt(el1))
 // 	}
-// 	return res
+// 	return vec1
 // }
 
 GO FUNC strconv.AppendQuote has:
 // func appendQuote(dst ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/strconv/quote.go:117:22), s string) Object {
-// 	strconv.AppendQuote(dst, s)
+// 	res := strconv.AppendQuote(dst, s)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin(MakeInt(el1))
 // 	}
-// 	return res
+// 	return vec1
 // }
 
 GO FUNC strconv.AppendQuoteRune has:
 // func appendQuoteRune(dst ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/strconv/quote.go:156:26), r Object) Object {
-// 	strconv.AppendQuoteRune(dst, r)
+// 	res := strconv.AppendQuoteRune(dst, r)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin(MakeInt(el1))
 // 	}
-// 	return res
+// 	return vec1
 // }
 
 GO FUNC strconv.AppendQuoteRuneToASCII has:
 // func appendQuoteRuneToASCII(dst ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/strconv/quote.go:170:33), r Object) Object {
-// 	strconv.AppendQuoteRuneToASCII(dst, r)
+// 	res := strconv.AppendQuoteRuneToASCII(dst, r)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin(MakeInt(el1))
 // 	}
-// 	return res
+// 	return vec1
 // }
 
 GO FUNC strconv.AppendQuoteRuneToGraphic has:
 // func appendQuoteRuneToGraphic(dst ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/strconv/quote.go:184:35), r Object) Object {
-// 	strconv.AppendQuoteRuneToGraphic(dst, r)
+// 	res := strconv.AppendQuoteRuneToGraphic(dst, r)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin(MakeInt(el1))
 // 	}
-// 	return res
+// 	return vec1
 // }
 
 GO FUNC strconv.AppendQuoteToASCII has:
 // func appendQuoteToASCII(dst ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/strconv/quote.go:130:29), s string) Object {
-// 	strconv.AppendQuoteToASCII(dst, s)
+// 	res := strconv.AppendQuoteToASCII(dst, s)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin(MakeInt(el1))
 // 	}
-// 	return res
+// 	return vec1
 // }
 
 GO FUNC strconv.AppendQuoteToGraphic has:
 // func appendQuoteToGraphic(dst ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/strconv/quote.go:143:31), s string) Object {
-// 	strconv.AppendQuoteToGraphic(dst, s)
+// 	res := strconv.AppendQuoteToGraphic(dst, s)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin(MakeInt(el1))
 // 	}
-// 	return res
+// 	return vec1
 // }
 
 GO FUNC strconv.AppendUint has:
 // func appendUint(dst ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/strconv/itoa.go:50:21), i Object, base int) Object {
-// 	strconv.AppendUint(dst, i, base)
+// 	res := strconv.AppendUint(dst, i, base)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin(MakeInt(el1))
 // 	}
-// 	return res
+// 	return vec1
 // }
 
 GO FUNC strconv.Atoi has:
@@ -20092,72 +20092,72 @@ GO FUNC strconv.UnquoteChar has:
 
 GO FUNC strings.Fields has:
 func fields(s string) Object {
-	strings.Fields(s)
+	res := strings.Fields(s)
 	vec1 := EmptyVector
-	for _, el1 := range  {
+	for _, el1 := range res {
 		vec1 = vec1.Conjoin(MakeString(el1))
 	}
-	return res
+	return vec1
 }
 
 GO FUNC strings.FieldsFunc has:
 // func fieldsFunc(s string, f ABEND882(unrecognized Expr type *ast.FuncType at: ../GOSRC/strings/strings.go:378:29)) Object {
-// 	strings.FieldsFunc(s, f)
+// 	res := strings.FieldsFunc(s, f)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin(MakeString(el1))
 // 	}
-// 	return res
+// 	return vec1
 // }
 
 GO FUNC strings.NewReader has:
-// func newReader(s string) Object {
-// 	return *(ABEND680:TODO)strings.NewReader(s)
-// }
+func newReader(s string) Object {
+	return strings.NewReader(s)
+}
 
 GO FUNC strings.NewReplacer has:
 // func newReplacer(oldnew ABEND882(unrecognized Expr type *ast.Ellipsis at: ../GOSRC/strings/replace.go:24:25)) Object {
-// 	return *(ABEND680:TODO)strings.NewReplacer(oldnew)
+// 	return strings.NewReplacer(oldnew)
 // }
 
 GO FUNC strings.Split has:
 func split(s string, sep string) Object {
-	strings.Split(s, sep)
+	res := strings.Split(s, sep)
 	vec1 := EmptyVector
-	for _, el1 := range  {
+	for _, el1 := range res {
 		vec1 = vec1.Conjoin(MakeString(el1))
 	}
-	return res
+	return vec1
 }
 
 GO FUNC strings.SplitAfter has:
 func splitAfter(s string, sep string) Object {
-	strings.SplitAfter(s, sep)
+	res := strings.SplitAfter(s, sep)
 	vec1 := EmptyVector
-	for _, el1 := range  {
+	for _, el1 := range res {
 		vec1 = vec1.Conjoin(MakeString(el1))
 	}
-	return res
+	return vec1
 }
 
 GO FUNC strings.SplitAfterN has:
 func splitAfterN(s string, sep string, n int) Object {
-	strings.SplitAfterN(s, sep, n)
+	res := strings.SplitAfterN(s, sep, n)
 	vec1 := EmptyVector
-	for _, el1 := range  {
+	for _, el1 := range res {
 		vec1 = vec1.Conjoin(MakeString(el1))
 	}
-	return res
+	return vec1
 }
 
 GO FUNC strings.SplitN has:
 func splitN(s string, sep string, n int) Object {
-	strings.SplitN(s, sep, n)
+	res := strings.SplitN(s, sep, n)
 	vec1 := EmptyVector
-	for _, el1 := range  {
+	for _, el1 := range res {
 		vec1 = vec1.Conjoin(MakeString(el1))
 	}
-	return res
+	return vec1
 }
 
 GO FUNC subtle.ConstantTimeCopy has:
@@ -20168,21 +20168,21 @@ GO FUNC subtle.ConstantTimeCopy has:
 
 GO FUNC suffixarray.New has:
 // func new(data ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/index/suffixarray/suffixarray.go:35:15)) Object {
-// 	suffixarray.New(data)
+// 	res := suffixarray.New(data)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin(MakeInt(el1))
 // 	}
 // 	vec2 := EmptyVector
-// 	for _, el2 := range  {
+// 	for _, el2 := range res {
 // 		vec2 = vec2.Conjoin(MakeInt(el2))
 // 	}
-// 	return res
+// 	return *(ABEND680:TODO)
 // }
 
 GO FUNC sync.NewCond has:
 // func newCond(l Object) Object {
-// 	return *(ABEND680:TODO)sync.NewCond(l)
+// 	return sync.NewCond(l)
 // }
 
 GO FUNC syntax.Compile has:
@@ -20280,7 +20280,7 @@ func bpfInterface(fd int, name string) Object {
 
 GO FUNC syscall.BpfJump has:
 // func bpfJump(code int, k int, jt int, jf int) Object {
-// 	return *(ABEND680:TODO)syscall.BpfJump(code, k, jt, jf)
+// 	return syscall.BpfJump(code, k, jt, jf)
 // }
 
 GO FUNC syscall.BpfStats has:
@@ -20294,7 +20294,7 @@ GO FUNC syscall.BpfStats has:
 
 GO FUNC syscall.BpfStmt has:
 // func bpfStmt(code int, k int) Object {
-// 	return *(ABEND680:TODO)syscall.BpfStmt(code, k)
+// 	return syscall.BpfStmt(code, k)
 // }
 
 GO FUNC syscall.BpfTimeout has:
@@ -20355,12 +20355,12 @@ func dup(fd int) Object {
 
 GO FUNC syscall.Environ has:
 func environ() Object {
-	syscall.Environ()
+	res := syscall.Environ()
 	vec1 := EmptyVector
-	for _, el1 := range  {
+	for _, el1 := range res {
 		vec1 = vec1.Conjoin(MakeString(el1))
 	}
-	return res
+	return vec1
 }
 
 GO FUNC syscall.Exit has:
@@ -20600,19 +20600,19 @@ func mmap(fd int, offset Object, length int, prot int, flags int) Object {
 }
 
 GO FUNC syscall.NsecToTimespec has:
-// func nsecToTimespec(nsec Object) Object {
-// 	return (ABEND680:TODO)syscall.NsecToTimespec(nsec)
-// }
+func nsecToTimespec(nsec Object) Object {
+	return syscall.NsecToTimespec(nsec)
+}
 
 GO FUNC syscall.NsecToTimeval has:
-func nsecToTimeval(nsec Object) Object {
-	syscall.NsecToTimeval(nsec)
-	vec1 := EmptyVector
-	for _, el1 := range  {
-		vec1 = vec1.Conjoin(MakeInt(el1))
-	}
-	return res
-}
+// func nsecToTimeval(nsec Object) Object {
+// 	res := syscall.NsecToTimeval(nsec)
+// 	vec1 := EmptyVector
+// 	for _, el1 := range res {
+// 		vec1 = vec1.Conjoin(MakeInt(el1))
+// 	}
+// 	return (ABEND680:TODO)
+// }
 
 GO FUNC syscall.Open has:
 func open(path string, mode int, perm Object) Object {
@@ -20909,22 +20909,22 @@ GO FUNC syscall.StartProcess has:
 
 GO FUNC syscall.StringByteSlice has:
 func stringByteSlice(s string) Object {
-	syscall.StringByteSlice(s)
+	res := syscall.StringByteSlice(s)
 	vec1 := EmptyVector
-	for _, el1 := range  {
+	for _, el1 := range res {
 		vec1 = vec1.Conjoin(MakeInt(el1))
 	}
-	return res
+	return vec1
 }
 
 GO FUNC syscall.StringSlicePtr has:
 // func stringSlicePtr(ss ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/syscall/exec_unix.go:71:24)) Object {
-// 	syscall.StringSlicePtr(ss)
+// 	res := syscall.StringSlicePtr(ss)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin(*MakeInt(el1))
 // 	}
-// 	return res
+// 	return vec1
 // }
 
 GO FUNC syscall.Syscall has:
@@ -20977,12 +20977,12 @@ func sysctlUint32(name string) Object {
 
 GO FUNC syscall.UnixRights has:
 // func unixRights(fds ABEND882(unrecognized Expr type *ast.Ellipsis at: ../GOSRC/syscall/sockcmsg_unix.go:74:21)) Object {
-// 	syscall.UnixRights(fds)
+// 	res := syscall.UnixRights(fds)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin(MakeInt(el1))
 // 	}
-// 	return res
+// 	return vec1
 // }
 
 GO FUNC syscall.Wait4 has:
@@ -21032,17 +21032,17 @@ GO FUNC syslog.NewLogger has:
 
 GO FUNC tabwriter.NewWriter has:
 // func newWriter(output ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/text/tabwriter/tabwriter.go:597:23), minwidth int, tabwidth int, padding int, padchar Object, flags Object) Object {
-// 	tabwriter.NewWriter(output, minwidth, tabwidth, padding, padchar, flags)
+// 	res := tabwriter.NewWriter(output, minwidth, tabwidth, padding, padchar, flags)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin(MakeInt(el1))
 // 	}
 // 	vec2 := EmptyVector
-// 	for _, el2 := range  {
+// 	for _, el2 := range res {
 // 		vec2 = vec2.Conjoin(MakeInt(el2))
 // 	}
 // 	vec3 := EmptyVector
-// 	for _, el3 := range  {
+// 	for _, el3 := range res {
 // 		vec4 := EmptyVector
 // 		for _, el4 := range el3 {
 // 			vec4 = vec4.Conjoin()
@@ -21050,10 +21050,10 @@ GO FUNC tabwriter.NewWriter has:
 // 		vec3 = vec3.Conjoin(vec4)
 // 	}
 // 	vec5 := EmptyVector
-// 	for _, el5 := range  {
+// 	for _, el5 := range res {
 // 		vec5 = vec5.Conjoin(MakeInt(el5))
 // 	}
-// 	return res
+// 	return *(ABEND680:TODO)
 // }
 
 GO FUNC tar.FileInfoHeader has:
@@ -21067,12 +21067,12 @@ GO FUNC tar.FileInfoHeader has:
 
 GO FUNC tar.NewReader has:
 // func newReader(r ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/archive/tar/reader.go:39:18)) Object {
-// 	return *(ABEND680:TODO)tar.NewReader(r)
+// 	return tar.NewReader(r)
 // }
 
 GO FUNC tar.NewWriter has:
 // func newWriter(w ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/archive/tar/writer.go:33:18)) Object {
-// 	return *(ABEND680:TODO)tar.NewWriter(w)
+// 	return tar.NewWriter(w)
 // }
 
 GO FUNC testing.AllocsPerRun has:
@@ -21082,7 +21082,7 @@ GO FUNC testing.AllocsPerRun has:
 
 GO FUNC testing.Benchmark has:
 // func benchmark(f ABEND882(unrecognized Expr type *ast.FuncType at: ../GOSRC/testing/benchmark.go:649:18)) Object {
-// 	return (ABEND680:TODO)testing.Benchmark(f)
+// 	return testing.Benchmark(f)
 // }
 
 GO FUNC testing.Coverage has:
@@ -21098,20 +21098,20 @@ GO FUNC testing.Main has:
 
 GO FUNC testing.MainStart has:
 // func mainStart(deps Object, tests ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/testing/testing.go:995:37), benchmarks ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/testing/testing.go:995:64), examples ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/testing/testing.go:995:94)) Object {
-// 	testing.MainStart(deps, tests, benchmarks, examples)
+// 	res := testing.MainStart(deps, tests, benchmarks, examples)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin((ABEND680:TODO))
 // 	}
 // 	vec2 := EmptyVector
-// 	for _, el2 := range  {
+// 	for _, el2 := range res {
 // 		vec2 = vec2.Conjoin((ABEND680:TODO))
 // 	}
 // 	vec3 := EmptyVector
-// 	for _, el3 := range  {
+// 	for _, el3 := range res {
 // 		vec3 = vec3.Conjoin((ABEND680:TODO))
 // 	}
-// 	return res
+// 	return *(ABEND680:TODO)
 // }
 
 GO FUNC testing.RegisterCover has:
@@ -21141,37 +21141,37 @@ GO FUNC textproto.Dial has:
 
 GO FUNC textproto.NewConn has:
 // func newConn(conn ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/net/textproto/textproto.go:66:19)) Object {
-// 	textproto.NewConn(conn)
+// 	res := textproto.NewConn(conn)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin(MakeInt(el1))
 // 	}
-// 	return res
+// 	return *(ABEND680:TODO)
 // }
 
 GO FUNC textproto.NewReader has:
 // func newReader(r ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/net/textproto/reader.go:29:18)) Object {
-// 	textproto.NewReader(r)
+// 	res := textproto.NewReader(r)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin(MakeInt(el1))
 // 	}
-// 	return res
+// 	return *(ABEND680:TODO)
 // }
 
 GO FUNC textproto.NewWriter has:
 // func newWriter(w ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/net/textproto/writer.go:21:18)) Object {
-// 	return *(ABEND680:TODO)textproto.NewWriter(w)
+// 	return textproto.NewWriter(w)
 // }
 
 GO FUNC textproto.TrimBytes has:
 // func trimBytes(b ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/net/textproto/textproto.go:137:18)) Object {
-// 	textproto.TrimBytes(b)
+// 	res := textproto.TrimBytes(b)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin(MakeInt(el1))
 // 	}
-// 	return res
+// 	return vec1
 // }
 
 GO FUNC time.After has:
@@ -21181,35 +21181,35 @@ GO FUNC time.After has:
 
 GO FUNC time.AfterFunc has:
 // func afterFunc(d Object, f ABEND882(unrecognized Expr type *ast.FuncType at: ../GOSRC/time/sleep.go:159:30)) Object {
-// 	return *(ABEND680:TODO)time.AfterFunc(d, f)
+// 	return time.AfterFunc(d, f)
 // }
 
 GO FUNC time.Date has:
 // func date(year int, month Object, day int, hour int, min int, sec int, nsec int, loc ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/time/time.go:1326:69)) Object {
-// 	time.Date(year, month, day, hour, min, sec, nsec, loc)
+// 	res := time.Date(year, month, day, hour, min, sec, nsec, loc)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin()
 // 	}
 // 	vec2 := EmptyVector
-// 	for _, el2 := range  {
+// 	for _, el2 := range res {
 // 		vec2 = vec2.Conjoin()
 // 	}
-// 	return res
+// 	return (ABEND680:TODO)
 // }
 
 GO FUNC time.FixedZone has:
 // func fixedZone(name string, offset int) Object {
-// 	time.FixedZone(name, offset)
+// 	res := time.FixedZone(name, offset)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin()
 // 	}
 // 	vec2 := EmptyVector
-// 	for _, el2 := range  {
+// 	for _, el2 := range res {
 // 		vec2 = vec2.Conjoin()
 // 	}
-// 	return res
+// 	return *(ABEND680:TODO)
 // }
 
 GO FUNC time.LoadLocation has:
@@ -21248,26 +21248,26 @@ GO FUNC time.LoadLocationFromTZData has:
 
 GO FUNC time.NewTicker has:
 // func newTicker(d Object) Object {
-// 	return *(ABEND680:TODO)time.NewTicker(d)
+// 	return time.NewTicker(d)
 // }
 
 GO FUNC time.NewTimer has:
 // func newTimer(d Object) Object {
-// 	return *(ABEND680:TODO)time.NewTimer(d)
+// 	return time.NewTimer(d)
 // }
 
 GO FUNC time.Now has:
 // func now() Object {
-// 	time.Now()
+// 	res := time.Now()
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin()
 // 	}
 // 	vec2 := EmptyVector
-// 	for _, el2 := range  {
+// 	for _, el2 := range res {
 // 		vec2 = vec2.Conjoin()
 // 	}
-// 	return res
+// 	return (ABEND680:TODO)
 // }
 
 GO FUNC time.Parse has:
@@ -21326,23 +21326,23 @@ GO FUNC time.Tick has:
 
 GO FUNC time.Unix has:
 // func unix(sec Object, nsec Object) Object {
-// 	time.Unix(sec, nsec)
+// 	res := time.Unix(sec, nsec)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin()
 // 	}
 // 	vec2 := EmptyVector
-// 	for _, el2 := range  {
+// 	for _, el2 := range res {
 // 		vec2 = vec2.Conjoin()
 // 	}
-// 	return res
+// 	return (ABEND680:TODO)
 // }
 
 GO FUNC tls.Client has:
 // func client(conn ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/crypto/tls/tls.go:39:18), config ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/crypto/tls/tls.go:39:35)) Object {
-// 	tls.Client(conn, config)
+// 	res := tls.Client(conn, config)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec2 := EmptyVector
 // 		for _, el2 := range el1 {
 // 			vec3 := EmptyVector
@@ -21366,31 +21366,31 @@ GO FUNC tls.Client has:
 // 		vec1 = vec1.Conjoin((ABEND680:TODO))
 // 	}
 // 	vec7 := EmptyVector
-// 	for _, el7 := range  {
+// 	for _, el7 := range res {
 // 		vec7 = vec7.Conjoin(MakeString(el7))
 // 	}
 // 	vec8 := EmptyVector
-// 	for _, el8 := range  {
+// 	for _, el8 := range res {
 // 		vec8 = vec8.Conjoin(MakeInt(el8))
 // 	}
 // 	vec9 := EmptyVector
-// 	for _, el9 := range  {
+// 	for _, el9 := range res {
 // 		vec9 = vec9.Conjoin(MakeInt(el9))
 // 	}
 // 	vec10 := EmptyVector
-// 	for _, el10 := range  {
+// 	for _, el10 := range res {
 // 		vec10 = vec10.Conjoin(MakeInt(el10))
 // 	}
 // 	vec11 := EmptyVector
-// 	for _, el11 := range  {
+// 	for _, el11 := range res {
 // 		vec11 = vec11.Conjoin()
 // 	}
 // 	vec12 := EmptyVector
-// 	for _, el12 := range  {
+// 	for _, el12 := range res {
 // 		vec12 = vec12.Conjoin(MakeInt(el12))
 // 	}
 // 	vec13 := EmptyVector
-// 	for _, el13 := range  {
+// 	for _, el13 := range res {
 // 		vec14 := EmptyVector
 // 		for _, el14 := range el13 {
 // 			vec14 = vec14.Conjoin(MakeInt(el14))
@@ -21398,11 +21398,11 @@ GO FUNC tls.Client has:
 // 		vec13 = vec13.Conjoin(vec14)
 // 	}
 // 	vec15 := EmptyVector
-// 	for _, el15 := range  {
+// 	for _, el15 := range res {
 // 		vec15 = vec15.Conjoin(*el15)
 // 	}
 // 	vec16 := EmptyVector
-// 	for _, el16 := range  {
+// 	for _, el16 := range res {
 // 		vec17 := EmptyVector
 // 		for _, el17 := range el16 {
 // 			vec17 = vec17.Conjoin(*el17)
@@ -21410,22 +21410,22 @@ GO FUNC tls.Client has:
 // 		vec16 = vec16.Conjoin(vec17)
 // 	}
 // 	vec18 := EmptyVector
-// 	for _, el18 := range  {
+// 	for _, el18 := range res {
 // 		vec18 = vec18.Conjoin(MakeInt(el18))
 // 	}
 // 	vec19 := EmptyVector
-// 	for _, el19 := range  {
+// 	for _, el19 := range res {
 // 		vec19 = vec19.Conjoin(MakeInt(el19))
 // 	}
 // 	vec20 := EmptyVector
-// 	for _, el20 := range  {
+// 	for _, el20 := range res {
 // 		vec20 = vec20.Conjoin(MakeInt(el20))
 // 	}
 // 	vec21 := EmptyVector
-// 	for _, el21 := range  {
+// 	for _, el21 := range res {
 // 		vec21 = vec21.Conjoin(MakeInt(el21))
 // 	}
-// 	return res
+// 	return *(ABEND680:TODO)
 // }
 
 GO FUNC tls.Dial has:
@@ -21664,9 +21664,9 @@ GO FUNC tls.NewListener has:
 
 GO FUNC tls.Server has:
 // func server(conn ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/crypto/tls/tls.go:31:18), config ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/crypto/tls/tls.go:31:35)) Object {
-// 	tls.Server(conn, config)
+// 	res := tls.Server(conn, config)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec2 := EmptyVector
 // 		for _, el2 := range el1 {
 // 			vec3 := EmptyVector
@@ -21690,31 +21690,31 @@ GO FUNC tls.Server has:
 // 		vec1 = vec1.Conjoin((ABEND680:TODO))
 // 	}
 // 	vec7 := EmptyVector
-// 	for _, el7 := range  {
+// 	for _, el7 := range res {
 // 		vec7 = vec7.Conjoin(MakeString(el7))
 // 	}
 // 	vec8 := EmptyVector
-// 	for _, el8 := range  {
+// 	for _, el8 := range res {
 // 		vec8 = vec8.Conjoin(MakeInt(el8))
 // 	}
 // 	vec9 := EmptyVector
-// 	for _, el9 := range  {
+// 	for _, el9 := range res {
 // 		vec9 = vec9.Conjoin(MakeInt(el9))
 // 	}
 // 	vec10 := EmptyVector
-// 	for _, el10 := range  {
+// 	for _, el10 := range res {
 // 		vec10 = vec10.Conjoin(MakeInt(el10))
 // 	}
 // 	vec11 := EmptyVector
-// 	for _, el11 := range  {
+// 	for _, el11 := range res {
 // 		vec11 = vec11.Conjoin()
 // 	}
 // 	vec12 := EmptyVector
-// 	for _, el12 := range  {
+// 	for _, el12 := range res {
 // 		vec12 = vec12.Conjoin(MakeInt(el12))
 // 	}
 // 	vec13 := EmptyVector
-// 	for _, el13 := range  {
+// 	for _, el13 := range res {
 // 		vec14 := EmptyVector
 // 		for _, el14 := range el13 {
 // 			vec14 = vec14.Conjoin(MakeInt(el14))
@@ -21722,11 +21722,11 @@ GO FUNC tls.Server has:
 // 		vec13 = vec13.Conjoin(vec14)
 // 	}
 // 	vec15 := EmptyVector
-// 	for _, el15 := range  {
+// 	for _, el15 := range res {
 // 		vec15 = vec15.Conjoin(*el15)
 // 	}
 // 	vec16 := EmptyVector
-// 	for _, el16 := range  {
+// 	for _, el16 := range res {
 // 		vec17 := EmptyVector
 // 		for _, el17 := range el16 {
 // 			vec17 = vec17.Conjoin(*el17)
@@ -21734,22 +21734,22 @@ GO FUNC tls.Server has:
 // 		vec16 = vec16.Conjoin(vec17)
 // 	}
 // 	vec18 := EmptyVector
-// 	for _, el18 := range  {
+// 	for _, el18 := range res {
 // 		vec18 = vec18.Conjoin(MakeInt(el18))
 // 	}
 // 	vec19 := EmptyVector
-// 	for _, el19 := range  {
+// 	for _, el19 := range res {
 // 		vec19 = vec19.Conjoin(MakeInt(el19))
 // 	}
 // 	vec20 := EmptyVector
-// 	for _, el20 := range  {
+// 	for _, el20 := range res {
 // 		vec20 = vec20.Conjoin(MakeInt(el20))
 // 	}
 // 	vec21 := EmptyVector
-// 	for _, el21 := range  {
+// 	for _, el21 := range res {
 // 		vec21 = vec21.Conjoin(MakeInt(el21))
 // 	}
-// 	return res
+// 	return *(ABEND680:TODO)
 // }
 
 GO FUNC tls.X509KeyPair has:
@@ -21783,9 +21783,9 @@ GO FUNC tls.X509KeyPair has:
 
 GO FUNC token.NewFileSet has:
 // func newFileSet() Object {
-// 	token.NewFileSet()
+// 	res := token.NewFileSet()
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec2 := EmptyVector
 // 		for _, el2 := range el1 {
 // 			vec2 = vec2.Conjoin(MakeInt(el2))
@@ -21797,14 +21797,14 @@ GO FUNC token.NewFileSet has:
 // 		vec1 = vec1.Conjoin(*(ABEND680:TODO))
 // 	}
 // 	vec4 := EmptyVector
-// 	for _, el4 := range  {
+// 	for _, el4 := range res {
 // 		vec4 = vec4.Conjoin(MakeInt(el4))
 // 	}
 // 	vec5 := EmptyVector
-// 	for _, el5 := range  {
+// 	for _, el5 := range res {
 // 		vec5 = vec5.Conjoin()
 // 	}
-// 	return res
+// 	return *(ABEND680:TODO)
 // }
 
 GO FUNC trace.Log has:
@@ -21830,7 +21830,7 @@ GO FUNC trace.NewTask has:
 
 GO FUNC trace.StartRegion has:
 // func startRegion(ctx ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/runtime/trace/annotation.go:149:22), regionType string) Object {
-// 	return *(ABEND680:TODO)trace.StartRegion(ctx, regionType)
+// 	return trace.StartRegion(ctx, regionType)
 // }
 
 GO FUNC trace.Stop has:
@@ -21880,30 +21880,30 @@ GO FUNC transform.Chain has:
 
 GO FUNC transform.NewReader has:
 // func newReader(r ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/vendor/golang_org/x/text/transform/transform.go:136:18), t Object) Object {
-// 	transform.NewReader(r, t)
+// 	res := transform.NewReader(r, t)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin(MakeInt(el1))
 // 	}
 // 	vec2 := EmptyVector
-// 	for _, el2 := range  {
+// 	for _, el2 := range res {
 // 		vec2 = vec2.Conjoin(MakeInt(el2))
 // 	}
-// 	return res
+// 	return *(ABEND680:TODO)
 // }
 
 GO FUNC transform.NewWriter has:
 // func newWriter(w ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/vendor/golang_org/x/text/transform/transform.go:223:18), t Object) Object {
-// 	transform.NewWriter(w, t)
+// 	res := transform.NewWriter(w, t)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin(MakeInt(el1))
 // 	}
 // 	vec2 := EmptyVector
-// 	for _, el2 := range  {
+// 	for _, el2 := range res {
 // 		vec2 = vec2.Conjoin(MakeInt(el2))
 // 	}
-// 	return res
+// 	return *(ABEND680:TODO)
 // }
 
 GO FUNC transform.RemoveFunc has:
@@ -21966,27 +21966,27 @@ GO FUNC types.MissingMethod has:
 
 GO FUNC types.NewArray has:
 // func newArray(elem Object, len Object) Object {
-// 	return *(ABEND680:TODO)types.NewArray(elem, len)
+// 	return types.NewArray(elem, len)
 // }
 
 GO FUNC types.NewChan has:
 // func newChan(dir Object, elem Object) Object {
-// 	return *(ABEND680:TODO)types.NewChan(dir, elem)
+// 	return types.NewChan(dir, elem)
 // }
 
 GO FUNC types.NewChecker has:
 // func newChecker(conf ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/go/types/check.go:170:22), fset ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/go/types/check.go:170:36), pkg ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/go/types/check.go:170:56), info ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/go/types/check.go:170:71)) Object {
-// 	types.NewChecker(conf, fset, pkg, info)
+// 	res := types.NewChecker(conf, fset, pkg, info)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin(*)
 // 	}
 // 	vec2 := EmptyVector
-// 	for _, el2 := range  {
+// 	for _, el2 := range res {
 // 		vec2 = vec2.Conjoin(*)
 // 	}
 // 	vec3 := EmptyVector
-// 	for _, el3 := range  {
+// 	for _, el3 := range res {
 // 		vec4 := EmptyVector
 // 		for _, el4 := range el3 {
 // 			vec4 = vec4.Conjoin(*(ABEND680:TODO))
@@ -21994,208 +21994,208 @@ GO FUNC types.NewChecker has:
 // 		vec3 = vec3.Conjoin(*(ABEND680:TODO))
 // 	}
 // 	vec5 := EmptyVector
-// 	for _, el5 := range  {
+// 	for _, el5 := range res {
 // 		vec5 = vec5.Conjoin(*el5)
 // 	}
 // 	vec6 := EmptyVector
-// 	for _, el6 := range  {
+// 	for _, el6 := range res {
 // 		vec6 = vec6.Conjoin(el6)
 // 	}
 // 	vec7 := EmptyVector
-// 	for _, el7 := range  {
+// 	for _, el7 := range res {
 // 		vec7 = vec7.Conjoin(el7)
 // 	}
-// 	return res
+// 	return *(ABEND680:TODO)
 // }
 
 GO FUNC types.NewConst has:
 // func newConst(pos ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/go/types/object.go:205:19), pkg ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/go/types/object.go:205:34), name string, typ Object, val ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/go/types/object.go:205:71)) Object {
-// 	return *(ABEND680:TODO)types.NewConst(pos, pkg, name, typ, val)
+// 	return types.NewConst(pos, pkg, name, typ, val)
 // }
 
 GO FUNC types.NewField has:
 // func newField(pos ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/go/types/object.go:276:19), pkg ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/go/types/object.go:276:34), name string, typ Object, embedded Object) Object {
-// 	return *(ABEND680:TODO)types.NewField(pos, pkg, name, typ, embedded)
+// 	return types.NewField(pos, pkg, name, typ, embedded)
 // }
 
 GO FUNC types.NewFunc has:
 // func newFunc(pos ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/go/types/object.go:301:18), pkg ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/go/types/object.go:301:33), name string, sig ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/go/types/object.go:301:60)) Object {
-// 	return *(ABEND680:TODO)types.NewFunc(pos, pkg, name, sig)
+// 	return types.NewFunc(pos, pkg, name, sig)
 // }
 
 GO FUNC types.NewInterface has:
 // func newInterface(methods ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/go/types/type.go:266:27), embeddeds ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/go/types/type.go:266:46)) Object {
-// 	types.NewInterface(methods, embeddeds)
+// 	res := types.NewInterface(methods, embeddeds)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin(*(ABEND680:TODO))
 // 	}
 // 	vec2 := EmptyVector
-// 	for _, el2 := range  {
+// 	for _, el2 := range res {
 // 		vec2 = vec2.Conjoin(el2)
 // 	}
 // 	vec3 := EmptyVector
-// 	for _, el3 := range  {
+// 	for _, el3 := range res {
 // 		vec3 = vec3.Conjoin(*(ABEND680:TODO))
 // 	}
-// 	return res
+// 	return *(ABEND680:TODO)
 // }
 
 GO FUNC types.NewInterfaceType has:
 // func newInterfaceType(methods ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/go/types/type.go:280:31), embeddeds ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/go/types/type.go:280:50)) Object {
-// 	types.NewInterfaceType(methods, embeddeds)
+// 	res := types.NewInterfaceType(methods, embeddeds)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin(*(ABEND680:TODO))
 // 	}
 // 	vec2 := EmptyVector
-// 	for _, el2 := range  {
+// 	for _, el2 := range res {
 // 		vec2 = vec2.Conjoin(el2)
 // 	}
 // 	vec3 := EmptyVector
-// 	for _, el3 := range  {
+// 	for _, el3 := range res {
 // 		vec3 = vec3.Conjoin(*(ABEND680:TODO))
 // 	}
-// 	return res
+// 	return *(ABEND680:TODO)
 // }
 
 GO FUNC types.NewLabel has:
 // func newLabel(pos ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/go/types/object.go:331:19), pkg ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/go/types/object.go:331:34), name string) Object {
-// 	return *(ABEND680:TODO)types.NewLabel(pos, pkg, name)
+// 	return types.NewLabel(pos, pkg, name)
 // }
 
 GO FUNC types.NewMap has:
 // func newMap(key Object, elem Object) Object {
-// 	return *(ABEND680:TODO)types.NewMap(key, elem)
+// 	return types.NewMap(key, elem)
 // }
 
 GO FUNC types.NewMethodSet has:
 // func newMethodSet(T Object) Object {
-// 	types.NewMethodSet(T)
+// 	res := types.NewMethodSet(T)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec2 := EmptyVector
 // 		for _, el2 := range el1 {
 // 			vec2 = vec2.Conjoin(MakeInt(el2))
 // 		}
 // 		vec1 = vec1.Conjoin(*(ABEND680:TODO))
 // 	}
-// 	return res
+// 	return *(ABEND680:TODO)
 // }
 
 GO FUNC types.NewNamed has:
 // func newNamed(obj ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/go/types/type.go:433:19), underlying Object, methods ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/go/types/type.go:433:55)) Object {
-// 	types.NewNamed(obj, underlying, methods)
+// 	res := types.NewNamed(obj, underlying, methods)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin(*(ABEND680:TODO))
 // 	}
-// 	return res
+// 	return *(ABEND680:TODO)
 // }
 
 GO FUNC types.NewPackage has:
 // func newPackage(path string, name string) Object {
-// 	types.NewPackage(path, name)
+// 	res := types.NewPackage(path, name)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin(*)
 // 	}
 // 	vec2 := EmptyVector
-// 	for _, el2 := range  {
+// 	for _, el2 := range res {
 // 		vec2 = vec2.Conjoin(*)
 // 	}
-// 	return res
+// 	return *(ABEND680:TODO)
 // }
 
 GO FUNC types.NewParam has:
 // func newParam(pos ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/go/types/object.go:269:19), pkg ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/go/types/object.go:269:34), name string, typ Object) Object {
-// 	return *(ABEND680:TODO)types.NewParam(pos, pkg, name, typ)
+// 	return types.NewParam(pos, pkg, name, typ)
 // }
 
 GO FUNC types.NewPkgName has:
 // func newPkgName(pos ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/go/types/object.go:189:21), pkg ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/go/types/object.go:189:36), name string, imported ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/go/types/object.go:189:68)) Object {
-// 	types.NewPkgName(pos, pkg, name, imported)
+// 	res := types.NewPkgName(pos, pkg, name, imported)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin(*)
 // 	}
 // 	vec2 := EmptyVector
-// 	for _, el2 := range  {
+// 	for _, el2 := range res {
 // 		vec2 = vec2.Conjoin(*)
 // 	}
-// 	return res
+// 	return *(ABEND680:TODO)
 // }
 
 GO FUNC types.NewPointer has:
 // func newPointer(elem Object) Object {
-// 	return *(ABEND680:TODO)types.NewPointer(elem)
+// 	return types.NewPointer(elem)
 // }
 
 GO FUNC types.NewScope has:
 // func newScope(parent ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/go/types/scope.go:36:22), pos ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/go/types/scope.go:36:39), end ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/go/types/scope.go:36:39), comment string) Object {
-// 	types.NewScope(parent, pos, end, comment)
+// 	res := types.NewScope(parent, pos, end, comment)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin(*)
 // 	}
-// 	return res
+// 	return *(ABEND680:TODO)
 // }
 
 GO FUNC types.NewSignature has:
 // func newSignature(recv ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/go/types/type.go:213:24), params ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/go/types/type.go:213:46), results ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/go/types/type.go:213:46), variadic Object) Object {
-// 	types.NewSignature(recv, params, results, variadic)
+// 	res := types.NewSignature(recv, params, results, variadic)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin(*)
 // 	}
 // 	vec2 := EmptyVector
-// 	for _, el2 := range  {
+// 	for _, el2 := range res {
 // 		vec2 = vec2.Conjoin(*(ABEND680:TODO))
 // 	}
 // 	vec3 := EmptyVector
-// 	for _, el3 := range  {
+// 	for _, el3 := range res {
 // 		vec3 = vec3.Conjoin(*(ABEND680:TODO))
 // 	}
-// 	return res
+// 	return *(ABEND680:TODO)
 // }
 
 GO FUNC types.NewSlice has:
 // func newSlice(elem Object) Object {
-// 	return *(ABEND680:TODO)types.NewSlice(elem)
+// 	return types.NewSlice(elem)
 // }
 
 GO FUNC types.NewStruct has:
 // func newStruct(fields ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/go/types/type.go:131:23), tags ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/go/types/type.go:131:36)) Object {
-// 	types.NewStruct(fields, tags)
+// 	res := types.NewStruct(fields, tags)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin(*(ABEND680:TODO))
 // 	}
 // 	vec2 := EmptyVector
-// 	for _, el2 := range  {
+// 	for _, el2 := range res {
 // 		vec2 = vec2.Conjoin(MakeString(el2))
 // 	}
-// 	return res
+// 	return *(ABEND680:TODO)
 // }
 
 GO FUNC types.NewTuple has:
 // func newTuple(x ABEND882(unrecognized Expr type *ast.Ellipsis at: ../GOSRC/go/types/type.go:177:17)) Object {
-// 	types.NewTuple(x)
+// 	res := types.NewTuple(x)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin(*(ABEND680:TODO))
 // 	}
-// 	return res
+// 	return *(ABEND680:TODO)
 // }
 
 GO FUNC types.NewTypeName has:
 // func newTypeName(pos ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/go/types/object.go:226:22), pkg ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/go/types/object.go:226:37), name string, typ Object) Object {
-// 	return *(ABEND680:TODO)types.NewTypeName(pos, pkg, name, typ)
+// 	return types.NewTypeName(pos, pkg, name, typ)
 // }
 
 GO FUNC types.NewVar has:
 // func newVar(pos ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/go/types/object.go:264:17), pkg ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/go/types/object.go:264:32), name string, typ Object) Object {
-// 	return *(ABEND680:TODO)types.NewVar(pos, pkg, name, typ)
+// 	return types.NewVar(pos, pkg, name, typ)
 // }
 
 GO FUNC types.RelativeTo has:
@@ -22312,14 +22312,14 @@ func queryUnescape(s string) Object {
 }
 
 GO FUNC url.User has:
-// func user(username string) Object {
-// 	return *(ABEND680:TODO)url.User(username)
-// }
+func user(username string) Object {
+	return url.User(username)
+}
 
 GO FUNC url.UserPassword has:
-// func userPassword(username string, password string) Object {
-// 	return *(ABEND680:TODO)url.UserPassword(username, password)
-// }
+func userPassword(username string, password string) Object {
+	return url.UserPassword(username, password)
+}
 
 GO FUNC user.Current has:
 // func current() Object {
@@ -22368,12 +22368,12 @@ GO FUNC user.LookupId has:
 
 GO FUNC utf16.Decode has:
 // func decode(s ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/unicode/utf16/utf16.go:88:15)) Object {
-// 	utf16.Decode(s)
+// 	res := utf16.Decode(s)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin()
 // 	}
-// 	return res
+// 	return vec1
 // }
 
 GO FUNC utf16.DecodeRune has:
@@ -22383,12 +22383,12 @@ GO FUNC utf16.DecodeRune has:
 
 GO FUNC utf16.Encode has:
 // func encode(s ABEND882(unrecognized Expr type *ast.ArrayType at: ../GOSRC/unicode/utf16/utf16.go:56:15)) Object {
-// 	utf16.Encode(s)
+// 	res := utf16.Encode(s)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin(MakeInt(el1))
 // 	}
-// 	return res
+// 	return vec1
 // }
 
 GO FUNC utf16.EncodeRune has:
@@ -22499,22 +22499,22 @@ GO FUNC x509.MarshalECPrivateKey has:
 
 GO FUNC x509.MarshalPKCS1PrivateKey has:
 // func marshalPKCS1PrivateKey(key ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/crypto/x509/pkcs1.go:92:33)) Object {
-// 	x509.MarshalPKCS1PrivateKey(key)
+// 	res := x509.MarshalPKCS1PrivateKey(key)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin(MakeInt(el1))
 // 	}
-// 	return res
+// 	return vec1
 // }
 
 GO FUNC x509.MarshalPKCS1PublicKey has:
 // func marshalPKCS1PublicKey(key ABEND882(unrecognized Expr type *ast.StarExpr at: ../GOSRC/crypto/x509/pkcs1.go:148:32)) Object {
-// 	x509.MarshalPKCS1PublicKey(key)
+// 	res := x509.MarshalPKCS1PublicKey(key)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin(MakeInt(el1))
 // 	}
-// 	return res
+// 	return vec1
 // }
 
 GO FUNC x509.MarshalPKCS8PrivateKey has:
@@ -22545,9 +22545,9 @@ GO FUNC x509.MarshalPKIXPublicKey has:
 
 GO FUNC x509.NewCertPool has:
 // func newCertPool() Object {
-// 	x509.NewCertPool()
+// 	res := x509.NewCertPool()
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec2 := EmptyVector
 // 		for _, el2 := range el1 {
 // 			vec2 = vec2.Conjoin(MakeInt(el2))
@@ -22666,7 +22666,7 @@ GO FUNC x509.NewCertPool has:
 // 		}
 // 		vec1 = vec1.Conjoin(*(ABEND680:TODO))
 // 	}
-// 	return res
+// 	return *(ABEND680:TODO)
 // }
 
 GO FUNC x509.ParseCRL has:
@@ -23211,27 +23211,27 @@ GO FUNC xml.MarshalIndent has:
 
 GO FUNC xml.NewDecoder has:
 // func newDecoder(r ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/encoding/xml/xml.go:229:19)) Object {
-// 	xml.NewDecoder(r)
+// 	res := xml.NewDecoder(r)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin(MakeString(el1))
 // 	}
-// 	return res
+// 	return *(ABEND680:TODO)
 // }
 
 GO FUNC xml.NewEncoder has:
 // func newEncoder(w ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/encoding/xml/marshal.go:137:19)) Object {
-// 	return *(ABEND680:TODO)xml.NewEncoder(w)
+// 	return xml.NewEncoder(w)
 // }
 
 GO FUNC xml.NewTokenDecoder has:
 // func newTokenDecoder(t Object) Object {
-// 	xml.NewTokenDecoder(t)
+// 	res := xml.NewTokenDecoder(t)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin(MakeString(el1))
 // 	}
-// 	return res
+// 	return *(ABEND680:TODO)
 // }
 
 GO FUNC zip.FileInfoHeader has:
@@ -23266,12 +23266,12 @@ GO FUNC zip.NewReader has:
 
 GO FUNC zip.NewWriter has:
 // func newWriter(w ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/archive/zip/writer.go:43:18)) Object {
-// 	zip.NewWriter(w)
+// 	res := zip.NewWriter(w)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin(*)
 // 	}
-// 	return res
+// 	return *(ABEND680:TODO)
 // }
 
 GO FUNC zip.OpenReader has:
@@ -23323,16 +23323,16 @@ GO FUNC zlib.NewReaderDict has:
 
 GO FUNC zlib.NewWriter has:
 // func newWriter(w ABEND882(unrecognized Expr type *ast.SelectorExpr at: ../GOSRC/compress/zlib/writer.go:43:18)) Object {
-// 	zlib.NewWriter(w)
+// 	res := zlib.NewWriter(w)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin(MakeInt(el1))
 // 	}
 // 	vec2 := EmptyVector
-// 	for _, el2 := range  {
+// 	for _, el2 := range res {
 // 		vec2 = vec2.Conjoin(MakeInt(el2))
 // 	}
-// 	return res
+// 	return *(ABEND680:TODO)
 // }
 
 GO FUNC zlib.NewWriterLevel has:
