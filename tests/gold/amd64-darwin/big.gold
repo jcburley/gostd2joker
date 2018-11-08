@@ -572,7 +572,7 @@ JOKER FUNC cgi.Serve has:
 ;; (defn ^Error Serve
 ;;   "Serve executes the provided Handler on the currently active CGI\nrequest, if any. If there's no current CGI environment\nan error is returned. The provided handler may be nil to use\nhttp.DefaultServeMux.\nGo return type: error\nJoker return type: Error"
 ;;   {:added "1.0"
-;;    :go "serve(handler)"}
+;;    :go "cgi.Serve(handler)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/http/cgi/child.go:146:20) handler])
 
 JOKER FUNC cookiejar.New has:
@@ -593,21 +593,21 @@ JOKER FUNC fcgi.Serve has:
 ;; (defn ^Error Serve
 ;;   "Serve accepts incoming FastCGI connections on the listener l, creating a new\ngoroutine for each. The goroutine reads requests and then calls handler\nto reply to them.\nIf l is nil, Serve accepts connections from os.Stdin.\nIf handler is nil, http.DefaultServeMux is used.\nGo return type: error\nJoker return type: Error"
 ;;   {:added "1.0"
-;;    :go "serve(l, handler)"}
+;;    :go "fcgi.Serve(l, handler)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/http/fcgi/child.go:331:14) l, ^ABEND881(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/http/fcgi/child.go:331:36) handler])
 
 JOKER FUNC http.CanonicalHeaderKey has:
 (defn ^String CanonicalHeaderKey
   "CanonicalHeaderKey returns the canonical format of the\nheader key s. The canonicalization converts the first\nletter and any letter following a hyphen to upper case;\nthe rest are converted to lowercase. For example, the\ncanonical key for \"accept-encoding\" is \"Accept-Encoding\".\nIf s contains a space or invalid header field bytes, it is\nreturned without modifications.\nGo return type: string\nJoker return type: String"
   {:added "1.0"
-   :go "canonicalHeaderKey(s)"}
+   :go "http.CanonicalHeaderKey(s)"}
   [^String s])
 
 JOKER FUNC http.DetectContentType has:
 ;; (defn ^String DetectContentType
 ;;   "DetectContentType implements the algorithm described\nat https://mimesniff.spec.whatwg.org/ to determine the\nContent-Type of the given data. It considers at most the\nfirst 512 bytes of data. DetectContentType always returns\na valid MIME type: if it cannot determine a more specific one, it\nreturns \"application/octet-stream\".\nGo return type: string\nJoker return type: String"
 ;;   {:added "1.0"
-;;    :go "detectContentType(data)"}
+;;    :go "http.DetectContentType(data)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: tests/big/net/http/sniff.go:21:29) data])
 
 JOKER FUNC http.Error has:
@@ -656,14 +656,14 @@ JOKER FUNC http.ListenAndServe has:
 (defn ^Error ListenAndServe
   "ListenAndServe listens on the TCP network address addr and then calls\nServe with handler to handle requests on incoming connections.\nAccepted connections are configured to enable TCP keep-alives.\n\nThe handler is typically nil, in which case the DefaultServeMux is used.\n\nListenAndServe always returns a non-nil error.\nGo return type: error\nJoker return type: Error"
   {:added "1.0"
-   :go "listenAndServe(addr, handler)"}
+   :go "http.ListenAndServe(addr, handler)"}
   [^String addr, handler])
 
 JOKER FUNC http.ListenAndServeTLS has:
 (defn ^Error ListenAndServeTLS
   "ListenAndServeTLS acts identically to ListenAndServe, except that it\nexpects HTTPS connections. Additionally, files containing a certificate and\nmatching private key for the server must be provided. If the certificate\nis signed by a certificate authority, the certFile should be the concatenation\nof the server's certificate, any intermediates, and the CA's certificate.\nGo return type: error\nJoker return type: Error"
   {:added "1.0"
-   :go "listenAndServeTLS(addr, certFile, keyFile, handler)"}
+   :go "http.ListenAndServeTLS(addr, certFile, keyFile, handler)"}
   [^String addr, ^String certFile, ^String keyFile, handler])
 
 JOKER FUNC http.MaxBytesReader has:
@@ -782,7 +782,7 @@ JOKER FUNC http.Serve has:
 ;; (defn ^Error Serve
 ;;   "Serve accepts incoming HTTP connections on the listener l,\ncreating a new service goroutine for each. The service goroutines\nread requests and then call handler to reply to them.\n\nThe handler is typically nil, in which case the DefaultServeMux is used.\n\nHTTP/2 support is only enabled if the Listener returns *tls.Conn\nconnections and they were configured with \"h2\" in the TLS\nConfig.NextProtos.\n\nServe always returns a non-nil error.\nGo return type: error\nJoker return type: Error"
 ;;   {:added "1.0"
-;;    :go "serve(l, handler)"}
+;;    :go "http.Serve(l, handler)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/http/server.go:2421:14) l, handler])
 
 JOKER FUNC http.ServeContent has:
@@ -803,7 +803,7 @@ JOKER FUNC http.ServeTLS has:
 ;; (defn ^Error ServeTLS
 ;;   "ServeTLS accepts incoming HTTPS connections on the listener l,\ncreating a new service goroutine for each. The service goroutines\nread requests and then call handler to reply to them.\n\nThe handler is typically nil, in which case the DefaultServeMux is used.\n\nAdditionally, files containing a certificate and matching private key\nfor the server must be provided. If the certificate is signed by a\ncertificate authority, the certFile should be the concatenation\nof the server's certificate, any intermediates, and the CA's certificate.\n\nServeTLS always returns a non-nil error.\nGo return type: error\nJoker return type: Error"
 ;;   {:added "1.0"
-;;    :go "serveTLS(l, handler, certFile, keyFile)"}
+;;    :go "http.ServeTLS(l, handler, certFile, keyFile)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/http/server.go:2438:17) l, handler, ^String certFile, ^String keyFile])
 
 JOKER FUNC http.SetCookie has:
@@ -817,7 +817,7 @@ JOKER FUNC http.StatusText has:
 (defn ^String StatusText
   "StatusText returns a text for the HTTP status code. It returns the empty\nstring if the code is unknown.\nGo return type: string\nJoker return type: String"
   {:added "1.0"
-   :go "statusText(code)"}
+   :go "http.StatusText(code)"}
   [^Int code])
 
 JOKER FUNC http.StripPrefix has:
@@ -1125,7 +1125,7 @@ JOKER FUNC net.JoinHostPort has:
 (defn ^String JoinHostPort
   "JoinHostPort combines host and port into a network address of the\nform \"host:port\". If host contains a colon, as found in literal\nIPv6 addresses, then JoinHostPort returns \"[host]:port\".\n\nSee func Dial for a description of the host and port parameters.\nGo return type: string\nJoker return type: String"
   {:added "1.0"
-   :go "joinHostPort(host, port)"}
+   :go "net.JoinHostPort(host, port)"}
   [^String host, ^String port])
 
 JOKER FUNC net.Listen has:
@@ -1412,14 +1412,14 @@ JOKER FUNC rpc.Register has:
 ;; (defn ^Error Register
 ;;   "Register publishes the receiver's methods in the DefaultServer.\nGo return type: error\nJoker return type: Error"
 ;;   {:added "1.0"
-;;    :go "register(rcvr)"}
+;;    :go "rpc.Register(rcvr)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.InterfaceType at: tests/big/net/rpc/server.go:642:20) rcvr])
 
 JOKER FUNC rpc.RegisterName has:
 ;; (defn ^Error RegisterName
 ;;   "RegisterName is like Register but uses the provided name for the type\ninstead of the receiver's concrete type.\nGo return type: error\nJoker return type: Error"
 ;;   {:added "1.0"
-;;    :go "registerName(name, rcvr)"}
+;;    :go "rpc.RegisterName(name, rcvr)"}
 ;;   [^String name, ^ABEND881(unrecognized Expr type *ast.InterfaceType at: tests/big/net/rpc/server.go:646:37) rcvr])
 
 JOKER FUNC rpc.ServeCodec has:
@@ -1440,7 +1440,7 @@ JOKER FUNC rpc.ServeRequest has:
 (defn ^Error ServeRequest
   "ServeRequest is like ServeCodec but synchronously serves a single request.\nIt does not close the codec upon completion.\nGo return type: error\nJoker return type: Error"
   {:added "1.0"
-   :go "serveRequest(codec)"}
+   :go "rpc.ServeRequest(codec)"}
   [codec])
 
 JOKER FUNC smtp.CRAMMD5Auth has:
@@ -1475,14 +1475,14 @@ JOKER FUNC smtp.SendMail has:
 ;; (defn ^Error SendMail
 ;;   "SendMail connects to the server at addr, switches to TLS if\npossible, authenticates with the optional mechanism a if possible,\nand then sends an email from address from, to addresses to, with\nmessage msg.\nThe addr must include a port, as in \"mail.example.com:smtp\".\n\nThe addresses in the to parameter are the SMTP RCPT addresses.\n\nThe msg parameter should be an RFC 822-style email with headers\nfirst, a blank line, and then the message body. The lines of msg\nshould be CRLF terminated. The msg headers should usually include\nfields such as \"From\", \"To\", \"Subject\", and \"Cc\".  Sending \"Bcc\"\nmessages is accomplished by including an email address in the to\nparameter but not including it in the msg headers.\n\nThe SendMail function and the net/smtp package are low-level\nmechanisms and provide no support for DKIM signing, MIME\nattachments (see the mime/multipart package), or other mail\nfunctionality. Higher-level packages exist outside of the standard\nlibrary.\nGo return type: error\nJoker return type: Error"
 ;;   {:added "1.0"
-;;    :go "sendMail(addr, a, from, to, msg)"}
+;;    :go "smtp.SendMail(addr, a, from, to, msg)"}
 ;;   [^String addr, a, ^String from, ^ABEND881(unrecognized Expr type *ast.ArrayType at: tests/big/net/smtp/smtp.go:319:52) to, ^ABEND881(unrecognized Expr type *ast.ArrayType at: tests/big/net/smtp/smtp.go:319:66) msg])
 
 JOKER FUNC textproto.CanonicalMIMEHeaderKey has:
 (defn ^String CanonicalMIMEHeaderKey
   "CanonicalMIMEHeaderKey returns the canonical format of the\nMIME header key s. The canonicalization converts the first\nletter and any letter following a hyphen to upper case;\nthe rest are converted to lowercase. For example, the\ncanonical key for \"accept-encoding\" is \"Accept-Encoding\".\nMIME header keys are assumed to be ASCII only.\nIf s contains a space or invalid header field bytes, it is\nreturned without modifications.\nGo return type: string\nJoker return type: String"
   {:added "1.0"
-   :go "canonicalMIMEHeaderKey(s)"}
+   :go "textproto.CanonicalMIMEHeaderKey(s)"}
   [^String s])
 
 JOKER FUNC textproto.Dial has:
@@ -1524,7 +1524,7 @@ JOKER FUNC textproto.TrimString has:
 (defn ^String TrimString
   "TrimString returns s without leading and trailing ASCII space.\nGo return type: string\nJoker return type: String"
   {:added "1.0"
-   :go "trimString(s)"}
+   :go "textproto.TrimString(s)"}
   [^String s])
 
 JOKER FUNC url.Parse has:
@@ -1552,7 +1552,7 @@ JOKER FUNC url.PathEscape has:
 (defn ^String PathEscape
   "PathEscape escapes the string so it can be safely placed\ninside a URL path segment.\nGo return type: string\nJoker return type: String"
   {:added "1.0"
-   :go "pathEscape(s)"}
+   :go "url.PathEscape(s)"}
   [^String s])
 
 JOKER FUNC url.PathUnescape has:
@@ -1566,7 +1566,7 @@ JOKER FUNC url.QueryEscape has:
 (defn ^String QueryEscape
   "QueryEscape escapes the string so it can be safely placed\ninside a URL query.\nGo return type: string\nJoker return type: String"
   {:added "1.0"
-   :go "queryEscape(s)"}
+   :go "url.QueryEscape(s)"}
   [^String s])
 
 JOKER FUNC url.QueryUnescape has:

@@ -119,7 +119,7 @@ JOKER FUNC url.PathEscape has:
 (defn ^String PathEscape
   "PathEscape escapes the string so it can be safely placed\ninside a URL path segment.\nGo return type: string\nJoker return type: String"
   {:added "1.0"
-   :go "pathEscape(s)"}
+   :go "url.PathEscape(s)"}
   [^String s])
 
 JOKER FUNC url.PathUnescape has:
@@ -133,7 +133,7 @@ JOKER FUNC url.QueryEscape has:
 (defn ^String QueryEscape
   "QueryEscape escapes the string so it can be safely placed\ninside a URL query.\nGo return type: string\nJoker return type: String"
   {:added "1.0"
-   :go "queryEscape(s)"}
+   :go "url.QueryEscape(s)"}
   [^String s])
 
 JOKER FUNC url.QueryUnescape has:
