@@ -595,6 +595,8 @@ func genGoPostItem(indent, pkg string, f *Field, idx *int, p *Ident, gores, jok,
 	}
 	if gores == nil {
 		rtn = ""
+	} else if *gores == "res" {
+		rtn = *gores
 	} else {
 		if p == nil || p.Name == "" {
 			rtn = fmt.Sprintf("res%d", *idx)
@@ -643,13 +645,18 @@ func genGoPostList(indent string, pkg string, fl *FieldList) (gores, jok, gol, g
 		}
 		goc = indent + "res := EmptyVector\n" + goc + indent + "return res\n"
 		gores += " := "
-	} else {
-		rtn := genGoPostItem(indent, pkg, fl.List[0], &idx, nil,
+	} else if len(fl.List) == 0 {
+		genGoPostItem(indent, pkg, fl.List[0], &idx, nil,
 			nil, &jok, &gol, &goc)
+	} else {
+		gores = "res"
+		rtn := genGoPostItem(indent, pkg, fl.List[0], &idx, nil,
+			&gores, &jok, &gol, &goc)
 		if goc == "" {
-			gores = "return " + rtn
+			gores = "return " // No code generated, so no need to use rtn as intermediary
 		} else {
-			goc += indent + "return res\n"
+			goc += indent + "return " + rtn + "\n"
+			gores += " := "
 		}
 	}
 	return

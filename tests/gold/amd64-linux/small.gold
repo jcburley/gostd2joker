@@ -141,18 +141,18 @@ JOKER FUNC url.QueryUnescape has:
   [^String s])
 
 JOKER FUNC url.User has:
-;; (defn User
-;;   "User returns a Userinfo containing the provided username\nand no password set.\nGo return type: *Userinfo\nJoker return type: {:username ^String, :password ^String, :passwordSet ^Bool}"
-;;   {:added "1.0"
-;;    :go "user(username)"}
-;;   [^String username])
+(defn User
+  "User returns a Userinfo containing the provided username\nand no password set.\nGo return type: *Userinfo\nJoker return type: {:username ^String, :password ^String, :passwordSet ^Bool}"
+  {:added "1.0"
+   :go "user(username)"}
+  [^String username])
 
 JOKER FUNC url.UserPassword has:
-;; (defn UserPassword
-;;   "UserPassword returns a Userinfo containing the provided username\nand password.\n\nThis functionality should only be used with legacy web sites.\nRFC 2396 warns that interpreting Userinfo this way\n``is NOT RECOMMENDED, because the passing of authentication\ninformation in clear text (such as URI) has proven to be a\nsecurity risk in almost every case where it has been used.''\nGo return type: *Userinfo\nJoker return type: {:username ^String, :password ^String, :passwordSet ^Bool}"
-;;   {:added "1.0"
-;;    :go "userPassword(username, password)"}
-;;   [^String username, ^String password])
+(defn UserPassword
+  "UserPassword returns a Userinfo containing the provided username\nand password.\n\nThis functionality should only be used with legacy web sites.\nRFC 2396 warns that interpreting Userinfo this way\n``is NOT RECOMMENDED, because the passing of authentication\ninformation in clear text (such as URI) has proven to be a\nsecurity risk in almost every case where it has been used.''\nGo return type: *Userinfo\nJoker return type: {:username ^String, :password ^String, :passwordSet ^Bool}"
+  {:added "1.0"
+   :go "userPassword(username, password)"}
+  [^String username, ^String password])
 
 GO FUNC net.LookupAddr has:
 func lookupAddr(addr string) Object {
@@ -310,13 +310,13 @@ func queryUnescape(s string) Object {
 }
 
 GO FUNC url.User has:
-// func user(username string) Object {
-// 	return *(ABEND680:TODO)url.User(username)
-// }
+func user(username string) Object {
+	return url.User(username)
+}
 
 GO FUNC url.UserPassword has:
-// func userPassword(username string, password string) Object {
-// 	return *(ABEND680:TODO)url.UserPassword(username, password)
-// }
+func userPassword(username string, password string) Object {
+	return url.UserPassword(username, password)
+}
 
 Totals: types=10 functions=18 receivers=46

@@ -1292,18 +1292,18 @@ JOKER FUNC url.QueryUnescape has:
   [^String s])
 
 JOKER FUNC url.User has:
-;; (defn User
-;;   "User returns a Userinfo containing the provided username\nand no password set.\nGo return type: *Userinfo\nJoker return type: {:username ^String, :password ^String, :passwordSet ^Bool}"
-;;   {:added "1.0"
-;;    :go "user(username)"}
-;;   [^String username])
+(defn User
+  "User returns a Userinfo containing the provided username\nand no password set.\nGo return type: *Userinfo\nJoker return type: {:username ^String, :password ^String, :passwordSet ^Bool}"
+  {:added "1.0"
+   :go "user(username)"}
+  [^String username])
 
 JOKER FUNC url.UserPassword has:
-;; (defn UserPassword
-;;   "UserPassword returns a Userinfo containing the provided username\nand password.\n\nThis functionality should only be used with legacy web sites.\nRFC 2396 warns that interpreting Userinfo this way\n``is NOT RECOMMENDED, because the passing of authentication\ninformation in clear text (such as URI) has proven to be a\nsecurity risk in almost every case where it has been used.''\nGo return type: *Userinfo\nJoker return type: {:username ^String, :password ^String, :passwordSet ^Bool}"
-;;   {:added "1.0"
-;;    :go "userPassword(username, password)"}
-;;   [^String username, ^String password])
+(defn UserPassword
+  "UserPassword returns a Userinfo containing the provided username\nand password.\n\nThis functionality should only be used with legacy web sites.\nRFC 2396 warns that interpreting Userinfo this way\n``is NOT RECOMMENDED, because the passing of authentication\ninformation in clear text (such as URI) has proven to be a\nsecurity risk in almost every case where it has been used.''\nGo return type: *Userinfo\nJoker return type: {:username ^String, :password ^String, :passwordSet ^Bool}"
+  {:added "1.0"
+   :go "userPassword(username, password)"}
+  [^String username, ^String password])
 
 GO FUNC cgi.Request has:
 // func request() Object {
@@ -1423,7 +1423,7 @@ GO FUNC http.NewRequest has:
 
 GO FUNC http.NewServeMux has:
 // func newServeMux() Object {
-// 	return *(ABEND680:TODO)http.NewServeMux()
+// 	return http.NewServeMux()
 // }
 
 GO FUNC http.NotFound has:
@@ -1579,32 +1579,32 @@ GO FUNC http.TimeoutHandler has:
 
 GO FUNC httptest.NewRecorder has:
 // func newRecorder() Object {
-// 	return *(ABEND680:TODO)httptest.NewRecorder()
+// 	return httptest.NewRecorder()
 // }
 
 GO FUNC httptest.NewRequest has:
 // func newRequest(method string, target string, body ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/http/httptest/httptest.go:41:45)) Object {
-// 	return *httptest.NewRequest(method, target, body)
+// 	return httptest.NewRequest(method, target, body)
 // }
 
 GO FUNC httptest.NewServer has:
 // func newServer(handler ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/http/httptest/server.go:80:24)) Object {
-// 	return *(ABEND680:TODO)httptest.NewServer(handler)
+// 	return httptest.NewServer(handler)
 // }
 
 GO FUNC httptest.NewTLSServer has:
 // func newTLSServer(handler ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/http/httptest/server.go:160:27)) Object {
-// 	return *(ABEND680:TODO)httptest.NewTLSServer(handler)
+// 	return httptest.NewTLSServer(handler)
 // }
 
 GO FUNC httptest.NewUnstartedServer has:
 // func newUnstartedServer(handler ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/http/httptest/server.go:92:33)) Object {
-// 	return *(ABEND680:TODO)httptest.NewUnstartedServer(handler)
+// 	return httptest.NewUnstartedServer(handler)
 // }
 
 GO FUNC httptrace.ContextClientTrace has:
 // func contextClientTrace(ctx ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/http/httptrace/trace.go:24:29)) Object {
-// 	return *(ABEND680:TODO)httptrace.ContextClientTrace(ctx)
+// 	return httptrace.ContextClientTrace(ctx)
 // }
 
 GO FUNC httptrace.WithClientTrace has:
@@ -1663,22 +1663,22 @@ GO FUNC httputil.NewChunkedWriter has:
 
 GO FUNC httputil.NewClientConn has:
 // func newClientConn(c ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/http/httputil/persist.go:248:22), r ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/http/httputil/persist.go:248:34)) Object {
-// 	return *(ABEND680:TODO)httputil.NewClientConn(c, r)
+// 	return httputil.NewClientConn(c, r)
 // }
 
 GO FUNC httputil.NewProxyClientConn has:
 // func newProxyClientConn(c ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/http/httputil/persist.go:265:27), r ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/http/httputil/persist.go:265:39)) Object {
-// 	return *(ABEND680:TODO)httputil.NewProxyClientConn(c, r)
+// 	return httputil.NewProxyClientConn(c, r)
 // }
 
 GO FUNC httputil.NewServerConn has:
 // func newServerConn(c ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/http/httputil/persist.go:54:22), r ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/http/httputil/persist.go:54:34)) Object {
-// 	return *(ABEND680:TODO)httputil.NewServerConn(c, r)
+// 	return httputil.NewServerConn(c, r)
 // }
 
 GO FUNC httputil.NewSingleHostReverseProxy has:
 // func newSingleHostReverseProxy(target ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/http/httputil/reverseproxy.go:103:39)) Object {
-// 	return *(ABEND680:TODO)httputil.NewSingleHostReverseProxy(target)
+// 	return httputil.NewSingleHostReverseProxy(target)
 // }
 
 GO FUNC jsonrpc.Dial has:
@@ -1692,7 +1692,7 @@ GO FUNC jsonrpc.Dial has:
 
 GO FUNC jsonrpc.NewClient has:
 // func newClient(conn ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/rpc/jsonrpc/client.go:113:21)) Object {
-// 	return *jsonrpc.NewClient(conn)
+// 	return jsonrpc.NewClient(conn)
 // }
 
 GO FUNC jsonrpc.NewClientCodec has:
@@ -1753,12 +1753,12 @@ GO FUNC mail.ReadMessage has:
 
 GO FUNC net.CIDRMask has:
 func cIDRMask(ones int, bits int) Object {
-	net.CIDRMask(ones, bits)
+	res := net.CIDRMask(ones, bits)
 	vec1 := EmptyVector
-	for _, el1 := range  {
+	for _, el1 := range res {
 		vec1 = vec1.Conjoin(MakeInt(el1))
 	}
-	return res
+	return vec1
 }
 
 GO FUNC net.Dial has:
@@ -1844,22 +1844,22 @@ GO FUNC net.FilePacketConn has:
 
 GO FUNC net.IPv4 has:
 func iPv4(a Object, b Object, c Object, d Object) Object {
-	net.IPv4(a, b, c, d)
+	res := net.IPv4(a, b, c, d)
 	vec1 := EmptyVector
-	for _, el1 := range  {
+	for _, el1 := range res {
 		vec1 = vec1.Conjoin(MakeInt(el1))
 	}
-	return res
+	return vec1
 }
 
 GO FUNC net.IPv4Mask has:
 func iPv4Mask(a Object, b Object, c Object, d Object) Object {
-	net.IPv4Mask(a, b, c, d)
+	res := net.IPv4Mask(a, b, c, d)
 	vec1 := EmptyVector
-	for _, el1 := range  {
+	for _, el1 := range res {
 		vec1 = vec1.Conjoin(MakeInt(el1))
 	}
-	return res
+	return vec1
 }
 
 GO FUNC net.InterfaceAddrs has:
@@ -2128,12 +2128,12 @@ GO FUNC net.ParseCIDR has:
 
 GO FUNC net.ParseIP has:
 func parseIP(s string) Object {
-	net.ParseIP(s)
+	res := net.ParseIP(s)
 	vec1 := EmptyVector
-	for _, el1 := range  {
+	for _, el1 := range res {
 		vec1 = vec1.Conjoin(MakeInt(el1))
 	}
-	return res
+	return vec1
 }
 
 GO FUNC net.ParseMAC has:
@@ -2292,17 +2292,17 @@ GO FUNC rpc.HandleHTTP has:
 
 GO FUNC rpc.NewClient has:
 // func newClient(conn ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/rpc/client.go:193:21)) Object {
-// 	return *(ABEND680:TODO)rpc.NewClient(conn)
+// 	return rpc.NewClient(conn)
 // }
 
 GO FUNC rpc.NewClientWithCodec has:
 // func newClientWithCodec(codec Object) Object {
-// 	return *(ABEND680:TODO)rpc.NewClientWithCodec(codec)
+// 	return rpc.NewClientWithCodec(codec)
 // }
 
 GO FUNC rpc.NewServer has:
 // func newServer() Object {
-// 	return *(ABEND680:TODO)rpc.NewServer()
+// 	return rpc.NewServer()
 // }
 
 GO FUNC rpc.ServeCodec has:
@@ -2368,37 +2368,37 @@ GO FUNC textproto.Dial has:
 
 GO FUNC textproto.NewConn has:
 // func newConn(conn ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/net/textproto/textproto.go:66:19)) Object {
-// 	textproto.NewConn(conn)
+// 	res := textproto.NewConn(conn)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin(MakeInt(el1))
 // 	}
-// 	return res
+// 	return *(ABEND680:TODO)
 // }
 
 GO FUNC textproto.NewReader has:
 // func newReader(r ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/textproto/reader.go:29:18)) Object {
-// 	textproto.NewReader(r)
+// 	res := textproto.NewReader(r)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin(MakeInt(el1))
 // 	}
-// 	return res
+// 	return *(ABEND680:TODO)
 // }
 
 GO FUNC textproto.NewWriter has:
 // func newWriter(w ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/net/textproto/writer.go:21:18)) Object {
-// 	return *(ABEND680:TODO)textproto.NewWriter(w)
+// 	return textproto.NewWriter(w)
 // }
 
 GO FUNC textproto.TrimBytes has:
 // func trimBytes(b ABEND882(unrecognized Expr type *ast.ArrayType at: tests/big/net/textproto/textproto.go:137:18)) Object {
-// 	textproto.TrimBytes(b)
+// 	res := textproto.TrimBytes(b)
 // 	vec1 := EmptyVector
-// 	for _, el1 := range  {
+// 	for _, el1 := range res {
 // 		vec1 = vec1.Conjoin(MakeInt(el1))
 // 	}
-// 	return res
+// 	return vec1
 // }
 
 GO FUNC url.Parse has:
@@ -2447,13 +2447,13 @@ func queryUnescape(s string) Object {
 }
 
 GO FUNC url.User has:
-// func user(username string) Object {
-// 	return *(ABEND680:TODO)url.User(username)
-// }
+func user(username string) Object {
+	return url.User(username)
+}
 
 GO FUNC url.UserPassword has:
-// func userPassword(username string, password string) Object {
-// 	return *(ABEND680:TODO)url.UserPassword(username, password)
-// }
+func userPassword(username string, password string) Object {
+	return url.UserPassword(username, password)
+}
 
 Totals: types=102 functions=148 receivers=1200
