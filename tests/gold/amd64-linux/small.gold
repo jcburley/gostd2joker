@@ -1,13 +1,13 @@
 Walking from tests/small to tests/small/go
-Processing sourceDir=tests/small dump=false:
+Processing sourceDir=/go dump=false:
 Walking from tests/small to tests/small/net
-Processing sourceDir=tests/small dump=false:
+Processing sourceDir=/net dump=false:
 Matchfile(tests/small/net/dnsclient.go) => true <nil>
 Matchfile(tests/small/net/lookup.go) => true <nil>
 Package net:
 Processing package=net:
 Walking from tests/small to tests/small/net/url
-Processing sourceDir=tests/small dump=false:
+Processing sourceDir=/net/url dump=false:
 Matchfile(tests/small/net/url/url.go) => true <nil>
 Package url:
 Processing package=url:

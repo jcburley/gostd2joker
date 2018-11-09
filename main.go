@@ -7,6 +7,7 @@ import (
 	"go/build"
 	"go/parser"
 	"go/token"
+	"io/ioutil"
 	"regexp"
 	"strings"
 	"os"
@@ -44,7 +45,7 @@ var fset *token.FileSet
 var dump bool
 var verbose bool
 var receivers int
-var populateDir string
+var populateDir string // "-" means populate /dev/null
 
 func whereAt(p token.Pos) string {
 	return fmt.Sprintf("%s", fset.Position(p).String())
@@ -202,7 +203,7 @@ func processPackage(pkg string, p *Package) {
 
 func processDir(d string, path string, mode parser.Mode) error {
 	if verbose {
-		fmt.Printf("Processing sourceDir=%s dump=%t:\n", d, dump)
+		fmt.Printf("Processing sourceDir=%s dump=%t:\n", strings.TrimPrefix(path, d), dump)
 	}
 
 	pkgs, err := parser.ParseDir(fset, path,
@@ -236,8 +237,7 @@ func processDir(d string, path string, mode parser.Mode) error {
 			if verbose {
 				fmt.Printf("Package %s:\n", k)
 			}
-			processPackage(k, v)
-			//				processPackage(strings.Replace(path, d + "/", "", 1) + "/" + k, v)
+			processPackage(k, v) // processPackage(strings.Replace(path, d + "/", "", 1) + "/" + k, v)
 		}
 	}
 
@@ -837,10 +837,11 @@ Usage: gostd2joker options...
 
 Options:
   --source <go-source-dir-name>  # Location of Go source tree's src/ subdirectory
-  --populate <joker-std-subdir>  # Where to write the joker.go.* files (usually .../joker/std/go/)
+  --populate <joker-std-subdir>  # Where to write the joker.go.* files (usually .../joker/std/go/); "-" == /dev/null
   --overwrite                    # Overwrite any existing <joker-std-subdir> files, leaving existing files intact
   --replace                      # 'rm -fr <joker-std-subdir>' before creating <joker-std-subdir>
   --fresh                        # (Default) Refuse to overwrite existing <joker-std-subdir> directory
+  --joker <joker-source-dir-name>  # Modify pertinent source files to reflect packages being created
   --verbose, -v                  # Print info on what's going on
   --dump                         # Use go's AST dump API on pertinent elements (functions, types, etc.)
   --help, -h                     # Print this information
@@ -852,12 +853,44 @@ If <joker-std-subdir> is not specified, no Go nor Clojure source files
 	os.Exit(0)
 }
 
+// E.g.: \t_ "github.com/candid82/joker/std/go/net"
+func updateJokerMain(f string) {
+	by, err := ioutil.ReadFile(f)
+	check(err)
+	m := string(by)
+	flag := "Imports added by gostd2joker"
+	endflag := "End gostd2joker imports"
+
+/* TODO:
+	capture import pathname for std/os, remove the trailing "os", use that as prefix for imports;
+	in processDir inner function, call routine to append, to a set, e.g. 'http' or 'http/httputil' if not already there;
+	here again, output the underscore, import prefix, and qualified package name to each member of set
+*/
+
+	if !strings.Contains(m, flag) {
+		if verbose {
+			fmt.Printf("Adding custom import line to %s\n", f)
+		}
+		m = strings.Replace(m, "import", "import ( // " + flag + "\n) // " + endflag + "\n\nimport", 1)
+		m = "// Auto-modified by gostd2joker\n" + m
+	}
+	reImport := regexp.MustCompile("(?msU)" + flag + ".*" + endflag)  // [^(]*[(][^)]*[)]
+	newImports := ""
+	m = reImport.ReplaceAllString(m, flag + newImports + endflag)
+	if verbose {
+		fmt.Printf("Writing %s\n", f)
+	}
+	err = ioutil.WriteFile(f, []byte(m), 0777)
+	check(err)
+}
+
 func main() {
 	fset = token.NewFileSet() // positions are relative to fset
 	dump = false
 
 	length := len(os.Args)
 	sourceDir := ""
+	jokerSourceDir := ""
 	replace := false
 	overwrite := false
 
@@ -904,6 +937,16 @@ func main() {
 				} else {
 					panic("missing path after --source option")
 				}
+			case "--joker":
+				if jokerSourceDir != "" {
+					panic("cannot specify --joker <joker-source-dir-name> more than once")
+				}
+				if i < length-1 && notOption(os.Args[i+1]) {
+					i += 1 // shift
+					jokerSourceDir = os.Args[i]
+				} else {
+					panic("missing path after --joker option")
+				}
 			default:
 				panic("unrecognized option " + a)
 			}
@@ -926,7 +969,7 @@ func main() {
 		}
 	}
 
-	if populateDir != "" {
+	if populateDir != "" && populateDir != "-" {
 		if replace {
 			if e := os.RemoveAll(populateDir); e != nil {
 				panic(fmt.Sprintf("Unable to effectively 'rm -fr %s'", populateDir))
@@ -983,7 +1026,7 @@ func main() {
 
 	sortedPackageMap(jokerCode,
 		func(p string, v codeInfo) {
-			if populateDir != "" {
+			if populateDir != "" && populateDir != "-" {
 				jf := filepath.Join(populateDir, p + ".joke")
 				var e error
 				unbuf_out, e = os.Create(jf)
@@ -1000,7 +1043,9 @@ func main() {
 			}
 			sortedCodeMap(v,
 				func(f string, w string) {
-					fmt.Printf("JOKER FUNC %s.%s has:%v\n", p, f, w)
+					if verbose || populateDir == "" {
+						fmt.Printf("JOKER FUNC %s.%s has:%v\n", p, f, w)
+					}
 					if out != nil {
 						out.WriteString(w)
 					}
@@ -1013,7 +1058,7 @@ func main() {
 		})
 	sortedPackageMap(goCode,
 		func(p string, v codeInfo) {
-			if populateDir != "" {
+			if populateDir != "" && populateDir != "-" {
 				gf := filepath.Join(populateDir, p, p + "_native.go")
 				var e error
 				e = os.MkdirAll(filepath.Dir(gf), 0777)
@@ -1034,10 +1079,12 @@ import (
 			}
 			sortedCodeMap(v,
 				func(f string, w string) {
+					if verbose || populateDir == "" {
+						fmt.Printf("GO FUNC %s.%s has:%v\n", p, f, w)
+					}
 					if out != nil {
 						out.WriteString(w)
 					}
-					fmt.Printf("GO FUNC %s.%s has:%v\n", p, f, w)
 				})
 			if out != nil {
 				out.Flush()
@@ -1045,6 +1092,10 @@ import (
 				out = nil
 			}
 		})
+
+	if jokerSourceDir != "" {
+		updateJokerMain(filepath.Join(jokerSourceDir, "main.go"))
+	}
 
 	if verbose {
 		fmt.Printf("Totals: types=%d functions=%d receivers=%d\n",
