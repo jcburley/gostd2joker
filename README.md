@@ -99,7 +99,9 @@ After each test it runs, it uses `git diff` to compare the resulting `.gold` fil
 
 NOTE: `$GOSRC` can now be pointed to a symlink, and `tests/gold/*/gosrc.gold` has been rebuilt with `GOSRC=../GOSRC`, with that being a symlink (one directory level above `gostd2joker` itself) to the Go source tree. This allows me to easily run on different machines and OSes without having tons of needless differences due to absolute pathnames being different (some machines use `/home`, others `/Users`, to hold home directories).
 
-ALSO NOTE: The Go standard library is customized per system architecture and OS, and `gostd2joker` picks up these differences via its use of Go's build-related packages. That's why `tests/gold/` has a subdirectory for each combination of `$GOARCH` and `$GOOS`. Updating another machine's copy of the `gostd2joker` repo is somewhat automated via `update.sh` -- e.g.:
+## Update Tests on Other Machines
+
+The Go standard library is customized per system architecture and OS, and `gostd2joker` picks up these differences via its use of Go's build-related packages. That's why `tests/gold/` has a subdirectory for each combination of `$GOARCH` and `$GOOS`. Updating another machine's copy of the `gostd2joker` repo is somewhat automated via `update.sh` -- e.g.:
 
 ```
 $ ./update.sh 
