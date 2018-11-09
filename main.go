@@ -880,12 +880,6 @@ func updateJokerMain(pkgs []string, f string) {
 	flag := "Imports added by gostd2joker"
 	endflag := "End gostd2joker imports"
 
-/* TODO:
-	capture import pathname for std/os, remove the trailing "os", use that as prefix for imports;
-	in processDir inner function, call routine to append, to a set, e.g. 'http' or 'http/httputil' if not already there;
-	here again, output the underscore, import prefix, and qualified package name to each member of set
-*/
-
 	if !strings.Contains(m, flag) {
 		if verbose {
 			fmt.Printf("Adding custom import line to %s\n", f)
@@ -901,6 +895,46 @@ func updateJokerMain(pkgs []string, f string) {
 		newImports += importPrefix + p + "\"\n"
 	}
 	m = reImport.ReplaceAllString(m, flag + newImports + ") // " + endflag)
+
+	if verbose {
+		fmt.Printf("Writing %s\n", f)
+	}
+	err = ioutil.WriteFile(f, []byte(m), 0777)
+	check(err)
+}
+
+// E.g.: *loaded-libs* #{'joker.core 'joker.os 'joker.base64 'joker.json 'joker.string 'joker.yaml 'joker.go.net})
+func updateCoreDotJoke(pkgs []string, f string) {
+	by, err := ioutil.ReadFile(f)
+	check(err)
+	m := string(by)
+	flag := "Loaded-libraries added by gostd2joker"
+	endflag := "End gostd2joker loaded-libraries"
+
+	if !strings.Contains(m, flag) {
+		if verbose {
+			fmt.Printf("Adding custom loaded libraries to %s\n", f)
+		}
+		m = strings.Replace(m, "\n  *loaded-libs* #{",
+			"\n  *loaded-libs* #{\n   ;; " + flag + "\n   ;; " + endflag + "\n", 1)
+		m = ";;;; Auto-modified by gostd2joker\n" + m
+	}
+
+	reImport := regexp.MustCompile("(?msU)" + flag + ".*" + endflag + "\n *?")
+	newImports := "\n  "
+	importPrefix := " 'joker.go."
+	curLine := ""
+	for _, p := range pkgs {
+		more := importPrefix + strings.Replace(p, string(filepath.Separator), ".", -1)
+		if curLine != "" && len(curLine) + len(more) > 77 {
+			newImports += curLine + "\n  "
+			curLine = more
+		} else {
+			curLine += more
+		}
+	}
+	newImports += curLine
+	m = reImport.ReplaceAllString(m, flag + newImports + "\n   ;; " + endflag + "\n   ")
 
 	if verbose {
 		fmt.Printf("Writing %s\n", f)
@@ -1124,6 +1158,7 @@ import (
 		sortedPackages(packagesSet,
 			func (p string) { packagesArray = append(packagesArray, p) })
 		updateJokerMain(packagesArray, filepath.Join(jokerSourceDir, "main.go"))
+		updateCoreDotJoke(packagesArray, filepath.Join(jokerSourceDir, "core", "data", "core.joke"))
 	}
 
 	if verbose {
