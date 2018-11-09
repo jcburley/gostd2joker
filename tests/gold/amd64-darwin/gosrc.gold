@@ -1,7 +1,7 @@
 Walking from ../GOSRC to ../GOSRC/archive
-Processing sourceDir=/archive dump=false:
+Processing archive:
 Walking from ../GOSRC to ../GOSRC/archive/tar
-Processing sourceDir=/archive/tar dump=false:
+Processing archive/tar:
 Ignoring test code in example_test.go
 Ignoring test code in writer_test.go
 Matchfile(../GOSRC/archive/tar/stat_actime2.go) => true <nil>
@@ -19,7 +19,7 @@ Package tar:
 Processing package=tar:
 Excluding ../GOSRC/archive/tar/testdata
 Walking from ../GOSRC to ../GOSRC/archive/zip
-Processing sourceDir=/archive/zip dump=false:
+Processing archive/zip:
 Matchfile(../GOSRC/archive/zip/register.go) => true <nil>
 Ignoring test code in example_test.go
 Ignoring test code in writer_test.go
@@ -32,7 +32,7 @@ Package zip:
 Processing package=zip:
 Excluding ../GOSRC/archive/zip/testdata
 Walking from ../GOSRC to ../GOSRC/bufio
-Processing sourceDir=/bufio dump=false:
+Processing bufio:
 Ignoring test code in example_test.go
 Ignoring test code in bufio_test.go
 Matchfile(../GOSRC/bufio/scan.go) => true <nil>
@@ -43,7 +43,7 @@ Package bufio:
 Processing package=bufio:
 Excluding ../GOSRC/builtin
 Walking from ../GOSRC to ../GOSRC/bytes
-Processing sourceDir=/bytes dump=false:
+Processing bytes:
 Ignoring test code in compare_test.go
 Ignoring test code in example_test.go
 Matchfile(../GOSRC/bytes/bytes_decl.go) => true <nil>
@@ -59,9 +59,9 @@ Package bytes:
 Processing package=bytes:
 Excluding ../GOSRC/cmd
 Walking from ../GOSRC to ../GOSRC/compress
-Processing sourceDir=/compress dump=false:
+Processing compress:
 Walking from ../GOSRC to ../GOSRC/compress/bzip2
-Processing sourceDir=/compress/bzip2 dump=false:
+Processing compress/bzip2:
 Ignoring test code in bzip2_test.go
 Matchfile(../GOSRC/compress/bzip2/huffman.go) => true <nil>
 Matchfile(../GOSRC/compress/bzip2/bzip2.go) => true <nil>
@@ -71,7 +71,7 @@ Package bzip2:
 Processing package=bzip2:
 Excluding ../GOSRC/compress/bzip2/testdata
 Walking from ../GOSRC to ../GOSRC/compress/flate
-Processing sourceDir=/compress/flate dump=false:
+Processing compress/flate:
 Ignoring test code in flate_test.go
 Ignoring test code in example_test.go
 Matchfile(../GOSRC/compress/flate/token.go) => true <nil>
@@ -91,7 +91,7 @@ Package flate:
 Processing package=flate:
 Excluding ../GOSRC/compress/flate/testdata
 Walking from ../GOSRC to ../GOSRC/compress/gzip
-Processing sourceDir=/compress/gzip dump=false:
+Processing compress/gzip:
 Ignoring test code in example_test.go
 Matchfile(../GOSRC/compress/gzip/gzip.go) => true <nil>
 Matchfile(../GOSRC/compress/gzip/gunzip.go) => true <nil>
@@ -102,7 +102,7 @@ Package gzip:
 Processing package=gzip:
 Excluding ../GOSRC/compress/gzip/testdata
 Walking from ../GOSRC to ../GOSRC/compress/lzw
-Processing sourceDir=/compress/lzw dump=false:
+Processing compress/lzw:
 Ignoring test code in writer_test.go
 Matchfile(../GOSRC/compress/lzw/writer.go) => true <nil>
 Matchfile(../GOSRC/compress/lzw/reader.go) => true <nil>
@@ -111,7 +111,7 @@ Package lzw:
 Processing package=lzw:
 Excluding ../GOSRC/compress/testdata
 Walking from ../GOSRC to ../GOSRC/compress/zlib
-Processing sourceDir=/compress/zlib dump=false:
+Processing compress/zlib:
 Ignoring test code in example_test.go
 Ignoring test code in writer_test.go
 Matchfile(../GOSRC/compress/zlib/writer.go) => true <nil>
@@ -120,9 +120,9 @@ Ignoring test code in reader_test.go
 Package zlib:
 Processing package=zlib:
 Walking from ../GOSRC to ../GOSRC/container
-Processing sourceDir=/container dump=false:
+Processing container:
 Walking from ../GOSRC to ../GOSRC/container/heap
-Processing sourceDir=/container/heap dump=false:
+Processing container/heap:
 Matchfile(../GOSRC/container/heap/heap.go) => true <nil>
 Ignoring test code in example_pq_test.go
 Ignoring test code in example_intheap_test.go
@@ -130,21 +130,21 @@ Ignoring test code in heap_test.go
 Package heap:
 Processing package=heap:
 Walking from ../GOSRC to ../GOSRC/container/list
-Processing sourceDir=/container/list dump=false:
+Processing container/list:
 Matchfile(../GOSRC/container/list/list.go) => true <nil>
 Ignoring test code in example_test.go
 Ignoring test code in list_test.go
 Package list:
 Processing package=list:
 Walking from ../GOSRC to ../GOSRC/container/ring
-Processing sourceDir=/container/ring dump=false:
+Processing container/ring:
 Ignoring test code in example_test.go
 Matchfile(../GOSRC/container/ring/ring.go) => true <nil>
 Ignoring test code in ring_test.go
 Package ring:
 Processing package=ring:
 Walking from ../GOSRC to ../GOSRC/context
-Processing sourceDir=/context dump=false:
+Processing context:
 Ignoring test code in example_test.go
 Ignoring test code in net_test.go
 Ignoring test code in context_test.go
@@ -154,13 +154,13 @@ Ignoring test code in benchmark_test.go
 Package context:
 Processing package=context:
 Walking from ../GOSRC to ../GOSRC/crypto
-Processing sourceDir=/crypto dump=false:
+Processing crypto:
 Ignoring test code in issue21104_test.go
 Matchfile(../GOSRC/crypto/crypto.go) => true <nil>
 Package crypto:
 Processing package=crypto:
 Walking from ../GOSRC to ../GOSRC/crypto/aes
-Processing sourceDir=/crypto/aes dump=false:
+Processing crypto/aes:
 Matchfile(../GOSRC/crypto/aes/cipher_s390x.go) => false <nil>
 Matchfile(../GOSRC/crypto/aes/ctr_s390x.go) => false <nil>
 Matchfile(../GOSRC/crypto/aes/cbc_s390x.go) => false <nil>
@@ -178,7 +178,7 @@ Matchfile(../GOSRC/crypto/aes/block.go) => true <nil>
 Package aes:
 Processing package=aes:
 Walking from ../GOSRC to ../GOSRC/crypto/cipher
-Processing sourceDir=/crypto/cipher dump=false:
+Processing crypto/cipher:
 Matchfile(../GOSRC/crypto/cipher/cfb.go) => true <nil>
 Matchfile(../GOSRC/crypto/cipher/cbc.go) => true <nil>
 Ignoring test code in ctr_aes_test.go
@@ -201,7 +201,7 @@ Ignoring test code in ofb_test.go
 Package cipher:
 Processing package=cipher:
 Walking from ../GOSRC to ../GOSRC/crypto/des
-Processing sourceDir=/crypto/des dump=false:
+Processing crypto/des:
 Ignoring test code in example_test.go
 Ignoring test code in des_test.go
 Matchfile(../GOSRC/crypto/des/cipher.go) => true <nil>
@@ -210,13 +210,13 @@ Matchfile(../GOSRC/crypto/des/block.go) => true <nil>
 Package des:
 Processing package=des:
 Walking from ../GOSRC to ../GOSRC/crypto/dsa
-Processing sourceDir=/crypto/dsa dump=false:
+Processing crypto/dsa:
 Ignoring test code in dsa_test.go
 Matchfile(../GOSRC/crypto/dsa/dsa.go) => true <nil>
 Package dsa:
 Processing package=dsa:
 Walking from ../GOSRC to ../GOSRC/crypto/ecdsa
-Processing sourceDir=/crypto/ecdsa dump=false:
+Processing crypto/ecdsa:
 Ignoring test code in example_test.go
 Ignoring test code in ecdsa_test.go
 Matchfile(../GOSRC/crypto/ecdsa/ecdsa.go) => true <nil>
@@ -224,7 +224,7 @@ Package ecdsa:
 Processing package=ecdsa:
 Excluding ../GOSRC/crypto/ecdsa/testdata
 Walking from ../GOSRC to ../GOSRC/crypto/elliptic
-Processing sourceDir=/crypto/elliptic dump=false:
+Processing crypto/elliptic:
 Matchfile(../GOSRC/crypto/elliptic/p224.go) => true <nil>
 Ignoring test code in fuzz_test.go
 Ignoring test code in p224_test.go
@@ -237,14 +237,14 @@ Matchfile(../GOSRC/crypto/elliptic/p256.go) => false <nil>
 Package elliptic:
 Processing package=elliptic:
 Walking from ../GOSRC to ../GOSRC/crypto/hmac
-Processing sourceDir=/crypto/hmac dump=false:
+Processing crypto/hmac:
 Ignoring test code in hmac_test.go
 Matchfile(../GOSRC/crypto/hmac/hmac.go) => true <nil>
 Package hmac:
 Processing package=hmac:
 Excluding ../GOSRC/crypto/internal
 Walking from ../GOSRC to ../GOSRC/crypto/md5
-Processing sourceDir=/crypto/md5 dump=false:
+Processing crypto/md5:
 Matchfile(../GOSRC/crypto/md5/md5block_decl.go) => true <nil>
 Matchfile(../GOSRC/crypto/md5/gen.go) => false <nil>
 Ignoring test code in example_test.go
@@ -255,7 +255,7 @@ Matchfile(../GOSRC/crypto/md5/md5.go) => true <nil>
 Package md5:
 Processing package=md5:
 Walking from ../GOSRC to ../GOSRC/crypto/rand
-Processing sourceDir=/crypto/rand dump=false:
+Processing crypto/rand:
 Ignoring test code in example_test.go
 Matchfile(../GOSRC/crypto/rand/rand_unix.go) => true <nil>
 Ignoring test code in rand_linux_test.go
@@ -271,7 +271,7 @@ Matchfile(../GOSRC/crypto/rand/rand_windows.go) => false <nil>
 Package rand:
 Processing package=rand:
 Walking from ../GOSRC to ../GOSRC/crypto/rc4
-Processing sourceDir=/crypto/rc4 dump=false:
+Processing crypto/rc4:
 Matchfile(../GOSRC/crypto/rc4/rc4_ref.go) => false <nil>
 Matchfile(../GOSRC/crypto/rc4/rc4_asm.go) => true <nil>
 Ignoring test code in rc4_test.go
@@ -279,7 +279,7 @@ Matchfile(../GOSRC/crypto/rc4/rc4.go) => true <nil>
 Package rc4:
 Processing package=rc4:
 Walking from ../GOSRC to ../GOSRC/crypto/rsa
-Processing sourceDir=/crypto/rsa dump=false:
+Processing crypto/rsa:
 Ignoring test code in pkcs1v15_test.go
 Ignoring test code in example_test.go
 Ignoring test code in pss_test.go
@@ -291,7 +291,7 @@ Package rsa:
 Processing package=rsa:
 Excluding ../GOSRC/crypto/rsa/testdata
 Walking from ../GOSRC to ../GOSRC/crypto/sha1
-Processing sourceDir=/crypto/sha1 dump=false:
+Processing crypto/sha1:
 Ignoring test code in fallback_test.go
 Matchfile(../GOSRC/crypto/sha1/sha1block.go) => true <nil>
 Ignoring test code in example_test.go
@@ -306,7 +306,7 @@ Matchfile(../GOSRC/crypto/sha1/sha1block_amd64.go) => true <nil>
 Package sha1:
 Processing package=sha1:
 Walking from ../GOSRC to ../GOSRC/crypto/sha256
-Processing sourceDir=/crypto/sha256 dump=false:
+Processing crypto/sha256:
 Ignoring test code in fallback_test.go
 Matchfile(../GOSRC/crypto/sha256/sha256block_generic.go) => false <nil>
 Matchfile(../GOSRC/crypto/sha256/sha256block_arm64.go) => false <nil>
@@ -320,7 +320,7 @@ Matchfile(../GOSRC/crypto/sha256/sha256block.go) => true <nil>
 Package sha256:
 Processing package=sha256:
 Walking from ../GOSRC to ../GOSRC/crypto/sha512
-Processing sourceDir=/crypto/sha512 dump=false:
+Processing crypto/sha512:
 Ignoring test code in fallback_test.go
 Matchfile(../GOSRC/crypto/sha512/sha512.go) => true <nil>
 Matchfile(../GOSRC/crypto/sha512/sha512block_s390x.go) => false <nil>
@@ -332,13 +332,13 @@ Matchfile(../GOSRC/crypto/sha512/sha512block_generic.go) => false <nil>
 Package sha512:
 Processing package=sha512:
 Walking from ../GOSRC to ../GOSRC/crypto/subtle
-Processing sourceDir=/crypto/subtle dump=false:
+Processing crypto/subtle:
 Ignoring test code in constant_time_test.go
 Matchfile(../GOSRC/crypto/subtle/constant_time.go) => true <nil>
 Package subtle:
 Processing package=subtle:
 Walking from ../GOSRC to ../GOSRC/crypto/tls
-Processing sourceDir=/crypto/tls dump=false:
+Processing crypto/tls:
 Ignoring test code in example_test.go
 Ignoring test code in handshake_test.go
 Ignoring test code in handshake_messages_test.go
@@ -365,7 +365,7 @@ Package tls:
 Processing package=tls:
 Excluding ../GOSRC/crypto/tls/testdata
 Walking from ../GOSRC to ../GOSRC/crypto/x509
-Processing sourceDir=/crypto/x509 dump=false:
+Processing crypto/x509:
 Matchfile(../GOSRC/crypto/x509/root_windows.go) => false <nil>
 Matchfile(../GOSRC/crypto/x509/root_js.go) => false <nil>
 Matchfile(../GOSRC/crypto/x509/root_unix.go) => false <nil>
@@ -400,15 +400,15 @@ Matchfile(../GOSRC/crypto/x509/verify.go) => true <nil>
 Package x509:
 Processing package=x509:
 Walking from ../GOSRC to ../GOSRC/crypto/x509/pkix
-Processing sourceDir=/crypto/x509/pkix dump=false:
+Processing crypto/x509/pkix:
 Matchfile(../GOSRC/crypto/x509/pkix/pkix.go) => true <nil>
 Package pkix:
 Processing package=pkix:
 Excluding ../GOSRC/crypto/x509/testdata
 Walking from ../GOSRC to ../GOSRC/database
-Processing sourceDir=/database dump=false:
+Processing database:
 Walking from ../GOSRC to ../GOSRC/database/sql
-Processing sourceDir=/database/sql dump=false:
+Processing database/sql:
 Ignoring test code in example_test.go
 Matchfile(../GOSRC/database/sql/convert.go) => true <nil>
 Ignoring test code in sql_test.go
@@ -419,16 +419,16 @@ Matchfile(../GOSRC/database/sql/sql.go) => true <nil>
 Package sql:
 Processing package=sql:
 Walking from ../GOSRC to ../GOSRC/database/sql/driver
-Processing sourceDir=/database/sql/driver dump=false:
+Processing database/sql/driver:
 Ignoring test code in types_test.go
 Matchfile(../GOSRC/database/sql/driver/types.go) => true <nil>
 Matchfile(../GOSRC/database/sql/driver/driver.go) => true <nil>
 Package driver:
 Processing package=driver:
 Walking from ../GOSRC to ../GOSRC/debug
-Processing sourceDir=/debug dump=false:
+Processing debug:
 Walking from ../GOSRC to ../GOSRC/debug/dwarf
-Processing sourceDir=/debug/dwarf dump=false:
+Processing debug/dwarf:
 Matchfile(../GOSRC/debug/dwarf/buf.go) => true <nil>
 Matchfile(../GOSRC/debug/dwarf/typeunit.go) => true <nil>
 Matchfile(../GOSRC/debug/dwarf/class_string.go) => true <nil>
@@ -448,7 +448,7 @@ Package dwarf:
 Processing package=dwarf:
 Excluding ../GOSRC/debug/dwarf/testdata
 Walking from ../GOSRC to ../GOSRC/debug/elf
-Processing sourceDir=/debug/elf dump=false:
+Processing debug/elf:
 Ignoring test code in symbols_test.go
 Ignoring test code in file_test.go
 Ignoring test code in elf_test.go
@@ -459,7 +459,7 @@ Package elf:
 Processing package=elf:
 Excluding ../GOSRC/debug/elf/testdata
 Walking from ../GOSRC to ../GOSRC/debug/gosym
-Processing sourceDir=/debug/gosym dump=false:
+Processing debug/gosym:
 Matchfile(../GOSRC/debug/gosym/symtab.go) => true <nil>
 Matchfile(../GOSRC/debug/gosym/pclntab.go) => true <nil>
 Ignoring test code in symtab_test.go
@@ -467,7 +467,7 @@ Ignoring test code in pclntab_test.go
 Package gosym:
 Processing package=gosym:
 Walking from ../GOSRC to ../GOSRC/debug/macho
-Processing sourceDir=/debug/macho dump=false:
+Processing debug/macho:
 Matchfile(../GOSRC/debug/macho/reloctype.go) => true <nil>
 Matchfile(../GOSRC/debug/macho/macho.go) => true <nil>
 Ignoring test code in file_test.go
@@ -478,7 +478,7 @@ Package macho:
 Processing package=macho:
 Excluding ../GOSRC/debug/macho/testdata
 Walking from ../GOSRC to ../GOSRC/debug/pe
-Processing sourceDir=/debug/pe dump=false:
+Processing debug/pe:
 Matchfile(../GOSRC/debug/pe/section.go) => true <nil>
 Matchfile(../GOSRC/debug/pe/symbol.go) => true <nil>
 Ignoring test code in file_test.go
@@ -490,7 +490,7 @@ Package pe:
 Processing package=pe:
 Excluding ../GOSRC/debug/pe/testdata
 Walking from ../GOSRC to ../GOSRC/debug/plan9obj
-Processing sourceDir=/debug/plan9obj dump=false:
+Processing debug/plan9obj:
 Matchfile(../GOSRC/debug/plan9obj/plan9obj.go) => true <nil>
 Ignoring test code in file_test.go
 Matchfile(../GOSRC/debug/plan9obj/file.go) => true <nil>
@@ -498,18 +498,18 @@ Package plan9obj:
 Processing package=plan9obj:
 Excluding ../GOSRC/debug/plan9obj/testdata
 Walking from ../GOSRC to ../GOSRC/encoding
-Processing sourceDir=/encoding dump=false:
+Processing encoding:
 Matchfile(../GOSRC/encoding/encoding.go) => true <nil>
 Package encoding:
 Processing package=encoding:
 Walking from ../GOSRC to ../GOSRC/encoding/ascii85
-Processing sourceDir=/encoding/ascii85 dump=false:
+Processing encoding/ascii85:
 Ignoring test code in ascii85_test.go
 Matchfile(../GOSRC/encoding/ascii85/ascii85.go) => true <nil>
 Package ascii85:
 Processing package=ascii85:
 Walking from ../GOSRC to ../GOSRC/encoding/asn1
-Processing sourceDir=/encoding/asn1 dump=false:
+Processing encoding/asn1:
 Matchfile(../GOSRC/encoding/asn1/marshal.go) => true <nil>
 Matchfile(../GOSRC/encoding/asn1/common.go) => true <nil>
 Matchfile(../GOSRC/encoding/asn1/asn1.go) => true <nil>
@@ -518,21 +518,21 @@ Ignoring test code in asn1_test.go
 Package asn1:
 Processing package=asn1:
 Walking from ../GOSRC to ../GOSRC/encoding/base32
-Processing sourceDir=/encoding/base32 dump=false:
+Processing encoding/base32:
 Ignoring test code in base32_test.go
 Ignoring test code in example_test.go
 Matchfile(../GOSRC/encoding/base32/base32.go) => true <nil>
 Package base32:
 Processing package=base32:
 Walking from ../GOSRC to ../GOSRC/encoding/base64
-Processing sourceDir=/encoding/base64 dump=false:
+Processing encoding/base64:
 Ignoring test code in example_test.go
 Matchfile(../GOSRC/encoding/base64/base64.go) => true <nil>
 Ignoring test code in base64_test.go
 Package base64:
 Processing package=base64:
 Walking from ../GOSRC to ../GOSRC/encoding/binary
-Processing sourceDir=/encoding/binary dump=false:
+Processing encoding/binary:
 Ignoring test code in example_test.go
 Matchfile(../GOSRC/encoding/binary/binary.go) => true <nil>
 Ignoring test code in binary_test.go
@@ -541,7 +541,7 @@ Matchfile(../GOSRC/encoding/binary/varint.go) => true <nil>
 Package binary:
 Processing package=binary:
 Walking from ../GOSRC to ../GOSRC/encoding/csv
-Processing sourceDir=/encoding/csv dump=false:
+Processing encoding/csv:
 Ignoring test code in example_test.go
 Ignoring test code in writer_test.go
 Matchfile(../GOSRC/encoding/csv/writer.go) => true <nil>
@@ -550,7 +550,7 @@ Ignoring test code in reader_test.go
 Package csv:
 Processing package=csv:
 Walking from ../GOSRC to ../GOSRC/encoding/gob
-Processing sourceDir=/encoding/gob dump=false:
+Processing encoding/gob:
 Ignoring test code in timing_test.go
 Matchfile(../GOSRC/encoding/gob/decgen.go) => false <nil>
 Matchfile(../GOSRC/encoding/gob/encode.go) => true <nil>
@@ -575,14 +575,14 @@ Matchfile(../GOSRC/encoding/gob/encgen.go) => false <nil>
 Package gob:
 Processing package=gob:
 Walking from ../GOSRC to ../GOSRC/encoding/hex
-Processing sourceDir=/encoding/hex dump=false:
+Processing encoding/hex:
 Ignoring test code in example_test.go
 Matchfile(../GOSRC/encoding/hex/hex.go) => true <nil>
 Ignoring test code in hex_test.go
 Package hex:
 Processing package=hex:
 Walking from ../GOSRC to ../GOSRC/encoding/json
-Processing sourceDir=/encoding/json dump=false:
+Processing encoding/json:
 Ignoring test code in decode_test.go
 Matchfile(../GOSRC/encoding/json/encode.go) => true <nil>
 Ignoring test code in example_test.go
@@ -606,14 +606,14 @@ Package json:
 Processing package=json:
 Excluding ../GOSRC/encoding/json/testdata
 Walking from ../GOSRC to ../GOSRC/encoding/pem
-Processing sourceDir=/encoding/pem dump=false:
+Processing encoding/pem:
 Ignoring test code in example_test.go
 Matchfile(../GOSRC/encoding/pem/pem.go) => true <nil>
 Ignoring test code in pem_test.go
 Package pem:
 Processing package=pem:
 Walking from ../GOSRC to ../GOSRC/encoding/xml
-Processing sourceDir=/encoding/xml dump=false:
+Processing encoding/xml:
 Ignoring test code in read_test.go
 Ignoring test code in example_test.go
 Matchfile(../GOSRC/encoding/xml/marshal.go) => true <nil>
@@ -626,20 +626,20 @@ Ignoring test code in marshal_test.go
 Package xml:
 Processing package=xml:
 Walking from ../GOSRC to ../GOSRC/errors
-Processing sourceDir=/errors dump=false:
+Processing errors:
 Ignoring test code in example_test.go
 Ignoring test code in errors_test.go
 Matchfile(../GOSRC/errors/errors.go) => true <nil>
 Package errors:
 Processing package=errors:
 Walking from ../GOSRC to ../GOSRC/expvar
-Processing sourceDir=/expvar dump=false:
+Processing expvar:
 Ignoring test code in expvar_test.go
 Matchfile(../GOSRC/expvar/expvar.go) => true <nil>
 Package expvar:
 Processing package=expvar:
 Walking from ../GOSRC to ../GOSRC/flag
-Processing sourceDir=/flag dump=false:
+Processing flag:
 Ignoring test code in example_test.go
 Matchfile(../GOSRC/flag/flag.go) => true <nil>
 Ignoring test code in flag_test.go
@@ -648,7 +648,7 @@ Ignoring test code in example_value_test.go
 Package flag:
 Processing package=flag:
 Walking from ../GOSRC to ../GOSRC/fmt
-Processing sourceDir=/fmt dump=false:
+Processing fmt:
 Ignoring test code in example_test.go
 Ignoring test code in fmt_test.go
 Matchfile(../GOSRC/fmt/format.go) => true <nil>
@@ -661,9 +661,9 @@ Ignoring test code in scan_test.go
 Package fmt:
 Processing package=fmt:
 Walking from ../GOSRC to ../GOSRC/go
-Processing sourceDir=/go dump=false:
+Processing go:
 Walking from ../GOSRC to ../GOSRC/go/ast
-Processing sourceDir=/go/ast dump=false:
+Processing go/ast:
 Matchfile(../GOSRC/go/ast/resolve.go) => true <nil>
 Ignoring test code in example_test.go
 Ignoring test code in filter_test.go
@@ -680,7 +680,7 @@ Matchfile(../GOSRC/go/ast/commentmap.go) => true <nil>
 Package ast:
 Processing package=ast:
 Walking from ../GOSRC to ../GOSRC/go/build
-Processing sourceDir=/go/build dump=false:
+Processing go/build:
 Matchfile(../GOSRC/go/build/gc.go) => true <nil>
 Ignoring test code in read_test.go
 Matchfile(../GOSRC/go/build/build.go) => true <nil>
@@ -695,14 +695,14 @@ Package build:
 Processing package=build:
 Excluding ../GOSRC/go/build/testdata
 Walking from ../GOSRC to ../GOSRC/go/constant
-Processing sourceDir=/go/constant dump=false:
+Processing go/constant:
 Ignoring test code in example_test.go
 Ignoring test code in value_test.go
 Matchfile(../GOSRC/go/constant/value.go) => true <nil>
 Package constant:
 Processing package=constant:
 Walking from ../GOSRC to ../GOSRC/go/doc
-Processing sourceDir=/go/doc dump=false:
+Processing go/doc:
 Ignoring test code in comment_test.go
 Ignoring test code in example_test.go
 Ignoring test code in synopsis_test.go
@@ -719,7 +719,7 @@ Package doc:
 Processing package=doc:
 Excluding ../GOSRC/go/doc/testdata
 Walking from ../GOSRC to ../GOSRC/go/format
-Processing sourceDir=/go/format dump=false:
+Processing go/format:
 Ignoring test code in example_test.go
 Matchfile(../GOSRC/go/format/internal.go) => true <nil>
 Ignoring test code in format_test.go
@@ -727,14 +727,14 @@ Matchfile(../GOSRC/go/format/format.go) => true <nil>
 Package format:
 Processing package=format:
 Walking from ../GOSRC to ../GOSRC/go/importer
-Processing sourceDir=/go/importer dump=false:
+Processing go/importer:
 Matchfile(../GOSRC/go/importer/importer.go) => true <nil>
 Ignoring test code in importer_test.go
 Package importer:
 Processing package=importer:
 Excluding ../GOSRC/go/internal
 Walking from ../GOSRC to ../GOSRC/go/parser
-Processing sourceDir=/go/parser dump=false:
+Processing go/parser:
 Ignoring test code in example_test.go
 Ignoring test code in parser_test.go
 Matchfile(../GOSRC/go/parser/interface.go) => true <nil>
@@ -746,7 +746,7 @@ Package parser:
 Processing package=parser:
 Excluding ../GOSRC/go/parser/testdata
 Walking from ../GOSRC to ../GOSRC/go/printer
-Processing sourceDir=/go/printer dump=false:
+Processing go/printer:
 Ignoring test code in example_test.go
 Ignoring test code in printer_test.go
 Ignoring test code in performance_test.go
@@ -756,7 +756,7 @@ Package printer:
 Processing package=printer:
 Excluding ../GOSRC/go/printer/testdata
 Walking from ../GOSRC to ../GOSRC/go/scanner
-Processing sourceDir=/go/scanner dump=false:
+Processing go/scanner:
 Ignoring test code in example_test.go
 Matchfile(../GOSRC/go/scanner/scanner.go) => true <nil>
 Ignoring test code in scanner_test.go
@@ -764,7 +764,7 @@ Matchfile(../GOSRC/go/scanner/errors.go) => true <nil>
 Package scanner:
 Processing package=scanner:
 Walking from ../GOSRC to ../GOSRC/go/token
-Processing sourceDir=/go/token dump=false:
+Processing go/token:
 Ignoring test code in serialize_test.go
 Ignoring test code in example_test.go
 Matchfile(../GOSRC/go/token/token.go) => true <nil>
@@ -774,7 +774,7 @@ Matchfile(../GOSRC/go/token/position.go) => true <nil>
 Package token:
 Processing package=token:
 Walking from ../GOSRC to ../GOSRC/go/types
-Processing sourceDir=/go/types dump=false:
+Processing go/types:
 Matchfile(../GOSRC/go/types/object.go) => true <nil>
 Ignoring test code in check_test.go
 Matchfile(../GOSRC/go/types/check.go) => true <nil>
@@ -826,20 +826,20 @@ Package types:
 Processing package=types:
 Excluding ../GOSRC/go/types/testdata
 Walking from ../GOSRC to ../GOSRC/hash
-Processing sourceDir=/hash dump=false:
+Processing hash:
 Ignoring test code in example_test.go
 Matchfile(../GOSRC/hash/hash.go) => true <nil>
 Ignoring test code in marshal_test.go
 Package hash:
 Processing package=hash:
 Walking from ../GOSRC to ../GOSRC/hash/adler32
-Processing sourceDir=/hash/adler32 dump=false:
+Processing hash/adler32:
 Matchfile(../GOSRC/hash/adler32/adler32.go) => true <nil>
 Ignoring test code in adler32_test.go
 Package adler32:
 Processing package=adler32:
 Walking from ../GOSRC to ../GOSRC/hash/crc32
-Processing sourceDir=/hash/crc32 dump=false:
+Processing hash/crc32:
 Matchfile(../GOSRC/hash/crc32/crc32_ppc64le.go) => false <nil>
 Matchfile(../GOSRC/hash/crc32/crc32_amd64.go) => true <nil>
 Ignoring test code in example_test.go
@@ -854,19 +854,19 @@ Matchfile(../GOSRC/hash/crc32/crc32_amd64p32.go) => false <nil>
 Package crc32:
 Processing package=crc32:
 Walking from ../GOSRC to ../GOSRC/hash/crc64
-Processing sourceDir=/hash/crc64 dump=false:
+Processing hash/crc64:
 Ignoring test code in crc64_test.go
 Matchfile(../GOSRC/hash/crc64/crc64.go) => true <nil>
 Package crc64:
 Processing package=crc64:
 Walking from ../GOSRC to ../GOSRC/hash/fnv
-Processing sourceDir=/hash/fnv dump=false:
+Processing hash/fnv:
 Matchfile(../GOSRC/hash/fnv/fnv.go) => true <nil>
 Ignoring test code in fnv_test.go
 Package fnv:
 Processing package=fnv:
 Walking from ../GOSRC to ../GOSRC/html
-Processing sourceDir=/html dump=false:
+Processing html:
 Ignoring test code in example_test.go
 Matchfile(../GOSRC/html/escape.go) => true <nil>
 Matchfile(../GOSRC/html/entity.go) => true <nil>
@@ -875,7 +875,7 @@ Ignoring test code in escape_test.go
 Package html:
 Processing package=html:
 Walking from ../GOSRC to ../GOSRC/html/template
-Processing sourceDir=/html/template dump=false:
+Processing html/template:
 Ignoring test code in clone_test.go
 Matchfile(../GOSRC/html/template/error.go) => true <nil>
 Ignoring test code in examplefiles_test.go
@@ -908,7 +908,7 @@ Matchfile(../GOSRC/html/template/jsctx_string.go) => true <nil>
 Package template:
 Processing package=template:
 Walking from ../GOSRC to ../GOSRC/image
-Processing sourceDir=/image dump=false:
+Processing image:
 Ignoring test code in geom_test.go
 Ignoring test code in decode_test.go
 Matchfile(../GOSRC/image/format.go) => true <nil>
@@ -922,7 +922,7 @@ Ignoring test code in decode_example_test.go
 Package image:
 Processing package=image:
 Walking from ../GOSRC to ../GOSRC/image/color
-Processing sourceDir=/image/color dump=false:
+Processing image/color:
 Matchfile(../GOSRC/image/color/color.go) => true <nil>
 Ignoring test code in color_test.go
 Ignoring test code in ycbcr_test.go
@@ -930,14 +930,14 @@ Matchfile(../GOSRC/image/color/ycbcr.go) => true <nil>
 Package color:
 Processing package=color:
 Walking from ../GOSRC to ../GOSRC/image/color/palette
-Processing sourceDir=/image/color/palette dump=false:
+Processing image/color/palette:
 Matchfile(../GOSRC/image/color/palette/generate.go) => true <nil>
 Matchfile(../GOSRC/image/color/palette/gen.go) => false <nil>
 Matchfile(../GOSRC/image/color/palette/palette.go) => true <nil>
 Package palette:
 Processing package=palette:
 Walking from ../GOSRC to ../GOSRC/image/draw
-Processing sourceDir=/image/draw dump=false:
+Processing image/draw:
 Ignoring test code in draw_test.go
 Ignoring test code in example_test.go
 Ignoring test code in clip_test.go
@@ -946,7 +946,7 @@ Matchfile(../GOSRC/image/draw/draw.go) => true <nil>
 Package draw:
 Processing package=draw:
 Walking from ../GOSRC to ../GOSRC/image/gif
-Processing sourceDir=/image/gif dump=false:
+Processing image/gif:
 Ignoring test code in writer_test.go
 Matchfile(../GOSRC/image/gif/writer.go) => true <nil>
 Matchfile(../GOSRC/image/gif/reader.go) => true <nil>
@@ -955,7 +955,7 @@ Package gif:
 Processing package=gif:
 Excluding ../GOSRC/image/internal
 Walking from ../GOSRC to ../GOSRC/image/jpeg
-Processing sourceDir=/image/jpeg dump=false:
+Processing image/jpeg:
 Ignoring test code in writer_test.go
 Matchfile(../GOSRC/image/jpeg/huffman.go) => true <nil>
 Ignoring test code in dct_test.go
@@ -968,7 +968,7 @@ Matchfile(../GOSRC/image/jpeg/fdct.go) => true <nil>
 Package jpeg:
 Processing package=jpeg:
 Walking from ../GOSRC to ../GOSRC/image/png
-Processing sourceDir=/image/png dump=false:
+Processing image/png:
 Ignoring test code in example_test.go
 Ignoring test code in writer_test.go
 Ignoring test code in paeth_test.go
@@ -981,9 +981,9 @@ Processing package=png:
 Excluding ../GOSRC/image/png/testdata
 Excluding ../GOSRC/image/testdata
 Walking from ../GOSRC to ../GOSRC/index
-Processing sourceDir=/index dump=false:
+Processing index:
 Walking from ../GOSRC to ../GOSRC/index/suffixarray
-Processing sourceDir=/index/suffixarray dump=false:
+Processing index/suffixarray:
 Ignoring test code in example_test.go
 Ignoring test code in suffixarray_test.go
 Matchfile(../GOSRC/index/suffixarray/suffixarray.go) => true <nil>
@@ -992,7 +992,7 @@ Package suffixarray:
 Processing package=suffixarray:
 Excluding ../GOSRC/internal
 Walking from ../GOSRC to ../GOSRC/io
-Processing sourceDir=/io dump=false:
+Processing io:
 Ignoring test code in example_test.go
 Ignoring test code in multi_test.go
 Matchfile(../GOSRC/io/io.go) => true <nil>
@@ -1003,7 +1003,7 @@ Ignoring test code in io_test.go
 Package io:
 Processing package=io:
 Walking from ../GOSRC to ../GOSRC/io/ioutil
-Processing sourceDir=/io/ioutil dump=false:
+Processing io/ioutil:
 Ignoring test code in example_test.go
 Matchfile(../GOSRC/io/ioutil/tempfile.go) => true <nil>
 Matchfile(../GOSRC/io/ioutil/ioutil.go) => true <nil>
@@ -1013,14 +1013,14 @@ Package ioutil:
 Processing package=ioutil:
 Excluding ../GOSRC/io/ioutil/testdata
 Walking from ../GOSRC to ../GOSRC/log
-Processing sourceDir=/log dump=false:
+Processing log:
 Matchfile(../GOSRC/log/log.go) => true <nil>
 Ignoring test code in example_test.go
 Ignoring test code in log_test.go
 Package log:
 Processing package=log:
 Walking from ../GOSRC to ../GOSRC/log/syslog
-Processing sourceDir=/log/syslog dump=false:
+Processing log/syslog:
 Ignoring test code in example_test.go
 Matchfile(../GOSRC/log/syslog/syslog.go) => true <nil>
 Matchfile(../GOSRC/log/syslog/doc.go) => true <nil>
@@ -1029,7 +1029,7 @@ Matchfile(../GOSRC/log/syslog/syslog_unix.go) => true <nil>
 Package syslog:
 Processing package=syslog:
 Walking from ../GOSRC to ../GOSRC/math
-Processing sourceDir=/math dump=false:
+Processing math:
 Matchfile(../GOSRC/math/arith_s390x.go) => false <nil>
 Matchfile(../GOSRC/math/sqrt.go) => true <nil>
 Matchfile(../GOSRC/math/log.go) => true <nil>
@@ -1084,7 +1084,7 @@ Matchfile(../GOSRC/math/lgamma.go) => true <nil>
 Package math:
 Processing package=math:
 Walking from ../GOSRC to ../GOSRC/math/big
-Processing sourceDir=/math/big dump=false:
+Processing math/big:
 Matchfile(../GOSRC/math/big/sqrt.go) => true <nil>
 Matchfile(../GOSRC/math/big/natconv.go) => true <nil>
 Matchfile(../GOSRC/math/big/ratmarsh.go) => true <nil>
@@ -1134,7 +1134,7 @@ Ignoring test code in bits_test.go
 Package big:
 Processing package=big:
 Walking from ../GOSRC to ../GOSRC/math/bits
-Processing sourceDir=/math/bits dump=false:
+Processing math/bits:
 Ignoring test code in example_test.go
 Matchfile(../GOSRC/math/bits/bits.go) => true <nil>
 Matchfile(../GOSRC/math/bits/bits_tables.go) => true <nil>
@@ -1145,7 +1145,7 @@ Ignoring test code in bits_test.go
 Package bits:
 Processing package=bits:
 Walking from ../GOSRC to ../GOSRC/math/cmplx
-Processing sourceDir=/math/cmplx dump=false:
+Processing math/cmplx:
 Matchfile(../GOSRC/math/cmplx/sqrt.go) => true <nil>
 Matchfile(../GOSRC/math/cmplx/log.go) => true <nil>
 Matchfile(../GOSRC/math/cmplx/isnan.go) => true <nil>
@@ -1165,7 +1165,7 @@ Matchfile(../GOSRC/math/cmplx/conj.go) => true <nil>
 Package cmplx:
 Processing package=cmplx:
 Walking from ../GOSRC to ../GOSRC/math/rand
-Processing sourceDir=/math/rand dump=false:
+Processing math/rand:
 Matchfile(../GOSRC/math/rand/gen_cooked.go) => false <nil>
 Ignoring test code in example_test.go
 Ignoring test code in race_test.go
@@ -1179,7 +1179,7 @@ Matchfile(../GOSRC/math/rand/zipf.go) => true <nil>
 Package rand:
 Processing package=rand:
 Walking from ../GOSRC to ../GOSRC/mime
-Processing sourceDir=/mime dump=false:
+Processing mime:
 Ignoring test code in encodedword_test.go
 Ignoring test code in example_test.go
 Matchfile(../GOSRC/mime/type_windows.go) => false <nil>
@@ -1197,7 +1197,7 @@ Matchfile(../GOSRC/mime/type_openbsd.go) => false <nil>
 Package mime:
 Processing package=mime:
 Walking from ../GOSRC to ../GOSRC/mime/multipart
-Processing sourceDir=/mime/multipart dump=false:
+Processing mime/multipart:
 Ignoring test code in example_test.go
 Ignoring test code in multipart_test.go
 Ignoring test code in writer_test.go
@@ -1209,7 +1209,7 @@ Package multipart:
 Processing package=multipart:
 Excluding ../GOSRC/mime/multipart/testdata
 Walking from ../GOSRC to ../GOSRC/mime/quotedprintable
-Processing sourceDir=/mime/quotedprintable dump=false:
+Processing mime/quotedprintable:
 Ignoring test code in example_test.go
 Ignoring test code in writer_test.go
 Matchfile(../GOSRC/mime/quotedprintable/writer.go) => true <nil>
@@ -1219,7 +1219,7 @@ Package quotedprintable:
 Processing package=quotedprintable:
 Excluding ../GOSRC/mime/testdata
 Walking from ../GOSRC to ../GOSRC/net
-Processing sourceDir=/net dump=false:
+Processing net:
 Matchfile(../GOSRC/net/fd_windows.go) => false <nil>
 Ignoring test code in ipsock_test.go
 Matchfile(../GOSRC/net/fd_plan9.go) => false <nil>
@@ -1403,7 +1403,7 @@ Matchfile(../GOSRC/net/file_stub.go) => false <nil>
 Package net:
 Processing package=net:
 Walking from ../GOSRC to ../GOSRC/net/http
-Processing sourceDir=/net/http dump=false:
+Processing net/http:
 Matchfile(../GOSRC/net/http/jar.go) => true <nil>
 Ignoring test code in cookie_test.go
 Matchfile(../GOSRC/net/http/transport.go) => true <nil>
@@ -1452,7 +1452,7 @@ Matchfile(../GOSRC/net/http/filetransport.go) => true <nil>
 Package http:
 Processing package=http:
 Walking from ../GOSRC to ../GOSRC/net/http/cgi
-Processing sourceDir=/net/http/cgi dump=false:
+Processing net/http/cgi:
 Ignoring test code in plan9_test.go
 Ignoring test code in child_test.go
 Ignoring test code in posix_test.go
@@ -1464,7 +1464,7 @@ Package cgi:
 Processing package=cgi:
 Excluding ../GOSRC/net/http/cgi/testdata
 Walking from ../GOSRC to ../GOSRC/net/http/cookiejar
-Processing sourceDir=/net/http/cookiejar dump=false:
+Processing net/http/cookiejar:
 Matchfile(../GOSRC/net/http/cookiejar/jar.go) => true <nil>
 Ignoring test code in example_test.go
 Matchfile(../GOSRC/net/http/cookiejar/punycode.go) => true <nil>
@@ -1474,14 +1474,14 @@ Ignoring test code in dummy_publicsuffix_test.go
 Package cookiejar:
 Processing package=cookiejar:
 Walking from ../GOSRC to ../GOSRC/net/http/fcgi
-Processing sourceDir=/net/http/fcgi dump=false:
+Processing net/http/fcgi:
 Matchfile(../GOSRC/net/http/fcgi/child.go) => true <nil>
 Matchfile(../GOSRC/net/http/fcgi/fcgi.go) => true <nil>
 Ignoring test code in fcgi_test.go
 Package fcgi:
 Processing package=fcgi:
 Walking from ../GOSRC to ../GOSRC/net/http/httptest
-Processing sourceDir=/net/http/httptest dump=false:
+Processing net/http/httptest:
 Ignoring test code in example_test.go
 Matchfile(../GOSRC/net/http/httptest/server.go) => true <nil>
 Matchfile(../GOSRC/net/http/httptest/recorder.go) => true <nil>
@@ -1492,14 +1492,14 @@ Ignoring test code in server_test.go
 Package httptest:
 Processing package=httptest:
 Walking from ../GOSRC to ../GOSRC/net/http/httptrace
-Processing sourceDir=/net/http/httptrace dump=false:
+Processing net/http/httptrace:
 Ignoring test code in trace_test.go
 Ignoring test code in example_test.go
 Matchfile(../GOSRC/net/http/httptrace/trace.go) => true <nil>
 Package httptrace:
 Processing package=httptrace:
 Walking from ../GOSRC to ../GOSRC/net/http/httputil
-Processing sourceDir=/net/http/httputil dump=false:
+Processing net/http/httputil:
 Ignoring test code in example_test.go
 Matchfile(../GOSRC/net/http/httputil/httputil.go) => true <nil>
 Matchfile(../GOSRC/net/http/httputil/persist.go) => true <nil>
@@ -1511,7 +1511,7 @@ Package httputil:
 Processing package=httputil:
 Excluding ../GOSRC/net/http/internal
 Walking from ../GOSRC to ../GOSRC/net/http/pprof
-Processing sourceDir=/net/http/pprof dump=false:
+Processing net/http/pprof:
 Matchfile(../GOSRC/net/http/pprof/pprof.go) => true <nil>
 Ignoring test code in pprof_test.go
 Package pprof:
@@ -1519,14 +1519,14 @@ Processing package=pprof:
 Excluding ../GOSRC/net/http/testdata
 Excluding ../GOSRC/net/internal
 Walking from ../GOSRC to ../GOSRC/net/mail
-Processing sourceDir=/net/mail dump=false:
+Processing net/mail:
 Ignoring test code in example_test.go
 Matchfile(../GOSRC/net/mail/message.go) => true <nil>
 Ignoring test code in message_test.go
 Package mail:
 Processing package=mail:
 Walking from ../GOSRC to ../GOSRC/net/rpc
-Processing sourceDir=/net/rpc dump=false:
+Processing net/rpc:
 Matchfile(../GOSRC/net/rpc/server.go) => true <nil>
 Matchfile(../GOSRC/net/rpc/client.go) => true <nil>
 Matchfile(../GOSRC/net/rpc/debug.go) => true <nil>
@@ -1535,14 +1535,14 @@ Ignoring test code in server_test.go
 Package rpc:
 Processing package=rpc:
 Walking from ../GOSRC to ../GOSRC/net/rpc/jsonrpc
-Processing sourceDir=/net/rpc/jsonrpc dump=false:
+Processing net/rpc/jsonrpc:
 Matchfile(../GOSRC/net/rpc/jsonrpc/server.go) => true <nil>
 Matchfile(../GOSRC/net/rpc/jsonrpc/client.go) => true <nil>
 Ignoring test code in all_test.go
 Package jsonrpc:
 Processing package=jsonrpc:
 Walking from ../GOSRC to ../GOSRC/net/smtp
-Processing sourceDir=/net/smtp dump=false:
+Processing net/smtp:
 Ignoring test code in example_test.go
 Matchfile(../GOSRC/net/smtp/auth.go) => true <nil>
 Ignoring test code in smtp_test.go
@@ -1551,7 +1551,7 @@ Package smtp:
 Processing package=smtp:
 Excluding ../GOSRC/net/testdata
 Walking from ../GOSRC to ../GOSRC/net/textproto
-Processing sourceDir=/net/textproto dump=false:
+Processing net/textproto:
 Matchfile(../GOSRC/net/textproto/header.go) => true <nil>
 Matchfile(../GOSRC/net/textproto/textproto.go) => true <nil>
 Ignoring test code in writer_test.go
@@ -1562,14 +1562,14 @@ Ignoring test code in reader_test.go
 Package textproto:
 Processing package=textproto:
 Walking from ../GOSRC to ../GOSRC/net/url
-Processing sourceDir=/net/url dump=false:
+Processing net/url:
 Ignoring test code in example_test.go
 Matchfile(../GOSRC/net/url/url.go) => true <nil>
 Ignoring test code in url_test.go
 Package url:
 Processing package=url:
 Walking from ../GOSRC to ../GOSRC/os
-Processing sourceDir=/os dump=false:
+Processing os:
 Matchfile(../GOSRC/os/stat_openbsd.go) => false <nil>
 Matchfile(../GOSRC/os/sticky_bsd.go) => true <nil>
 Matchfile(../GOSRC/os/executable_procfs.go) => false <nil>
@@ -1659,7 +1659,7 @@ Matchfile(../GOSRC/os/getwd_darwin.go) => true <nil>
 Package os:
 Processing package=os:
 Walking from ../GOSRC to ../GOSRC/os/exec
-Processing sourceDir=/os/exec dump=false:
+Processing os/exec:
 Matchfile(../GOSRC/os/exec/lp_windows.go) => false <nil>
 Ignoring test code in example_test.go
 Ignoring test code in exec_test.go
@@ -1678,7 +1678,7 @@ Ignoring test code in exec_posix_test.go
 Package exec:
 Processing package=exec:
 Walking from ../GOSRC to ../GOSRC/os/signal
-Processing sourceDir=/os/signal dump=false:
+Processing os/signal:
 Matchfile(../GOSRC/os/signal/signal.go) => true <nil>
 Ignoring test code in example_test.go
 Ignoring test code in signal_plan9_test.go
@@ -1692,7 +1692,7 @@ Package signal:
 Processing package=signal:
 Excluding ../GOSRC/os/signal/internal
 Walking from ../GOSRC to ../GOSRC/os/user
-Processing sourceDir=/os/user dump=false:
+Processing os/user:
 Matchfile(../GOSRC/os/user/lookup_android.go) => false <nil>
 Matchfile(../GOSRC/os/user/user.go) => true <nil>
 Ignoring test code in user_test.go
@@ -1711,7 +1711,7 @@ Ignoring test code in lookup_unix_test.go
 Package user:
 Processing package=user:
 Walking from ../GOSRC to ../GOSRC/path
-Processing sourceDir=/path dump=false:
+Processing path:
 Ignoring test code in example_test.go
 Ignoring test code in path_test.go
 Ignoring test code in match_test.go
@@ -1720,7 +1720,7 @@ Matchfile(../GOSRC/path/path.go) => true <nil>
 Package path:
 Processing package=path:
 Walking from ../GOSRC to ../GOSRC/path/filepath
-Processing sourceDir=/path/filepath dump=false:
+Processing path/filepath:
 Matchfile(../GOSRC/path/filepath/symlink.go) => true <nil>
 Ignoring test code in example_test.go
 Ignoring test code in path_test.go
@@ -1740,14 +1740,14 @@ Ignoring test code in export_windows_test.go
 Package filepath:
 Processing package=filepath:
 Walking from ../GOSRC to ../GOSRC/plugin
-Processing sourceDir=/plugin dump=false:
+Processing plugin:
 Matchfile(../GOSRC/plugin/plugin_stubs.go) => false <nil>
 Matchfile(../GOSRC/plugin/plugin_dlopen.go) => true <nil>
 Matchfile(../GOSRC/plugin/plugin.go) => true <nil>
 Package plugin:
 Processing package=plugin:
 Walking from ../GOSRC to ../GOSRC/reflect
-Processing sourceDir=/reflect dump=false:
+Processing reflect:
 Matchfile(../GOSRC/reflect/swapper.go) => true <nil>
 Ignoring test code in example_test.go
 Matchfile(../GOSRC/reflect/type.go) => true <nil>
@@ -1761,7 +1761,7 @@ Matchfile(../GOSRC/reflect/value.go) => true <nil>
 Package reflect:
 Processing package=reflect:
 Walking from ../GOSRC to ../GOSRC/regexp
-Processing sourceDir=/regexp dump=false:
+Processing regexp:
 Ignoring test code in example_test.go
 Ignoring test code in exec_test.go
 Ignoring test code in onepass_test.go
@@ -1775,7 +1775,7 @@ Ignoring test code in find_test.go
 Package regexp:
 Processing package=regexp:
 Walking from ../GOSRC to ../GOSRC/regexp/syntax
-Processing sourceDir=/regexp/syntax dump=false:
+Processing regexp/syntax:
 Matchfile(../GOSRC/regexp/syntax/prog.go) => true <nil>
 Matchfile(../GOSRC/regexp/syntax/simplify.go) => true <nil>
 Ignoring test code in prog_test.go
@@ -1791,7 +1791,7 @@ Package syntax:
 Processing package=syntax:
 Excluding ../GOSRC/regexp/testdata
 Walking from ../GOSRC to ../GOSRC/runtime
-Processing sourceDir=/runtime dump=false:
+Processing runtime:
 Matchfile(../GOSRC/runtime/netpoll_stub.go) => false <nil>
 Ignoring test code in export_mmap_test.go
 Ignoring test code in fastlog2_test.go
@@ -2138,7 +2138,7 @@ Ignoring test code in export_futex_test.go
 Package runtime:
 Processing package=runtime:
 Walking from ../GOSRC to ../GOSRC/runtime/cgo
-Processing sourceDir=/runtime/cgo dump=false:
+Processing runtime/cgo:
 Matchfile(../GOSRC/runtime/cgo/openbsd.go) => false <nil>
 Matchfile(../GOSRC/runtime/cgo/dragonfly.go) => false <nil>
 Matchfile(../GOSRC/runtime/cgo/iscgo.go) => true <nil>
@@ -2154,7 +2154,7 @@ Matchfile(../GOSRC/runtime/cgo/mmap.go) => false <nil>
 Package cgo:
 Processing package=cgo:
 Walking from ../GOSRC to ../GOSRC/runtime/debug
-Processing sourceDir=/runtime/debug dump=false:
+Processing runtime/debug:
 Ignoring test code in garbage_test.go
 Matchfile(../GOSRC/runtime/debug/stack.go) => true <nil>
 Matchfile(../GOSRC/runtime/debug/stubs.go) => true <nil>
@@ -2165,10 +2165,10 @@ Package debug:
 Processing package=debug:
 Excluding ../GOSRC/runtime/internal
 Walking from ../GOSRC to ../GOSRC/runtime/msan
-Processing sourceDir=/runtime/msan dump=false:
+Processing runtime/msan:
 Matchfile(../GOSRC/runtime/msan/msan.go) => false <nil>
 Walking from ../GOSRC to ../GOSRC/runtime/pprof
-Processing sourceDir=/runtime/pprof dump=false:
+Processing runtime/pprof:
 Matchfile(../GOSRC/runtime/pprof/pprof.go) => true <nil>
 Ignoring test code in mprof_test.go
 Matchfile(../GOSRC/runtime/pprof/runtime.go) => true <nil>
@@ -2188,7 +2188,7 @@ Processing package=pprof:
 Excluding ../GOSRC/runtime/pprof/internal
 Excluding ../GOSRC/runtime/pprof/testdata
 Walking from ../GOSRC to ../GOSRC/runtime/race
-Processing sourceDir=/runtime/race dump=false:
+Processing runtime/race:
 Ignoring test code in race_unix_test.go
 Ignoring test code in race_test.go
 Ignoring test code in sched_test.go
@@ -2202,7 +2202,7 @@ Processing package=race:
 Excluding ../GOSRC/runtime/race/testdata
 Excluding ../GOSRC/runtime/testdata
 Walking from ../GOSRC to ../GOSRC/runtime/trace
-Processing sourceDir=/runtime/trace dump=false:
+Processing runtime/trace:
 Ignoring test code in trace_test.go
 Ignoring test code in example_test.go
 Ignoring test code in annotation_test.go
@@ -2212,7 +2212,7 @@ Ignoring test code in trace_stack_test.go
 Package trace:
 Processing package=trace:
 Walking from ../GOSRC to ../GOSRC/sort
-Processing sourceDir=/sort dump=false:
+Processing sort:
 Ignoring test code in example_search_test.go
 Matchfile(../GOSRC/sort/slice.go) => true <nil>
 Ignoring test code in example_test.go
@@ -2230,7 +2230,7 @@ Ignoring test code in example_multi_test.go
 Package sort:
 Processing package=sort:
 Walking from ../GOSRC to ../GOSRC/strconv
-Processing sourceDir=/strconv dump=false:
+Processing strconv:
 Ignoring test code in atof_test.go
 Matchfile(../GOSRC/strconv/extfloat.go) => true <nil>
 Ignoring test code in example_test.go
@@ -2258,7 +2258,7 @@ Package strconv:
 Processing package=strconv:
 Excluding ../GOSRC/strconv/testdata
 Walking from ../GOSRC to ../GOSRC/strings
-Processing sourceDir=/strings dump=false:
+Processing strings:
 Matchfile(../GOSRC/strings/strings_decl.go) => true <nil>
 Ignoring test code in replace_test.go
 Ignoring test code in compare_test.go
@@ -2277,7 +2277,7 @@ Ignoring test code in builder_test.go
 Package strings:
 Processing package=strings:
 Walking from ../GOSRC to ../GOSRC/sync
-Processing sourceDir=/sync dump=false:
+Processing sync:
 Ignoring test code in map_bench_test.go
 Ignoring test code in example_pool_test.go
 Ignoring test code in example_test.go
@@ -2302,7 +2302,7 @@ Matchfile(../GOSRC/sync/waitgroup.go) => true <nil>
 Package sync:
 Processing package=sync:
 Walking from ../GOSRC to ../GOSRC/sync/atomic
-Processing sourceDir=/sync/atomic dump=false:
+Processing sync/atomic:
 Ignoring test code in example_test.go
 Ignoring test code in value_test.go
 Matchfile(../GOSRC/sync/atomic/doc.go) => true <nil>
@@ -2311,7 +2311,7 @@ Matchfile(../GOSRC/sync/atomic/value.go) => true <nil>
 Package atomic:
 Processing package=atomic:
 Walking from ../GOSRC to ../GOSRC/syscall
-Processing sourceDir=/syscall dump=false:
+Processing syscall:
 Matchfile(../GOSRC/syscall/dirent.go) => true <nil>
 Matchfile(../GOSRC/syscall/types_linux.go) => false <nil>
 Matchfile(../GOSRC/syscall/ztypes_openbsd_arm.go) => false <nil>
@@ -2551,13 +2551,13 @@ Matchfile(../GOSRC/syscall/zsyscall_freebsd_amd64.go) => false <nil>
 Package syscall:
 Processing package=syscall:
 Walking from ../GOSRC to ../GOSRC/syscall/js
-Processing sourceDir=/syscall/js dump=false:
+Processing syscall/js:
 Matchfile(../GOSRC/syscall/js/callback.go) => false <nil>
 Ignoring test code in js_test.go
 Matchfile(../GOSRC/syscall/js/typedarray.go) => false <nil>
 Matchfile(../GOSRC/syscall/js/js.go) => false <nil>
 Walking from ../GOSRC to ../GOSRC/testing
-Processing sourceDir=/testing dump=false:
+Processing testing:
 Ignoring test code in helper_test.go
 Matchfile(../GOSRC/testing/benchmark.go) => true <nil>
 Ignoring test code in sub_test.go
@@ -2576,36 +2576,36 @@ Package testing:
 Processing package=testing:
 Excluding ../GOSRC/testing/internal
 Walking from ../GOSRC to ../GOSRC/testing/iotest
-Processing sourceDir=/testing/iotest dump=false:
+Processing testing/iotest:
 Matchfile(../GOSRC/testing/iotest/logger.go) => true <nil>
 Matchfile(../GOSRC/testing/iotest/writer.go) => true <nil>
 Matchfile(../GOSRC/testing/iotest/reader.go) => true <nil>
 Package iotest:
 Processing package=iotest:
 Walking from ../GOSRC to ../GOSRC/testing/quick
-Processing sourceDir=/testing/quick dump=false:
+Processing testing/quick:
 Ignoring test code in quick_test.go
 Matchfile(../GOSRC/testing/quick/quick.go) => true <nil>
 Package quick:
 Processing package=quick:
 Walking from ../GOSRC to ../GOSRC/text
-Processing sourceDir=/text dump=false:
+Processing text:
 Walking from ../GOSRC to ../GOSRC/text/scanner
-Processing sourceDir=/text/scanner dump=false:
+Processing text/scanner:
 Ignoring test code in example_test.go
 Matchfile(../GOSRC/text/scanner/scanner.go) => true <nil>
 Ignoring test code in scanner_test.go
 Package scanner:
 Processing package=scanner:
 Walking from ../GOSRC to ../GOSRC/text/tabwriter
-Processing sourceDir=/text/tabwriter dump=false:
+Processing text/tabwriter:
 Ignoring test code in tabwriter_test.go
 Ignoring test code in example_test.go
 Matchfile(../GOSRC/text/tabwriter/tabwriter.go) => true <nil>
 Package tabwriter:
 Processing package=tabwriter:
 Walking from ../GOSRC to ../GOSRC/text/template
-Processing sourceDir=/text/template dump=false:
+Processing text/template:
 Matchfile(../GOSRC/text/template/option.go) => true <nil>
 Ignoring test code in examplefunc_test.go
 Ignoring test code in examplefiles_test.go
@@ -2620,7 +2620,7 @@ Matchfile(../GOSRC/text/template/funcs.go) => true <nil>
 Package template:
 Processing package=template:
 Walking from ../GOSRC to ../GOSRC/text/template/parse
-Processing sourceDir=/text/template/parse dump=false:
+Processing text/template/parse:
 Ignoring test code in lex_test.go
 Matchfile(../GOSRC/text/template/parse/lex.go) => true <nil>
 Ignoring test code in parse_test.go
@@ -2630,7 +2630,7 @@ Package parse:
 Processing package=parse:
 Excluding ../GOSRC/text/template/testdata
 Walking from ../GOSRC to ../GOSRC/time
-Processing sourceDir=/time dump=false:
+Processing time:
 Ignoring test code in zoneinfo_windows_test.go
 Matchfile(../GOSRC/time/sys_windows.go) => false <nil>
 Ignoring test code in example_test.go
@@ -2663,7 +2663,7 @@ Ignoring test code in export_windows_test.go
 Package time:
 Processing package=time:
 Walking from ../GOSRC to ../GOSRC/unicode
-Processing sourceDir=/unicode dump=false:
+Processing unicode:
 Ignoring test code in example_test.go
 Ignoring test code in graphic_test.go
 Matchfile(../GOSRC/unicode/maketables.go) => false <nil>
@@ -2678,34 +2678,34 @@ Ignoring test code in letter_test.go
 Package unicode:
 Processing package=unicode:
 Walking from ../GOSRC to ../GOSRC/unicode/utf16
-Processing sourceDir=/unicode/utf16 dump=false:
+Processing unicode/utf16:
 Ignoring test code in utf16_test.go
 Ignoring test code in export_test.go
 Matchfile(../GOSRC/unicode/utf16/utf16.go) => true <nil>
 Package utf16:
 Processing package=utf16:
 Walking from ../GOSRC to ../GOSRC/unicode/utf8
-Processing sourceDir=/unicode/utf8 dump=false:
+Processing unicode/utf8:
 Ignoring test code in example_test.go
 Ignoring test code in utf8_test.go
 Matchfile(../GOSRC/unicode/utf8/utf8.go) => true <nil>
 Package utf8:
 Processing package=utf8:
 Walking from ../GOSRC to ../GOSRC/unsafe
-Processing sourceDir=/unsafe dump=false:
+Processing unsafe:
 Matchfile(../GOSRC/unsafe/unsafe.go) => true <nil>
 Package unsafe:
 Processing package=unsafe:
 Walking from ../GOSRC to ../GOSRC/vendor
-Processing sourceDir=/vendor dump=false:
+Processing vendor:
 Walking from ../GOSRC to ../GOSRC/vendor/golang_org
-Processing sourceDir=/vendor/golang_org dump=false:
+Processing vendor/golang_org:
 Walking from ../GOSRC to ../GOSRC/vendor/golang_org/x
-Processing sourceDir=/vendor/golang_org/x dump=false:
+Processing vendor/golang_org/x:
 Walking from ../GOSRC to ../GOSRC/vendor/golang_org/x/crypto
-Processing sourceDir=/vendor/golang_org/x/crypto dump=false:
+Processing vendor/golang_org/x/crypto:
 Walking from ../GOSRC to ../GOSRC/vendor/golang_org/x/crypto/chacha20poly1305
-Processing sourceDir=/vendor/golang_org/x/crypto/chacha20poly1305 dump=false:
+Processing vendor/golang_org/x/crypto/chacha20poly1305:
 Matchfile(../GOSRC/vendor/golang_org/x/crypto/chacha20poly1305/chacha20poly1305_amd64.go) => true <nil>
 Matchfile(../GOSRC/vendor/golang_org/x/crypto/chacha20poly1305/chacha20poly1305_generic.go) => true <nil>
 Matchfile(../GOSRC/vendor/golang_org/x/crypto/chacha20poly1305/chacha20poly1305_noasm.go) => false <nil>
@@ -2715,7 +2715,7 @@ Ignoring test code in chacha20poly1305_test.go
 Package chacha20poly1305:
 Processing package=chacha20poly1305:
 Walking from ../GOSRC to ../GOSRC/vendor/golang_org/x/crypto/cryptobyte
-Processing sourceDir=/vendor/golang_org/x/crypto/cryptobyte dump=false:
+Processing vendor/golang_org/x/crypto/cryptobyte:
 Ignoring test code in example_test.go
 Ignoring test code in cryptobyte_test.go
 Matchfile(../GOSRC/vendor/golang_org/x/crypto/cryptobyte/builder.go) => true <nil>
@@ -2725,12 +2725,12 @@ Ignoring test code in asn1_test.go
 Package cryptobyte:
 Processing package=cryptobyte:
 Walking from ../GOSRC to ../GOSRC/vendor/golang_org/x/crypto/cryptobyte/asn1
-Processing sourceDir=/vendor/golang_org/x/crypto/cryptobyte/asn1 dump=false:
+Processing vendor/golang_org/x/crypto/cryptobyte/asn1:
 Matchfile(../GOSRC/vendor/golang_org/x/crypto/cryptobyte/asn1/asn1.go) => true <nil>
 Package asn1:
 Processing package=asn1:
 Walking from ../GOSRC to ../GOSRC/vendor/golang_org/x/crypto/curve25519
-Processing sourceDir=/vendor/golang_org/x/crypto/curve25519 dump=false:
+Processing vendor/golang_org/x/crypto/curve25519:
 Matchfile(../GOSRC/vendor/golang_org/x/crypto/curve25519/doc.go) => true <nil>
 Matchfile(../GOSRC/vendor/golang_org/x/crypto/curve25519/curve25519.go) => false <nil>
 Matchfile(../GOSRC/vendor/golang_org/x/crypto/curve25519/mont25519_amd64.go) => true <nil>
@@ -2739,7 +2739,7 @@ Package curve25519:
 Processing package=curve25519:
 Excluding ../GOSRC/vendor/golang_org/x/crypto/internal
 Walking from ../GOSRC to ../GOSRC/vendor/golang_org/x/crypto/poly1305
-Processing sourceDir=/vendor/golang_org/x/crypto/poly1305 dump=false:
+Processing vendor/golang_org/x/crypto/poly1305:
 Matchfile(../GOSRC/vendor/golang_org/x/crypto/poly1305/sum_amd64.go) => true <nil>
 Matchfile(../GOSRC/vendor/golang_org/x/crypto/poly1305/sum_noasm.go) => false <nil>
 Matchfile(../GOSRC/vendor/golang_org/x/crypto/poly1305/sum_ref.go) => true <nil>
@@ -2751,36 +2751,36 @@ Ignoring test code in poly1305_test.go
 Package poly1305:
 Processing package=poly1305:
 Walking from ../GOSRC to ../GOSRC/vendor/golang_org/x/net
-Processing sourceDir=/vendor/golang_org/x/net dump=false:
+Processing vendor/golang_org/x/net:
 Walking from ../GOSRC to ../GOSRC/vendor/golang_org/x/net/dns
-Processing sourceDir=/vendor/golang_org/x/net/dns dump=false:
+Processing vendor/golang_org/x/net/dns:
 Walking from ../GOSRC to ../GOSRC/vendor/golang_org/x/net/dns/dnsmessage
-Processing sourceDir=/vendor/golang_org/x/net/dns/dnsmessage dump=false:
+Processing vendor/golang_org/x/net/dns/dnsmessage:
 Ignoring test code in example_test.go
 Matchfile(../GOSRC/vendor/golang_org/x/net/dns/dnsmessage/message.go) => true <nil>
 Ignoring test code in message_test.go
 Package dnsmessage:
 Processing package=dnsmessage:
 Walking from ../GOSRC to ../GOSRC/vendor/golang_org/x/net/http
-Processing sourceDir=/vendor/golang_org/x/net/http dump=false:
+Processing vendor/golang_org/x/net/http:
 Walking from ../GOSRC to ../GOSRC/vendor/golang_org/x/net/http/httpguts
-Processing sourceDir=/vendor/golang_org/x/net/http/httpguts dump=false:
+Processing vendor/golang_org/x/net/http/httpguts:
 Ignoring test code in httplex_test.go
 Matchfile(../GOSRC/vendor/golang_org/x/net/http/httpguts/httplex.go) => true <nil>
 Matchfile(../GOSRC/vendor/golang_org/x/net/http/httpguts/guts.go) => true <nil>
 Package httpguts:
 Processing package=httpguts:
 Walking from ../GOSRC to ../GOSRC/vendor/golang_org/x/net/http/httpproxy
-Processing sourceDir=/vendor/golang_org/x/net/http/httpproxy dump=false:
+Processing vendor/golang_org/x/net/http/httpproxy:
 Matchfile(../GOSRC/vendor/golang_org/x/net/http/httpproxy/proxy.go) => true <nil>
 Ignoring test code in export_test.go
 Ignoring test code in proxy_test.go
 Package httpproxy:
 Processing package=httpproxy:
 Walking from ../GOSRC to ../GOSRC/vendor/golang_org/x/net/http2
-Processing sourceDir=/vendor/golang_org/x/net/http2 dump=false:
+Processing vendor/golang_org/x/net/http2:
 Walking from ../GOSRC to ../GOSRC/vendor/golang_org/x/net/http2/hpack
-Processing sourceDir=/vendor/golang_org/x/net/http2/hpack dump=false:
+Processing vendor/golang_org/x/net/http2/hpack:
 Matchfile(../GOSRC/vendor/golang_org/x/net/http2/hpack/hpack.go) => true <nil>
 Matchfile(../GOSRC/vendor/golang_org/x/net/http2/hpack/encode.go) => true <nil>
 Ignoring test code in tables_test.go
@@ -2791,7 +2791,7 @@ Ignoring test code in encode_test.go
 Package hpack:
 Processing package=hpack:
 Walking from ../GOSRC to ../GOSRC/vendor/golang_org/x/net/idna
-Processing sourceDir=/vendor/golang_org/x/net/idna dump=false:
+Processing vendor/golang_org/x/net/idna:
 Matchfile(../GOSRC/vendor/golang_org/x/net/idna/punycode.go) => true <nil>
 Matchfile(../GOSRC/vendor/golang_org/x/net/idna/idna.go) => true <nil>
 Ignoring test code in punycode_test.go
@@ -2802,7 +2802,7 @@ Package idna:
 Processing package=idna:
 Excluding ../GOSRC/vendor/golang_org/x/net/internal
 Walking from ../GOSRC to ../GOSRC/vendor/golang_org/x/net/lif
-Processing sourceDir=/vendor/golang_org/x/net/lif dump=false:
+Processing vendor/golang_org/x/net/lif:
 Matchfile(../GOSRC/vendor/golang_org/x/net/lif/lif.go) => false <nil>
 Matchfile(../GOSRC/vendor/golang_org/x/net/lif/binary.go) => false <nil>
 Ignoring test code in link_test.go
@@ -2814,7 +2814,7 @@ Matchfile(../GOSRC/vendor/golang_org/x/net/lif/zsys_solaris_amd64.go) => false <
 Matchfile(../GOSRC/vendor/golang_org/x/net/lif/syscall.go) => false <nil>
 Matchfile(../GOSRC/vendor/golang_org/x/net/lif/sys.go) => false <nil>
 Walking from ../GOSRC to ../GOSRC/vendor/golang_org/x/net/nettest
-Processing sourceDir=/vendor/golang_org/x/net/nettest dump=false:
+Processing vendor/golang_org/x/net/nettest:
 Ignoring test code in conntest_test.go
 Matchfile(../GOSRC/vendor/golang_org/x/net/nettest/conntest_go17.go) => true <nil>
 Matchfile(../GOSRC/vendor/golang_org/x/net/nettest/conntest_go16.go) => false <nil>
@@ -2822,7 +2822,7 @@ Matchfile(../GOSRC/vendor/golang_org/x/net/nettest/conntest.go) => true <nil>
 Package nettest:
 Processing package=nettest:
 Walking from ../GOSRC to ../GOSRC/vendor/golang_org/x/net/route
-Processing sourceDir=/vendor/golang_org/x/net/route dump=false:
+Processing vendor/golang_org/x/net/route:
 Matchfile(../GOSRC/vendor/golang_org/x/net/route/zsys_dragonfly.go) => false <nil>
 Matchfile(../GOSRC/vendor/golang_org/x/net/route/interface_freebsd.go) => false <nil>
 Matchfile(../GOSRC/vendor/golang_org/x/net/route/binary.go) => true <nil>
@@ -2863,30 +2863,30 @@ Matchfile(../GOSRC/vendor/golang_org/x/net/route/sys_darwin.go) => true <nil>
 Package route:
 Processing package=route:
 Walking from ../GOSRC to ../GOSRC/vendor/golang_org/x/text
-Processing sourceDir=/vendor/golang_org/x/text dump=false:
+Processing vendor/golang_org/x/text:
 Walking from ../GOSRC to ../GOSRC/vendor/golang_org/x/text/secure
-Processing sourceDir=/vendor/golang_org/x/text/secure dump=false:
+Processing vendor/golang_org/x/text/secure:
 Matchfile(../GOSRC/vendor/golang_org/x/text/secure/doc.go) => true <nil>
 Package secure:
 Processing package=secure:
 Walking from ../GOSRC to ../GOSRC/vendor/golang_org/x/text/secure/bidirule
-Processing sourceDir=/vendor/golang_org/x/text/secure/bidirule dump=false:
+Processing vendor/golang_org/x/text/secure/bidirule:
 Matchfile(../GOSRC/vendor/golang_org/x/text/secure/bidirule/bidirule.go) => true <nil>
 Package bidirule:
 Processing package=bidirule:
 Walking from ../GOSRC to ../GOSRC/vendor/golang_org/x/text/transform
-Processing sourceDir=/vendor/golang_org/x/text/transform dump=false:
+Processing vendor/golang_org/x/text/transform:
 Ignoring test code in examples_test.go
 Matchfile(../GOSRC/vendor/golang_org/x/text/transform/transform.go) => true <nil>
 Package transform:
 Processing package=transform:
 Walking from ../GOSRC to ../GOSRC/vendor/golang_org/x/text/unicode
-Processing sourceDir=/vendor/golang_org/x/text/unicode dump=false:
+Processing vendor/golang_org/x/text/unicode:
 Matchfile(../GOSRC/vendor/golang_org/x/text/unicode/doc.go) => true <nil>
 Package unicode:
 Processing package=unicode:
 Walking from ../GOSRC to ../GOSRC/vendor/golang_org/x/text/unicode/bidi
-Processing sourceDir=/vendor/golang_org/x/text/unicode/bidi dump=false:
+Processing vendor/golang_org/x/text/unicode/bidi:
 Ignoring test code in example_test.go
 Matchfile(../GOSRC/vendor/golang_org/x/text/unicode/bidi/core.go) => true <nil>
 Matchfile(../GOSRC/vendor/golang_org/x/text/unicode/bidi/prop.go) => true <nil>
@@ -2897,7 +2897,7 @@ Matchfile(../GOSRC/vendor/golang_org/x/text/unicode/bidi/bracket.go) => true <ni
 Package bidi:
 Processing package=bidi:
 Walking from ../GOSRC to ../GOSRC/vendor/golang_org/x/text/unicode/norm
-Processing sourceDir=/vendor/golang_org/x/text/unicode/norm dump=false:
+Processing vendor/golang_org/x/text/unicode/norm:
 Ignoring test code in example_test.go
 Matchfile(../GOSRC/vendor/golang_org/x/text/unicode/norm/iter.go) => true <nil>
 Matchfile(../GOSRC/vendor/golang_org/x/text/unicode/norm/normalize.go) => true <nil>
