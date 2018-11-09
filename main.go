@@ -872,10 +872,8 @@ If <joker-std-subdir> is not specified, no Go nor Clojure source files
 	os.Exit(0)
 }
 
-var packagesArray = []string{} // Relative package pathnames in alphabetical order
-
 // E.g.: \t_ "github.com/candid82/joker/std/go/net"
-func updateJokerMain(f string) {
+func updateJokerMain(pkgs []string, f string) {
 	by, err := ioutil.ReadFile(f)
 	check(err)
 	m := string(by)
@@ -895,9 +893,15 @@ func updateJokerMain(f string) {
 		m = strings.Replace(m, "import", "import ( // " + flag + "\n) // " + endflag + "\n\nimport", 1)
 		m = "// Auto-modified by gostd2joker\n" + m
 	}
+
 	reImport := regexp.MustCompile("(?msU)" + flag + ".*" + endflag)  // [^(]*[(][^)]*[)]
-	newImports := ""
-	m = reImport.ReplaceAllString(m, flag + newImports + endflag)
+	newImports := "\n"
+	importPrefix := "\t_ \"github.com/candid82/joker/std/go/"
+	for _, p := range pkgs {
+		newImports += importPrefix + p + "\"\n"
+	}
+	m = reImport.ReplaceAllString(m, flag + newImports + ") // " + endflag)
+
 	if verbose {
 		fmt.Printf("Writing %s\n", f)
 	}
@@ -1115,9 +1119,11 @@ import (
 		})
 
 	if jokerSourceDir != "" {
+		var packagesArray = []string{} // Relative package pathnames in alphabetical order
+
 		sortedPackages(packagesSet,
 			func (p string) { packagesArray = append(packagesArray, p) })
-		updateJokerMain(filepath.Join(jokerSourceDir, "main.go"))
+		updateJokerMain(packagesArray, filepath.Join(jokerSourceDir, "main.go"))
 	}
 
 	if verbose {
