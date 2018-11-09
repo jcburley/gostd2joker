@@ -5,12 +5,12 @@ Processing net:
 Matchfile(tests/small/src/net/dnsclient.go) => true <nil>
 Matchfile(tests/small/src/net/lookup.go) => true <nil>
 Package net:
-Processing package=net:
+Processing package=net in net:
 Walking from tests/small/src to tests/small/src/net/url
 Processing net/url:
 Matchfile(tests/small/src/net/url/url.go) => true <nil>
 Package url:
-Processing package=url:
+Processing package=url in net/url:
 TYPE net.MX:
   tests/small/src/net/dnsclient.go
 TYPE net.NS:

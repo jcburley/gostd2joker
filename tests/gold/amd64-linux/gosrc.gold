@@ -16,7 +16,7 @@ Matchfile(GO.link/src/archive/tar/stat_actime2.go) => false <nil>
 Matchfile(GO.link/src/archive/tar/format.go) => true <nil>
 Matchfile(GO.link/src/archive/tar/stat_unix.go) => true <nil>
 Package tar:
-Processing package=tar:
+Processing package=tar in archive/tar:
 Excluding GO.link/src/archive/tar/testdata
 Walking from GO.link/src to GO.link/src/archive/zip
 Processing archive/zip:
@@ -29,7 +29,7 @@ Ignoring test code in zip_test.go
 Matchfile(GO.link/src/archive/zip/writer.go) => true <nil>
 Matchfile(GO.link/src/archive/zip/register.go) => true <nil>
 Package zip:
-Processing package=zip:
+Processing package=zip in archive/zip:
 Excluding GO.link/src/archive/zip/testdata
 Walking from GO.link/src to GO.link/src/bufio
 Processing bufio:
@@ -40,7 +40,7 @@ Matchfile(GO.link/src/bufio/bufio.go) => true <nil>
 Matchfile(GO.link/src/bufio/scan.go) => true <nil>
 Ignoring test code in bufio_test.go
 Package bufio:
-Processing package=bufio:
+Processing package=bufio in bufio:
 Excluding GO.link/src/builtin
 Walking from GO.link/src to GO.link/src/bytes
 Processing bytes:
@@ -56,7 +56,7 @@ Ignoring test code in boundary_test.go
 Ignoring test code in bytes_test.go
 Matchfile(GO.link/src/bytes/bytes.go) => true <nil>
 Package bytes:
-Processing package=bytes:
+Processing package=bytes in bytes:
 Excluding GO.link/src/cmd
 Walking from GO.link/src to GO.link/src/compress
 Processing compress:
@@ -68,7 +68,7 @@ Matchfile(GO.link/src/compress/bzip2/huffman.go) => true <nil>
 Matchfile(GO.link/src/compress/bzip2/move_to_front.go) => true <nil>
 Matchfile(GO.link/src/compress/bzip2/bit_reader.go) => true <nil>
 Package bzip2:
-Processing package=bzip2:
+Processing package=bzip2 in compress/bzip2:
 Excluding GO.link/src/compress/bzip2/testdata
 Walking from GO.link/src to GO.link/src/compress/flate
 Processing compress/flate:
@@ -88,7 +88,7 @@ Ignoring test code in deflate_test.go
 Ignoring test code in dict_decoder_test.go
 Ignoring test code in flate_test.go
 Package flate:
-Processing package=flate:
+Processing package=flate in compress/flate:
 Excluding GO.link/src/compress/flate/testdata
 Walking from GO.link/src to GO.link/src/compress/gzip
 Processing compress/gzip:
@@ -99,7 +99,7 @@ Ignoring test code in gzip_test.go
 Ignoring test code in issue14937_test.go
 Matchfile(GO.link/src/compress/gzip/gzip.go) => true <nil>
 Package gzip:
-Processing package=gzip:
+Processing package=gzip in compress/gzip:
 Excluding GO.link/src/compress/gzip/testdata
 Walking from GO.link/src to GO.link/src/compress/lzw
 Processing compress/lzw:
@@ -108,7 +108,7 @@ Matchfile(GO.link/src/compress/lzw/reader.go) => true <nil>
 Ignoring test code in reader_test.go
 Matchfile(GO.link/src/compress/lzw/writer.go) => true <nil>
 Package lzw:
-Processing package=lzw:
+Processing package=lzw in compress/lzw:
 Excluding GO.link/src/compress/testdata
 Walking from GO.link/src to GO.link/src/compress/zlib
 Processing compress/zlib:
@@ -118,7 +118,7 @@ Matchfile(GO.link/src/compress/zlib/reader.go) => true <nil>
 Ignoring test code in reader_test.go
 Matchfile(GO.link/src/compress/zlib/writer.go) => true <nil>
 Package zlib:
-Processing package=zlib:
+Processing package=zlib in compress/zlib:
 Walking from GO.link/src to GO.link/src/container
 Processing container:
 Walking from GO.link/src to GO.link/src/container/heap
@@ -128,21 +128,21 @@ Matchfile(GO.link/src/container/heap/heap.go) => true <nil>
 Ignoring test code in example_intheap_test.go
 Ignoring test code in heap_test.go
 Package heap:
-Processing package=heap:
+Processing package=heap in container/heap:
 Walking from GO.link/src to GO.link/src/container/list
 Processing container/list:
 Ignoring test code in example_test.go
 Matchfile(GO.link/src/container/list/list.go) => true <nil>
 Ignoring test code in list_test.go
 Package list:
-Processing package=list:
+Processing package=list in container/list:
 Walking from GO.link/src to GO.link/src/container/ring
 Processing container/ring:
 Ignoring test code in ring_test.go
 Ignoring test code in example_test.go
 Matchfile(GO.link/src/container/ring/ring.go) => true <nil>
 Package ring:
-Processing package=ring:
+Processing package=ring in container/ring:
 Walking from GO.link/src to GO.link/src/context
 Processing context:
 Ignoring test code in example_test.go
@@ -152,13 +152,13 @@ Ignoring test code in context_test.go
 Ignoring test code in benchmark_test.go
 Matchfile(GO.link/src/context/context.go) => true <nil>
 Package context:
-Processing package=context:
+Processing package=context in context:
 Walking from GO.link/src to GO.link/src/crypto
 Processing crypto:
 Ignoring test code in issue21104_test.go
 Matchfile(GO.link/src/crypto/crypto.go) => true <nil>
 Package crypto:
-Processing package=crypto:
+Processing package=crypto in crypto:
 Walking from GO.link/src to GO.link/src/crypto/aes
 Processing crypto/aes:
 Matchfile(GO.link/src/crypto/aes/cipher_s390x.go) => false <nil>
@@ -176,7 +176,7 @@ Matchfile(GO.link/src/crypto/aes/cipher_asm.go) => true <nil>
 Matchfile(GO.link/src/crypto/aes/const.go) => true <nil>
 Matchfile(GO.link/src/crypto/aes/block.go) => true <nil>
 Package aes:
-Processing package=aes:
+Processing package=aes in crypto/aes:
 Walking from GO.link/src to GO.link/src/crypto/cipher
 Processing crypto/cipher:
 Ignoring test code in ctr_test.go
@@ -199,7 +199,7 @@ Ignoring test code in common_test.go
 Matchfile(GO.link/src/crypto/cipher/gcm.go) => true <nil>
 Ignoring test code in ofb_test.go
 Package cipher:
-Processing package=cipher:
+Processing package=cipher in crypto/cipher:
 Walking from GO.link/src to GO.link/src/crypto/des
 Processing crypto/des:
 Ignoring test code in example_test.go
@@ -208,20 +208,20 @@ Ignoring test code in des_test.go
 Matchfile(GO.link/src/crypto/des/const.go) => true <nil>
 Matchfile(GO.link/src/crypto/des/block.go) => true <nil>
 Package des:
-Processing package=des:
+Processing package=des in crypto/des:
 Walking from GO.link/src to GO.link/src/crypto/dsa
 Processing crypto/dsa:
 Matchfile(GO.link/src/crypto/dsa/dsa.go) => true <nil>
 Ignoring test code in dsa_test.go
 Package dsa:
-Processing package=dsa:
+Processing package=dsa in crypto/dsa:
 Walking from GO.link/src to GO.link/src/crypto/ecdsa
 Processing crypto/ecdsa:
 Ignoring test code in example_test.go
 Ignoring test code in ecdsa_test.go
 Matchfile(GO.link/src/crypto/ecdsa/ecdsa.go) => true <nil>
 Package ecdsa:
-Processing package=ecdsa:
+Processing package=ecdsa in crypto/ecdsa:
 Excluding GO.link/src/crypto/ecdsa/testdata
 Walking from GO.link/src to GO.link/src/crypto/elliptic
 Processing crypto/elliptic:
@@ -235,13 +235,13 @@ Matchfile(GO.link/src/crypto/elliptic/p224.go) => true <nil>
 Matchfile(GO.link/src/crypto/elliptic/p256_asm.go) => true <nil>
 Matchfile(GO.link/src/crypto/elliptic/p256_s390x.go) => false <nil>
 Package elliptic:
-Processing package=elliptic:
+Processing package=elliptic in crypto/elliptic:
 Walking from GO.link/src to GO.link/src/crypto/hmac
 Processing crypto/hmac:
 Matchfile(GO.link/src/crypto/hmac/hmac.go) => true <nil>
 Ignoring test code in hmac_test.go
 Package hmac:
-Processing package=hmac:
+Processing package=hmac in crypto/hmac:
 Excluding GO.link/src/crypto/internal
 Walking from GO.link/src to GO.link/src/crypto/md5
 Processing crypto/md5:
@@ -253,7 +253,7 @@ Matchfile(GO.link/src/crypto/md5/md5block_generic.go) => false <nil>
 Matchfile(GO.link/src/crypto/md5/gen.go) => false <nil>
 Matchfile(GO.link/src/crypto/md5/md5.go) => true <nil>
 Package md5:
-Processing package=md5:
+Processing package=md5 in crypto/md5:
 Walking from GO.link/src to GO.link/src/crypto/rand
 Processing crypto/rand:
 Ignoring test code in example_test.go
@@ -269,7 +269,7 @@ Matchfile(GO.link/src/crypto/rand/rand_openbsd.go) => false <nil>
 Matchfile(GO.link/src/crypto/rand/rand_js.go) => false <nil>
 Ignoring test code in util_test.go
 Package rand:
-Processing package=rand:
+Processing package=rand in crypto/rand:
 Walking from GO.link/src to GO.link/src/crypto/rc4
 Processing crypto/rc4:
 Matchfile(GO.link/src/crypto/rc4/rc4.go) => true <nil>
@@ -277,7 +277,7 @@ Matchfile(GO.link/src/crypto/rc4/rc4_asm.go) => true <nil>
 Matchfile(GO.link/src/crypto/rc4/rc4_ref.go) => false <nil>
 Ignoring test code in rc4_test.go
 Package rc4:
-Processing package=rc4:
+Processing package=rc4 in crypto/rc4:
 Walking from GO.link/src to GO.link/src/crypto/rsa
 Processing crypto/rsa:
 Ignoring test code in example_test.go
@@ -288,7 +288,7 @@ Matchfile(GO.link/src/crypto/rsa/pkcs1v15.go) => true <nil>
 Ignoring test code in rsa_test.go
 Ignoring test code in pss_test.go
 Package rsa:
-Processing package=rsa:
+Processing package=rsa in crypto/rsa:
 Excluding GO.link/src/crypto/rsa/testdata
 Walking from GO.link/src to GO.link/src/crypto/sha1
 Processing crypto/sha1:
@@ -304,7 +304,7 @@ Matchfile(GO.link/src/crypto/sha1/sha1block_s390x.go) => false <nil>
 Matchfile(GO.link/src/crypto/sha1/sha1block_amd64.go) => true <nil>
 Matchfile(GO.link/src/crypto/sha1/sha1block_decl.go) => false <nil>
 Package sha1:
-Processing package=sha1:
+Processing package=sha1 in crypto/sha1:
 Walking from GO.link/src to GO.link/src/crypto/sha256
 Processing crypto/sha256:
 Ignoring test code in example_test.go
@@ -318,7 +318,7 @@ Matchfile(GO.link/src/crypto/sha256/sha256block_generic.go) => false <nil>
 Matchfile(GO.link/src/crypto/sha256/sha256.go) => true <nil>
 Ignoring test code in sha256_test.go
 Package sha256:
-Processing package=sha256:
+Processing package=sha256 in crypto/sha256:
 Walking from GO.link/src to GO.link/src/crypto/sha512
 Processing crypto/sha512:
 Matchfile(GO.link/src/crypto/sha512/sha512block_s390x.go) => false <nil>
@@ -330,13 +330,13 @@ Matchfile(GO.link/src/crypto/sha512/sha512block_generic.go) => false <nil>
 Matchfile(GO.link/src/crypto/sha512/sha512block.go) => true <nil>
 Matchfile(GO.link/src/crypto/sha512/sha512block_decl.go) => false <nil>
 Package sha512:
-Processing package=sha512:
+Processing package=sha512 in crypto/sha512:
 Walking from GO.link/src to GO.link/src/crypto/subtle
 Processing crypto/subtle:
 Matchfile(GO.link/src/crypto/subtle/constant_time.go) => true <nil>
 Ignoring test code in constant_time_test.go
 Package subtle:
-Processing package=subtle:
+Processing package=subtle in crypto/subtle:
 Walking from GO.link/src to GO.link/src/crypto/tls
 Processing crypto/tls:
 Matchfile(GO.link/src/crypto/tls/prf.go) => true <nil>
@@ -362,7 +362,7 @@ Ignoring test code in handshake_test.go
 Ignoring test code in conn_test.go
 Ignoring test code in handshake_server_test.go
 Package tls:
-Processing package=tls:
+Processing package=tls in crypto/tls:
 Excluding GO.link/src/crypto/tls/testdata
 Walking from GO.link/src to GO.link/src/crypto/x509
 Processing crypto/x509:
@@ -398,12 +398,12 @@ Matchfile(GO.link/src/crypto/x509/root_darwin_arm_gen.go) => false <nil>
 Matchfile(GO.link/src/crypto/x509/pem_decrypt.go) => true <nil>
 Ignoring test code in x509_test.go
 Package x509:
-Processing package=x509:
+Processing package=x509 in crypto/x509:
 Walking from GO.link/src to GO.link/src/crypto/x509/pkix
 Processing crypto/x509/pkix:
 Matchfile(GO.link/src/crypto/x509/pkix/pkix.go) => true <nil>
 Package pkix:
-Processing package=pkix:
+Processing package=pkix in crypto/x509/pkix:
 Excluding GO.link/src/crypto/x509/testdata
 Walking from GO.link/src to GO.link/src/database
 Processing database:
@@ -417,14 +417,14 @@ Ignoring test code in convert_test.go
 Ignoring test code in fakedb_test.go
 Matchfile(GO.link/src/database/sql/ctxutil.go) => true <nil>
 Package sql:
-Processing package=sql:
+Processing package=sql in database/sql:
 Walking from GO.link/src to GO.link/src/database/sql/driver
 Processing database/sql/driver:
 Matchfile(GO.link/src/database/sql/driver/types.go) => true <nil>
 Matchfile(GO.link/src/database/sql/driver/driver.go) => true <nil>
 Ignoring test code in types_test.go
 Package driver:
-Processing package=driver:
+Processing package=driver in database/sql/driver:
 Walking from GO.link/src to GO.link/src/debug
 Processing debug:
 Walking from GO.link/src to GO.link/src/debug/dwarf
@@ -445,7 +445,7 @@ Matchfile(GO.link/src/debug/dwarf/line.go) => true <nil>
 Matchfile(GO.link/src/debug/dwarf/open.go) => true <nil>
 Matchfile(GO.link/src/debug/dwarf/const.go) => true <nil>
 Package dwarf:
-Processing package=dwarf:
+Processing package=dwarf in debug/dwarf:
 Excluding GO.link/src/debug/dwarf/testdata
 Walking from GO.link/src to GO.link/src/debug/elf
 Processing debug/elf:
@@ -456,7 +456,7 @@ Ignoring test code in elf_test.go
 Matchfile(GO.link/src/debug/elf/file.go) => true <nil>
 Ignoring test code in file_test.go
 Package elf:
-Processing package=elf:
+Processing package=elf in debug/elf:
 Excluding GO.link/src/debug/elf/testdata
 Walking from GO.link/src to GO.link/src/debug/gosym
 Processing debug/gosym:
@@ -465,7 +465,7 @@ Matchfile(GO.link/src/debug/gosym/pclntab.go) => true <nil>
 Ignoring test code in pclntab_test.go
 Matchfile(GO.link/src/debug/gosym/symtab.go) => true <nil>
 Package gosym:
-Processing package=gosym:
+Processing package=gosym in debug/gosym:
 Walking from GO.link/src to GO.link/src/debug/macho
 Processing debug/macho:
 Matchfile(GO.link/src/debug/macho/macho.go) => true <nil>
@@ -475,7 +475,7 @@ Matchfile(GO.link/src/debug/macho/file.go) => true <nil>
 Ignoring test code in file_test.go
 Matchfile(GO.link/src/debug/macho/reloctype.go) => true <nil>
 Package macho:
-Processing package=macho:
+Processing package=macho in debug/macho:
 Excluding GO.link/src/debug/macho/testdata
 Walking from GO.link/src to GO.link/src/debug/pe
 Processing debug/pe:
@@ -487,7 +487,7 @@ Matchfile(GO.link/src/debug/pe/string.go) => true <nil>
 Matchfile(GO.link/src/debug/pe/symbol.go) => true <nil>
 Matchfile(GO.link/src/debug/pe/pe.go) => true <nil>
 Package pe:
-Processing package=pe:
+Processing package=pe in debug/pe:
 Excluding GO.link/src/debug/pe/testdata
 Walking from GO.link/src to GO.link/src/debug/plan9obj
 Processing debug/plan9obj:
@@ -495,19 +495,19 @@ Matchfile(GO.link/src/debug/plan9obj/plan9obj.go) => true <nil>
 Matchfile(GO.link/src/debug/plan9obj/file.go) => true <nil>
 Ignoring test code in file_test.go
 Package plan9obj:
-Processing package=plan9obj:
+Processing package=plan9obj in debug/plan9obj:
 Excluding GO.link/src/debug/plan9obj/testdata
 Walking from GO.link/src to GO.link/src/encoding
 Processing encoding:
 Matchfile(GO.link/src/encoding/encoding.go) => true <nil>
 Package encoding:
-Processing package=encoding:
+Processing package=encoding in encoding:
 Walking from GO.link/src to GO.link/src/encoding/ascii85
 Processing encoding/ascii85:
 Matchfile(GO.link/src/encoding/ascii85/ascii85.go) => true <nil>
 Ignoring test code in ascii85_test.go
 Package ascii85:
-Processing package=ascii85:
+Processing package=ascii85 in encoding/ascii85:
 Walking from GO.link/src to GO.link/src/encoding/asn1
 Processing encoding/asn1:
 Ignoring test code in marshal_test.go
@@ -516,21 +516,21 @@ Matchfile(GO.link/src/encoding/asn1/asn1.go) => true <nil>
 Ignoring test code in asn1_test.go
 Matchfile(GO.link/src/encoding/asn1/marshal.go) => true <nil>
 Package asn1:
-Processing package=asn1:
+Processing package=asn1 in encoding/asn1:
 Walking from GO.link/src to GO.link/src/encoding/base32
 Processing encoding/base32:
 Ignoring test code in example_test.go
 Matchfile(GO.link/src/encoding/base32/base32.go) => true <nil>
 Ignoring test code in base32_test.go
 Package base32:
-Processing package=base32:
+Processing package=base32 in encoding/base32:
 Walking from GO.link/src to GO.link/src/encoding/base64
 Processing encoding/base64:
 Ignoring test code in example_test.go
 Ignoring test code in base64_test.go
 Matchfile(GO.link/src/encoding/base64/base64.go) => true <nil>
 Package base64:
-Processing package=base64:
+Processing package=base64 in encoding/base64:
 Walking from GO.link/src to GO.link/src/encoding/binary
 Processing encoding/binary:
 Ignoring test code in example_test.go
@@ -539,7 +539,7 @@ Matchfile(GO.link/src/encoding/binary/binary.go) => true <nil>
 Ignoring test code in binary_test.go
 Ignoring test code in varint_test.go
 Package binary:
-Processing package=binary:
+Processing package=binary in encoding/binary:
 Walking from GO.link/src to GO.link/src/encoding/csv
 Processing encoding/csv:
 Ignoring test code in example_test.go
@@ -548,7 +548,7 @@ Matchfile(GO.link/src/encoding/csv/reader.go) => true <nil>
 Ignoring test code in reader_test.go
 Matchfile(GO.link/src/encoding/csv/writer.go) => true <nil>
 Package csv:
-Processing package=csv:
+Processing package=csv in encoding/csv:
 Walking from GO.link/src to GO.link/src/encoding/gob
 Processing encoding/gob:
 Matchfile(GO.link/src/encoding/gob/type.go) => true <nil>
@@ -573,14 +573,14 @@ Matchfile(GO.link/src/encoding/gob/dec_helpers.go) => true <nil>
 Ignoring test code in example_interface_test.go
 Matchfile(GO.link/src/encoding/gob/encoder.go) => true <nil>
 Package gob:
-Processing package=gob:
+Processing package=gob in encoding/gob:
 Walking from GO.link/src to GO.link/src/encoding/hex
 Processing encoding/hex:
 Ignoring test code in example_test.go
 Ignoring test code in hex_test.go
 Matchfile(GO.link/src/encoding/hex/hex.go) => true <nil>
 Package hex:
-Processing package=hex:
+Processing package=hex in encoding/hex:
 Walking from GO.link/src to GO.link/src/encoding/json
 Processing encoding/json:
 Ignoring test code in example_test.go
@@ -603,7 +603,7 @@ Matchfile(GO.link/src/encoding/json/stream.go) => true <nil>
 Matchfile(GO.link/src/encoding/json/indent.go) => true <nil>
 Ignoring test code in encode_test.go
 Package json:
-Processing package=json:
+Processing package=json in encoding/json:
 Excluding GO.link/src/encoding/json/testdata
 Walking from GO.link/src to GO.link/src/encoding/pem
 Processing encoding/pem:
@@ -611,7 +611,7 @@ Ignoring test code in pem_test.go
 Ignoring test code in example_test.go
 Matchfile(GO.link/src/encoding/pem/pem.go) => true <nil>
 Package pem:
-Processing package=pem:
+Processing package=pem in encoding/pem:
 Walking from GO.link/src to GO.link/src/encoding/xml
 Processing encoding/xml:
 Ignoring test code in example_test.go
@@ -624,20 +624,20 @@ Ignoring test code in read_test.go
 Matchfile(GO.link/src/encoding/xml/xml.go) => true <nil>
 Matchfile(GO.link/src/encoding/xml/marshal.go) => true <nil>
 Package xml:
-Processing package=xml:
+Processing package=xml in encoding/xml:
 Walking from GO.link/src to GO.link/src/errors
 Processing errors:
 Ignoring test code in example_test.go
 Matchfile(GO.link/src/errors/errors.go) => true <nil>
 Ignoring test code in errors_test.go
 Package errors:
-Processing package=errors:
+Processing package=errors in errors:
 Walking from GO.link/src to GO.link/src/expvar
 Processing expvar:
 Ignoring test code in expvar_test.go
 Matchfile(GO.link/src/expvar/expvar.go) => true <nil>
 Package expvar:
-Processing package=expvar:
+Processing package=expvar in expvar:
 Walking from GO.link/src to GO.link/src/flag
 Processing flag:
 Ignoring test code in flag_test.go
@@ -646,7 +646,7 @@ Ignoring test code in example_value_test.go
 Ignoring test code in export_test.go
 Matchfile(GO.link/src/flag/flag.go) => true <nil>
 Package flag:
-Processing package=flag:
+Processing package=flag in flag:
 Walking from GO.link/src to GO.link/src/fmt
 Processing fmt:
 Ignoring test code in example_test.go
@@ -659,7 +659,7 @@ Matchfile(GO.link/src/fmt/doc.go) => true <nil>
 Matchfile(GO.link/src/fmt/format.go) => true <nil>
 Ignoring test code in fmt_test.go
 Package fmt:
-Processing package=fmt:
+Processing package=fmt in fmt:
 Walking from GO.link/src to GO.link/src/go
 Processing go:
 Walking from GO.link/src to GO.link/src/go/ast
@@ -678,7 +678,7 @@ Matchfile(GO.link/src/go/ast/scope.go) => true <nil>
 Ignoring test code in ast_test.go
 Matchfile(GO.link/src/go/ast/ast.go) => true <nil>
 Package ast:
-Processing package=ast:
+Processing package=ast in go/ast:
 Walking from GO.link/src to GO.link/src/go/build
 Processing go/build:
 Matchfile(GO.link/src/go/build/build.go) => true <nil>
@@ -693,7 +693,7 @@ Matchfile(GO.link/src/go/build/gc.go) => true <nil>
 Matchfile(GO.link/src/go/build/doc.go) => true <nil>
 Ignoring test code in build_test.go
 Package build:
-Processing package=build:
+Processing package=build in go/build:
 Excluding GO.link/src/go/build/testdata
 Walking from GO.link/src to GO.link/src/go/constant
 Processing go/constant:
@@ -701,7 +701,7 @@ Ignoring test code in example_test.go
 Matchfile(GO.link/src/go/constant/value.go) => true <nil>
 Ignoring test code in value_test.go
 Package constant:
-Processing package=constant:
+Processing package=constant in go/constant:
 Walking from GO.link/src to GO.link/src/go/doc
 Processing go/doc:
 Ignoring test code in example_test.go
@@ -717,7 +717,7 @@ Matchfile(GO.link/src/go/doc/headscan.go) => false <nil>
 Matchfile(GO.link/src/go/doc/doc.go) => true <nil>
 Ignoring test code in synopsis_test.go
 Package doc:
-Processing package=doc:
+Processing package=doc in go/doc:
 Excluding GO.link/src/go/doc/testdata
 Walking from GO.link/src to GO.link/src/go/format
 Processing go/format:
@@ -726,13 +726,13 @@ Ignoring test code in format_test.go
 Matchfile(GO.link/src/go/format/internal.go) => true <nil>
 Matchfile(GO.link/src/go/format/format.go) => true <nil>
 Package format:
-Processing package=format:
+Processing package=format in go/format:
 Walking from GO.link/src to GO.link/src/go/importer
 Processing go/importer:
 Ignoring test code in importer_test.go
 Matchfile(GO.link/src/go/importer/importer.go) => true <nil>
 Package importer:
-Processing package=importer:
+Processing package=importer in go/importer:
 Excluding GO.link/src/go/internal
 Walking from GO.link/src to GO.link/src/go/parser
 Processing go/parser:
@@ -744,7 +744,7 @@ Ignoring test code in short_test.go
 Ignoring test code in parser_test.go
 Ignoring test code in error_test.go
 Package parser:
-Processing package=parser:
+Processing package=parser in go/parser:
 Excluding GO.link/src/go/parser/testdata
 Walking from GO.link/src to GO.link/src/go/printer
 Processing go/printer:
@@ -754,7 +754,7 @@ Matchfile(GO.link/src/go/printer/nodes.go) => true <nil>
 Ignoring test code in performance_test.go
 Matchfile(GO.link/src/go/printer/printer.go) => true <nil>
 Package printer:
-Processing package=printer:
+Processing package=printer in go/printer:
 Excluding GO.link/src/go/printer/testdata
 Walking from GO.link/src to GO.link/src/go/scanner
 Processing go/scanner:
@@ -763,7 +763,7 @@ Matchfile(GO.link/src/go/scanner/errors.go) => true <nil>
 Matchfile(GO.link/src/go/scanner/scanner.go) => true <nil>
 Ignoring test code in scanner_test.go
 Package scanner:
-Processing package=scanner:
+Processing package=scanner in go/scanner:
 Walking from GO.link/src to GO.link/src/go/token
 Processing go/token:
 Ignoring test code in example_test.go
@@ -773,7 +773,7 @@ Matchfile(GO.link/src/go/token/token.go) => true <nil>
 Matchfile(GO.link/src/go/token/serialize.go) => true <nil>
 Ignoring test code in serialize_test.go
 Package token:
-Processing package=token:
+Processing package=token in go/token:
 Walking from GO.link/src to GO.link/src/go/types
 Processing go/types:
 Matchfile(GO.link/src/go/types/type.go) => true <nil>
@@ -824,7 +824,7 @@ Matchfile(GO.link/src/go/types/exprstring.go) => true <nil>
 Matchfile(GO.link/src/go/types/labels.go) => true <nil>
 Matchfile(GO.link/src/go/types/initorder.go) => true <nil>
 Package types:
-Processing package=types:
+Processing package=types in go/types:
 Excluding GO.link/src/go/types/testdata
 Walking from GO.link/src to GO.link/src/hash
 Processing hash:
@@ -832,13 +832,13 @@ Ignoring test code in example_test.go
 Ignoring test code in marshal_test.go
 Matchfile(GO.link/src/hash/hash.go) => true <nil>
 Package hash:
-Processing package=hash:
+Processing package=hash in hash:
 Walking from GO.link/src to GO.link/src/hash/adler32
 Processing hash/adler32:
 Ignoring test code in adler32_test.go
 Matchfile(GO.link/src/hash/adler32/adler32.go) => true <nil>
 Package adler32:
-Processing package=adler32:
+Processing package=adler32 in hash/adler32:
 Walking from GO.link/src to GO.link/src/hash/crc32
 Processing hash/crc32:
 Ignoring test code in example_test.go
@@ -853,19 +853,19 @@ Matchfile(GO.link/src/hash/crc32/crc32_arm64.go) => false <nil>
 Matchfile(GO.link/src/hash/crc32/crc32_amd64p32.go) => false <nil>
 Matchfile(GO.link/src/hash/crc32/crc32_s390x.go) => false <nil>
 Package crc32:
-Processing package=crc32:
+Processing package=crc32 in hash/crc32:
 Walking from GO.link/src to GO.link/src/hash/crc64
 Processing hash/crc64:
 Ignoring test code in crc64_test.go
 Matchfile(GO.link/src/hash/crc64/crc64.go) => true <nil>
 Package crc64:
-Processing package=crc64:
+Processing package=crc64 in hash/crc64:
 Walking from GO.link/src to GO.link/src/hash/fnv
 Processing hash/fnv:
 Ignoring test code in fnv_test.go
 Matchfile(GO.link/src/hash/fnv/fnv.go) => true <nil>
 Package fnv:
-Processing package=fnv:
+Processing package=fnv in hash/fnv:
 Walking from GO.link/src to GO.link/src/html
 Processing html:
 Ignoring test code in example_test.go
@@ -874,7 +874,7 @@ Ignoring test code in entity_test.go
 Ignoring test code in escape_test.go
 Matchfile(GO.link/src/html/entity.go) => true <nil>
 Package html:
-Processing package=html:
+Processing package=html in html:
 Walking from GO.link/src to GO.link/src/html/template
 Processing html/template:
 Ignoring test code in example_test.go
@@ -907,7 +907,7 @@ Matchfile(GO.link/src/html/template/context.go) => true <nil>
 Matchfile(GO.link/src/html/template/template.go) => true <nil>
 Ignoring test code in clone_test.go
 Package template:
-Processing package=template:
+Processing package=template in html/template:
 Walking from GO.link/src to GO.link/src/image
 Processing image:
 Matchfile(GO.link/src/image/ycbcr.go) => true <nil>
@@ -921,7 +921,7 @@ Matchfile(GO.link/src/image/format.go) => true <nil>
 Matchfile(GO.link/src/image/image.go) => true <nil>
 Matchfile(GO.link/src/image/geom.go) => true <nil>
 Package image:
-Processing package=image:
+Processing package=image in image:
 Walking from GO.link/src to GO.link/src/image/color
 Processing image/color:
 Matchfile(GO.link/src/image/color/ycbcr.go) => true <nil>
@@ -929,14 +929,14 @@ Matchfile(GO.link/src/image/color/color.go) => true <nil>
 Ignoring test code in ycbcr_test.go
 Ignoring test code in color_test.go
 Package color:
-Processing package=color:
+Processing package=color in image/color:
 Walking from GO.link/src to GO.link/src/image/color/palette
 Processing image/color/palette:
 Matchfile(GO.link/src/image/color/palette/generate.go) => true <nil>
 Matchfile(GO.link/src/image/color/palette/gen.go) => false <nil>
 Matchfile(GO.link/src/image/color/palette/palette.go) => true <nil>
 Package palette:
-Processing package=palette:
+Processing package=palette in image/color/palette:
 Walking from GO.link/src to GO.link/src/image/draw
 Processing image/draw:
 Ignoring test code in example_test.go
@@ -945,7 +945,7 @@ Matchfile(GO.link/src/image/draw/draw.go) => true <nil>
 Ignoring test code in clip_test.go
 Ignoring test code in draw_test.go
 Package draw:
-Processing package=draw:
+Processing package=draw in image/draw:
 Walking from GO.link/src to GO.link/src/image/gif
 Processing image/gif:
 Ignoring test code in writer_test.go
@@ -953,7 +953,7 @@ Matchfile(GO.link/src/image/gif/reader.go) => true <nil>
 Ignoring test code in reader_test.go
 Matchfile(GO.link/src/image/gif/writer.go) => true <nil>
 Package gif:
-Processing package=gif:
+Processing package=gif in image/gif:
 Excluding GO.link/src/image/internal
 Walking from GO.link/src to GO.link/src/image/jpeg
 Processing image/jpeg:
@@ -967,7 +967,7 @@ Matchfile(GO.link/src/image/jpeg/huffman.go) => true <nil>
 Matchfile(GO.link/src/image/jpeg/idct.go) => true <nil>
 Matchfile(GO.link/src/image/jpeg/fdct.go) => true <nil>
 Package jpeg:
-Processing package=jpeg:
+Processing package=jpeg in image/jpeg:
 Walking from GO.link/src to GO.link/src/image/png
 Processing image/png:
 Ignoring test code in example_test.go
@@ -978,7 +978,7 @@ Ignoring test code in paeth_test.go
 Matchfile(GO.link/src/image/png/writer.go) => true <nil>
 Matchfile(GO.link/src/image/png/paeth.go) => true <nil>
 Package png:
-Processing package=png:
+Processing package=png in image/png:
 Excluding GO.link/src/image/png/testdata
 Excluding GO.link/src/image/testdata
 Walking from GO.link/src to GO.link/src/index
@@ -990,7 +990,7 @@ Ignoring test code in example_test.go
 Ignoring test code in suffixarray_test.go
 Matchfile(GO.link/src/index/suffixarray/suffixarray.go) => true <nil>
 Package suffixarray:
-Processing package=suffixarray:
+Processing package=suffixarray in index/suffixarray:
 Excluding GO.link/src/internal
 Walking from GO.link/src to GO.link/src/io
 Processing io:
@@ -1002,7 +1002,7 @@ Ignoring test code in multi_test.go
 Ignoring test code in pipe_test.go
 Matchfile(GO.link/src/io/multi.go) => true <nil>
 Package io:
-Processing package=io:
+Processing package=io in io:
 Walking from GO.link/src to GO.link/src/io/ioutil
 Processing io/ioutil:
 Ignoring test code in example_test.go
@@ -1011,7 +1011,7 @@ Matchfile(GO.link/src/io/ioutil/tempfile.go) => true <nil>
 Matchfile(GO.link/src/io/ioutil/ioutil.go) => true <nil>
 Ignoring test code in ioutil_test.go
 Package ioutil:
-Processing package=ioutil:
+Processing package=ioutil in io/ioutil:
 Excluding GO.link/src/io/ioutil/testdata
 Walking from GO.link/src to GO.link/src/log
 Processing log:
@@ -1019,7 +1019,7 @@ Ignoring test code in example_test.go
 Ignoring test code in log_test.go
 Matchfile(GO.link/src/log/log.go) => true <nil>
 Package log:
-Processing package=log:
+Processing package=log in log:
 Walking from GO.link/src to GO.link/src/log/syslog
 Processing log/syslog:
 Ignoring test code in example_test.go
@@ -1028,7 +1028,7 @@ Ignoring test code in syslog_test.go
 Matchfile(GO.link/src/log/syslog/doc.go) => true <nil>
 Matchfile(GO.link/src/log/syslog/syslog_unix.go) => true <nil>
 Package syslog:
-Processing package=syslog:
+Processing package=syslog in log/syslog:
 Walking from GO.link/src to GO.link/src/math
 Processing math:
 Matchfile(GO.link/src/math/log1p.go) => true <nil>
@@ -1083,7 +1083,7 @@ Matchfile(GO.link/src/math/const.go) => true <nil>
 Matchfile(GO.link/src/math/gamma.go) => true <nil>
 Matchfile(GO.link/src/math/abs.go) => true <nil>
 Package math:
-Processing package=math:
+Processing package=math in math:
 Walking from GO.link/src to GO.link/src/math/big
 Processing math/big:
 Matchfile(GO.link/src/math/big/ftoa.go) => true <nil>
@@ -1133,7 +1133,7 @@ Matchfile(GO.link/src/math/big/intconv.go) => true <nil>
 Ignoring test code in decimal_test.go
 Matchfile(GO.link/src/math/big/int.go) => true <nil>
 Package big:
-Processing package=big:
+Processing package=big in math/big:
 Walking from GO.link/src to GO.link/src/math/bits
 Processing math/bits:
 Ignoring test code in example_test.go
@@ -1144,7 +1144,7 @@ Matchfile(GO.link/src/math/bits/make_tables.go) => false <nil>
 Matchfile(GO.link/src/math/bits/bits.go) => true <nil>
 Matchfile(GO.link/src/math/bits/make_examples.go) => false <nil>
 Package bits:
-Processing package=bits:
+Processing package=bits in math/bits:
 Walking from GO.link/src to GO.link/src/math/cmplx
 Processing math/cmplx:
 Ignoring test code in cmath_test.go
@@ -1164,7 +1164,7 @@ Matchfile(GO.link/src/math/cmplx/asin.go) => true <nil>
 Matchfile(GO.link/src/math/cmplx/isnan.go) => true <nil>
 Matchfile(GO.link/src/math/cmplx/abs.go) => true <nil>
 Package cmplx:
-Processing package=cmplx:
+Processing package=cmplx in math/cmplx:
 Walking from GO.link/src to GO.link/src/math/rand
 Processing math/rand:
 Ignoring test code in example_test.go
@@ -1178,7 +1178,8 @@ Matchfile(GO.link/src/math/rand/rand.go) => true <nil>
 Matchfile(GO.link/src/math/rand/gen_cooked.go) => false <nil>
 Ignoring test code in regress_test.go
 Package rand:
-Processing package=rand:
+Processing package=rand in math/rand:
+Skipping rand as it was already processed in crypto/rand before being seen in math/rand.
 Walking from GO.link/src to GO.link/src/mime
 Processing mime:
 Matchfile(GO.link/src/mime/type.go) => true <nil>
@@ -1196,7 +1197,7 @@ Ignoring test code in encodedword_test.go
 Ignoring test code in mediatype_test.go
 Matchfile(GO.link/src/mime/type_unix.go) => true <nil>
 Package mime:
-Processing package=mime:
+Processing package=mime in mime:
 Walking from GO.link/src to GO.link/src/mime/multipart
 Processing mime/multipart:
 Ignoring test code in example_test.go
@@ -1207,7 +1208,7 @@ Matchfile(GO.link/src/mime/multipart/formdata.go) => true <nil>
 Ignoring test code in multipart_test.go
 Matchfile(GO.link/src/mime/multipart/multipart.go) => true <nil>
 Package multipart:
-Processing package=multipart:
+Processing package=multipart in mime/multipart:
 Excluding GO.link/src/mime/multipart/testdata
 Walking from GO.link/src to GO.link/src/mime/quotedprintable
 Processing mime/quotedprintable:
@@ -1217,7 +1218,7 @@ Matchfile(GO.link/src/mime/quotedprintable/reader.go) => true <nil>
 Ignoring test code in reader_test.go
 Matchfile(GO.link/src/mime/quotedprintable/writer.go) => true <nil>
 Package quotedprintable:
-Processing package=quotedprintable:
+Processing package=quotedprintable in mime/quotedprintable:
 Excluding GO.link/src/mime/testdata
 Walking from GO.link/src to GO.link/src/net
 Processing net:
@@ -1402,7 +1403,7 @@ Matchfile(GO.link/src/net/error_plan9.go) => false <nil>
 Ignoring test code in writev_test.go
 Ignoring test code in interface_bsd_test.go
 Package net:
-Processing package=net:
+Processing package=net in net:
 Walking from GO.link/src to GO.link/src/net/http
 Processing net/http:
 Matchfile(GO.link/src/net/http/header.go) => true <nil>
@@ -1451,7 +1452,7 @@ Ignoring test code in proxy_test.go
 Matchfile(GO.link/src/net/http/server.go) => true <nil>
 Matchfile(GO.link/src/net/http/response.go) => true <nil>
 Package http:
-Processing package=http:
+Processing package=http in net/http:
 Walking from GO.link/src to GO.link/src/net/http/cgi
 Processing net/http/cgi:
 Ignoring test code in child_test.go
@@ -1462,7 +1463,7 @@ Ignoring test code in plan9_test.go
 Matchfile(GO.link/src/net/http/cgi/host.go) => true <nil>
 Matchfile(GO.link/src/net/http/cgi/child.go) => true <nil>
 Package cgi:
-Processing package=cgi:
+Processing package=cgi in net/http/cgi:
 Excluding GO.link/src/net/http/cgi/testdata
 Walking from GO.link/src to GO.link/src/net/http/cookiejar
 Processing net/http/cookiejar:
@@ -1473,14 +1474,14 @@ Ignoring test code in jar_test.go
 Ignoring test code in dummy_publicsuffix_test.go
 Matchfile(GO.link/src/net/http/cookiejar/jar.go) => true <nil>
 Package cookiejar:
-Processing package=cookiejar:
+Processing package=cookiejar in net/http/cookiejar:
 Walking from GO.link/src to GO.link/src/net/http/fcgi
 Processing net/http/fcgi:
 Matchfile(GO.link/src/net/http/fcgi/fcgi.go) => true <nil>
 Ignoring test code in fcgi_test.go
 Matchfile(GO.link/src/net/http/fcgi/child.go) => true <nil>
 Package fcgi:
-Processing package=fcgi:
+Processing package=fcgi in net/http/fcgi:
 Walking from GO.link/src to GO.link/src/net/http/httptest
 Processing net/http/httptest:
 Matchfile(GO.link/src/net/http/httptest/recorder.go) => true <nil>
@@ -1491,14 +1492,14 @@ Ignoring test code in httptest_test.go
 Ignoring test code in recorder_test.go
 Matchfile(GO.link/src/net/http/httptest/server.go) => true <nil>
 Package httptest:
-Processing package=httptest:
+Processing package=httptest in net/http/httptest:
 Walking from GO.link/src to GO.link/src/net/http/httptrace
 Processing net/http/httptrace:
 Ignoring test code in example_test.go
 Matchfile(GO.link/src/net/http/httptrace/trace.go) => true <nil>
 Ignoring test code in trace_test.go
 Package httptrace:
-Processing package=httptrace:
+Processing package=httptrace in net/http/httptrace:
 Walking from GO.link/src to GO.link/src/net/http/httputil
 Processing net/http/httputil:
 Ignoring test code in example_test.go
@@ -1509,14 +1510,14 @@ Matchfile(GO.link/src/net/http/httputil/reverseproxy.go) => true <nil>
 Ignoring test code in reverseproxy_test.go
 Matchfile(GO.link/src/net/http/httputil/persist.go) => true <nil>
 Package httputil:
-Processing package=httputil:
+Processing package=httputil in net/http/httputil:
 Excluding GO.link/src/net/http/internal
 Walking from GO.link/src to GO.link/src/net/http/pprof
 Processing net/http/pprof:
 Ignoring test code in pprof_test.go
 Matchfile(GO.link/src/net/http/pprof/pprof.go) => true <nil>
 Package pprof:
-Processing package=pprof:
+Processing package=pprof in net/http/pprof:
 Excluding GO.link/src/net/http/testdata
 Excluding GO.link/src/net/internal
 Walking from GO.link/src to GO.link/src/net/mail
@@ -1525,7 +1526,7 @@ Ignoring test code in example_test.go
 Ignoring test code in message_test.go
 Matchfile(GO.link/src/net/mail/message.go) => true <nil>
 Package mail:
-Processing package=mail:
+Processing package=mail in net/mail:
 Walking from GO.link/src to GO.link/src/net/rpc
 Processing net/rpc:
 Matchfile(GO.link/src/net/rpc/debug.go) => true <nil>
@@ -1534,14 +1535,14 @@ Ignoring test code in server_test.go
 Ignoring test code in client_test.go
 Matchfile(GO.link/src/net/rpc/server.go) => true <nil>
 Package rpc:
-Processing package=rpc:
+Processing package=rpc in net/rpc:
 Walking from GO.link/src to GO.link/src/net/rpc/jsonrpc
 Processing net/rpc/jsonrpc:
 Matchfile(GO.link/src/net/rpc/jsonrpc/client.go) => true <nil>
 Ignoring test code in all_test.go
 Matchfile(GO.link/src/net/rpc/jsonrpc/server.go) => true <nil>
 Package jsonrpc:
-Processing package=jsonrpc:
+Processing package=jsonrpc in net/rpc/jsonrpc:
 Walking from GO.link/src to GO.link/src/net/smtp
 Processing net/smtp:
 Ignoring test code in example_test.go
@@ -1549,7 +1550,7 @@ Ignoring test code in smtp_test.go
 Matchfile(GO.link/src/net/smtp/auth.go) => true <nil>
 Matchfile(GO.link/src/net/smtp/smtp.go) => true <nil>
 Package smtp:
-Processing package=smtp:
+Processing package=smtp in net/smtp:
 Excluding GO.link/src/net/testdata
 Walking from GO.link/src to GO.link/src/net/textproto
 Processing net/textproto:
@@ -1561,14 +1562,14 @@ Matchfile(GO.link/src/net/textproto/pipeline.go) => true <nil>
 Matchfile(GO.link/src/net/textproto/writer.go) => true <nil>
 Matchfile(GO.link/src/net/textproto/textproto.go) => true <nil>
 Package textproto:
-Processing package=textproto:
+Processing package=textproto in net/textproto:
 Walking from GO.link/src to GO.link/src/net/url
 Processing net/url:
 Ignoring test code in example_test.go
 Ignoring test code in url_test.go
 Matchfile(GO.link/src/net/url/url.go) => true <nil>
 Package url:
-Processing package=url:
+Processing package=url in net/url:
 Walking from GO.link/src to GO.link/src/os
 Processing os:
 Matchfile(GO.link/src/os/exec.go) => true <nil>
@@ -1658,7 +1659,7 @@ Matchfile(GO.link/src/os/file_posix.go) => true <nil>
 Matchfile(GO.link/src/os/stat_linux.go) => true <nil>
 Matchfile(GO.link/src/os/error_plan9.go) => false <nil>
 Package os:
-Processing package=os:
+Processing package=os in os:
 Walking from GO.link/src to GO.link/src/os/exec
 Processing os/exec:
 Matchfile(GO.link/src/os/exec/exec.go) => true <nil>
@@ -1677,7 +1678,7 @@ Ignoring test code in env_test.go
 Matchfile(GO.link/src/os/exec/exec_unix.go) => true <nil>
 Ignoring test code in lp_test.go
 Package exec:
-Processing package=exec:
+Processing package=exec in os/exec:
 Walking from GO.link/src to GO.link/src/os/signal
 Processing os/signal:
 Ignoring test code in example_test.go
@@ -1690,7 +1691,7 @@ Matchfile(GO.link/src/os/signal/signal_plan9.go) => false <nil>
 Ignoring test code in signal_cgo_test.go
 Matchfile(GO.link/src/os/signal/doc.go) => true <nil>
 Package signal:
-Processing package=signal:
+Processing package=signal in os/signal:
 Excluding GO.link/src/os/signal/internal
 Walking from GO.link/src to GO.link/src/os/user
 Processing os/user:
@@ -1710,7 +1711,7 @@ Ignoring test code in lookup_unix_test.go
 Matchfile(GO.link/src/os/user/getgrouplist_darwin.go) => false <nil>
 Matchfile(GO.link/src/os/user/getgrouplist_unix.go) => true <nil>
 Package user:
-Processing package=user:
+Processing package=user in os/user:
 Walking from GO.link/src to GO.link/src/path
 Processing path:
 Matchfile(GO.link/src/path/path.go) => true <nil>
@@ -1719,7 +1720,7 @@ Ignoring test code in path_test.go
 Ignoring test code in match_test.go
 Matchfile(GO.link/src/path/match.go) => true <nil>
 Package path:
-Processing package=path:
+Processing package=path in path:
 Walking from GO.link/src to GO.link/src/path/filepath
 Processing path/filepath:
 Matchfile(GO.link/src/path/filepath/path.go) => true <nil>
@@ -1739,14 +1740,14 @@ Matchfile(GO.link/src/path/filepath/path_windows.go) => false <nil>
 Matchfile(GO.link/src/path/filepath/path_plan9.go) => false <nil>
 Matchfile(GO.link/src/path/filepath/match.go) => true <nil>
 Package filepath:
-Processing package=filepath:
+Processing package=filepath in path/filepath:
 Walking from GO.link/src to GO.link/src/plugin
 Processing plugin:
 Matchfile(GO.link/src/plugin/plugin.go) => true <nil>
 Matchfile(GO.link/src/plugin/plugin_stubs.go) => false <nil>
 Matchfile(GO.link/src/plugin/plugin_dlopen.go) => true <nil>
 Package plugin:
-Processing package=plugin:
+Processing package=plugin in plugin:
 Walking from GO.link/src to GO.link/src/reflect
 Processing reflect:
 Matchfile(GO.link/src/reflect/type.go) => true <nil>
@@ -1760,7 +1761,7 @@ Ignoring test code in tostring_test.go
 Ignoring test code in set_test.go
 Ignoring test code in all_test.go
 Package reflect:
-Processing package=reflect:
+Processing package=reflect in reflect:
 Walking from GO.link/src to GO.link/src/regexp
 Processing regexp:
 Ignoring test code in exec2_test.go
@@ -1774,7 +1775,7 @@ Ignoring test code in all_test.go
 Ignoring test code in exec_test.go
 Ignoring test code in onepass_test.go
 Package regexp:
-Processing package=regexp:
+Processing package=regexp in regexp:
 Walking from GO.link/src to GO.link/src/regexp/syntax
 Processing regexp/syntax:
 Ignoring test code in simplify_test.go
@@ -1789,7 +1790,7 @@ Matchfile(GO.link/src/regexp/syntax/doc.go) => true <nil>
 Matchfile(GO.link/src/regexp/syntax/perl_groups.go) => true <nil>
 Matchfile(GO.link/src/regexp/syntax/op_string.go) => true <nil>
 Package syntax:
-Processing package=syntax:
+Processing package=syntax in regexp/syntax:
 Excluding GO.link/src/regexp/testdata
 Walking from GO.link/src to GO.link/src/runtime
 Processing runtime:
@@ -2137,7 +2138,7 @@ Matchfile(GO.link/src/runtime/mfixalloc.go) => true <nil>
 Matchfile(GO.link/src/runtime/cpuprof.go) => true <nil>
 Matchfile(GO.link/src/runtime/defs_windows_386.go) => false <nil>
 Package runtime:
-Processing package=runtime:
+Processing package=runtime in runtime:
 Walking from GO.link/src to GO.link/src/runtime/cgo
 Processing runtime/cgo:
 Matchfile(GO.link/src/runtime/cgo/cgo.go) => true <nil>
@@ -2153,7 +2154,7 @@ Matchfile(GO.link/src/runtime/cgo/callbacks.go) => true <nil>
 Matchfile(GO.link/src/runtime/cgo/freebsd.go) => false <nil>
 Matchfile(GO.link/src/runtime/cgo/callbacks_traceback.go) => true <nil>
 Package cgo:
-Processing package=cgo:
+Processing package=cgo in runtime/cgo:
 Walking from GO.link/src to GO.link/src/runtime/debug
 Processing runtime/debug:
 Matchfile(GO.link/src/runtime/debug/stack.go) => true <nil>
@@ -2163,7 +2164,7 @@ Matchfile(GO.link/src/runtime/debug/garbage.go) => true <nil>
 Ignoring test code in heapdump_test.go
 Matchfile(GO.link/src/runtime/debug/stubs.go) => true <nil>
 Package debug:
-Processing package=debug:
+Processing package=debug in runtime/debug:
 Excluding GO.link/src/runtime/internal
 Walking from GO.link/src to GO.link/src/runtime/msan
 Processing runtime/msan:
@@ -2185,7 +2186,8 @@ Ignoring test code in label_test.go
 Matchfile(GO.link/src/runtime/pprof/proto.go) => true <nil>
 Ignoring test code in protomem_test.go
 Package pprof:
-Processing package=pprof:
+Processing package=pprof in runtime/pprof:
+Skipping pprof as it was already processed in net/http/pprof before being seen in runtime/pprof.
 Excluding GO.link/src/runtime/pprof/internal
 Excluding GO.link/src/runtime/pprof/testdata
 Walking from GO.link/src to GO.link/src/runtime/race
@@ -2199,7 +2201,7 @@ Ignoring test code in output_test.go
 Ignoring test code in race_unix_test.go
 Ignoring test code in race_windows_test.go
 Package race:
-Processing package=race:
+Processing package=race in runtime/race:
 Excluding GO.link/src/runtime/race/testdata
 Excluding GO.link/src/runtime/testdata
 Walking from GO.link/src to GO.link/src/runtime/trace
@@ -2211,7 +2213,7 @@ Ignoring test code in trace_stack_test.go
 Matchfile(GO.link/src/runtime/trace/annotation.go) => true <nil>
 Ignoring test code in trace_test.go
 Package trace:
-Processing package=trace:
+Processing package=trace in runtime/trace:
 Walking from GO.link/src to GO.link/src/sort
 Processing sort:
 Ignoring test code in sort_test.go
@@ -2229,7 +2231,7 @@ Ignoring test code in example_wrapper_test.go
 Ignoring test code in search_test.go
 Matchfile(GO.link/src/sort/zfuncversion.go) => true <nil>
 Package sort:
-Processing package=sort:
+Processing package=sort in sort:
 Walking from GO.link/src to GO.link/src/strconv
 Processing strconv:
 Matchfile(GO.link/src/strconv/isprint.go) => true <nil>
@@ -2256,7 +2258,7 @@ Ignoring test code in atof_test.go
 Matchfile(GO.link/src/strconv/makeisprint.go) => false <nil>
 Ignoring test code in decimal_test.go
 Package strconv:
-Processing package=strconv:
+Processing package=strconv in strconv:
 Excluding GO.link/src/strconv/testdata
 Walking from GO.link/src to GO.link/src/strings
 Processing strings:
@@ -2276,7 +2278,7 @@ Matchfile(GO.link/src/strings/builder.go) => true <nil>
 Ignoring test code in search_test.go
 Matchfile(GO.link/src/strings/compare.go) => true <nil>
 Package strings:
-Processing package=strings:
+Processing package=strings in strings:
 Walking from GO.link/src to GO.link/src/sync
 Processing sync:
 Ignoring test code in example_test.go
@@ -2301,7 +2303,7 @@ Matchfile(GO.link/src/sync/mutex.go) => true <nil>
 Matchfile(GO.link/src/sync/waitgroup.go) => true <nil>
 Matchfile(GO.link/src/sync/runtime.go) => true <nil>
 Package sync:
-Processing package=sync:
+Processing package=sync in sync:
 Walking from GO.link/src to GO.link/src/sync/atomic
 Processing sync/atomic:
 Ignoring test code in example_test.go
@@ -2310,7 +2312,7 @@ Ignoring test code in atomic_test.go
 Matchfile(GO.link/src/sync/atomic/doc.go) => true <nil>
 Ignoring test code in value_test.go
 Package atomic:
-Processing package=atomic:
+Processing package=atomic in sync/atomic:
 Walking from GO.link/src to GO.link/src/syscall
 Processing syscall:
 Matchfile(GO.link/src/syscall/syscall.go) => true <nil>
@@ -2550,7 +2552,7 @@ Matchfile(GO.link/src/syscall/zerrors_darwin_arm64.go) => false <nil>
 Ignoring test code in creds_test.go
 Matchfile(GO.link/src/syscall/unzip_nacl.go) => false <nil>
 Package syscall:
-Processing package=syscall:
+Processing package=syscall in syscall:
 Walking from GO.link/src to GO.link/src/syscall/js
 Processing syscall/js:
 Ignoring test code in js_test.go
@@ -2574,7 +2576,7 @@ Matchfile(GO.link/src/testing/match.go) => true <nil>
 Ignoring test code in testing_test.go
 Ignoring test code in sub_test.go
 Package testing:
-Processing package=testing:
+Processing package=testing in testing:
 Excluding GO.link/src/testing/internal
 Walking from GO.link/src to GO.link/src/testing/iotest
 Processing testing/iotest:
@@ -2582,13 +2584,13 @@ Matchfile(GO.link/src/testing/iotest/reader.go) => true <nil>
 Matchfile(GO.link/src/testing/iotest/logger.go) => true <nil>
 Matchfile(GO.link/src/testing/iotest/writer.go) => true <nil>
 Package iotest:
-Processing package=iotest:
+Processing package=iotest in testing/iotest:
 Walking from GO.link/src to GO.link/src/testing/quick
 Processing testing/quick:
 Ignoring test code in quick_test.go
 Matchfile(GO.link/src/testing/quick/quick.go) => true <nil>
 Package quick:
-Processing package=quick:
+Processing package=quick in testing/quick:
 Walking from GO.link/src to GO.link/src/text
 Processing text:
 Walking from GO.link/src to GO.link/src/text/scanner
@@ -2597,14 +2599,15 @@ Ignoring test code in example_test.go
 Matchfile(GO.link/src/text/scanner/scanner.go) => true <nil>
 Ignoring test code in scanner_test.go
 Package scanner:
-Processing package=scanner:
+Processing package=scanner in text/scanner:
+Skipping scanner as it was already processed in go/scanner before being seen in text/scanner.
 Walking from GO.link/src to GO.link/src/text/tabwriter
 Processing text/tabwriter:
 Ignoring test code in example_test.go
 Ignoring test code in tabwriter_test.go
 Matchfile(GO.link/src/text/tabwriter/tabwriter.go) => true <nil>
 Package tabwriter:
-Processing package=tabwriter:
+Processing package=tabwriter in text/tabwriter:
 Walking from GO.link/src to GO.link/src/text/template
 Processing text/template:
 Matchfile(GO.link/src/text/template/exec.go) => true <nil>
@@ -2619,7 +2622,8 @@ Ignoring test code in examplefunc_test.go
 Matchfile(GO.link/src/text/template/template.go) => true <nil>
 Matchfile(GO.link/src/text/template/helper.go) => true <nil>
 Package template:
-Processing package=template:
+Processing package=template in text/template:
+Skipping template as it was already processed in html/template before being seen in text/template.
 Walking from GO.link/src to GO.link/src/text/template/parse
 Processing text/template/parse:
 Matchfile(GO.link/src/text/template/parse/parse.go) => true <nil>
@@ -2628,7 +2632,7 @@ Matchfile(GO.link/src/text/template/parse/node.go) => true <nil>
 Matchfile(GO.link/src/text/template/parse/lex.go) => true <nil>
 Ignoring test code in lex_test.go
 Package parse:
-Processing package=parse:
+Processing package=parse in text/template/parse:
 Excluding GO.link/src/text/template/testdata
 Walking from GO.link/src to GO.link/src/time
 Processing time:
@@ -2662,7 +2666,7 @@ Ignoring test code in zoneinfo_android_test.go
 Matchfile(GO.link/src/time/sys_unix.go) => true <nil>
 Ignoring test code in tick_test.go
 Package time:
-Processing package=time:
+Processing package=time in time:
 Walking from GO.link/src to GO.link/src/unicode
 Processing unicode:
 Matchfile(GO.link/src/unicode/digit.go) => true <nil>
@@ -2677,26 +2681,26 @@ Matchfile(GO.link/src/unicode/maketables.go) => false <nil>
 Matchfile(GO.link/src/unicode/letter.go) => true <nil>
 Ignoring test code in script_test.go
 Package unicode:
-Processing package=unicode:
+Processing package=unicode in unicode:
 Walking from GO.link/src to GO.link/src/unicode/utf16
 Processing unicode/utf16:
 Ignoring test code in export_test.go
 Matchfile(GO.link/src/unicode/utf16/utf16.go) => true <nil>
 Ignoring test code in utf16_test.go
 Package utf16:
-Processing package=utf16:
+Processing package=utf16 in unicode/utf16:
 Walking from GO.link/src to GO.link/src/unicode/utf8
 Processing unicode/utf8:
 Ignoring test code in example_test.go
 Ignoring test code in utf8_test.go
 Matchfile(GO.link/src/unicode/utf8/utf8.go) => true <nil>
 Package utf8:
-Processing package=utf8:
+Processing package=utf8 in unicode/utf8:
 Walking from GO.link/src to GO.link/src/unsafe
 Processing unsafe:
 Matchfile(GO.link/src/unsafe/unsafe.go) => true <nil>
 Package unsafe:
-Processing package=unsafe:
+Processing package=unsafe in unsafe:
 Walking from GO.link/src to GO.link/src/vendor
 Processing vendor:
 Walking from GO.link/src to GO.link/src/vendor/golang_org
@@ -2714,7 +2718,7 @@ Ignoring test code in chacha20poly1305_vectors_test.go
 Matchfile(GO.link/src/vendor/golang_org/x/crypto/chacha20poly1305/chacha20poly1305_generic.go) => true <nil>
 Matchfile(GO.link/src/vendor/golang_org/x/crypto/chacha20poly1305/chacha20poly1305_amd64.go) => true <nil>
 Package chacha20poly1305:
-Processing package=chacha20poly1305:
+Processing package=chacha20poly1305 in vendor/golang_org/x/crypto/chacha20poly1305:
 Walking from GO.link/src to GO.link/src/vendor/golang_org/x/crypto/cryptobyte
 Processing vendor/golang_org/x/crypto/cryptobyte:
 Ignoring test code in example_test.go
@@ -2724,12 +2728,13 @@ Ignoring test code in cryptobyte_test.go
 Matchfile(GO.link/src/vendor/golang_org/x/crypto/cryptobyte/string.go) => true <nil>
 Matchfile(GO.link/src/vendor/golang_org/x/crypto/cryptobyte/builder.go) => true <nil>
 Package cryptobyte:
-Processing package=cryptobyte:
+Processing package=cryptobyte in vendor/golang_org/x/crypto/cryptobyte:
 Walking from GO.link/src to GO.link/src/vendor/golang_org/x/crypto/cryptobyte/asn1
 Processing vendor/golang_org/x/crypto/cryptobyte/asn1:
 Matchfile(GO.link/src/vendor/golang_org/x/crypto/cryptobyte/asn1/asn1.go) => true <nil>
 Package asn1:
-Processing package=asn1:
+Processing package=asn1 in vendor/golang_org/x/crypto/cryptobyte/asn1:
+Skipping asn1 as it was already processed in encoding/asn1 before being seen in vendor/golang_org/x/crypto/cryptobyte/asn1.
 Walking from GO.link/src to GO.link/src/vendor/golang_org/x/crypto/curve25519
 Processing vendor/golang_org/x/crypto/curve25519:
 Matchfile(GO.link/src/vendor/golang_org/x/crypto/curve25519/curve25519.go) => false <nil>
@@ -2737,7 +2742,7 @@ Matchfile(GO.link/src/vendor/golang_org/x/crypto/curve25519/doc.go) => true <nil
 Ignoring test code in curve25519_test.go
 Matchfile(GO.link/src/vendor/golang_org/x/crypto/curve25519/mont25519_amd64.go) => true <nil>
 Package curve25519:
-Processing package=curve25519:
+Processing package=curve25519 in vendor/golang_org/x/crypto/curve25519:
 Excluding GO.link/src/vendor/golang_org/x/crypto/internal
 Walking from GO.link/src to GO.link/src/vendor/golang_org/x/crypto/poly1305
 Processing vendor/golang_org/x/crypto/poly1305:
@@ -2750,7 +2755,7 @@ Ignoring test code in poly1305_test.go
 Matchfile(GO.link/src/vendor/golang_org/x/crypto/poly1305/sum_amd64.go) => true <nil>
 Matchfile(GO.link/src/vendor/golang_org/x/crypto/poly1305/sum_arm.go) => false <nil>
 Package poly1305:
-Processing package=poly1305:
+Processing package=poly1305 in vendor/golang_org/x/crypto/poly1305:
 Walking from GO.link/src to GO.link/src/vendor/golang_org/x/net
 Processing vendor/golang_org/x/net:
 Walking from GO.link/src to GO.link/src/vendor/golang_org/x/net/dns
@@ -2761,7 +2766,7 @@ Ignoring test code in example_test.go
 Ignoring test code in message_test.go
 Matchfile(GO.link/src/vendor/golang_org/x/net/dns/dnsmessage/message.go) => true <nil>
 Package dnsmessage:
-Processing package=dnsmessage:
+Processing package=dnsmessage in vendor/golang_org/x/net/dns/dnsmessage:
 Walking from GO.link/src to GO.link/src/vendor/golang_org/x/net/http
 Processing vendor/golang_org/x/net/http:
 Walking from GO.link/src to GO.link/src/vendor/golang_org/x/net/http/httpguts
@@ -2770,14 +2775,14 @@ Ignoring test code in httplex_test.go
 Matchfile(GO.link/src/vendor/golang_org/x/net/http/httpguts/guts.go) => true <nil>
 Matchfile(GO.link/src/vendor/golang_org/x/net/http/httpguts/httplex.go) => true <nil>
 Package httpguts:
-Processing package=httpguts:
+Processing package=httpguts in vendor/golang_org/x/net/http/httpguts:
 Walking from GO.link/src to GO.link/src/vendor/golang_org/x/net/http/httpproxy
 Processing vendor/golang_org/x/net/http/httpproxy:
 Ignoring test code in export_test.go
 Matchfile(GO.link/src/vendor/golang_org/x/net/http/httpproxy/proxy.go) => true <nil>
 Ignoring test code in proxy_test.go
 Package httpproxy:
-Processing package=httpproxy:
+Processing package=httpproxy in vendor/golang_org/x/net/http/httpproxy:
 Walking from GO.link/src to GO.link/src/vendor/golang_org/x/net/http2
 Processing vendor/golang_org/x/net/http2:
 Walking from GO.link/src to GO.link/src/vendor/golang_org/x/net/http2/hpack
@@ -2790,7 +2795,7 @@ Matchfile(GO.link/src/vendor/golang_org/x/net/http2/hpack/huffman.go) => true <n
 Ignoring test code in hpack_test.go
 Ignoring test code in encode_test.go
 Package hpack:
-Processing package=hpack:
+Processing package=hpack in vendor/golang_org/x/net/http2/hpack:
 Walking from GO.link/src to GO.link/src/vendor/golang_org/x/net/idna
 Processing vendor/golang_org/x/net/idna:
 Matchfile(GO.link/src/vendor/golang_org/x/net/idna/punycode.go) => true <nil>
@@ -2800,7 +2805,7 @@ Matchfile(GO.link/src/vendor/golang_org/x/net/idna/idna.go) => true <nil>
 Matchfile(GO.link/src/vendor/golang_org/x/net/idna/tables.go) => true <nil>
 Matchfile(GO.link/src/vendor/golang_org/x/net/idna/trieval.go) => true <nil>
 Package idna:
-Processing package=idna:
+Processing package=idna in vendor/golang_org/x/net/idna:
 Excluding GO.link/src/vendor/golang_org/x/net/internal
 Walking from GO.link/src to GO.link/src/vendor/golang_org/x/net/lif
 Processing vendor/golang_org/x/net/lif:
@@ -2821,7 +2826,7 @@ Matchfile(GO.link/src/vendor/golang_org/x/net/nettest/conntest.go) => true <nil>
 Ignoring test code in conntest_test.go
 Matchfile(GO.link/src/vendor/golang_org/x/net/nettest/conntest_go16.go) => false <nil>
 Package nettest:
-Processing package=nettest:
+Processing package=nettest in vendor/golang_org/x/net/nettest:
 Walking from GO.link/src to GO.link/src/vendor/golang_org/x/net/route
 Processing vendor/golang_org/x/net/route:
 Matchfile(GO.link/src/vendor/golang_org/x/net/route/syscall.go) => false <nil>
@@ -2867,23 +2872,24 @@ Walking from GO.link/src to GO.link/src/vendor/golang_org/x/text/secure
 Processing vendor/golang_org/x/text/secure:
 Matchfile(GO.link/src/vendor/golang_org/x/text/secure/doc.go) => true <nil>
 Package secure:
-Processing package=secure:
+Processing package=secure in vendor/golang_org/x/text/secure:
 Walking from GO.link/src to GO.link/src/vendor/golang_org/x/text/secure/bidirule
 Processing vendor/golang_org/x/text/secure/bidirule:
 Matchfile(GO.link/src/vendor/golang_org/x/text/secure/bidirule/bidirule.go) => true <nil>
 Package bidirule:
-Processing package=bidirule:
+Processing package=bidirule in vendor/golang_org/x/text/secure/bidirule:
 Walking from GO.link/src to GO.link/src/vendor/golang_org/x/text/transform
 Processing vendor/golang_org/x/text/transform:
 Matchfile(GO.link/src/vendor/golang_org/x/text/transform/transform.go) => true <nil>
 Ignoring test code in examples_test.go
 Package transform:
-Processing package=transform:
+Processing package=transform in vendor/golang_org/x/text/transform:
 Walking from GO.link/src to GO.link/src/vendor/golang_org/x/text/unicode
 Processing vendor/golang_org/x/text/unicode:
 Matchfile(GO.link/src/vendor/golang_org/x/text/unicode/doc.go) => true <nil>
 Package unicode:
-Processing package=unicode:
+Processing package=unicode in vendor/golang_org/x/text/unicode:
+Skipping unicode as it was already processed in unicode before being seen in vendor/golang_org/x/text/unicode.
 Walking from GO.link/src to GO.link/src/vendor/golang_org/x/text/unicode/bidi
 Processing vendor/golang_org/x/text/unicode/bidi:
 Matchfile(GO.link/src/vendor/golang_org/x/text/unicode/bidi/bracket.go) => true <nil>
@@ -2894,7 +2900,7 @@ Matchfile(GO.link/src/vendor/golang_org/x/text/unicode/bidi/tables.go) => true <
 Matchfile(GO.link/src/vendor/golang_org/x/text/unicode/bidi/trieval.go) => true <nil>
 Matchfile(GO.link/src/vendor/golang_org/x/text/unicode/bidi/bidi.go) => true <nil>
 Package bidi:
-Processing package=bidi:
+Processing package=bidi in vendor/golang_org/x/text/unicode/bidi:
 Walking from GO.link/src to GO.link/src/vendor/golang_org/x/text/unicode/norm
 Processing vendor/golang_org/x/text/unicode/norm:
 Ignoring test code in example_test.go
@@ -2910,21 +2916,7 @@ Matchfile(GO.link/src/vendor/golang_org/x/text/unicode/norm/forminfo.go) => true
 Matchfile(GO.link/src/vendor/golang_org/x/text/unicode/norm/triegen.go) => false <nil>
 Ignoring test code in example_iter_test.go
 Package norm:
-Processing package=norm:
-NOTE: Already seen function rand.Int in GO.link/src/crypto/rand/util.go, yet again in GO.link/src/math/rand/rand.go
-NOTE: Already seen function rand.Read in GO.link/src/crypto/rand/rand.go, yet again in GO.link/src/math/rand/rand.go
-NOTE: Already seen function template.HTMLEscape in GO.link/src/html/template/escape.go, yet again in GO.link/src/text/template/funcs.go
-NOTE: Already seen function template.HTMLEscapeString in GO.link/src/html/template/escape.go, yet again in GO.link/src/text/template/funcs.go
-NOTE: Already seen function template.HTMLEscaper in GO.link/src/html/template/escape.go, yet again in GO.link/src/text/template/funcs.go
-NOTE: Already seen function template.IsTrue in GO.link/src/html/template/template.go, yet again in GO.link/src/text/template/exec.go
-NOTE: Already seen function template.JSEscape in GO.link/src/html/template/escape.go, yet again in GO.link/src/text/template/funcs.go
-NOTE: Already seen function template.JSEscapeString in GO.link/src/html/template/escape.go, yet again in GO.link/src/text/template/funcs.go
-NOTE: Already seen function template.JSEscaper in GO.link/src/html/template/escape.go, yet again in GO.link/src/text/template/funcs.go
-NOTE: Already seen function template.Must in GO.link/src/html/template/template.go, yet again in GO.link/src/text/template/helper.go
-NOTE: Already seen function template.New in GO.link/src/html/template/template.go, yet again in GO.link/src/text/template/template.go
-NOTE: Already seen function template.ParseFiles in GO.link/src/html/template/template.go, yet again in GO.link/src/text/template/helper.go
-NOTE: Already seen function template.ParseGlob in GO.link/src/html/template/template.go, yet again in GO.link/src/text/template/helper.go
-NOTE: Already seen function template.URLQueryEscaper in GO.link/src/html/template/escape.go, yet again in GO.link/src/text/template/funcs.go
+Processing package=norm in vendor/golang_org/x/text/unicode/norm:
 TYPE aes.KeySizeError:
   GO.link/src/crypto/aes/cipher.go
 TYPE ascii85.CorruptInputError:
@@ -2945,8 +2937,6 @@ TYPE asn1.StructuralError:
   GO.link/src/encoding/asn1/asn1.go
 TYPE asn1.SyntaxError:
   GO.link/src/encoding/asn1/asn1.go
-TYPE asn1.Tag:
-  GO.link/src/vendor/golang_org/x/crypto/cryptobyte/asn1/asn1.go
 TYPE ast.ArrayType:
   GO.link/src/go/ast/ast.go
 TYPE ast.AssignStmt:
@@ -4239,10 +4229,6 @@ TYPE png.FormatError:
   GO.link/src/image/png/reader.go
 TYPE png.UnsupportedError:
   GO.link/src/image/png/reader.go
-TYPE pprof.LabelSet:
-  GO.link/src/runtime/pprof/label.go
-TYPE pprof.Profile:
-  GO.link/src/runtime/pprof/pprof.go
 TYPE printer.CommentedNode:
   GO.link/src/go/printer/printer.go
 TYPE printer.Config:
@@ -4263,14 +4249,6 @@ TYPE quotedprintable.Reader:
   GO.link/src/mime/quotedprintable/reader.go
 TYPE quotedprintable.Writer:
   GO.link/src/mime/quotedprintable/writer.go
-TYPE rand.Rand:
-  GO.link/src/math/rand/rand.go
-TYPE rand.Source:
-  GO.link/src/math/rand/rand.go
-TYPE rand.Source64:
-  GO.link/src/math/rand/rand.go
-TYPE rand.Zipf:
-  GO.link/src/math/rand/zipf.go
 TYPE rc4.Cipher:
   GO.link/src/crypto/rc4/rc4.go
 TYPE rc4.KeySizeError:
@@ -4369,10 +4347,8 @@ TYPE scanner.ErrorList:
   GO.link/src/go/scanner/errors.go
 TYPE scanner.Mode:
   GO.link/src/go/scanner/scanner.go
-TYPE scanner.Position:
-  GO.link/src/text/scanner/scanner.go
 TYPE scanner.Scanner:
-  GO.link/src/text/scanner/scanner.go
+  GO.link/src/go/scanner/scanner.go
 TYPE smtp.Auth:
   GO.link/src/net/smtp/auth.go
 TYPE smtp.Client:
@@ -4643,10 +4619,8 @@ TYPE template.Error:
   GO.link/src/html/template/error.go
 TYPE template.ErrorCode:
   GO.link/src/html/template/error.go
-TYPE template.ExecError:
-  GO.link/src/text/template/exec.go
 TYPE template.FuncMap:
-  GO.link/src/text/template/funcs.go
+  GO.link/src/html/template/template.go
 TYPE template.HTML:
   GO.link/src/html/template/content.go
 TYPE template.HTMLAttr:
@@ -4658,7 +4632,7 @@ TYPE template.JSStr:
 TYPE template.Srcset:
   GO.link/src/html/template/content.go
 TYPE template.Template:
-  GO.link/src/text/template/template.go
+  GO.link/src/html/template/template.go
 TYPE template.URL:
   GO.link/src/html/template/content.go
 TYPE testing.B:
@@ -10785,20 +10759,6 @@ JOKER FUNC pprof.Cmdline has:
 ;;    :go "cmdline(w, r)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/net/http/pprof/pprof.go:83:16) w, ^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/net/http/pprof/pprof.go:83:39) r])
 
-JOKER FUNC pprof.Do has:
-;; (defn Do
-;;   "Do calls f with a copy of the parent context with the\ngiven labels added to the parent's label map.\nEach key/value pair in labels is inserted into the label map in the\norder provided, overriding any previous value for the same key.\nThe augmented label map will be set for the duration of the call to f\nand restored once f returns.\n"
-;;   {:added "1.0"
-;;    :go "do(ctx, labels, f)"}
-;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/runtime/pprof/runtime.go:31:13) ctx, labels, ^ABEND881(unrecognized Expr type *ast.FuncType at: GO.link/src/runtime/pprof/runtime.go:31:49) f])
-
-JOKER FUNC pprof.ForLabels has:
-;; (defn ForLabels
-;;   "ForLabels invokes f with each label set on the context.\nThe function f should return true to continue iteration or false to stop iteration early.\n"
-;;   {:added "1.0"
-;;    :go "forLabels(ctx, f)"}
-;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/runtime/pprof/label.go:78:20) ctx, ^ABEND881(unrecognized Expr type *ast.FuncType at: GO.link/src/runtime/pprof/label.go:78:39) f])
-
 JOKER FUNC pprof.Handler has:
 ;; (defn Handler
 ;;   "Handler returns an HTTP handler that serves the named profile.\nGo return type: ...\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/net/http/pprof/pprof.go:221:27)"
@@ -10813,68 +10773,12 @@ JOKER FUNC pprof.Index has:
 ;;    :go "index(w, r)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/net/http/pprof/pprof.go:264:14) w, ^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/net/http/pprof/pprof.go:264:37) r])
 
-JOKER FUNC pprof.Label has:
-;; (defn Label
-;;   "Label returns the value of the label with the given key on ctx, and a boolean indicating\nwhether that label exists.\nGo return type: (string, bool)\nJoker return type: [String Bool]"
-;;   {:added "1.0"
-;;    :go "label(ctx, key)"}
-;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/runtime/pprof/label.go:70:16) ctx, ^String key])
-
-JOKER FUNC pprof.Labels has:
-;; (defn Labels
-;;   "Labels takes an even number of strings representing key-value pairs\nand makes a LabelSet containing them.\nA label overwrites a prior label with the same key.\nGo return type: LabelSet\nJoker return type: {:list ^(vector-of ABEND042(cannot find typename pprof.label))}"
-;;   {:added "1.0"
-;;    :go "labels(args)"}
-;;   [^ABEND881(unrecognized Expr type *ast.Ellipsis at: GO.link/src/runtime/pprof/label.go:57:18) args])
-
-JOKER FUNC pprof.Lookup has:
-;; (defn Lookup
-;;   "Lookup returns the profile with the given name, or nil if no such profile exists.\nGo return type: *Profile\nJoker return type: {:name ^String, :mu ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/runtime/pprof/pprof.go:134:8), :m ^ABEND883(unrecognized Expr type *ast.MapType at: GO.link/src/runtime/pprof/pprof.go:135:8), :count ^ABEND883(unrecognized Expr type *ast.FuncType at: GO.link/src/runtime/pprof/pprof.go:136:8), :write ^ABEND883(unrecognized Expr type *ast.FuncType at: GO.link/src/runtime/pprof/pprof.go:137:8)}"
-;;   {:added "1.0"
-;;    :go "lookup(name)"}
-;;   [^String name])
-
-JOKER FUNC pprof.NewProfile has:
-;; (defn NewProfile
-;;   "NewProfile creates a new profile with the given name.\nIf a profile with that name already exists, NewProfile panics.\nThe convention is to use a 'import/path.' prefix to create\nseparate name spaces for each package.\nFor compatibility with various tools that read pprof data,\nprofile names should not contain spaces.\nGo return type: *Profile\nJoker return type: {:name ^String, :mu ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/runtime/pprof/pprof.go:134:8), :m ^ABEND883(unrecognized Expr type *ast.MapType at: GO.link/src/runtime/pprof/pprof.go:135:8), :count ^ABEND883(unrecognized Expr type *ast.FuncType at: GO.link/src/runtime/pprof/pprof.go:136:8), :write ^ABEND883(unrecognized Expr type *ast.FuncType at: GO.link/src/runtime/pprof/pprof.go:137:8)}"
-;;   {:added "1.0"
-;;    :go "newProfile(name)"}
-;;   [^String name])
-
 JOKER FUNC pprof.Profile has:
 ;; (defn Profile
 ;;   "Profile responds with the pprof-formatted cpu profile.\nProfiling lasts for duration specified in seconds GET parameter, or for 30 seconds if not specified.\nThe package initialization registers it as /debug/pprof/profile.\n"
 ;;   {:added "1.0"
 ;;    :go "profile(w, r)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/net/http/pprof/pprof.go:116:16) w, ^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/net/http/pprof/pprof.go:116:39) r])
-
-JOKER FUNC pprof.Profiles has:
-;; (defn Profiles
-;;   "Profiles returns a slice of all the known profiles, sorted by name.\nGo return type: []*Profile\nJoker return type: (vector-of {:name ^String, :mu ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/runtime/pprof/pprof.go:134:8), :m ^ABEND883(unrecognized Expr type *ast.MapType at: GO.link/src/runtime/pprof/pprof.go:135:8), :count ^ABEND883(unrecognized Expr type *ast.FuncType at: GO.link/src/runtime/pprof/pprof.go:136:8), :write ^ABEND883(unrecognized Expr type *ast.FuncType at: GO.link/src/runtime/pprof/pprof.go:137:8)})"
-;;   {:added "1.0"
-;;    :go "profiles()"}
-;;   [])
-
-JOKER FUNC pprof.SetGoroutineLabels has:
-;; (defn SetGoroutineLabels
-;;   "SetGoroutineLabels sets the current goroutine's labels to match ctx.\nThis is a lower-level API than Do, which should be used instead when possible.\n"
-;;   {:added "1.0"
-;;    :go "setGoroutineLabels(ctx)"}
-;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/runtime/pprof/runtime.go:20:29) ctx])
-
-JOKER FUNC pprof.StartCPUProfile has:
-;; (defn ^Error StartCPUProfile
-;;   "StartCPUProfile enables CPU profiling for the current process.\nWhile profiling, the profile will be buffered and written to w.\nStartCPUProfile returns an error if profiling is already enabled.\n\nOn Unix-like systems, StartCPUProfile does not work by default for\nGo code built with -buildmode=c-archive or -buildmode=c-shared.\nStartCPUProfile relies on the SIGPROF signal, but that signal will\nbe delivered to the main program's SIGPROF signal handler (if any)\nnot to the one used by Go. To make it work, call os/signal.Notify\nfor syscall.SIGPROF, but note that doing so may break any profiling\nbeing done by the main program.\nGo return type: error\nJoker return type: Error"
-;;   {:added "1.0"
-;;    :go "pprof.StartCPUProfile(w)"}
-;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/runtime/pprof/pprof.go:740:24) w])
-
-JOKER FUNC pprof.StopCPUProfile has:
-;; (defn StopCPUProfile
-;;   "StopCPUProfile stops the current CPU profile, if any.\nStopCPUProfile only returns after all the writes for the\nprofile have completed.\n"
-;;   {:added "1.0"
-;;    :go "stopCPUProfile()"}
-;;   [])
 
 JOKER FUNC pprof.Symbol has:
 ;; (defn Symbol
@@ -10889,20 +10793,6 @@ JOKER FUNC pprof.Trace has:
 ;;   {:added "1.0"
 ;;    :go "trace(w, r)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/net/http/pprof/pprof.go:145:14) w, ^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/net/http/pprof/pprof.go:145:37) r])
-
-JOKER FUNC pprof.WithLabels has:
-;; (defn WithLabels
-;;   "WithLabels returns a new context.Context with the given labels added.\nA label overwrites a prior label with the same key.\nGo return type: ...\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/runtime/pprof/label.go:39:55)"
-;;   {:added "1.0"
-;;    :go "withLabels(ctx, labels)"}
-;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/runtime/pprof/label.go:39:21) ctx, labels])
-
-JOKER FUNC pprof.WriteHeapProfile has:
-;; (defn ^Error WriteHeapProfile
-;;   "WriteHeapProfile is shorthand for Lookup(\"heap\").WriteTo(w, 0).\nIt is preserved for backwards compatibility.\nGo return type: error\nJoker return type: Error"
-;;   {:added "1.0"
-;;    :go "pprof.WriteHeapProfile(w)"}
-;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/runtime/pprof/pprof.go:520:25) w])
 
 JOKER FUNC printer.Fprint has:
 ;; (defn ^Error Fprint
@@ -10946,96 +10836,12 @@ JOKER FUNC quotedprintable.NewWriter has:
 ;;    :go "newWriter(w)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/mime/quotedprintable/writer.go:24:18) w])
 
-JOKER FUNC rand.ExpFloat64 has:
-;; (defn ExpFloat64
-;;   "ExpFloat64 returns an exponentially distributed float64 in the range\n(0, +math.MaxFloat64] with an exponential distribution whose rate parameter\n(lambda) is 1 and whose mean is 1/lambda (1) from the default Source.\nTo produce a distribution with a different rate parameter,\ncallers can adjust the output using:\n\n sample = ExpFloat64() / desiredRateParameter\nGo return type: float64\nJoker return type: ABEND042(cannot find typename rand.float64)"
+JOKER FUNC rand.Int has:
+;; (defn Int
+;;   "Int returns a uniform random value in [0, max). It panics if max <= 0.\nGo return type: (n *..., err error)\nJoker return type: [ABEND883(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/crypto/rand/util.go:106:44) Error]"
 ;;   {:added "1.0"
-;;    :go "expFloat64()"}
-;;   [])
-
-JOKER FUNC rand.Float32 has:
-;; (defn Float32
-;;   "Float32 returns, as a float32, a pseudo-random number in [0.0,1.0)\nfrom the default Source.\nGo return type: float32\nJoker return type: ABEND042(cannot find typename rand.float32)"
-;;   {:added "1.0"
-;;    :go "float32()"}
-;;   [])
-
-JOKER FUNC rand.Float64 has:
-;; (defn Float64
-;;   "Float64 returns, as a float64, a pseudo-random number in [0.0,1.0)\nfrom the default Source.\nGo return type: float64\nJoker return type: ABEND042(cannot find typename rand.float64)"
-;;   {:added "1.0"
-;;    :go "float64()"}
-;;   [])
-
-JOKER FUNC rand.Int31 has:
-(defn ^Int Int31
-  "Int31 returns a non-negative pseudo-random 31-bit integer as an int32\nfrom the default Source.\nGo return type: int\nJoker return type: Int"
-  {:added "1.0"
-   :go "rand.Int31()"}
-  [])
-
-JOKER FUNC rand.Int31n has:
-(defn ^Int Int31n
-  "Int31n returns, as an int32, a non-negative pseudo-random number in [0,n)\nfrom the default Source.\nIt panics if n <= 0.\nGo return type: int\nJoker return type: Int"
-  {:added "1.0"
-   :go "rand.Int31n(n)"}
-  [^Int n])
-
-JOKER FUNC rand.Int63 has:
-(defn ^Int Int63
-  "Int63 returns a non-negative pseudo-random 63-bit integer as an int64\nfrom the default Source.\nGo return type: int\nJoker return type: Int"
-  {:added "1.0"
-   :go "rand.Int63()"}
-  [])
-
-JOKER FUNC rand.Int63n has:
-(defn ^Int Int63n
-  "Int63n returns, as an int64, a non-negative pseudo-random number in [0,n)\nfrom the default Source.\nIt panics if n <= 0.\nGo return type: int\nJoker return type: Int"
-  {:added "1.0"
-   :go "rand.Int63n(n)"}
-  [^Int n])
-
-JOKER FUNC rand.Intn has:
-(defn ^Int Intn
-  "Intn returns, as an int, a non-negative pseudo-random number in [0,n)\nfrom the default Source.\nIt panics if n <= 0.\nGo return type: int\nJoker return type: Int"
-  {:added "1.0"
-   :go "rand.Intn(n)"}
-  [^Int n])
-
-JOKER FUNC rand.New has:
-;; (defn New
-;;   "New returns a new Rand that uses random values from src\nto generate other random values.\nGo return type: *Rand\nJoker return type: {:src ^ABEND883(unrecognized Expr type *ast.InterfaceType at: GO.link/src/math/rand/rand.go:25:13), :s64 ^ABEND883(unrecognized Expr type *ast.InterfaceType at: GO.link/src/math/rand/rand.go:36:15), :readVal ^Int, :readPos ^ABEND042(cannot find typename rand.int8)}"
-;;   {:added "1.0"
-;;    :go "new(src)"}
-;;   [src])
-
-JOKER FUNC rand.NewSource has:
-;; (defn NewSource
-;;   "NewSource returns a new pseudo-random Source seeded with the given value.\nUnlike the default Source used by top-level functions, this source is not\nsafe for concurrent use by multiple goroutines.\nGo return type: Source\nJoker return type: ABEND883(unrecognized Expr type *ast.InterfaceType at: GO.link/src/math/rand/rand.go:25:13)"
-;;   {:added "1.0"
-;;    :go "newSource(seed)"}
-;;   [^Int seed])
-
-JOKER FUNC rand.NewZipf has:
-;; (defn NewZipf
-;;   "NewZipf returns a Zipf variate generator.\nThe generator generates values k ∈ [0, imax]\nsuch that P(k) is proportional to (v + k) ** (-s).\nRequirements: s > 1 and v >= 1.\nGo return type: *Zipf\nJoker return type: {:r ^{:src ^ABEND883(unrecognized Expr type *ast.InterfaceType at: GO.link/src/math/rand/rand.go:25:13), :s64 ^ABEND883(unrecognized Expr type *ast.InterfaceType at: GO.link/src/math/rand/rand.go:36:15), :readVal ^Int, :readPos ^ABEND042(cannot find typename rand.int8)}, :imax ^ABEND042(cannot find typename rand.float64), :v ^ABEND042(cannot find typename rand.float64), :q ^ABEND042(cannot find typename rand.float64), :s ^ABEND042(cannot find typename rand.float64), :oneminusQ ^ABEND042(cannot find typename rand.float64), :oneminusQinv ^ABEND042(cannot find typename rand.float64), :hxm ^ABEND042(cannot find typename rand.float64), :hx0minusHxm ^ABEND042(cannot find typename rand.float64)}"
-;;   {:added "1.0"
-;;    :go "newZipf(r, s, v, imax)"}
-;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/math/rand/zipf.go:39:16) r, s, v, imax])
-
-JOKER FUNC rand.NormFloat64 has:
-;; (defn NormFloat64
-;;   "NormFloat64 returns a normally distributed float64 in the range\n[-math.MaxFloat64, +math.MaxFloat64] with\nstandard normal distribution (mean = 0, stddev = 1)\nfrom the default Source.\nTo produce a different normal distribution, callers can\nadjust the output using:\n\n sample = NormFloat64() * desiredStdDev + desiredMean\nGo return type: float64\nJoker return type: ABEND042(cannot find typename rand.float64)"
-;;   {:added "1.0"
-;;    :go "normFloat64()"}
-;;   [])
-
-JOKER FUNC rand.Perm has:
-(defn Perm
-  "Perm returns, as a slice of n ints, a pseudo-random permutation of the integers [0,n)\nfrom the default Source.\nGo return type: []int\nJoker return type: (vector-of Int)"
-  {:added "1.0"
-   :go "perm(n)"}
-  [^Int n])
+;;    :go "int(rand, max)"}
+;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/crypto/rand/util.go:106:15) rand, ^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/crypto/rand/util.go:106:30) max])
 
 JOKER FUNC rand.Prime has:
 ;; (defn Prime
@@ -11044,33 +10850,12 @@ JOKER FUNC rand.Prime has:
 ;;    :go "prime(rand, bits)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/crypto/rand/util.go:31:17) rand, ^Int bits])
 
-JOKER FUNC rand.Seed has:
-;; (defn Seed
-;;   "Seed uses the provided seed value to initialize the default Source to a\ndeterministic state. If Seed is not called, the generator behaves as\nif seeded by Seed(1). Seed values that have the same remainder when\ndivided by 2^31-1 generate the same pseudo-random sequence.\nSeed, unlike the Rand.Seed method, is safe for concurrent use.\n"
+JOKER FUNC rand.Read has:
+;; (defn Read
+;;   "Read is a helper function that calls Reader.Read using io.ReadFull.\nOn return, n == len(b) if and only if err == nil.\nGo return type: (n int, err error)\nJoker return type: [Int Error]"
 ;;   {:added "1.0"
-;;    :go "seed(seed)"}
-;;   [^Int seed])
-
-JOKER FUNC rand.Shuffle has:
-;; (defn Shuffle
-;;   "Shuffle pseudo-randomizes the order of elements using the default Source.\nn is the number of elements. Shuffle panics if n < 0.\nswap swaps the elements with indexes i and j.\n"
-;;   {:added "1.0"
-;;    :go "shuffle(n, swap)"}
-;;   [^Int n, ^ABEND881(unrecognized Expr type *ast.FuncType at: GO.link/src/math/rand/rand.go:346:26) swap])
-
-JOKER FUNC rand.Uint32 has:
-(defn ^Int Uint32
-  "Uint32 returns a pseudo-random 32-bit value as a uint32\nfrom the default Source.\nGo return type: int\nJoker return type: Int"
-  {:added "1.0"
-   :go "rand.Uint32()"}
-  [])
-
-JOKER FUNC rand.Uint64 has:
-;; (defn Uint64
-;;   "Uint64 returns a pseudo-random 64-bit value as a uint64\nfrom the default Source.\nGo return type: uint64\nJoker return type: ABEND042(cannot find typename rand.uint64)"
-;;   {:added "1.0"
-;;    :go "uint64()"}
-;;   [])
+;;    :go "read(b)"}
+;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: GO.link/src/crypto/rand/rand.go:23:13) b])
 
 JOKER FUNC rc4.NewCipher has:
 ;; (defn NewCipher
@@ -11778,13 +11563,6 @@ JOKER FUNC scanner.PrintError has:
 ;;   {:added "1.0"
 ;;    :go "printError(w, err)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/go/scanner/errors.go:116:19) w, err])
-
-JOKER FUNC scanner.TokenString has:
-(defn ^String TokenString
-  "TokenString returns a printable string for a token or Unicode character.\nGo return type: string\nJoker return type: String"
-  {:added "1.0"
-   :go "scanner.TokenString(tok)"}
-  [tok])
 
 JOKER FUNC sha1.New has:
 ;; (defn New
@@ -14361,6 +14139,90 @@ JOKER FUNC tar.NewWriter has:
 ;;   {:added "1.0"
 ;;    :go "newWriter(w)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/archive/tar/writer.go:33:18) w])
+
+JOKER FUNC template.HTMLEscape has:
+;; (defn HTMLEscape
+;;   "HTMLEscape writes to w the escaped HTML equivalent of the plain text data b.\n"
+;;   {:added "1.0"
+;;    :go "hTMLEscape(w, b)"}
+;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/html/template/escape.go:855:19) w, ^ABEND881(unrecognized Expr type *ast.ArrayType at: GO.link/src/html/template/escape.go:855:32) b])
+
+JOKER FUNC template.HTMLEscapeString has:
+(defn ^String HTMLEscapeString
+  "HTMLEscapeString returns the escaped HTML equivalent of the plain text data s.\nGo return type: string\nJoker return type: String"
+  {:added "1.0"
+   :go "template.HTMLEscapeString(s)"}
+  [^String s])
+
+JOKER FUNC template.HTMLEscaper has:
+;; (defn ^String HTMLEscaper
+;;   "HTMLEscaper returns the escaped HTML equivalent of the textual\nrepresentation of its arguments.\nGo return type: string\nJoker return type: String"
+;;   {:added "1.0"
+;;    :go "template.HTMLEscaper(args)"}
+;;   [^ABEND881(unrecognized Expr type *ast.Ellipsis at: GO.link/src/html/template/escape.go:866:23) args])
+
+JOKER FUNC template.IsTrue has:
+;; (defn IsTrue
+;;   "IsTrue reports whether the value is 'true', in the sense of not the zero of its type,\nand whether the value has a meaningful truth value. This is the definition of\ntruth used by if and other such actions.\nGo return type: (truth bool, ok bool)\nJoker return type: [Bool Bool]"
+;;   {:added "1.0"
+;;    :go "isTrue(val)"}
+;;   [^ABEND881(unrecognized Expr type *ast.InterfaceType at: GO.link/src/html/template/template.go:487:17) val])
+
+JOKER FUNC template.JSEscape has:
+;; (defn JSEscape
+;;   "JSEscape writes to w the escaped JavaScript equivalent of the plain text data b.\n"
+;;   {:added "1.0"
+;;    :go "jSEscape(w, b)"}
+;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/html/template/escape.go:871:17) w, ^ABEND881(unrecognized Expr type *ast.ArrayType at: GO.link/src/html/template/escape.go:871:30) b])
+
+JOKER FUNC template.JSEscapeString has:
+(defn ^String JSEscapeString
+  "JSEscapeString returns the escaped JavaScript equivalent of the plain text data s.\nGo return type: string\nJoker return type: String"
+  {:added "1.0"
+   :go "template.JSEscapeString(s)"}
+  [^String s])
+
+JOKER FUNC template.JSEscaper has:
+;; (defn ^String JSEscaper
+;;   "JSEscaper returns the escaped JavaScript equivalent of the textual\nrepresentation of its arguments.\nGo return type: string\nJoker return type: String"
+;;   {:added "1.0"
+;;    :go "template.JSEscaper(args)"}
+;;   [^ABEND881(unrecognized Expr type *ast.Ellipsis at: GO.link/src/html/template/escape.go:882:21) args])
+
+JOKER FUNC template.Must has:
+;; (defn Must
+;;   "Must is a helper that wraps a call to a function returning (*Template, error)\nand panics if the error is non-nil. It is intended for use in variable initializations\nsuch as\n\tvar t = template.Must(template.New(\"name\").Parse(\"html\"))\nGo return type: *Template\nJoker return type: {:escapeErr ^Error, :text ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/html/template/template.go:25:8), :Tree ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/html/template/template.go:27:14)}"
+;;   {:added "1.0"
+;;    :go "must(t, err)"}
+;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/html/template/template.go:370:13) t, err])
+
+JOKER FUNC template.New has:
+;; (defn New
+;;   "New allocates a new HTML template with the given name.\nGo return type: *Template\nJoker return type: {:escapeErr ^Error, :text ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/html/template/template.go:25:8), :Tree ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/html/template/template.go:27:14)}"
+;;   {:added "1.0"
+;;    :go "new(name)"}
+;;   [^String name])
+
+JOKER FUNC template.ParseFiles has:
+;; (defn ParseFiles
+;;   "ParseFiles creates a new Template and parses the template definitions from\nthe named files. The returned template's name will have the (base) name and\n(parsed) contents of the first file. There must be at least one file.\nIf an error occurs, parsing stops and the returned *Template is nil.\n\nWhen parsing multiple files with the same name in different directories,\nthe last one mentioned will be the one that results.\nFor instance, ParseFiles(\"a/foo\", \"b/foo\") stores \"b/foo\" as the template\nnamed \"foo\", while \"a/foo\" is unavailable.\nGo return type: (*Template, error)\nJoker return type: [{:escapeErr ^Error, :text ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/html/template/template.go:25:8), :Tree ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/html/template/template.go:27:14)} Error]"
+;;   {:added "1.0"
+;;    :go "parseFiles(filenames)"}
+;;   [^ABEND881(unrecognized Expr type *ast.Ellipsis at: GO.link/src/html/template/template.go:386:27) filenames])
+
+JOKER FUNC template.ParseGlob has:
+;; (defn ParseGlob
+;;   "ParseGlob creates a new Template and parses the template definitions from the\nfiles identified by the pattern, which must match at least one file. The\nreturned template will have the (base) name and (parsed) contents of the\nfirst file matched by the pattern. ParseGlob is equivalent to calling\nParseFiles with the list of files matched by the pattern.\n\nWhen parsing multiple files with the same name in different directories,\nthe last one mentioned will be the one that results.\nGo return type: (*Template, error)\nJoker return type: [{:escapeErr ^Error, :text ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/html/template/template.go:25:8), :Tree ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/html/template/template.go:27:14)} Error]"
+;;   {:added "1.0"
+;;    :go "parseGlob(pattern)"}
+;;   [^String pattern])
+
+JOKER FUNC template.URLQueryEscaper has:
+;; (defn ^String URLQueryEscaper
+;;   "URLQueryEscaper returns the escaped value of the textual representation of\nits arguments in a form suitable for embedding in a URL query.\nGo return type: string\nJoker return type: String"
+;;   {:added "1.0"
+;;    :go "template.URLQueryEscaper(args)"}
+;;   [^ABEND881(unrecognized Expr type *ast.Ellipsis at: GO.link/src/html/template/escape.go:888:27) args])
 
 JOKER FUNC testing.AllocsPerRun has:
 ;; (defn AllocsPerRun
@@ -22854,18 +22716,6 @@ GO FUNC pprof.Cmdline has:
 // 	...ABEND675: TODO...
 // }
 
-GO FUNC pprof.Do has:
-// func do(ctx ABEND882(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/runtime/pprof/runtime.go:31:13), labels ABEND884(unrecognized type LabelSet at: GO.link/src/runtime/pprof/runtime.go:31:37), f ABEND882(unrecognized Expr type *ast.FuncType at: GO.link/src/runtime/pprof/runtime.go:31:49)) Object {
-// 	pprof.Do(ctx, labels, f)
-// 	...ABEND675: TODO...
-// }
-
-GO FUNC pprof.ForLabels has:
-// func forLabels(ctx ABEND882(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/runtime/pprof/label.go:78:20), f ABEND882(unrecognized Expr type *ast.FuncType at: GO.link/src/runtime/pprof/label.go:78:39)) Object {
-// 	pprof.ForLabels(ctx, f)
-// 	...ABEND675: TODO...
-// }
-
 GO FUNC pprof.Handler has:
 // func handler(name string) Object {
 // 	return pprof.Handler(name)
@@ -22877,82 +22727,9 @@ GO FUNC pprof.Index has:
 // 	...ABEND675: TODO...
 // }
 
-GO FUNC pprof.Label has:
-// func label(ctx ABEND882(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/runtime/pprof/label.go:70:16), key string) Object {
-// 	res1, res2 := pprof.Label(ctx, key)
-// 	res := EmptyVector
-// 	res = res.Conjoin(MakeString(res1))
-// 	res = res.Conjoin(MakeBool(res2))
-// 	return res
-// }
-
-GO FUNC pprof.Labels has:
-// func labels(args ABEND882(unrecognized Expr type *ast.Ellipsis at: GO.link/src/runtime/pprof/label.go:57:18)) Object {
-// 	res := pprof.Labels(args)
-// 	map1 := EmptyArrayMap()
-// 	vec2 := EmptyVector
-// 	for _, elem2 := range res.list {
-// 		vec2 = vec2.Conjoin()
-// 	}
-// 	map1.Add(MakeKeyword("list"), vec2)
-// 	return map1
-// }
-
-GO FUNC pprof.Lookup has:
-// func lookup(name string) Object {
-// 	res := pprof.Lookup(name)
-// 	map1 := EmptyArrayMap()
-// 	map1.Add(MakeKeyword("name"), MakeString((*res).name))
-// 	map1.Add(MakeKeyword("mu"), (*res).mu)
-// 	map1.Add(MakeKeyword("m"), (*res).m)
-// 	map1.Add(MakeKeyword("count"), (*res).count)
-// 	map1.Add(MakeKeyword("write"), (*res).write)
-// 	return map1
-// }
-
-GO FUNC pprof.NewProfile has:
-// func newProfile(name string) Object {
-// 	res := pprof.NewProfile(name)
-// 	map1 := EmptyArrayMap()
-// 	map1.Add(MakeKeyword("name"), MakeString((*res).name))
-// 	map1.Add(MakeKeyword("mu"), (*res).mu)
-// 	map1.Add(MakeKeyword("m"), (*res).m)
-// 	map1.Add(MakeKeyword("count"), (*res).count)
-// 	map1.Add(MakeKeyword("write"), (*res).write)
-// 	return map1
-// }
-
 GO FUNC pprof.Profile has:
 // func profile(w ABEND882(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/net/http/pprof/pprof.go:116:16), r ABEND882(unrecognized Expr type *ast.StarExpr at: GO.link/src/net/http/pprof/pprof.go:116:39)) Object {
 // 	pprof.Profile(w, r)
-// 	...ABEND675: TODO...
-// }
-
-GO FUNC pprof.Profiles has:
-// func profiles() Object {
-// 	res := pprof.Profiles()
-// 	vec1 := EmptyVector
-// 	for _, elem1 := range res {
-// 		map2 := EmptyArrayMap()
-// 		map2.Add(MakeKeyword("name"), MakeString((*elem1).name))
-// 		map2.Add(MakeKeyword("mu"), (*elem1).mu)
-// 		map2.Add(MakeKeyword("m"), (*elem1).m)
-// 		map2.Add(MakeKeyword("count"), (*elem1).count)
-// 		map2.Add(MakeKeyword("write"), (*elem1).write)
-// 		vec1 = vec1.Conjoin(map2)
-// 	}
-// 	return vec1
-// }
-
-GO FUNC pprof.SetGoroutineLabels has:
-// func setGoroutineLabels(ctx ABEND882(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/runtime/pprof/runtime.go:20:29)) Object {
-// 	pprof.SetGoroutineLabels(ctx)
-// 	...ABEND675: TODO...
-// }
-
-GO FUNC pprof.StopCPUProfile has:
-// func stopCPUProfile() Object {
-// 	pprof.StopCPUProfile()
 // 	...ABEND675: TODO...
 // }
 
@@ -22966,11 +22743,6 @@ GO FUNC pprof.Trace has:
 // func trace(w ABEND882(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/net/http/pprof/pprof.go:145:14), r ABEND882(unrecognized Expr type *ast.StarExpr at: GO.link/src/net/http/pprof/pprof.go:145:37)) Object {
 // 	pprof.Trace(w, r)
 // 	...ABEND675: TODO...
-// }
-
-GO FUNC pprof.WithLabels has:
-// func withLabels(ctx ABEND882(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/runtime/pprof/label.go:39:21), labels ABEND884(unrecognized type LabelSet at: GO.link/src/runtime/pprof/label.go:39:45)) Object {
-// 	return pprof.WithLabels(ctx, labels)
 // }
 
 GO FUNC quick.Value has:
@@ -23012,72 +22784,14 @@ GO FUNC quotedprintable.NewWriter has:
 // 	return map1
 // }
 
-GO FUNC rand.ExpFloat64 has:
-// func expFloat64() Object {
-// 	return rand.ExpFloat64()
+GO FUNC rand.Int has:
+// func int(rand ABEND882(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/crypto/rand/util.go:106:15), max ABEND882(unrecognized Expr type *ast.StarExpr at: GO.link/src/crypto/rand/util.go:106:30)) Object {
+// 	n, err := rand.Int(rand, max)
+// 	res := EmptyVector
+// 	res = res.Conjoin((*n))
+// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+// 	return res
 // }
-
-GO FUNC rand.Float32 has:
-// func float32() Object {
-// 	return rand.Float32()
-// }
-
-GO FUNC rand.Float64 has:
-// func float64() Object {
-// 	return rand.Float64()
-// }
-
-GO FUNC rand.New has:
-// func new(src ABEND884(unrecognized type Source at: GO.link/src/math/rand/rand.go:67:14)) Object {
-// 	res := rand.New(src)
-// 	map1 := EmptyArrayMap()
-// 	map1.Add(MakeKeyword("src"), (*res).src)
-// 	map1.Add(MakeKeyword("s64"), (*res).s64)
-// 	map1.Add(MakeKeyword("readVal"), MakeInt(int((*res).readVal)))
-// 	map1.Add(MakeKeyword("readPos"), )
-// 	return map1
-// }
-
-GO FUNC rand.NewSource has:
-// func newSource(seed int64) Object {
-// 	return rand.NewSource(seed)
-// }
-
-GO FUNC rand.NewZipf has:
-// func newZipf(r ABEND882(unrecognized Expr type *ast.StarExpr at: GO.link/src/math/rand/zipf.go:39:16), s ABEND884(unrecognized type float64 at: GO.link/src/math/rand/zipf.go:39:25), v ABEND884(unrecognized type float64 at: GO.link/src/math/rand/zipf.go:39:36), imax ABEND884(unrecognized type uint64 at: GO.link/src/math/rand/zipf.go:39:50)) Object {
-// 	res := rand.NewZipf(r, s, v, imax)
-// 	map1 := EmptyArrayMap()
-// 	map2 := EmptyArrayMap()
-// 	map2.Add(MakeKeyword("src"), (*(*res).r).src)
-// 	map2.Add(MakeKeyword("s64"), (*(*res).r).s64)
-// 	map2.Add(MakeKeyword("readVal"), MakeInt(int((*(*res).r).readVal)))
-// 	map2.Add(MakeKeyword("readPos"), )
-// 	map1.Add(MakeKeyword("r"), map2)
-// 	map1.Add(MakeKeyword("imax"), )
-// 	map1.Add(MakeKeyword("v"), )
-// 	map1.Add(MakeKeyword("q"), )
-// 	map1.Add(MakeKeyword("s"), )
-// 	map1.Add(MakeKeyword("oneminusQ"), )
-// 	map1.Add(MakeKeyword("oneminusQinv"), )
-// 	map1.Add(MakeKeyword("hxm"), )
-// 	map1.Add(MakeKeyword("hx0minusHxm"), )
-// 	return map1
-// }
-
-GO FUNC rand.NormFloat64 has:
-// func normFloat64() Object {
-// 	return rand.NormFloat64()
-// }
-
-GO FUNC rand.Perm has:
-func perm(n int) Object {
-	res := rand.Perm(n)
-	vec1 := EmptyVector
-	for _, elem1 := range res {
-		vec1 = vec1.Conjoin(MakeInt(int(elem1)))
-	}
-	return vec1
-}
 
 GO FUNC rand.Prime has:
 // func prime(rand ABEND882(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/crypto/rand/util.go:31:17), bits int) Object {
@@ -23088,21 +22802,13 @@ GO FUNC rand.Prime has:
 // 	return res
 // }
 
-GO FUNC rand.Seed has:
-// func seed(seed int64) Object {
-// 	rand.Seed(seed)
-// 	...ABEND675: TODO...
-// }
-
-GO FUNC rand.Shuffle has:
-// func shuffle(n int, swap ABEND882(unrecognized Expr type *ast.FuncType at: GO.link/src/math/rand/rand.go:346:26)) Object {
-// 	rand.Shuffle(n, swap)
-// 	...ABEND675: TODO...
-// }
-
-GO FUNC rand.Uint64 has:
-// func uint64() Object {
-// 	return rand.Uint64()
+GO FUNC rand.Read has:
+// func read(b ABEND882(unrecognized Expr type *ast.ArrayType at: GO.link/src/crypto/rand/rand.go:23:13)) Object {
+// 	n, err := rand.Read(b)
+// 	res := EmptyVector
+// 	res = res.Conjoin(MakeInt(int(n)))
+// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+// 	return res
 // }
 
 GO FUNC rc4.NewCipher has:
@@ -25673,6 +25379,73 @@ GO FUNC tar.NewWriter has:
 // 	map1.Add(MakeKeyword("blk"), )
 // 	map1.Add(MakeKeyword("err"), func () Object { if ((*res).err) == nil { return NIL } else { return MakeString((*res).err.Error()) } }())
 // 	return map1
+// }
+
+GO FUNC template.HTMLEscape has:
+// func hTMLEscape(w ABEND882(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/html/template/escape.go:855:19), b ABEND882(unrecognized Expr type *ast.ArrayType at: GO.link/src/html/template/escape.go:855:32)) Object {
+// 	template.HTMLEscape(w, b)
+// 	...ABEND675: TODO...
+// }
+
+GO FUNC template.IsTrue has:
+// func isTrue(val ABEND882(unrecognized Expr type *ast.InterfaceType at: GO.link/src/html/template/template.go:487:17)) Object {
+// 	truth, ok := template.IsTrue(val)
+// 	res := EmptyVector
+// 	res = res.Conjoin(MakeBool(truth))
+// 	res = res.Conjoin(MakeBool(ok))
+// 	return res
+// }
+
+GO FUNC template.JSEscape has:
+// func jSEscape(w ABEND882(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/html/template/escape.go:871:17), b ABEND882(unrecognized Expr type *ast.ArrayType at: GO.link/src/html/template/escape.go:871:30)) Object {
+// 	template.JSEscape(w, b)
+// 	...ABEND675: TODO...
+// }
+
+GO FUNC template.Must has:
+// func must(t ABEND882(unrecognized Expr type *ast.StarExpr at: GO.link/src/html/template/template.go:370:13), err error) Object {
+// 	res := template.Must(t, err)
+// 	map1 := EmptyArrayMap()
+// 	map1.Add(MakeKeyword("escapeErr"), func () Object { if ((*res).escapeErr) == nil { return NIL } else { return MakeString((*res).escapeErr.Error()) } }())
+// 	map1.Add(MakeKeyword("text"), (*(*res).text))
+// 	map1.Add(MakeKeyword("Tree"), (*(*res).Tree))
+// 	return map1
+// }
+
+GO FUNC template.New has:
+// func new(name string) Object {
+// 	res := template.New(name)
+// 	map1 := EmptyArrayMap()
+// 	map1.Add(MakeKeyword("escapeErr"), func () Object { if ((*res).escapeErr) == nil { return NIL } else { return MakeString((*res).escapeErr.Error()) } }())
+// 	map1.Add(MakeKeyword("text"), (*(*res).text))
+// 	map1.Add(MakeKeyword("Tree"), (*(*res).Tree))
+// 	return map1
+// }
+
+GO FUNC template.ParseFiles has:
+// func parseFiles(filenames ABEND882(unrecognized Expr type *ast.Ellipsis at: GO.link/src/html/template/template.go:386:27)) Object {
+// 	res1, res2 := template.ParseFiles(filenames)
+// 	res := EmptyVector
+// 	map1 := EmptyArrayMap()
+// 	map1.Add(MakeKeyword("escapeErr"), func () Object { if ((*res1).escapeErr) == nil { return NIL } else { return MakeString((*res1).escapeErr.Error()) } }())
+// 	map1.Add(MakeKeyword("text"), (*(*res1).text))
+// 	map1.Add(MakeKeyword("Tree"), (*(*res1).Tree))
+// 	res = res.Conjoin(map1)
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	return res
+// }
+
+GO FUNC template.ParseGlob has:
+// func parseGlob(pattern string) Object {
+// 	res1, res2 := template.ParseGlob(pattern)
+// 	res := EmptyVector
+// 	map1 := EmptyArrayMap()
+// 	map1.Add(MakeKeyword("escapeErr"), func () Object { if ((*res1).escapeErr) == nil { return NIL } else { return MakeString((*res1).escapeErr.Error()) } }())
+// 	map1.Add(MakeKeyword("text"), (*(*res1).text))
+// 	map1.Add(MakeKeyword("Tree"), (*(*res1).Tree))
+// 	res = res.Conjoin(map1)
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	return res
 // }
 
 GO FUNC testing.AllocsPerRun has:
@@ -28994,4 +28767,4 @@ GO FUNC zlib.NewWriterLevelDict has:
 // 	return res
 // }
 
-Totals: types=1025 functions=1562 receivers=6046
+Totals: types=1016 functions=1532 receivers=5898

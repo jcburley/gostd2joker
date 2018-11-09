@@ -209,10 +209,20 @@ func sortedPackages(m map[string]struct{}, f func(k string)) {
 	}
 }
 
-func processPackage(pkg string, p *Package) {
+/* Maps simple package names to their (relative) source directories. */
+var packageDirs = map[string]string {}
+
+func processPackage(pkgDir string, pkg string, p *Package) {
 	if verbose {
-		fmt.Printf("Processing package=%s:\n", pkg)
+		fmt.Printf("Processing package=%s in %s:\n", pkg, pkgDir)
 	}
+	if pd, ok := packageDirs[pkg]; ok {
+		fmt.Fprintf(os.Stderr,
+			"Skipping %s as it was already processed in %s before being seen in %s.\n",
+			pkg, pd, pkgDir)
+		return
+	}
+	packageDirs[pkg] = pkgDir
 	for filename, f := range p.Files {
 		processDecls(pkg, filename, f)
 	}
@@ -256,7 +266,7 @@ func processDir(d string, path string, mode parser.Mode) error {
 			if verbose {
 				fmt.Printf("Package %s:\n", k)
 			}
-			processPackage(k, v) // processPackage(strings.Replace(path, d + "/", "", 1) + "/" + k, v)
+			processPackage(pkgDir, k, v) // processPackage(strings.Replace(path, d + "/", "", 1) + "/" + k, v)
 		}
 	}
 
@@ -1163,7 +1173,7 @@ func main() {
 	sortedPackageMap(goCode,
 		func(p string, v codeInfo) {
 			if jokerLibDir != "" && jokerLibDir != "-" {
-				gf := filepath.Join(jokerLibDir, p, p + "_native.go")
+				gf := filepath.Join(jokerLibDir, packageDirs[p], p + "_native.go")
 				var e error
 				e = os.MkdirAll(filepath.Dir(gf), 0777)
 				check(e)
