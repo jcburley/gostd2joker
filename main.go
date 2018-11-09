@@ -1087,7 +1087,7 @@ func main() {
 				if e != nil {
 					msg = e.Error()
 				}
-				panic(fmt.Sprintf("Cannot populate empty directory %s; please 'rm -fr' first, or specify --overwrite or --replace: %s",
+				panic(fmt.Sprintf("Refusing to populate existing directory %s; please 'rm -fr' first, or specify --overwrite or --replace: %s",
 					jokerLibDir, msg))
 			}
 			if e := os.MkdirAll(jokerLibDir, 0777); e != nil {
