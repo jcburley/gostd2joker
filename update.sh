@@ -8,5 +8,6 @@ git diff
 read -p "Accept and update $GOENV test results? " -n 1 -r
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
+    echo ""
     git commit -a -m "Update $GOENV tests" && git push
 fi
