@@ -1,6 +1,6 @@
 # gostd2joker
 
-Idea here is for people who build Joker to optionally run (a future version of) this tool against a Go source tree, which _must_ correspond to the version of Go they use to build Joker itself, to populate `joker/std/go/`. Further, the build parameters (`$GOOS`, `$GOARCH`, etc.) must match -- so `build-all.sh` would have to pass those to this tool (if it was to be used) for each of the targets. I think this also means `joker/std/go` would need to be recreated from scratch each time (via `rm -rf` or equivalent), so nothing left over from a previous build, perhaps for a different architecture (or version of Go), would get picked up. Possibly the tool itself should do this (when `--populate` is specified, which will be the typical use case).
+Idea here is for people who build Joker to optionally run (a future version of) this tool against a Go source tree, which _must_ correspond to the version of Go they use to build Joker itself, to populate `joker/std/go/`. Further, the build parameters (`$GOARCH`, `$GOOS`, etc.) must match -- so `build-all.sh` would have to pass those to this tool (if it was to be used) for each of the targets. I think this also means `joker/std/go` would need to be recreated from scratch each time (via `rm -rf` or equivalent), so nothing left over from a previous build, perhaps for a different architecture (or version of Go), would get picked up. Possibly the tool itself should do this (when `--populate` is specified, which will be the typical use case).
 
 At the moment, this is just a proof of concept, focusing on `net.LookupMX()`. E.g. run it like this:
 
@@ -99,4 +99,42 @@ After each test it runs, it uses `git diff` to compare the resulting `.gold` fil
 
 NOTE: `$GOSRC` can now be pointed to a symlink, and `tests/gold/*/gosrc.gold` has been rebuilt with `GOSRC=../GOSRC`, with that being a symlink (one directory level above `gostd2joker` itself) to the Go source tree. This allows me to easily run on different machines and OSes without having tons of needless differences due to absolute pathnames being different (some machines use `/home`, others `/Users`, to hold home directories).
 
-ALSO NOTE: The Go standard library is customized per system architecture and OS, and `gostd2joker` picks up these differences via its use of Go's build-related packages. That's why `tests/gold/` has a subdirectory for each combination of `$GOOS` and `$GOARCH`.
+ALSO NOTE: The Go standard library is customized per system architecture and OS, and `gostd2joker` picks up these differences via its use of Go's build-related packages. That's why `tests/gold/` has a subdirectory for each combination of `$GOARCH` and `$GOOS`. Updating another machine's copy of the `gostd2joker` repo is somewhat automated via `update.sh` -- e.g.:
+
+```
+$ ./update.sh 
+remote: Enumerating objects: 8, done.
+remote: Counting objects: 100% (8/8), done.
+remote: Compressing objects: 100% (4/4), done.
+remote: Total 6 (delta 4), reused 4 (delta 2), pack-reused 0
+Unpacking objects: 100% (6/6), done.
+From github.com:jcburley/gostd2joker
+   5cfed10..3c00773  master     -> origin/master
+Updating 5cfed10..3c00773
+Fast-forward
+ README.md | 63 +++++++++++++++++++++++++++++++++++----------------------------
+ 1 file changed, 35 insertions(+), 28 deletions(-)
+No changes to amd64-darwin test results.
+$
+```
+
+(Note the final line of output, indicating the value of `$GOARCH-$GOOS` in the `go` environment.)
+
+If there are changes to the test results, they'll be displayed (via `git diff`), and the script will then prompt as to whether to accept and update them:
+
+```
+Accept and update amd64-darwin test results? y
+[master 5cfed10] Update amd64-darwin tests
+ 3 files changed, 200 insertions(+), 200 deletions(-)
+Counting objects: 8, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (8/8), done.
+Writing objects: 100% (8/8), 3.90 KiB | 266.00 KiB/s, done.
+Total 8 (delta 4), reused 0 (delta 0)
+remote: Resolving deltas: 100% (4/4), completed with 4 local objects.
+To github.com:jcburley/gostd2joker
+   339fbba..5cfed10  master -> master
+$
+```
+
+(Don't forget to `git pull origin master` on your other development machines after updating test results, to avoid having to do the `git merge` dance when you make changes on them and try to `git push`.)
