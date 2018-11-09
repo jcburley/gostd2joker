@@ -8,57 +8,64 @@ At the moment, this is just a proof of concept, focusing on `net.LookupMX()`. E.
 $ ./gostd2joker --source ~/github/golang/go/src 2>&1 | less  # --source is now a required option
 ```
 
-Then page through it. Code snippets intended for e.g. `joker/std/go/net.joke` are currently just printed to `stdout`, making iteration much easier.
+Then page through it. Code snippets intended for e.g. `joker/std/go/net.joke` are currently just printed to `stdout`, making iteration much easier. (Or, specify `--populate <dir>` to get all the individual `*.joke` and `*.go` files in `joker/std/go/`.)
 
 Anything not supported results in either a `panic` or, more often, the string `ABEND` along with some kind of explanation. The latter is used to auto-detect a non-convertible function, in which case the snippet(s) are still output, but commented-out, so it's easy to see what's missing and (perhaps) why.
 
 Among things to do to "productize" this:
 
-* Add `--populate <dir>` option to specify the `joker/std/go/` directory into which to (over-?)write actual code
-* Generate imports and such properly
-* Change `generate-std.joke` to support this tool's output (this avoids the tool having to generate `*_native.go` snippets or files in many, if not all, cases)
+* IN PROGRESS: Add `--populate <dir>` option to specify the `joker/std/go/` directory into which to (over-?)write actual code
+* IN PROGRESS: Generate imports and such properly
+* NEEDED?: Change `generate-std.joke` to support this tool's output (this avoids the tool having to generate `*_native.go` snippets or files in many, if not all, cases)
 * Might have to replace the current ad-hoc tracking of Go packages with something that respects `import` and the like
-* Have tool generate more-helpful docstrings than just copying the ones with the Go functions -- e.g. the return types, maybe decorated with extra information?
+* SOMEWHAT DONE: Have tool generate more-helpful docstrings than just copying the ones with the Go functions -- e.g. the return types, maybe decorated with extra information?
 * Explain how to use the tool in Joker's `README.md`
 * Document the code better
-* Probably should remove all the `--dump` and maybe `--list` stuff if/when the tool is operating smoothly
-* Assess performance impact (especially startup time) and mitigate as appropriate
+* Assess performance impact (especially startup time) on Joker, and mitigate as appropriate
 
 ## Sample Usage
 
 This uses a "small" copy of the `golang/go/src/net/` subdirectory in the Go source tree -- enough to quickly iterate over getting `LookupMX()` to look more like we might want it to. A full copy of that subdirectory is in `tests/big`. Note that this tool currently manages to work on the entire `golang/go/src/` tree, though it sees multiple definitions of the same function (and complains about them -- they shouldn't be output, of course).
 
 ```
-$ ./gostd2joker --source $PWD/tests/small 2>&1 | grep -E -C5 '(lookupMX|queryEscape)'
+$ ./gostd2joker --source $PWD/tests/small 2>&1 | grep -i -E -C20 '(lookupMX|queryEscape)'
 
-FUNC net.LookupMX has: 
-(defn ^[[{:host ^String Host, :pref ^Int Pref}] Error] LookupMX
-  "LookupMX returns the DNS MX records for the given domain name sorted by preference."
+JOKER FUNC net.LookupMX has:
+(defn LookupMX
+  "LookupMX returns the DNS MX records for the given domain name sorted by preference.\nGo return type: ([]*MX, error)\nJoker return type: [(vector-of {:Host ^String, :Pref ^Int}) Error]"
   {:added "1.0"
    :go "lookupMX(name)"}
   [^String name])
 
-FUNC net.LookupPort has: 
-(defn ^[port err] LookupPort
-  "LookupPort looks up the port for the given network and service."
---
-FUNC url.QueryEscape has: 
+...
+
+JOKER FUNC url.QueryEscape has:
 (defn ^String QueryEscape
-  "QueryEscape escapes the string so it can be safely placed
-inside a URL query."
+  "QueryEscape escapes the string so it can be safely placed\ninside a URL query.\nGo return type: string\nJoker return type: String"
   {:added "1.0"
-   :go "queryEscape(s)"}
+   :go "url.QueryEscape(s)"}
   [^String s])
 
-FUNC url.PathEscape has: 
-(defn ^String PathEscape
-  "PathEscape escapes the string so it can be safely placed
-$
+...
+
+GO FUNC net.LookupMX has:
+func lookupMX(name string) Object {
+	res1, res2 := net.LookupMX(name)
+	res := EmptyVector
+	vec1 := EmptyVector
+	for _, elem1 := range res1 {
+		map2 := EmptyArrayMap()
+		map2.Add(MakeKeyword("Host"), MakeString((*elem1).Host))
+		map2.Add(MakeKeyword("Pref"), MakeInt(int((*elem1).Pref)))
+		vec1 = vec1.Conjoin(map2)
+	}
+	res = res.Conjoin(vec1)
+	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+	return res
+}
 ```
 
-Note that `^[[{:host ..., :pref ...}] Error]` construct -- it indicates that `LookupMX()` returns a vector whose first element is itself a vector of maps with the indicated keys, and whose second element is of type `Error`.
-
-I'm not sure that syntax really works, though -- because it doesn't seem to distinguish between a one-element vector and a vector of multiple elements of the same type (of the one element listed). I think Clojure itself would specify a Java class name instead; not sure to what that would translate in Joker.
+Note that `^[(vector-of {:Host ^String, :Pref ^Int}) Error]` construct -- it indicates that `LookupMX()` returns a vector whose first element is itself a vector of maps with the indicated keys, and whose second element is of type `Error`.
 
 ## Run Tests
 
