@@ -1,10 +1,4 @@
-;;;; Auto-modified by gostd2joker at 2018-11-09T16:53:02.808757478-05:00
-
-(def namespaces [
-  ;; Namespaces added by gostd2joker
-  'go.go 'go.net 'go.net.url
-  ;; End gostd2joker-added namespaces
-  'string 'json 'base64 'os 'time 'yaml 'http 'math 'html 'url])
+(def namespaces ['string 'json 'base64 'os 'time 'yaml 'http 'math 'html 'url])
 
 (apply require namespaces)
 

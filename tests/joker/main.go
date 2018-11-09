@@ -1,12 +1,4 @@
-// Auto-modified by gostd2joker at 2018-11-09T16:53:02.808757478-05:00
-
 package main
-
-import ( // Imports added by gostd2joker
-	_ "github.com/candid82/joker/std/go/go"
-	_ "github.com/candid82/joker/std/go/net"
-	_ "github.com/candid82/joker/std/go/net/url"
-) // End gostd2joker-added imports
 
 import (
 	"bufio"
