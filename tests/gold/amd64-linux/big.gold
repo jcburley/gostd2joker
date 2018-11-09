@@ -3341,7 +3341,10 @@ func userPassword(username string, password string) Object {
 	return map1
 }
 
-Writing joker/main.go
-Writing joker/core/data/core.joke
-Writing joker/std/generate-std.joke
+Adding custom import line to tests/joker/main.go
+Writing tests/joker/main.go
+Adding custom loaded libraries to tests/joker/core/data/core.joke
+Writing tests/joker/core/data/core.joke
+Adding custom namespaces to tests/joker/std/generate-std.joke
+Writing tests/joker/std/generate-std.joke
 Totals: types=102 functions=148 receivers=1200
