@@ -1,20 +1,20 @@
 # gostd2joker
 
-Idea here is for people who build Joker to optionally run (a future version of) this tool against a Go source tree, which _must_ correspond to the version of Go they use to build Joker itself, to populate `joker/std/go/`. Further, the build parameters (`$GOARCH`, `$GOOS`, etc.) must match -- so `build-all.sh` would have to pass those to this tool (if it was to be used) for each of the targets. I think this also means `joker/std/go` would need to be recreated from scratch each time (via `rm -rf` or equivalent), so nothing left over from a previous build, perhaps for a different architecture (or version of Go), would get picked up. Possibly the tool itself should do this (when `--populate` is specified, which will be the typical use case).
+Before building Joker, one can optionally run this tool against a Go source tree, which _must_ correspond to the version of Go they use to build Joker itself, to populate `joker/std/go/` and modify related Joker source files. Further, the build parameters (`$GOARCH`, `$GOOS`, etc.) must match -- so `build-all.sh` would have to pass those to this tool (if it was to be used) for each of the targets.
 
-At the moment, this is just a proof of concept, focusing on `net.LookupMX()`. E.g. run it like this:
+At the moment, this is just a proof of concept, focusing initially on `net.LookupMX()`. E.g. run it like this:
 
 ```
-$ ./gostd2joker --source ~/github/golang/go/src 2>&1 | less  # --source is now a required option
+$ ln -s <go-source-directory> GO.link
+$ ./gostd2joker 2>&1 | less
 ```
 
-Then page through it. Code snippets intended for e.g. `joker/std/go/net.joke` are currently just printed to `stdout`, making iteration much easier. (Or, specify `--populate <dir>` to get all the individual `*.joke` and `*.go` files in `joker/std/go/`.)
+Then page through it. Code snippets intended for e.g. `joker/std/go/net.joke` are printed to `stdout`, making iteration (during development of this tool) much easier. Or, specify `--joker <joker-source-directory>` to get all the individual `*.joke` and `*.go` files in `<dir>/std/go/`, along with modifications to `<dir>/main.go`, `<dir>/core/data/core.joke`, and `<dir>/std/generate-std.joke`.
 
 Anything not supported results in either a `panic` or, more often, the string `ABEND` along with some kind of explanation. The latter is used to auto-detect a non-convertible function, in which case the snippet(s) are still output, but commented-out, so it's easy to see what's missing and (perhaps) why.
 
 Among things to do to "productize" this:
 
-* IN PROGRESS: Add `--populate <dir>` option to specify the `joker/std/go/` directory into which to (over-?)write actual code
 * IN PROGRESS: Generate imports and such properly
 * NEEDED?: Change `generate-std.joke` to support this tool's output (this avoids the tool having to generate `*_native.go` snippets or files in many, if not all, cases)
 * Might have to replace the current ad-hoc tracking of Go packages with something that respects `import` and the like
@@ -28,7 +28,7 @@ Among things to do to "productize" this:
 This uses a "small" copy of the `golang/go/src/net/` subdirectory in the Go source tree -- enough to quickly iterate over getting `LookupMX()` to look more like we might want it to. A full copy of that subdirectory is in `tests/big`. Note that this tool currently manages to work on the entire `golang/go/src/` tree, though it sees multiple definitions of the same function (and complains about them -- they shouldn't be output, of course).
 
 ```
-$ ./gostd2joker --source $PWD/tests/small 2>&1 | grep -i -E -C20 '(lookupMX|queryEscape)'
+$ ./gostd2joker --go $PWD/tests/small 2>&1 | grep -i -E -C20 '(lookupMX|queryEscape)'
 
 JOKER FUNC net.LookupMX has:
 (defn LookupMX
@@ -72,13 +72,11 @@ Note that `^[(vector-of {:Host ^String, :Pref ^Int}) Error]` construct -- it ind
 The `test.sh` script runs tests against a small, then larger, then
 (optionally) full, copy of Go 1.11's `golang/go/src/` tree.
 
-If you have a copy of the Go source tree available, define the `GOSRC` environment variable to point to its `src/` subdirectory, ideally via a the relative symlink `../GOSRC`, to be compatible with existing test output. E.g.:
+If you have a copy of the Go source tree available, define the `GOSRC` environment variable to point to its `src/` subdirectory, ideally via a the relative symlink `./GO.link`, to be compatible with existing test output. E.g.:
 
 ```
-$ ln -s ~/golang/go/src ../GOSRC  # If $GOSRC is undefined, ../GOSRC will be tried
+$ ln -s ~/golang/go ./GO.link  # If $GOSRC is undefined, ./GO.link will be tried
 ```
-
-(This same environment variable might someday be "respected" by `gostd2joker` and even `joker/run.sh` someday.)
 
 Then, invoke `test.sh` either with no options, or with `--on-error :` to run the `:` (`true`) command when it detects an error (the default being `exit 99`).
 
@@ -93,11 +91,9 @@ The script currently runs tests in this order:
 
 1. `tests/small`
 2. `tests/big`
-3. (If `$GOSRC` is non-null and points to a directory) `$GOSRC`
+3. `./GOSRC` (or, if `$GOSRC` is non-null and points to a directory, `$GOSRC`)
 
 After each test it runs, it uses `git diff` to compare the resulting `.gold` file with the checked-out version and, if there are any differences, it runs the command specified via `--on-error` (again, the default is `exit 99`, so the script will exit as soon as it sees a failing test).
-
-NOTE: `$GOSRC` can now be pointed to a symlink, and `tests/gold/*/gosrc.gold` has been rebuilt with `GOSRC=../GOSRC`, with that being a symlink (one directory level above `gostd2joker` itself) to the Go source tree. This allows me to easily run on different machines and OSes without having tons of needless differences due to absolute pathnames being different (some machines use `/home`, others `/Users`, to hold home directories).
 
 ## Update Tests on Other Machines
 

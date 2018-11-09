@@ -46,7 +46,6 @@ var fset *token.FileSet
 var dump bool
 var verbose bool
 var receivers int
-var populateDir string // "-" means populate /dev/null
 
 func whereAt(p token.Pos) string {
 	return fmt.Sprintf("%s", fset.Position(p).String())
@@ -856,8 +855,7 @@ func usage() {
 Usage: gostd2joker options...
 
 Options:
-  --source <go-source-dir-name>  # Location of Go source tree's src/ subdirectory
-  --populate <joker-std-subdir>  # Where to write the joker.go.* files (usually .../joker/std/go/); "-" == /dev/null
+  --go <go-source-dir-name>      # Location of Go source tree's src/ subdirectory
   --overwrite                    # Overwrite any existing <joker-std-subdir> files, leaving existing files intact
   --replace                      # 'rm -fr <joker-std-subdir>' before creating <joker-std-subdir>
   --fresh                        # (Default) Refuse to overwrite existing <joker-std-subdir> directory
@@ -1013,16 +1011,6 @@ func main() {
 				usage()
 			case "--version", "-V":
 				fmt.Printf("%s version %s\n", os.Args[0], VERSION)
-			case "--populate":
-				if populateDir != "" {
-					panic("cannot specify --populate <joker-std-subdir> more than once")
-				}
-				if i < length-1 && notOption(os.Args[i+1]) {
-					i += 1 // shift
-					populateDir = os.Args[i]
-				} else {
-					panic("missing path after --populate option")
-				}
 			case "--dump":
 				dump = true
 			case "--overwrite":
@@ -1036,15 +1024,15 @@ func main() {
 				overwrite = false
 			case "--verbose", "-v":
 				verbose = true
-			case "--source":
+			case "--go":
 				if sourceDir != "" {
-					panic("cannot specify --source <go-source-dir-name> more than once")
+					panic("cannot specify --go <go-source-dir-name> more than once")
 				}
 				if i < length-1 && notOption(os.Args[i+1]) {
 					i += 1 // shift
 					sourceDir = os.Args[i]
 				} else {
-					panic("missing path after --source option")
+					panic("missing path after --go option")
 				}
 			case "--joker":
 				if jokerSourceDir != "" {
@@ -1069,8 +1057,13 @@ func main() {
 	}
 
 	if sourceDir == "" {
-		panic("Must specify --source <go-source-dir-name> option")
+		goLink := "GO.link"
+		if si, e := os.Stat(goLink); e != nil || !si.IsDir() {
+			panic("Must specify --go <go-source-dir-name> option, or make ./GO.link a symlink to the golang/go/ source directory")
+		}
 	}
+
+	sourceDir = filepath.Join(sourceDir, "src")
 
 	if fi, e := os.Stat(filepath.Join(sourceDir, "go")); e != nil || !fi.IsDir() {
 		if m, e := filepath.Glob(filepath.Join(sourceDir, "*.go")); e != nil || m == nil || len(m) == 0 {
@@ -1078,25 +1071,27 @@ func main() {
 		}
 	}
 
-	if populateDir != "" && populateDir != "-" {
+	jokerLibDir := ""
+	if jokerSourceDir != "" && jokerSourceDir != "-" {
+		jokerLibDir = filepath.Join(jokerSourceDir, "std", "go")
 		if replace {
-			if e := os.RemoveAll(populateDir); e != nil {
-				panic(fmt.Sprintf("Unable to effectively 'rm -fr %s'", populateDir))
+			if e := os.RemoveAll(jokerLibDir); e != nil {
+				panic(fmt.Sprintf("Unable to effectively 'rm -fr %s'", jokerLibDir))
 			}
 		}
 
 		if !overwrite {
 			var stat syscall.Stat_t
-			if e := syscall.Stat(populateDir, &stat); e == nil || e.Error() != "no such file or directory" {
+			if e := syscall.Stat(jokerLibDir, &stat); e == nil || e.Error() != "no such file or directory" {
 				msg := "already exists"
 				if e != nil {
 					msg = e.Error()
 				}
 				panic(fmt.Sprintf("Cannot populate empty directory %s; please 'rm -fr' first, or specify --overwrite or --replace: %s",
-					populateDir, msg))
+					jokerLibDir, msg))
 			}
-			if e := os.MkdirAll(populateDir, 0777); e != nil {
-				panic(fmt.Sprintf("Cannot 'mkdir -p %s': %s", populateDir, e.Error()))
+			if e := os.MkdirAll(jokerLibDir, 0777); e != nil {
+				panic(fmt.Sprintf("Cannot 'mkdir -p %s': %s", jokerLibDir, e.Error()))
 			}
 		}
 	}
@@ -1135,8 +1130,8 @@ func main() {
 
 	sortedPackageMap(jokerCode,
 		func(p string, v codeInfo) {
-			if populateDir != "" && populateDir != "-" {
-				jf := filepath.Join(populateDir, p + ".joke")
+			if jokerLibDir != "" && jokerLibDir != "-" {
+				jf := filepath.Join(jokerLibDir, p + ".joke")
 				var e error
 				unbuf_out, e = os.Create(jf)
 				check(e)
@@ -1152,7 +1147,7 @@ func main() {
 			}
 			sortedCodeMap(v,
 				func(f string, w string) {
-					if verbose || populateDir == "" {
+					if verbose || jokerLibDir == "" {
 						fmt.Printf("JOKER FUNC %s.%s has:%v\n", p, f, w)
 					}
 					if out != nil {
@@ -1167,8 +1162,8 @@ func main() {
 		})
 	sortedPackageMap(goCode,
 		func(p string, v codeInfo) {
-			if populateDir != "" && populateDir != "-" {
-				gf := filepath.Join(populateDir, p, p + "_native.go")
+			if jokerLibDir != "" && jokerLibDir != "-" {
+				gf := filepath.Join(jokerLibDir, p, p + "_native.go")
 				var e error
 				e = os.MkdirAll(filepath.Dir(gf), 0777)
 				check(e)
@@ -1188,7 +1183,7 @@ import (
 			}
 			sortedCodeMap(v,
 				func(f string, w string) {
-					if verbose || populateDir == "" {
+					if verbose || jokerLibDir == "" {
 						fmt.Printf("GO FUNC %s.%s has:%v\n", p, f, w)
 					}
 					if out != nil {
@@ -1202,7 +1197,7 @@ import (
 			}
 		})
 
-	if jokerSourceDir != "" {
+	if jokerSourceDir != "" && jokerSourceDir != "-" {
 		var packagesArray = []string{} // Relative package pathnames in alphabetical order
 
 		sortedPackages(packagesSet,
