@@ -165,8 +165,8 @@ func lookupAddr(addr string) Object {
 	for _, elem1 := range names {
 		vec1 = vec1.Conjoin(MakeString(elem1))
 	}
-	res.Conjoin(vec1)
-	res.Conjoin(MakeString(err.Error()))
+	res = res.Conjoin(vec1)
+	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
 	return res
 }
 
@@ -174,8 +174,8 @@ GO FUNC net.LookupCNAME has:
 func lookupCNAME(host string) Object {
 	cname, err := net.LookupCNAME(host)
 	res := EmptyVector
-	res.Conjoin(MakeString(cname))
-	res.Conjoin(MakeString(err.Error()))
+	res = res.Conjoin(MakeString(cname))
+	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
 	return res
 }
 
@@ -187,8 +187,8 @@ func lookupHost(host string) Object {
 	for _, elem1 := range addrs {
 		vec1 = vec1.Conjoin(MakeString(elem1))
 	}
-	res.Conjoin(vec1)
-	res.Conjoin(MakeString(err.Error()))
+	res = res.Conjoin(vec1)
+	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
 	return res
 }
 
@@ -200,8 +200,8 @@ GO FUNC net.LookupIP has:
 // 	for _, elem1 := range res1 {
 // 		vec1 = vec1.Conjoin()
 // 	}
-// 	res.Conjoin(vec1)
-// 	res.Conjoin(MakeString(res2.Error()))
+// 	res = res.Conjoin(vec1)
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
 // 	return res
 // }
 
@@ -216,8 +216,8 @@ func lookupMX(name string) Object {
 		map2.Add(MakeKeyword("Pref"), MakeInt(int((*elem1).Pref)))
 		vec1 = vec1.Conjoin(map2)
 	}
-	res.Conjoin(vec1)
-	res.Conjoin(MakeString(res2.Error()))
+	res = res.Conjoin(vec1)
+	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
 	return res
 }
 
@@ -231,8 +231,8 @@ func lookupNS(name string) Object {
 		map2.Add(MakeKeyword("Host"), MakeString((*elem1).Host))
 		vec1 = vec1.Conjoin(map2)
 	}
-	res.Conjoin(vec1)
-	res.Conjoin(MakeString(res2.Error()))
+	res = res.Conjoin(vec1)
+	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
 	return res
 }
 
@@ -240,8 +240,8 @@ GO FUNC net.LookupPort has:
 func lookupPort(network string, service string) Object {
 	port, err := net.LookupPort(network, service)
 	res := EmptyVector
-	res.Conjoin(MakeInt(int(port)))
-	res.Conjoin(MakeString(err.Error()))
+	res = res.Conjoin(MakeInt(int(port)))
+	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
 	return res
 }
 
@@ -258,9 +258,9 @@ func lookupSRV(service string, proto string, name string) Object {
 		map2.Add(MakeKeyword("Weight"), MakeInt(int((*elem1).Weight)))
 		vec1 = vec1.Conjoin(map2)
 	}
-	res.Conjoin(MakeString(cname))
-	res.Conjoin(vec1)
-	res.Conjoin(MakeString(err.Error()))
+	res = res.Conjoin(MakeString(cname))
+	res = res.Conjoin(vec1)
+	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
 	return res
 }
 
@@ -272,8 +272,8 @@ func lookupTXT(name string) Object {
 	for _, elem1 := range res1 {
 		vec1 = vec1.Conjoin(MakeString(elem1))
 	}
-	res.Conjoin(vec1)
-	res.Conjoin(MakeString(res2.Error()))
+	res = res.Conjoin(vec1)
+	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
 	return res
 }
 
@@ -295,8 +295,8 @@ func parse(rawurl string) Object {
 	map1.Add(MakeKeyword("ForceQuery"), MakeBool((*res1).ForceQuery))
 	map1.Add(MakeKeyword("RawQuery"), MakeString((*res1).RawQuery))
 	map1.Add(MakeKeyword("Fragment"), MakeString((*res1).Fragment))
-	res.Conjoin(map1)
-	res.Conjoin(MakeString(res2.Error()))
+	res = res.Conjoin(map1)
+	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
 	return res
 }
 
@@ -304,8 +304,8 @@ GO FUNC url.ParseQuery has:
 // func parseQuery(query string) Object {
 // 	res1, res2 := url.ParseQuery(query)
 // 	res := EmptyVector
-// 	res.Conjoin(res1)
-// 	res.Conjoin(MakeString(res2.Error()))
+// 	res = res.Conjoin(res1)
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
 // 	return res
 // }
 
@@ -327,8 +327,8 @@ func parseRequestURI(rawurl string) Object {
 	map1.Add(MakeKeyword("ForceQuery"), MakeBool((*res1).ForceQuery))
 	map1.Add(MakeKeyword("RawQuery"), MakeString((*res1).RawQuery))
 	map1.Add(MakeKeyword("Fragment"), MakeString((*res1).Fragment))
-	res.Conjoin(map1)
-	res.Conjoin(MakeString(res2.Error()))
+	res = res.Conjoin(map1)
+	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
 	return res
 }
 
@@ -336,8 +336,8 @@ GO FUNC url.PathUnescape has:
 func pathUnescape(s string) Object {
 	res1, res2 := url.PathUnescape(s)
 	res := EmptyVector
-	res.Conjoin(MakeString(res1))
-	res.Conjoin(MakeString(res2.Error()))
+	res = res.Conjoin(MakeString(res1))
+	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
 	return res
 }
 
@@ -345,8 +345,8 @@ GO FUNC url.QueryUnescape has:
 func queryUnescape(s string) Object {
 	res1, res2 := url.QueryUnescape(s)
 	res := EmptyVector
-	res.Conjoin(MakeString(res1))
-	res.Conjoin(MakeString(res2.Error()))
+	res = res.Conjoin(MakeString(res1))
+	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
 	return res
 }
 
