@@ -561,6 +561,10 @@ func genGoPostStar(indent, pkg, in string, e Expr) (jok, gol, goc, out string) {
 	return
 }
 
+func maybeNil(expr, in string) string {
+	return "func () Object { if (" + expr + ") == nil { return NIL } else { return " + in + " } }()"
+}
+
 func genGoPostExpr(indent, pkg, in string, e Expr) (jok, gol, goc, out string) {
 	switch v := e.(type) {
 	case *Ident:
@@ -580,7 +584,7 @@ func genGoPostExpr(indent, pkg, in string, e Expr) (jok, gol, goc, out string) {
 		case "error":
 			jok = "Error"
 			gol = "error"
-			out = "MakeString(" + in + ".Error())"  // TODO: Test this, as I can't find a MakeError() in joker/core/object.go
+			out = maybeNil(in, "MakeString(" + in + ".Error())")  // TODO: Test this, as I can't find a MakeError() in joker/core/object.go
 		default:
 			jok, _, goc, out = genGoPostNamed(indent, pkg, in, v.Name)
 			gol = v.Name  // This is as far as Go needs to go for a type signature
@@ -643,11 +647,11 @@ func genGoPostList(indent string, pkg string, fl *FieldList) (gores, jok, gol, g
 		for _, f := range fl.List {
 			if f.Names == nil {
 				rtn := genGoPostItem(indent, pkg, f, &idx, nil, &gores, &jok, &gol, &goc)
-				goc += indent + "res.Conjoin(" + rtn + ")\n"
+				goc += indent + "res = res.Conjoin(" + rtn + ")\n"
 			} else {
 				for _, p := range f.Names {
 					rtn := genGoPostItem(indent, pkg, f, &idx, p, &gores, &jok, &gol, &goc)
-					goc += indent + "res.Conjoin(" + rtn + ")\n"
+					goc += indent + "res = res.Conjoin(" + rtn + ")\n"
 				}
 			}
 		}
