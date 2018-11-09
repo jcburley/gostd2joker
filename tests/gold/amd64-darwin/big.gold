@@ -183,7 +183,7 @@ Ignoring test code in main_test.go
 Ignoring test code in dnsclient_unix_test.go
 Matchfile(tests/big/src/net/file_stub.go) => false <nil>
 Package net:
-Processing package=net:
+Processing package=net in net:
 Walking from tests/big/src to tests/big/src/net/http
 Processing net/http:
 Matchfile(tests/big/src/net/http/jar.go) => true <nil>
@@ -232,7 +232,7 @@ Matchfile(tests/big/src/net/http/roundtrip.go) => true <nil>
 Ignoring test code in main_test.go
 Matchfile(tests/big/src/net/http/filetransport.go) => true <nil>
 Package http:
-Processing package=http:
+Processing package=http in net/http:
 Walking from tests/big/src to tests/big/src/net/http/cgi
 Processing net/http/cgi:
 Ignoring test code in plan9_test.go
@@ -243,7 +243,7 @@ Ignoring test code in matryoshka_test.go
 Matchfile(tests/big/src/net/http/cgi/host.go) => true <nil>
 Matchfile(tests/big/src/net/http/cgi/child.go) => true <nil>
 Package cgi:
-Processing package=cgi:
+Processing package=cgi in net/http/cgi:
 Excluding tests/big/src/net/http/cgi/testdata
 Walking from tests/big/src to tests/big/src/net/http/cookiejar
 Processing net/http/cookiejar:
@@ -254,14 +254,14 @@ Ignoring test code in punycode_test.go
 Ignoring test code in jar_test.go
 Ignoring test code in dummy_publicsuffix_test.go
 Package cookiejar:
-Processing package=cookiejar:
+Processing package=cookiejar in net/http/cookiejar:
 Walking from tests/big/src to tests/big/src/net/http/fcgi
 Processing net/http/fcgi:
 Matchfile(tests/big/src/net/http/fcgi/child.go) => true <nil>
 Matchfile(tests/big/src/net/http/fcgi/fcgi.go) => true <nil>
 Ignoring test code in fcgi_test.go
 Package fcgi:
-Processing package=fcgi:
+Processing package=fcgi in net/http/fcgi:
 Walking from tests/big/src to tests/big/src/net/http/httptest
 Processing net/http/httptest:
 Ignoring test code in example_test.go
@@ -272,14 +272,14 @@ Matchfile(tests/big/src/net/http/httptest/httptest.go) => true <nil>
 Ignoring test code in recorder_test.go
 Ignoring test code in server_test.go
 Package httptest:
-Processing package=httptest:
+Processing package=httptest in net/http/httptest:
 Walking from tests/big/src to tests/big/src/net/http/httptrace
 Processing net/http/httptrace:
 Ignoring test code in trace_test.go
 Ignoring test code in example_test.go
 Matchfile(tests/big/src/net/http/httptrace/trace.go) => true <nil>
 Package httptrace:
-Processing package=httptrace:
+Processing package=httptrace in net/http/httptrace:
 Walking from tests/big/src to tests/big/src/net/http/httputil
 Processing net/http/httputil:
 Ignoring test code in example_test.go
@@ -290,14 +290,14 @@ Matchfile(tests/big/src/net/http/httputil/dump.go) => true <nil>
 Ignoring test code in reverseproxy_test.go
 Matchfile(tests/big/src/net/http/httputil/reverseproxy.go) => true <nil>
 Package httputil:
-Processing package=httputil:
+Processing package=httputil in net/http/httputil:
 Excluding tests/big/src/net/http/internal
 Walking from tests/big/src to tests/big/src/net/http/pprof
 Processing net/http/pprof:
 Matchfile(tests/big/src/net/http/pprof/pprof.go) => true <nil>
 Ignoring test code in pprof_test.go
 Package pprof:
-Processing package=pprof:
+Processing package=pprof in net/http/pprof:
 Excluding tests/big/src/net/http/testdata
 Excluding tests/big/src/net/internal
 Walking from tests/big/src to tests/big/src/net/mail
@@ -306,7 +306,7 @@ Ignoring test code in example_test.go
 Matchfile(tests/big/src/net/mail/message.go) => true <nil>
 Ignoring test code in message_test.go
 Package mail:
-Processing package=mail:
+Processing package=mail in net/mail:
 Walking from tests/big/src to tests/big/src/net/rpc
 Processing net/rpc:
 Matchfile(tests/big/src/net/rpc/server.go) => true <nil>
@@ -315,14 +315,14 @@ Matchfile(tests/big/src/net/rpc/debug.go) => true <nil>
 Ignoring test code in client_test.go
 Ignoring test code in server_test.go
 Package rpc:
-Processing package=rpc:
+Processing package=rpc in net/rpc:
 Walking from tests/big/src to tests/big/src/net/rpc/jsonrpc
 Processing net/rpc/jsonrpc:
 Matchfile(tests/big/src/net/rpc/jsonrpc/server.go) => true <nil>
 Matchfile(tests/big/src/net/rpc/jsonrpc/client.go) => true <nil>
 Ignoring test code in all_test.go
 Package jsonrpc:
-Processing package=jsonrpc:
+Processing package=jsonrpc in net/rpc/jsonrpc:
 Walking from tests/big/src to tests/big/src/net/smtp
 Processing net/smtp:
 Ignoring test code in example_test.go
@@ -330,7 +330,7 @@ Matchfile(tests/big/src/net/smtp/auth.go) => true <nil>
 Ignoring test code in smtp_test.go
 Matchfile(tests/big/src/net/smtp/smtp.go) => true <nil>
 Package smtp:
-Processing package=smtp:
+Processing package=smtp in net/smtp:
 Excluding tests/big/src/net/testdata
 Walking from tests/big/src to tests/big/src/net/textproto
 Processing net/textproto:
@@ -342,14 +342,14 @@ Matchfile(tests/big/src/net/textproto/pipeline.go) => true <nil>
 Matchfile(tests/big/src/net/textproto/reader.go) => true <nil>
 Ignoring test code in reader_test.go
 Package textproto:
-Processing package=textproto:
+Processing package=textproto in net/textproto:
 Walking from tests/big/src to tests/big/src/net/url
 Processing net/url:
 Ignoring test code in example_test.go
 Matchfile(tests/big/src/net/url/url.go) => true <nil>
 Ignoring test code in url_test.go
 Package url:
-Processing package=url:
+Processing package=url in net/url:
 TYPE cgi.Handler:
   tests/big/src/net/http/cgi/host.go
 TYPE cookiejar.Jar:
@@ -3341,12 +3341,10 @@ func userPassword(username string, password string) Object {
 	return map1
 }
 
-panic: open joker/main.go: no such file or directory
-
-goroutine 1 [running]:
-main.check(...)
-	/Users/craig/.go/src/github.com/jcburley/gostd2joker/main.go:26
-main.updateJokerMain(0xc000882d00, 0x10, 0x10, 0xc0006820b0, 0xd)
-	/Users/craig/.go/src/github.com/jcburley/gostd2joker/main.go:886 +0x664
-main.main()
-	/Users/craig/.go/src/github.com/jcburley/gostd2joker/main.go:1205 +0xf54
+Adding custom import line to tests/joker/main.go
+Writing tests/joker/main.go
+Adding custom loaded libraries to tests/joker/core/data/core.joke
+Writing tests/joker/core/data/core.joke
+Adding custom namespaces to tests/joker/std/generate-std.joke
+Writing tests/joker/std/generate-std.joke
+Totals: types=102 functions=148 receivers=1200
