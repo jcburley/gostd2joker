@@ -1,7 +1,7 @@
 Walking from tests/big to tests/big/go
-Processing sourceDir=/go dump=false:
+Processing go:
 Walking from tests/big to tests/big/net
-Processing sourceDir=/net dump=false:
+Processing net:
 Matchfile(tests/big/net/conf_netcgo.go) => false <nil>
 Ignoring test code in main_cloexec_test.go
 Ignoring test code in example_test.go
@@ -185,7 +185,7 @@ Ignoring test code in interface_bsd_test.go
 Package net:
 Processing package=net:
 Walking from tests/big to tests/big/net/http
-Processing sourceDir=/net/http dump=false:
+Processing net/http:
 Matchfile(tests/big/net/http/header.go) => true <nil>
 Ignoring test code in response_test.go
 Ignoring test code in transport_internal_test.go
@@ -234,7 +234,7 @@ Matchfile(tests/big/net/http/response.go) => true <nil>
 Package http:
 Processing package=http:
 Walking from tests/big to tests/big/net/http/cgi
-Processing sourceDir=/net/http/cgi dump=false:
+Processing net/http/cgi:
 Ignoring test code in child_test.go
 Ignoring test code in host_test.go
 Ignoring test code in matryoshka_test.go
@@ -246,7 +246,7 @@ Package cgi:
 Processing package=cgi:
 Excluding tests/big/net/http/cgi/testdata
 Walking from tests/big to tests/big/net/http/cookiejar
-Processing sourceDir=/net/http/cookiejar dump=false:
+Processing net/http/cookiejar:
 Ignoring test code in example_test.go
 Matchfile(tests/big/net/http/cookiejar/punycode.go) => true <nil>
 Ignoring test code in punycode_test.go
@@ -256,14 +256,14 @@ Matchfile(tests/big/net/http/cookiejar/jar.go) => true <nil>
 Package cookiejar:
 Processing package=cookiejar:
 Walking from tests/big to tests/big/net/http/fcgi
-Processing sourceDir=/net/http/fcgi dump=false:
+Processing net/http/fcgi:
 Matchfile(tests/big/net/http/fcgi/fcgi.go) => true <nil>
 Ignoring test code in fcgi_test.go
 Matchfile(tests/big/net/http/fcgi/child.go) => true <nil>
 Package fcgi:
 Processing package=fcgi:
 Walking from tests/big to tests/big/net/http/httptest
-Processing sourceDir=/net/http/httptest dump=false:
+Processing net/http/httptest:
 Matchfile(tests/big/net/http/httptest/recorder.go) => true <nil>
 Ignoring test code in example_test.go
 Ignoring test code in server_test.go
@@ -274,14 +274,14 @@ Matchfile(tests/big/net/http/httptest/server.go) => true <nil>
 Package httptest:
 Processing package=httptest:
 Walking from tests/big to tests/big/net/http/httptrace
-Processing sourceDir=/net/http/httptrace dump=false:
+Processing net/http/httptrace:
 Ignoring test code in example_test.go
 Matchfile(tests/big/net/http/httptrace/trace.go) => true <nil>
 Ignoring test code in trace_test.go
 Package httptrace:
 Processing package=httptrace:
 Walking from tests/big to tests/big/net/http/httputil
-Processing sourceDir=/net/http/httputil dump=false:
+Processing net/http/httputil:
 Ignoring test code in example_test.go
 Matchfile(tests/big/net/http/httputil/httputil.go) => true <nil>
 Matchfile(tests/big/net/http/httputil/dump.go) => true <nil>
@@ -293,7 +293,7 @@ Package httputil:
 Processing package=httputil:
 Excluding tests/big/net/http/internal
 Walking from tests/big to tests/big/net/http/pprof
-Processing sourceDir=/net/http/pprof dump=false:
+Processing net/http/pprof:
 Ignoring test code in pprof_test.go
 Matchfile(tests/big/net/http/pprof/pprof.go) => true <nil>
 Package pprof:
@@ -301,14 +301,14 @@ Processing package=pprof:
 Excluding tests/big/net/http/testdata
 Excluding tests/big/net/internal
 Walking from tests/big to tests/big/net/mail
-Processing sourceDir=/net/mail dump=false:
+Processing net/mail:
 Ignoring test code in example_test.go
 Ignoring test code in message_test.go
 Matchfile(tests/big/net/mail/message.go) => true <nil>
 Package mail:
 Processing package=mail:
 Walking from tests/big to tests/big/net/rpc
-Processing sourceDir=/net/rpc dump=false:
+Processing net/rpc:
 Matchfile(tests/big/net/rpc/debug.go) => true <nil>
 Matchfile(tests/big/net/rpc/client.go) => true <nil>
 Ignoring test code in server_test.go
@@ -317,14 +317,14 @@ Matchfile(tests/big/net/rpc/server.go) => true <nil>
 Package rpc:
 Processing package=rpc:
 Walking from tests/big to tests/big/net/rpc/jsonrpc
-Processing sourceDir=/net/rpc/jsonrpc dump=false:
+Processing net/rpc/jsonrpc:
 Matchfile(tests/big/net/rpc/jsonrpc/client.go) => true <nil>
 Ignoring test code in all_test.go
 Matchfile(tests/big/net/rpc/jsonrpc/server.go) => true <nil>
 Package jsonrpc:
 Processing package=jsonrpc:
 Walking from tests/big to tests/big/net/smtp
-Processing sourceDir=/net/smtp dump=false:
+Processing net/smtp:
 Ignoring test code in example_test.go
 Ignoring test code in smtp_test.go
 Matchfile(tests/big/net/smtp/auth.go) => true <nil>
@@ -333,7 +333,7 @@ Package smtp:
 Processing package=smtp:
 Excluding tests/big/net/testdata
 Walking from tests/big to tests/big/net/textproto
-Processing sourceDir=/net/textproto dump=false:
+Processing net/textproto:
 Matchfile(tests/big/net/textproto/header.go) => true <nil>
 Ignoring test code in writer_test.go
 Matchfile(tests/big/net/textproto/reader.go) => true <nil>
@@ -344,7 +344,7 @@ Matchfile(tests/big/net/textproto/textproto.go) => true <nil>
 Package textproto:
 Processing package=textproto:
 Walking from tests/big to tests/big/net/url
-Processing sourceDir=/net/url dump=false:
+Processing net/url:
 Ignoring test code in example_test.go
 Ignoring test code in url_test.go
 Matchfile(tests/big/net/url/url.go) => true <nil>

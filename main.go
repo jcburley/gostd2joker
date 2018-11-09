@@ -192,6 +192,23 @@ func processDecls(pkg string, filename string, f *File) {
 	}
 }
 
+/* Maintain a set of packages seen, keyed by (relative) package pathname. */
+var exists = struct{}{}
+var packagesSet = map[string]struct{} {}
+
+/* Sort the packages -- currently appears to not actually be
+/* necessary, probably because of how walkDirs() works. */
+func sortedPackages(m map[string]struct{}, f func(k string)) {
+	var keys []string
+	for k, _ := range m {
+		keys = append(keys, k)
+	}
+	sort.Strings(keys)
+	for _, k := range keys {
+		f(k)
+	}
+}
+
 func processPackage(pkg string, p *Package) {
 	if verbose {
 		fmt.Printf("Processing package=%s:\n", pkg)
@@ -202,9 +219,11 @@ func processPackage(pkg string, p *Package) {
 }
 
 func processDir(d string, path string, mode parser.Mode) error {
+	pkgDir := strings.TrimPrefix(path, d + string(filepath.Separator))
 	if verbose {
-		fmt.Printf("Processing sourceDir=%s dump=%t:\n", strings.TrimPrefix(path, d), dump)
+		fmt.Printf("Processing %s:\n", pkgDir)
 	}
+	packagesSet[pkgDir] = exists
 
 	pkgs, err := parser.ParseDir(fset, path,
 		// Walk only *.go files that meet default (target) build constraints, e.g. per "// build ..."
@@ -853,6 +872,8 @@ If <joker-std-subdir> is not specified, no Go nor Clojure source files
 	os.Exit(0)
 }
 
+var packagesArray = []string{} // Relative package pathnames in alphabetical order
+
 // E.g.: \t_ "github.com/candid82/joker/std/go/net"
 func updateJokerMain(f string) {
 	by, err := ioutil.ReadFile(f)
@@ -1094,6 +1115,8 @@ import (
 		})
 
 	if jokerSourceDir != "" {
+		sortedPackages(packagesSet,
+			func (p string) { packagesArray = append(packagesArray, p) })
 		updateJokerMain(filepath.Join(jokerSourceDir, "main.go"))
 	}
 
