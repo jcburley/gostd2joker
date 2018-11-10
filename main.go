@@ -1071,6 +1071,7 @@ func main() {
 		if si, e := os.Stat(goLink); e != nil || !si.IsDir() {
 			panic("Must specify --go <go-source-dir-name> option, or make ./GO.link a symlink to the golang/go/ source directory")
 		}
+		sourceDir = goLink
 	}
 
 	sourceDir = filepath.Join(sourceDir, "src")
