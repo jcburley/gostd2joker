@@ -1195,7 +1195,7 @@ func main() {
     :doc "Provides a low-level interface to the %s package."}
   go.%s)
 `,
-					p, p, p)
+					packageDirs[p], p, p)
 			}
 			sortedCodeMap(v,
 				func(f string, w string) {
