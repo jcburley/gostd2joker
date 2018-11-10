@@ -1,4 +1,4 @@
-;;;; Auto-modified by gostd2joker at 2018-11-09T18:56:04.568293048-05:00
+;;;; Auto-modified by gostd2joker at 2018-11-09T19:20:00.863481303-05:00
 
 ; This code is a modified version of original Clojure's implementation
 ; (https://github.com/clojure/clojure/blob/master/src/clj/clojure/core.clj)
@@ -3185,7 +3185,7 @@
     :doc "A set of symbols representing loaded libs"}
   *loaded-libs* #{
    ;; Loaded-libraries added by gostd2joker
-   'joker.go.go 'joker.go.net 'joker.go.net.http 'joker.go.net.http.cgi
+   'joker.go.net 'joker.go.net.http 'joker.go.net.http.cgi
    'joker.go.net.http.cookiejar 'joker.go.net.http.fcgi
    'joker.go.net.http.httptest 'joker.go.net.http.httptrace
    'joker.go.net.http.httputil 'joker.go.net.http.pprof 'joker.go.net.mail

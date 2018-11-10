@@ -99,7 +99,8 @@ var DUPLICATEFUNCTION = &FuncDecl {}
 
 var alreadySeen = []string {}
 
-func processFuncDecl(pkg string, filename string, f *File, fn *FuncDecl) {
+// Returns whether any public functions were actually processed.
+func processFuncDecl(pkg string, filename string, f *File, fn *FuncDecl) bool {
 	if (dump) {
 		Print(fset, fn)
 	}
@@ -113,6 +114,7 @@ func processFuncDecl(pkg string, filename string, f *File, fn *FuncDecl) {
 		}
 	}
 	functions[fname] = &funcInfo{fn, pkg, filename}
+	return true
 }
 
 type typeInfo struct {
@@ -168,7 +170,8 @@ func processTypeSpecs(pkg string, filename string, f *File, tss []Spec) {
 	}
 }
 
-func processDecls(pkg string, filename string, f *File) {
+// Returns whether any public functions were actually processed.
+func processDecls(pkg string, filename string, f *File) (found bool) {
 	for _, s := range f.Decls {
 		switch v := s.(type) {
 		case *FuncDecl:
@@ -180,7 +183,9 @@ func processDecls(pkg string, filename string, f *File) {
 			if unicode.IsLower(rune(v.Name.Name[0])) {
 				continue  // Skipping non-exported functions
 			}
-			processFuncDecl(pkg, filename, f, v)
+			if processFuncDecl(pkg, filename, f, v) {
+				found = true
+			}
 		case *GenDecl:
 			if v.Tok != token.TYPE {
 				continue
@@ -190,22 +195,23 @@ func processDecls(pkg string, filename string, f *File) {
 			panic(fmt.Sprintf("unrecognized Decl type %T at: %s", v, whereAt(v.Pos())))
 		}
 	}
+	return
 }
 
-/* Maintain a set of packages seen, keyed by (relative) package pathname. */
+/* Maintain a map of packages seen, keyed by (relative) package pathname, with value of whether any public functions have been seen in it. */
 var exists = struct{}{}
-var packagesSet = map[string]struct{} {}
+var packagesNonEmpty = map[string]bool {}
 
 /* Sort the packages -- currently appears to not actually be
 /* necessary, probably because of how walkDirs() works. */
-func sortedPackages(m map[string]struct{}, f func(k string)) {
+func sortedPackagesNonEmpty(m map[string]bool, f func(k string, f bool)) {
 	var keys []string
 	for k, _ := range m {
 		keys = append(keys, k)
 	}
 	sort.Strings(keys)
 	for _, k := range keys {
-		f(k)
+		f(k, packagesNonEmpty[k])
 	}
 }
 
@@ -223,8 +229,14 @@ func processPackage(pkgDir string, pkg string, p *Package) {
 		return
 	}
 	packageDirs[pkg] = pkgDir
+	found := false
 	for filename, f := range p.Files {
-		processDecls(pkg, filename, f)
+		if processDecls(pkg, filename, f) {
+			found = true
+		}
+	}
+	if found {
+		packagesNonEmpty[pkgDir] = true
 	}
 }
 
@@ -233,7 +245,9 @@ func processDir(d string, path string, mode parser.Mode) error {
 	if verbose {
 		fmt.Printf("Processing %s:\n", pkgDir)
 	}
-	packagesSet[pkgDir] = exists
+	if _, ok := packagesNonEmpty[pkgDir]; !ok {
+		packagesNonEmpty[pkgDir] = false
+	}
 
 	pkgs, err := parser.ParseDir(fset, path,
 		// Walk only *.go files that meet default (target) build constraints, e.g. per "// build ..."
@@ -1211,8 +1225,8 @@ import (
 	if jokerSourceDir != "" && jokerSourceDir != "-" {
 		var packagesArray = []string{} // Relative package pathnames in alphabetical order
 
-		sortedPackages(packagesSet,
-			func (p string) { packagesArray = append(packagesArray, p) })
+		sortedPackagesNonEmpty(packagesNonEmpty,
+			func (p string, f bool) { if f { packagesArray = append(packagesArray, p) } })
 		updateJokerMain(packagesArray, filepath.Join(jokerSourceDir, "main.go"))
 		updateCoreDotJoke(packagesArray, filepath.Join(jokerSourceDir, "core", "data", "core.joke"))
 		updateGenerateSTD(packagesArray, filepath.Join(jokerSourceDir, "std", "generate-std.joke"))

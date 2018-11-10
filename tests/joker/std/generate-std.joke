@@ -1,8 +1,8 @@
-;;;; Auto-modified by gostd2joker at 2018-11-09T18:56:04.568293048-05:00
+;;;; Auto-modified by gostd2joker at 2018-11-09T19:20:00.863481303-05:00
 
 (def namespaces [
   ;; Namespaces added by gostd2joker
-  'go.go 'go.net 'go.net.http 'go.net.http.cgi 'go.net.http.cookiejar
+  'go.net 'go.net.http 'go.net.http.cgi 'go.net.http.cookiejar
   'go.net.http.fcgi 'go.net.http.httptest 'go.net.http.httptrace
   'go.net.http.httputil 'go.net.http.pprof 'go.net.mail 'go.net.rpc
   'go.net.rpc.jsonrpc 'go.net.smtp 'go.net.textproto 'go.net.url

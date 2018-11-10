@@ -1,9 +1,8 @@
-// Auto-modified by gostd2joker at 2018-11-09T18:56:04.568293048-05:00
+// Auto-modified by gostd2joker at 2018-11-09T19:20:00.863481303-05:00
 
 package main
 
 import ( // Imports added by gostd2joker
-	_ "github.com/candid82/joker/std/go/go"
 	_ "github.com/candid82/joker/std/go/net"
 	_ "github.com/candid82/joker/std/go/net/http"
 	_ "github.com/candid82/joker/std/go/net/http/cgi"
