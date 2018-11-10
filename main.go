@@ -896,7 +896,11 @@ If <joker-std-subdir> is not specified, no Go nor Clojure source files
 }
 
 var currentTime = ""
+var noTime = false
 func curTime() string {
+	if noTime {
+		return "(omitted for testing)"
+	}
 	if currentTime == "" {
 		by, _ := time.Now().MarshalText()
 		currentTime = string(by)
@@ -1035,6 +1039,8 @@ func main() {
 				usage()
 			case "--version", "-V":
 				fmt.Printf("%s version %s\n", os.Args[0], VERSION)
+			case "--notime":
+				noTime = true
 			case "--dump":
 				dump = true
 			case "--overwrite":
