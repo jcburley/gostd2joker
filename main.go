@@ -878,7 +878,6 @@ func genFunction(f string, fn *funcInfo) {
 		if _, found := packagesInfo[fn.pkgDir]; !found {
 			panic(fmt.Sprintf("Cannot find package %s", fn.pkgDir))
 		}
-		packagesInfo[fn.pkgDir].imports[fn.pkgDir] = exists
 	}
 
 	jokerFn := fmt.Sprintf(jfmt, jokerReturnType, d.Name.Name,
@@ -898,6 +897,12 @@ func %s(%s) %s {
 	if strings.Contains(jokerFn, "ABEND") || strings.Contains(goFn, "ABEND") {
 		jokerFn = nonEmptyLineRegexp.ReplaceAllString(jokerFn, `;; $1`)
 		goFn = nonEmptyLineRegexp.ReplaceAllString(goFn, `// $1`)
+	} else {
+		if jokerReturnType == "" {
+//			packagesInfo[fn.pkgDir].imports[jokerCoreImport] = exists  // ~~~
+		} else {
+			packagesInfo[fn.pkgDir].imports[fn.pkgDir] = exists
+		}
 	}
 
 	if _, ok := jokerCode[pkg]; !ok {
