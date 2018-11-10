@@ -2,8 +2,8 @@
 
 (ns
   ^{:go-imports ["net/http/pprof"]
-    :doc "Provides a low-level interface to the pprof package."}
-  go.pprof)
+    :doc "Provides a low-level interface to the net/http/pprof package."}
+  go.net.http.pprof)
 
 ;; (defn Cmdline
 ;;   "Cmdline responds with the running program's\ncommand line, with arguments separated by NUL bytes.\nThe package initialization registers it as /debug/pprof/cmdline.\n"

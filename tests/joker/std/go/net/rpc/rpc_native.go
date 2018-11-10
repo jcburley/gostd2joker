@@ -3,7 +3,7 @@
 package rpc
 
 import (
-	rpc "net/rpc"
+	"net/rpc"
 	. "github.com/candid82/joker/core"
 )
 

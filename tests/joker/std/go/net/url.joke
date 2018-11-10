@@ -2,8 +2,8 @@
 
 (ns
   ^{:go-imports ["net/url"]
-    :doc "Provides a low-level interface to the url package."}
-  go.url)
+    :doc "Provides a low-level interface to the net/url package."}
+  go.net.url)
 
 (defn Parse
   "Parse parses rawurl into a URL structure.\n\nThe rawurl may be relative (a path, without a host) or absolute\n(starting with a scheme). Trying to parse a hostname and path\nwithout a scheme is invalid but may not necessarily return an\nerror, due to parsing ambiguities.\nGo return type: (*URL, error)\nJoker return type: [{:Scheme ^String, :Opaque ^String, :User ^{}, :Host ^String, :Path ^String, :RawPath ^String, :ForceQuery ^Bool, :RawQuery ^String, :Fragment ^String} Error]"

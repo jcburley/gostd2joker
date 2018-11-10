@@ -2,8 +2,8 @@
 
 (ns
   ^{:go-imports ["net/http/cookiejar"]
-    :doc "Provides a low-level interface to the cookiejar package."}
-  go.cookiejar)
+    :doc "Provides a low-level interface to the net/http/cookiejar package."}
+  go.net.http.cookiejar)
 
 ;; (defn New
 ;;   "New returns a new cookie jar. A nil *Options is equivalent to a zero\nOptions.\nGo return type: (*Jar, error)\nJoker return type: [{} Error]"

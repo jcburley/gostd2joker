@@ -3,7 +3,7 @@
 package http
 
 import (
-	http "net/http"
+	"net/http"
 	. "github.com/candid82/joker/core"
 )
 

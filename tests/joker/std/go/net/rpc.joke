@@ -2,8 +2,8 @@
 
 (ns
   ^{:go-imports ["net/rpc"]
-    :doc "Provides a low-level interface to the rpc package."}
-  go.rpc)
+    :doc "Provides a low-level interface to the net/rpc package."}
+  go.net.rpc)
 
 ;; (defn Accept
 ;;   "Accept accepts connections on the listener and serves requests\nto DefaultServer for each incoming connection.\nAccept blocks; the caller typically invokes it in a go statement.\n"

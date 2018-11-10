@@ -3,7 +3,7 @@
 package fcgi
 
 import (
-	fcgi "net/http/fcgi"
+	"net/http/fcgi"
 	. "github.com/candid82/joker/core"
 )
 

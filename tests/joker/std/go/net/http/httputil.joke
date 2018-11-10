@@ -2,8 +2,8 @@
 
 (ns
   ^{:go-imports ["net/http/httputil"]
-    :doc "Provides a low-level interface to the httputil package."}
-  go.httputil)
+    :doc "Provides a low-level interface to the net/http/httputil package."}
+  go.net.http.httputil)
 
 ;; (defn DumpRequest
 ;;   "DumpRequest returns the given request in its HTTP/1.x wire\nrepresentation. It should only be used by servers to debug client\nrequests. The returned representation is an approximation only;\nsome details of the initial request are lost while parsing it into\nan http.Request. In particular, the order and case of header field\nnames are lost. The order of values in multi-valued headers is kept\nintact. HTTP/2 requests are dumped in HTTP/1.x form, not in their\noriginal binary representations.\n\nIf body is true, DumpRequest also returns the body. To do so, it\nconsumes req.Body and then replaces it with a new io.ReadCloser\nthat yields the same bytes. If DumpRequest returns an error,\nthe state of req is undefined.\n\nThe documentation for http.Request.Write details which fields\nof req are included in the dump.\nGo return type: ([]int, error)\nJoker return type: [(vector-of Int) Error]"

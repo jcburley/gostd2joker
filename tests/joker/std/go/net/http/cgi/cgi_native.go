@@ -3,7 +3,7 @@
 package cgi
 
 import (
-	cgi "net/http/cgi"
+	"net/http/cgi"
 	. "github.com/candid82/joker/core"
 )
 

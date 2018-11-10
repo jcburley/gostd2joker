@@ -2,8 +2,8 @@
 
 (ns
   ^{:go-imports ["net/http/httptest"]
-    :doc "Provides a low-level interface to the httptest package."}
-  go.httptest)
+    :doc "Provides a low-level interface to the net/http/httptest package."}
+  go.net.http.httptest)
 
 ;; (defn NewRecorder
 ;;   "NewRecorder returns an initialized ResponseRecorder.\nGo return type: *ResponseRecorder\nJoker return type: {:Code ^Int, :HeaderMap ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/httptest/recorder.go:35:12), :Body ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/httptest/recorder.go:39:8), :Flushed ^Bool}"

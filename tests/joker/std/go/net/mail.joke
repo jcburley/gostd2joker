@@ -2,8 +2,8 @@
 
 (ns
   ^{:go-imports ["net/mail"]
-    :doc "Provides a low-level interface to the mail package."}
-  go.mail)
+    :doc "Provides a low-level interface to the net/mail package."}
+  go.net.mail)
 
 (defn ParseAddress
   "Parses a single RFC 5322 address, e.g. \"Barry Gibbs <bg@example.com>\"\nGo return type: (*Address, error)\nJoker return type: [{:Name ^String, :Address ^String} Error]"

@@ -2,8 +2,8 @@
 
 (ns
   ^{:go-imports ["net/textproto"]
-    :doc "Provides a low-level interface to the textproto package."}
-  go.textproto)
+    :doc "Provides a low-level interface to the net/textproto package."}
+  go.net.textproto)
 
 (defn ^String CanonicalMIMEHeaderKey
   "CanonicalMIMEHeaderKey returns the canonical format of the\nMIME header key s. The canonicalization converts the first\nletter and any letter following a hyphen to upper case;\nthe rest are converted to lowercase. For example, the\ncanonical key for \"accept-encoding\" is \"Accept-Encoding\".\nMIME header keys are assumed to be ASCII only.\nIf s contains a space or invalid header field bytes, it is\nreturned without modifications.\nGo return type: string\nJoker return type: String"

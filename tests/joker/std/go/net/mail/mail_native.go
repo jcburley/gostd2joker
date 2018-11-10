@@ -3,7 +3,7 @@
 package mail
 
 import (
-	mail "net/mail"
+	"net/mail"
 	. "github.com/candid82/joker/core"
 )
 

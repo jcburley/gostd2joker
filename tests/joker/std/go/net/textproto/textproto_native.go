@@ -3,7 +3,7 @@
 package textproto
 
 import (
-	textproto "net/textproto"
+	"net/textproto"
 	. "github.com/candid82/joker/core"
 )
 

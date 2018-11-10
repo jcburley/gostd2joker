@@ -2,8 +2,8 @@
 
 (ns
   ^{:go-imports ["net/rpc/jsonrpc"]
-    :doc "Provides a low-level interface to the jsonrpc package."}
-  go.jsonrpc)
+    :doc "Provides a low-level interface to the net/rpc/jsonrpc package."}
+  go.net.rpc.jsonrpc)
 
 ;; (defn Dial
 ;;   "Dial connects to a JSON-RPC server at the specified network address.\nGo return type: (*..., error)\nJoker return type: [ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/rpc/jsonrpc/client.go:118:38) Error]"

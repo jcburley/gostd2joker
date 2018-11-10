@@ -2,8 +2,8 @@
 
 (ns
   ^{:go-imports ["net/http/cgi"]
-    :doc "Provides a low-level interface to the cgi package."}
-  go.cgi)
+    :doc "Provides a low-level interface to the net/http/cgi package."}
+  go.net.http.cgi)
 
 ;; (defn Request
 ;;   "Request returns the HTTP request as represented in the current\nenvironment. This assumes the current program is being run\nby a web server in a CGI environment.\nThe returned Request's Body is populated, if applicable.\nGo return type: (*..., error)\nJoker return type: [ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/cgi/child.go:29:18) Error]"

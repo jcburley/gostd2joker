@@ -2,8 +2,8 @@
 
 (ns
   ^{:go-imports ["net/http/fcgi"]
-    :doc "Provides a low-level interface to the fcgi package."}
-  go.fcgi)
+    :doc "Provides a low-level interface to the net/http/fcgi package."}
+  go.net.http.fcgi)
 
 ;; (defn ProcessEnv
 ;;   "ProcessEnv returns FastCGI environment variables associated with the request r\nfor which no effort was made to be included in the request itself - the data\nis hidden in the request's context. As an example, if REMOTE_USER is set for a\nrequest, it will not be found anywhere in r, but it will be included in\nProcessEnv's response (via r's context).\nGo return type: ...\nJoker return type: ABEND883(unrecognized Expr type *ast.MapType at: tests/big/src/net/http/fcgi/child.go:358:34)"

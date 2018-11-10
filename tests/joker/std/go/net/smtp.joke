@@ -2,8 +2,8 @@
 
 (ns
   ^{:go-imports ["net/smtp"]
-    :doc "Provides a low-level interface to the smtp package."}
-  go.smtp)
+    :doc "Provides a low-level interface to the net/smtp package."}
+  go.net.smtp)
 
 ;; (defn CRAMMD5Auth
 ;;   "CRAMMD5Auth returns an Auth that implements the CRAM-MD5 authentication\nmechanism as defined in RFC 2195.\nThe returned Auth uses the given username and secret to authenticate\nto the server using the challenge-response mechanism.\nGo return type: Auth\nJoker return type: ABEND883(unrecognized Expr type *ast.InterfaceType at: tests/big/src/net/smtp/auth.go:15:11)"
