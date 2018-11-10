@@ -577,7 +577,7 @@ JOKER FUNC cgi.Serve has:
 
 JOKER FUNC cookiejar.New has:
 ;; (defn New
-;;   "New returns a new cookie jar. A nil *Options is equivalent to a zero\nOptions.\nGo return type: (*Jar, error)\nJoker return type: [{:psList ^ABEND883(unrecognized Expr type *ast.InterfaceType at: tests/big/src/net/http/cookiejar/jar.go:34:23), :mu ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/cookiejar/jar.go:64:5), :entries ^ABEND883(unrecognized Expr type *ast.MapType at: tests/big/src/net/http/cookiejar/jar.go:68:10), :nextSeqNum ^ABEND042(cannot find typename cookiejar.uint64)} Error]"
+;;   "New returns a new cookie jar. A nil *Options is equivalent to a zero\nOptions.\nGo return type: (*Jar, error)\nJoker return type: [{} Error]"
 ;;   {:added "1.0"
 ;;    :go "new(o)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/http/cookiejar/jar.go:77:12) o])
@@ -626,7 +626,7 @@ JOKER FUNC http.FileServer has:
 
 JOKER FUNC http.Get has:
 ;; (defn Get
-;;   "Get issues a GET to the specified URL. If the response is one of\nthe following redirect codes, Get follows the redirect, up to a\nmaximum of 10 redirects:\n\n   301 (Moved Permanently)\n   302 (Found)\n   303 (See Other)\n   307 (Temporary Redirect)\n   308 (Permanent Redirect)\n\nAn error is returned if there were too many redirects or if there\nwas an HTTP protocol error. A non-2xx response doesn't cause an\nerror. Any returned error will be of type *url.Error. The url.Error\nvalue's Timeout method will report true if request timed out or was\ncanceled.\n\nWhen err is nil, resp always contains a non-nil resp.Body.\nCaller should close resp.Body when done reading from it.\n\nGet is a wrapper around DefaultClient.Get.\n\nTo make a request with custom headers, use NewRequest and\nDefaultClient.Do.\nGo return type: (resp *Response, err error)\nJoker return type: [{:Status ^String, :StatusCode ^Int, :Proto ^String, :ProtoMajor ^Int, :ProtoMinor ^Int, :Header ^ABEND883(unrecognized Expr type *ast.MapType at: tests/big/src/net/http/header.go:20:13), :Body ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/response.go:66:7), :ContentLength ^Int, :TransferEncoding ^(vector-of String), :Close ^Bool, :Uncompressed ^Bool, :Trailer ^ABEND883(unrecognized Expr type *ast.MapType at: tests/big/src/net/http/header.go:20:13), :Request ^{:Method ^String, :URL ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/request.go:127:7), :Proto ^String, :ProtoMajor ^Int, :ProtoMinor ^Int, :Header ^ABEND883(unrecognized Expr type *ast.MapType at: tests/big/src/net/http/header.go:20:13), :Body ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/request.go:181:7), :GetBody ^ABEND883(unrecognized Expr type *ast.FuncType at: tests/big/src/net/http/request.go:189:10), :ContentLength ^Int, :TransferEncoding ^(vector-of String), :Close ^Bool, :Host ^String, :Form ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/request.go:241:7), :PostForm ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/request.go:248:11), :MultipartForm ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/request.go:253:17), :Trailer ^ABEND883(unrecognized Expr type *ast.MapType at: tests/big/src/net/http/header.go:20:13), :RemoteAddr ^String, :RequestURI ^String, :TLS ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/request.go:297:7), :Cancel ^ABEND883(unrecognized Expr type *ast.ChanType at: tests/big/src/net/http/request.go:308:9), :Response ^ABEND947(recursive type reference involving http.Response), :ctx ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/request.go:319:6)}, :TLS ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/response.go:115:7)} Error]"
+;;   "Get issues a GET to the specified URL. If the response is one of\nthe following redirect codes, Get follows the redirect, up to a\nmaximum of 10 redirects:\n\n   301 (Moved Permanently)\n   302 (Found)\n   303 (See Other)\n   307 (Temporary Redirect)\n   308 (Permanent Redirect)\n\nAn error is returned if there were too many redirects or if there\nwas an HTTP protocol error. A non-2xx response doesn't cause an\nerror. Any returned error will be of type *url.Error. The url.Error\nvalue's Timeout method will report true if request timed out or was\ncanceled.\n\nWhen err is nil, resp always contains a non-nil resp.Body.\nCaller should close resp.Body when done reading from it.\n\nGet is a wrapper around DefaultClient.Get.\n\nTo make a request with custom headers, use NewRequest and\nDefaultClient.Do.\nGo return type: (resp *Response, err error)\nJoker return type: [{:Status ^String, :StatusCode ^Int, :Proto ^String, :ProtoMajor ^Int, :ProtoMinor ^Int, :Header ^ABEND883(unrecognized Expr type *ast.MapType at: tests/big/src/net/http/header.go:20:13), :Body ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/response.go:66:7), :ContentLength ^Int, :TransferEncoding ^(vector-of String), :Close ^Bool, :Uncompressed ^Bool, :Trailer ^ABEND883(unrecognized Expr type *ast.MapType at: tests/big/src/net/http/header.go:20:13), :Request ^{:Method ^String, :URL ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/request.go:127:7), :Proto ^String, :ProtoMajor ^Int, :ProtoMinor ^Int, :Header ^ABEND883(unrecognized Expr type *ast.MapType at: tests/big/src/net/http/header.go:20:13), :Body ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/request.go:181:7), :GetBody ^ABEND883(unrecognized Expr type *ast.FuncType at: tests/big/src/net/http/request.go:189:10), :ContentLength ^Int, :TransferEncoding ^(vector-of String), :Close ^Bool, :Host ^String, :Form ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/request.go:241:7), :PostForm ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/request.go:248:11), :MultipartForm ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/request.go:253:17), :Trailer ^ABEND883(unrecognized Expr type *ast.MapType at: tests/big/src/net/http/header.go:20:13), :RemoteAddr ^String, :RequestURI ^String, :TLS ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/request.go:297:7), :Cancel ^ABEND883(unrecognized Expr type *ast.ChanType at: tests/big/src/net/http/request.go:308:9), :Response ^ABEND947(recursive type reference involving http.Response)}, :TLS ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/response.go:115:7)} Error]"
 ;;   {:added "1.0"
 ;;    :go "get(url)"}
 ;;   [^String url])
@@ -647,7 +647,7 @@ JOKER FUNC http.HandleFunc has:
 
 JOKER FUNC http.Head has:
 ;; (defn Head
-;;   "Head issues a HEAD to the specified URL. If the response is one of\nthe following redirect codes, Head follows the redirect, up to a\nmaximum of 10 redirects:\n\n   301 (Moved Permanently)\n   302 (Found)\n   303 (See Other)\n   307 (Temporary Redirect)\n   308 (Permanent Redirect)\n\nHead is a wrapper around DefaultClient.Head\nGo return type: (resp *Response, err error)\nJoker return type: [{:Status ^String, :StatusCode ^Int, :Proto ^String, :ProtoMajor ^Int, :ProtoMinor ^Int, :Header ^ABEND883(unrecognized Expr type *ast.MapType at: tests/big/src/net/http/header.go:20:13), :Body ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/response.go:66:7), :ContentLength ^Int, :TransferEncoding ^(vector-of String), :Close ^Bool, :Uncompressed ^Bool, :Trailer ^ABEND883(unrecognized Expr type *ast.MapType at: tests/big/src/net/http/header.go:20:13), :Request ^{:Method ^String, :URL ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/request.go:127:7), :Proto ^String, :ProtoMajor ^Int, :ProtoMinor ^Int, :Header ^ABEND883(unrecognized Expr type *ast.MapType at: tests/big/src/net/http/header.go:20:13), :Body ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/request.go:181:7), :GetBody ^ABEND883(unrecognized Expr type *ast.FuncType at: tests/big/src/net/http/request.go:189:10), :ContentLength ^Int, :TransferEncoding ^(vector-of String), :Close ^Bool, :Host ^String, :Form ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/request.go:241:7), :PostForm ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/request.go:248:11), :MultipartForm ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/request.go:253:17), :Trailer ^ABEND883(unrecognized Expr type *ast.MapType at: tests/big/src/net/http/header.go:20:13), :RemoteAddr ^String, :RequestURI ^String, :TLS ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/request.go:297:7), :Cancel ^ABEND883(unrecognized Expr type *ast.ChanType at: tests/big/src/net/http/request.go:308:9), :Response ^ABEND947(recursive type reference involving http.Response), :ctx ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/request.go:319:6)}, :TLS ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/response.go:115:7)} Error]"
+;;   "Head issues a HEAD to the specified URL. If the response is one of\nthe following redirect codes, Head follows the redirect, up to a\nmaximum of 10 redirects:\n\n   301 (Moved Permanently)\n   302 (Found)\n   303 (See Other)\n   307 (Temporary Redirect)\n   308 (Permanent Redirect)\n\nHead is a wrapper around DefaultClient.Head\nGo return type: (resp *Response, err error)\nJoker return type: [{:Status ^String, :StatusCode ^Int, :Proto ^String, :ProtoMajor ^Int, :ProtoMinor ^Int, :Header ^ABEND883(unrecognized Expr type *ast.MapType at: tests/big/src/net/http/header.go:20:13), :Body ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/response.go:66:7), :ContentLength ^Int, :TransferEncoding ^(vector-of String), :Close ^Bool, :Uncompressed ^Bool, :Trailer ^ABEND883(unrecognized Expr type *ast.MapType at: tests/big/src/net/http/header.go:20:13), :Request ^{:Method ^String, :URL ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/request.go:127:7), :Proto ^String, :ProtoMajor ^Int, :ProtoMinor ^Int, :Header ^ABEND883(unrecognized Expr type *ast.MapType at: tests/big/src/net/http/header.go:20:13), :Body ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/request.go:181:7), :GetBody ^ABEND883(unrecognized Expr type *ast.FuncType at: tests/big/src/net/http/request.go:189:10), :ContentLength ^Int, :TransferEncoding ^(vector-of String), :Close ^Bool, :Host ^String, :Form ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/request.go:241:7), :PostForm ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/request.go:248:11), :MultipartForm ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/request.go:253:17), :Trailer ^ABEND883(unrecognized Expr type *ast.MapType at: tests/big/src/net/http/header.go:20:13), :RemoteAddr ^String, :RequestURI ^String, :TLS ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/request.go:297:7), :Cancel ^ABEND883(unrecognized Expr type *ast.ChanType at: tests/big/src/net/http/request.go:308:9), :Response ^ABEND947(recursive type reference involving http.Response)}, :TLS ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/response.go:115:7)} Error]"
 ;;   {:added "1.0"
 ;;    :go "head(url)"}
 ;;   [^String url])
@@ -682,14 +682,14 @@ JOKER FUNC http.NewFileTransport has:
 
 JOKER FUNC http.NewRequest has:
 ;; (defn NewRequest
-;;   "NewRequest returns a new Request given a method, URL, and optional body.\n\nIf the provided body is also an io.Closer, the returned\nRequest.Body is set to body and will be closed by the Client\nmethods Do, Post, and PostForm, and Transport.RoundTrip.\n\nNewRequest returns a Request suitable for use with Client.Do or\nTransport.RoundTrip. To create a request for use with testing a\nServer Handler, either use the NewRequest function in the\nnet/http/httptest package, use ReadRequest, or manually update the\nRequest fields. See the Request type's documentation for the\ndifference between inbound and outbound request fields.\n\nIf body is of type *bytes.Buffer, *bytes.Reader, or\n*strings.Reader, the returned request's ContentLength is set to its\nexact value (instead of -1), GetBody is populated (so 307 and 308\nredirects can replay the body), and Body is set to NoBody if the\nContentLength is 0.\nGo return type: (*Request, error)\nJoker return type: [{:Method ^String, :URL ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/request.go:127:7), :Proto ^String, :ProtoMajor ^Int, :ProtoMinor ^Int, :Header ^ABEND883(unrecognized Expr type *ast.MapType at: tests/big/src/net/http/header.go:20:13), :Body ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/request.go:181:7), :GetBody ^ABEND883(unrecognized Expr type *ast.FuncType at: tests/big/src/net/http/request.go:189:10), :ContentLength ^Int, :TransferEncoding ^(vector-of String), :Close ^Bool, :Host ^String, :Form ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/request.go:241:7), :PostForm ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/request.go:248:11), :MultipartForm ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/request.go:253:17), :Trailer ^ABEND883(unrecognized Expr type *ast.MapType at: tests/big/src/net/http/header.go:20:13), :RemoteAddr ^String, :RequestURI ^String, :TLS ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/request.go:297:7), :Cancel ^ABEND883(unrecognized Expr type *ast.ChanType at: tests/big/src/net/http/request.go:308:9), :Response ^{:Status ^String, :StatusCode ^Int, :Proto ^String, :ProtoMajor ^Int, :ProtoMinor ^Int, :Header ^ABEND883(unrecognized Expr type *ast.MapType at: tests/big/src/net/http/header.go:20:13), :Body ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/response.go:66:7), :ContentLength ^Int, :TransferEncoding ^(vector-of String), :Close ^Bool, :Uncompressed ^Bool, :Trailer ^ABEND883(unrecognized Expr type *ast.MapType at: tests/big/src/net/http/header.go:20:13), :Request ^ABEND947(recursive type reference involving http.Request), :TLS ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/response.go:115:7)}, :ctx ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/request.go:319:6)} Error]"
+;;   "NewRequest returns a new Request given a method, URL, and optional body.\n\nIf the provided body is also an io.Closer, the returned\nRequest.Body is set to body and will be closed by the Client\nmethods Do, Post, and PostForm, and Transport.RoundTrip.\n\nNewRequest returns a Request suitable for use with Client.Do or\nTransport.RoundTrip. To create a request for use with testing a\nServer Handler, either use the NewRequest function in the\nnet/http/httptest package, use ReadRequest, or manually update the\nRequest fields. See the Request type's documentation for the\ndifference between inbound and outbound request fields.\n\nIf body is of type *bytes.Buffer, *bytes.Reader, or\n*strings.Reader, the returned request's ContentLength is set to its\nexact value (instead of -1), GetBody is populated (so 307 and 308\nredirects can replay the body), and Body is set to NoBody if the\nContentLength is 0.\nGo return type: (*Request, error)\nJoker return type: [{:Method ^String, :URL ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/request.go:127:7), :Proto ^String, :ProtoMajor ^Int, :ProtoMinor ^Int, :Header ^ABEND883(unrecognized Expr type *ast.MapType at: tests/big/src/net/http/header.go:20:13), :Body ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/request.go:181:7), :GetBody ^ABEND883(unrecognized Expr type *ast.FuncType at: tests/big/src/net/http/request.go:189:10), :ContentLength ^Int, :TransferEncoding ^(vector-of String), :Close ^Bool, :Host ^String, :Form ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/request.go:241:7), :PostForm ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/request.go:248:11), :MultipartForm ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/request.go:253:17), :Trailer ^ABEND883(unrecognized Expr type *ast.MapType at: tests/big/src/net/http/header.go:20:13), :RemoteAddr ^String, :RequestURI ^String, :TLS ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/request.go:297:7), :Cancel ^ABEND883(unrecognized Expr type *ast.ChanType at: tests/big/src/net/http/request.go:308:9), :Response ^{:Status ^String, :StatusCode ^Int, :Proto ^String, :ProtoMajor ^Int, :ProtoMinor ^Int, :Header ^ABEND883(unrecognized Expr type *ast.MapType at: tests/big/src/net/http/header.go:20:13), :Body ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/response.go:66:7), :ContentLength ^Int, :TransferEncoding ^(vector-of String), :Close ^Bool, :Uncompressed ^Bool, :Trailer ^ABEND883(unrecognized Expr type *ast.MapType at: tests/big/src/net/http/header.go:20:13), :Request ^ABEND947(recursive type reference involving http.Request), :TLS ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/response.go:115:7)}} Error]"
 ;;   {:added "1.0"
 ;;    :go "newRequest(method, url, body)"}
 ;;   [^String method, ^String url, ^ABEND881(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/request.go:792:42) body])
 
 JOKER FUNC http.NewServeMux has:
 ;; (defn NewServeMux
-;;   "NewServeMux allocates and returns a new ServeMux.\nGo return type: *ServeMux\nJoker return type: {:mu ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/server.go:2150:8), :m ^ABEND883(unrecognized Expr type *ast.MapType at: tests/big/src/net/http/server.go:2151:8), :hosts ^Bool}"
+;;   "NewServeMux allocates and returns a new ServeMux.\nGo return type: *ServeMux\nJoker return type: {}"
 ;;   {:added "1.0"
 ;;    :go "newServeMux()"}
 ;;   [])
@@ -724,14 +724,14 @@ JOKER FUNC http.ParseTime has:
 
 JOKER FUNC http.Post has:
 ;; (defn Post
-;;   "Post issues a POST to the specified URL.\n\nCaller should close resp.Body when done reading from it.\n\nIf the provided body is an io.Closer, it is closed after the\nrequest.\n\nPost is a wrapper around DefaultClient.Post.\n\nTo set custom headers, use NewRequest and DefaultClient.Do.\n\nSee the Client.Do method documentation for details on how redirects\nare handled.\nGo return type: (resp *Response, err error)\nJoker return type: [{:Status ^String, :StatusCode ^Int, :Proto ^String, :ProtoMajor ^Int, :ProtoMinor ^Int, :Header ^ABEND883(unrecognized Expr type *ast.MapType at: tests/big/src/net/http/header.go:20:13), :Body ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/response.go:66:7), :ContentLength ^Int, :TransferEncoding ^(vector-of String), :Close ^Bool, :Uncompressed ^Bool, :Trailer ^ABEND883(unrecognized Expr type *ast.MapType at: tests/big/src/net/http/header.go:20:13), :Request ^{:Method ^String, :URL ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/request.go:127:7), :Proto ^String, :ProtoMajor ^Int, :ProtoMinor ^Int, :Header ^ABEND883(unrecognized Expr type *ast.MapType at: tests/big/src/net/http/header.go:20:13), :Body ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/request.go:181:7), :GetBody ^ABEND883(unrecognized Expr type *ast.FuncType at: tests/big/src/net/http/request.go:189:10), :ContentLength ^Int, :TransferEncoding ^(vector-of String), :Close ^Bool, :Host ^String, :Form ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/request.go:241:7), :PostForm ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/request.go:248:11), :MultipartForm ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/request.go:253:17), :Trailer ^ABEND883(unrecognized Expr type *ast.MapType at: tests/big/src/net/http/header.go:20:13), :RemoteAddr ^String, :RequestURI ^String, :TLS ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/request.go:297:7), :Cancel ^ABEND883(unrecognized Expr type *ast.ChanType at: tests/big/src/net/http/request.go:308:9), :Response ^ABEND947(recursive type reference involving http.Response), :ctx ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/request.go:319:6)}, :TLS ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/response.go:115:7)} Error]"
+;;   "Post issues a POST to the specified URL.\n\nCaller should close resp.Body when done reading from it.\n\nIf the provided body is an io.Closer, it is closed after the\nrequest.\n\nPost is a wrapper around DefaultClient.Post.\n\nTo set custom headers, use NewRequest and DefaultClient.Do.\n\nSee the Client.Do method documentation for details on how redirects\nare handled.\nGo return type: (resp *Response, err error)\nJoker return type: [{:Status ^String, :StatusCode ^Int, :Proto ^String, :ProtoMajor ^Int, :ProtoMinor ^Int, :Header ^ABEND883(unrecognized Expr type *ast.MapType at: tests/big/src/net/http/header.go:20:13), :Body ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/response.go:66:7), :ContentLength ^Int, :TransferEncoding ^(vector-of String), :Close ^Bool, :Uncompressed ^Bool, :Trailer ^ABEND883(unrecognized Expr type *ast.MapType at: tests/big/src/net/http/header.go:20:13), :Request ^{:Method ^String, :URL ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/request.go:127:7), :Proto ^String, :ProtoMajor ^Int, :ProtoMinor ^Int, :Header ^ABEND883(unrecognized Expr type *ast.MapType at: tests/big/src/net/http/header.go:20:13), :Body ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/request.go:181:7), :GetBody ^ABEND883(unrecognized Expr type *ast.FuncType at: tests/big/src/net/http/request.go:189:10), :ContentLength ^Int, :TransferEncoding ^(vector-of String), :Close ^Bool, :Host ^String, :Form ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/request.go:241:7), :PostForm ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/request.go:248:11), :MultipartForm ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/request.go:253:17), :Trailer ^ABEND883(unrecognized Expr type *ast.MapType at: tests/big/src/net/http/header.go:20:13), :RemoteAddr ^String, :RequestURI ^String, :TLS ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/request.go:297:7), :Cancel ^ABEND883(unrecognized Expr type *ast.ChanType at: tests/big/src/net/http/request.go:308:9), :Response ^ABEND947(recursive type reference involving http.Response)}, :TLS ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/response.go:115:7)} Error]"
 ;;   {:added "1.0"
 ;;    :go "post(url, contentType, body)"}
 ;;   [^String url, ^String contentType, ^ABEND881(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/client.go:748:41) body])
 
 JOKER FUNC http.PostForm has:
 ;; (defn PostForm
-;;   "PostForm issues a POST to the specified URL, with data's keys and\nvalues URL-encoded as the request body.\n\nThe Content-Type header is set to application/x-www-form-urlencoded.\nTo set other headers, use NewRequest and DefaultClient.Do.\n\nWhen err is nil, resp always contains a non-nil resp.Body.\nCaller should close resp.Body when done reading from it.\n\nPostForm is a wrapper around DefaultClient.PostForm.\n\nSee the Client.Do method documentation for details on how redirects\nare handled.\nGo return type: (resp *Response, err error)\nJoker return type: [{:Status ^String, :StatusCode ^Int, :Proto ^String, :ProtoMajor ^Int, :ProtoMinor ^Int, :Header ^ABEND883(unrecognized Expr type *ast.MapType at: tests/big/src/net/http/header.go:20:13), :Body ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/response.go:66:7), :ContentLength ^Int, :TransferEncoding ^(vector-of String), :Close ^Bool, :Uncompressed ^Bool, :Trailer ^ABEND883(unrecognized Expr type *ast.MapType at: tests/big/src/net/http/header.go:20:13), :Request ^{:Method ^String, :URL ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/request.go:127:7), :Proto ^String, :ProtoMajor ^Int, :ProtoMinor ^Int, :Header ^ABEND883(unrecognized Expr type *ast.MapType at: tests/big/src/net/http/header.go:20:13), :Body ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/request.go:181:7), :GetBody ^ABEND883(unrecognized Expr type *ast.FuncType at: tests/big/src/net/http/request.go:189:10), :ContentLength ^Int, :TransferEncoding ^(vector-of String), :Close ^Bool, :Host ^String, :Form ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/request.go:241:7), :PostForm ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/request.go:248:11), :MultipartForm ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/request.go:253:17), :Trailer ^ABEND883(unrecognized Expr type *ast.MapType at: tests/big/src/net/http/header.go:20:13), :RemoteAddr ^String, :RequestURI ^String, :TLS ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/request.go:297:7), :Cancel ^ABEND883(unrecognized Expr type *ast.ChanType at: tests/big/src/net/http/request.go:308:9), :Response ^ABEND947(recursive type reference involving http.Response), :ctx ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/request.go:319:6)}, :TLS ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/response.go:115:7)} Error]"
+;;   "PostForm issues a POST to the specified URL, with data's keys and\nvalues URL-encoded as the request body.\n\nThe Content-Type header is set to application/x-www-form-urlencoded.\nTo set other headers, use NewRequest and DefaultClient.Do.\n\nWhen err is nil, resp always contains a non-nil resp.Body.\nCaller should close resp.Body when done reading from it.\n\nPostForm is a wrapper around DefaultClient.PostForm.\n\nSee the Client.Do method documentation for details on how redirects\nare handled.\nGo return type: (resp *Response, err error)\nJoker return type: [{:Status ^String, :StatusCode ^Int, :Proto ^String, :ProtoMajor ^Int, :ProtoMinor ^Int, :Header ^ABEND883(unrecognized Expr type *ast.MapType at: tests/big/src/net/http/header.go:20:13), :Body ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/response.go:66:7), :ContentLength ^Int, :TransferEncoding ^(vector-of String), :Close ^Bool, :Uncompressed ^Bool, :Trailer ^ABEND883(unrecognized Expr type *ast.MapType at: tests/big/src/net/http/header.go:20:13), :Request ^{:Method ^String, :URL ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/request.go:127:7), :Proto ^String, :ProtoMajor ^Int, :ProtoMinor ^Int, :Header ^ABEND883(unrecognized Expr type *ast.MapType at: tests/big/src/net/http/header.go:20:13), :Body ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/request.go:181:7), :GetBody ^ABEND883(unrecognized Expr type *ast.FuncType at: tests/big/src/net/http/request.go:189:10), :ContentLength ^Int, :TransferEncoding ^(vector-of String), :Close ^Bool, :Host ^String, :Form ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/request.go:241:7), :PostForm ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/request.go:248:11), :MultipartForm ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/request.go:253:17), :Trailer ^ABEND883(unrecognized Expr type *ast.MapType at: tests/big/src/net/http/header.go:20:13), :RemoteAddr ^String, :RequestURI ^String, :TLS ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/request.go:297:7), :Cancel ^ABEND883(unrecognized Expr type *ast.ChanType at: tests/big/src/net/http/request.go:308:9), :Response ^ABEND947(recursive type reference involving http.Response)}, :TLS ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/response.go:115:7)} Error]"
 ;;   {:added "1.0"
 ;;    :go "postForm(url, data)"}
 ;;   [^String url, ^ABEND881(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/client.go:785:32) data])
@@ -752,14 +752,14 @@ JOKER FUNC http.ProxyURL has:
 
 JOKER FUNC http.ReadRequest has:
 ;; (defn ReadRequest
-;;   "ReadRequest reads and parses an incoming request from b.\n\nReadRequest is a low-level function and should only be used for\nspecialized applications; most code should use the Server to read\nrequests and handle them via the Handler interface. ReadRequest\nonly supports HTTP/1.x requests. For HTTP/2, use golang.org/x/net/http2.\nGo return type: (*Request, error)\nJoker return type: [{:Method ^String, :URL ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/request.go:127:7), :Proto ^String, :ProtoMajor ^Int, :ProtoMinor ^Int, :Header ^ABEND883(unrecognized Expr type *ast.MapType at: tests/big/src/net/http/header.go:20:13), :Body ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/request.go:181:7), :GetBody ^ABEND883(unrecognized Expr type *ast.FuncType at: tests/big/src/net/http/request.go:189:10), :ContentLength ^Int, :TransferEncoding ^(vector-of String), :Close ^Bool, :Host ^String, :Form ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/request.go:241:7), :PostForm ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/request.go:248:11), :MultipartForm ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/request.go:253:17), :Trailer ^ABEND883(unrecognized Expr type *ast.MapType at: tests/big/src/net/http/header.go:20:13), :RemoteAddr ^String, :RequestURI ^String, :TLS ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/request.go:297:7), :Cancel ^ABEND883(unrecognized Expr type *ast.ChanType at: tests/big/src/net/http/request.go:308:9), :Response ^{:Status ^String, :StatusCode ^Int, :Proto ^String, :ProtoMajor ^Int, :ProtoMinor ^Int, :Header ^ABEND883(unrecognized Expr type *ast.MapType at: tests/big/src/net/http/header.go:20:13), :Body ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/response.go:66:7), :ContentLength ^Int, :TransferEncoding ^(vector-of String), :Close ^Bool, :Uncompressed ^Bool, :Trailer ^ABEND883(unrecognized Expr type *ast.MapType at: tests/big/src/net/http/header.go:20:13), :Request ^ABEND947(recursive type reference involving http.Request), :TLS ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/response.go:115:7)}, :ctx ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/request.go:319:6)} Error]"
+;;   "ReadRequest reads and parses an incoming request from b.\n\nReadRequest is a low-level function and should only be used for\nspecialized applications; most code should use the Server to read\nrequests and handle them via the Handler interface. ReadRequest\nonly supports HTTP/1.x requests. For HTTP/2, use golang.org/x/net/http2.\nGo return type: (*Request, error)\nJoker return type: [{:Method ^String, :URL ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/request.go:127:7), :Proto ^String, :ProtoMajor ^Int, :ProtoMinor ^Int, :Header ^ABEND883(unrecognized Expr type *ast.MapType at: tests/big/src/net/http/header.go:20:13), :Body ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/request.go:181:7), :GetBody ^ABEND883(unrecognized Expr type *ast.FuncType at: tests/big/src/net/http/request.go:189:10), :ContentLength ^Int, :TransferEncoding ^(vector-of String), :Close ^Bool, :Host ^String, :Form ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/request.go:241:7), :PostForm ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/request.go:248:11), :MultipartForm ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/request.go:253:17), :Trailer ^ABEND883(unrecognized Expr type *ast.MapType at: tests/big/src/net/http/header.go:20:13), :RemoteAddr ^String, :RequestURI ^String, :TLS ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/request.go:297:7), :Cancel ^ABEND883(unrecognized Expr type *ast.ChanType at: tests/big/src/net/http/request.go:308:9), :Response ^{:Status ^String, :StatusCode ^Int, :Proto ^String, :ProtoMajor ^Int, :ProtoMinor ^Int, :Header ^ABEND883(unrecognized Expr type *ast.MapType at: tests/big/src/net/http/header.go:20:13), :Body ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/response.go:66:7), :ContentLength ^Int, :TransferEncoding ^(vector-of String), :Close ^Bool, :Uncompressed ^Bool, :Trailer ^ABEND883(unrecognized Expr type *ast.MapType at: tests/big/src/net/http/header.go:20:13), :Request ^ABEND947(recursive type reference involving http.Request), :TLS ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/response.go:115:7)}} Error]"
 ;;   {:added "1.0"
 ;;    :go "readRequest(b)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/http/request.go:942:20) b])
 
 JOKER FUNC http.ReadResponse has:
 ;; (defn ReadResponse
-;;   "ReadResponse reads and returns an HTTP response from r.\nThe req parameter optionally specifies the Request that corresponds\nto this Response. If nil, a GET request is assumed.\nClients must call resp.Body.Close when finished reading resp.Body.\nAfter that call, clients can inspect resp.Trailer to find key/value\npairs included in the response trailer.\nGo return type: (*Response, error)\nJoker return type: [{:Status ^String, :StatusCode ^Int, :Proto ^String, :ProtoMajor ^Int, :ProtoMinor ^Int, :Header ^ABEND883(unrecognized Expr type *ast.MapType at: tests/big/src/net/http/header.go:20:13), :Body ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/response.go:66:7), :ContentLength ^Int, :TransferEncoding ^(vector-of String), :Close ^Bool, :Uncompressed ^Bool, :Trailer ^ABEND883(unrecognized Expr type *ast.MapType at: tests/big/src/net/http/header.go:20:13), :Request ^{:Method ^String, :URL ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/request.go:127:7), :Proto ^String, :ProtoMajor ^Int, :ProtoMinor ^Int, :Header ^ABEND883(unrecognized Expr type *ast.MapType at: tests/big/src/net/http/header.go:20:13), :Body ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/request.go:181:7), :GetBody ^ABEND883(unrecognized Expr type *ast.FuncType at: tests/big/src/net/http/request.go:189:10), :ContentLength ^Int, :TransferEncoding ^(vector-of String), :Close ^Bool, :Host ^String, :Form ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/request.go:241:7), :PostForm ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/request.go:248:11), :MultipartForm ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/request.go:253:17), :Trailer ^ABEND883(unrecognized Expr type *ast.MapType at: tests/big/src/net/http/header.go:20:13), :RemoteAddr ^String, :RequestURI ^String, :TLS ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/request.go:297:7), :Cancel ^ABEND883(unrecognized Expr type *ast.ChanType at: tests/big/src/net/http/request.go:308:9), :Response ^ABEND947(recursive type reference involving http.Response), :ctx ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/request.go:319:6)}, :TLS ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/response.go:115:7)} Error]"
+;;   "ReadResponse reads and returns an HTTP response from r.\nThe req parameter optionally specifies the Request that corresponds\nto this Response. If nil, a GET request is assumed.\nClients must call resp.Body.Close when finished reading resp.Body.\nAfter that call, clients can inspect resp.Trailer to find key/value\npairs included in the response trailer.\nGo return type: (*Response, error)\nJoker return type: [{:Status ^String, :StatusCode ^Int, :Proto ^String, :ProtoMajor ^Int, :ProtoMinor ^Int, :Header ^ABEND883(unrecognized Expr type *ast.MapType at: tests/big/src/net/http/header.go:20:13), :Body ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/response.go:66:7), :ContentLength ^Int, :TransferEncoding ^(vector-of String), :Close ^Bool, :Uncompressed ^Bool, :Trailer ^ABEND883(unrecognized Expr type *ast.MapType at: tests/big/src/net/http/header.go:20:13), :Request ^{:Method ^String, :URL ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/request.go:127:7), :Proto ^String, :ProtoMajor ^Int, :ProtoMinor ^Int, :Header ^ABEND883(unrecognized Expr type *ast.MapType at: tests/big/src/net/http/header.go:20:13), :Body ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/request.go:181:7), :GetBody ^ABEND883(unrecognized Expr type *ast.FuncType at: tests/big/src/net/http/request.go:189:10), :ContentLength ^Int, :TransferEncoding ^(vector-of String), :Close ^Bool, :Host ^String, :Form ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/request.go:241:7), :PostForm ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/request.go:248:11), :MultipartForm ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/request.go:253:17), :Trailer ^ABEND883(unrecognized Expr type *ast.MapType at: tests/big/src/net/http/header.go:20:13), :RemoteAddr ^String, :RequestURI ^String, :TLS ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/request.go:297:7), :Cancel ^ABEND883(unrecognized Expr type *ast.ChanType at: tests/big/src/net/http/request.go:308:9), :Response ^ABEND947(recursive type reference involving http.Response)}, :TLS ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/response.go:115:7)} Error]"
 ;;   {:added "1.0"
 ;;    :go "readResponse(r, req)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/http/response.go:148:21) r, ^ABEND881(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/http/response.go:148:40) req])
@@ -836,7 +836,7 @@ JOKER FUNC http.TimeoutHandler has:
 
 JOKER FUNC httptest.NewRecorder has:
 ;; (defn NewRecorder
-;;   "NewRecorder returns an initialized ResponseRecorder.\nGo return type: *ResponseRecorder\nJoker return type: {:Code ^Int, :HeaderMap ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/httptest/recorder.go:35:12), :Body ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/httptest/recorder.go:39:8), :Flushed ^Bool, :result ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/httptest/recorder.go:44:15), :snapHeader ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/httptest/recorder.go:45:14), :wroteHeader ^Bool}"
+;;   "NewRecorder returns an initialized ResponseRecorder.\nGo return type: *ResponseRecorder\nJoker return type: {:Code ^Int, :HeaderMap ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/httptest/recorder.go:35:12), :Body ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/httptest/recorder.go:39:8), :Flushed ^Bool}"
 ;;   {:added "1.0"
 ;;    :go "newRecorder()"}
 ;;   [])
@@ -850,21 +850,21 @@ JOKER FUNC httptest.NewRequest has:
 
 JOKER FUNC httptest.NewServer has:
 ;; (defn NewServer
-;;   "NewServer starts and returns a new Server.\nThe caller should call Close when finished, to shut it down.\nGo return type: *Server\nJoker return type: {:URL ^String, :Listener ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/httptest/server.go:28:11), :TLS ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/httptest/server.go:33:7), :Config ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/httptest/server.go:37:10), :certificate ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/httptest/server.go:40:15), :wg ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/httptest/server.go:44:5), :mu ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/httptest/server.go:46:9), :closed ^Bool, :conns ^ABEND883(unrecognized Expr type *ast.MapType at: tests/big/src/net/http/httptest/server.go:48:9), :client ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/httptest/server.go:52:10)}"
+;;   "NewServer starts and returns a new Server.\nThe caller should call Close when finished, to shut it down.\nGo return type: *Server\nJoker return type: {:URL ^String, :Listener ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/httptest/server.go:28:11), :TLS ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/httptest/server.go:33:7), :Config ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/httptest/server.go:37:10)}"
 ;;   {:added "1.0"
 ;;    :go "newServer(handler)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/httptest/server.go:80:24) handler])
 
 JOKER FUNC httptest.NewTLSServer has:
 ;; (defn NewTLSServer
-;;   "NewTLSServer starts and returns a new Server using TLS.\nThe caller should call Close when finished, to shut it down.\nGo return type: *Server\nJoker return type: {:URL ^String, :Listener ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/httptest/server.go:28:11), :TLS ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/httptest/server.go:33:7), :Config ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/httptest/server.go:37:10), :certificate ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/httptest/server.go:40:15), :wg ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/httptest/server.go:44:5), :mu ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/httptest/server.go:46:9), :closed ^Bool, :conns ^ABEND883(unrecognized Expr type *ast.MapType at: tests/big/src/net/http/httptest/server.go:48:9), :client ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/httptest/server.go:52:10)}"
+;;   "NewTLSServer starts and returns a new Server using TLS.\nThe caller should call Close when finished, to shut it down.\nGo return type: *Server\nJoker return type: {:URL ^String, :Listener ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/httptest/server.go:28:11), :TLS ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/httptest/server.go:33:7), :Config ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/httptest/server.go:37:10)}"
 ;;   {:added "1.0"
 ;;    :go "newTLSServer(handler)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/httptest/server.go:160:27) handler])
 
 JOKER FUNC httptest.NewUnstartedServer has:
 ;; (defn NewUnstartedServer
-;;   "NewUnstartedServer returns a new Server but doesn't start it.\n\nAfter changing its configuration, the caller should call Start or\nStartTLS.\n\nThe caller should call Close when finished, to shut it down.\nGo return type: *Server\nJoker return type: {:URL ^String, :Listener ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/httptest/server.go:28:11), :TLS ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/httptest/server.go:33:7), :Config ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/httptest/server.go:37:10), :certificate ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/httptest/server.go:40:15), :wg ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/httptest/server.go:44:5), :mu ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/httptest/server.go:46:9), :closed ^Bool, :conns ^ABEND883(unrecognized Expr type *ast.MapType at: tests/big/src/net/http/httptest/server.go:48:9), :client ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/httptest/server.go:52:10)}"
+;;   "NewUnstartedServer returns a new Server but doesn't start it.\n\nAfter changing its configuration, the caller should call Start or\nStartTLS.\n\nThe caller should call Close when finished, to shut it down.\nGo return type: *Server\nJoker return type: {:URL ^String, :Listener ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/httptest/server.go:28:11), :TLS ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/httptest/server.go:33:7), :Config ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/httptest/server.go:37:10)}"
 ;;   {:added "1.0"
 ;;    :go "newUnstartedServer(handler)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/httptest/server.go:92:33) handler])
@@ -920,21 +920,21 @@ JOKER FUNC httputil.NewChunkedWriter has:
 
 JOKER FUNC httputil.NewClientConn has:
 ;; (defn NewClientConn
-;;   "NewClientConn is an artifact of Go's early HTTP implementation.\nIt is low-level, old, and unused by Go's current HTTP stack.\nWe should have deleted it before Go 1.\n\nDeprecated: Use the Client or Transport in package net/http instead.\nGo return type: *ClientConn\nJoker return type: {:mu ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/httputil/persist.go:231:18), :c ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/httputil/persist.go:232:18), :r ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/httputil/persist.go:233:19), :re ^Error, :we ^Error, :lastbody ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/httputil/persist.go:235:18), :nread ^Int, :nwritten ^Int, :pipereq ^ABEND883(unrecognized Expr type *ast.MapType at: tests/big/src/net/http/httputil/persist.go:237:18), :pipe ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/httputil/persist.go:239:11), :writeReq ^ABEND883(unrecognized Expr type *ast.FuncType at: tests/big/src/net/http/httputil/persist.go:240:11)}"
+;;   "NewClientConn is an artifact of Go's early HTTP implementation.\nIt is low-level, old, and unused by Go's current HTTP stack.\nWe should have deleted it before Go 1.\n\nDeprecated: Use the Client or Transport in package net/http instead.\nGo return type: *ClientConn\nJoker return type: {}"
 ;;   {:added "1.0"
 ;;    :go "newClientConn(c, r)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/httputil/persist.go:248:22) c, ^ABEND881(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/http/httputil/persist.go:248:34) r])
 
 JOKER FUNC httputil.NewProxyClientConn has:
 ;; (defn NewProxyClientConn
-;;   "NewProxyClientConn is an artifact of Go's early HTTP implementation.\nIt is low-level, old, and unused by Go's current HTTP stack.\nWe should have deleted it before Go 1.\n\nDeprecated: Use the Client or Transport in package net/http instead.\nGo return type: *ClientConn\nJoker return type: {:mu ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/httputil/persist.go:231:18), :c ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/httputil/persist.go:232:18), :r ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/httputil/persist.go:233:19), :re ^Error, :we ^Error, :lastbody ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/httputil/persist.go:235:18), :nread ^Int, :nwritten ^Int, :pipereq ^ABEND883(unrecognized Expr type *ast.MapType at: tests/big/src/net/http/httputil/persist.go:237:18), :pipe ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/httputil/persist.go:239:11), :writeReq ^ABEND883(unrecognized Expr type *ast.FuncType at: tests/big/src/net/http/httputil/persist.go:240:11)}"
+;;   "NewProxyClientConn is an artifact of Go's early HTTP implementation.\nIt is low-level, old, and unused by Go's current HTTP stack.\nWe should have deleted it before Go 1.\n\nDeprecated: Use the Client or Transport in package net/http instead.\nGo return type: *ClientConn\nJoker return type: {}"
 ;;   {:added "1.0"
 ;;    :go "newProxyClientConn(c, r)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/httputil/persist.go:265:27) c, ^ABEND881(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/http/httputil/persist.go:265:39) r])
 
 JOKER FUNC httputil.NewServerConn has:
 ;; (defn NewServerConn
-;;   "NewServerConn is an artifact of Go's early HTTP implementation.\nIt is low-level, old, and unused by Go's current HTTP stack.\nWe should have deleted it before Go 1.\n\nDeprecated: Use the Server in package net/http instead.\nGo return type: *ServerConn\nJoker return type: {:mu ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/httputil/persist.go:38:18), :c ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/httputil/persist.go:39:18), :r ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/httputil/persist.go:40:19), :re ^Error, :we ^Error, :lastbody ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/httputil/persist.go:42:18), :nread ^Int, :nwritten ^Int, :pipereq ^ABEND883(unrecognized Expr type *ast.MapType at: tests/big/src/net/http/httputil/persist.go:44:18), :pipe ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/httputil/persist.go:46:7)}"
+;;   "NewServerConn is an artifact of Go's early HTTP implementation.\nIt is low-level, old, and unused by Go's current HTTP stack.\nWe should have deleted it before Go 1.\n\nDeprecated: Use the Server in package net/http instead.\nGo return type: *ServerConn\nJoker return type: {}"
 ;;   {:added "1.0"
 ;;    :go "newServerConn(c, r)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/httputil/persist.go:54:22) c, ^ABEND881(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/http/httputil/persist.go:54:34) r])
@@ -1158,7 +1158,7 @@ JOKER FUNC net.ListenPacket has:
 
 JOKER FUNC net.ListenTCP has:
 ;; (defn ListenTCP
-;;   "ListenTCP acts like Listen for TCP networks.\n\nThe network must be a TCP network name; see func Dial for details.\n\nIf the IP field of laddr is nil or an unspecified IP address,\nListenTCP listens on all available unicast and anycast IP addresses\nof the local system.\nIf the Port field of laddr is 0, a port number is automatically\nchosen.\nGo return type: (*TCPListener, error)\nJoker return type: [{:fd ^ABEND042(cannot find typename net.netFD)} Error]"
+;;   "ListenTCP acts like Listen for TCP networks.\n\nThe network must be a TCP network name; see func Dial for details.\n\nIf the IP field of laddr is nil or an unspecified IP address,\nListenTCP listens on all available unicast and anycast IP addresses\nof the local system.\nIf the Port field of laddr is 0, a port number is automatically\nchosen.\nGo return type: (*TCPListener, error)\nJoker return type: [{} Error]"
 ;;   {:added "1.0"
 ;;    :go "listenTCP(network, laddr)"}
 ;;   [^String network, ^ABEND881(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/tcpsock.go:323:38) laddr])
@@ -1172,7 +1172,7 @@ JOKER FUNC net.ListenUDP has:
 
 JOKER FUNC net.ListenUnix has:
 ;; (defn ListenUnix
-;;   "ListenUnix acts like Listen for Unix networks.\n\nThe network must be \"unix\" or \"unixpacket\".\nGo return type: (*UnixListener, error)\nJoker return type: [{:fd ^ABEND042(cannot find typename net.netFD), :path ^String, :unlink ^Bool, :unlinkOnce ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/unixsock.go:221:13)} Error]"
+;;   "ListenUnix acts like Listen for Unix networks.\n\nThe network must be \"unix\" or \"unixpacket\".\nGo return type: (*UnixListener, error)\nJoker return type: [{} Error]"
 ;;   {:added "1.0"
 ;;    :go "listenUnix(network, laddr)"}
 ;;   [^String network, ^ABEND881(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/unixsock.go:314:39) laddr])
@@ -1360,25 +1360,25 @@ JOKER FUNC rpc.Accept has:
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/rpc/server.go:692:17) lis])
 
 JOKER FUNC rpc.Dial has:
-;; (defn Dial
-;;   "Dial connects to an RPC server at the specified network address.\nGo return type: (*Client, error)\nJoker return type: [{:codec ^ABEND883(unrecognized Expr type *ast.InterfaceType at: tests/big/src/net/rpc/client.go:63:18), :reqMutex ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/rpc/client.go:44:11), :request ^{:ServiceMethod ^String, :Seq ^ABEND042(cannot find typename rpc.uint64), :next ^ABEND947(recursive type reference involving rpc.Request)}, :mutex ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/rpc/client.go:47:11), :seq ^ABEND042(cannot find typename rpc.uint64), :pending ^ABEND883(unrecognized Expr type *ast.MapType at: tests/big/src/net/rpc/client.go:49:11), :closing ^Bool, :shutdown ^Bool} Error]"
-;;   {:added "1.0"
-;;    :go "dial(network, address)"}
-;;   [^String network, ^String address])
+(defn Dial
+  "Dial connects to an RPC server at the specified network address.\nGo return type: (*Client, error)\nJoker return type: [{} Error]"
+  {:added "1.0"
+   :go "dial(network, address)"}
+  [^String network, ^String address])
 
 JOKER FUNC rpc.DialHTTP has:
-;; (defn DialHTTP
-;;   "DialHTTP connects to an HTTP RPC server at the specified network address\nlistening on the default HTTP RPC path.\nGo return type: (*Client, error)\nJoker return type: [{:codec ^ABEND883(unrecognized Expr type *ast.InterfaceType at: tests/big/src/net/rpc/client.go:63:18), :reqMutex ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/rpc/client.go:44:11), :request ^{:ServiceMethod ^String, :Seq ^ABEND042(cannot find typename rpc.uint64), :next ^ABEND947(recursive type reference involving rpc.Request)}, :mutex ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/rpc/client.go:47:11), :seq ^ABEND042(cannot find typename rpc.uint64), :pending ^ABEND883(unrecognized Expr type *ast.MapType at: tests/big/src/net/rpc/client.go:49:11), :closing ^Bool, :shutdown ^Bool} Error]"
-;;   {:added "1.0"
-;;    :go "dialHTTP(network, address)"}
-;;   [^String network, ^String address])
+(defn DialHTTP
+  "DialHTTP connects to an HTTP RPC server at the specified network address\nlistening on the default HTTP RPC path.\nGo return type: (*Client, error)\nJoker return type: [{} Error]"
+  {:added "1.0"
+   :go "dialHTTP(network, address)"}
+  [^String network, ^String address])
 
 JOKER FUNC rpc.DialHTTPPath has:
-;; (defn DialHTTPPath
-;;   "DialHTTPPath connects to an HTTP RPC server\nat the specified network address and path.\nGo return type: (*Client, error)\nJoker return type: [{:codec ^ABEND883(unrecognized Expr type *ast.InterfaceType at: tests/big/src/net/rpc/client.go:63:18), :reqMutex ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/rpc/client.go:44:11), :request ^{:ServiceMethod ^String, :Seq ^ABEND042(cannot find typename rpc.uint64), :next ^ABEND947(recursive type reference involving rpc.Request)}, :mutex ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/rpc/client.go:47:11), :seq ^ABEND042(cannot find typename rpc.uint64), :pending ^ABEND883(unrecognized Expr type *ast.MapType at: tests/big/src/net/rpc/client.go:49:11), :closing ^Bool, :shutdown ^Bool} Error]"
-;;   {:added "1.0"
-;;    :go "dialHTTPPath(network, address, path)"}
-;;   [^String network, ^String address, ^String path])
+(defn DialHTTPPath
+  "DialHTTPPath connects to an HTTP RPC server\nat the specified network address and path.\nGo return type: (*Client, error)\nJoker return type: [{} Error]"
+  {:added "1.0"
+   :go "dialHTTPPath(network, address, path)"}
+  [^String network, ^String address, ^String path])
 
 JOKER FUNC rpc.HandleHTTP has:
 ;; (defn HandleHTTP
@@ -1389,21 +1389,21 @@ JOKER FUNC rpc.HandleHTTP has:
 
 JOKER FUNC rpc.NewClient has:
 ;; (defn NewClient
-;;   "NewClient returns a new Client to handle requests to the\nset of services at the other end of the connection.\nIt adds a buffer to the write side of the connection so\nthe header and payload are sent as a unit.\n\nThe read and write halves of the connection are serialized independently,\nso no interlocking is required. However each half may be accessed\nconcurrently so the implementation of conn should protect against\nconcurrent reads or concurrent writes.\nGo return type: *Client\nJoker return type: {:codec ^ABEND883(unrecognized Expr type *ast.InterfaceType at: tests/big/src/net/rpc/client.go:63:18), :reqMutex ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/rpc/client.go:44:11), :request ^{:ServiceMethod ^String, :Seq ^ABEND042(cannot find typename rpc.uint64), :next ^ABEND947(recursive type reference involving rpc.Request)}, :mutex ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/rpc/client.go:47:11), :seq ^ABEND042(cannot find typename rpc.uint64), :pending ^ABEND883(unrecognized Expr type *ast.MapType at: tests/big/src/net/rpc/client.go:49:11), :closing ^Bool, :shutdown ^Bool}"
+;;   "NewClient returns a new Client to handle requests to the\nset of services at the other end of the connection.\nIt adds a buffer to the write side of the connection so\nthe header and payload are sent as a unit.\n\nThe read and write halves of the connection are serialized independently,\nso no interlocking is required. However each half may be accessed\nconcurrently so the implementation of conn should protect against\nconcurrent reads or concurrent writes.\nGo return type: *Client\nJoker return type: {}"
 ;;   {:added "1.0"
 ;;    :go "newClient(conn)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/rpc/client.go:193:21) conn])
 
 JOKER FUNC rpc.NewClientWithCodec has:
 ;; (defn NewClientWithCodec
-;;   "NewClientWithCodec is like NewClient but uses the specified\ncodec to encode requests and decode responses.\nGo return type: *Client\nJoker return type: {:codec ^ABEND883(unrecognized Expr type *ast.InterfaceType at: tests/big/src/net/rpc/client.go:63:18), :reqMutex ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/rpc/client.go:44:11), :request ^{:ServiceMethod ^String, :Seq ^ABEND042(cannot find typename rpc.uint64), :next ^ABEND947(recursive type reference involving rpc.Request)}, :mutex ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/rpc/client.go:47:11), :seq ^ABEND042(cannot find typename rpc.uint64), :pending ^ABEND883(unrecognized Expr type *ast.MapType at: tests/big/src/net/rpc/client.go:49:11), :closing ^Bool, :shutdown ^Bool}"
+;;   "NewClientWithCodec is like NewClient but uses the specified\ncodec to encode requests and decode responses.\nGo return type: *Client\nJoker return type: {}"
 ;;   {:added "1.0"
 ;;    :go "newClientWithCodec(codec)"}
 ;;   [codec])
 
 JOKER FUNC rpc.NewServer has:
 ;; (defn NewServer
-;;   "NewServer returns a new Server.\nGo return type: *Server\nJoker return type: {:serviceMap ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/rpc/server.go:190:13), :reqLock ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/rpc/server.go:191:13), :freeReq ^{:ServiceMethod ^String, :Seq ^ABEND042(cannot find typename rpc.uint64), :next ^ABEND947(recursive type reference involving rpc.Request)}, :respLock ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/rpc/server.go:193:13), :freeResp ^{:ServiceMethod ^String, :Seq ^ABEND042(cannot find typename rpc.uint64), :Error ^String, :next ^ABEND947(recursive type reference involving rpc.Response)}}"
+;;   "NewServer returns a new Server.\nGo return type: *Server\nJoker return type: {}"
 ;;   {:added "1.0"
 ;;    :go "newServer()"}
 ;;   [])
@@ -1452,14 +1452,14 @@ JOKER FUNC smtp.CRAMMD5Auth has:
 
 JOKER FUNC smtp.Dial has:
 ;; (defn Dial
-;;   "Dial returns a new Client connected to an SMTP server at addr.\nThe addr must include a port, as in \"mail.example.com:smtp\".\nGo return type: (*Client, error)\nJoker return type: [{:Text ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/smtp/smtp.go:33:8), :conn ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/smtp/smtp.go:36:7), :tls ^Bool, :serverName ^String, :ext ^ABEND883(unrecognized Expr type *ast.MapType at: tests/big/src/net/smtp/smtp.go:41:6), :auth ^(vector-of String), :localName ^String, :didHello ^Bool, :helloError ^Error} Error]"
+;;   "Dial returns a new Client connected to an SMTP server at addr.\nThe addr must include a port, as in \"mail.example.com:smtp\".\nGo return type: (*Client, error)\nJoker return type: [{:Text ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/smtp/smtp.go:33:8)} Error]"
 ;;   {:added "1.0"
 ;;    :go "dial(addr)"}
 ;;   [^String addr])
 
 JOKER FUNC smtp.NewClient has:
 ;; (defn NewClient
-;;   "NewClient returns a new Client using an existing connection and host as a\nserver name to be used when authenticating.\nGo return type: (*Client, error)\nJoker return type: [{:Text ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/smtp/smtp.go:33:8), :conn ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/smtp/smtp.go:36:7), :tls ^Bool, :serverName ^String, :ext ^ABEND883(unrecognized Expr type *ast.MapType at: tests/big/src/net/smtp/smtp.go:41:6), :auth ^(vector-of String), :localName ^String, :didHello ^Bool, :helloError ^Error} Error]"
+;;   "NewClient returns a new Client using an existing connection and host as a\nserver name to be used when authenticating.\nGo return type: (*Client, error)\nJoker return type: [{:Text ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/smtp/smtp.go:33:8)} Error]"
 ;;   {:added "1.0"
 ;;    :go "newClient(conn, host)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/smtp/smtp.go:62:21) conn, ^String host])
@@ -1486,29 +1486,29 @@ JOKER FUNC textproto.CanonicalMIMEHeaderKey has:
   [^String s])
 
 JOKER FUNC textproto.Dial has:
-;; (defn Dial
-;;   "Dial connects to the given address on the given network using net.Dial\nand then returns a new Conn for the connection.\nGo return type: (*Conn, error)\nJoker return type: [{:conn ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/textproto/textproto.go:62:7)} Error]"
-;;   {:added "1.0"
-;;    :go "dial(network, addr)"}
-;;   [^String network, ^String addr])
+(defn Dial
+  "Dial connects to the given address on the given network using net.Dial\nand then returns a new Conn for the connection.\nGo return type: (*Conn, error)\nJoker return type: [{} Error]"
+  {:added "1.0"
+   :go "dial(network, addr)"}
+  [^String network, ^String addr])
 
 JOKER FUNC textproto.NewConn has:
 ;; (defn NewConn
-;;   "NewConn returns a new Conn using conn for I/O.\nGo return type: *Conn\nJoker return type: {:conn ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/textproto/textproto.go:62:7)}"
+;;   "NewConn returns a new Conn using conn for I/O.\nGo return type: *Conn\nJoker return type: {}"
 ;;   {:added "1.0"
 ;;    :go "newConn(conn)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/textproto/textproto.go:66:19) conn])
 
 JOKER FUNC textproto.NewReader has:
 ;; (defn NewReader
-;;   "NewReader returns a new Reader reading from r.\n\nTo avoid denial of service attacks, the provided bufio.Reader\nshould be reading from an io.LimitReader or similar Reader to bound\nthe size of responses.\nGo return type: *Reader\nJoker return type: {:R ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/textproto/reader.go:19:7), :dot ^ABEND042(cannot find typename textproto.dotReader), :buf ^(vector-of Int)}"
+;;   "NewReader returns a new Reader reading from r.\n\nTo avoid denial of service attacks, the provided bufio.Reader\nshould be reading from an io.LimitReader or similar Reader to bound\nthe size of responses.\nGo return type: *Reader\nJoker return type: {:R ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/textproto/reader.go:19:7)}"
 ;;   {:added "1.0"
 ;;    :go "newReader(r)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/textproto/reader.go:29:18) r])
 
 JOKER FUNC textproto.NewWriter has:
 ;; (defn NewWriter
-;;   "NewWriter returns a new Writer writing to w.\nGo return type: *Writer\nJoker return type: {:W ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/textproto/writer.go:16:7), :dot ^ABEND042(cannot find typename textproto.dotWriter)}"
+;;   "NewWriter returns a new Writer writing to w.\nGo return type: *Writer\nJoker return type: {:W ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/textproto/writer.go:16:7)}"
 ;;   {:added "1.0"
 ;;    :go "newWriter(w)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/textproto/writer.go:21:18) w])
@@ -1529,7 +1529,7 @@ JOKER FUNC textproto.TrimString has:
 
 JOKER FUNC url.Parse has:
 (defn Parse
-  "Parse parses rawurl into a URL structure.\n\nThe rawurl may be relative (a path, without a host) or absolute\n(starting with a scheme). Trying to parse a hostname and path\nwithout a scheme is invalid but may not necessarily return an\nerror, due to parsing ambiguities.\nGo return type: (*URL, error)\nJoker return type: [{:Scheme ^String, :Opaque ^String, :User ^{:username ^String, :password ^String, :passwordSet ^Bool}, :Host ^String, :Path ^String, :RawPath ^String, :ForceQuery ^Bool, :RawQuery ^String, :Fragment ^String} Error]"
+  "Parse parses rawurl into a URL structure.\n\nThe rawurl may be relative (a path, without a host) or absolute\n(starting with a scheme). Trying to parse a hostname and path\nwithout a scheme is invalid but may not necessarily return an\nerror, due to parsing ambiguities.\nGo return type: (*URL, error)\nJoker return type: [{:Scheme ^String, :Opaque ^String, :User ^{}, :Host ^String, :Path ^String, :RawPath ^String, :ForceQuery ^Bool, :RawQuery ^String, :Fragment ^String} Error]"
   {:added "1.0"
    :go "parse(rawurl)"}
   [^String rawurl])
@@ -1543,7 +1543,7 @@ JOKER FUNC url.ParseQuery has:
 
 JOKER FUNC url.ParseRequestURI has:
 (defn ParseRequestURI
-  "ParseRequestURI parses rawurl into a URL structure. It assumes that\nrawurl was received in an HTTP request, so the rawurl is interpreted\nonly as an absolute URI or an absolute path.\nThe string rawurl is assumed not to have a #fragment suffix.\n(Web browsers strip #fragment before sending the URL to a web server.)\nGo return type: (*URL, error)\nJoker return type: [{:Scheme ^String, :Opaque ^String, :User ^{:username ^String, :password ^String, :passwordSet ^Bool}, :Host ^String, :Path ^String, :RawPath ^String, :ForceQuery ^Bool, :RawQuery ^String, :Fragment ^String} Error]"
+  "ParseRequestURI parses rawurl into a URL structure. It assumes that\nrawurl was received in an HTTP request, so the rawurl is interpreted\nonly as an absolute URI or an absolute path.\nThe string rawurl is assumed not to have a #fragment suffix.\n(Web browsers strip #fragment before sending the URL to a web server.)\nGo return type: (*URL, error)\nJoker return type: [{:Scheme ^String, :Opaque ^String, :User ^{}, :Host ^String, :Path ^String, :RawPath ^String, :ForceQuery ^Bool, :RawQuery ^String, :Fragment ^String} Error]"
   {:added "1.0"
    :go "parseRequestURI(rawurl)"}
   [^String rawurl])
@@ -1577,18 +1577,18 @@ JOKER FUNC url.QueryUnescape has:
   [^String s])
 
 JOKER FUNC url.User has:
-(defn User
-  "User returns a Userinfo containing the provided username\nand no password set.\nGo return type: *Userinfo\nJoker return type: {:username ^String, :password ^String, :passwordSet ^Bool}"
-  {:added "1.0"
-   :go "user(username)"}
-  [^String username])
+;; (defn User
+;;   "User returns a Userinfo containing the provided username\nand no password set.\nGo return type: *Userinfo\nJoker return type: {}"
+;;   {:added "1.0"
+;;    :go "user(username)"}
+;;   [^String username])
 
 JOKER FUNC url.UserPassword has:
-(defn UserPassword
-  "UserPassword returns a Userinfo containing the provided username\nand password.\n\nThis functionality should only be used with legacy web sites.\nRFC 2396 warns that interpreting Userinfo this way\n``is NOT RECOMMENDED, because the passing of authentication\ninformation in clear text (such as URI) has proven to be a\nsecurity risk in almost every case where it has been used.''\nGo return type: *Userinfo\nJoker return type: {:username ^String, :password ^String, :passwordSet ^Bool}"
-  {:added "1.0"
-   :go "userPassword(username, password)"}
-  [^String username, ^String password])
+;; (defn UserPassword
+;;   "UserPassword returns a Userinfo containing the provided username\nand password.\n\nThis functionality should only be used with legacy web sites.\nRFC 2396 warns that interpreting Userinfo this way\n``is NOT RECOMMENDED, because the passing of authentication\ninformation in clear text (such as URI) has proven to be a\nsecurity risk in almost every case where it has been used.''\nGo return type: *Userinfo\nJoker return type: {}"
+;;   {:added "1.0"
+;;    :go "userPassword(username, password)"}
+;;   [^String username, ^String password])
 
 GO FUNC cgi.Request has:
 // func request() Object {
@@ -1612,12 +1612,7 @@ GO FUNC cookiejar.New has:
 // func new(o ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/http/cookiejar/jar.go:77:12)) Object {
 // 	res1, res2 := cookiejar.New(o)
 // 	res := EmptyVector
-// 	map1 := EmptyArrayMap()
-// 	map1.Add(MakeKeyword("psList"), (*res1).psList)
-// 	map1.Add(MakeKeyword("mu"), (*res1).mu)
-// 	map1.Add(MakeKeyword("entries"), (*res1).entries)
-// 	map1.Add(MakeKeyword("nextSeqNum"), )
-// 	res = res.Conjoin(map1)
+// 	res = res.Conjoin(NIL)
 // 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
 // 	return res
 // }
@@ -1685,7 +1680,6 @@ GO FUNC http.Get has:
 // 	map3.Add(MakeKeyword("TLS"), (*(*(*resp).Request).TLS))
 // 	map3.Add(MakeKeyword("Cancel"), (*(*resp).Request).Cancel)
 // 	map3.Add(MakeKeyword("Response"), )
-// 	map3.Add(MakeKeyword("ctx"), (*(*resp).Request).ctx)
 // 	map1.Add(MakeKeyword("Request"), map3)
 // 	map1.Add(MakeKeyword("TLS"), (*(*resp).TLS))
 // 	res = res.Conjoin(map1)
@@ -1752,7 +1746,6 @@ GO FUNC http.Head has:
 // 	map3.Add(MakeKeyword("TLS"), (*(*(*resp).Request).TLS))
 // 	map3.Add(MakeKeyword("Cancel"), (*(*resp).Request).Cancel)
 // 	map3.Add(MakeKeyword("Response"), )
-// 	map3.Add(MakeKeyword("ctx"), (*(*resp).Request).ctx)
 // 	map1.Add(MakeKeyword("Request"), map3)
 // 	map1.Add(MakeKeyword("TLS"), (*(*resp).TLS))
 // 	res = res.Conjoin(map1)
@@ -1819,7 +1812,6 @@ GO FUNC http.NewRequest has:
 // 	map3.Add(MakeKeyword("Request"), )
 // 	map3.Add(MakeKeyword("TLS"), (*(*(*res1).Response).TLS))
 // 	map1.Add(MakeKeyword("Response"), map3)
-// 	map1.Add(MakeKeyword("ctx"), (*res1).ctx)
 // 	res = res.Conjoin(map1)
 // 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
 // 	return res
@@ -1827,12 +1819,8 @@ GO FUNC http.NewRequest has:
 
 GO FUNC http.NewServeMux has:
 // func newServeMux() Object {
-// 	res := http.NewServeMux()
-// 	map1 := EmptyArrayMap()
-// 	map1.Add(MakeKeyword("mu"), (*res).mu)
-// 	map1.Add(MakeKeyword("m"), (*res).m)
-// 	map1.Add(MakeKeyword("hosts"), MakeBool((*res).hosts))
-// 	return map1
+// 	return http.NewServeMux()
+// 	ABEND124(no public information returned)
 // }
 
 GO FUNC http.NotFound has:
@@ -1912,7 +1900,6 @@ GO FUNC http.Post has:
 // 	map3.Add(MakeKeyword("TLS"), (*(*(*resp).Request).TLS))
 // 	map3.Add(MakeKeyword("Cancel"), (*(*resp).Request).Cancel)
 // 	map3.Add(MakeKeyword("Response"), )
-// 	map3.Add(MakeKeyword("ctx"), (*(*resp).Request).ctx)
 // 	map1.Add(MakeKeyword("Request"), map3)
 // 	map1.Add(MakeKeyword("TLS"), (*(*resp).TLS))
 // 	res = res.Conjoin(map1)
@@ -1967,7 +1954,6 @@ GO FUNC http.PostForm has:
 // 	map3.Add(MakeKeyword("TLS"), (*(*(*resp).Request).TLS))
 // 	map3.Add(MakeKeyword("Cancel"), (*(*resp).Request).Cancel)
 // 	map3.Add(MakeKeyword("Response"), )
-// 	map3.Add(MakeKeyword("ctx"), (*(*resp).Request).ctx)
 // 	map1.Add(MakeKeyword("Request"), map3)
 // 	map1.Add(MakeKeyword("TLS"), (*(*resp).TLS))
 // 	res = res.Conjoin(map1)
@@ -2038,7 +2024,6 @@ GO FUNC http.ReadRequest has:
 // 	map3.Add(MakeKeyword("Request"), )
 // 	map3.Add(MakeKeyword("TLS"), (*(*(*res1).Response).TLS))
 // 	map1.Add(MakeKeyword("Response"), map3)
-// 	map1.Add(MakeKeyword("ctx"), (*res1).ctx)
 // 	res = res.Conjoin(map1)
 // 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
 // 	return res
@@ -2091,7 +2076,6 @@ GO FUNC http.ReadResponse has:
 // 	map3.Add(MakeKeyword("TLS"), (*(*(*res1).Request).TLS))
 // 	map3.Add(MakeKeyword("Cancel"), (*(*res1).Request).Cancel)
 // 	map3.Add(MakeKeyword("Response"), )
-// 	map3.Add(MakeKeyword("ctx"), (*(*res1).Request).ctx)
 // 	map1.Add(MakeKeyword("Request"), map3)
 // 	map1.Add(MakeKeyword("TLS"), (*(*res1).TLS))
 // 	res = res.Conjoin(map1)
@@ -2146,9 +2130,6 @@ GO FUNC httptest.NewRecorder has:
 // 	map1.Add(MakeKeyword("HeaderMap"), (*res).HeaderMap)
 // 	map1.Add(MakeKeyword("Body"), (*(*res).Body))
 // 	map1.Add(MakeKeyword("Flushed"), MakeBool((*res).Flushed))
-// 	map1.Add(MakeKeyword("result"), (*(*res).result))
-// 	map1.Add(MakeKeyword("snapHeader"), (*res).snapHeader)
-// 	map1.Add(MakeKeyword("wroteHeader"), MakeBool((*res).wroteHeader))
 // 	return map1
 // }
 
@@ -2165,12 +2146,6 @@ GO FUNC httptest.NewServer has:
 // 	map1.Add(MakeKeyword("Listener"), (*res).Listener)
 // 	map1.Add(MakeKeyword("TLS"), (*(*res).TLS))
 // 	map1.Add(MakeKeyword("Config"), (*(*res).Config))
-// 	map1.Add(MakeKeyword("certificate"), (*(*res).certificate))
-// 	map1.Add(MakeKeyword("wg"), (*res).wg)
-// 	map1.Add(MakeKeyword("mu"), (*res).mu)
-// 	map1.Add(MakeKeyword("closed"), MakeBool((*res).closed))
-// 	map1.Add(MakeKeyword("conns"), (*res).conns)
-// 	map1.Add(MakeKeyword("client"), (*(*res).client))
 // 	return map1
 // }
 
@@ -2182,12 +2157,6 @@ GO FUNC httptest.NewTLSServer has:
 // 	map1.Add(MakeKeyword("Listener"), (*res).Listener)
 // 	map1.Add(MakeKeyword("TLS"), (*(*res).TLS))
 // 	map1.Add(MakeKeyword("Config"), (*(*res).Config))
-// 	map1.Add(MakeKeyword("certificate"), (*(*res).certificate))
-// 	map1.Add(MakeKeyword("wg"), (*res).wg)
-// 	map1.Add(MakeKeyword("mu"), (*res).mu)
-// 	map1.Add(MakeKeyword("closed"), MakeBool((*res).closed))
-// 	map1.Add(MakeKeyword("conns"), (*res).conns)
-// 	map1.Add(MakeKeyword("client"), (*(*res).client))
 // 	return map1
 // }
 
@@ -2199,12 +2168,6 @@ GO FUNC httptest.NewUnstartedServer has:
 // 	map1.Add(MakeKeyword("Listener"), (*res).Listener)
 // 	map1.Add(MakeKeyword("TLS"), (*(*res).TLS))
 // 	map1.Add(MakeKeyword("Config"), (*(*res).Config))
-// 	map1.Add(MakeKeyword("certificate"), (*(*res).certificate))
-// 	map1.Add(MakeKeyword("wg"), (*res).wg)
-// 	map1.Add(MakeKeyword("mu"), (*res).mu)
-// 	map1.Add(MakeKeyword("closed"), MakeBool((*res).closed))
-// 	map1.Add(MakeKeyword("conns"), (*res).conns)
-// 	map1.Add(MakeKeyword("client"), (*(*res).client))
 // 	return map1
 // }
 
@@ -2287,55 +2250,20 @@ GO FUNC httputil.NewChunkedWriter has:
 
 GO FUNC httputil.NewClientConn has:
 // func newClientConn(c ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/httputil/persist.go:248:22), r ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/http/httputil/persist.go:248:34)) Object {
-// 	res := httputil.NewClientConn(c, r)
-// 	map1 := EmptyArrayMap()
-// 	map1.Add(MakeKeyword("mu"), (*res).mu)
-// 	map1.Add(MakeKeyword("c"), (*res).c)
-// 	map1.Add(MakeKeyword("r"), (*(*res).r))
-// 	map1.Add(MakeKeyword("re"), func () Object { if ((*res).re) == nil { return NIL } else { return MakeString((*res).re.Error()) } }())
-// 	map1.Add(MakeKeyword("we"), func () Object { if ((*res).we) == nil { return NIL } else { return MakeString((*res).we.Error()) } }())
-// 	map1.Add(MakeKeyword("lastbody"), (*res).lastbody)
-// 	map1.Add(MakeKeyword("nread"), MakeInt(int((*res).nread)))
-// 	map1.Add(MakeKeyword("nwritten"), MakeInt(int((*res).nwritten)))
-// 	map1.Add(MakeKeyword("pipereq"), (*res).pipereq)
-// 	map1.Add(MakeKeyword("pipe"), (*res).pipe)
-// 	map1.Add(MakeKeyword("writeReq"), (*res).writeReq)
-// 	return map1
+// 	return httputil.NewClientConn(c, r)
+// 	ABEND124(no public information returned)
 // }
 
 GO FUNC httputil.NewProxyClientConn has:
 // func newProxyClientConn(c ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/httputil/persist.go:265:27), r ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/http/httputil/persist.go:265:39)) Object {
-// 	res := httputil.NewProxyClientConn(c, r)
-// 	map1 := EmptyArrayMap()
-// 	map1.Add(MakeKeyword("mu"), (*res).mu)
-// 	map1.Add(MakeKeyword("c"), (*res).c)
-// 	map1.Add(MakeKeyword("r"), (*(*res).r))
-// 	map1.Add(MakeKeyword("re"), func () Object { if ((*res).re) == nil { return NIL } else { return MakeString((*res).re.Error()) } }())
-// 	map1.Add(MakeKeyword("we"), func () Object { if ((*res).we) == nil { return NIL } else { return MakeString((*res).we.Error()) } }())
-// 	map1.Add(MakeKeyword("lastbody"), (*res).lastbody)
-// 	map1.Add(MakeKeyword("nread"), MakeInt(int((*res).nread)))
-// 	map1.Add(MakeKeyword("nwritten"), MakeInt(int((*res).nwritten)))
-// 	map1.Add(MakeKeyword("pipereq"), (*res).pipereq)
-// 	map1.Add(MakeKeyword("pipe"), (*res).pipe)
-// 	map1.Add(MakeKeyword("writeReq"), (*res).writeReq)
-// 	return map1
+// 	return httputil.NewProxyClientConn(c, r)
+// 	ABEND124(no public information returned)
 // }
 
 GO FUNC httputil.NewServerConn has:
 // func newServerConn(c ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/httputil/persist.go:54:22), r ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/http/httputil/persist.go:54:34)) Object {
-// 	res := httputil.NewServerConn(c, r)
-// 	map1 := EmptyArrayMap()
-// 	map1.Add(MakeKeyword("mu"), (*res).mu)
-// 	map1.Add(MakeKeyword("c"), (*res).c)
-// 	map1.Add(MakeKeyword("r"), (*(*res).r))
-// 	map1.Add(MakeKeyword("re"), func () Object { if ((*res).re) == nil { return NIL } else { return MakeString((*res).re.Error()) } }())
-// 	map1.Add(MakeKeyword("we"), func () Object { if ((*res).we) == nil { return NIL } else { return MakeString((*res).we.Error()) } }())
-// 	map1.Add(MakeKeyword("lastbody"), (*res).lastbody)
-// 	map1.Add(MakeKeyword("nread"), MakeInt(int((*res).nread)))
-// 	map1.Add(MakeKeyword("nwritten"), MakeInt(int((*res).nwritten)))
-// 	map1.Add(MakeKeyword("pipereq"), (*res).pipereq)
-// 	map1.Add(MakeKeyword("pipe"), (*res).pipe)
-// 	return map1
+// 	return httputil.NewServerConn(c, r)
+// 	ABEND124(no public information returned)
 // }
 
 GO FUNC httputil.NewSingleHostReverseProxy has:
@@ -2454,8 +2382,7 @@ GO FUNC net.DialIP has:
 // func dialIP(network string, laddr ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/iprawsock.go:211:42), raddr ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/iprawsock.go:211:42)) Object {
 // 	res1, res2 := net.DialIP(network, laddr, raddr)
 // 	res := EmptyVector
-// 	map1 := EmptyArrayMap()
-// 	res = res.Conjoin(map1)
+// 	res = res.Conjoin(NIL)
 // 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
 // 	return res
 // }
@@ -2464,8 +2391,7 @@ GO FUNC net.DialTCP has:
 // func dialTCP(network string, laddr ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/tcpsock.go:206:43), raddr ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/tcpsock.go:206:43)) Object {
 // 	res1, res2 := net.DialTCP(network, laddr, raddr)
 // 	res := EmptyVector
-// 	map1 := EmptyArrayMap()
-// 	res = res.Conjoin(map1)
+// 	res = res.Conjoin(NIL)
 // 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
 // 	return res
 // }
@@ -2483,8 +2409,7 @@ GO FUNC net.DialUDP has:
 // func dialUDP(network string, laddr ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/udpsock.go:205:43), raddr ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/udpsock.go:205:43)) Object {
 // 	res1, res2 := net.DialUDP(network, laddr, raddr)
 // 	res := EmptyVector
-// 	map1 := EmptyArrayMap()
-// 	res = res.Conjoin(map1)
+// 	res = res.Conjoin(NIL)
 // 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
 // 	return res
 // }
@@ -2493,8 +2418,7 @@ GO FUNC net.DialUnix has:
 // func dialUnix(network string, laddr ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/unixsock.go:200:44), raddr ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/unixsock.go:200:44)) Object {
 // 	res1, res2 := net.DialUnix(network, laddr, raddr)
 // 	res := EmptyVector
-// 	map1 := EmptyArrayMap()
-// 	res = res.Conjoin(map1)
+// 	res = res.Conjoin(NIL)
 // 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
 // 	return res
 // }
@@ -2633,8 +2557,7 @@ GO FUNC net.ListenIP has:
 // func listenIP(network string, laddr ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/iprawsock.go:230:37)) Object {
 // 	res1, res2 := net.ListenIP(network, laddr)
 // 	res := EmptyVector
-// 	map1 := EmptyArrayMap()
-// 	res = res.Conjoin(map1)
+// 	res = res.Conjoin(NIL)
 // 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
 // 	return res
 // }
@@ -2643,8 +2566,7 @@ GO FUNC net.ListenMulticastUDP has:
 // func listenMulticastUDP(network string, ifi ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/udpsock.go:265:45), gaddr ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/udpsock.go:265:63)) Object {
 // 	res1, res2 := net.ListenMulticastUDP(network, ifi, gaddr)
 // 	res := EmptyVector
-// 	map1 := EmptyArrayMap()
-// 	res = res.Conjoin(map1)
+// 	res = res.Conjoin(NIL)
 // 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
 // 	return res
 // }
@@ -2662,9 +2584,7 @@ GO FUNC net.ListenTCP has:
 // func listenTCP(network string, laddr ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/tcpsock.go:323:38)) Object {
 // 	res1, res2 := net.ListenTCP(network, laddr)
 // 	res := EmptyVector
-// 	map1 := EmptyArrayMap()
-// 	map1.Add(MakeKeyword("fd"), )
-// 	res = res.Conjoin(map1)
+// 	res = res.Conjoin(NIL)
 // 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
 // 	return res
 // }
@@ -2673,8 +2593,7 @@ GO FUNC net.ListenUDP has:
 // func listenUDP(network string, laddr ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/udpsock.go:231:38)) Object {
 // 	res1, res2 := net.ListenUDP(network, laddr)
 // 	res := EmptyVector
-// 	map1 := EmptyArrayMap()
-// 	res = res.Conjoin(map1)
+// 	res = res.Conjoin(NIL)
 // 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
 // 	return res
 // }
@@ -2683,12 +2602,7 @@ GO FUNC net.ListenUnix has:
 // func listenUnix(network string, laddr ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/unixsock.go:314:39)) Object {
 // 	res1, res2 := net.ListenUnix(network, laddr)
 // 	res := EmptyVector
-// 	map1 := EmptyArrayMap()
-// 	map1.Add(MakeKeyword("fd"), )
-// 	map1.Add(MakeKeyword("path"), MakeString((*res1).path))
-// 	map1.Add(MakeKeyword("unlink"), MakeBool((*res1).unlink))
-// 	map1.Add(MakeKeyword("unlinkOnce"), (*res1).unlinkOnce)
-// 	res = res.Conjoin(map1)
+// 	res = res.Conjoin(NIL)
 // 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
 // 	return res
 // }
@@ -2697,8 +2611,7 @@ GO FUNC net.ListenUnixgram has:
 // func listenUnixgram(network string, laddr ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/unixsock.go:334:43)) Object {
 // 	res1, res2 := net.ListenUnixgram(network, laddr)
 // 	res := EmptyVector
-// 	map1 := EmptyArrayMap()
-// 	res = res.Conjoin(map1)
+// 	res = res.Conjoin(NIL)
 // 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
 // 	return res
 // }
@@ -2998,70 +2911,31 @@ GO FUNC rpc.Accept has:
 // }
 
 GO FUNC rpc.Dial has:
-// func dial(network string, address string) Object {
-// 	res1, res2 := rpc.Dial(network, address)
-// 	res := EmptyVector
-// 	map1 := EmptyArrayMap()
-// 	map1.Add(MakeKeyword("codec"), (*res1).codec)
-// 	map1.Add(MakeKeyword("reqMutex"), (*res1).reqMutex)
-// 	map2 := EmptyArrayMap()
-// 	map2.Add(MakeKeyword("ServiceMethod"), MakeString((*res1).request.ServiceMethod))
-// 	map2.Add(MakeKeyword("Seq"), )
-// 	map2.Add(MakeKeyword("next"), )
-// 	map1.Add(MakeKeyword("request"), map2)
-// 	map1.Add(MakeKeyword("mutex"), (*res1).mutex)
-// 	map1.Add(MakeKeyword("seq"), )
-// 	map1.Add(MakeKeyword("pending"), (*res1).pending)
-// 	map1.Add(MakeKeyword("closing"), MakeBool((*res1).closing))
-// 	map1.Add(MakeKeyword("shutdown"), MakeBool((*res1).shutdown))
-// 	res = res.Conjoin(map1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
-// 	return res
-// }
+func dial(network string, address string) Object {
+	res1, res2 := rpc.Dial(network, address)
+	res := EmptyVector
+	res = res.Conjoin(NIL)
+	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+	return res
+}
 
 GO FUNC rpc.DialHTTP has:
-// func dialHTTP(network string, address string) Object {
-// 	res1, res2 := rpc.DialHTTP(network, address)
-// 	res := EmptyVector
-// 	map1 := EmptyArrayMap()
-// 	map1.Add(MakeKeyword("codec"), (*res1).codec)
-// 	map1.Add(MakeKeyword("reqMutex"), (*res1).reqMutex)
-// 	map2 := EmptyArrayMap()
-// 	map2.Add(MakeKeyword("ServiceMethod"), MakeString((*res1).request.ServiceMethod))
-// 	map2.Add(MakeKeyword("Seq"), )
-// 	map2.Add(MakeKeyword("next"), )
-// 	map1.Add(MakeKeyword("request"), map2)
-// 	map1.Add(MakeKeyword("mutex"), (*res1).mutex)
-// 	map1.Add(MakeKeyword("seq"), )
-// 	map1.Add(MakeKeyword("pending"), (*res1).pending)
-// 	map1.Add(MakeKeyword("closing"), MakeBool((*res1).closing))
-// 	map1.Add(MakeKeyword("shutdown"), MakeBool((*res1).shutdown))
-// 	res = res.Conjoin(map1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
-// 	return res
-// }
+func dialHTTP(network string, address string) Object {
+	res1, res2 := rpc.DialHTTP(network, address)
+	res := EmptyVector
+	res = res.Conjoin(NIL)
+	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+	return res
+}
 
 GO FUNC rpc.DialHTTPPath has:
-// func dialHTTPPath(network string, address string, path string) Object {
-// 	res1, res2 := rpc.DialHTTPPath(network, address, path)
-// 	res := EmptyVector
-// 	map1 := EmptyArrayMap()
-// 	map1.Add(MakeKeyword("codec"), (*res1).codec)
-// 	map1.Add(MakeKeyword("reqMutex"), (*res1).reqMutex)
-// 	map2 := EmptyArrayMap()
-// 	map2.Add(MakeKeyword("ServiceMethod"), MakeString((*res1).request.ServiceMethod))
-// 	map2.Add(MakeKeyword("Seq"), )
-// 	map2.Add(MakeKeyword("next"), )
-// 	map1.Add(MakeKeyword("request"), map2)
-// 	map1.Add(MakeKeyword("mutex"), (*res1).mutex)
-// 	map1.Add(MakeKeyword("seq"), )
-// 	map1.Add(MakeKeyword("pending"), (*res1).pending)
-// 	map1.Add(MakeKeyword("closing"), MakeBool((*res1).closing))
-// 	map1.Add(MakeKeyword("shutdown"), MakeBool((*res1).shutdown))
-// 	res = res.Conjoin(map1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
-// 	return res
-// }
+func dialHTTPPath(network string, address string, path string) Object {
+	res1, res2 := rpc.DialHTTPPath(network, address, path)
+	res := EmptyVector
+	res = res.Conjoin(NIL)
+	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+	return res
+}
 
 GO FUNC rpc.HandleHTTP has:
 // func handleHTTP() Object {
@@ -3071,61 +2945,20 @@ GO FUNC rpc.HandleHTTP has:
 
 GO FUNC rpc.NewClient has:
 // func newClient(conn ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/rpc/client.go:193:21)) Object {
-// 	res := rpc.NewClient(conn)
-// 	map1 := EmptyArrayMap()
-// 	map1.Add(MakeKeyword("codec"), (*res).codec)
-// 	map1.Add(MakeKeyword("reqMutex"), (*res).reqMutex)
-// 	map2 := EmptyArrayMap()
-// 	map2.Add(MakeKeyword("ServiceMethod"), MakeString((*res).request.ServiceMethod))
-// 	map2.Add(MakeKeyword("Seq"), )
-// 	map2.Add(MakeKeyword("next"), )
-// 	map1.Add(MakeKeyword("request"), map2)
-// 	map1.Add(MakeKeyword("mutex"), (*res).mutex)
-// 	map1.Add(MakeKeyword("seq"), )
-// 	map1.Add(MakeKeyword("pending"), (*res).pending)
-// 	map1.Add(MakeKeyword("closing"), MakeBool((*res).closing))
-// 	map1.Add(MakeKeyword("shutdown"), MakeBool((*res).shutdown))
-// 	return map1
+// 	return rpc.NewClient(conn)
+// 	ABEND124(no public information returned)
 // }
 
 GO FUNC rpc.NewClientWithCodec has:
 // func newClientWithCodec(codec ABEND884(unrecognized type ClientCodec at: tests/big/src/net/rpc/client.go:201:31)) Object {
-// 	res := rpc.NewClientWithCodec(codec)
-// 	map1 := EmptyArrayMap()
-// 	map1.Add(MakeKeyword("codec"), (*res).codec)
-// 	map1.Add(MakeKeyword("reqMutex"), (*res).reqMutex)
-// 	map2 := EmptyArrayMap()
-// 	map2.Add(MakeKeyword("ServiceMethod"), MakeString((*res).request.ServiceMethod))
-// 	map2.Add(MakeKeyword("Seq"), )
-// 	map2.Add(MakeKeyword("next"), )
-// 	map1.Add(MakeKeyword("request"), map2)
-// 	map1.Add(MakeKeyword("mutex"), (*res).mutex)
-// 	map1.Add(MakeKeyword("seq"), )
-// 	map1.Add(MakeKeyword("pending"), (*res).pending)
-// 	map1.Add(MakeKeyword("closing"), MakeBool((*res).closing))
-// 	map1.Add(MakeKeyword("shutdown"), MakeBool((*res).shutdown))
-// 	return map1
+// 	return rpc.NewClientWithCodec(codec)
+// 	ABEND124(no public information returned)
 // }
 
 GO FUNC rpc.NewServer has:
 // func newServer() Object {
-// 	res := rpc.NewServer()
-// 	map1 := EmptyArrayMap()
-// 	map1.Add(MakeKeyword("serviceMap"), (*res).serviceMap)
-// 	map1.Add(MakeKeyword("reqLock"), (*res).reqLock)
-// 	map2 := EmptyArrayMap()
-// 	map2.Add(MakeKeyword("ServiceMethod"), MakeString((*(*res).freeReq).ServiceMethod))
-// 	map2.Add(MakeKeyword("Seq"), )
-// 	map2.Add(MakeKeyword("next"), )
-// 	map1.Add(MakeKeyword("freeReq"), map2)
-// 	map1.Add(MakeKeyword("respLock"), (*res).respLock)
-// 	map3 := EmptyArrayMap()
-// 	map3.Add(MakeKeyword("ServiceMethod"), MakeString((*(*res).freeResp).ServiceMethod))
-// 	map3.Add(MakeKeyword("Seq"), )
-// 	map3.Add(MakeKeyword("Error"), MakeString((*(*res).freeResp).Error))
-// 	map3.Add(MakeKeyword("next"), )
-// 	map1.Add(MakeKeyword("freeResp"), map3)
-// 	return map1
+// 	return rpc.NewServer()
+// 	ABEND124(no public information returned)
 // }
 
 GO FUNC rpc.ServeCodec has:
@@ -3151,18 +2984,6 @@ GO FUNC smtp.Dial has:
 // 	res := EmptyVector
 // 	map1 := EmptyArrayMap()
 // 	map1.Add(MakeKeyword("Text"), (*(*res1).Text))
-// 	map1.Add(MakeKeyword("conn"), (*res1).conn)
-// 	map1.Add(MakeKeyword("tls"), MakeBool((*res1).tls))
-// 	map1.Add(MakeKeyword("serverName"), MakeString((*res1).serverName))
-// 	map1.Add(MakeKeyword("ext"), (*res1).ext)
-// 	vec2 := EmptyVector
-// 	for _, elem2 := range (*res1).auth {
-// 		vec2 = vec2.Conjoin(MakeString(elem2))
-// 	}
-// 	map1.Add(MakeKeyword("auth"), vec2)
-// 	map1.Add(MakeKeyword("localName"), MakeString((*res1).localName))
-// 	map1.Add(MakeKeyword("didHello"), MakeBool((*res1).didHello))
-// 	map1.Add(MakeKeyword("helloError"), func () Object { if ((*res1).helloError) == nil { return NIL } else { return MakeString((*res1).helloError.Error()) } }())
 // 	res = res.Conjoin(map1)
 // 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
 // 	return res
@@ -3174,18 +2995,6 @@ GO FUNC smtp.NewClient has:
 // 	res := EmptyVector
 // 	map1 := EmptyArrayMap()
 // 	map1.Add(MakeKeyword("Text"), (*(*res1).Text))
-// 	map1.Add(MakeKeyword("conn"), (*res1).conn)
-// 	map1.Add(MakeKeyword("tls"), MakeBool((*res1).tls))
-// 	map1.Add(MakeKeyword("serverName"), MakeString((*res1).serverName))
-// 	map1.Add(MakeKeyword("ext"), (*res1).ext)
-// 	vec2 := EmptyVector
-// 	for _, elem2 := range (*res1).auth {
-// 		vec2 = vec2.Conjoin(MakeString(elem2))
-// 	}
-// 	map1.Add(MakeKeyword("auth"), vec2)
-// 	map1.Add(MakeKeyword("localName"), MakeString((*res1).localName))
-// 	map1.Add(MakeKeyword("didHello"), MakeBool((*res1).didHello))
-// 	map1.Add(MakeKeyword("helloError"), func () Object { if ((*res1).helloError) == nil { return NIL } else { return MakeString((*res1).helloError.Error()) } }())
 // 	res = res.Conjoin(map1)
 // 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
 // 	return res
@@ -3197,22 +3006,18 @@ GO FUNC smtp.PlainAuth has:
 // }
 
 GO FUNC textproto.Dial has:
-// func dial(network string, addr string) Object {
-// 	res1, res2 := textproto.Dial(network, addr)
-// 	res := EmptyVector
-// 	map1 := EmptyArrayMap()
-// 	map1.Add(MakeKeyword("conn"), (*res1).conn)
-// 	res = res.Conjoin(map1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
-// 	return res
-// }
+func dial(network string, addr string) Object {
+	res1, res2 := textproto.Dial(network, addr)
+	res := EmptyVector
+	res = res.Conjoin(NIL)
+	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+	return res
+}
 
 GO FUNC textproto.NewConn has:
 // func newConn(conn ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/textproto/textproto.go:66:19)) Object {
-// 	res := textproto.NewConn(conn)
-// 	map1 := EmptyArrayMap()
-// 	map1.Add(MakeKeyword("conn"), (*res).conn)
-// 	return map1
+// 	return textproto.NewConn(conn)
+// 	ABEND124(no public information returned)
 // }
 
 GO FUNC textproto.NewReader has:
@@ -3220,12 +3025,6 @@ GO FUNC textproto.NewReader has:
 // 	res := textproto.NewReader(r)
 // 	map1 := EmptyArrayMap()
 // 	map1.Add(MakeKeyword("R"), (*(*res).R))
-// 	map1.Add(MakeKeyword("dot"), )
-// 	vec2 := EmptyVector
-// 	for _, elem2 := range (*res).buf {
-// 		vec2 = vec2.Conjoin(MakeInt(int(elem2)))
-// 	}
-// 	map1.Add(MakeKeyword("buf"), vec2)
 // 	return map1
 // }
 
@@ -3234,7 +3033,6 @@ GO FUNC textproto.NewWriter has:
 // 	res := textproto.NewWriter(w)
 // 	map1 := EmptyArrayMap()
 // 	map1.Add(MakeKeyword("W"), (*(*res).W))
-// 	map1.Add(MakeKeyword("dot"), )
 // 	return map1
 // }
 
@@ -3255,11 +3053,7 @@ func parse(rawurl string) Object {
 	map1 := EmptyArrayMap()
 	map1.Add(MakeKeyword("Scheme"), MakeString((*res1).Scheme))
 	map1.Add(MakeKeyword("Opaque"), MakeString((*res1).Opaque))
-	map2 := EmptyArrayMap()
-	map2.Add(MakeKeyword("username"), MakeString((*(*res1).User).username))
-	map2.Add(MakeKeyword("password"), MakeString((*(*res1).User).password))
-	map2.Add(MakeKeyword("passwordSet"), MakeBool((*(*res1).User).passwordSet))
-	map1.Add(MakeKeyword("User"), map2)
+	map1.Add(MakeKeyword("User"), NIL)
 	map1.Add(MakeKeyword("Host"), MakeString((*res1).Host))
 	map1.Add(MakeKeyword("Path"), MakeString((*res1).Path))
 	map1.Add(MakeKeyword("RawPath"), MakeString((*res1).RawPath))
@@ -3287,11 +3081,7 @@ func parseRequestURI(rawurl string) Object {
 	map1 := EmptyArrayMap()
 	map1.Add(MakeKeyword("Scheme"), MakeString((*res1).Scheme))
 	map1.Add(MakeKeyword("Opaque"), MakeString((*res1).Opaque))
-	map2 := EmptyArrayMap()
-	map2.Add(MakeKeyword("username"), MakeString((*(*res1).User).username))
-	map2.Add(MakeKeyword("password"), MakeString((*(*res1).User).password))
-	map2.Add(MakeKeyword("passwordSet"), MakeBool((*(*res1).User).passwordSet))
-	map1.Add(MakeKeyword("User"), map2)
+	map1.Add(MakeKeyword("User"), NIL)
 	map1.Add(MakeKeyword("Host"), MakeString((*res1).Host))
 	map1.Add(MakeKeyword("Path"), MakeString((*res1).Path))
 	map1.Add(MakeKeyword("RawPath"), MakeString((*res1).RawPath))
@@ -3322,24 +3112,16 @@ func queryUnescape(s string) Object {
 }
 
 GO FUNC url.User has:
-func user(username string) Object {
-	res := url.User(username)
-	map1 := EmptyArrayMap()
-	map1.Add(MakeKeyword("username"), MakeString((*res).username))
-	map1.Add(MakeKeyword("password"), MakeString((*res).password))
-	map1.Add(MakeKeyword("passwordSet"), MakeBool((*res).passwordSet))
-	return map1
-}
+// func user(username string) Object {
+// 	return url.User(username)
+// 	ABEND124(no public information returned)
+// }
 
 GO FUNC url.UserPassword has:
-func userPassword(username string, password string) Object {
-	res := url.UserPassword(username, password)
-	map1 := EmptyArrayMap()
-	map1.Add(MakeKeyword("username"), MakeString((*res).username))
-	map1.Add(MakeKeyword("password"), MakeString((*res).password))
-	map1.Add(MakeKeyword("passwordSet"), MakeBool((*res).passwordSet))
-	return map1
-}
+// func userPassword(username string, password string) Object {
+// 	return url.UserPassword(username, password)
+// 	ABEND124(no public information returned)
+// }
 
 Adding custom import line to tests/joker/main.go
 Writing tests/joker/main.go
