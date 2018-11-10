@@ -3,7 +3,6 @@
 package pprof
 
 import (
-	"net/http/pprof"
 	. "github.com/candid82/joker/core"
 )
 

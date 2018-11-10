@@ -3,7 +3,6 @@
 package httputil
 
 import (
-	"net/http/httputil"
 	. "github.com/candid82/joker/core"
 )
 

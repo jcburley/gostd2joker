@@ -3,7 +3,6 @@
 package cookiejar
 
 import (
-	"net/http/cookiejar"
 	. "github.com/candid82/joker/core"
 )
 

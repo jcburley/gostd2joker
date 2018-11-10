@@ -3,7 +3,6 @@
 package httptest
 
 import (
-	"net/http/httptest"
 	. "github.com/candid82/joker/core"
 )
 

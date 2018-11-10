@@ -3,7 +3,6 @@
 package httptrace
 
 import (
-	"net/http/httptrace"
 	. "github.com/candid82/joker/core"
 )
 

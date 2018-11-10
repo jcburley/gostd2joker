@@ -3,7 +3,6 @@
 package smtp
 
 import (
-	"net/smtp"
 	. "github.com/candid82/joker/core"
 )
 

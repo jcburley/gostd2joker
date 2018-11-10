@@ -3,7 +3,6 @@
 package jsonrpc
 
 import (
-	"net/rpc/jsonrpc"
 	. "github.com/candid82/joker/core"
 )
 
