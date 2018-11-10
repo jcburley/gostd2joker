@@ -2,7 +2,8 @@
 
 (ns
   ^{:go-imports []
-    :doc "Provides a low-level interface to the net/smtp package."}
+    :doc "Provides a low-level interface to the net/smtp package."
+    :empty true}
   go.net.smtp)
 
 ;; (defn CRAMMD5Auth

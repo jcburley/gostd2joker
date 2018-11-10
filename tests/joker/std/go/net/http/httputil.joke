@@ -2,7 +2,8 @@
 
 (ns
   ^{:go-imports []
-    :doc "Provides a low-level interface to the net/http/httputil package."}
+    :doc "Provides a low-level interface to the net/http/httputil package."
+    :empty true}
   go.net.http.httputil)
 
 ;; (defn DumpRequest

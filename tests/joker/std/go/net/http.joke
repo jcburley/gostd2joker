@@ -2,7 +2,8 @@
 
 (ns
   ^{:go-imports ["net/http"]
-    :doc "Provides a low-level interface to the net/http package."}
+    :doc "Provides a low-level interface to the net/http package."
+    :empty false}
   go.net.http)
 
 (defn ^String CanonicalHeaderKey

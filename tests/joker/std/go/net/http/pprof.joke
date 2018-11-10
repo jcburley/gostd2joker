@@ -2,7 +2,8 @@
 
 (ns
   ^{:go-imports []
-    :doc "Provides a low-level interface to the net/http/pprof package."}
+    :doc "Provides a low-level interface to the net/http/pprof package."
+    :empty true}
   go.net.http.pprof)
 
 ;; (defn Cmdline

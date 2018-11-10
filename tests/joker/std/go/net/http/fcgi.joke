@@ -2,7 +2,8 @@
 
 (ns
   ^{:go-imports []
-    :doc "Provides a low-level interface to the net/http/fcgi package."}
+    :doc "Provides a low-level interface to the net/http/fcgi package."
+    :empty true}
   go.net.http.fcgi)
 
 ;; (defn ProcessEnv

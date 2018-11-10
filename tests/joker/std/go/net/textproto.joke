@@ -2,7 +2,8 @@
 
 (ns
   ^{:go-imports ["net/textproto"]
-    :doc "Provides a low-level interface to the net/textproto package."}
+    :doc "Provides a low-level interface to the net/textproto package."
+    :empty false}
   go.net.textproto)
 
 (defn ^String CanonicalMIMEHeaderKey

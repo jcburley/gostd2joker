@@ -2,7 +2,8 @@
 
 (ns
   ^{:go-imports ["net/url"]
-    :doc "Provides a low-level interface to the net/url package."}
+    :doc "Provides a low-level interface to the net/url package."
+    :empty false}
   go.net.url)
 
 (defn Parse

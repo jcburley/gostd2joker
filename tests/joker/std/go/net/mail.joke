@@ -2,7 +2,8 @@
 
 (ns
   ^{:go-imports []
-    :doc "Provides a low-level interface to the net/mail package."}
+    :doc "Provides a low-level interface to the net/mail package."
+    :empty false}
   go.net.mail)
 
 (defn ParseAddress

@@ -2,7 +2,8 @@
 
 (ns
   ^{:go-imports []
-    :doc "Provides a low-level interface to the net/http/httptrace package."}
+    :doc "Provides a low-level interface to the net/http/httptrace package."
+    :empty true}
   go.net.http.httptrace)
 
 ;; (defn ContextClientTrace

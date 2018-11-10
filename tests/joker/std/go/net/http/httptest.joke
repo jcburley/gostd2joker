@@ -2,7 +2,8 @@
 
 (ns
   ^{:go-imports []
-    :doc "Provides a low-level interface to the net/http/httptest package."}
+    :doc "Provides a low-level interface to the net/http/httptest package."
+    :empty true}
   go.net.http.httptest)
 
 ;; (defn NewRecorder

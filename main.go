@@ -257,10 +257,9 @@ func processPackage(pkgDir string, pkg string, p *Package) {
 		}
 	}
 	if found {
-		if _, found = packagesInfo[pkgDir]; !found {
+		if _, ok := packagesInfo[pkgDir]; !ok {
 			packagesInfo[pkgDir] = &packageInfo{packageImports{}, packageImports{}, false}
 		}
-		packagesInfo[pkgDir].nonEmpty = true
 	}
 }
 
@@ -899,6 +898,7 @@ func %s(%s) %s {
 		jokerFn = nonEmptyLineRegexp.ReplaceAllString(jokerFn, `;; $1`)
 		goFn = nonEmptyLineRegexp.ReplaceAllString(goFn, `// $1`)
 	} else {
+		packagesInfo[fn.pkgDir].nonEmpty = true
 		if jokerReturnType == "" {
 			packagesInfo[fn.pkgDir].importsNative[fn.pkgDir] = exists
 		} else {
@@ -1236,11 +1236,13 @@ func main() {
 
 (ns
   ^{:go-imports [%s]
-    :doc "Provides a low-level interface to the %s package."}
+    :doc "Provides a low-level interface to the %s package."
+    :empty %s}
   go.%s)
 `,
 					strings.TrimPrefix(packageQuotedImportList(pi.importsAutoGen, " "), " "),
 					pkgDir,
+					func() string { if pi.nonEmpty { return "false" } else { return "true" } }(),
 					strings.Replace(pkgDir, string(filepath.Separator), ".", -1))
 				}
 			sortedCodeMap(v,

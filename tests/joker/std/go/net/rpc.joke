@@ -2,7 +2,8 @@
 
 (ns
   ^{:go-imports ["net/rpc"]
-    :doc "Provides a low-level interface to the net/rpc package."}
+    :doc "Provides a low-level interface to the net/rpc package."
+    :empty false}
   go.net.rpc)
 
 ;; (defn Accept

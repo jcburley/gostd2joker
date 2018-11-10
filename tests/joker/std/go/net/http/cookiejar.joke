@@ -2,7 +2,8 @@
 
 (ns
   ^{:go-imports []
-    :doc "Provides a low-level interface to the net/http/cookiejar package."}
+    :doc "Provides a low-level interface to the net/http/cookiejar package."
+    :empty true}
   go.net.http.cookiejar)
 
 ;; (defn New

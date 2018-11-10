@@ -2,7 +2,8 @@
 
 (ns
   ^{:go-imports ["net"]
-    :doc "Provides a low-level interface to the net package."}
+    :doc "Provides a low-level interface to the net package."
+    :empty false}
   go.net)
 
 (defn CIDRMask

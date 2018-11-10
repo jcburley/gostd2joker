@@ -2,7 +2,8 @@
 
 (ns
   ^{:go-imports []
-    :doc "Provides a low-level interface to the net/rpc/jsonrpc package."}
+    :doc "Provides a low-level interface to the net/rpc/jsonrpc package."
+    :empty true}
   go.net.rpc.jsonrpc)
 
 ;; (defn Dial
