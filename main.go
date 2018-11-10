@@ -508,6 +508,10 @@ func genSymReset() {
 	genSymIndex = 0
 }
 
+func exprIsUseful(rtn string) bool {
+	return rtn != "NIL"
+}
+
 func genGoPostNamed(indent, pkg, in, t string) (jok, gol, goc, out string) {
 	qt := pkg + "." + t
 	if v, ok := types[qt]; ok {
@@ -535,19 +539,20 @@ func genGoPostNamed(indent, pkg, in, t string) (jok, gol, goc, out string) {
 // Joker: { :a ^Int, :b ^String }
 // Go: struct { a int; b string }
 func genGoPostStruct(indent, pkg, in string, fl *FieldList) (jok, gol, goc, out string) {
-	if fl == nil {
-		jok = "{}"
-		gol = "struct {}"
-		out = in
-		return
-	}
 	tmpmap := genSym("map")
 	goc += indent + tmpmap + " := EmptyArrayMap()\n"
+	useful := false
 	for _, f := range fl.List {
 		for _, p := range f.Names {
+			if unicode.IsLower(rune(p.Name[0])) {
+				continue  // Skipping non-exported fields
+			}
 			var joktype, goltype, more_goc string
 			joktype, goltype, more_goc, out =
 				genGoPostExpr(indent, pkg, in + "." + p.Name, f.Type)
+			if useful || exprIsUseful(out) {
+				useful = true
+			}
 			goc += more_goc
 			goc += indent + tmpmap + ".Add(MakeKeyword(\"" + p.Name + "\"), " + out + ")\n"
 			if jok != "" {
@@ -573,6 +578,10 @@ func genGoPostStruct(indent, pkg, in string, fl *FieldList) (jok, gol, goc, out 
 	jok = "{" + jok + "}"
 	gol = "struct {" + gol + "}"
 	out = tmpmap
+	if !useful {
+		goc = ""
+		out = "NIL"
+	}
 	return
 }
 
@@ -687,13 +696,16 @@ func genGoPostList(indent string, pkg string, fl *FieldList) (gores, jok, gol, g
 	idx := 0
 	multiple := len(fl.List) > 1 || (fl.List[0].Names != nil && len(fl.List[0].Names) > 1)
 	if multiple {
+		useful := false
 		for _, f := range fl.List {
 			if f.Names == nil {
 				rtn := genGoPostItem(indent, pkg, f, &idx, nil, &gores, &jok, &gol, &goc)
+				useful = useful || exprIsUseful(rtn)
 				goc += indent + "res = res.Conjoin(" + rtn + ")\n"
 			} else {
 				for _, p := range f.Names {
 					rtn := genGoPostItem(indent, pkg, f, &idx, p, &gores, &jok, &gol, &goc)
+					useful = useful || exprIsUseful(rtn)
 					goc += indent + "res = res.Conjoin(" + rtn + ")\n"
 				}
 			}
@@ -702,8 +714,12 @@ func genGoPostList(indent string, pkg string, fl *FieldList) (gores, jok, gol, g
 		if gol != "" {
 			gol = "(" + gol + ")"
 		}
-		goc = indent + "res := EmptyVector\n" + goc + indent + "return res\n"
 		gores += " := "
+		if useful {
+			goc = indent + "res := EmptyVector\n" + goc + indent + "return res\n"
+		} else {
+			goc = indent + "ABEND123(no public information returned)\n"
+		}
 	} else if len(fl.List) == 0 {
 		genGoPostItem(indent, pkg, fl.List[0], &idx, nil,
 			nil, &jok, &gol, &goc)
@@ -716,6 +732,9 @@ func genGoPostList(indent string, pkg string, fl *FieldList) (gores, jok, gol, g
 		} else {
 			goc += indent + "return " + rtn + "\n"
 			gores += " := "
+		}
+		if !exprIsUseful(rtn) {
+			goc += indent + "ABEND124(no public information returned)\n"
 		}
 	}
 	return

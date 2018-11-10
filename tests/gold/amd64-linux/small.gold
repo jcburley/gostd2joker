@@ -96,7 +96,7 @@ JOKER FUNC net.LookupTXT has:
 
 JOKER FUNC url.Parse has:
 (defn Parse
-  "Parse parses rawurl into a URL structure.\n\nThe rawurl may be relative (a path, without a host) or absolute\n(starting with a scheme). Trying to parse a hostname and path\nwithout a scheme is invalid but may not necessarily return an\nerror, due to parsing ambiguities.\nGo return type: (*URL, error)\nJoker return type: [{:Scheme ^String, :Opaque ^String, :User ^{:username ^String, :password ^String, :passwordSet ^Bool}, :Host ^String, :Path ^String, :RawPath ^String, :ForceQuery ^Bool, :RawQuery ^String, :Fragment ^String} Error]"
+  "Parse parses rawurl into a URL structure.\n\nThe rawurl may be relative (a path, without a host) or absolute\n(starting with a scheme). Trying to parse a hostname and path\nwithout a scheme is invalid but may not necessarily return an\nerror, due to parsing ambiguities.\nGo return type: (*URL, error)\nJoker return type: [{:Scheme ^String, :Opaque ^String, :User ^{}, :Host ^String, :Path ^String, :RawPath ^String, :ForceQuery ^Bool, :RawQuery ^String, :Fragment ^String} Error]"
   {:added "1.0"
    :go "parse(rawurl)"}
   [^String rawurl])
@@ -110,7 +110,7 @@ JOKER FUNC url.ParseQuery has:
 
 JOKER FUNC url.ParseRequestURI has:
 (defn ParseRequestURI
-  "ParseRequestURI parses rawurl into a URL structure. It assumes that\nrawurl was received in an HTTP request, so the rawurl is interpreted\nonly as an absolute URI or an absolute path.\nThe string rawurl is assumed not to have a #fragment suffix.\n(Web browsers strip #fragment before sending the URL to a web server.)\nGo return type: (*URL, error)\nJoker return type: [{:Scheme ^String, :Opaque ^String, :User ^{:username ^String, :password ^String, :passwordSet ^Bool}, :Host ^String, :Path ^String, :RawPath ^String, :ForceQuery ^Bool, :RawQuery ^String, :Fragment ^String} Error]"
+  "ParseRequestURI parses rawurl into a URL structure. It assumes that\nrawurl was received in an HTTP request, so the rawurl is interpreted\nonly as an absolute URI or an absolute path.\nThe string rawurl is assumed not to have a #fragment suffix.\n(Web browsers strip #fragment before sending the URL to a web server.)\nGo return type: (*URL, error)\nJoker return type: [{:Scheme ^String, :Opaque ^String, :User ^{}, :Host ^String, :Path ^String, :RawPath ^String, :ForceQuery ^Bool, :RawQuery ^String, :Fragment ^String} Error]"
   {:added "1.0"
    :go "parseRequestURI(rawurl)"}
   [^String rawurl])
@@ -144,18 +144,18 @@ JOKER FUNC url.QueryUnescape has:
   [^String s])
 
 JOKER FUNC url.User has:
-(defn User
-  "User returns a Userinfo containing the provided username\nand no password set.\nGo return type: *Userinfo\nJoker return type: {:username ^String, :password ^String, :passwordSet ^Bool}"
-  {:added "1.0"
-   :go "user(username)"}
-  [^String username])
+;; (defn User
+;;   "User returns a Userinfo containing the provided username\nand no password set.\nGo return type: *Userinfo\nJoker return type: {}"
+;;   {:added "1.0"
+;;    :go "user(username)"}
+;;   [^String username])
 
 JOKER FUNC url.UserPassword has:
-(defn UserPassword
-  "UserPassword returns a Userinfo containing the provided username\nand password.\n\nThis functionality should only be used with legacy web sites.\nRFC 2396 warns that interpreting Userinfo this way\n``is NOT RECOMMENDED, because the passing of authentication\ninformation in clear text (such as URI) has proven to be a\nsecurity risk in almost every case where it has been used.''\nGo return type: *Userinfo\nJoker return type: {:username ^String, :password ^String, :passwordSet ^Bool}"
-  {:added "1.0"
-   :go "userPassword(username, password)"}
-  [^String username, ^String password])
+;; (defn UserPassword
+;;   "UserPassword returns a Userinfo containing the provided username\nand password.\n\nThis functionality should only be used with legacy web sites.\nRFC 2396 warns that interpreting Userinfo this way\n``is NOT RECOMMENDED, because the passing of authentication\ninformation in clear text (such as URI) has proven to be a\nsecurity risk in almost every case where it has been used.''\nGo return type: *Userinfo\nJoker return type: {}"
+;;   {:added "1.0"
+;;    :go "userPassword(username, password)"}
+;;   [^String username, ^String password])
 
 GO FUNC net.LookupAddr has:
 func lookupAddr(addr string) Object {
@@ -284,11 +284,7 @@ func parse(rawurl string) Object {
 	map1 := EmptyArrayMap()
 	map1.Add(MakeKeyword("Scheme"), MakeString((*res1).Scheme))
 	map1.Add(MakeKeyword("Opaque"), MakeString((*res1).Opaque))
-	map2 := EmptyArrayMap()
-	map2.Add(MakeKeyword("username"), MakeString((*(*res1).User).username))
-	map2.Add(MakeKeyword("password"), MakeString((*(*res1).User).password))
-	map2.Add(MakeKeyword("passwordSet"), MakeBool((*(*res1).User).passwordSet))
-	map1.Add(MakeKeyword("User"), map2)
+	map1.Add(MakeKeyword("User"), NIL)
 	map1.Add(MakeKeyword("Host"), MakeString((*res1).Host))
 	map1.Add(MakeKeyword("Path"), MakeString((*res1).Path))
 	map1.Add(MakeKeyword("RawPath"), MakeString((*res1).RawPath))
@@ -316,11 +312,7 @@ func parseRequestURI(rawurl string) Object {
 	map1 := EmptyArrayMap()
 	map1.Add(MakeKeyword("Scheme"), MakeString((*res1).Scheme))
 	map1.Add(MakeKeyword("Opaque"), MakeString((*res1).Opaque))
-	map2 := EmptyArrayMap()
-	map2.Add(MakeKeyword("username"), MakeString((*(*res1).User).username))
-	map2.Add(MakeKeyword("password"), MakeString((*(*res1).User).password))
-	map2.Add(MakeKeyword("passwordSet"), MakeBool((*(*res1).User).passwordSet))
-	map1.Add(MakeKeyword("User"), map2)
+	map1.Add(MakeKeyword("User"), NIL)
 	map1.Add(MakeKeyword("Host"), MakeString((*res1).Host))
 	map1.Add(MakeKeyword("Path"), MakeString((*res1).Path))
 	map1.Add(MakeKeyword("RawPath"), MakeString((*res1).RawPath))
@@ -351,23 +343,15 @@ func queryUnescape(s string) Object {
 }
 
 GO FUNC url.User has:
-func user(username string) Object {
-	res := url.User(username)
-	map1 := EmptyArrayMap()
-	map1.Add(MakeKeyword("username"), MakeString((*res).username))
-	map1.Add(MakeKeyword("password"), MakeString((*res).password))
-	map1.Add(MakeKeyword("passwordSet"), MakeBool((*res).passwordSet))
-	return map1
-}
+// func user(username string) Object {
+// 	return url.User(username)
+// 	ABEND124(no public information returned)
+// }
 
 GO FUNC url.UserPassword has:
-func userPassword(username string, password string) Object {
-	res := url.UserPassword(username, password)
-	map1 := EmptyArrayMap()
-	map1.Add(MakeKeyword("username"), MakeString((*res).username))
-	map1.Add(MakeKeyword("password"), MakeString((*res).password))
-	map1.Add(MakeKeyword("passwordSet"), MakeBool((*res).passwordSet))
-	return map1
-}
+// func userPassword(username string, password string) Object {
+// 	return url.UserPassword(username, password)
+// 	ABEND124(no public information returned)
+// }
 
 Totals: types=10 functions=18 receivers=46
