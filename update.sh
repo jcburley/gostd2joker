@@ -6,8 +6,8 @@ git pull && go clean && go vet && go build && ./test.sh --on-error : && echo "No
 git diff
 
 read -p "Accept and update $GOENV test results? " -n 1 -r
+echo ""
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
-    echo ""
     git commit -a -m "Update $GOENV tests" && git push
 fi
