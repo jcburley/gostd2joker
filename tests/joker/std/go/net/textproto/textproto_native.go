@@ -8,7 +8,7 @@ import (
 )
 
 func dial(network string, addr string) Object {
-	res1, res2 := textproto.Dial(network, addr)
+	_, res2 := textproto.Dial(network, addr)
 	res := EmptyVector
 	res = res.Conjoin(NIL)
 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())

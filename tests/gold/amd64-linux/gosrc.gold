@@ -16071,7 +16071,7 @@ GO FUNC bidi.DefaultDirection has:
 
 GO FUNC bidi.Lookup has:
 // func lookup(s ABEND882(unrecognized Expr type *ast.ArrayType at: GO.link/src/vendor/golang_org/x/text/unicode/bidi/prop.go:87:15)) Object {
-// 	p, sz := bidi.Lookup(s)
+// 	_, sz := bidi.Lookup(s)
 // 	res := EmptyVector
 // 	res = res.Conjoin(NIL)
 // 	res = res.Conjoin(MakeInt(int(sz)))
@@ -16080,7 +16080,7 @@ GO FUNC bidi.Lookup has:
 
 GO FUNC bidi.LookupRune has:
 // func lookupRune(r ABEND884(unrecognized type rune at: GO.link/src/vendor/golang_org/x/text/unicode/bidi/prop.go:63:19)) Object {
-// 	p, size := bidi.LookupRune(r)
+// 	_, size := bidi.LookupRune(r)
 // 	res := EmptyVector
 // 	res = res.Conjoin(NIL)
 // 	res = res.Conjoin(MakeInt(int(size)))
@@ -16089,7 +16089,7 @@ GO FUNC bidi.LookupRune has:
 
 GO FUNC bidi.LookupString has:
 func lookupString(s string) Object {
-	p, sz := bidi.LookupString(s)
+	_, sz := bidi.LookupString(s)
 	res := EmptyVector
 	res = res.Conjoin(NIL)
 	res = res.Conjoin(MakeInt(int(sz)))
@@ -16132,7 +16132,7 @@ GO FUNC big.NewRat has:
 
 GO FUNC big.ParseFloat has:
 // func parseFloat(s string, base int, prec uint, mode ABEND884(unrecognized type RoundingMode at: GO.link/src/math/big/floatconv.go:278:53)) Object {
-// 	f, b, err := big.ParseFloat(s, base, prec, mode)
+// 	_, b, err := big.ParseFloat(s, base, prec, mode)
 // 	res := EmptyVector
 // 	res = res.Conjoin(NIL)
 // 	res = res.Conjoin(MakeInt(int(b)))
@@ -17379,7 +17379,7 @@ GO FUNC context.WithValue has:
 
 GO FUNC cookiejar.New has:
 // func new(o ABEND882(unrecognized Expr type *ast.StarExpr at: GO.link/src/net/http/cookiejar/jar.go:77:12)) Object {
-// 	res1, res2 := cookiejar.New(o)
+// 	_, res2 := cookiejar.New(o)
 // 	res := EmptyVector
 // 	res = res.Conjoin(NIL)
 // 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
@@ -17747,7 +17747,7 @@ GO FUNC dsa.Sign has:
 
 GO FUNC dwarf.New has:
 // func new(abbrev ABEND882(unrecognized Expr type *ast.ArrayType at: GO.link/src/debug/dwarf/open.go:41:68), aranges ABEND882(unrecognized Expr type *ast.ArrayType at: GO.link/src/debug/dwarf/open.go:41:68), frame ABEND882(unrecognized Expr type *ast.ArrayType at: GO.link/src/debug/dwarf/open.go:41:68), info ABEND882(unrecognized Expr type *ast.ArrayType at: GO.link/src/debug/dwarf/open.go:41:68), line ABEND882(unrecognized Expr type *ast.ArrayType at: GO.link/src/debug/dwarf/open.go:41:68), pubnames ABEND882(unrecognized Expr type *ast.ArrayType at: GO.link/src/debug/dwarf/open.go:41:68), ranges ABEND882(unrecognized Expr type *ast.ArrayType at: GO.link/src/debug/dwarf/open.go:41:68), str ABEND882(unrecognized Expr type *ast.ArrayType at: GO.link/src/debug/dwarf/open.go:41:68)) Object {
-// 	res1, res2 := dwarf.New(abbrev, aranges, frame, info, line, pubnames, ranges, str)
+// 	_, res2 := dwarf.New(abbrev, aranges, frame, info, line, pubnames, ranges, str)
 // 	res := EmptyVector
 // 	res = res.Conjoin(NIL)
 // 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
@@ -18210,7 +18210,7 @@ GO FUNC flate.NewReaderDict has:
 
 GO FUNC flate.NewWriter has:
 // func newWriter(w ABEND882(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/compress/flate/deflate.go:666:18), level int) Object {
-// 	res1, res2 := flate.NewWriter(w, level)
+// 	_, res2 := flate.NewWriter(w, level)
 // 	res := EmptyVector
 // 	res = res.Conjoin(NIL)
 // 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
@@ -18219,7 +18219,7 @@ GO FUNC flate.NewWriter has:
 
 GO FUNC flate.NewWriterDict has:
 // func newWriterDict(w ABEND882(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/compress/flate/deflate.go:680:22), level int, dict ABEND882(unrecognized Expr type *ast.ArrayType at: GO.link/src/compress/flate/deflate.go:680:49)) Object {
-// 	res1, res2 := flate.NewWriterDict(w, level, dict)
+// 	_, res2 := flate.NewWriterDict(w, level, dict)
 // 	res := EmptyVector
 // 	res = res.Conjoin(NIL)
 // 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
@@ -18687,7 +18687,7 @@ GO FUNC gosym.NewTable has:
 
 GO FUNC gzip.NewReader has:
 // func newReader(r ABEND882(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/compress/gzip/gunzip.go:92:18)) Object {
-// 	res1, res2 := gzip.NewReader(r)
+// 	_, res2 := gzip.NewReader(r)
 // 	res := EmptyVector
 // 	res = res.Conjoin(NIL)
 // 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
@@ -18702,7 +18702,7 @@ GO FUNC gzip.NewWriter has:
 
 GO FUNC gzip.NewWriterLevel has:
 // func newWriterLevel(w ABEND882(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/compress/gzip/gzip.go:60:23), level int) Object {
-// 	res1, res2 := gzip.NewWriterLevel(w, level)
+// 	_, res2 := gzip.NewWriterLevel(w, level)
 // 	res := EmptyVector
 // 	res = res.Conjoin(NIL)
 // 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
@@ -19967,7 +19967,7 @@ GO FUNC io.NewSectionReader has:
 
 GO FUNC io.Pipe has:
 // func pipe() Object {
-// 	res1, res2 := io.Pipe()
+// 	_, _ := io.Pipe()
 // 	ABEND123(no public information returned)
 // }
 
@@ -20869,7 +20869,7 @@ GO FUNC net.Dial has:
 
 GO FUNC net.DialIP has:
 // func dialIP(network string, laddr ABEND882(unrecognized Expr type *ast.StarExpr at: GO.link/src/net/iprawsock.go:211:42), raddr ABEND882(unrecognized Expr type *ast.StarExpr at: GO.link/src/net/iprawsock.go:211:42)) Object {
-// 	res1, res2 := net.DialIP(network, laddr, raddr)
+// 	_, res2 := net.DialIP(network, laddr, raddr)
 // 	res := EmptyVector
 // 	res = res.Conjoin(NIL)
 // 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
@@ -20878,7 +20878,7 @@ GO FUNC net.DialIP has:
 
 GO FUNC net.DialTCP has:
 // func dialTCP(network string, laddr ABEND882(unrecognized Expr type *ast.StarExpr at: GO.link/src/net/tcpsock.go:206:43), raddr ABEND882(unrecognized Expr type *ast.StarExpr at: GO.link/src/net/tcpsock.go:206:43)) Object {
-// 	res1, res2 := net.DialTCP(network, laddr, raddr)
+// 	_, res2 := net.DialTCP(network, laddr, raddr)
 // 	res := EmptyVector
 // 	res = res.Conjoin(NIL)
 // 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
@@ -20896,7 +20896,7 @@ GO FUNC net.DialTimeout has:
 
 GO FUNC net.DialUDP has:
 // func dialUDP(network string, laddr ABEND882(unrecognized Expr type *ast.StarExpr at: GO.link/src/net/udpsock.go:205:43), raddr ABEND882(unrecognized Expr type *ast.StarExpr at: GO.link/src/net/udpsock.go:205:43)) Object {
-// 	res1, res2 := net.DialUDP(network, laddr, raddr)
+// 	_, res2 := net.DialUDP(network, laddr, raddr)
 // 	res := EmptyVector
 // 	res = res.Conjoin(NIL)
 // 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
@@ -20905,7 +20905,7 @@ GO FUNC net.DialUDP has:
 
 GO FUNC net.DialUnix has:
 // func dialUnix(network string, laddr ABEND882(unrecognized Expr type *ast.StarExpr at: GO.link/src/net/unixsock.go:200:44), raddr ABEND882(unrecognized Expr type *ast.StarExpr at: GO.link/src/net/unixsock.go:200:44)) Object {
-// 	res1, res2 := net.DialUnix(network, laddr, raddr)
+// 	_, res2 := net.DialUnix(network, laddr, raddr)
 // 	res := EmptyVector
 // 	res = res.Conjoin(NIL)
 // 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
@@ -21044,7 +21044,7 @@ GO FUNC net.Listen has:
 
 GO FUNC net.ListenIP has:
 // func listenIP(network string, laddr ABEND882(unrecognized Expr type *ast.StarExpr at: GO.link/src/net/iprawsock.go:230:37)) Object {
-// 	res1, res2 := net.ListenIP(network, laddr)
+// 	_, res2 := net.ListenIP(network, laddr)
 // 	res := EmptyVector
 // 	res = res.Conjoin(NIL)
 // 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
@@ -21053,7 +21053,7 @@ GO FUNC net.ListenIP has:
 
 GO FUNC net.ListenMulticastUDP has:
 // func listenMulticastUDP(network string, ifi ABEND882(unrecognized Expr type *ast.StarExpr at: GO.link/src/net/udpsock.go:265:45), gaddr ABEND882(unrecognized Expr type *ast.StarExpr at: GO.link/src/net/udpsock.go:265:63)) Object {
-// 	res1, res2 := net.ListenMulticastUDP(network, ifi, gaddr)
+// 	_, res2 := net.ListenMulticastUDP(network, ifi, gaddr)
 // 	res := EmptyVector
 // 	res = res.Conjoin(NIL)
 // 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
@@ -21071,7 +21071,7 @@ GO FUNC net.ListenPacket has:
 
 GO FUNC net.ListenTCP has:
 // func listenTCP(network string, laddr ABEND882(unrecognized Expr type *ast.StarExpr at: GO.link/src/net/tcpsock.go:323:38)) Object {
-// 	res1, res2 := net.ListenTCP(network, laddr)
+// 	_, res2 := net.ListenTCP(network, laddr)
 // 	res := EmptyVector
 // 	res = res.Conjoin(NIL)
 // 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
@@ -21080,7 +21080,7 @@ GO FUNC net.ListenTCP has:
 
 GO FUNC net.ListenUDP has:
 // func listenUDP(network string, laddr ABEND882(unrecognized Expr type *ast.StarExpr at: GO.link/src/net/udpsock.go:231:38)) Object {
-// 	res1, res2 := net.ListenUDP(network, laddr)
+// 	_, res2 := net.ListenUDP(network, laddr)
 // 	res := EmptyVector
 // 	res = res.Conjoin(NIL)
 // 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
@@ -21089,7 +21089,7 @@ GO FUNC net.ListenUDP has:
 
 GO FUNC net.ListenUnix has:
 // func listenUnix(network string, laddr ABEND882(unrecognized Expr type *ast.StarExpr at: GO.link/src/net/unixsock.go:314:39)) Object {
-// 	res1, res2 := net.ListenUnix(network, laddr)
+// 	_, res2 := net.ListenUnix(network, laddr)
 // 	res := EmptyVector
 // 	res = res.Conjoin(NIL)
 // 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
@@ -21098,7 +21098,7 @@ GO FUNC net.ListenUnix has:
 
 GO FUNC net.ListenUnixgram has:
 // func listenUnixgram(network string, laddr ABEND882(unrecognized Expr type *ast.StarExpr at: GO.link/src/net/unixsock.go:334:43)) Object {
-// 	res1, res2 := net.ListenUnixgram(network, laddr)
+// 	_, res2 := net.ListenUnixgram(network, laddr)
 // 	res := EmptyVector
 // 	res = res.Conjoin(NIL)
 // 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
@@ -21372,7 +21372,7 @@ GO FUNC os.Clearenv has:
 
 GO FUNC os.Create has:
 func create(name string) Object {
-	res1, res2 := os.Create(name)
+	_, res2 := os.Create(name)
 	res := EmptyVector
 	res = res.Conjoin(NIL)
 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
@@ -21472,7 +21472,7 @@ GO FUNC os.NewFile has:
 
 GO FUNC os.Open has:
 func open(name string) Object {
-	res1, res2 := os.Open(name)
+	_, res2 := os.Open(name)
 	res := EmptyVector
 	res = res.Conjoin(NIL)
 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
@@ -21481,7 +21481,7 @@ func open(name string) Object {
 
 GO FUNC os.OpenFile has:
 // func openFile(name string, flag int, perm ABEND884(unrecognized type FileMode at: GO.link/src/os/file.go:282:43)) Object {
-// 	res1, res2 := os.OpenFile(name, flag, perm)
+// 	_, res2 := os.OpenFile(name, flag, perm)
 // 	res := EmptyVector
 // 	res = res.Conjoin(NIL)
 // 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
@@ -21490,7 +21490,7 @@ GO FUNC os.OpenFile has:
 
 GO FUNC os.Pipe has:
 func pipe() Object {
-	r, w, err := os.Pipe()
+	_, _, err := os.Pipe()
 	res := EmptyVector
 	res = res.Conjoin(NIL)
 	res = res.Conjoin(NIL)
@@ -21802,7 +21802,7 @@ func open(name string) Object {
 
 GO FUNC plugin.Open has:
 func open(path string) Object {
-	res1, res2 := plugin.Open(path)
+	_, res2 := plugin.Open(path)
 	res := EmptyVector
 	res = res.Conjoin(NIL)
 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
@@ -21920,7 +21920,7 @@ GO FUNC rand.Read has:
 
 GO FUNC rc4.NewCipher has:
 // func newCipher(key ABEND882(unrecognized Expr type *ast.ArrayType at: GO.link/src/crypto/rc4/rc4.go:31:20)) Object {
-// 	res1, res2 := rc4.NewCipher(key)
+// 	_, res2 := rc4.NewCipher(key)
 // 	res := EmptyVector
 // 	res = res.Conjoin(NIL)
 // 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
@@ -22014,7 +22014,7 @@ GO FUNC reflect.PtrTo has:
 
 GO FUNC reflect.Select has:
 // func select(cases ABEND882(unrecognized Expr type *ast.ArrayType at: GO.link/src/reflect/value.go:2025:19)) Object {
-// 	chosen, recv, recvOK := reflect.Select(cases)
+// 	chosen, _, recvOK := reflect.Select(cases)
 // 	res := EmptyVector
 // 	res = res.Conjoin(MakeInt(int(chosen)))
 // 	res = res.Conjoin(NIL)
@@ -22056,7 +22056,7 @@ GO FUNC reflect.Zero has:
 
 GO FUNC regexp.Compile has:
 func compile(expr string) Object {
-	res1, res2 := regexp.Compile(expr)
+	_, res2 := regexp.Compile(expr)
 	res := EmptyVector
 	res = res.Conjoin(NIL)
 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
@@ -22065,7 +22065,7 @@ func compile(expr string) Object {
 
 GO FUNC regexp.CompilePOSIX has:
 func compilePOSIX(expr string) Object {
-	res1, res2 := regexp.CompilePOSIX(expr)
+	_, res2 := regexp.CompilePOSIX(expr)
 	res := EmptyVector
 	res = res.Conjoin(NIL)
 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
@@ -22127,7 +22127,7 @@ GO FUNC rpc.Accept has:
 
 GO FUNC rpc.Dial has:
 func dial(network string, address string) Object {
-	res1, res2 := rpc.Dial(network, address)
+	_, res2 := rpc.Dial(network, address)
 	res := EmptyVector
 	res = res.Conjoin(NIL)
 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
@@ -22136,7 +22136,7 @@ func dial(network string, address string) Object {
 
 GO FUNC rpc.DialHTTP has:
 func dialHTTP(network string, address string) Object {
-	res1, res2 := rpc.DialHTTP(network, address)
+	_, res2 := rpc.DialHTTP(network, address)
 	res := EmptyVector
 	res = res.Conjoin(NIL)
 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
@@ -22145,7 +22145,7 @@ func dialHTTP(network string, address string) Object {
 
 GO FUNC rpc.DialHTTPPath has:
 func dialHTTPPath(network string, address string, path string) Object {
-	res1, res2 := rpc.DialHTTPPath(network, address, path)
+	_, res2 := rpc.DialHTTPPath(network, address, path)
 	res := EmptyVector
 	res = res.Conjoin(NIL)
 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
@@ -22770,7 +22770,7 @@ GO FUNC sql.Named has:
 
 GO FUNC sql.Open has:
 func open(driverName string, dataSourceName string) Object {
-	res1, res2 := sql.Open(driverName, dataSourceName)
+	_, res2 := sql.Open(driverName, dataSourceName)
 	res := EmptyVector
 	res = res.Conjoin(NIL)
 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
@@ -24073,7 +24073,7 @@ GO FUNC syscall.Write has:
 
 GO FUNC syslog.Dial has:
 // func dial(network string, raddr string, priority ABEND884(unrecognized type Priority at: GO.link/src/log/syslog/syslog.go:118:43), tag string) Object {
-// 	res1, res2 := syslog.Dial(network, raddr, priority, tag)
+// 	_, res2 := syslog.Dial(network, raddr, priority, tag)
 // 	res := EmptyVector
 // 	res = res.Conjoin(NIL)
 // 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
@@ -24082,7 +24082,7 @@ GO FUNC syslog.Dial has:
 
 GO FUNC syslog.New has:
 // func new(priority ABEND884(unrecognized type Priority at: GO.link/src/log/syslog/syslog.go:107:19), tag string) Object {
-// 	res1, res2 := syslog.New(priority, tag)
+// 	_, res2 := syslog.New(priority, tag)
 // 	res := EmptyVector
 // 	res = res.Conjoin(NIL)
 // 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
@@ -24250,7 +24250,7 @@ GO FUNC testing.RunBenchmarks has:
 
 GO FUNC textproto.Dial has:
 func dial(network string, addr string) Object {
-	res1, res2 := textproto.Dial(network, addr)
+	_, res2 := textproto.Dial(network, addr)
 	res := EmptyVector
 	res = res.Conjoin(NIL)
 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
@@ -24316,7 +24316,7 @@ GO FUNC time.FixedZone has:
 
 GO FUNC time.LoadLocation has:
 func loadLocation(name string) Object {
-	res1, res2 := time.LoadLocation(name)
+	_, res2 := time.LoadLocation(name)
 	res := EmptyVector
 	res = res.Conjoin(NIL)
 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
@@ -24325,7 +24325,7 @@ func loadLocation(name string) Object {
 
 GO FUNC time.LoadLocationFromTZData has:
 // func loadLocationFromTZData(name string, data ABEND882(unrecognized Expr type *ast.ArrayType at: GO.link/src/time/zoneinfo_read.go:86:47)) Object {
-// 	res1, res2 := time.LoadLocationFromTZData(name, data)
+// 	_, res2 := time.LoadLocationFromTZData(name, data)
 // 	res := EmptyVector
 // 	res = res.Conjoin(NIL)
 // 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
@@ -24356,7 +24356,7 @@ GO FUNC time.Now has:
 
 GO FUNC time.Parse has:
 func parse(layout string, value string) Object {
-	res1, res2 := time.Parse(layout, value)
+	_, res2 := time.Parse(layout, value)
 	res := EmptyVector
 	res = res.Conjoin(NIL)
 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
@@ -24374,7 +24374,7 @@ func parseDuration(s string) Object {
 
 GO FUNC time.ParseInLocation has:
 // func parseInLocation(layout string, value string, loc ABEND882(unrecognized Expr type *ast.StarExpr at: GO.link/src/time/format.go:782:48)) Object {
-// 	res1, res2 := time.ParseInLocation(layout, value, loc)
+// 	_, res2 := time.ParseInLocation(layout, value, loc)
 // 	res := EmptyVector
 // 	res = res.Conjoin(NIL)
 // 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
@@ -24406,7 +24406,7 @@ GO FUNC tls.Client has:
 
 GO FUNC tls.Dial has:
 // func dial(network string, addr string, config ABEND882(unrecognized Expr type *ast.StarExpr at: GO.link/src/crypto/tls/tls.go:169:40)) Object {
-// 	res1, res2 := tls.Dial(network, addr, config)
+// 	_, res2 := tls.Dial(network, addr, config)
 // 	res := EmptyVector
 // 	res = res.Conjoin(NIL)
 // 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
@@ -24415,7 +24415,7 @@ GO FUNC tls.Dial has:
 
 GO FUNC tls.DialWithDialer has:
 // func dialWithDialer(dialer ABEND882(unrecognized Expr type *ast.StarExpr at: GO.link/src/crypto/tls/tls.go:98:28), network string, addr string, config ABEND882(unrecognized Expr type *ast.StarExpr at: GO.link/src/crypto/tls/tls.go:98:70)) Object {
-// 	res1, res2 := tls.DialWithDialer(dialer, network, addr, config)
+// 	_, res2 := tls.DialWithDialer(dialer, network, addr, config)
 // 	res := EmptyVector
 // 	res = res.Conjoin(NIL)
 // 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
@@ -24537,7 +24537,7 @@ GO FUNC trace.Logf has:
 
 GO FUNC trace.NewTask has:
 // func newTask(pctx ABEND882(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/runtime/trace/annotation.go:34:19), taskType string) Object {
-// 	ctx, task := trace.NewTask(pctx, taskType)
+// 	ctx, _ := trace.NewTask(pctx, taskType)
 // 	res := EmptyVector
 // 	res = res.Conjoin(ctx)
 // 	res = res.Conjoin(NIL)
@@ -24661,7 +24661,7 @@ GO FUNC types.LookupFieldOrMethod has:
 
 GO FUNC types.MissingMethod has:
 // func missingMethod(V ABEND884(unrecognized type Type at: GO.link/src/go/types/lookup.go:250:22), T ABEND882(unrecognized Expr type *ast.StarExpr at: GO.link/src/go/types/lookup.go:250:30), static bool) Object {
-// 	method, wrongType := types.MissingMethod(V, T, static)
+// 	_, wrongType := types.MissingMethod(V, T, static)
 // 	res := EmptyVector
 // 	res = res.Conjoin(NIL)
 // 	res = res.Conjoin(MakeBool(wrongType))
@@ -25687,7 +25687,7 @@ GO FUNC x509.ParsePKIXPublicKey has:
 
 GO FUNC x509.SystemCertPool has:
 func systemCertPool() Object {
-	res1, res2 := x509.SystemCertPool()
+	_, res2 := x509.SystemCertPool()
 	res := EmptyVector
 	res = res.Conjoin(NIL)
 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
@@ -25824,7 +25824,7 @@ GO FUNC zip.NewWriter has:
 
 GO FUNC zip.OpenReader has:
 func openReader(name string) Object {
-	res1, res2 := zip.OpenReader(name)
+	_, res2 := zip.OpenReader(name)
 	res := EmptyVector
 	res = res.Conjoin(NIL)
 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
@@ -25869,7 +25869,7 @@ GO FUNC zlib.NewWriter has:
 
 GO FUNC zlib.NewWriterLevel has:
 // func newWriterLevel(w ABEND882(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/compress/zlib/writer.go:54:23), level int) Object {
-// 	res1, res2 := zlib.NewWriterLevel(w, level)
+// 	_, res2 := zlib.NewWriterLevel(w, level)
 // 	res := EmptyVector
 // 	res = res.Conjoin(NIL)
 // 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
@@ -25878,7 +25878,7 @@ GO FUNC zlib.NewWriterLevel has:
 
 GO FUNC zlib.NewWriterLevelDict has:
 // func newWriterLevelDict(w ABEND882(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/compress/zlib/writer.go:63:27), level int, dict ABEND882(unrecognized Expr type *ast.ArrayType at: GO.link/src/compress/zlib/writer.go:63:54)) Object {
-// 	res1, res2 := zlib.NewWriterLevelDict(w, level, dict)
+// 	_, res2 := zlib.NewWriterLevelDict(w, level, dict)
 // 	res := EmptyVector
 // 	res = res.Conjoin(NIL)
 // 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())

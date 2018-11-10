@@ -685,13 +685,13 @@ func genGoPostItem(indent, pkg string, f *Field, idx *int, p *Ident, gores, jok,
 		rtn = ""
 	} else if *gores == "res" {
 		rtn = *gores
+		gores = nil // Don't need to update this anymore
 	} else {
 		if p == nil || p.Name == "" {
 			rtn = fmt.Sprintf("res%d", *idx)
 		} else {
 			rtn = p.Name
 		}
-		*gores += rtn
 	}
 	joktype, goltype, goc_pre, val := genGoPostExpr(indent, pkg, rtn, f.Type)
 	*goc = goc_pre + *goc
@@ -709,6 +709,13 @@ func genGoPostItem(indent, pkg string, f *Field, idx *int, p *Ident, gores, jok,
 		*gol += paramNameAsGo(p.Name) + " "
 	}
 	*gol += goltype
+	if gores != nil {
+		if exprIsUseful(val) {
+			*gores += rtn
+		} else {
+			*gores += "_"
+		}
+	}
 	return val
 }
 
@@ -740,9 +747,6 @@ func genGoPostList(indent string, pkg string, fl *FieldList) (gores, jok, gol, g
 		} else {
 			goc = indent + "ABEND123(no public information returned)\n"
 		}
-	} else if len(fl.List) == 0 {
-		genGoPostItem(indent, pkg, fl.List[0], &idx, nil,
-			nil, &jok, &gol, &goc)
 	} else {
 		gores = "res"
 		rtn := genGoPostItem(indent, pkg, fl.List[0], &idx, nil,

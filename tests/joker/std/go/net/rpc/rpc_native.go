@@ -13,7 +13,7 @@ import (
 // }
 
 func dial(network string, address string) Object {
-	res1, res2 := rpc.Dial(network, address)
+	_, res2 := rpc.Dial(network, address)
 	res := EmptyVector
 	res = res.Conjoin(NIL)
 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
@@ -21,7 +21,7 @@ func dial(network string, address string) Object {
 }
 
 func dialHTTP(network string, address string) Object {
-	res1, res2 := rpc.DialHTTP(network, address)
+	_, res2 := rpc.DialHTTP(network, address)
 	res := EmptyVector
 	res = res.Conjoin(NIL)
 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
@@ -29,7 +29,7 @@ func dialHTTP(network string, address string) Object {
 }
 
 func dialHTTPPath(network string, address string, path string) Object {
-	res1, res2 := rpc.DialHTTPPath(network, address, path)
+	_, res2 := rpc.DialHTTPPath(network, address, path)
 	res := EmptyVector
 	res = res.Conjoin(NIL)
 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
