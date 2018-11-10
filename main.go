@@ -95,7 +95,8 @@ func sortedFuncInfoMap(m map[string]*funcInfo, f func(k string, v *funcInfo)) {
 	}
 }
 
-var functions = map[string]*funcInfo {}
+// Map (unqualified) function names to info on each.
+var unqualifiedFunctions = map[string]*funcInfo {}
 var DUPLICATEFUNCTION = &FuncDecl {}
 
 var alreadySeen = []string {}
@@ -106,7 +107,7 @@ func processFuncDecl(pkg, pkgDir, filename string, f *File, fn *FuncDecl) bool {
 		Print(fset, fn)
 	}
 	fname := pkg + "." + fn.Name.Name
-	if v, ok := functions[fname]; ok {
+	if v, ok := unqualifiedFunctions[fname]; ok {
 		if v.fd != DUPLICATEFUNCTION {
 			alreadySeen = append(alreadySeen,
 				fmt.Sprintf("NOTE: Already seen function %s in %s, yet again in %s",
@@ -114,7 +115,7 @@ func processFuncDecl(pkg, pkgDir, filename string, f *File, fn *FuncDecl) bool {
 			fn = DUPLICATEFUNCTION
 		}
 	}
-	functions[fname] = &funcInfo{fn, pkg, pkgDir, filename}
+	unqualifiedFunctions[fname] = &funcInfo{fn, pkg, pkgDir, filename}
 	return true
 }
 
@@ -1204,7 +1205,7 @@ func main() {
 	}
 
 	/* Generate function code snippets in alphabetical order, to stabilize test output in re unsupported types. */
-	sortedFuncInfoMap(functions,
+	sortedFuncInfoMap(unqualifiedFunctions,
 		func(f string, v *funcInfo) {
 			if v.fd != DUPLICATEFUNCTION {
 				genFunction(f, v)
@@ -1311,7 +1312,7 @@ import (
 
 	if verbose {
 		fmt.Printf("Totals: types=%d functions=%d receivers=%d\n",
-			len(types), len(functions), receivers)
+			len(types), len(unqualifiedFunctions), receivers)
 	}
 
 	os.Exit(0)

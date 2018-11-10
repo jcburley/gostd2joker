@@ -18,7 +18,7 @@ cp -pr tests/joker.orig tests/joker
 ./gostd2joker --no-timestamp -v --go tests/big --replace --joker tests/joker 2>&1 | grep -v '^Default context:' > $GOENV/big.gold
 git diff --quiet -u $GOENV/big.gold || { echo >&2 "FAILED: big test"; RC=1; $EXIT; }
 
-if [ -z "$GOSRC" -a -e ../GOSRC ]; then
+if [ -z "$GOSRC" -a -e ./GO.link ]; then
     GOSRC=./GO.link
 fi
 
