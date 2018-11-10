@@ -364,7 +364,7 @@ func exprAsClojure(e Expr) string {
 		case "bool":
 			return "Bool"
 		default:
-			return ""
+			return fmt.Sprintf("ABEND885(unrecognized type %s at: %s)", v.Name, whereAt(e.Pos()))
 		}
 	default:
 		return fmt.Sprintf("ABEND881(unrecognized Expr type %T at: %s)", e, whereAt(e.Pos()))
@@ -545,6 +545,7 @@ func genGoPostNamed(indent, pkg, in, t string) (jok, gol, goc, out string) {
 			v[0].jok = jok
 			v[0].gol = gol
 			v[0].building = false
+			v[0].built = true
 		}
 	} else {
 		jok = fmt.Sprintf("ABEND042(cannot find typename %s)", qt)
