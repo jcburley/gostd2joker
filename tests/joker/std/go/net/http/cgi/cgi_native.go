@@ -10,7 +10,7 @@ import (
 // 	res1, res2 := cgi.Request()
 // 	res := EmptyVector
 // 	res = res.Conjoin((*res1))
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -18,6 +18,6 @@ import (
 // 	res1, res2 := cgi.RequestFromMap(params)
 // 	res := EmptyVector
 // 	res = res.Conjoin((*res1))
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }

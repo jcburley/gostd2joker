@@ -21,7 +21,7 @@ func parse(rawurl string) Object {
 	map1.Add(MakeKeyword("RawQuery"), MakeString((*res1).RawQuery))
 	map1.Add(MakeKeyword("Fragment"), MakeString((*res1).Fragment))
 	res = res.Conjoin(map1)
-	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 	return res
 }
 
@@ -29,7 +29,7 @@ func parse(rawurl string) Object {
 // 	res1, res2 := url.ParseQuery(query)
 // 	res := EmptyVector
 // 	res = res.Conjoin(res1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -47,7 +47,7 @@ func parseRequestURI(rawurl string) Object {
 	map1.Add(MakeKeyword("RawQuery"), MakeString((*res1).RawQuery))
 	map1.Add(MakeKeyword("Fragment"), MakeString((*res1).Fragment))
 	res = res.Conjoin(map1)
-	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 	return res
 }
 
@@ -55,7 +55,7 @@ func pathUnescape(s string) Object {
 	res1, res2 := url.PathUnescape(s)
 	res := EmptyVector
 	res = res.Conjoin(MakeString(res1))
-	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 	return res
 }
 
@@ -63,7 +63,7 @@ func queryUnescape(s string) Object {
 	res1, res2 := url.QueryUnescape(s)
 	res := EmptyVector
 	res = res.Conjoin(MakeString(res1))
-	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 	return res
 }
 

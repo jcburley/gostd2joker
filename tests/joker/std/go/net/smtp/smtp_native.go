@@ -16,7 +16,7 @@ import (
 // 	map1 := EmptyArrayMap()
 // 	map1.Add(MakeKeyword("Text"), (*(*res1).Text))
 // 	res = res.Conjoin(map1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -26,7 +26,7 @@ import (
 // 	map1 := EmptyArrayMap()
 // 	map1.Add(MakeKeyword("Text"), (*(*res1).Text))
 // 	res = res.Conjoin(map1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 

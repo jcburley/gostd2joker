@@ -656,7 +656,7 @@ func genGoPostExpr(indent, pkg, in string, e Expr) (jok, gol, goc, out string) {
 		case "error":
 			jok = "Error"
 			gol = "error"
-			out = maybeNil(in, "MakeString(" + in + ".Error())")  // TODO: Test this, as I can't find a MakeError() in joker/core/object.go
+			out = maybeNil(in, "MakeError(" + in + ")")  // TODO: Test this against the MakeError() added to joker/core/object.go
 		default:
 			jok, _, goc, out = genGoPostNamed(indent, pkg, in, v.Name)
 			gol = v.Name  // This is as far as Go needs to go for a type signature

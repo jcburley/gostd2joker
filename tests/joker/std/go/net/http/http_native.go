@@ -65,7 +65,7 @@ import (
 // 	map1.Add(MakeKeyword("Request"), map3)
 // 	map1.Add(MakeKeyword("TLS"), (*(*resp).TLS))
 // 	res = res.Conjoin(map1)
-// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 // 	return res
 // }
 
@@ -128,7 +128,7 @@ import (
 // 	map1.Add(MakeKeyword("Request"), map3)
 // 	map1.Add(MakeKeyword("TLS"), (*(*resp).TLS))
 // 	res = res.Conjoin(map1)
-// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 // 	return res
 // }
 
@@ -189,7 +189,7 @@ import (
 // 	map3.Add(MakeKeyword("TLS"), (*(*(*res1).Response).TLS))
 // 	map1.Add(MakeKeyword("Response"), map3)
 // 	res = res.Conjoin(map1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -220,7 +220,7 @@ func parseHTTPVersion(vers string) Object {
 // 	t, err := http.ParseTime(text)
 // 	res := EmptyVector
 // 	res = res.Conjoin(t)
-// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 // 	return res
 // }
 
@@ -273,7 +273,7 @@ func parseHTTPVersion(vers string) Object {
 // 	map1.Add(MakeKeyword("Request"), map3)
 // 	map1.Add(MakeKeyword("TLS"), (*(*resp).TLS))
 // 	res = res.Conjoin(map1)
-// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 // 	return res
 // }
 
@@ -326,7 +326,7 @@ func parseHTTPVersion(vers string) Object {
 // 	map1.Add(MakeKeyword("Request"), map3)
 // 	map1.Add(MakeKeyword("TLS"), (*(*resp).TLS))
 // 	res = res.Conjoin(map1)
-// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 // 	return res
 // }
 
@@ -334,7 +334,7 @@ func parseHTTPVersion(vers string) Object {
 // 	res1, res2 := http.ProxyFromEnvironment(req)
 // 	res := EmptyVector
 // 	res = res.Conjoin((*res1))
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -391,7 +391,7 @@ func parseHTTPVersion(vers string) Object {
 // 	map3.Add(MakeKeyword("TLS"), (*(*(*res1).Response).TLS))
 // 	map1.Add(MakeKeyword("Response"), map3)
 // 	res = res.Conjoin(map1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -444,7 +444,7 @@ func parseHTTPVersion(vers string) Object {
 // 	map1.Add(MakeKeyword("Request"), map3)
 // 	map1.Add(MakeKeyword("TLS"), (*(*res1).TLS))
 // 	res = res.Conjoin(map1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 

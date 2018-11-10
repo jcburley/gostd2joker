@@ -20,7 +20,7 @@ func cIDRMask(ones int, bits int) Object {
 // 	res1, res2 := net.Dial(network, address)
 // 	res := EmptyVector
 // 	res = res.Conjoin(res1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -28,7 +28,7 @@ func cIDRMask(ones int, bits int) Object {
 // 	res1, res2 := net.DialIP(network, laddr, raddr)
 // 	res := EmptyVector
 // 	res = res.Conjoin(NIL)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -36,7 +36,7 @@ func cIDRMask(ones int, bits int) Object {
 // 	res1, res2 := net.DialTCP(network, laddr, raddr)
 // 	res := EmptyVector
 // 	res = res.Conjoin(NIL)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -44,7 +44,7 @@ func cIDRMask(ones int, bits int) Object {
 // 	res1, res2 := net.DialTimeout(network, address, timeout)
 // 	res := EmptyVector
 // 	res = res.Conjoin(res1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -52,7 +52,7 @@ func cIDRMask(ones int, bits int) Object {
 // 	res1, res2 := net.DialUDP(network, laddr, raddr)
 // 	res := EmptyVector
 // 	res = res.Conjoin(NIL)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -60,7 +60,7 @@ func cIDRMask(ones int, bits int) Object {
 // 	res1, res2 := net.DialUnix(network, laddr, raddr)
 // 	res := EmptyVector
 // 	res = res.Conjoin(NIL)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -68,7 +68,7 @@ func cIDRMask(ones int, bits int) Object {
 // 	c, err := net.FileConn(f)
 // 	res := EmptyVector
 // 	res = res.Conjoin(c)
-// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 // 	return res
 // }
 
@@ -76,7 +76,7 @@ func cIDRMask(ones int, bits int) Object {
 // 	ln, err := net.FileListener(f)
 // 	res := EmptyVector
 // 	res = res.Conjoin(ln)
-// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 // 	return res
 // }
 
@@ -84,7 +84,7 @@ func cIDRMask(ones int, bits int) Object {
 // 	c, err := net.FilePacketConn(f)
 // 	res := EmptyVector
 // 	res = res.Conjoin(c)
-// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 // 	return res
 // }
 
@@ -114,7 +114,7 @@ func iPv4Mask(a byte, b byte, c byte, d byte) Object {
 // 		vec1 = vec1.Conjoin(elem1)
 // 	}
 // 	res = res.Conjoin(vec1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -132,7 +132,7 @@ func interfaceByIndex(index int) Object {
 	map1.Add(MakeKeyword("HardwareAddr"), vec2)
 	map1.Add(MakeKeyword("Flags"), MakeInt(int((*res1).Flags)))
 	res = res.Conjoin(map1)
-	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 	return res
 }
 
@@ -150,7 +150,7 @@ func interfaceByName(name string) Object {
 	map1.Add(MakeKeyword("HardwareAddr"), vec2)
 	map1.Add(MakeKeyword("Flags"), MakeInt(int((*res1).Flags)))
 	res = res.Conjoin(map1)
-	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 	return res
 }
 
@@ -172,7 +172,7 @@ func interfaces() Object {
 		vec1 = vec1.Conjoin(map2)
 	}
 	res = res.Conjoin(vec1)
-	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 	return res
 }
 
@@ -180,7 +180,7 @@ func interfaces() Object {
 // 	res1, res2 := net.Listen(network, address)
 // 	res := EmptyVector
 // 	res = res.Conjoin(res1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -188,7 +188,7 @@ func interfaces() Object {
 // 	res1, res2 := net.ListenIP(network, laddr)
 // 	res := EmptyVector
 // 	res = res.Conjoin(NIL)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -196,7 +196,7 @@ func interfaces() Object {
 // 	res1, res2 := net.ListenMulticastUDP(network, ifi, gaddr)
 // 	res := EmptyVector
 // 	res = res.Conjoin(NIL)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -204,7 +204,7 @@ func interfaces() Object {
 // 	res1, res2 := net.ListenPacket(network, address)
 // 	res := EmptyVector
 // 	res = res.Conjoin(res1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -212,7 +212,7 @@ func interfaces() Object {
 // 	res1, res2 := net.ListenTCP(network, laddr)
 // 	res := EmptyVector
 // 	res = res.Conjoin(NIL)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -220,7 +220,7 @@ func interfaces() Object {
 // 	res1, res2 := net.ListenUDP(network, laddr)
 // 	res := EmptyVector
 // 	res = res.Conjoin(NIL)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -228,7 +228,7 @@ func interfaces() Object {
 // 	res1, res2 := net.ListenUnix(network, laddr)
 // 	res := EmptyVector
 // 	res = res.Conjoin(NIL)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -236,7 +236,7 @@ func interfaces() Object {
 // 	res1, res2 := net.ListenUnixgram(network, laddr)
 // 	res := EmptyVector
 // 	res = res.Conjoin(NIL)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -248,7 +248,7 @@ func lookupAddr(addr string) Object {
 		vec1 = vec1.Conjoin(MakeString(elem1))
 	}
 	res = res.Conjoin(vec1)
-	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 	return res
 }
 
@@ -256,7 +256,7 @@ func lookupCNAME(host string) Object {
 	cname, err := net.LookupCNAME(host)
 	res := EmptyVector
 	res = res.Conjoin(MakeString(cname))
-	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 	return res
 }
 
@@ -268,7 +268,7 @@ func lookupHost(host string) Object {
 		vec1 = vec1.Conjoin(MakeString(elem1))
 	}
 	res = res.Conjoin(vec1)
-	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 	return res
 }
 
@@ -284,7 +284,7 @@ func lookupIP(host string) Object {
 		vec1 = vec1.Conjoin(vec2)
 	}
 	res = res.Conjoin(vec1)
-	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 	return res
 }
 
@@ -299,7 +299,7 @@ func lookupMX(name string) Object {
 		vec1 = vec1.Conjoin(map2)
 	}
 	res = res.Conjoin(vec1)
-	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 	return res
 }
 
@@ -313,7 +313,7 @@ func lookupNS(name string) Object {
 		vec1 = vec1.Conjoin(map2)
 	}
 	res = res.Conjoin(vec1)
-	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 	return res
 }
 
@@ -321,7 +321,7 @@ func lookupPort(network string, service string) Object {
 	port, err := net.LookupPort(network, service)
 	res := EmptyVector
 	res = res.Conjoin(MakeInt(int(port)))
-	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 	return res
 }
 
@@ -339,7 +339,7 @@ func lookupSRV(service string, proto string, name string) Object {
 	}
 	res = res.Conjoin(MakeString(cname))
 	res = res.Conjoin(vec1)
-	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 	return res
 }
 
@@ -351,7 +351,7 @@ func lookupTXT(name string) Object {
 		vec1 = vec1.Conjoin(MakeString(elem1))
 	}
 	res = res.Conjoin(vec1)
-	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 	return res
 }
 
@@ -375,7 +375,7 @@ func parseCIDR(s string) Object {
 	}
 	res = res.Conjoin(vec1)
 	res = res.Conjoin(map2)
-	res = res.Conjoin(func () Object { if (res3) == nil { return NIL } else { return MakeString(res3.Error()) } }())
+	res = res.Conjoin(func () Object { if (res3) == nil { return NIL } else { return MakeError(res3) } }())
 	return res
 }
 
@@ -396,7 +396,7 @@ func parseMAC(s string) Object {
 		vec1 = vec1.Conjoin(MakeInt(int(elem1)))
 	}
 	res = res.Conjoin(vec1)
-	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 	return res
 }
 
@@ -419,7 +419,7 @@ func resolveIPAddr(network string, address string) Object {
 	map1.Add(MakeKeyword("IP"), vec2)
 	map1.Add(MakeKeyword("Zone"), MakeString((*res1).Zone))
 	res = res.Conjoin(map1)
-	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 	return res
 }
 
@@ -435,7 +435,7 @@ func resolveTCPAddr(network string, address string) Object {
 	map1.Add(MakeKeyword("Port"), MakeInt(int((*res1).Port)))
 	map1.Add(MakeKeyword("Zone"), MakeString((*res1).Zone))
 	res = res.Conjoin(map1)
-	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 	return res
 }
 
@@ -451,7 +451,7 @@ func resolveUDPAddr(network string, address string) Object {
 	map1.Add(MakeKeyword("Port"), MakeInt(int((*res1).Port)))
 	map1.Add(MakeKeyword("Zone"), MakeString((*res1).Zone))
 	res = res.Conjoin(map1)
-	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 	return res
 }
 
@@ -462,7 +462,7 @@ func resolveUnixAddr(network string, address string) Object {
 	map1.Add(MakeKeyword("Name"), MakeString((*res1).Name))
 	map1.Add(MakeKeyword("Net"), MakeString((*res1).Net))
 	res = res.Conjoin(map1)
-	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 	return res
 }
 
@@ -471,6 +471,6 @@ func splitHostPort(hostport string) Object {
 	res := EmptyVector
 	res = res.Conjoin(MakeString(host))
 	res = res.Conjoin(MakeString(port))
-	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 	return res
 }

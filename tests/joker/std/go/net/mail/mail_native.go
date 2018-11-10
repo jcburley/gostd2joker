@@ -14,7 +14,7 @@ func parseAddress(address string) Object {
 	map1.Add(MakeKeyword("Name"), MakeString((*res1).Name))
 	map1.Add(MakeKeyword("Address"), MakeString((*res1).Address))
 	res = res.Conjoin(map1)
-	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 	return res
 }
 
@@ -29,7 +29,7 @@ func parseAddressList(list string) Object {
 		vec1 = vec1.Conjoin(map2)
 	}
 	res = res.Conjoin(vec1)
-	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 	return res
 }
 
@@ -37,7 +37,7 @@ func parseAddressList(list string) Object {
 // 	res1, res2 := mail.ParseDate(date)
 // 	res := EmptyVector
 // 	res = res.Conjoin(res1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -48,6 +48,6 @@ func parseAddressList(list string) Object {
 // 	map1.Add(MakeKeyword("Header"), (*msg).Header)
 // 	map1.Add(MakeKeyword("Body"), (*msg).Body)
 // 	res = res.Conjoin(map1)
-// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 // 	return res
 // }

@@ -14,7 +14,7 @@ import (
 // 		vec1 = vec1.Conjoin(MakeInt(int(elem1)))
 // 	}
 // 	res = res.Conjoin(vec1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -26,7 +26,7 @@ import (
 // 		vec1 = vec1.Conjoin(MakeInt(int(elem1)))
 // 	}
 // 	res = res.Conjoin(vec1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -38,7 +38,7 @@ import (
 // 		vec1 = vec1.Conjoin(MakeInt(int(elem1)))
 // 	}
 // 	res = res.Conjoin(vec1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
