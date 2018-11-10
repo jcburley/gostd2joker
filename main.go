@@ -73,8 +73,9 @@ func commentGroupInQuotes(doc *CommentGroup, jok, gol string) string {
 
 type funcInfo struct {
 	fd *FuncDecl
-	pkg string
-	filename string
+	pkg string // full path to package
+	pkgDir string // relative path to package
+	filename string // filename within package
 }
 
 /* Go apparently doesn't support/allow 'interface{}' as the value (or
@@ -100,7 +101,7 @@ var DUPLICATEFUNCTION = &FuncDecl {}
 var alreadySeen = []string {}
 
 // Returns whether any public functions were actually processed.
-func processFuncDecl(pkg string, filename string, f *File, fn *FuncDecl) bool {
+func processFuncDecl(pkg, pkgDir, filename string, f *File, fn *FuncDecl) bool {
 	if (dump) {
 		Print(fset, fn)
 	}
@@ -113,7 +114,7 @@ func processFuncDecl(pkg string, filename string, f *File, fn *FuncDecl) bool {
 			fn = DUPLICATEFUNCTION
 		}
 	}
-	functions[fname] = &funcInfo{fn, pkg, filename}
+	functions[fname] = &funcInfo{fn, pkg, pkgDir, filename}
 	return true
 }
 
@@ -171,7 +172,7 @@ func processTypeSpecs(pkg string, filename string, f *File, tss []Spec) {
 }
 
 // Returns whether any public functions were actually processed.
-func processDecls(pkg string, filename string, f *File) (found bool) {
+func processDecls(pkg, pkgDir, filename string, f *File) (found bool) {
 	for _, s := range f.Decls {
 		switch v := s.(type) {
 		case *FuncDecl:
@@ -183,7 +184,7 @@ func processDecls(pkg string, filename string, f *File) (found bool) {
 			if unicode.IsLower(rune(v.Name.Name[0])) {
 				continue  // Skipping non-exported functions
 			}
-			if processFuncDecl(pkg, filename, f, v) {
+			if processFuncDecl(pkg, pkgDir, filename, f, v) {
 				found = true
 			}
 		case *GenDecl:
@@ -198,24 +199,42 @@ func processDecls(pkg string, filename string, f *File) (found bool) {
 	return
 }
 
-/* Maintain a map of packages seen, keyed by (relative) package pathname, with value of whether any public functions have been seen in it. */
 var exists = struct{}{}
-var packagesNonEmpty = map[string]bool {}
+
+/* Maps relative package names to their imports, non-emptiness, etc. */
+type packageImports map[string]struct{}
+type packageInfo struct {
+	imports packageImports
+	nonEmpty bool
+}
+var packagesInfo = map[string]*packageInfo {}
 
 /* Sort the packages -- currently appears to not actually be
 /* necessary, probably because of how walkDirs() works. */
-func sortedPackagesNonEmpty(m map[string]bool, f func(k string, f bool)) {
+func sortedPackagesInfo(m map[string]*packageInfo, f func(k string, i *packageInfo)) {
 	var keys []string
 	for k, _ := range m {
 		keys = append(keys, k)
 	}
 	sort.Strings(keys)
 	for _, k := range keys {
-		f(k, packagesNonEmpty[k])
+		f(k, m[k])
 	}
 }
 
-/* Maps simple package names to their (relative) source directories. */
+func sortedPackageImports(pi packageImports, f func(k string)) {
+	var keys []string
+	for k, _ := range pi {
+		keys = append(keys, k)
+	}
+	sort.Strings(keys)
+	for _, k := range keys {
+		f(k)
+	}
+}
+
+/* Maps simple (base) package names to their (relative) source
+/* directories. */
 var packageDirs = map[string]string {}
 
 func processPackage(pkgDir string, pkg string, p *Package) {
@@ -231,12 +250,15 @@ func processPackage(pkgDir string, pkg string, p *Package) {
 	packageDirs[pkg] = pkgDir
 	found := false
 	for filename, f := range p.Files {
-		if processDecls(pkg, filename, f) {
+		if processDecls(pkg, pkgDir, filename, f) {
 			found = true
 		}
 	}
 	if found {
-		packagesNonEmpty[pkgDir] = true
+		if _, found = packagesInfo[pkgDir]; !found {
+			packagesInfo[pkgDir] = &packageInfo{packageImports{}, false}
+		}
+		packagesInfo[pkgDir].nonEmpty = true
 	}
 }
 
@@ -244,9 +266,6 @@ func processDir(d string, path string, mode parser.Mode) error {
 	pkgDir := strings.TrimPrefix(path, d + string(filepath.Separator))
 	if verbose {
 		fmt.Printf("Processing %s:\n", pkgDir)
-	}
-	if _, ok := packagesNonEmpty[pkgDir]; !ok {
-		packagesNonEmpty[pkgDir] = false
 	}
 
 	pkgs, err := parser.ParseDir(fset, path,
@@ -855,6 +874,10 @@ func genFunction(f string, fn *funcInfo) {
 	} else {
 		jokerReturnType += " "
 		jok2gol = pkg + "." + d.Name.Name
+		if _, found := packagesInfo[fn.pkgDir]; !found {
+			panic(fmt.Sprintf("Cannot find package %s", fn.pkgDir))
+		}
+		packagesInfo[fn.pkgDir].imports[fn.pkgDir] = exists
 	}
 
 	jokerFn := fmt.Sprintf(jfmt, jokerReturnType, d.Name.Name,
@@ -1039,6 +1062,18 @@ func updateGenerateSTD(pkgs []string, f string) {
 	check(err)
 }
 
+func packageQuotedImportList(pi packageImports) string {
+	imports := ""
+	sortedPackageImports(pi,
+		func(k string) {
+			if imports != "" {
+				imports += " "
+			}
+			imports += `"` + k + `"`
+		})
+	return imports
+}
+
 func main() {
 	fset = token.NewFileSet() // positions are relative to fset
 	dump = false
@@ -1049,7 +1084,7 @@ func main() {
 	replace := false
 	overwrite := false
 
-	var mode parser.Mode = parser.ParseComments /* Also: parser.ImportsOnly, parser.ParseComments ? See https://golang.org/pkg/go/parser/ */
+	var mode parser.Mode = parser.ParseComments
 
 	for i := 1; i < length; i++ { // shift
 		a := os.Args[i]
@@ -1188,16 +1223,21 @@ func main() {
 				unbuf_out, e = os.Create(jf)
 				check(e)
 				out = bufio.NewWriterSize(unbuf_out, 16384)
+
 				pkgDir := packageDirs[p]
-				fmt.Fprintf(out, `;;;; Auto-generated by gostd2joker at ` + curTimeAndVersion() + `, do not edit!!
+				pi := packagesInfo[pkgDir]
+
+				fmt.Fprintf(out,
+					`;;;; Auto-generated by gostd2joker at ` + curTimeAndVersion() + `, do not edit!!
 
 (ns
-  ^{:go-imports ["%s"]
+  ^{:go-imports [%s]
     :doc "Provides a low-level interface to the %s package."}
   go.%s)
 `,
-					pkgDir, pkgDir, strings.Replace(pkgDir, string(filepath.Separator), ".", -1))
-			}
+					packageQuotedImportList(pi.imports), pkgDir,
+					strings.Replace(pkgDir, string(filepath.Separator), ".", -1))
+				}
 			sortedCodeMap(v,
 				func(f string, w string) {
 					if verbose || jokerLibDir == "" {
@@ -1231,7 +1271,8 @@ func main() {
 					pkgImport = p + ` "` + pkgDir + `"`
 				}
 */
-				fmt.Fprintf(out, `// Auto-generated by gostd2joker at ` + curTimeAndVersion() + `, do not edit!!
+				fmt.Fprintf(out,
+					`// Auto-generated by gostd2joker at ` + curTimeAndVersion() + `, do not edit!!
 
 package %s
 
@@ -1261,8 +1302,8 @@ import (
 	if jokerSourceDir != "" && jokerSourceDir != "-" {
 		var packagesArray = []string{} // Relative package pathnames in alphabetical order
 
-		sortedPackagesNonEmpty(packagesNonEmpty,
-			func (p string, f bool) { if f { packagesArray = append(packagesArray, p) } })
+		sortedPackagesInfo(packagesInfo,
+			func (p string, i *packageInfo) { if i.nonEmpty { packagesArray = append(packagesArray, p) } })
 		updateJokerMain(packagesArray, filepath.Join(jokerSourceDir, "main.go"))
 		updateCoreDotJoke(packagesArray, filepath.Join(jokerSourceDir, "core", "data", "core.joke"))
 		updateGenerateSTD(packagesArray, filepath.Join(jokerSourceDir, "std", "generate-std.joke"))
