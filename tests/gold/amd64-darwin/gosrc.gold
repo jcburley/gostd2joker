@@ -15429,7 +15429,7 @@ GO FUNC aes.NewCipher has:
 // 	res1, res2 := aes.NewCipher(key)
 // 	res := EmptyVector
 // 	res = res.Conjoin(res1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -15439,7 +15439,7 @@ GO FUNC ascii85.Decode has:
 // 	res := EmptyVector
 // 	res = res.Conjoin(MakeInt(int(ndst)))
 // 	res = res.Conjoin(MakeInt(int(nsrc)))
-// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 // 	return res
 // }
 
@@ -15462,7 +15462,7 @@ GO FUNC asn1.Marshal has:
 // 		vec1 = vec1.Conjoin(MakeInt(int(elem1)))
 // 	}
 // 	res = res.Conjoin(vec1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -15475,7 +15475,7 @@ GO FUNC asn1.MarshalWithParams has:
 // 		vec1 = vec1.Conjoin(MakeInt(int(elem1)))
 // 	}
 // 	res = res.Conjoin(vec1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -15488,7 +15488,7 @@ GO FUNC asn1.Unmarshal has:
 // 		vec1 = vec1.Conjoin(MakeInt(int(elem1)))
 // 	}
 // 	res = res.Conjoin(vec1)
-// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 // 	return res
 // }
 
@@ -15501,7 +15501,7 @@ GO FUNC asn1.UnmarshalWithParams has:
 // 		vec1 = vec1.Conjoin(MakeInt(int(elem1)))
 // 	}
 // 	res = res.Conjoin(vec1)
-// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 // 	return res
 // }
 
@@ -15667,7 +15667,7 @@ GO FUNC ast.NewPackage has:
 // 	map1.Add(MakeKeyword("Imports"), (*res1).Imports)
 // 	map1.Add(MakeKeyword("Files"), (*res1).Files)
 // 	res = res.Conjoin(map1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -15882,7 +15882,7 @@ GO FUNC big.ParseFloat has:
 // 	res := EmptyVector
 // 	res = res.Conjoin(NIL)
 // 	res = res.Conjoin(MakeInt(int(b)))
-// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 // 	return res
 // }
 
@@ -15891,7 +15891,7 @@ GO FUNC binary.ReadUvarint has:
 // 	res1, res2 := binary.ReadUvarint(r)
 // 	res := EmptyVector
 // 	res = res.Conjoin()
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -15900,7 +15900,7 @@ GO FUNC binary.ReadVarint has:
 // 	res1, res2 := binary.ReadVarint(r)
 // 	res := EmptyVector
 // 	res = res.Conjoin(MakeInt(int(res1)))
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -15993,7 +15993,7 @@ GO FUNC bufio.ScanBytes has:
 // 	}
 // 	res = res.Conjoin(MakeInt(int(advance)))
 // 	res = res.Conjoin(vec1)
-// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 // 	return res
 // }
 
@@ -16007,7 +16007,7 @@ GO FUNC bufio.ScanLines has:
 // 	}
 // 	res = res.Conjoin(MakeInt(int(advance)))
 // 	res = res.Conjoin(vec1)
-// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 // 	return res
 // }
 
@@ -16021,7 +16021,7 @@ GO FUNC bufio.ScanRunes has:
 // 	}
 // 	res = res.Conjoin(MakeInt(int(advance)))
 // 	res = res.Conjoin(vec1)
-// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 // 	return res
 // }
 
@@ -16035,7 +16035,7 @@ GO FUNC bufio.ScanWords has:
 // 	}
 // 	res = res.Conjoin(MakeInt(int(advance)))
 // 	res = res.Conjoin(vec1)
-// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 // 	return res
 // }
 
@@ -16044,7 +16044,7 @@ func archChar(goarch string) Object {
 	res1, res2 := build.ArchChar(goarch)
 	res := EmptyVector
 	res = res.Conjoin(MakeString(res1))
-	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 	return res
 }
 
@@ -16196,7 +16196,7 @@ GO FUNC build.Import has:
 // 	map1.Add(MakeKeyword("XTestImports"), vec26)
 // 	map1.Add(MakeKeyword("XTestImportPos"), (*res1).XTestImportPos)
 // 	res = res.Conjoin(map1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -16348,7 +16348,7 @@ GO FUNC build.ImportDir has:
 // 	map1.Add(MakeKeyword("XTestImports"), vec26)
 // 	map1.Add(MakeKeyword("XTestImportPos"), (*res1).XTestImportPos)
 // 	res = res.Conjoin(map1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -16674,7 +16674,7 @@ GO FUNC cgi.Request has:
 // 	res1, res2 := cgi.Request()
 // 	res := EmptyVector
 // 	res = res.Conjoin((*res1))
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -16683,7 +16683,7 @@ GO FUNC cgi.RequestFromMap has:
 // 	res1, res2 := cgi.RequestFromMap(params)
 // 	res := EmptyVector
 // 	res = res.Conjoin((*res1))
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -16704,7 +16704,7 @@ GO FUNC chacha20poly1305.New has:
 // 	res1, res2 := chacha20poly1305.New(key)
 // 	res := EmptyVector
 // 	res = res.Conjoin(res1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -16738,7 +16738,7 @@ GO FUNC cipher.NewGCM has:
 // 	res1, res2 := cipher.NewGCM(cipher)
 // 	res := EmptyVector
 // 	res = res.Conjoin(res1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -16747,7 +16747,7 @@ GO FUNC cipher.NewGCMWithNonceSize has:
 // 	res1, res2 := cipher.NewGCMWithNonceSize(cipher, size)
 // 	res := EmptyVector
 // 	res = res.Conjoin(res1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -16756,7 +16756,7 @@ GO FUNC cipher.NewGCMWithTagSize has:
 // 	res1, res2 := cipher.NewGCMWithTagSize(cipher, tagSize)
 // 	res := EmptyVector
 // 	res = res.Conjoin(res1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -17128,7 +17128,7 @@ GO FUNC cookiejar.New has:
 // 	res1, res2 := cookiejar.New(o)
 // 	res := EmptyVector
 // 	res = res.Conjoin(NIL)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -17275,7 +17275,7 @@ GO FUNC des.NewCipher has:
 // 	res1, res2 := des.NewCipher(key)
 // 	res := EmptyVector
 // 	res = res.Conjoin(res1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -17284,7 +17284,7 @@ GO FUNC des.NewTripleDESCipher has:
 // 	res1, res2 := des.NewTripleDESCipher(key)
 // 	res := EmptyVector
 // 	res = res.Conjoin(res1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -17306,7 +17306,7 @@ GO FUNC dnsmessage.NewName has:
 // 	map1.Add(MakeKeyword("Data"), vec2)
 // 	map1.Add(MakeKeyword("Length"), )
 // 	res = res.Conjoin(map1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -17487,7 +17487,7 @@ GO FUNC dsa.Sign has:
 // 	res := EmptyVector
 // 	res = res.Conjoin((*r))
 // 	res = res.Conjoin((*s))
-// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 // 	return res
 // }
 
@@ -17496,7 +17496,7 @@ GO FUNC dwarf.New has:
 // 	res1, res2 := dwarf.New(abbrev, aranges, frame, info, line, pubnames, ranges, str)
 // 	res := EmptyVector
 // 	res = res.Conjoin(NIL)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -17507,7 +17507,7 @@ GO FUNC ecdsa.GenerateKey has:
 // 	map1 := EmptyArrayMap()
 // 	map1.Add(MakeKeyword("D"), (*(*res1).D))
 // 	res = res.Conjoin(map1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -17517,7 +17517,7 @@ GO FUNC ecdsa.Sign has:
 // 	res := EmptyVector
 // 	res = res.Conjoin((*r))
 // 	res = res.Conjoin((*s))
-// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 // 	return res
 // }
 
@@ -17537,7 +17537,7 @@ GO FUNC elf.NewFile has:
 // 	}
 // 	map1.Add(MakeKeyword("Progs"), vec4)
 // 	res = res.Conjoin(map1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -17557,7 +17557,7 @@ func open(name string) Object {
 	}
 	map1.Add(MakeKeyword("Progs"), vec4)
 	res = res.Conjoin(map1)
-	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 	return res
 }
 
@@ -17582,7 +17582,7 @@ GO FUNC elliptic.GenerateKey has:
 // 	res = res.Conjoin(vec1)
 // 	res = res.Conjoin((*x))
 // 	res = res.Conjoin((*y))
-// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 // 	return res
 // }
 
@@ -17690,7 +17690,7 @@ func lookPath(file string) Object {
 	res1, res2 := exec.LookPath(file)
 	res := EmptyVector
 	res = res.Conjoin(MakeString(res1))
-	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 	return res
 }
 
@@ -17750,7 +17750,7 @@ func abs(path string) Object {
 	res1, res2 := filepath.Abs(path)
 	res := EmptyVector
 	res = res.Conjoin(MakeString(res1))
-	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 	return res
 }
 
@@ -17759,7 +17759,7 @@ func evalSymlinks(path string) Object {
 	res1, res2 := filepath.EvalSymlinks(path)
 	res := EmptyVector
 	res = res.Conjoin(MakeString(res1))
-	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 	return res
 }
 
@@ -17772,7 +17772,7 @@ func glob(pattern string) Object {
 		vec1 = vec1.Conjoin(MakeString(elem1))
 	}
 	res = res.Conjoin(vec1)
-	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 	return res
 }
 
@@ -17781,7 +17781,7 @@ func match(pattern string, name string) Object {
 	matched, err := filepath.Match(pattern, name)
 	res := EmptyVector
 	res = res.Conjoin(MakeBool(matched))
-	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 	return res
 }
 
@@ -17790,7 +17790,7 @@ func rel(basepath string, targpath string) Object {
 	res1, res2 := filepath.Rel(basepath, targpath)
 	res := EmptyVector
 	res = res.Conjoin(MakeString(res1))
-	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 	return res
 }
 
@@ -17959,7 +17959,7 @@ GO FUNC flate.NewWriter has:
 // 	res1, res2 := flate.NewWriter(w, level)
 // 	res := EmptyVector
 // 	res = res.Conjoin(NIL)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -17968,7 +17968,7 @@ GO FUNC flate.NewWriterDict has:
 // 	res1, res2 := flate.NewWriterDict(w, level, dict)
 // 	res := EmptyVector
 // 	res = res.Conjoin(NIL)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -17977,7 +17977,7 @@ GO FUNC fmt.Fprint has:
 // 	n, err := fmt.Fprint(w, a)
 // 	res := EmptyVector
 // 	res = res.Conjoin(MakeInt(int(n)))
-// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 // 	return res
 // }
 
@@ -17986,7 +17986,7 @@ GO FUNC fmt.Fprintf has:
 // 	n, err := fmt.Fprintf(w, format, a)
 // 	res := EmptyVector
 // 	res = res.Conjoin(MakeInt(int(n)))
-// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 // 	return res
 // }
 
@@ -17995,7 +17995,7 @@ GO FUNC fmt.Fprintln has:
 // 	n, err := fmt.Fprintln(w, a)
 // 	res := EmptyVector
 // 	res = res.Conjoin(MakeInt(int(n)))
-// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 // 	return res
 // }
 
@@ -18004,7 +18004,7 @@ GO FUNC fmt.Fscan has:
 // 	n, err := fmt.Fscan(r, a)
 // 	res := EmptyVector
 // 	res = res.Conjoin(MakeInt(int(n)))
-// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 // 	return res
 // }
 
@@ -18013,7 +18013,7 @@ GO FUNC fmt.Fscanf has:
 // 	n, err := fmt.Fscanf(r, format, a)
 // 	res := EmptyVector
 // 	res = res.Conjoin(MakeInt(int(n)))
-// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 // 	return res
 // }
 
@@ -18022,7 +18022,7 @@ GO FUNC fmt.Fscanln has:
 // 	n, err := fmt.Fscanln(r, a)
 // 	res := EmptyVector
 // 	res = res.Conjoin(MakeInt(int(n)))
-// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 // 	return res
 // }
 
@@ -18031,7 +18031,7 @@ GO FUNC fmt.Print has:
 // 	n, err := fmt.Print(a)
 // 	res := EmptyVector
 // 	res = res.Conjoin(MakeInt(int(n)))
-// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 // 	return res
 // }
 
@@ -18040,7 +18040,7 @@ GO FUNC fmt.Printf has:
 // 	n, err := fmt.Printf(format, a)
 // 	res := EmptyVector
 // 	res = res.Conjoin(MakeInt(int(n)))
-// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 // 	return res
 // }
 
@@ -18049,7 +18049,7 @@ GO FUNC fmt.Println has:
 // 	n, err := fmt.Println(a)
 // 	res := EmptyVector
 // 	res = res.Conjoin(MakeInt(int(n)))
-// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 // 	return res
 // }
 
@@ -18058,7 +18058,7 @@ GO FUNC fmt.Scan has:
 // 	n, err := fmt.Scan(a)
 // 	res := EmptyVector
 // 	res = res.Conjoin(MakeInt(int(n)))
-// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 // 	return res
 // }
 
@@ -18067,7 +18067,7 @@ GO FUNC fmt.Scanf has:
 // 	n, err := fmt.Scanf(format, a)
 // 	res := EmptyVector
 // 	res = res.Conjoin(MakeInt(int(n)))
-// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 // 	return res
 // }
 
@@ -18076,7 +18076,7 @@ GO FUNC fmt.Scanln has:
 // 	n, err := fmt.Scanln(a)
 // 	res := EmptyVector
 // 	res = res.Conjoin(MakeInt(int(n)))
-// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 // 	return res
 // }
 
@@ -18085,7 +18085,7 @@ GO FUNC fmt.Sscan has:
 // 	n, err := fmt.Sscan(str, a)
 // 	res := EmptyVector
 // 	res = res.Conjoin(MakeInt(int(n)))
-// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 // 	return res
 // }
 
@@ -18094,7 +18094,7 @@ GO FUNC fmt.Sscanf has:
 // 	n, err := fmt.Sscanf(str, format, a)
 // 	res := EmptyVector
 // 	res = res.Conjoin(MakeInt(int(n)))
-// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 // 	return res
 // }
 
@@ -18103,7 +18103,7 @@ GO FUNC fmt.Sscanln has:
 // 	n, err := fmt.Sscanln(str, a)
 // 	res := EmptyVector
 // 	res = res.Conjoin(MakeInt(int(n)))
-// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 // 	return res
 // }
 
@@ -18146,7 +18146,7 @@ GO FUNC format.Source has:
 // 		vec1 = vec1.Conjoin(MakeInt(int(elem1)))
 // 	}
 // 	res = res.Conjoin(vec1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -18155,7 +18155,7 @@ GO FUNC gif.Decode has:
 // 	res1, res2 := gif.Decode(r)
 // 	res := EmptyVector
 // 	res = res.Conjoin(res1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -18183,7 +18183,7 @@ GO FUNC gif.DecodeAll has:
 // 	map1.Add(MakeKeyword("Config"), (*res1).Config)
 // 	map1.Add(MakeKeyword("BackgroundIndex"), MakeInt(int((*res1).BackgroundIndex)))
 // 	res = res.Conjoin(map1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -18192,7 +18192,7 @@ GO FUNC gif.DecodeConfig has:
 // 	res1, res2 := gif.DecodeConfig(r)
 // 	res := EmptyVector
 // 	res = res.Conjoin(res1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -18427,7 +18427,7 @@ GO FUNC gosym.NewTable has:
 // 	}
 // 	map1.Add(MakeKeyword("Objs"), vec24)
 // 	res = res.Conjoin(map1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -18436,7 +18436,7 @@ GO FUNC gzip.NewReader has:
 // 	res1, res2 := gzip.NewReader(r)
 // 	res := EmptyVector
 // 	res = res.Conjoin(NIL)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -18451,7 +18451,7 @@ GO FUNC gzip.NewWriterLevel has:
 // 	res1, res2 := gzip.NewWriterLevel(w, level)
 // 	res := EmptyVector
 // 	res = res.Conjoin(NIL)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -18488,7 +18488,7 @@ GO FUNC hex.Decode has:
 // 	res1, res2 := hex.Decode(dst, src)
 // 	res := EmptyVector
 // 	res = res.Conjoin(MakeInt(int(res1)))
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -18501,7 +18501,7 @@ func decodeString(s string) Object {
 		vec1 = vec1.Conjoin(MakeInt(int(elem1)))
 	}
 	res = res.Conjoin(vec1)
-	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 	return res
 }
 
@@ -18540,7 +18540,7 @@ GO FUNC hpack.HuffmanDecode has:
 // 	res1, res2 := hpack.HuffmanDecode(w, v)
 // 	res := EmptyVector
 // 	res = res.Conjoin(MakeInt(int(res1)))
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -18549,7 +18549,7 @@ GO FUNC hpack.HuffmanDecodeToString has:
 // 	res1, res2 := hpack.HuffmanDecodeToString(v)
 // 	res := EmptyVector
 // 	res = res.Conjoin(MakeString(res1))
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -18631,7 +18631,7 @@ GO FUNC http.Get has:
 // 	map1.Add(MakeKeyword("Request"), map3)
 // 	map1.Add(MakeKeyword("TLS"), (*(*resp).TLS))
 // 	res = res.Conjoin(map1)
-// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 // 	return res
 // }
 
@@ -18697,7 +18697,7 @@ GO FUNC http.Head has:
 // 	map1.Add(MakeKeyword("Request"), map3)
 // 	map1.Add(MakeKeyword("TLS"), (*(*resp).TLS))
 // 	res = res.Conjoin(map1)
-// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 // 	return res
 // }
 
@@ -18761,7 +18761,7 @@ GO FUNC http.NewRequest has:
 // 	map3.Add(MakeKeyword("TLS"), (*(*(*res1).Response).TLS))
 // 	map1.Add(MakeKeyword("Response"), map3)
 // 	res = res.Conjoin(map1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -18797,7 +18797,7 @@ GO FUNC http.ParseTime has:
 // 	t, err := http.ParseTime(text)
 // 	res := EmptyVector
 // 	res = res.Conjoin(t)
-// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 // 	return res
 // }
 
@@ -18851,7 +18851,7 @@ GO FUNC http.Post has:
 // 	map1.Add(MakeKeyword("Request"), map3)
 // 	map1.Add(MakeKeyword("TLS"), (*(*resp).TLS))
 // 	res = res.Conjoin(map1)
-// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 // 	return res
 // }
 
@@ -18905,7 +18905,7 @@ GO FUNC http.PostForm has:
 // 	map1.Add(MakeKeyword("Request"), map3)
 // 	map1.Add(MakeKeyword("TLS"), (*(*resp).TLS))
 // 	res = res.Conjoin(map1)
-// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 // 	return res
 // }
 
@@ -18914,7 +18914,7 @@ GO FUNC http.ProxyFromEnvironment has:
 // 	res1, res2 := http.ProxyFromEnvironment(req)
 // 	res := EmptyVector
 // 	res = res.Conjoin((*res1))
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -18973,7 +18973,7 @@ GO FUNC http.ReadRequest has:
 // 	map3.Add(MakeKeyword("TLS"), (*(*(*res1).Response).TLS))
 // 	map1.Add(MakeKeyword("Response"), map3)
 // 	res = res.Conjoin(map1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -19027,7 +19027,7 @@ GO FUNC http.ReadResponse has:
 // 	map1.Add(MakeKeyword("Request"), map3)
 // 	map1.Add(MakeKeyword("TLS"), (*(*res1).TLS))
 // 	res = res.Conjoin(map1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -19075,7 +19075,7 @@ func punycodeHostPort(v string) Object {
 	res1, res2 := httpguts.PunycodeHostPort(v)
 	res := EmptyVector
 	res = res.Conjoin(MakeString(res1))
-	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 	return res
 }
 
@@ -19176,7 +19176,7 @@ GO FUNC httputil.DumpRequest has:
 // 		vec1 = vec1.Conjoin(MakeInt(int(elem1)))
 // 	}
 // 	res = res.Conjoin(vec1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -19189,7 +19189,7 @@ GO FUNC httputil.DumpRequestOut has:
 // 		vec1 = vec1.Conjoin(MakeInt(int(elem1)))
 // 	}
 // 	res = res.Conjoin(vec1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -19202,7 +19202,7 @@ GO FUNC httputil.DumpResponse has:
 // 		vec1 = vec1.Conjoin(MakeInt(int(elem1)))
 // 	}
 // 	res = res.Conjoin(vec1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -19279,7 +19279,7 @@ func toASCII(s string) Object {
 	res1, res2 := idna.ToASCII(s)
 	res := EmptyVector
 	res = res.Conjoin(MakeString(res1))
-	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 	return res
 }
 
@@ -19288,7 +19288,7 @@ func toUnicode(s string) Object {
 	res1, res2 := idna.ToUnicode(s)
 	res := EmptyVector
 	res = res.Conjoin(MakeString(res1))
-	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 	return res
 }
 
@@ -19318,7 +19318,7 @@ GO FUNC image.Decode has:
 // 	res := EmptyVector
 // 	res = res.Conjoin(res1)
 // 	res = res.Conjoin(MakeString(res2))
-// 	res = res.Conjoin(func () Object { if (res3) == nil { return NIL } else { return MakeString(res3.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res3) == nil { return NIL } else { return MakeError(res3) } }())
 // 	return res
 // }
 
@@ -19332,7 +19332,7 @@ GO FUNC image.DecodeConfig has:
 // 	map1.Add(MakeKeyword("Height"), MakeInt(int(res1.Height)))
 // 	res = res.Conjoin(map1)
 // 	res = res.Conjoin(MakeString(res2))
-// 	res = res.Conjoin(func () Object { if (res3) == nil { return NIL } else { return MakeString(res3.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res3) == nil { return NIL } else { return MakeError(res3) } }())
 // 	return res
 // }
 
@@ -19668,7 +19668,7 @@ GO FUNC io.Copy has:
 // 	written, err := io.Copy(dst, src)
 // 	res := EmptyVector
 // 	res = res.Conjoin(MakeInt(int(written)))
-// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 // 	return res
 // }
 
@@ -19677,7 +19677,7 @@ GO FUNC io.CopyBuffer has:
 // 	written, err := io.CopyBuffer(dst, src, buf)
 // 	res := EmptyVector
 // 	res = res.Conjoin(MakeInt(int(written)))
-// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 // 	return res
 // }
 
@@ -19686,7 +19686,7 @@ GO FUNC io.CopyN has:
 // 	written, err := io.CopyN(dst, src, n)
 // 	res := EmptyVector
 // 	res = res.Conjoin(MakeInt(int(written)))
-// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 // 	return res
 // }
 
@@ -19722,7 +19722,7 @@ GO FUNC io.ReadAtLeast has:
 // 	n, err := io.ReadAtLeast(r, buf, min)
 // 	res := EmptyVector
 // 	res = res.Conjoin(MakeInt(int(n)))
-// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 // 	return res
 // }
 
@@ -19731,7 +19731,7 @@ GO FUNC io.ReadFull has:
 // 	n, err := io.ReadFull(r, buf)
 // 	res := EmptyVector
 // 	res = res.Conjoin(MakeInt(int(n)))
-// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 // 	return res
 // }
 
@@ -19745,7 +19745,7 @@ GO FUNC io.WriteString has:
 // 	n, err := io.WriteString(w, s)
 // 	res := EmptyVector
 // 	res = res.Conjoin(MakeInt(int(n)))
-// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 // 	return res
 // }
 
@@ -19798,7 +19798,7 @@ GO FUNC ioutil.ReadAll has:
 // 		vec1 = vec1.Conjoin(MakeInt(int(elem1)))
 // 	}
 // 	res = res.Conjoin(vec1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -19811,7 +19811,7 @@ GO FUNC ioutil.ReadDir has:
 // 		vec1 = vec1.Conjoin(elem1)
 // 	}
 // 	res = res.Conjoin(vec1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -19824,7 +19824,7 @@ func readFile(filename string) Object {
 		vec1 = vec1.Conjoin(MakeInt(int(elem1)))
 	}
 	res = res.Conjoin(vec1)
-	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 	return res
 }
 
@@ -19833,7 +19833,7 @@ func tempDir(dir string, prefix string) Object {
 	name, err := ioutil.TempDir(dir, prefix)
 	res := EmptyVector
 	res = res.Conjoin(MakeString(name))
-	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 	return res
 }
 
@@ -19842,7 +19842,7 @@ GO FUNC ioutil.TempFile has:
 // 	f, err := ioutil.TempFile(dir, pattern)
 // 	res := EmptyVector
 // 	res = res.Conjoin((*f))
-// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 // 	return res
 // }
 
@@ -19851,7 +19851,7 @@ GO FUNC jpeg.Decode has:
 // 	res1, res2 := jpeg.Decode(r)
 // 	res := EmptyVector
 // 	res = res.Conjoin(res1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -19860,7 +19860,7 @@ GO FUNC jpeg.DecodeConfig has:
 // 	res1, res2 := jpeg.DecodeConfig(r)
 // 	res := EmptyVector
 // 	res = res.Conjoin(res1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -19879,7 +19879,7 @@ GO FUNC json.Marshal has:
 // 		vec1 = vec1.Conjoin(MakeInt(int(elem1)))
 // 	}
 // 	res = res.Conjoin(vec1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -19892,7 +19892,7 @@ GO FUNC json.MarshalIndent has:
 // 		vec1 = vec1.Conjoin(MakeInt(int(elem1)))
 // 	}
 // 	res = res.Conjoin(vec1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -19913,7 +19913,7 @@ GO FUNC jsonrpc.Dial has:
 // 	res1, res2 := jsonrpc.Dial(network, address)
 // 	res := EmptyVector
 // 	res = res.Conjoin((*res1))
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -20044,7 +20044,7 @@ GO FUNC macho.NewFatFile has:
 // 	}
 // 	map1.Add(MakeKeyword("Arches"), vec2)
 // 	res = res.Conjoin(map1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -20099,7 +20099,7 @@ GO FUNC macho.NewFile has:
 // 	map10.Add(MakeKeyword("IndirectSyms"), vec11)
 // 	map1.Add(MakeKeyword("Dysymtab"), map10)
 // 	res = res.Conjoin(map1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -20154,7 +20154,7 @@ GO FUNC macho.Open has:
 // 	map10.Add(MakeKeyword("IndirectSyms"), vec11)
 // 	map1.Add(MakeKeyword("Dysymtab"), map10)
 // 	res = res.Conjoin(map1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -20170,7 +20170,7 @@ func openFat(name string) Object {
 	}
 	map1.Add(MakeKeyword("Arches"), vec2)
 	res = res.Conjoin(map1)
-	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 	return res
 }
 
@@ -20182,7 +20182,7 @@ func parseAddress(address string) Object {
 	map1.Add(MakeKeyword("Name"), MakeString((*res1).Name))
 	map1.Add(MakeKeyword("Address"), MakeString((*res1).Address))
 	res = res.Conjoin(map1)
-	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 	return res
 }
 
@@ -20198,7 +20198,7 @@ func parseAddressList(list string) Object {
 		vec1 = vec1.Conjoin(map2)
 	}
 	res = res.Conjoin(vec1)
-	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 	return res
 }
 
@@ -20207,7 +20207,7 @@ GO FUNC mail.ParseDate has:
 // 	res1, res2 := mail.ParseDate(date)
 // 	res := EmptyVector
 // 	res = res.Conjoin(res1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -20219,7 +20219,7 @@ GO FUNC mail.ReadMessage has:
 // 	map1.Add(MakeKeyword("Header"), (*msg).Header)
 // 	map1.Add(MakeKeyword("Body"), (*msg).Body)
 // 	res = res.Conjoin(map1)
-// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 // 	return res
 // }
 
@@ -20568,7 +20568,7 @@ func extensionsByType(typ string) Object {
 		vec1 = vec1.Conjoin(MakeString(elem1))
 	}
 	res = res.Conjoin(vec1)
-	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 	return res
 }
 
@@ -20578,7 +20578,7 @@ GO FUNC mime.ParseMediaType has:
 // 	res := EmptyVector
 // 	res = res.Conjoin(MakeString(mediatype))
 // 	res = res.Conjoin(params)
-// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 // 	return res
 // }
 
@@ -20609,7 +20609,7 @@ GO FUNC net.Dial has:
 // 	res1, res2 := net.Dial(network, address)
 // 	res := EmptyVector
 // 	res = res.Conjoin(res1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -20618,7 +20618,7 @@ GO FUNC net.DialIP has:
 // 	res1, res2 := net.DialIP(network, laddr, raddr)
 // 	res := EmptyVector
 // 	res = res.Conjoin(NIL)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -20627,7 +20627,7 @@ GO FUNC net.DialTCP has:
 // 	res1, res2 := net.DialTCP(network, laddr, raddr)
 // 	res := EmptyVector
 // 	res = res.Conjoin(NIL)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -20636,7 +20636,7 @@ GO FUNC net.DialTimeout has:
 // 	res1, res2 := net.DialTimeout(network, address, timeout)
 // 	res := EmptyVector
 // 	res = res.Conjoin(res1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -20645,7 +20645,7 @@ GO FUNC net.DialUDP has:
 // 	res1, res2 := net.DialUDP(network, laddr, raddr)
 // 	res := EmptyVector
 // 	res = res.Conjoin(NIL)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -20654,7 +20654,7 @@ GO FUNC net.DialUnix has:
 // 	res1, res2 := net.DialUnix(network, laddr, raddr)
 // 	res := EmptyVector
 // 	res = res.Conjoin(NIL)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -20663,7 +20663,7 @@ GO FUNC net.FileConn has:
 // 	c, err := net.FileConn(f)
 // 	res := EmptyVector
 // 	res = res.Conjoin(c)
-// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 // 	return res
 // }
 
@@ -20672,7 +20672,7 @@ GO FUNC net.FileListener has:
 // 	ln, err := net.FileListener(f)
 // 	res := EmptyVector
 // 	res = res.Conjoin(ln)
-// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 // 	return res
 // }
 
@@ -20681,7 +20681,7 @@ GO FUNC net.FilePacketConn has:
 // 	c, err := net.FilePacketConn(f)
 // 	res := EmptyVector
 // 	res = res.Conjoin(c)
-// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 // 	return res
 // }
 
@@ -20714,7 +20714,7 @@ GO FUNC net.InterfaceAddrs has:
 // 		vec1 = vec1.Conjoin(elem1)
 // 	}
 // 	res = res.Conjoin(vec1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -20733,7 +20733,7 @@ func interfaceByIndex(index int) Object {
 	map1.Add(MakeKeyword("HardwareAddr"), vec2)
 	map1.Add(MakeKeyword("Flags"), MakeInt(int((*res1).Flags)))
 	res = res.Conjoin(map1)
-	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 	return res
 }
 
@@ -20752,7 +20752,7 @@ func interfaceByName(name string) Object {
 	map1.Add(MakeKeyword("HardwareAddr"), vec2)
 	map1.Add(MakeKeyword("Flags"), MakeInt(int((*res1).Flags)))
 	res = res.Conjoin(map1)
-	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 	return res
 }
 
@@ -20775,7 +20775,7 @@ func interfaces() Object {
 		vec1 = vec1.Conjoin(map2)
 	}
 	res = res.Conjoin(vec1)
-	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 	return res
 }
 
@@ -20784,7 +20784,7 @@ GO FUNC net.Listen has:
 // 	res1, res2 := net.Listen(network, address)
 // 	res := EmptyVector
 // 	res = res.Conjoin(res1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -20793,7 +20793,7 @@ GO FUNC net.ListenIP has:
 // 	res1, res2 := net.ListenIP(network, laddr)
 // 	res := EmptyVector
 // 	res = res.Conjoin(NIL)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -20802,7 +20802,7 @@ GO FUNC net.ListenMulticastUDP has:
 // 	res1, res2 := net.ListenMulticastUDP(network, ifi, gaddr)
 // 	res := EmptyVector
 // 	res = res.Conjoin(NIL)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -20811,7 +20811,7 @@ GO FUNC net.ListenPacket has:
 // 	res1, res2 := net.ListenPacket(network, address)
 // 	res := EmptyVector
 // 	res = res.Conjoin(res1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -20820,7 +20820,7 @@ GO FUNC net.ListenTCP has:
 // 	res1, res2 := net.ListenTCP(network, laddr)
 // 	res := EmptyVector
 // 	res = res.Conjoin(NIL)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -20829,7 +20829,7 @@ GO FUNC net.ListenUDP has:
 // 	res1, res2 := net.ListenUDP(network, laddr)
 // 	res := EmptyVector
 // 	res = res.Conjoin(NIL)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -20838,7 +20838,7 @@ GO FUNC net.ListenUnix has:
 // 	res1, res2 := net.ListenUnix(network, laddr)
 // 	res := EmptyVector
 // 	res = res.Conjoin(NIL)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -20847,7 +20847,7 @@ GO FUNC net.ListenUnixgram has:
 // 	res1, res2 := net.ListenUnixgram(network, laddr)
 // 	res := EmptyVector
 // 	res = res.Conjoin(NIL)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -20860,7 +20860,7 @@ func lookupAddr(addr string) Object {
 		vec1 = vec1.Conjoin(MakeString(elem1))
 	}
 	res = res.Conjoin(vec1)
-	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 	return res
 }
 
@@ -20869,7 +20869,7 @@ func lookupCNAME(host string) Object {
 	cname, err := net.LookupCNAME(host)
 	res := EmptyVector
 	res = res.Conjoin(MakeString(cname))
-	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 	return res
 }
 
@@ -20882,7 +20882,7 @@ func lookupHost(host string) Object {
 		vec1 = vec1.Conjoin(MakeString(elem1))
 	}
 	res = res.Conjoin(vec1)
-	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 	return res
 }
 
@@ -20899,7 +20899,7 @@ func lookupIP(host string) Object {
 		vec1 = vec1.Conjoin(vec2)
 	}
 	res = res.Conjoin(vec1)
-	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 	return res
 }
 
@@ -20915,7 +20915,7 @@ func lookupMX(name string) Object {
 		vec1 = vec1.Conjoin(map2)
 	}
 	res = res.Conjoin(vec1)
-	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 	return res
 }
 
@@ -20930,7 +20930,7 @@ func lookupNS(name string) Object {
 		vec1 = vec1.Conjoin(map2)
 	}
 	res = res.Conjoin(vec1)
-	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 	return res
 }
 
@@ -20939,7 +20939,7 @@ func lookupPort(network string, service string) Object {
 	port, err := net.LookupPort(network, service)
 	res := EmptyVector
 	res = res.Conjoin(MakeInt(int(port)))
-	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 	return res
 }
 
@@ -20958,7 +20958,7 @@ func lookupSRV(service string, proto string, name string) Object {
 	}
 	res = res.Conjoin(MakeString(cname))
 	res = res.Conjoin(vec1)
-	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 	return res
 }
 
@@ -20971,7 +20971,7 @@ func lookupTXT(name string) Object {
 		vec1 = vec1.Conjoin(MakeString(elem1))
 	}
 	res = res.Conjoin(vec1)
-	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 	return res
 }
 
@@ -20996,7 +20996,7 @@ func parseCIDR(s string) Object {
 	}
 	res = res.Conjoin(vec1)
 	res = res.Conjoin(map2)
-	res = res.Conjoin(func () Object { if (res3) == nil { return NIL } else { return MakeString(res3.Error()) } }())
+	res = res.Conjoin(func () Object { if (res3) == nil { return NIL } else { return MakeError(res3) } }())
 	return res
 }
 
@@ -21019,7 +21019,7 @@ func parseMAC(s string) Object {
 		vec1 = vec1.Conjoin(MakeInt(int(elem1)))
 	}
 	res = res.Conjoin(vec1)
-	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 	return res
 }
 
@@ -21044,7 +21044,7 @@ func resolveIPAddr(network string, address string) Object {
 	map1.Add(MakeKeyword("IP"), vec2)
 	map1.Add(MakeKeyword("Zone"), MakeString((*res1).Zone))
 	res = res.Conjoin(map1)
-	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 	return res
 }
 
@@ -21061,7 +21061,7 @@ func resolveTCPAddr(network string, address string) Object {
 	map1.Add(MakeKeyword("Port"), MakeInt(int((*res1).Port)))
 	map1.Add(MakeKeyword("Zone"), MakeString((*res1).Zone))
 	res = res.Conjoin(map1)
-	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 	return res
 }
 
@@ -21078,7 +21078,7 @@ func resolveUDPAddr(network string, address string) Object {
 	map1.Add(MakeKeyword("Port"), MakeInt(int((*res1).Port)))
 	map1.Add(MakeKeyword("Zone"), MakeString((*res1).Zone))
 	res = res.Conjoin(map1)
-	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 	return res
 }
 
@@ -21090,7 +21090,7 @@ func resolveUnixAddr(network string, address string) Object {
 	map1.Add(MakeKeyword("Name"), MakeString((*res1).Name))
 	map1.Add(MakeKeyword("Net"), MakeString((*res1).Net))
 	res = res.Conjoin(map1)
-	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 	return res
 }
 
@@ -21100,7 +21100,7 @@ func splitHostPort(hostport string) Object {
 	res := EmptyVector
 	res = res.Conjoin(MakeString(host))
 	res = res.Conjoin(MakeString(port))
-	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 	return res
 }
 
@@ -21121,7 +21121,7 @@ func create(name string) Object {
 	res1, res2 := os.Create(name)
 	res := EmptyVector
 	res = res.Conjoin(NIL)
-	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 	return res
 }
 
@@ -21140,7 +21140,7 @@ func executable() Object {
 	res1, res2 := os.Executable()
 	res := EmptyVector
 	res = res.Conjoin(MakeString(res1))
-	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 	return res
 }
 
@@ -21157,7 +21157,7 @@ func findProcess(pid int) Object {
 	map1 := EmptyArrayMap()
 	map1.Add(MakeKeyword("Pid"), MakeInt(int((*res1).Pid)))
 	res = res.Conjoin(map1)
-	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 	return res
 }
 
@@ -21170,7 +21170,7 @@ func getgroups() Object {
 		vec1 = vec1.Conjoin(MakeInt(int(elem1)))
 	}
 	res = res.Conjoin(vec1)
-	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 	return res
 }
 
@@ -21179,7 +21179,7 @@ func getwd() Object {
 	dir, err := os.Getwd()
 	res := EmptyVector
 	res = res.Conjoin(MakeString(dir))
-	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 	return res
 }
 
@@ -21188,7 +21188,7 @@ func hostname() Object {
 	name, err := os.Hostname()
 	res := EmptyVector
 	res = res.Conjoin(MakeString(name))
-	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 	return res
 }
 
@@ -21206,7 +21206,7 @@ GO FUNC os.Lstat has:
 // 	res1, res2 := os.Lstat(name)
 // 	res := EmptyVector
 // 	res = res.Conjoin(res1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -21221,7 +21221,7 @@ func open(name string) Object {
 	res1, res2 := os.Open(name)
 	res := EmptyVector
 	res = res.Conjoin(NIL)
-	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 	return res
 }
 
@@ -21230,7 +21230,7 @@ GO FUNC os.OpenFile has:
 // 	res1, res2 := os.OpenFile(name, flag, perm)
 // 	res := EmptyVector
 // 	res = res.Conjoin(NIL)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -21240,7 +21240,7 @@ func pipe() Object {
 	res := EmptyVector
 	res = res.Conjoin(NIL)
 	res = res.Conjoin(NIL)
-	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 	return res
 }
 
@@ -21249,7 +21249,7 @@ func readlink(name string) Object {
 	res1, res2 := os.Readlink(name)
 	res := EmptyVector
 	res = res.Conjoin(MakeString(res1))
-	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 	return res
 }
 
@@ -21260,7 +21260,7 @@ GO FUNC os.StartProcess has:
 // 	map1 := EmptyArrayMap()
 // 	map1.Add(MakeKeyword("Pid"), MakeInt(int((*res1).Pid)))
 // 	res = res.Conjoin(map1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -21269,7 +21269,7 @@ GO FUNC os.Stat has:
 // 	res1, res2 := os.Stat(name)
 // 	res := EmptyVector
 // 	res = res.Conjoin(res1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -21278,7 +21278,7 @@ func userCacheDir() Object {
 	res1, res2 := os.UserCacheDir()
 	res := EmptyVector
 	res = res.Conjoin(MakeString(res1))
-	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 	return res
 }
 
@@ -21311,7 +21311,7 @@ GO FUNC parse.Parse has:
 // 	res1, res2 := parse.Parse(name, text, leftDelim, rightDelim, funcs)
 // 	res := EmptyVector
 // 	res = res.Conjoin(res1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -21320,7 +21320,7 @@ GO FUNC parser.ParseDir has:
 // 	pkgs, first := parser.ParseDir(fset, path, filter, mode)
 // 	res := EmptyVector
 // 	res = res.Conjoin(pkgs)
-// 	res = res.Conjoin(func () Object { if (first) == nil { return NIL } else { return MakeString(first.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (first) == nil { return NIL } else { return MakeError(first) } }())
 // 	return res
 // }
 
@@ -21329,7 +21329,7 @@ GO FUNC parser.ParseExpr has:
 // 	res1, res2 := parser.ParseExpr(x)
 // 	res := EmptyVector
 // 	res = res.Conjoin(res1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -21338,7 +21338,7 @@ GO FUNC parser.ParseExprFrom has:
 // 	res1, res2 := parser.ParseExprFrom(fset, filename, src, mode)
 // 	res := EmptyVector
 // 	res = res.Conjoin(res1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -21347,7 +21347,7 @@ GO FUNC parser.ParseFile has:
 // 	f, err := parser.ParseFile(fset, filename, src, mode)
 // 	res := EmptyVector
 // 	res = res.Conjoin((*f))
-// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 // 	return res
 // }
 
@@ -21356,7 +21356,7 @@ func match(pattern string, name string) Object {
 	matched, err := path.Match(pattern, name)
 	res := EmptyVector
 	res = res.Conjoin(MakeBool(matched))
-	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 	return res
 }
 
@@ -21423,7 +21423,7 @@ GO FUNC pe.NewFile has:
 // 	}
 // 	map1.Add(MakeKeyword("StringTable"), vec11)
 // 	res = res.Conjoin(map1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -21481,7 +21481,7 @@ GO FUNC pe.Open has:
 // 	}
 // 	map1.Add(MakeKeyword("StringTable"), vec11)
 // 	res = res.Conjoin(map1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -21527,7 +21527,7 @@ GO FUNC plan9obj.NewFile has:
 // 	}
 // 	map1.Add(MakeKeyword("Sections"), vec2)
 // 	res = res.Conjoin(map1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -21542,7 +21542,7 @@ func open(name string) Object {
 	}
 	map1.Add(MakeKeyword("Sections"), vec2)
 	res = res.Conjoin(map1)
-	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 	return res
 }
 
@@ -21551,7 +21551,7 @@ func open(path string) Object {
 	res1, res2 := plugin.Open(path)
 	res := EmptyVector
 	res = res.Conjoin(NIL)
-	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 	return res
 }
 
@@ -21560,7 +21560,7 @@ GO FUNC png.Decode has:
 // 	res1, res2 := png.Decode(r)
 // 	res := EmptyVector
 // 	res = res.Conjoin(res1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -21569,7 +21569,7 @@ GO FUNC png.DecodeConfig has:
 // 	res1, res2 := png.DecodeConfig(r)
 // 	res := EmptyVector
 // 	res = res.Conjoin(res1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -21642,7 +21642,7 @@ GO FUNC rand.Int has:
 // 	n, err := rand.Int(rand, max)
 // 	res := EmptyVector
 // 	res = res.Conjoin((*n))
-// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 // 	return res
 // }
 
@@ -21651,7 +21651,7 @@ GO FUNC rand.Prime has:
 // 	p, err := rand.Prime(rand, bits)
 // 	res := EmptyVector
 // 	res = res.Conjoin((*p))
-// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 // 	return res
 // }
 
@@ -21660,7 +21660,7 @@ GO FUNC rand.Read has:
 // 	n, err := rand.Read(b)
 // 	res := EmptyVector
 // 	res = res.Conjoin(MakeInt(int(n)))
-// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 // 	return res
 // }
 
@@ -21669,7 +21669,7 @@ GO FUNC rc4.NewCipher has:
 // 	res1, res2 := rc4.NewCipher(key)
 // 	res := EmptyVector
 // 	res = res.Conjoin(NIL)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -21805,7 +21805,7 @@ func compile(expr string) Object {
 	res1, res2 := regexp.Compile(expr)
 	res := EmptyVector
 	res = res.Conjoin(NIL)
-	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 	return res
 }
 
@@ -21814,7 +21814,7 @@ func compilePOSIX(expr string) Object {
 	res1, res2 := regexp.CompilePOSIX(expr)
 	res := EmptyVector
 	res = res.Conjoin(NIL)
-	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 	return res
 }
 
@@ -21823,7 +21823,7 @@ GO FUNC regexp.Match has:
 // 	matched, err := regexp.Match(pattern, b)
 // 	res := EmptyVector
 // 	res = res.Conjoin(MakeBool(matched))
-// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 // 	return res
 // }
 
@@ -21832,7 +21832,7 @@ GO FUNC regexp.MatchReader has:
 // 	matched, err := regexp.MatchReader(pattern, r)
 // 	res := EmptyVector
 // 	res = res.Conjoin(MakeBool(matched))
-// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 // 	return res
 // }
 
@@ -21841,7 +21841,7 @@ func matchString(pattern string, s string) Object {
 	matched, err := regexp.MatchString(pattern, s)
 	res := EmptyVector
 	res = res.Conjoin(MakeBool(matched))
-	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 	return res
 }
 
@@ -21874,7 +21874,7 @@ GO FUNC route.FetchRIB has:
 // 		vec1 = vec1.Conjoin(MakeInt(int(elem1)))
 // 	}
 // 	res = res.Conjoin(vec1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -21887,7 +21887,7 @@ GO FUNC route.ParseRIB has:
 // 		vec1 = vec1.Conjoin(elem1)
 // 	}
 // 	res = res.Conjoin(vec1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -21902,7 +21902,7 @@ func dial(network string, address string) Object {
 	res1, res2 := rpc.Dial(network, address)
 	res := EmptyVector
 	res = res.Conjoin(NIL)
-	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 	return res
 }
 
@@ -21911,7 +21911,7 @@ func dialHTTP(network string, address string) Object {
 	res1, res2 := rpc.DialHTTP(network, address)
 	res := EmptyVector
 	res = res.Conjoin(NIL)
-	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 	return res
 }
 
@@ -21920,7 +21920,7 @@ func dialHTTPPath(network string, address string, path string) Object {
 	res1, res2 := rpc.DialHTTPPath(network, address, path)
 	res := EmptyVector
 	res = res.Conjoin(NIL)
-	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 	return res
 }
 
@@ -21969,7 +21969,7 @@ GO FUNC rsa.DecryptOAEP has:
 // 		vec1 = vec1.Conjoin(MakeInt(int(elem1)))
 // 	}
 // 	res = res.Conjoin(vec1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -21982,7 +21982,7 @@ GO FUNC rsa.DecryptPKCS1v15 has:
 // 		vec1 = vec1.Conjoin(MakeInt(int(elem1)))
 // 	}
 // 	res = res.Conjoin(vec1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -21995,7 +21995,7 @@ GO FUNC rsa.EncryptOAEP has:
 // 		vec1 = vec1.Conjoin(MakeInt(int(elem1)))
 // 	}
 // 	res = res.Conjoin(vec1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -22008,7 +22008,7 @@ GO FUNC rsa.EncryptPKCS1v15 has:
 // 		vec1 = vec1.Conjoin(MakeInt(int(elem1)))
 // 	}
 // 	res = res.Conjoin(vec1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -22038,7 +22038,7 @@ GO FUNC rsa.GenerateKey has:
 // 	map3.Add(MakeKeyword("CRTValues"), vec4)
 // 	map1.Add(MakeKeyword("Precomputed"), map3)
 // 	res = res.Conjoin(map1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -22068,7 +22068,7 @@ GO FUNC rsa.GenerateMultiPrimeKey has:
 // 	map3.Add(MakeKeyword("CRTValues"), vec4)
 // 	map1.Add(MakeKeyword("Precomputed"), map3)
 // 	res = res.Conjoin(map1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -22081,7 +22081,7 @@ GO FUNC rsa.SignPKCS1v15 has:
 // 		vec1 = vec1.Conjoin(MakeInt(int(elem1)))
 // 	}
 // 	res = res.Conjoin(vec1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -22094,7 +22094,7 @@ GO FUNC rsa.SignPSS has:
 // 		vec1 = vec1.Conjoin(MakeInt(int(elem1)))
 // 	}
 // 	res = res.Conjoin(vec1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -22453,7 +22453,7 @@ GO FUNC smtp.Dial has:
 // 	map1 := EmptyArrayMap()
 // 	map1.Add(MakeKeyword("Text"), (*(*res1).Text))
 // 	res = res.Conjoin(map1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -22464,7 +22464,7 @@ GO FUNC smtp.NewClient has:
 // 	map1 := EmptyArrayMap()
 // 	map1.Add(MakeKeyword("Text"), (*(*res1).Text))
 // 	res = res.Conjoin(map1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -22545,7 +22545,7 @@ func open(driverName string, dataSourceName string) Object {
 	res1, res2 := sql.Open(driverName, dataSourceName)
 	res := EmptyVector
 	res = res.Conjoin(NIL)
-	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 	return res
 }
 
@@ -22666,7 +22666,7 @@ func atoi(s string) Object {
 	res1, res2 := strconv.Atoi(s)
 	res := EmptyVector
 	res = res.Conjoin(MakeInt(int(res1)))
-	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 	return res
 }
 
@@ -22675,7 +22675,7 @@ func parseBool(str string) Object {
 	res1, res2 := strconv.ParseBool(str)
 	res := EmptyVector
 	res = res.Conjoin(MakeBool(res1))
-	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 	return res
 }
 
@@ -22684,7 +22684,7 @@ GO FUNC strconv.ParseFloat has:
 // 	res1, res2 := strconv.ParseFloat(s, bitSize)
 // 	res := EmptyVector
 // 	res = res.Conjoin()
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -22693,7 +22693,7 @@ func parseInt(s string, base int, bitSize int) Object {
 	i, err := strconv.ParseInt(s, base, bitSize)
 	res := EmptyVector
 	res = res.Conjoin(MakeInt(int(i)))
-	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 	return res
 }
 
@@ -22702,7 +22702,7 @@ GO FUNC strconv.ParseUint has:
 // 	res1, res2 := strconv.ParseUint(s, base, bitSize)
 // 	res := EmptyVector
 // 	res = res.Conjoin()
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -22711,7 +22711,7 @@ func unquote(s string) Object {
 	res1, res2 := strconv.Unquote(s)
 	res := EmptyVector
 	res = res.Conjoin(MakeString(res1))
-	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 	return res
 }
 
@@ -22722,7 +22722,7 @@ GO FUNC strconv.UnquoteChar has:
 // 	res = res.Conjoin()
 // 	res = res.Conjoin(MakeBool(multibyte))
 // 	res = res.Conjoin(MakeString(tail))
-// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 // 	return res
 // }
 
@@ -22840,7 +22840,7 @@ GO FUNC syntax.Compile has:
 // 	map1.Add(MakeKeyword("Start"), MakeInt(int((*res1).Start)))
 // 	map1.Add(MakeKeyword("NumCap"), MakeInt(int((*res1).NumCap)))
 // 	res = res.Conjoin(map1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -22881,7 +22881,7 @@ GO FUNC syntax.Parse has:
 // 	map1.Add(MakeKeyword("Cap"), MakeInt(int((*res1).Cap)))
 // 	map1.Add(MakeKeyword("Name"), MakeString((*res1).Name))
 // 	res = res.Conjoin(map1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -22891,7 +22891,7 @@ GO FUNC syscall.Accept has:
 // 	res := EmptyVector
 // 	res = res.Conjoin(MakeInt(int(nfd)))
 // 	res = res.Conjoin(sa)
-// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 // 	return res
 // }
 
@@ -22900,7 +22900,7 @@ func bpfBuflen(fd int) Object {
 	res1, res2 := syscall.BpfBuflen(fd)
 	res := EmptyVector
 	res = res.Conjoin(MakeInt(int(res1)))
-	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 	return res
 }
 
@@ -22909,7 +22909,7 @@ func bpfDatalink(fd int) Object {
 	res1, res2 := syscall.BpfDatalink(fd)
 	res := EmptyVector
 	res = res.Conjoin(MakeInt(int(res1)))
-	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 	return res
 }
 
@@ -22918,7 +22918,7 @@ func bpfHeadercmpl(fd int) Object {
 	res1, res2 := syscall.BpfHeadercmpl(fd)
 	res := EmptyVector
 	res = res.Conjoin(MakeInt(int(res1)))
-	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 	return res
 }
 
@@ -22927,7 +22927,7 @@ func bpfInterface(fd int, name string) Object {
 	res1, res2 := syscall.BpfInterface(fd, name)
 	res := EmptyVector
 	res = res.Conjoin(MakeString(res1))
-	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 	return res
 }
 
@@ -22950,7 +22950,7 @@ func bpfStats(fd int) Object {
 	map1.Add(MakeKeyword("Recv"), MakeInt(int((*res1).Recv)))
 	map1.Add(MakeKeyword("Drop"), MakeInt(int((*res1).Drop)))
 	res = res.Conjoin(map1)
-	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 	return res
 }
 
@@ -22978,7 +22978,7 @@ func bpfTimeout(fd int) Object {
 	}
 	map1.Add(MakeKeyword("Pad_cgo_0"), vec2)
 	res = res.Conjoin(map1)
-	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 	return res
 }
 
@@ -22987,7 +22987,7 @@ func bytePtrFromString(s string) Object {
 	res1, res2 := syscall.BytePtrFromString(s)
 	res := EmptyVector
 	res = res.Conjoin(MakeInt(int((*res1))))
-	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 	return res
 }
 
@@ -23000,7 +23000,7 @@ func byteSliceFromString(s string) Object {
 		vec1 = vec1.Conjoin(MakeInt(int(elem1)))
 	}
 	res = res.Conjoin(vec1)
-	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 	return res
 }
 
@@ -23021,7 +23021,7 @@ func dup(fd int) Object {
 	nfd, err := syscall.Dup(fd)
 	res := EmptyVector
 	res = res.Conjoin(MakeInt(int(nfd)))
-	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 	return res
 }
 
@@ -23046,7 +23046,7 @@ GO FUNC syscall.ForkExec has:
 // 	pid, err := syscall.ForkExec(argv0, argv, attr)
 // 	res := EmptyVector
 // 	res = res.Conjoin(MakeInt(int(pid)))
-// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 // 	return res
 // }
 
@@ -23055,7 +23055,7 @@ func fpathconf(fd int, name int) Object {
 	val, err := syscall.Fpathconf(fd, name)
 	res := EmptyVector
 	res = res.Conjoin(MakeInt(int(val)))
-	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 	return res
 }
 
@@ -23064,7 +23064,7 @@ GO FUNC syscall.Getdirentries has:
 // 	n, err := syscall.Getdirentries(fd, buf, basep)
 // 	res := EmptyVector
 // 	res = res.Conjoin(MakeInt(int(n)))
-// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 // 	return res
 // }
 
@@ -23082,7 +23082,7 @@ GO FUNC syscall.Getfsstat has:
 // 	n, err := syscall.Getfsstat(buf, flags)
 // 	res := EmptyVector
 // 	res = res.Conjoin(MakeInt(int(n)))
-// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 // 	return res
 // }
 
@@ -23095,7 +23095,7 @@ func getgroups() Object {
 		vec1 = vec1.Conjoin(MakeInt(int(elem1)))
 	}
 	res = res.Conjoin(vec1)
-	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 	return res
 }
 
@@ -23104,7 +23104,7 @@ GO FUNC syscall.Getpeername has:
 // 	sa, err := syscall.Getpeername(fd)
 // 	res := EmptyVector
 // 	res = res.Conjoin(sa)
-// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 // 	return res
 // }
 
@@ -23113,7 +23113,7 @@ func getpgid(pid int) Object {
 	pgid, err := syscall.Getpgid(pid)
 	res := EmptyVector
 	res = res.Conjoin(MakeInt(int(pgid)))
-	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 	return res
 }
 
@@ -23122,7 +23122,7 @@ func getpriority(which int, who int) Object {
 	prio, err := syscall.Getpriority(which, who)
 	res := EmptyVector
 	res = res.Conjoin(MakeInt(int(prio)))
-	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 	return res
 }
 
@@ -23131,7 +23131,7 @@ func getsid(pid int) Object {
 	sid, err := syscall.Getsid(pid)
 	res := EmptyVector
 	res = res.Conjoin(MakeInt(int(sid)))
-	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 	return res
 }
 
@@ -23140,7 +23140,7 @@ GO FUNC syscall.Getsockname has:
 // 	sa, err := syscall.Getsockname(fd)
 // 	res := EmptyVector
 // 	res = res.Conjoin(sa)
-// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 // 	return res
 // }
 
@@ -23149,7 +23149,7 @@ func getsockoptByte(fd int, level int, opt int) Object {
 	value, err := syscall.GetsockoptByte(fd, level, opt)
 	res := EmptyVector
 	res = res.Conjoin(MakeInt(int(value)))
-	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 	return res
 }
 
@@ -23164,7 +23164,7 @@ func getsockoptICMPv6Filter(fd int, level int, opt int) Object {
 	}
 	map1.Add(MakeKeyword("Filt"), vec2)
 	res = res.Conjoin(map1)
-	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 	return res
 }
 
@@ -23184,7 +23184,7 @@ func getsockoptIPMreq(fd int, level int, opt int) Object {
 	}
 	map1.Add(MakeKeyword("Interface"), vec3)
 	res = res.Conjoin(map1)
-	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 	return res
 }
 
@@ -23207,7 +23207,7 @@ GO FUNC syscall.GetsockoptIPv6MTUInfo has:
 // 	map1.Add(MakeKeyword("Addr"), map2)
 // 	map1.Add(MakeKeyword("Mtu"), MakeInt(int((*res1).Mtu)))
 // 	res = res.Conjoin(map1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -23223,7 +23223,7 @@ func getsockoptIPv6Mreq(fd int, level int, opt int) Object {
 	map1.Add(MakeKeyword("Multiaddr"), vec2)
 	map1.Add(MakeKeyword("Interface"), MakeInt(int((*res1).Interface)))
 	res = res.Conjoin(map1)
-	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 	return res
 }
 
@@ -23236,7 +23236,7 @@ func getsockoptInet4Addr(fd int, level int, opt int) Object {
 		vec1 = vec1.Conjoin(MakeInt(int(elem1)))
 	}
 	res = res.Conjoin(vec1)
-	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 	return res
 }
 
@@ -23245,7 +23245,7 @@ func getsockoptInt(fd int, level int, opt int) Object {
 	value, err := syscall.GetsockoptInt(fd, level, opt)
 	res := EmptyVector
 	res = res.Conjoin(MakeInt(int(value)))
-	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 	return res
 }
 
@@ -23254,7 +23254,7 @@ func getwd() Object {
 	res1, res2 := syscall.Getwd()
 	res := EmptyVector
 	res = res.Conjoin(MakeString(res1))
-	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 	return res
 }
 
@@ -23263,7 +23263,7 @@ GO FUNC syscall.Kevent has:
 // 	n, err := syscall.Kevent(kq, changes, events, timeout)
 // 	res := EmptyVector
 // 	res = res.Conjoin(MakeInt(int(n)))
-// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 // 	return res
 // }
 
@@ -23272,7 +23272,7 @@ func kqueue() Object {
 	fd, err := syscall.Kqueue()
 	res := EmptyVector
 	res = res.Conjoin(MakeInt(int(fd)))
-	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 	return res
 }
 
@@ -23285,7 +23285,7 @@ func mmap(fd int, offset int64, length int, prot int, flags int) Object {
 		vec1 = vec1.Conjoin(MakeInt(int(elem1)))
 	}
 	res = res.Conjoin(vec1)
-	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 	return res
 }
 
@@ -23317,7 +23317,7 @@ func open(path string, mode int, perm uint32) Object {
 	fd, err := syscall.Open(path, mode, perm)
 	res := EmptyVector
 	res = res.Conjoin(MakeInt(int(fd)))
-	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 	return res
 }
 
@@ -23344,7 +23344,7 @@ GO FUNC syscall.ParseRoutingMessage has:
 // 		vec1 = vec1.Conjoin(elem1)
 // 	}
 // 	res = res.Conjoin(vec1)
-// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 // 	return res
 // }
 
@@ -23357,7 +23357,7 @@ GO FUNC syscall.ParseRoutingSockaddr has:
 // 		vec1 = vec1.Conjoin(elem1)
 // 	}
 // 	res = res.Conjoin(vec1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -23381,7 +23381,7 @@ GO FUNC syscall.ParseSocketControlMessage has:
 // 		vec1 = vec1.Conjoin(map2)
 // 	}
 // 	res = res.Conjoin(vec1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -23394,7 +23394,7 @@ GO FUNC syscall.ParseUnixRights has:
 // 		vec1 = vec1.Conjoin(MakeInt(int(elem1)))
 // 	}
 // 	res = res.Conjoin(vec1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -23403,7 +23403,7 @@ func pathconf(path string, name int) Object {
 	val, err := syscall.Pathconf(path, name)
 	res := EmptyVector
 	res = res.Conjoin(MakeInt(int(val)))
-	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 	return res
 }
 
@@ -23412,7 +23412,7 @@ GO FUNC syscall.Pread has:
 // 	n, err := syscall.Pread(fd, p, offset)
 // 	res := EmptyVector
 // 	res = res.Conjoin(MakeInt(int(n)))
-// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 // 	return res
 // }
 
@@ -23421,7 +23421,7 @@ GO FUNC syscall.Pwrite has:
 // 	n, err := syscall.Pwrite(fd, p, offset)
 // 	res := EmptyVector
 // 	res = res.Conjoin(MakeInt(int(n)))
-// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 // 	return res
 // }
 
@@ -23450,7 +23450,7 @@ GO FUNC syscall.Read has:
 // 	n, err := syscall.Read(fd, p)
 // 	res := EmptyVector
 // 	res = res.Conjoin(MakeInt(int(n)))
-// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 // 	return res
 // }
 
@@ -23459,7 +23459,7 @@ GO FUNC syscall.ReadDirent has:
 // 	n, err := syscall.ReadDirent(fd, buf)
 // 	res := EmptyVector
 // 	res = res.Conjoin(MakeInt(int(n)))
-// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 // 	return res
 // }
 
@@ -23468,7 +23468,7 @@ GO FUNC syscall.Readlink has:
 // 	n, err := syscall.Readlink(path, buf)
 // 	res := EmptyVector
 // 	res = res.Conjoin(MakeInt(int(n)))
-// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 // 	return res
 // }
 
@@ -23478,7 +23478,7 @@ GO FUNC syscall.Recvfrom has:
 // 	res := EmptyVector
 // 	res = res.Conjoin(MakeInt(int(n)))
 // 	res = res.Conjoin(from)
-// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 // 	return res
 // }
 
@@ -23490,7 +23490,7 @@ GO FUNC syscall.Recvmsg has:
 // 	res = res.Conjoin(MakeInt(int(oobn)))
 // 	res = res.Conjoin(MakeInt(int(recvflags)))
 // 	res = res.Conjoin(from)
-// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 // 	return res
 // }
 
@@ -23503,7 +23503,7 @@ func routeRIB(facility int, param int) Object {
 		vec1 = vec1.Conjoin(MakeInt(int(elem1)))
 	}
 	res = res.Conjoin(vec1)
-	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 	return res
 }
 
@@ -23512,7 +23512,7 @@ func seek(fd int, offset int64, whence int) Object {
 	newoffset, err := syscall.Seek(fd, offset, whence)
 	res := EmptyVector
 	res = res.Conjoin(MakeInt(int(newoffset)))
-	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 	return res
 }
 
@@ -23521,7 +23521,7 @@ GO FUNC syscall.Sendfile has:
 // 	written, err := syscall.Sendfile(outfd, infd, offset, count)
 // 	res := EmptyVector
 // 	res = res.Conjoin(MakeInt(int(written)))
-// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 // 	return res
 // }
 
@@ -23530,7 +23530,7 @@ GO FUNC syscall.SendmsgN has:
 // 	n, err := syscall.SendmsgN(fd, p, oob, to, flags)
 // 	res := EmptyVector
 // 	res = res.Conjoin(MakeInt(int(n)))
-// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 // 	return res
 // }
 
@@ -23539,7 +23539,7 @@ func setBpfBuflen(fd int, l int) Object {
 	res1, res2 := syscall.SetBpfBuflen(fd, l)
 	res := EmptyVector
 	res = res.Conjoin(MakeInt(int(res1)))
-	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 	return res
 }
 
@@ -23548,7 +23548,7 @@ func setBpfDatalink(fd int, t int) Object {
 	res1, res2 := syscall.SetBpfDatalink(fd, t)
 	res := EmptyVector
 	res = res.Conjoin(MakeInt(int(res1)))
-	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 	return res
 }
 
@@ -23563,7 +23563,7 @@ func setsid() Object {
 	pid, err := syscall.Setsid()
 	res := EmptyVector
 	res = res.Conjoin(MakeInt(int(pid)))
-	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 	return res
 }
 
@@ -23576,7 +23576,7 @@ GO FUNC syscall.SlicePtrFromStrings has:
 // 		vec1 = vec1.Conjoin(MakeInt(int((*elem1))))
 // 	}
 // 	res = res.Conjoin(vec1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -23585,7 +23585,7 @@ func socket(domain int, typ int, proto int) Object {
 	fd, err := syscall.Socket(domain, typ, proto)
 	res := EmptyVector
 	res = res.Conjoin(MakeInt(int(fd)))
-	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 	return res
 }
 
@@ -23598,7 +23598,7 @@ func socketpair(domain int, typ int, proto int) Object {
 		vec1 = vec1.Conjoin(MakeInt(int(elem1)))
 	}
 	res = res.Conjoin(vec1)
-	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 	return res
 }
 
@@ -23608,7 +23608,7 @@ GO FUNC syscall.StartProcess has:
 // 	res := EmptyVector
 // 	res = res.Conjoin(MakeInt(int(pid)))
 // 	res = res.Conjoin()
-// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 // 	return res
 // }
 
@@ -23667,7 +23667,7 @@ func sysctl(name string) Object {
 	value, err := syscall.Sysctl(name)
 	res := EmptyVector
 	res = res.Conjoin(MakeString(value))
-	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 	return res
 }
 
@@ -23676,7 +23676,7 @@ func sysctlUint32(name string) Object {
 	value, err := syscall.SysctlUint32(name)
 	res := EmptyVector
 	res = res.Conjoin(MakeInt(int(value)))
-	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 	return res
 }
 
@@ -23695,7 +23695,7 @@ GO FUNC syscall.Wait4 has:
 // 	wpid, err := syscall.Wait4(pid, wstatus, options, rusage)
 // 	res := EmptyVector
 // 	res = res.Conjoin(MakeInt(int(wpid)))
-// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 // 	return res
 // }
 
@@ -23704,7 +23704,7 @@ GO FUNC syscall.Write has:
 // 	n, err := syscall.Write(fd, p)
 // 	res := EmptyVector
 // 	res = res.Conjoin(MakeInt(int(n)))
-// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 // 	return res
 // }
 
@@ -23713,7 +23713,7 @@ GO FUNC syslog.Dial has:
 // 	res1, res2 := syslog.Dial(network, raddr, priority, tag)
 // 	res := EmptyVector
 // 	res = res.Conjoin(NIL)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -23722,7 +23722,7 @@ GO FUNC syslog.New has:
 // 	res1, res2 := syslog.New(priority, tag)
 // 	res := EmptyVector
 // 	res = res.Conjoin(NIL)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -23731,7 +23731,7 @@ GO FUNC syslog.NewLogger has:
 // 	res1, res2 := syslog.NewLogger(p, logFlag)
 // 	res := EmptyVector
 // 	res = res.Conjoin((*res1))
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -23764,7 +23764,7 @@ GO FUNC tar.FileInfoHeader has:
 // 	map1.Add(MakeKeyword("PAXRecords"), (*res1).PAXRecords)
 // 	map1.Add(MakeKeyword("Format"), MakeInt(int((*res1).Format)))
 // 	res = res.Conjoin(map1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -23824,7 +23824,7 @@ GO FUNC template.ParseFiles has:
 // 	map1 := EmptyArrayMap()
 // 	map1.Add(MakeKeyword("Tree"), (*(*res1).Tree))
 // 	res = res.Conjoin(map1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -23835,7 +23835,7 @@ GO FUNC template.ParseGlob has:
 // 	map1 := EmptyArrayMap()
 // 	map1.Add(MakeKeyword("Tree"), (*(*res1).Tree))
 // 	res = res.Conjoin(map1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -23890,7 +23890,7 @@ func dial(network string, addr string) Object {
 	res1, res2 := textproto.Dial(network, addr)
 	res := EmptyVector
 	res = res.Conjoin(NIL)
-	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 	return res
 }
 
@@ -23956,7 +23956,7 @@ func loadLocation(name string) Object {
 	res1, res2 := time.LoadLocation(name)
 	res := EmptyVector
 	res = res.Conjoin(NIL)
-	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 	return res
 }
 
@@ -23965,7 +23965,7 @@ GO FUNC time.LoadLocationFromTZData has:
 // 	res1, res2 := time.LoadLocationFromTZData(name, data)
 // 	res := EmptyVector
 // 	res = res.Conjoin(NIL)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -23996,7 +23996,7 @@ func parse(layout string, value string) Object {
 	res1, res2 := time.Parse(layout, value)
 	res := EmptyVector
 	res = res.Conjoin(NIL)
-	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 	return res
 }
 
@@ -24005,7 +24005,7 @@ func parseDuration(s string) Object {
 	res1, res2 := time.ParseDuration(s)
 	res := EmptyVector
 	res = res.Conjoin(MakeInt(int(res1)))
-	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 	return res
 }
 
@@ -24014,7 +24014,7 @@ GO FUNC time.ParseInLocation has:
 // 	res1, res2 := time.ParseInLocation(layout, value, loc)
 // 	res := EmptyVector
 // 	res = res.Conjoin(NIL)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -24046,7 +24046,7 @@ GO FUNC tls.Dial has:
 // 	res1, res2 := tls.Dial(network, addr, config)
 // 	res := EmptyVector
 // 	res = res.Conjoin(NIL)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -24055,7 +24055,7 @@ GO FUNC tls.DialWithDialer has:
 // 	res1, res2 := tls.DialWithDialer(dialer, network, addr, config)
 // 	res := EmptyVector
 // 	res = res.Conjoin(NIL)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -24064,7 +24064,7 @@ GO FUNC tls.Listen has:
 // 	res1, res2 := tls.Listen(network, laddr, config)
 // 	res := EmptyVector
 // 	res = res.Conjoin(res1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -24099,7 +24099,7 @@ GO FUNC tls.LoadX509KeyPair has:
 // 	map1.Add(MakeKeyword("SignedCertificateTimestamps"), vec5)
 // 	map1.Add(MakeKeyword("Leaf"), (*res1.Leaf))
 // 	res = res.Conjoin(map1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -24150,7 +24150,7 @@ GO FUNC tls.X509KeyPair has:
 // 	map1.Add(MakeKeyword("SignedCertificateTimestamps"), vec5)
 // 	map1.Add(MakeKeyword("Leaf"), (*res1.Leaf))
 // 	res = res.Conjoin(map1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -24209,7 +24209,7 @@ GO FUNC transform.Append has:
 // 	}
 // 	res = res.Conjoin(vec1)
 // 	res = res.Conjoin(MakeInt(int(n)))
-// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 // 	return res
 // }
 
@@ -24223,7 +24223,7 @@ GO FUNC transform.Bytes has:
 // 	}
 // 	res = res.Conjoin(vec1)
 // 	res = res.Conjoin(MakeInt(int(n)))
-// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 // 	return res
 // }
 
@@ -24255,7 +24255,7 @@ GO FUNC transform.String has:
 // 	res := EmptyVector
 // 	res = res.Conjoin(MakeString(result))
 // 	res = res.Conjoin(MakeInt(int(n)))
-// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 // 	return res
 // }
 
@@ -24278,7 +24278,7 @@ GO FUNC types.Eval has:
 // 	map1.Add(MakeKeyword("Type"), _.Type)
 // 	map1.Add(MakeKeyword("Value"), _.Value)
 // 	res = res.Conjoin(map1)
-// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 // 	return res
 // }
 
@@ -24526,7 +24526,7 @@ func parse(rawurl string) Object {
 	map1.Add(MakeKeyword("RawQuery"), MakeString((*res1).RawQuery))
 	map1.Add(MakeKeyword("Fragment"), MakeString((*res1).Fragment))
 	res = res.Conjoin(map1)
-	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 	return res
 }
 
@@ -24535,7 +24535,7 @@ GO FUNC url.ParseQuery has:
 // 	res1, res2 := url.ParseQuery(query)
 // 	res := EmptyVector
 // 	res = res.Conjoin(res1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -24554,7 +24554,7 @@ func parseRequestURI(rawurl string) Object {
 	map1.Add(MakeKeyword("RawQuery"), MakeString((*res1).RawQuery))
 	map1.Add(MakeKeyword("Fragment"), MakeString((*res1).Fragment))
 	res = res.Conjoin(map1)
-	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 	return res
 }
 
@@ -24563,7 +24563,7 @@ func pathUnescape(s string) Object {
 	res1, res2 := url.PathUnescape(s)
 	res := EmptyVector
 	res = res.Conjoin(MakeString(res1))
-	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 	return res
 }
 
@@ -24572,7 +24572,7 @@ func queryUnescape(s string) Object {
 	res1, res2 := url.QueryUnescape(s)
 	res := EmptyVector
 	res = res.Conjoin(MakeString(res1))
-	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 	return res
 }
 
@@ -24599,7 +24599,7 @@ func current() Object {
 	map1.Add(MakeKeyword("Name"), MakeString((*res1).Name))
 	map1.Add(MakeKeyword("HomeDir"), MakeString((*res1).HomeDir))
 	res = res.Conjoin(map1)
-	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 	return res
 }
 
@@ -24614,7 +24614,7 @@ func lookup(username string) Object {
 	map1.Add(MakeKeyword("Name"), MakeString((*res1).Name))
 	map1.Add(MakeKeyword("HomeDir"), MakeString((*res1).HomeDir))
 	res = res.Conjoin(map1)
-	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 	return res
 }
 
@@ -24626,7 +24626,7 @@ func lookupGroup(name string) Object {
 	map1.Add(MakeKeyword("Gid"), MakeString((*res1).Gid))
 	map1.Add(MakeKeyword("Name"), MakeString((*res1).Name))
 	res = res.Conjoin(map1)
-	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 	return res
 }
 
@@ -24638,7 +24638,7 @@ func lookupGroupId(gid string) Object {
 	map1.Add(MakeKeyword("Gid"), MakeString((*res1).Gid))
 	map1.Add(MakeKeyword("Name"), MakeString((*res1).Name))
 	res = res.Conjoin(map1)
-	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 	return res
 }
 
@@ -24653,7 +24653,7 @@ func lookupId(uid string) Object {
 	map1.Add(MakeKeyword("Name"), MakeString((*res1).Name))
 	map1.Add(MakeKeyword("HomeDir"), MakeString((*res1).HomeDir))
 	res = res.Conjoin(map1)
-	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 	return res
 }
 
@@ -24736,7 +24736,7 @@ GO FUNC x509.CreateCertificate has:
 // 		vec1 = vec1.Conjoin(MakeInt(int(elem1)))
 // 	}
 // 	res = res.Conjoin(vec1)
-// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 // 	return res
 // }
 
@@ -24749,7 +24749,7 @@ GO FUNC x509.CreateCertificateRequest has:
 // 		vec1 = vec1.Conjoin(MakeInt(int(elem1)))
 // 	}
 // 	res = res.Conjoin(vec1)
-// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 // 	return res
 // }
 
@@ -24762,7 +24762,7 @@ GO FUNC x509.DecryptPEMBlock has:
 // 		vec1 = vec1.Conjoin(MakeInt(int(elem1)))
 // 	}
 // 	res = res.Conjoin(vec1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -24771,7 +24771,7 @@ GO FUNC x509.EncryptPEMBlock has:
 // 	res1, res2 := x509.EncryptPEMBlock(rand, blockType, data, password, alg)
 // 	res := EmptyVector
 // 	res = res.Conjoin((*res1))
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -24784,7 +24784,7 @@ GO FUNC x509.MarshalECPrivateKey has:
 // 		vec1 = vec1.Conjoin(MakeInt(int(elem1)))
 // 	}
 // 	res = res.Conjoin(vec1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -24817,7 +24817,7 @@ GO FUNC x509.MarshalPKCS8PrivateKey has:
 // 		vec1 = vec1.Conjoin(MakeInt(int(elem1)))
 // 	}
 // 	res = res.Conjoin(vec1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -24830,7 +24830,7 @@ GO FUNC x509.MarshalPKIXPublicKey has:
 // 		vec1 = vec1.Conjoin(MakeInt(int(elem1)))
 // 	}
 // 	res = res.Conjoin(vec1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -24845,7 +24845,7 @@ GO FUNC x509.ParseCRL has:
 // 	res1, res2 := x509.ParseCRL(crlBytes)
 // 	res := EmptyVector
 // 	res = res.Conjoin((*res1))
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -25015,7 +25015,7 @@ GO FUNC x509.ParseCertificate has:
 // 	}
 // 	map1.Add(MakeKeyword("PolicyIdentifiers"), vec30)
 // 	res = res.Conjoin(map1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -25090,7 +25090,7 @@ GO FUNC x509.ParseCertificateRequest has:
 // 	}
 // 	map1.Add(MakeKeyword("URIs"), vec13)
 // 	res = res.Conjoin(map1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -25264,7 +25264,7 @@ GO FUNC x509.ParseCertificates has:
 // 		vec1 = vec1.Conjoin(map2)
 // 	}
 // 	res = res.Conjoin(vec1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -25273,7 +25273,7 @@ GO FUNC x509.ParseDERCRL has:
 // 	res1, res2 := x509.ParseDERCRL(derBytes)
 // 	res := EmptyVector
 // 	res = res.Conjoin((*res1))
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -25282,7 +25282,7 @@ GO FUNC x509.ParseECPrivateKey has:
 // 	res1, res2 := x509.ParseECPrivateKey(der)
 // 	res := EmptyVector
 // 	res = res.Conjoin((*res1))
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -25291,7 +25291,7 @@ GO FUNC x509.ParsePKCS1PrivateKey has:
 // 	res1, res2 := x509.ParsePKCS1PrivateKey(der)
 // 	res := EmptyVector
 // 	res = res.Conjoin((*res1))
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -25300,7 +25300,7 @@ GO FUNC x509.ParsePKCS1PublicKey has:
 // 	res1, res2 := x509.ParsePKCS1PublicKey(der)
 // 	res := EmptyVector
 // 	res = res.Conjoin((*res1))
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -25309,7 +25309,7 @@ GO FUNC x509.ParsePKCS8PrivateKey has:
 // 	key, err := x509.ParsePKCS8PrivateKey(der)
 // 	res := EmptyVector
 // 	res = res.Conjoin(key)
-// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 // 	return res
 // }
 
@@ -25318,7 +25318,7 @@ GO FUNC x509.ParsePKIXPublicKey has:
 // 	pub, err := x509.ParsePKIXPublicKey(derBytes)
 // 	res := EmptyVector
 // 	res = res.Conjoin(pub)
-// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeString(err.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 // 	return res
 // }
 
@@ -25327,7 +25327,7 @@ func systemCertPool() Object {
 	res1, res2 := x509.SystemCertPool()
 	res := EmptyVector
 	res = res.Conjoin(NIL)
-	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 	return res
 }
 
@@ -25351,7 +25351,7 @@ GO FUNC xml.Marshal has:
 // 		vec1 = vec1.Conjoin(MakeInt(int(elem1)))
 // 	}
 // 	res = res.Conjoin(vec1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -25364,7 +25364,7 @@ GO FUNC xml.MarshalIndent has:
 // 		vec1 = vec1.Conjoin(MakeInt(int(elem1)))
 // 	}
 // 	res = res.Conjoin(vec1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -25433,7 +25433,7 @@ GO FUNC zip.FileInfoHeader has:
 // 	map1.Add(MakeKeyword("Extra"), vec2)
 // 	map1.Add(MakeKeyword("ExternalAttrs"), MakeInt(int((*res1).ExternalAttrs)))
 // 	res = res.Conjoin(map1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -25449,7 +25449,7 @@ GO FUNC zip.NewReader has:
 // 	map1.Add(MakeKeyword("File"), vec2)
 // 	map1.Add(MakeKeyword("Comment"), MakeString((*res1).Comment))
 // 	res = res.Conjoin(map1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -25464,7 +25464,7 @@ func openReader(name string) Object {
 	res1, res2 := zip.OpenReader(name)
 	res := EmptyVector
 	res = res.Conjoin(NIL)
-	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 	return res
 }
 
@@ -25485,7 +25485,7 @@ GO FUNC zlib.NewReader has:
 // 	res1, res2 := zlib.NewReader(r)
 // 	res := EmptyVector
 // 	res = res.Conjoin(res1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -25494,7 +25494,7 @@ GO FUNC zlib.NewReaderDict has:
 // 	res1, res2 := zlib.NewReaderDict(r, dict)
 // 	res := EmptyVector
 // 	res = res.Conjoin(res1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -25509,7 +25509,7 @@ GO FUNC zlib.NewWriterLevel has:
 // 	res1, res2 := zlib.NewWriterLevel(w, level)
 // 	res := EmptyVector
 // 	res = res.Conjoin(NIL)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
@@ -25518,7 +25518,7 @@ GO FUNC zlib.NewWriterLevelDict has:
 // 	res1, res2 := zlib.NewWriterLevelDict(w, level, dict)
 // 	res := EmptyVector
 // 	res = res.Conjoin(NIL)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
 
