@@ -905,6 +905,7 @@ Options:
   --joker <joker-source-dir-name>  # Modify pertinent source files to reflect packages being created
   --verbose, -v                  # Print info on what's going on
   --dump                         # Use go's AST dump API on pertinent elements (functions, types, etc.)
+  --no-timestamp                 # Don't put the time (and version) info in generated/modified files
   --help, -h                     # Print this information
 
 If <joker-std-subdir> is not specified, no Go nor Clojure source files
@@ -1058,7 +1059,7 @@ func main() {
 				usage()
 			case "--version", "-V":
 				fmt.Printf("%s version %s\n", os.Args[0], VERSION)
-			case "--notimestamp":
+			case "--no-timestamp":
 				noTimeAndVersion = true
 			case "--dump":
 				dump = true
