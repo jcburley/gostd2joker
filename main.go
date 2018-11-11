@@ -517,15 +517,21 @@ func argsAsGo(p *FieldList) string {
 
  */
 
-var genSymIndex = 0
+var genSymIndex = map[string]int {}
 
 func genSym(pre string) string {
-	genSymIndex += 1
-	return fmt.Sprintf("%s%d", pre, genSymIndex)
+	var idx int
+	if i, ok := genSymIndex[pre]; ok {
+		idx = i + 1
+	} else {
+		idx = 1
+	}
+	genSymIndex[pre] = idx
+	return fmt.Sprintf("%s%d", pre, idx)
 }
 
 func genSymReset() {
-	genSymIndex = 0
+	genSymIndex = map[string]int {}
 }
 
 func exprIsUseful(rtn string) bool {
@@ -560,7 +566,7 @@ func genGoPostNamed(indent, pkg, in, t string) (jok, gol, goc, out string) {
 // Joker: { :a ^Int, :b ^String }
 // Go: struct { a int; b string }
 func genGoPostStruct(indent, pkg, in string, fl *FieldList) (jok, gol, goc, out string) {
-	tmpmap := genSym("map")
+	tmpmap := "map" + genSym("")
 	goc += indent + tmpmap + " := EmptyArrayMap()\n"
 	useful := false
 	for _, f := range fl.List {
@@ -689,7 +695,7 @@ func genGoPostItem(indent, pkg string, f *Field, idx *int, p *Ident, gores, jok,
 		gores = nil // Don't need to update this anymore
 	} else {
 		if p == nil || p.Name == "" {
-			rtn = fmt.Sprintf("res%d", *idx)
+			rtn = genSym("res")
 		} else {
 			rtn = p.Name
 		}
