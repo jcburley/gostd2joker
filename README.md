@@ -1,71 +1,58 @@
 # gostd2joker
 
-Before building Joker, one can optionally run this tool against a Go source tree, which _must_ correspond to the version of Go they use to build Joker itself, to populate `joker/std/go/` and modify related Joker source files. Further, the build parameters (`$GOARCH`, `$GOOS`, etc.) must match -- so `build-all.sh` would have to pass those to this tool (if it was to be used) for each of the targets.
+## Quick Start
+
+To make this "magic" happen:
+
+* Ensure you're running Go version 1.11.2 (see `go version`), as the copy of the subset of some supported Go packages, that comes with `gostd2joker`, comes from that version
+* `go get github.com/jcburley/gostd2joker`, which should build and install `gostd2joker`
+* (Not yet supported nor needed:) Get a copy of the Go source tree, e.g. [https://github.com/golang/go](from Github), and check out the tag/branch corresponding to the version of Go you're running (see `go version`)
+* Check out the `gostd2joker` branch of [https://github.com/jcburley/joker.git](my fork of Joker) and `cd` to it
+* Create a symlink from that copy of the Go source tree you checked out (above) to `./GO.link` (in the top-level Joker source directory)
+* `./run.sh`, specifying optional args such as `--version`, `-e '(println "i am here")'`, or even:
+
+```
+-e "(require '[joker.go.net :as n]) (print \"\\nNetwork interfaces:\\n  \") (n/Interfaces) (println)"
+```
+
+## Overview of Tool's Relationship to Joker and Go
+
+Before building Joker, one can optionally run this tool against a Go source tree, which _must_ correspond to the version of Go used to build Joker itself, to populate `joker/std/go/` and modify related Joker source files. Further, the build parameters (`$GOARCH`, `$GOOS`, etc.) must match -- so `build-all.sh` would have to pass those to this tool (if it was to be used) for each of the targets.
 
 At the moment, this is just a proof of concept, focusing initially on `net.LookupMX()`. E.g. run it like this:
 
 ```
-$ ln -s <go-source-directory> GO.link
-$ ./gostd2joker 2>&1 | less
+$ cd joker # Joker source directory
+$ ln -s <gostd2joker-source-directory>/tests/big GO.link  # Someday hope to link to the complete Go source directory!
+$ gostd2joker 2>&1 | less
 ```
 
-Then page through it. Code snippets intended for e.g. `joker/std/go/net.joke` are printed to `stdout`, making iteration (during development of this tool) much easier. Or, specify `--joker <joker-source-directory>` to get all the individual `*.joke` and `*.go` files in `<dir>/std/go/`, along with modifications to `<dir>/main.go`, `<dir>/core/data/core.joke`, and `<dir>/std/generate-std.joke`.
+Then page through it. Code snippets intended for e.g. `joker/std/go/net.joke` are printed to `stdout`, making iteration (during development of this tool) much easier. Or, specify `--joker <joker-source-directory>` (typically `--joker .`) to get all the individual `*.joke` and `*.go` files in `<dir>/std/go/`, along with modifications to `<dir>/main.go`, `<dir>/core/data/core.joke`, and `<dir>/std/generate-std.joke`.
 
 Anything not supported results in either a `panic` or, more often, the string `ABEND` along with some kind of explanation. The latter is used to auto-detect a non-convertible function, in which case the snippet(s) are still output, but commented-out, so it's easy to see what's missing and (perhaps) why.
 
 Among things to do to "productize" this:
 
-* IN PROGRESS: Generate imports and such properly
 * NEEDED?: Change `generate-std.joke` to support this tool's output (this avoids the tool having to generate `*_native.go` snippets or files in many, if not all, cases)
 * Might have to replace the current ad-hoc tracking of Go packages with something that respects `import` and the like
-* SOMEWHAT DONE: Have tool generate more-helpful docstrings than just copying the ones with the Go functions -- e.g. the return types, maybe decorated with extra information?
-* Explain how to use the tool in Joker's `README.md`
+* SOMEWHAT DONE: Have tool generate more-helpful docstrings than just copying the ones with the Go functions -- e.g. the parameter types, maybe decorated with extra information?
 * Document the code better
 * Assess performance impact (especially startup time) on Joker, and mitigate as appropriate
 
 ## Sample Usage
 
-This uses a "small" copy of the `golang/go/src/net/` subdirectory in the Go source tree -- enough to quickly iterate over getting `LookupMX()` to look more like we might want it to. A full copy of that subdirectory is in `tests/big`. Note that this tool currently manages to work on the entire `golang/go/src/` tree, though it sees multiple definitions of the same function (and complains about them -- they shouldn't be output, of course).
+Assuming Joker has been built as described above:
 
 ```
-$ ./gostd2joker --go $PWD/tests/small 2>&1 | grep -i -E -C20 '(lookupMX|queryEscape)'
-
-JOKER FUNC net.LookupMX has:
-(defn LookupMX
-  "LookupMX returns the DNS MX records for the given domain name sorted by preference.\nGo return type: ([]*MX, error)\nJoker return type: [(vector-of {:Host ^String, :Pref ^Int}) Error]"
-  {:added "1.0"
-   :go "lookupMX(name)"}
-  [^String name])
-
-...
-
-JOKER FUNC url.QueryEscape has:
-(defn ^String QueryEscape
-  "QueryEscape escapes the string so it can be safely placed\ninside a URL query.\nGo return type: string\nJoker return type: String"
-  {:added "1.0"
-   :go "url.QueryEscape(s)"}
-  [^String s])
-
-...
-
-GO FUNC net.LookupMX has:
-func lookupMX(name string) Object {
-	res1, res2 := net.LookupMX(name)
-	res := EmptyVector
-	vec1 := EmptyVector
-	for _, elem1 := range res1 {
-		map2 := EmptyArrayMap()
-		map2.Add(MakeKeyword("Host"), MakeString((*elem1).Host))
-		map2.Add(MakeKeyword("Pref"), MakeInt(int((*elem1).Pref)))
-		vec1 = vec1.Conjoin(map2)
-	}
-	res = res.Conjoin(vec1)
-	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeString(res2.Error()) } }())
-	return res
-}
+$ ./joker
+Welcome to joker v0.10.1. Use EOF (Ctrl-D) or SIGINT (Ctrl-C) to exit.
+user=> (require '[joker.go.net :as n])
+nil
+user=> (n/Interfaces)
+[[{:Index 1, :MTU 65536, :Name "lo", :HardwareAddr [], :Flags 5} {:Index 2, :MTU 1500, :Name "eth0", :HardwareAddr [20 218 233 31 200 87], :Flags 19} {:Index 3, :MTU 1500, :Name "docker0", :HardwareAddr [2 66 188 97 92 58], :Flags 19}] nil]
+user=>
+$
 ```
-
-Note that `^[(vector-of {:Host ^String, :Pref ^Int}) Error]` construct -- it indicates that `LookupMX()` returns a vector whose first element is itself a vector of maps with the indicated keys, and whose second element is of type `Error`.
 
 ## Run Tests
 
