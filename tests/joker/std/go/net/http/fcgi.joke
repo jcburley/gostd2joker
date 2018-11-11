@@ -7,13 +7,13 @@
   go.net.http.fcgi)
 
 ;; (defn ProcessEnv
-;;   "ProcessEnv returns FastCGI environment variables associated with the request r\nfor which no effort was made to be included in the request itself - the data\nis hidden in the request's context. As an example, if REMOTE_USER is set for a\nrequest, it will not be found anywhere in r, but it will be included in\nProcessEnv's response (via r's context).\nGo return type: ...\nJoker return type: ABEND883(unrecognized Expr type *ast.MapType at: tests/big/src/net/http/fcgi/child.go:358:34)"
+;;   "ProcessEnv returns FastCGI environment variables associated with the request r\nfor which no effort was made to be included in the request itself - the data\nis hidden in the request's context. As an example, if REMOTE_USER is set for a\nrequest, it will not be found anywhere in r, but it will be included in\nProcessEnv's response (via r's context).\n\nGo return type: ...\n\nJoker return type: ABEND883(unrecognized Expr type *ast.MapType at: tests/big/src/net/http/fcgi/child.go:358:34)"
 ;;   {:added "1.0"
 ;;    :go "processEnv(r)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/http/fcgi/child.go:358:19) r])
 
 ;; (defn ^Error Serve
-;;   "Serve accepts incoming FastCGI connections on the listener l, creating a new\ngoroutine for each. The goroutine reads requests and then calls handler\nto reply to them.\nIf l is nil, Serve accepts connections from os.Stdin.\nIf handler is nil, http.DefaultServeMux is used.\nGo return type: error\nJoker return type: Error"
+;;   "Serve accepts incoming FastCGI connections on the listener l, creating a new\ngoroutine for each. The goroutine reads requests and then calls handler\nto reply to them.\nIf l is nil, Serve accepts connections from os.Stdin.\nIf handler is nil, http.DefaultServeMux is used.\n\nGo return type: error\n\nJoker return type: Error"
 ;;   {:added "1.0"
 ;;    :go "fcgi.Serve(l, handler)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/fcgi/child.go:331:14) l, ^ABEND881(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/fcgi/child.go:331:36) handler])

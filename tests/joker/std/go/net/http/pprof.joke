@@ -13,7 +13,7 @@
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/pprof/pprof.go:83:16) w, ^ABEND881(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/http/pprof/pprof.go:83:39) r])
 
 ;; (defn Handler
-;;   "Handler returns an HTTP handler that serves the named profile.\nGo return type: ...\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/pprof/pprof.go:221:27)"
+;;   "Handler returns an HTTP handler that serves the named profile.\n\nGo return type: ...\n\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/pprof/pprof.go:221:27)"
 ;;   {:added "1.0"
 ;;    :go "handler(name)"}
 ;;   [^String name])

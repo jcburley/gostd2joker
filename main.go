@@ -58,13 +58,13 @@ func commentGroupInQuotes(doc *CommentGroup, jok, gol string) string {
 	}
 	if gol != "" {
 		if d != "" {
-			d = strings.Trim(d, " \t\n") + "\n"
+			d = strings.Trim(d, " \t\n") + "\n\n"
 		}
 		d += "Go return type: " + gol
 	}
 	if jok != "" {
 		if d != "" {
-			d = strings.Trim(d, " \t\n") + "\n"
+			d = strings.Trim(d, " \t\n") + "\n\n"
 		}
 		d += "Joker return type: " + jok
 	}

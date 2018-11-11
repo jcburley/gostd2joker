@@ -7,259 +7,259 @@
   go.net)
 
 (defn CIDRMask
-  "CIDRMask returns an IPMask consisting of `ones' 1 bits\nfollowed by 0s up to a total length of `bits' bits.\nFor a mask of this form, CIDRMask is the inverse of IPMask.Size.\nGo return type: IPMask\nJoker return type: (vector-of Int)"
+  "CIDRMask returns an IPMask consisting of `ones' 1 bits\nfollowed by 0s up to a total length of `bits' bits.\nFor a mask of this form, CIDRMask is the inverse of IPMask.Size.\n\nGo return type: IPMask\n\nJoker return type: (vector-of Int)"
   {:added "1.0"
    :go "cIDRMask(ones, bits)"}
   [^Int ones, ^Int bits])
 
 ;; (defn Dial
-;;   "Dial connects to the address on the named network.\n\nKnown networks are \"tcp\", \"tcp4\" (IPv4-only), \"tcp6\" (IPv6-only),\n\"udp\", \"udp4\" (IPv4-only), \"udp6\" (IPv6-only), \"ip\", \"ip4\"\n(IPv4-only), \"ip6\" (IPv6-only), \"unix\", \"unixgram\" and\n\"unixpacket\".\n\nFor TCP and UDP networks, the address has the form \"host:port\".\nThe host must be a literal IP address, or a host name that can be\nresolved to IP addresses.\nThe port must be a literal port number or a service name.\nIf the host is a literal IPv6 address it must be enclosed in square\nbrackets, as in \"[2001:db8::1]:80\" or \"[fe80::1%zone]:80\".\nThe zone specifies the scope of the literal IPv6 address as defined\nin RFC 4007.\nThe functions JoinHostPort and SplitHostPort manipulate a pair of\nhost and port in this form.\nWhen using TCP, and the host resolves to multiple IP addresses,\nDial will try each IP address in order until one succeeds.\n\nExamples:\n\tDial(\"tcp\", \"golang.org:http\")\n\tDial(\"tcp\", \"192.0.2.1:http\")\n\tDial(\"tcp\", \"198.51.100.1:80\")\n\tDial(\"udp\", \"[2001:db8::1]:domain\")\n\tDial(\"udp\", \"[fe80::1%lo0]:53\")\n\tDial(\"tcp\", \":80\")\n\nFor IP networks, the network must be \"ip\", \"ip4\" or \"ip6\" followed\nby a colon and a literal protocol number or a protocol name, and\nthe address has the form \"host\". The host must be a literal IP\naddress or a literal IPv6 address with zone.\nIt depends on each operating system how the operating system\nbehaves with a non-well known protocol number such as \"0\" or \"255\".\n\nExamples:\n\tDial(\"ip4:1\", \"192.0.2.1\")\n\tDial(\"ip6:ipv6-icmp\", \"2001:db8::1\")\n\tDial(\"ip6:58\", \"fe80::1%lo0\")\n\nFor TCP, UDP and IP networks, if the host is empty or a literal\nunspecified IP address, as in \":80\", \"0.0.0.0:80\" or \"[::]:80\" for\nTCP and UDP, \"\", \"0.0.0.0\" or \"::\" for IP, the local system is\nassumed.\n\nFor Unix networks, the address must be a file system path.\nGo return type: (Conn, error)\nJoker return type: [ABEND883(unrecognized Expr type *ast.InterfaceType at: tests/big/src/net/net.go:113:11) Error]"
+;;   "Dial connects to the address on the named network.\n\nKnown networks are \"tcp\", \"tcp4\" (IPv4-only), \"tcp6\" (IPv6-only),\n\"udp\", \"udp4\" (IPv4-only), \"udp6\" (IPv6-only), \"ip\", \"ip4\"\n(IPv4-only), \"ip6\" (IPv6-only), \"unix\", \"unixgram\" and\n\"unixpacket\".\n\nFor TCP and UDP networks, the address has the form \"host:port\".\nThe host must be a literal IP address, or a host name that can be\nresolved to IP addresses.\nThe port must be a literal port number or a service name.\nIf the host is a literal IPv6 address it must be enclosed in square\nbrackets, as in \"[2001:db8::1]:80\" or \"[fe80::1%zone]:80\".\nThe zone specifies the scope of the literal IPv6 address as defined\nin RFC 4007.\nThe functions JoinHostPort and SplitHostPort manipulate a pair of\nhost and port in this form.\nWhen using TCP, and the host resolves to multiple IP addresses,\nDial will try each IP address in order until one succeeds.\n\nExamples:\n\tDial(\"tcp\", \"golang.org:http\")\n\tDial(\"tcp\", \"192.0.2.1:http\")\n\tDial(\"tcp\", \"198.51.100.1:80\")\n\tDial(\"udp\", \"[2001:db8::1]:domain\")\n\tDial(\"udp\", \"[fe80::1%lo0]:53\")\n\tDial(\"tcp\", \":80\")\n\nFor IP networks, the network must be \"ip\", \"ip4\" or \"ip6\" followed\nby a colon and a literal protocol number or a protocol name, and\nthe address has the form \"host\". The host must be a literal IP\naddress or a literal IPv6 address with zone.\nIt depends on each operating system how the operating system\nbehaves with a non-well known protocol number such as \"0\" or \"255\".\n\nExamples:\n\tDial(\"ip4:1\", \"192.0.2.1\")\n\tDial(\"ip6:ipv6-icmp\", \"2001:db8::1\")\n\tDial(\"ip6:58\", \"fe80::1%lo0\")\n\nFor TCP, UDP and IP networks, if the host is empty or a literal\nunspecified IP address, as in \":80\", \"0.0.0.0:80\" or \"[::]:80\" for\nTCP and UDP, \"\", \"0.0.0.0\" or \"::\" for IP, the local system is\nassumed.\n\nFor Unix networks, the address must be a file system path.\n\nGo return type: (Conn, error)\n\nJoker return type: [ABEND883(unrecognized Expr type *ast.InterfaceType at: tests/big/src/net/net.go:113:11) Error]"
 ;;   {:added "1.0"
 ;;    :go "dial(network, address)"}
 ;;   [^String network, ^String address])
 
 ;; (defn DialIP
-;;   "DialIP acts like Dial for IP networks.\n\nThe network must be an IP network name; see func Dial for details.\n\nIf laddr is nil, a local address is automatically chosen.\nIf the IP field of raddr is nil or an unspecified IP address, the\nlocal system is assumed.\nGo return type: (*IPConn, error)\nJoker return type: [{} Error]"
+;;   "DialIP acts like Dial for IP networks.\n\nThe network must be an IP network name; see func Dial for details.\n\nIf laddr is nil, a local address is automatically chosen.\nIf the IP field of raddr is nil or an unspecified IP address, the\nlocal system is assumed.\n\nGo return type: (*IPConn, error)\n\nJoker return type: [{} Error]"
 ;;   {:added "1.0"
 ;;    :go "dialIP(network, laddr, raddr)"}
 ;;   [^String network, ^ABEND881(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/iprawsock.go:211:42) laddr, ^ABEND881(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/iprawsock.go:211:42) raddr])
 
 ;; (defn DialTCP
-;;   "DialTCP acts like Dial for TCP networks.\n\nThe network must be a TCP network name; see func Dial for details.\n\nIf laddr is nil, a local address is automatically chosen.\nIf the IP field of raddr is nil or an unspecified IP address, the\nlocal system is assumed.\nGo return type: (*TCPConn, error)\nJoker return type: [{} Error]"
+;;   "DialTCP acts like Dial for TCP networks.\n\nThe network must be a TCP network name; see func Dial for details.\n\nIf laddr is nil, a local address is automatically chosen.\nIf the IP field of raddr is nil or an unspecified IP address, the\nlocal system is assumed.\n\nGo return type: (*TCPConn, error)\n\nJoker return type: [{} Error]"
 ;;   {:added "1.0"
 ;;    :go "dialTCP(network, laddr, raddr)"}
 ;;   [^String network, ^ABEND881(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/tcpsock.go:206:43) laddr, ^ABEND881(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/tcpsock.go:206:43) raddr])
 
 ;; (defn DialTimeout
-;;   "DialTimeout acts like Dial but takes a timeout.\n\nThe timeout includes name resolution, if required.\nWhen using TCP, and the host in the address parameter resolves to\nmultiple IP addresses, the timeout is spread over each consecutive\ndial, such that each is given an appropriate fraction of the time\nto connect.\n\nSee func Dial for a description of the network and address\nparameters.\nGo return type: (Conn, error)\nJoker return type: [ABEND883(unrecognized Expr type *ast.InterfaceType at: tests/big/src/net/net.go:113:11) Error]"
+;;   "DialTimeout acts like Dial but takes a timeout.\n\nThe timeout includes name resolution, if required.\nWhen using TCP, and the host in the address parameter resolves to\nmultiple IP addresses, the timeout is spread over each consecutive\ndial, such that each is given an appropriate fraction of the time\nto connect.\n\nSee func Dial for a description of the network and address\nparameters.\n\nGo return type: (Conn, error)\n\nJoker return type: [ABEND883(unrecognized Expr type *ast.InterfaceType at: tests/big/src/net/net.go:113:11) Error]"
 ;;   {:added "1.0"
 ;;    :go "dialTimeout(network, address, timeout)"}
 ;;   [^String network, ^String address, ^ABEND881(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/dial.go:313:51) timeout])
 
 ;; (defn DialUDP
-;;   "DialUDP acts like Dial for UDP networks.\n\nThe network must be a UDP network name; see func Dial for details.\n\nIf laddr is nil, a local address is automatically chosen.\nIf the IP field of raddr is nil or an unspecified IP address, the\nlocal system is assumed.\nGo return type: (*UDPConn, error)\nJoker return type: [{} Error]"
+;;   "DialUDP acts like Dial for UDP networks.\n\nThe network must be a UDP network name; see func Dial for details.\n\nIf laddr is nil, a local address is automatically chosen.\nIf the IP field of raddr is nil or an unspecified IP address, the\nlocal system is assumed.\n\nGo return type: (*UDPConn, error)\n\nJoker return type: [{} Error]"
 ;;   {:added "1.0"
 ;;    :go "dialUDP(network, laddr, raddr)"}
 ;;   [^String network, ^ABEND881(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/udpsock.go:205:43) laddr, ^ABEND881(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/udpsock.go:205:43) raddr])
 
 ;; (defn DialUnix
-;;   "DialUnix acts like Dial for Unix networks.\n\nThe network must be a Unix network name; see func Dial for details.\n\nIf laddr is non-nil, it is used as the local address for the\nconnection.\nGo return type: (*UnixConn, error)\nJoker return type: [{} Error]"
+;;   "DialUnix acts like Dial for Unix networks.\n\nThe network must be a Unix network name; see func Dial for details.\n\nIf laddr is non-nil, it is used as the local address for the\nconnection.\n\nGo return type: (*UnixConn, error)\n\nJoker return type: [{} Error]"
 ;;   {:added "1.0"
 ;;    :go "dialUnix(network, laddr, raddr)"}
 ;;   [^String network, ^ABEND881(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/unixsock.go:200:44) laddr, ^ABEND881(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/unixsock.go:200:44) raddr])
 
 ;; (defn FileConn
-;;   "FileConn returns a copy of the network connection corresponding to\nthe open file f.\nIt is the caller's responsibility to close f when finished.\nClosing c does not affect f, and closing f does not affect c.\nGo return type: (c Conn, err error)\nJoker return type: [ABEND883(unrecognized Expr type *ast.InterfaceType at: tests/big/src/net/net.go:113:11) Error]"
+;;   "FileConn returns a copy of the network connection corresponding to\nthe open file f.\nIt is the caller's responsibility to close f when finished.\nClosing c does not affect f, and closing f does not affect c.\n\nGo return type: (c Conn, err error)\n\nJoker return type: [ABEND883(unrecognized Expr type *ast.InterfaceType at: tests/big/src/net/net.go:113:11) Error]"
 ;;   {:added "1.0"
 ;;    :go "fileConn(f)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/file.go:21:17) f])
 
 ;; (defn FileListener
-;;   "FileListener returns a copy of the network listener corresponding\nto the open file f.\nIt is the caller's responsibility to close ln when finished.\nClosing ln does not affect f, and closing f does not affect ln.\nGo return type: (ln Listener, err error)\nJoker return type: [ABEND883(unrecognized Expr type *ast.InterfaceType at: tests/big/src/net/net.go:365:15) Error]"
+;;   "FileListener returns a copy of the network listener corresponding\nto the open file f.\nIt is the caller's responsibility to close ln when finished.\nClosing ln does not affect f, and closing f does not affect ln.\n\nGo return type: (ln Listener, err error)\n\nJoker return type: [ABEND883(unrecognized Expr type *ast.InterfaceType at: tests/big/src/net/net.go:365:15) Error]"
 ;;   {:added "1.0"
 ;;    :go "fileListener(f)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/file.go:33:21) f])
 
 ;; (defn FilePacketConn
-;;   "FilePacketConn returns a copy of the packet network connection\ncorresponding to the open file f.\nIt is the caller's responsibility to close f when finished.\nClosing c does not affect f, and closing f does not affect c.\nGo return type: (c PacketConn, err error)\nJoker return type: [ABEND883(unrecognized Expr type *ast.InterfaceType at: tests/big/src/net/net.go:303:17) Error]"
+;;   "FilePacketConn returns a copy of the packet network connection\ncorresponding to the open file f.\nIt is the caller's responsibility to close f when finished.\nClosing c does not affect f, and closing f does not affect c.\n\nGo return type: (c PacketConn, err error)\n\nJoker return type: [ABEND883(unrecognized Expr type *ast.InterfaceType at: tests/big/src/net/net.go:303:17) Error]"
 ;;   {:added "1.0"
 ;;    :go "filePacketConn(f)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/file.go:45:23) f])
 
 (defn IPv4
-  "IPv4 returns the IP address (in 16-byte form) of the\nIPv4 address a.b.c.d.\nGo return type: IP\nJoker return type: (vector-of Int)"
+  "IPv4 returns the IP address (in 16-byte form) of the\nIPv4 address a.b.c.d.\n\nGo return type: IP\n\nJoker return type: (vector-of Int)"
   {:added "1.0"
    :go "iPv4(a, b, c, d)"}
   [^Byte a, ^Byte b, ^Byte c, ^Byte d])
 
 (defn IPv4Mask
-  "IPv4Mask returns the IP mask (in 4-byte form) of the\nIPv4 mask a.b.c.d.\nGo return type: IPMask\nJoker return type: (vector-of Int)"
+  "IPv4Mask returns the IP mask (in 4-byte form) of the\nIPv4 mask a.b.c.d.\n\nGo return type: IPMask\n\nJoker return type: (vector-of Int)"
   {:added "1.0"
    :go "iPv4Mask(a, b, c, d)"}
   [^Byte a, ^Byte b, ^Byte c, ^Byte d])
 
 ;; (defn InterfaceAddrs
-;;   "InterfaceAddrs returns a list of the system's unicast interface\naddresses.\n\nThe returned list does not identify the associated interface; use\nInterfaces and Interface.Addrs for more detail.\nGo return type: ([]Addr, error)\nJoker return type: [(vector-of ABEND883(unrecognized Expr type *ast.InterfaceType at: tests/big/src/net/net.go:105:11)) Error]"
+;;   "InterfaceAddrs returns a list of the system's unicast interface\naddresses.\n\nThe returned list does not identify the associated interface; use\nInterfaces and Interface.Addrs for more detail.\n\nGo return type: ([]Addr, error)\n\nJoker return type: [(vector-of ABEND883(unrecognized Expr type *ast.InterfaceType at: tests/big/src/net/net.go:105:11)) Error]"
 ;;   {:added "1.0"
 ;;    :go "interfaceAddrs()"}
 ;;   [])
 
 (defn InterfaceByIndex
-  "InterfaceByIndex returns the interface specified by index.\n\nOn Solaris, it returns one of the logical network interfaces\nsharing the logical data link; for more precision use\nInterfaceByName.\nGo return type: (*Interface, error)\nJoker return type: [{:Index ^Int, :MTU ^Int, :Name ^String, :HardwareAddr ^(vector-of Int), :Flags ^Int} Error]"
+  "InterfaceByIndex returns the interface specified by index.\n\nOn Solaris, it returns one of the logical network interfaces\nsharing the logical data link; for more precision use\nInterfaceByName.\n\nGo return type: (*Interface, error)\n\nJoker return type: [{:Index ^Int, :MTU ^Int, :Name ^String, :HardwareAddr ^(vector-of Int), :Flags ^Int} Error]"
   {:added "1.0"
    :go "interfaceByIndex(index)"}
   [^Int index])
 
 (defn InterfaceByName
-  "InterfaceByName returns the interface specified by name.\nGo return type: (*Interface, error)\nJoker return type: [{:Index ^Int, :MTU ^Int, :Name ^String, :HardwareAddr ^(vector-of Int), :Flags ^Int} Error]"
+  "InterfaceByName returns the interface specified by name.\n\nGo return type: (*Interface, error)\n\nJoker return type: [{:Index ^Int, :MTU ^Int, :Name ^String, :HardwareAddr ^(vector-of Int), :Flags ^Int} Error]"
   {:added "1.0"
    :go "interfaceByName(name)"}
   [^String name])
 
 (defn Interfaces
-  "Interfaces returns a list of the system's network interfaces.\nGo return type: ([]Interface, error)\nJoker return type: [(vector-of {:Index ^Int, :MTU ^Int, :Name ^String, :HardwareAddr ^(vector-of Int), :Flags ^Int}) Error]"
+  "Interfaces returns a list of the system's network interfaces.\n\nGo return type: ([]Interface, error)\n\nJoker return type: [(vector-of {:Index ^Int, :MTU ^Int, :Name ^String, :HardwareAddr ^(vector-of Int), :Flags ^Int}) Error]"
   {:added "1.0"
    :go "interfaces()"}
   [])
 
 (defn ^String JoinHostPort
-  "JoinHostPort combines host and port into a network address of the\nform \"host:port\". If host contains a colon, as found in literal\nIPv6 addresses, then JoinHostPort returns \"[host]:port\".\n\nSee func Dial for a description of the host and port parameters.\nGo return type: string\nJoker return type: String"
+  "JoinHostPort combines host and port into a network address of the\nform \"host:port\". If host contains a colon, as found in literal\nIPv6 addresses, then JoinHostPort returns \"[host]:port\".\n\nSee func Dial for a description of the host and port parameters.\n\nGo return type: string\n\nJoker return type: String"
   {:added "1.0"
    :go "net.JoinHostPort(host, port)"}
   [^String host, ^String port])
 
 ;; (defn Listen
-;;   "Listen announces on the local network address.\n\nThe network must be \"tcp\", \"tcp4\", \"tcp6\", \"unix\" or \"unixpacket\".\n\nFor TCP networks, if the host in the address parameter is empty or\na literal unspecified IP address, Listen listens on all available\nunicast and anycast IP addresses of the local system.\nTo only use IPv4, use network \"tcp4\".\nThe address can use a host name, but this is not recommended,\nbecause it will create a listener for at most one of the host's IP\naddresses.\nIf the port in the address parameter is empty or \"0\", as in\n\"127.0.0.1:\" or \"[::1]:0\", a port number is automatically chosen.\nThe Addr method of Listener can be used to discover the chosen\nport.\n\nSee func Dial for a description of the network and address\nparameters.\nGo return type: (Listener, error)\nJoker return type: [ABEND883(unrecognized Expr type *ast.InterfaceType at: tests/big/src/net/net.go:365:15) Error]"
+;;   "Listen announces on the local network address.\n\nThe network must be \"tcp\", \"tcp4\", \"tcp6\", \"unix\" or \"unixpacket\".\n\nFor TCP networks, if the host in the address parameter is empty or\na literal unspecified IP address, Listen listens on all available\nunicast and anycast IP addresses of the local system.\nTo only use IPv4, use network \"tcp4\".\nThe address can use a host name, but this is not recommended,\nbecause it will create a listener for at most one of the host's IP\naddresses.\nIf the port in the address parameter is empty or \"0\", as in\n\"127.0.0.1:\" or \"[::1]:0\", a port number is automatically chosen.\nThe Addr method of Listener can be used to discover the chosen\nport.\n\nSee func Dial for a description of the network and address\nparameters.\n\nGo return type: (Listener, error)\n\nJoker return type: [ABEND883(unrecognized Expr type *ast.InterfaceType at: tests/big/src/net/net.go:365:15) Error]"
 ;;   {:added "1.0"
 ;;    :go "listen(network, address)"}
 ;;   [^String network, ^String address])
 
 ;; (defn ListenIP
-;;   "ListenIP acts like ListenPacket for IP networks.\n\nThe network must be an IP network name; see func Dial for details.\n\nIf the IP field of laddr is nil or an unspecified IP address,\nListenIP listens on all available IP addresses of the local system\nexcept multicast IP addresses.\nGo return type: (*IPConn, error)\nJoker return type: [{} Error]"
+;;   "ListenIP acts like ListenPacket for IP networks.\n\nThe network must be an IP network name; see func Dial for details.\n\nIf the IP field of laddr is nil or an unspecified IP address,\nListenIP listens on all available IP addresses of the local system\nexcept multicast IP addresses.\n\nGo return type: (*IPConn, error)\n\nJoker return type: [{} Error]"
 ;;   {:added "1.0"
 ;;    :go "listenIP(network, laddr)"}
 ;;   [^String network, ^ABEND881(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/iprawsock.go:230:37) laddr])
 
 ;; (defn ListenMulticastUDP
-;;   "ListenMulticastUDP acts like ListenPacket for UDP networks but\ntakes a group address on a specific network interface.\n\nThe network must be a UDP network name; see func Dial for details.\n\nListenMulticastUDP listens on all available IP addresses of the\nlocal system including the group, multicast IP address.\nIf ifi is nil, ListenMulticastUDP uses the system-assigned\nmulticast interface, although this is not recommended because the\nassignment depends on platforms and sometimes it might require\nrouting configuration.\nIf the Port field of gaddr is 0, a port number is automatically\nchosen.\n\nListenMulticastUDP is just for convenience of simple, small\napplications. There are golang.org/x/net/ipv4 and\ngolang.org/x/net/ipv6 packages for general purpose uses.\nGo return type: (*UDPConn, error)\nJoker return type: [{} Error]"
+;;   "ListenMulticastUDP acts like ListenPacket for UDP networks but\ntakes a group address on a specific network interface.\n\nThe network must be a UDP network name; see func Dial for details.\n\nListenMulticastUDP listens on all available IP addresses of the\nlocal system including the group, multicast IP address.\nIf ifi is nil, ListenMulticastUDP uses the system-assigned\nmulticast interface, although this is not recommended because the\nassignment depends on platforms and sometimes it might require\nrouting configuration.\nIf the Port field of gaddr is 0, a port number is automatically\nchosen.\n\nListenMulticastUDP is just for convenience of simple, small\napplications. There are golang.org/x/net/ipv4 and\ngolang.org/x/net/ipv6 packages for general purpose uses.\n\nGo return type: (*UDPConn, error)\n\nJoker return type: [{} Error]"
 ;;   {:added "1.0"
 ;;    :go "listenMulticastUDP(network, ifi, gaddr)"}
 ;;   [^String network, ^ABEND881(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/udpsock.go:265:45) ifi, ^ABEND881(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/udpsock.go:265:63) gaddr])
 
 ;; (defn ListenPacket
-;;   "ListenPacket announces on the local network address.\n\nThe network must be \"udp\", \"udp4\", \"udp6\", \"unixgram\", or an IP\ntransport. The IP transports are \"ip\", \"ip4\", or \"ip6\" followed by\na colon and a literal protocol number or a protocol name, as in\n\"ip:1\" or \"ip:icmp\".\n\nFor UDP and IP networks, if the host in the address parameter is\nempty or a literal unspecified IP address, ListenPacket listens on\nall available IP addresses of the local system except multicast IP\naddresses.\nTo only use IPv4, use network \"udp4\" or \"ip4:proto\".\nThe address can use a host name, but this is not recommended,\nbecause it will create a listener for at most one of the host's IP\naddresses.\nIf the port in the address parameter is empty or \"0\", as in\n\"127.0.0.1:\" or \"[::1]:0\", a port number is automatically chosen.\nThe LocalAddr method of PacketConn can be used to discover the\nchosen port.\n\nSee func Dial for a description of the network and address\nparameters.\nGo return type: (PacketConn, error)\nJoker return type: [ABEND883(unrecognized Expr type *ast.InterfaceType at: tests/big/src/net/net.go:303:17) Error]"
+;;   "ListenPacket announces on the local network address.\n\nThe network must be \"udp\", \"udp4\", \"udp6\", \"unixgram\", or an IP\ntransport. The IP transports are \"ip\", \"ip4\", or \"ip6\" followed by\na colon and a literal protocol number or a protocol name, as in\n\"ip:1\" or \"ip:icmp\".\n\nFor UDP and IP networks, if the host in the address parameter is\nempty or a literal unspecified IP address, ListenPacket listens on\nall available IP addresses of the local system except multicast IP\naddresses.\nTo only use IPv4, use network \"udp4\" or \"ip4:proto\".\nThe address can use a host name, but this is not recommended,\nbecause it will create a listener for at most one of the host's IP\naddresses.\nIf the port in the address parameter is empty or \"0\", as in\n\"127.0.0.1:\" or \"[::1]:0\", a port number is automatically chosen.\nThe LocalAddr method of PacketConn can be used to discover the\nchosen port.\n\nSee func Dial for a description of the network and address\nparameters.\n\nGo return type: (PacketConn, error)\n\nJoker return type: [ABEND883(unrecognized Expr type *ast.InterfaceType at: tests/big/src/net/net.go:303:17) Error]"
 ;;   {:added "1.0"
 ;;    :go "listenPacket(network, address)"}
 ;;   [^String network, ^String address])
 
 ;; (defn ListenTCP
-;;   "ListenTCP acts like Listen for TCP networks.\n\nThe network must be a TCP network name; see func Dial for details.\n\nIf the IP field of laddr is nil or an unspecified IP address,\nListenTCP listens on all available unicast and anycast IP addresses\nof the local system.\nIf the Port field of laddr is 0, a port number is automatically\nchosen.\nGo return type: (*TCPListener, error)\nJoker return type: [{} Error]"
+;;   "ListenTCP acts like Listen for TCP networks.\n\nThe network must be a TCP network name; see func Dial for details.\n\nIf the IP field of laddr is nil or an unspecified IP address,\nListenTCP listens on all available unicast and anycast IP addresses\nof the local system.\nIf the Port field of laddr is 0, a port number is automatically\nchosen.\n\nGo return type: (*TCPListener, error)\n\nJoker return type: [{} Error]"
 ;;   {:added "1.0"
 ;;    :go "listenTCP(network, laddr)"}
 ;;   [^String network, ^ABEND881(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/tcpsock.go:323:38) laddr])
 
 ;; (defn ListenUDP
-;;   "ListenUDP acts like ListenPacket for UDP networks.\n\nThe network must be a UDP network name; see func Dial for details.\n\nIf the IP field of laddr is nil or an unspecified IP address,\nListenUDP listens on all available IP addresses of the local system\nexcept multicast IP addresses.\nIf the Port field of laddr is 0, a port number is automatically\nchosen.\nGo return type: (*UDPConn, error)\nJoker return type: [{} Error]"
+;;   "ListenUDP acts like ListenPacket for UDP networks.\n\nThe network must be a UDP network name; see func Dial for details.\n\nIf the IP field of laddr is nil or an unspecified IP address,\nListenUDP listens on all available IP addresses of the local system\nexcept multicast IP addresses.\nIf the Port field of laddr is 0, a port number is automatically\nchosen.\n\nGo return type: (*UDPConn, error)\n\nJoker return type: [{} Error]"
 ;;   {:added "1.0"
 ;;    :go "listenUDP(network, laddr)"}
 ;;   [^String network, ^ABEND881(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/udpsock.go:231:38) laddr])
 
 ;; (defn ListenUnix
-;;   "ListenUnix acts like Listen for Unix networks.\n\nThe network must be \"unix\" or \"unixpacket\".\nGo return type: (*UnixListener, error)\nJoker return type: [{} Error]"
+;;   "ListenUnix acts like Listen for Unix networks.\n\nThe network must be \"unix\" or \"unixpacket\".\n\nGo return type: (*UnixListener, error)\n\nJoker return type: [{} Error]"
 ;;   {:added "1.0"
 ;;    :go "listenUnix(network, laddr)"}
 ;;   [^String network, ^ABEND881(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/unixsock.go:314:39) laddr])
 
 ;; (defn ListenUnixgram
-;;   "ListenUnixgram acts like ListenPacket for Unix networks.\n\nThe network must be \"unixgram\".\nGo return type: (*UnixConn, error)\nJoker return type: [{} Error]"
+;;   "ListenUnixgram acts like ListenPacket for Unix networks.\n\nThe network must be \"unixgram\".\n\nGo return type: (*UnixConn, error)\n\nJoker return type: [{} Error]"
 ;;   {:added "1.0"
 ;;    :go "listenUnixgram(network, laddr)"}
 ;;   [^String network, ^ABEND881(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/unixsock.go:334:43) laddr])
 
 (defn LookupAddr
-  "LookupAddr performs a reverse lookup for the given address, returning a list\nof names mapping to that address.\n\nWhen using the host C library resolver, at most one result will be\nreturned. To bypass the host resolver, use a custom Resolver.\nGo return type: (names []string, err error)\nJoker return type: [(vector-of String) Error]"
+  "LookupAddr performs a reverse lookup for the given address, returning a list\nof names mapping to that address.\n\nWhen using the host C library resolver, at most one result will be\nreturned. To bypass the host resolver, use a custom Resolver.\n\nGo return type: (names []string, err error)\n\nJoker return type: [(vector-of String) Error]"
   {:added "1.0"
    :go "lookupAddr(addr)"}
   [^String addr])
 
 (defn LookupCNAME
-  "LookupCNAME returns the canonical name for the given host.\nCallers that do not care about the canonical name can call\nLookupHost or LookupIP directly; both take care of resolving\nthe canonical name as part of the lookup.\n\nA canonical name is the final name after following zero\nor more CNAME records.\nLookupCNAME does not return an error if host does not\ncontain DNS \"CNAME\" records, as long as host resolves to\naddress records.\nGo return type: (cname string, err error)\nJoker return type: [String Error]"
+  "LookupCNAME returns the canonical name for the given host.\nCallers that do not care about the canonical name can call\nLookupHost or LookupIP directly; both take care of resolving\nthe canonical name as part of the lookup.\n\nA canonical name is the final name after following zero\nor more CNAME records.\nLookupCNAME does not return an error if host does not\ncontain DNS \"CNAME\" records, as long as host resolves to\naddress records.\n\nGo return type: (cname string, err error)\n\nJoker return type: [String Error]"
   {:added "1.0"
    :go "lookupCNAME(host)"}
   [^String host])
 
 (defn LookupHost
-  "LookupHost looks up the given host using the local resolver.\nIt returns a slice of that host's addresses.\nGo return type: (addrs []string, err error)\nJoker return type: [(vector-of String) Error]"
+  "LookupHost looks up the given host using the local resolver.\nIt returns a slice of that host's addresses.\n\nGo return type: (addrs []string, err error)\n\nJoker return type: [(vector-of String) Error]"
   {:added "1.0"
    :go "lookupHost(host)"}
   [^String host])
 
 (defn LookupIP
-  "LookupIP looks up host using the local resolver.\nIt returns a slice of that host's IPv4 and IPv6 addresses.\nGo return type: ([]IP, error)\nJoker return type: [(vector-of (vector-of Int)) Error]"
+  "LookupIP looks up host using the local resolver.\nIt returns a slice of that host's IPv4 and IPv6 addresses.\n\nGo return type: ([]IP, error)\n\nJoker return type: [(vector-of (vector-of Int)) Error]"
   {:added "1.0"
    :go "lookupIP(host)"}
   [^String host])
 
 (defn LookupMX
-  "LookupMX returns the DNS MX records for the given domain name sorted by preference.\nGo return type: ([]*MX, error)\nJoker return type: [(vector-of {:Host ^String, :Pref ^Int}) Error]"
+  "LookupMX returns the DNS MX records for the given domain name sorted by preference.\n\nGo return type: ([]*MX, error)\n\nJoker return type: [(vector-of {:Host ^String, :Pref ^Int}) Error]"
   {:added "1.0"
    :go "lookupMX(name)"}
   [^String name])
 
 (defn LookupNS
-  "LookupNS returns the DNS NS records for the given domain name.\nGo return type: ([]*NS, error)\nJoker return type: [(vector-of {:Host ^String}) Error]"
+  "LookupNS returns the DNS NS records for the given domain name.\n\nGo return type: ([]*NS, error)\n\nJoker return type: [(vector-of {:Host ^String}) Error]"
   {:added "1.0"
    :go "lookupNS(name)"}
   [^String name])
 
 (defn LookupPort
-  "LookupPort looks up the port for the given network and service.\nGo return type: (port int, err error)\nJoker return type: [Int Error]"
+  "LookupPort looks up the port for the given network and service.\n\nGo return type: (port int, err error)\n\nJoker return type: [Int Error]"
   {:added "1.0"
    :go "lookupPort(network, service)"}
   [^String network, ^String service])
 
 (defn LookupSRV
-  "LookupSRV tries to resolve an SRV query of the given service,\nprotocol, and domain name. The proto is \"tcp\" or \"udp\".\nThe returned records are sorted by priority and randomized\nby weight within a priority.\n\nLookupSRV constructs the DNS name to look up following RFC 2782.\nThat is, it looks up _service._proto.name. To accommodate services\npublishing SRV records under non-standard names, if both service\nand proto are empty strings, LookupSRV looks up name directly.\nGo return type: (cname string, addrs []*SRV, err error)\nJoker return type: [String (vector-of {:Target ^String, :Port ^Int, :Priority ^Int, :Weight ^Int}) Error]"
+  "LookupSRV tries to resolve an SRV query of the given service,\nprotocol, and domain name. The proto is \"tcp\" or \"udp\".\nThe returned records are sorted by priority and randomized\nby weight within a priority.\n\nLookupSRV constructs the DNS name to look up following RFC 2782.\nThat is, it looks up _service._proto.name. To accommodate services\npublishing SRV records under non-standard names, if both service\nand proto are empty strings, LookupSRV looks up name directly.\n\nGo return type: (cname string, addrs []*SRV, err error)\n\nJoker return type: [String (vector-of {:Target ^String, :Port ^Int, :Priority ^Int, :Weight ^Int}) Error]"
   {:added "1.0"
    :go "lookupSRV(service, proto, name)"}
   [^String service, ^String proto, ^String name])
 
 (defn LookupTXT
-  "LookupTXT returns the DNS TXT records for the given domain name.\nGo return type: ([]string, error)\nJoker return type: [(vector-of String) Error]"
+  "LookupTXT returns the DNS TXT records for the given domain name.\n\nGo return type: ([]string, error)\n\nJoker return type: [(vector-of String) Error]"
   {:added "1.0"
    :go "lookupTXT(name)"}
   [^String name])
 
 (defn ParseCIDR
-  "ParseCIDR parses s as a CIDR notation IP address and prefix length,\nlike \"192.0.2.0/24\" or \"2001:db8::/32\", as defined in\nRFC 4632 and RFC 4291.\n\nIt returns the IP address and the network implied by the IP and\nprefix length.\nFor example, ParseCIDR(\"192.0.2.1/24\") returns the IP address\n192.0.2.1 and the network 192.0.2.0/24.\nGo return type: (IP, *IPNet, error)\nJoker return type: [(vector-of Int) {:IP ^(vector-of Int), :Mask ^(vector-of Int)} Error]"
+  "ParseCIDR parses s as a CIDR notation IP address and prefix length,\nlike \"192.0.2.0/24\" or \"2001:db8::/32\", as defined in\nRFC 4632 and RFC 4291.\n\nIt returns the IP address and the network implied by the IP and\nprefix length.\nFor example, ParseCIDR(\"192.0.2.1/24\") returns the IP address\n192.0.2.1 and the network 192.0.2.0/24.\n\nGo return type: (IP, *IPNet, error)\n\nJoker return type: [(vector-of Int) {:IP ^(vector-of Int), :Mask ^(vector-of Int)} Error]"
   {:added "1.0"
    :go "parseCIDR(s)"}
   [^String s])
 
 (defn ParseIP
-  "ParseIP parses s as an IP address, returning the result.\nThe string s can be in dotted decimal (\"192.0.2.1\")\nor IPv6 (\"2001:db8::68\") form.\nIf s is not a valid textual representation of an IP address,\nParseIP returns nil.\nGo return type: IP\nJoker return type: (vector-of Int)"
+  "ParseIP parses s as an IP address, returning the result.\nThe string s can be in dotted decimal (\"192.0.2.1\")\nor IPv6 (\"2001:db8::68\") form.\nIf s is not a valid textual representation of an IP address,\nParseIP returns nil.\n\nGo return type: IP\n\nJoker return type: (vector-of Int)"
   {:added "1.0"
    :go "parseIP(s)"}
   [^String s])
 
 (defn ParseMAC
-  "ParseMAC parses s as an IEEE 802 MAC-48, EUI-48, EUI-64, or a 20-octet\nIP over InfiniBand link-layer address using one of the following formats:\n  01:23:45:67:89:ab\n  01:23:45:67:89:ab:cd:ef\n  01:23:45:67:89:ab:cd:ef:00:00:01:23:45:67:89:ab:cd:ef:00:00\n  01-23-45-67-89-ab\n  01-23-45-67-89-ab-cd-ef\n  01-23-45-67-89-ab-cd-ef-00-00-01-23-45-67-89-ab-cd-ef-00-00\n  0123.4567.89ab\n  0123.4567.89ab.cdef\n  0123.4567.89ab.cdef.0000.0123.4567.89ab.cdef.0000\nGo return type: (hw HardwareAddr, err error)\nJoker return type: [(vector-of Int) Error]"
+  "ParseMAC parses s as an IEEE 802 MAC-48, EUI-48, EUI-64, or a 20-octet\nIP over InfiniBand link-layer address using one of the following formats:\n  01:23:45:67:89:ab\n  01:23:45:67:89:ab:cd:ef\n  01:23:45:67:89:ab:cd:ef:00:00:01:23:45:67:89:ab:cd:ef:00:00\n  01-23-45-67-89-ab\n  01-23-45-67-89-ab-cd-ef\n  01-23-45-67-89-ab-cd-ef-00-00-01-23-45-67-89-ab-cd-ef-00-00\n  0123.4567.89ab\n  0123.4567.89ab.cdef\n  0123.4567.89ab.cdef.0000.0123.4567.89ab.cdef.0000\n\nGo return type: (hw HardwareAddr, err error)\n\nJoker return type: [(vector-of Int) Error]"
   {:added "1.0"
    :go "parseMAC(s)"}
   [^String s])
 
 ;; (defn Pipe
-;;   "Pipe creates a synchronous, in-memory, full duplex\nnetwork connection; both ends implement the Conn interface.\nReads on one end are matched with writes on the other,\ncopying data directly between the two; there is no internal\nbuffering.\nGo return type: (Conn, Conn)\nJoker return type: [ABEND883(unrecognized Expr type *ast.InterfaceType at: tests/big/src/net/net.go:113:11) ABEND883(unrecognized Expr type *ast.InterfaceType at: tests/big/src/net/net.go:113:11)]"
+;;   "Pipe creates a synchronous, in-memory, full duplex\nnetwork connection; both ends implement the Conn interface.\nReads on one end are matched with writes on the other,\ncopying data directly between the two; there is no internal\nbuffering.\n\nGo return type: (Conn, Conn)\n\nJoker return type: [ABEND883(unrecognized Expr type *ast.InterfaceType at: tests/big/src/net/net.go:113:11) ABEND883(unrecognized Expr type *ast.InterfaceType at: tests/big/src/net/net.go:113:11)]"
 ;;   {:added "1.0"
 ;;    :go "pipe()"}
 ;;   [])
 
 (defn ResolveIPAddr
-  "ResolveIPAddr returns an address of IP end point.\n\nThe network must be an IP network name.\n\nIf the host in the address parameter is not a literal IP address,\nResolveIPAddr resolves the address to an address of IP end point.\nOtherwise, it parses the address as a literal IP address.\nThe address parameter can use a host name, but this is not\nrecommended, because it will return at most one of the host name's\nIP addresses.\n\nSee func Dial for a description of the network and address\nparameters.\nGo return type: (*IPAddr, error)\nJoker return type: [{:IP ^(vector-of Int), :Zone ^String} Error]"
+  "ResolveIPAddr returns an address of IP end point.\n\nThe network must be an IP network name.\n\nIf the host in the address parameter is not a literal IP address,\nResolveIPAddr resolves the address to an address of IP end point.\nOtherwise, it parses the address as a literal IP address.\nThe address parameter can use a host name, but this is not\nrecommended, because it will return at most one of the host name's\nIP addresses.\n\nSee func Dial for a description of the network and address\nparameters.\n\nGo return type: (*IPAddr, error)\n\nJoker return type: [{:IP ^(vector-of Int), :Zone ^String} Error]"
   {:added "1.0"
    :go "resolveIPAddr(network, address)"}
   [^String network, ^String address])
 
 (defn ResolveTCPAddr
-  "ResolveTCPAddr returns an address of TCP end point.\n\nThe network must be a TCP network name.\n\nIf the host in the address parameter is not a literal IP address or\nthe port is not a literal port number, ResolveTCPAddr resolves the\naddress to an address of TCP end point.\nOtherwise, it parses the address as a pair of literal IP address\nand port number.\nThe address parameter can use a host name, but this is not\nrecommended, because it will return at most one of the host name's\nIP addresses.\n\nSee func Dial for a description of the network and address\nparameters.\nGo return type: (*TCPAddr, error)\nJoker return type: [{:IP ^(vector-of Int), :Port ^Int, :Zone ^String} Error]"
+  "ResolveTCPAddr returns an address of TCP end point.\n\nThe network must be a TCP network name.\n\nIf the host in the address parameter is not a literal IP address or\nthe port is not a literal port number, ResolveTCPAddr resolves the\naddress to an address of TCP end point.\nOtherwise, it parses the address as a pair of literal IP address\nand port number.\nThe address parameter can use a host name, but this is not\nrecommended, because it will return at most one of the host name's\nIP addresses.\n\nSee func Dial for a description of the network and address\nparameters.\n\nGo return type: (*TCPAddr, error)\n\nJoker return type: [{:IP ^(vector-of Int), :Port ^Int, :Zone ^String} Error]"
   {:added "1.0"
    :go "resolveTCPAddr(network, address)"}
   [^String network, ^String address])
 
 (defn ResolveUDPAddr
-  "ResolveUDPAddr returns an address of UDP end point.\n\nThe network must be a UDP network name.\n\nIf the host in the address parameter is not a literal IP address or\nthe port is not a literal port number, ResolveUDPAddr resolves the\naddress to an address of UDP end point.\nOtherwise, it parses the address as a pair of literal IP address\nand port number.\nThe address parameter can use a host name, but this is not\nrecommended, because it will return at most one of the host name's\nIP addresses.\n\nSee func Dial for a description of the network and address\nparameters.\nGo return type: (*UDPAddr, error)\nJoker return type: [{:IP ^(vector-of Int), :Port ^Int, :Zone ^String} Error]"
+  "ResolveUDPAddr returns an address of UDP end point.\n\nThe network must be a UDP network name.\n\nIf the host in the address parameter is not a literal IP address or\nthe port is not a literal port number, ResolveUDPAddr resolves the\naddress to an address of UDP end point.\nOtherwise, it parses the address as a pair of literal IP address\nand port number.\nThe address parameter can use a host name, but this is not\nrecommended, because it will return at most one of the host name's\nIP addresses.\n\nSee func Dial for a description of the network and address\nparameters.\n\nGo return type: (*UDPAddr, error)\n\nJoker return type: [{:IP ^(vector-of Int), :Port ^Int, :Zone ^String} Error]"
   {:added "1.0"
    :go "resolveUDPAddr(network, address)"}
   [^String network, ^String address])
 
 (defn ResolveUnixAddr
-  "ResolveUnixAddr returns an address of Unix domain socket end point.\n\nThe network must be a Unix network name.\n\nSee func Dial for a description of the network and address\nparameters.\nGo return type: (*UnixAddr, error)\nJoker return type: [{:Name ^String, :Net ^String} Error]"
+  "ResolveUnixAddr returns an address of Unix domain socket end point.\n\nThe network must be a Unix network name.\n\nSee func Dial for a description of the network and address\nparameters.\n\nGo return type: (*UnixAddr, error)\n\nJoker return type: [{:Name ^String, :Net ^String} Error]"
   {:added "1.0"
    :go "resolveUnixAddr(network, address)"}
   [^String network, ^String address])
 
 (defn SplitHostPort
-  "SplitHostPort splits a network address of the form \"host:port\",\n\"host%zone:port\", \"[host]:port\" or \"[host%zone]:port\" into host or\nhost%zone and port.\n\nA literal IPv6 address in hostport must be enclosed in square\nbrackets, as in \"[::1]:80\", \"[::1%lo0]:80\".\n\nSee func Dial for a description of the hostport parameter, and host\nand port results.\nGo return type: (host string, port string, err error)\nJoker return type: [String String Error]"
+  "SplitHostPort splits a network address of the form \"host:port\",\n\"host%zone:port\", \"[host]:port\" or \"[host%zone]:port\" into host or\nhost%zone and port.\n\nA literal IPv6 address in hostport must be enclosed in square\nbrackets, as in \"[::1]:80\", \"[::1%lo0]:80\".\n\nSee func Dial for a description of the hostport parameter, and host\nand port results.\n\nGo return type: (host string, port string, err error)\n\nJoker return type: [String String Error]"
   {:added "1.0"
    :go "splitHostPort(hostport)"}
   [^String hostport])
