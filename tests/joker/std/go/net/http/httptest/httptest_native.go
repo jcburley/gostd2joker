@@ -3,7 +3,6 @@
 package httptest
 
 import (
-	. "github.com/candid82/joker/core"
 )
 
 // func newRecorder() Object {

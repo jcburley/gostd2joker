@@ -3,7 +3,6 @@
 package cgi
 
 import (
-	. "github.com/candid82/joker/core"
 )
 
 // func request() Object {

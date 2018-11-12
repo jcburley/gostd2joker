@@ -3,7 +3,6 @@
 package cookiejar
 
 import (
-	. "github.com/candid82/joker/core"
 )
 
 // func new(o ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/http/cookiejar/jar.go:77:12)) Object {

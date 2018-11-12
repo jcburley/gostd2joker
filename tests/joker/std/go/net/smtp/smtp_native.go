@@ -3,7 +3,6 @@
 package smtp
 
 import (
-	. "github.com/candid82/joker/core"
 )
 
 // func cRAMMD5Auth(username string, secret string) Object {

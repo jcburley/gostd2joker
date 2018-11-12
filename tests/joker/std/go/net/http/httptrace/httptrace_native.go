@@ -3,7 +3,6 @@
 package httptrace
 
 import (
-	. "github.com/candid82/joker/core"
 )
 
 // func contextClientTrace(ctx ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/httptrace/trace.go:24:29)) Object {

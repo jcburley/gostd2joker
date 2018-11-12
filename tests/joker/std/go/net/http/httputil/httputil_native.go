@@ -3,7 +3,6 @@
 package httputil
 
 import (
-	. "github.com/candid82/joker/core"
 )
 
 // func dumpRequest(req ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/http/httputil/dump.go:191:22), body bool) Object {

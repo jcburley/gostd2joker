@@ -3,7 +3,6 @@
 package fcgi
 
 import (
-	. "github.com/candid82/joker/core"
 )
 
 // func processEnv(r ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/http/fcgi/child.go:358:19)) Object {

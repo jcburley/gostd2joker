@@ -3,7 +3,6 @@
 package jsonrpc
 
 import (
-	. "github.com/candid82/joker/core"
 )
 
 // func dial(network string, address string) Object {

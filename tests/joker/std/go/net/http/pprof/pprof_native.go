@@ -3,7 +3,6 @@
 package pprof
 
 import (
-	. "github.com/candid82/joker/core"
 )
 
 // func cmdline(w ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/pprof/pprof.go:83:16), r ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/http/pprof/pprof.go:83:39)) Object {
