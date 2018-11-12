@@ -6,7 +6,7 @@ import (
 )
 
 // func contextClientTrace(ctx ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/httptrace/trace.go:24:29)) Object {
-// 	res := httptrace.ContextClientTrace(ctx)
+// 	res := _httptrace.ContextClientTrace(ctx)
 // 	map1 := EmptyArrayMap()
 // 	map1.Add(MakeKeyword("GetConn"), (*res).GetConn)
 // 	map1.Add(MakeKeyword("GotConn"), (*res).GotConn)
@@ -28,5 +28,5 @@ import (
 // }
 
 // func withClientTrace(ctx ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/httptrace/trace.go:34:26), trace ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/http/httptrace/trace.go:34:49)) Object {
-// 	return httptrace.WithClientTrace(ctx, trace)
+// 	return _httptrace.WithClientTrace(ctx, trace)
 // }

@@ -6,11 +6,11 @@ import (
 )
 
 // func cRAMMD5Auth(username string, secret string) Object {
-// 	return smtp.CRAMMD5Auth(username, secret)
+// 	return _smtp.CRAMMD5Auth(username, secret)
 // }
 
 // func dial(addr string) Object {
-// 	res1, res2 := smtp.Dial(addr)
+// 	res1, res2 := _smtp.Dial(addr)
 // 	res := EmptyVector
 // 	map1 := EmptyArrayMap()
 // 	map1.Add(MakeKeyword("Text"), (*(*res1).Text))
@@ -20,7 +20,7 @@ import (
 // }
 
 // func newClient(conn ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/smtp/smtp.go:62:21), host string) Object {
-// 	res1, res2 := smtp.NewClient(conn, host)
+// 	res1, res2 := _smtp.NewClient(conn, host)
 // 	res := EmptyVector
 // 	map1 := EmptyArrayMap()
 // 	map1.Add(MakeKeyword("Text"), (*(*res1).Text))
@@ -30,5 +30,5 @@ import (
 // }
 
 // func plainAuth(identity string, username string, password string, host string) Object {
-// 	return smtp.PlainAuth(identity, username, password, host)
+// 	return _smtp.PlainAuth(identity, username, password, host)
 // }

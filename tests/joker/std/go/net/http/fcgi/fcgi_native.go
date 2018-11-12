@@ -6,5 +6,5 @@ import (
 )
 
 // func processEnv(r ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/http/fcgi/child.go:358:19)) Object {
-// 	return fcgi.ProcessEnv(r)
+// 	return _fcgi.ProcessEnv(r)
 // }

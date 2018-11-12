@@ -6,7 +6,7 @@ import (
 )
 
 // func dumpRequest(req ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/http/httputil/dump.go:191:22), body bool) Object {
-// 	res1, res2 := httputil.DumpRequest(req, body)
+// 	res1, res2 := _httputil.DumpRequest(req, body)
 // 	res := EmptyVector
 // 	vec1 := EmptyVector
 // 	for _, elem1 := range res1 {
@@ -18,7 +18,7 @@ import (
 // }
 
 // func dumpRequestOut(req ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/http/httputil/dump.go:66:25), body bool) Object {
-// 	res1, res2 := httputil.DumpRequestOut(req, body)
+// 	res1, res2 := _httputil.DumpRequestOut(req, body)
 // 	res := EmptyVector
 // 	vec1 := EmptyVector
 // 	for _, elem1 := range res1 {
@@ -30,7 +30,7 @@ import (
 // }
 
 // func dumpResponse(resp ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/http/httputil/dump.go:281:24), body bool) Object {
-// 	res1, res2 := httputil.DumpResponse(resp, body)
+// 	res1, res2 := _httputil.DumpResponse(resp, body)
 // 	res := EmptyVector
 // 	vec1 := EmptyVector
 // 	for _, elem1 := range res1 {
@@ -42,30 +42,30 @@ import (
 // }
 
 // func newChunkedReader(r ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/httputil/httputil.go:20:25)) Object {
-// 	return httputil.NewChunkedReader(r)
+// 	return _httputil.NewChunkedReader(r)
 // }
 
 // func newChunkedWriter(w ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/httputil/httputil.go:35:25)) Object {
-// 	return httputil.NewChunkedWriter(w)
+// 	return _httputil.NewChunkedWriter(w)
 // }
 
 // func newClientConn(c ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/httputil/persist.go:248:22), r ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/http/httputil/persist.go:248:34)) Object {
-// 	return httputil.NewClientConn(c, r)
+// 	return _httputil.NewClientConn(c, r)
 // 	ABEND124(no public information returned)
 // }
 
 // func newProxyClientConn(c ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/httputil/persist.go:265:27), r ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/http/httputil/persist.go:265:39)) Object {
-// 	return httputil.NewProxyClientConn(c, r)
+// 	return _httputil.NewProxyClientConn(c, r)
 // 	ABEND124(no public information returned)
 // }
 
 // func newServerConn(c ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/httputil/persist.go:54:22), r ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/http/httputil/persist.go:54:34)) Object {
-// 	return httputil.NewServerConn(c, r)
+// 	return _httputil.NewServerConn(c, r)
 // 	ABEND124(no public information returned)
 // }
 
 // func newSingleHostReverseProxy(target ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/http/httputil/reverseproxy.go:103:39)) Object {
-// 	res := httputil.NewSingleHostReverseProxy(target)
+// 	res := _httputil.NewSingleHostReverseProxy(target)
 // 	map1 := EmptyArrayMap()
 // 	map1.Add(MakeKeyword("Director"), (*res).Director)
 // 	map1.Add(MakeKeyword("Transport"), (*res).Transport)

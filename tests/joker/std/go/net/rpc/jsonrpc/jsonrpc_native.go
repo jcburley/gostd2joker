@@ -6,7 +6,7 @@ import (
 )
 
 // func dial(network string, address string) Object {
-// 	res1, res2 := jsonrpc.Dial(network, address)
+// 	res1, res2 := _jsonrpc.Dial(network, address)
 // 	res := EmptyVector
 // 	res = res.Conjoin((*res1))
 // 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
@@ -14,18 +14,18 @@ import (
 // }
 
 // func newClient(conn ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/rpc/jsonrpc/client.go:113:21)) Object {
-// 	return jsonrpc.NewClient(conn)
+// 	return _jsonrpc.NewClient(conn)
 // }
 
 // func newClientCodec(conn ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/rpc/jsonrpc/client.go:37:26)) Object {
-// 	return jsonrpc.NewClientCodec(conn)
+// 	return _jsonrpc.NewClientCodec(conn)
 // }
 
 // func newServerCodec(conn ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/rpc/jsonrpc/server.go:37:26)) Object {
-// 	return jsonrpc.NewServerCodec(conn)
+// 	return _jsonrpc.NewServerCodec(conn)
 // }
 
 // func serveConn(conn ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/rpc/jsonrpc/server.go:132:21)) Object {
-// 	jsonrpc.ServeConn(conn)
+// 	_jsonrpc.ServeConn(conn)
 // 	...ABEND675: TODO...
 // }

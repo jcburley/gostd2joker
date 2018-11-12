@@ -159,7 +159,7 @@ JOKER FUNC url.UserPassword has:
 
 GO FUNC net.LookupAddr has:
 func lookupAddr(addr string) Object {
-	names, err := net.LookupAddr(addr)
+	names, err := _net.LookupAddr(addr)
 	res := EmptyVector
 	vec1 := EmptyVector
 	for _, elem1 := range names {
@@ -172,7 +172,7 @@ func lookupAddr(addr string) Object {
 
 GO FUNC net.LookupCNAME has:
 func lookupCNAME(host string) Object {
-	cname, err := net.LookupCNAME(host)
+	cname, err := _net.LookupCNAME(host)
 	res := EmptyVector
 	res = res.Conjoin(MakeString(cname))
 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
@@ -181,7 +181,7 @@ func lookupCNAME(host string) Object {
 
 GO FUNC net.LookupHost has:
 func lookupHost(host string) Object {
-	addrs, err := net.LookupHost(host)
+	addrs, err := _net.LookupHost(host)
 	res := EmptyVector
 	vec1 := EmptyVector
 	for _, elem1 := range addrs {
@@ -194,7 +194,7 @@ func lookupHost(host string) Object {
 
 GO FUNC net.LookupIP has:
 // func lookupIP(host string) Object {
-// 	res1, res2 := net.LookupIP(host)
+// 	res1, res2 := _net.LookupIP(host)
 // 	res := EmptyVector
 // 	vec1 := EmptyVector
 // 	for _, elem1 := range res1 {
@@ -207,7 +207,7 @@ GO FUNC net.LookupIP has:
 
 GO FUNC net.LookupMX has:
 func lookupMX(name string) Object {
-	res1, res2 := net.LookupMX(name)
+	res1, res2 := _net.LookupMX(name)
 	res := EmptyVector
 	vec1 := EmptyVector
 	for _, elem1 := range res1 {
@@ -223,7 +223,7 @@ func lookupMX(name string) Object {
 
 GO FUNC net.LookupNS has:
 func lookupNS(name string) Object {
-	res1, res2 := net.LookupNS(name)
+	res1, res2 := _net.LookupNS(name)
 	res := EmptyVector
 	vec1 := EmptyVector
 	for _, elem1 := range res1 {
@@ -238,7 +238,7 @@ func lookupNS(name string) Object {
 
 GO FUNC net.LookupPort has:
 func lookupPort(network string, service string) Object {
-	port, err := net.LookupPort(network, service)
+	port, err := _net.LookupPort(network, service)
 	res := EmptyVector
 	res = res.Conjoin(MakeInt(int(port)))
 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
@@ -247,7 +247,7 @@ func lookupPort(network string, service string) Object {
 
 GO FUNC net.LookupSRV has:
 func lookupSRV(service string, proto string, name string) Object {
-	cname, addrs, err := net.LookupSRV(service, proto, name)
+	cname, addrs, err := _net.LookupSRV(service, proto, name)
 	res := EmptyVector
 	vec1 := EmptyVector
 	for _, elem1 := range addrs {
@@ -266,7 +266,7 @@ func lookupSRV(service string, proto string, name string) Object {
 
 GO FUNC net.LookupTXT has:
 func lookupTXT(name string) Object {
-	res1, res2 := net.LookupTXT(name)
+	res1, res2 := _net.LookupTXT(name)
 	res := EmptyVector
 	vec1 := EmptyVector
 	for _, elem1 := range res1 {
@@ -279,7 +279,7 @@ func lookupTXT(name string) Object {
 
 GO FUNC url.Parse has:
 func parse(rawurl string) Object {
-	res1, res2 := url.Parse(rawurl)
+	res1, res2 := _url.Parse(rawurl)
 	res := EmptyVector
 	map1 := EmptyArrayMap()
 	map1.Add(MakeKeyword("Scheme"), MakeString((*res1).Scheme))
@@ -298,7 +298,7 @@ func parse(rawurl string) Object {
 
 GO FUNC url.ParseQuery has:
 // func parseQuery(query string) Object {
-// 	res1, res2 := url.ParseQuery(query)
+// 	res1, res2 := _url.ParseQuery(query)
 // 	res := EmptyVector
 // 	res = res.Conjoin(res1)
 // 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
@@ -307,7 +307,7 @@ GO FUNC url.ParseQuery has:
 
 GO FUNC url.ParseRequestURI has:
 func parseRequestURI(rawurl string) Object {
-	res1, res2 := url.ParseRequestURI(rawurl)
+	res1, res2 := _url.ParseRequestURI(rawurl)
 	res := EmptyVector
 	map1 := EmptyArrayMap()
 	map1.Add(MakeKeyword("Scheme"), MakeString((*res1).Scheme))
@@ -326,7 +326,7 @@ func parseRequestURI(rawurl string) Object {
 
 GO FUNC url.PathUnescape has:
 func pathUnescape(s string) Object {
-	res1, res2 := url.PathUnescape(s)
+	res1, res2 := _url.PathUnescape(s)
 	res := EmptyVector
 	res = res.Conjoin(MakeString(res1))
 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
@@ -335,7 +335,7 @@ func pathUnescape(s string) Object {
 
 GO FUNC url.QueryUnescape has:
 func queryUnescape(s string) Object {
-	res1, res2 := url.QueryUnescape(s)
+	res1, res2 := _url.QueryUnescape(s)
 	res := EmptyVector
 	res = res.Conjoin(MakeString(res1))
 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
@@ -344,13 +344,13 @@ func queryUnescape(s string) Object {
 
 GO FUNC url.User has:
 // func user(username string) Object {
-// 	return url.User(username)
+// 	return _url.User(username)
 // 	ABEND124(no public information returned)
 // }
 
 GO FUNC url.UserPassword has:
 // func userPassword(username string, password string) Object {
-// 	return url.UserPassword(username, password)
+// 	return _url.UserPassword(username, password)
 // 	ABEND124(no public information returned)
 // }
 

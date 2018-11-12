@@ -6,7 +6,7 @@ import (
 )
 
 // func request() Object {
-// 	res1, res2 := cgi.Request()
+// 	res1, res2 := _cgi.Request()
 // 	res := EmptyVector
 // 	res = res.Conjoin((*res1))
 // 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
@@ -14,7 +14,7 @@ import (
 // }
 
 // func requestFromMap(params ABEND882(unrecognized Expr type *ast.MapType at: tests/big/src/net/http/cgi/child.go:52:28)) Object {
-// 	res1, res2 := cgi.RequestFromMap(params)
+// 	res1, res2 := _cgi.RequestFromMap(params)
 // 	res := EmptyVector
 // 	res = res.Conjoin((*res1))
 // 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())

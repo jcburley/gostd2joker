@@ -3,12 +3,12 @@
 package net
 
 import (
-	"net"
+	_net "net"
 	. "github.com/candid82/joker/core"
 )
 
 func cIDRMask(ones int, bits int) Object {
-	res := net.CIDRMask(ones, bits)
+	res := _net.CIDRMask(ones, bits)
 	vec1 := EmptyVector
 	for _, elem1 := range res {
 		vec1 = vec1.Conjoin(MakeInt(int(elem1)))
@@ -17,7 +17,7 @@ func cIDRMask(ones int, bits int) Object {
 }
 
 // func dial(network string, address string) Object {
-// 	res1, res2 := net.Dial(network, address)
+// 	res1, res2 := _net.Dial(network, address)
 // 	res := EmptyVector
 // 	res = res.Conjoin(res1)
 // 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
@@ -25,7 +25,7 @@ func cIDRMask(ones int, bits int) Object {
 // }
 
 // func dialIP(network string, laddr ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/iprawsock.go:211:42), raddr ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/iprawsock.go:211:42)) Object {
-// 	_, res2 := net.DialIP(network, laddr, raddr)
+// 	_, res2 := _net.DialIP(network, laddr, raddr)
 // 	res := EmptyVector
 // 	res = res.Conjoin(NIL)
 // 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
@@ -33,7 +33,7 @@ func cIDRMask(ones int, bits int) Object {
 // }
 
 // func dialTCP(network string, laddr ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/tcpsock.go:206:43), raddr ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/tcpsock.go:206:43)) Object {
-// 	_, res2 := net.DialTCP(network, laddr, raddr)
+// 	_, res2 := _net.DialTCP(network, laddr, raddr)
 // 	res := EmptyVector
 // 	res = res.Conjoin(NIL)
 // 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
@@ -41,7 +41,7 @@ func cIDRMask(ones int, bits int) Object {
 // }
 
 // func dialTimeout(network string, address string, timeout ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/dial.go:313:51)) Object {
-// 	res1, res2 := net.DialTimeout(network, address, timeout)
+// 	res1, res2 := _net.DialTimeout(network, address, timeout)
 // 	res := EmptyVector
 // 	res = res.Conjoin(res1)
 // 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
@@ -49,7 +49,7 @@ func cIDRMask(ones int, bits int) Object {
 // }
 
 // func dialUDP(network string, laddr ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/udpsock.go:205:43), raddr ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/udpsock.go:205:43)) Object {
-// 	_, res2 := net.DialUDP(network, laddr, raddr)
+// 	_, res2 := _net.DialUDP(network, laddr, raddr)
 // 	res := EmptyVector
 // 	res = res.Conjoin(NIL)
 // 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
@@ -57,7 +57,7 @@ func cIDRMask(ones int, bits int) Object {
 // }
 
 // func dialUnix(network string, laddr ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/unixsock.go:200:44), raddr ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/unixsock.go:200:44)) Object {
-// 	_, res2 := net.DialUnix(network, laddr, raddr)
+// 	_, res2 := _net.DialUnix(network, laddr, raddr)
 // 	res := EmptyVector
 // 	res = res.Conjoin(NIL)
 // 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
@@ -65,7 +65,7 @@ func cIDRMask(ones int, bits int) Object {
 // }
 
 // func fileConn(f ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/file.go:21:17)) Object {
-// 	c, err := net.FileConn(f)
+// 	c, err := _net.FileConn(f)
 // 	res := EmptyVector
 // 	res = res.Conjoin(c)
 // 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
@@ -73,7 +73,7 @@ func cIDRMask(ones int, bits int) Object {
 // }
 
 // func fileListener(f ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/file.go:33:21)) Object {
-// 	ln, err := net.FileListener(f)
+// 	ln, err := _net.FileListener(f)
 // 	res := EmptyVector
 // 	res = res.Conjoin(ln)
 // 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
@@ -81,7 +81,7 @@ func cIDRMask(ones int, bits int) Object {
 // }
 
 // func filePacketConn(f ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/file.go:45:23)) Object {
-// 	c, err := net.FilePacketConn(f)
+// 	c, err := _net.FilePacketConn(f)
 // 	res := EmptyVector
 // 	res = res.Conjoin(c)
 // 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
@@ -89,7 +89,7 @@ func cIDRMask(ones int, bits int) Object {
 // }
 
 func iPv4(a byte, b byte, c byte, d byte) Object {
-	res := net.IPv4(a, b, c, d)
+	res := _net.IPv4(a, b, c, d)
 	vec1 := EmptyVector
 	for _, elem1 := range res {
 		vec1 = vec1.Conjoin(MakeInt(int(elem1)))
@@ -98,7 +98,7 @@ func iPv4(a byte, b byte, c byte, d byte) Object {
 }
 
 func iPv4Mask(a byte, b byte, c byte, d byte) Object {
-	res := net.IPv4Mask(a, b, c, d)
+	res := _net.IPv4Mask(a, b, c, d)
 	vec1 := EmptyVector
 	for _, elem1 := range res {
 		vec1 = vec1.Conjoin(MakeInt(int(elem1)))
@@ -107,7 +107,7 @@ func iPv4Mask(a byte, b byte, c byte, d byte) Object {
 }
 
 // func interfaceAddrs() Object {
-// 	res1, res2 := net.InterfaceAddrs()
+// 	res1, res2 := _net.InterfaceAddrs()
 // 	res := EmptyVector
 // 	vec1 := EmptyVector
 // 	for _, elem1 := range res1 {
@@ -119,7 +119,7 @@ func iPv4Mask(a byte, b byte, c byte, d byte) Object {
 // }
 
 func interfaceByIndex(index int) Object {
-	res1, res2 := net.InterfaceByIndex(index)
+	res1, res2 := _net.InterfaceByIndex(index)
 	res := EmptyVector
 	map1 := EmptyArrayMap()
 	map1.Add(MakeKeyword("Index"), MakeInt(int((*res1).Index)))
@@ -137,7 +137,7 @@ func interfaceByIndex(index int) Object {
 }
 
 func interfaceByName(name string) Object {
-	res1, res2 := net.InterfaceByName(name)
+	res1, res2 := _net.InterfaceByName(name)
 	res := EmptyVector
 	map1 := EmptyArrayMap()
 	map1.Add(MakeKeyword("Index"), MakeInt(int((*res1).Index)))
@@ -155,7 +155,7 @@ func interfaceByName(name string) Object {
 }
 
 func interfaces() Object {
-	res1, res2 := net.Interfaces()
+	res1, res2 := _net.Interfaces()
 	res := EmptyVector
 	vec1 := EmptyVector
 	for _, elem1 := range res1 {
@@ -177,7 +177,7 @@ func interfaces() Object {
 }
 
 // func listen(network string, address string) Object {
-// 	res1, res2 := net.Listen(network, address)
+// 	res1, res2 := _net.Listen(network, address)
 // 	res := EmptyVector
 // 	res = res.Conjoin(res1)
 // 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
@@ -185,7 +185,7 @@ func interfaces() Object {
 // }
 
 // func listenIP(network string, laddr ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/iprawsock.go:230:37)) Object {
-// 	_, res2 := net.ListenIP(network, laddr)
+// 	_, res2 := _net.ListenIP(network, laddr)
 // 	res := EmptyVector
 // 	res = res.Conjoin(NIL)
 // 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
@@ -193,7 +193,7 @@ func interfaces() Object {
 // }
 
 // func listenMulticastUDP(network string, ifi ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/udpsock.go:265:45), gaddr ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/udpsock.go:265:63)) Object {
-// 	_, res2 := net.ListenMulticastUDP(network, ifi, gaddr)
+// 	_, res2 := _net.ListenMulticastUDP(network, ifi, gaddr)
 // 	res := EmptyVector
 // 	res = res.Conjoin(NIL)
 // 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
@@ -201,7 +201,7 @@ func interfaces() Object {
 // }
 
 // func listenPacket(network string, address string) Object {
-// 	res1, res2 := net.ListenPacket(network, address)
+// 	res1, res2 := _net.ListenPacket(network, address)
 // 	res := EmptyVector
 // 	res = res.Conjoin(res1)
 // 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
@@ -209,7 +209,7 @@ func interfaces() Object {
 // }
 
 // func listenTCP(network string, laddr ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/tcpsock.go:323:38)) Object {
-// 	_, res2 := net.ListenTCP(network, laddr)
+// 	_, res2 := _net.ListenTCP(network, laddr)
 // 	res := EmptyVector
 // 	res = res.Conjoin(NIL)
 // 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
@@ -217,7 +217,7 @@ func interfaces() Object {
 // }
 
 // func listenUDP(network string, laddr ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/udpsock.go:231:38)) Object {
-// 	_, res2 := net.ListenUDP(network, laddr)
+// 	_, res2 := _net.ListenUDP(network, laddr)
 // 	res := EmptyVector
 // 	res = res.Conjoin(NIL)
 // 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
@@ -225,7 +225,7 @@ func interfaces() Object {
 // }
 
 // func listenUnix(network string, laddr ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/unixsock.go:314:39)) Object {
-// 	_, res2 := net.ListenUnix(network, laddr)
+// 	_, res2 := _net.ListenUnix(network, laddr)
 // 	res := EmptyVector
 // 	res = res.Conjoin(NIL)
 // 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
@@ -233,7 +233,7 @@ func interfaces() Object {
 // }
 
 // func listenUnixgram(network string, laddr ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/unixsock.go:334:43)) Object {
-// 	_, res2 := net.ListenUnixgram(network, laddr)
+// 	_, res2 := _net.ListenUnixgram(network, laddr)
 // 	res := EmptyVector
 // 	res = res.Conjoin(NIL)
 // 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
@@ -241,7 +241,7 @@ func interfaces() Object {
 // }
 
 func lookupAddr(addr string) Object {
-	names, err := net.LookupAddr(addr)
+	names, err := _net.LookupAddr(addr)
 	res := EmptyVector
 	vec1 := EmptyVector
 	for _, elem1 := range names {
@@ -253,7 +253,7 @@ func lookupAddr(addr string) Object {
 }
 
 func lookupCNAME(host string) Object {
-	cname, err := net.LookupCNAME(host)
+	cname, err := _net.LookupCNAME(host)
 	res := EmptyVector
 	res = res.Conjoin(MakeString(cname))
 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
@@ -261,7 +261,7 @@ func lookupCNAME(host string) Object {
 }
 
 func lookupHost(host string) Object {
-	addrs, err := net.LookupHost(host)
+	addrs, err := _net.LookupHost(host)
 	res := EmptyVector
 	vec1 := EmptyVector
 	for _, elem1 := range addrs {
@@ -273,7 +273,7 @@ func lookupHost(host string) Object {
 }
 
 func lookupIP(host string) Object {
-	res1, res2 := net.LookupIP(host)
+	res1, res2 := _net.LookupIP(host)
 	res := EmptyVector
 	vec1 := EmptyVector
 	for _, elem1 := range res1 {
@@ -289,7 +289,7 @@ func lookupIP(host string) Object {
 }
 
 func lookupMX(name string) Object {
-	res1, res2 := net.LookupMX(name)
+	res1, res2 := _net.LookupMX(name)
 	res := EmptyVector
 	vec1 := EmptyVector
 	for _, elem1 := range res1 {
@@ -304,7 +304,7 @@ func lookupMX(name string) Object {
 }
 
 func lookupNS(name string) Object {
-	res1, res2 := net.LookupNS(name)
+	res1, res2 := _net.LookupNS(name)
 	res := EmptyVector
 	vec1 := EmptyVector
 	for _, elem1 := range res1 {
@@ -318,7 +318,7 @@ func lookupNS(name string) Object {
 }
 
 func lookupPort(network string, service string) Object {
-	port, err := net.LookupPort(network, service)
+	port, err := _net.LookupPort(network, service)
 	res := EmptyVector
 	res = res.Conjoin(MakeInt(int(port)))
 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
@@ -326,7 +326,7 @@ func lookupPort(network string, service string) Object {
 }
 
 func lookupSRV(service string, proto string, name string) Object {
-	cname, addrs, err := net.LookupSRV(service, proto, name)
+	cname, addrs, err := _net.LookupSRV(service, proto, name)
 	res := EmptyVector
 	vec1 := EmptyVector
 	for _, elem1 := range addrs {
@@ -344,7 +344,7 @@ func lookupSRV(service string, proto string, name string) Object {
 }
 
 func lookupTXT(name string) Object {
-	res1, res2 := net.LookupTXT(name)
+	res1, res2 := _net.LookupTXT(name)
 	res := EmptyVector
 	vec1 := EmptyVector
 	for _, elem1 := range res1 {
@@ -356,7 +356,7 @@ func lookupTXT(name string) Object {
 }
 
 func parseCIDR(s string) Object {
-	res1, res2, res3 := net.ParseCIDR(s)
+	res1, res2, res3 := _net.ParseCIDR(s)
 	res := EmptyVector
 	map2 := EmptyArrayMap()
 	vec3 := EmptyVector
@@ -380,7 +380,7 @@ func parseCIDR(s string) Object {
 }
 
 func parseIP(s string) Object {
-	res := net.ParseIP(s)
+	res := _net.ParseIP(s)
 	vec1 := EmptyVector
 	for _, elem1 := range res {
 		vec1 = vec1.Conjoin(MakeInt(int(elem1)))
@@ -389,7 +389,7 @@ func parseIP(s string) Object {
 }
 
 func parseMAC(s string) Object {
-	hw, err := net.ParseMAC(s)
+	hw, err := _net.ParseMAC(s)
 	res := EmptyVector
 	vec1 := EmptyVector
 	for _, elem1 := range hw {
@@ -401,7 +401,7 @@ func parseMAC(s string) Object {
 }
 
 // func pipe() Object {
-// 	res1, res2 := net.Pipe()
+// 	res1, res2 := _net.Pipe()
 // 	res := EmptyVector
 // 	res = res.Conjoin(res1)
 // 	res = res.Conjoin(res2)
@@ -409,7 +409,7 @@ func parseMAC(s string) Object {
 // }
 
 func resolveIPAddr(network string, address string) Object {
-	res1, res2 := net.ResolveIPAddr(network, address)
+	res1, res2 := _net.ResolveIPAddr(network, address)
 	res := EmptyVector
 	map1 := EmptyArrayMap()
 	vec2 := EmptyVector
@@ -424,7 +424,7 @@ func resolveIPAddr(network string, address string) Object {
 }
 
 func resolveTCPAddr(network string, address string) Object {
-	res1, res2 := net.ResolveTCPAddr(network, address)
+	res1, res2 := _net.ResolveTCPAddr(network, address)
 	res := EmptyVector
 	map1 := EmptyArrayMap()
 	vec2 := EmptyVector
@@ -440,7 +440,7 @@ func resolveTCPAddr(network string, address string) Object {
 }
 
 func resolveUDPAddr(network string, address string) Object {
-	res1, res2 := net.ResolveUDPAddr(network, address)
+	res1, res2 := _net.ResolveUDPAddr(network, address)
 	res := EmptyVector
 	map1 := EmptyArrayMap()
 	vec2 := EmptyVector
@@ -456,7 +456,7 @@ func resolveUDPAddr(network string, address string) Object {
 }
 
 func resolveUnixAddr(network string, address string) Object {
-	res1, res2 := net.ResolveUnixAddr(network, address)
+	res1, res2 := _net.ResolveUnixAddr(network, address)
 	res := EmptyVector
 	map1 := EmptyArrayMap()
 	map1.Add(MakeKeyword("Name"), MakeString((*res1).Name))
@@ -467,7 +467,7 @@ func resolveUnixAddr(network string, address string) Object {
 }
 
 func splitHostPort(hostport string) Object {
-	host, port, err := net.SplitHostPort(hostport)
+	host, port, err := _net.SplitHostPort(hostport)
 	res := EmptyVector
 	res = res.Conjoin(MakeString(host))
 	res = res.Conjoin(MakeString(port))

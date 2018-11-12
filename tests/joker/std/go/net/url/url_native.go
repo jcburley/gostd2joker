@@ -3,12 +3,12 @@
 package url
 
 import (
-	"net/url"
+	_url "net/url"
 	. "github.com/candid82/joker/core"
 )
 
 func parse(rawurl string) Object {
-	res1, res2 := url.Parse(rawurl)
+	res1, res2 := _url.Parse(rawurl)
 	res := EmptyVector
 	map1 := EmptyArrayMap()
 	map1.Add(MakeKeyword("Scheme"), MakeString((*res1).Scheme))
@@ -26,7 +26,7 @@ func parse(rawurl string) Object {
 }
 
 // func parseQuery(query string) Object {
-// 	res1, res2 := url.ParseQuery(query)
+// 	res1, res2 := _url.ParseQuery(query)
 // 	res := EmptyVector
 // 	res = res.Conjoin(res1)
 // 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
@@ -34,7 +34,7 @@ func parse(rawurl string) Object {
 // }
 
 func parseRequestURI(rawurl string) Object {
-	res1, res2 := url.ParseRequestURI(rawurl)
+	res1, res2 := _url.ParseRequestURI(rawurl)
 	res := EmptyVector
 	map1 := EmptyArrayMap()
 	map1.Add(MakeKeyword("Scheme"), MakeString((*res1).Scheme))
@@ -52,7 +52,7 @@ func parseRequestURI(rawurl string) Object {
 }
 
 func pathUnescape(s string) Object {
-	res1, res2 := url.PathUnescape(s)
+	res1, res2 := _url.PathUnescape(s)
 	res := EmptyVector
 	res = res.Conjoin(MakeString(res1))
 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
@@ -60,7 +60,7 @@ func pathUnescape(s string) Object {
 }
 
 func queryUnescape(s string) Object {
-	res1, res2 := url.QueryUnescape(s)
+	res1, res2 := _url.QueryUnescape(s)
 	res := EmptyVector
 	res = res.Conjoin(MakeString(res1))
 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
@@ -68,11 +68,11 @@ func queryUnescape(s string) Object {
 }
 
 // func user(username string) Object {
-// 	return url.User(username)
+// 	return _url.User(username)
 // 	ABEND124(no public information returned)
 // }
 
 // func userPassword(username string, password string) Object {
-// 	return url.UserPassword(username, password)
+// 	return _url.UserPassword(username, password)
 // 	ABEND124(no public information returned)
 // }

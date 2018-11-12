@@ -3,17 +3,17 @@
 package rpc
 
 import (
-	"net/rpc"
+	_rpc "net/rpc"
 	. "github.com/candid82/joker/core"
 )
 
 // func accept(lis ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/rpc/server.go:692:17)) Object {
-// 	rpc.Accept(lis)
+// 	_rpc.Accept(lis)
 // 	...ABEND675: TODO...
 // }
 
 func dial(network string, address string) Object {
-	_, res2 := rpc.Dial(network, address)
+	_, res2 := _rpc.Dial(network, address)
 	res := EmptyVector
 	res = res.Conjoin(NIL)
 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
@@ -21,7 +21,7 @@ func dial(network string, address string) Object {
 }
 
 func dialHTTP(network string, address string) Object {
-	_, res2 := rpc.DialHTTP(network, address)
+	_, res2 := _rpc.DialHTTP(network, address)
 	res := EmptyVector
 	res = res.Conjoin(NIL)
 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
@@ -29,7 +29,7 @@ func dialHTTP(network string, address string) Object {
 }
 
 func dialHTTPPath(network string, address string, path string) Object {
-	_, res2 := rpc.DialHTTPPath(network, address, path)
+	_, res2 := _rpc.DialHTTPPath(network, address, path)
 	res := EmptyVector
 	res = res.Conjoin(NIL)
 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
@@ -37,31 +37,31 @@ func dialHTTPPath(network string, address string, path string) Object {
 }
 
 // func handleHTTP() Object {
-// 	rpc.HandleHTTP()
+// 	_rpc.HandleHTTP()
 // 	...ABEND675: TODO...
 // }
 
 // func newClient(conn ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/rpc/client.go:193:21)) Object {
-// 	return rpc.NewClient(conn)
+// 	return _rpc.NewClient(conn)
 // 	ABEND124(no public information returned)
 // }
 
 // func newClientWithCodec(codec ABEND884(unrecognized type ClientCodec at: tests/big/src/net/rpc/client.go:201:31)) Object {
-// 	return rpc.NewClientWithCodec(codec)
+// 	return _rpc.NewClientWithCodec(codec)
 // 	ABEND124(no public information returned)
 // }
 
 // func newServer() Object {
-// 	return rpc.NewServer()
+// 	return _rpc.NewServer()
 // 	ABEND124(no public information returned)
 // }
 
 // func serveCodec(codec ABEND884(unrecognized type ServerCodec at: tests/big/src/net/rpc/server.go:679:23)) Object {
-// 	rpc.ServeCodec(codec)
+// 	_rpc.ServeCodec(codec)
 // 	...ABEND675: TODO...
 // }
 
 // func serveConn(conn ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/rpc/server.go:673:21)) Object {
-// 	rpc.ServeConn(conn)
+// 	_rpc.ServeConn(conn)
 // 	...ABEND675: TODO...
 // }

@@ -6,7 +6,7 @@ import (
 )
 
 // func newRecorder() Object {
-// 	res := httptest.NewRecorder()
+// 	res := _httptest.NewRecorder()
 // 	map1 := EmptyArrayMap()
 // 	map1.Add(MakeKeyword("Code"), MakeInt(int((*res).Code)))
 // 	map1.Add(MakeKeyword("HeaderMap"), (*res).HeaderMap)
@@ -16,11 +16,11 @@ import (
 // }
 
 // func newRequest(method string, target string, body ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/httptest/httptest.go:41:45)) Object {
-// 	return httptest.NewRequest(method, target, body)
+// 	return _httptest.NewRequest(method, target, body)
 // }
 
 // func newServer(handler ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/httptest/server.go:80:24)) Object {
-// 	res := httptest.NewServer(handler)
+// 	res := _httptest.NewServer(handler)
 // 	map1 := EmptyArrayMap()
 // 	map1.Add(MakeKeyword("URL"), MakeString((*res).URL))
 // 	map1.Add(MakeKeyword("Listener"), (*res).Listener)
@@ -30,7 +30,7 @@ import (
 // }
 
 // func newTLSServer(handler ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/httptest/server.go:160:27)) Object {
-// 	res := httptest.NewTLSServer(handler)
+// 	res := _httptest.NewTLSServer(handler)
 // 	map1 := EmptyArrayMap()
 // 	map1.Add(MakeKeyword("URL"), MakeString((*res).URL))
 // 	map1.Add(MakeKeyword("Listener"), (*res).Listener)
@@ -40,7 +40,7 @@ import (
 // }
 
 // func newUnstartedServer(handler ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/httptest/server.go:92:33)) Object {
-// 	res := httptest.NewUnstartedServer(handler)
+// 	res := _httptest.NewUnstartedServer(handler)
 // 	map1 := EmptyArrayMap()
 // 	map1.Add(MakeKeyword("URL"), MakeString((*res).URL))
 // 	map1.Add(MakeKeyword("Listener"), (*res).Listener)

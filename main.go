@@ -8,6 +8,7 @@ import (
 	"go/parser"
 	"go/token"
 	"io/ioutil"
+	"path"
 	"regexp"
 	"strings"
 	"os"
@@ -847,7 +848,7 @@ func genGoPre(indent string, fl *FieldList, goFname string) (jok, jok2golParams,
 }
 
 func genGoCall(pkg, goFname string, goParams string) string {
-	return pkg + "." + goFname + "(" + goParams + ")\n"
+	return "_" + pkg + "." + goFname + "(" + goParams + ")\n"
 }
 
 func genGoPost(indent string, pkg string, d *FuncDecl) (goResultAssign, jokerReturnTypeForDoc, goReturnTypeForDoc string, goReturnCode string) {
@@ -1091,11 +1092,15 @@ func updateGenerateSTD(pkgs []string, f string) {
 	check(err)
 }
 
-func packageQuotedImportList(pi packageImports, prefix string) string {
+func packageQuotedImportList(pi packageImports, prefix string, rename bool) string {
 	imports := ""
 	sortedPackageImports(pi,
 		func(k string) {
-			imports += prefix + `"` + k + `"`
+			if rename {
+				imports += prefix + "_" + path.Base(k) + ` "` + k + `"`
+			} else {
+				imports += prefix + `"` + k + `"`
+			}
 		})
 	return imports
 }
@@ -1278,7 +1283,7 @@ func main() {
     :empty %s}
   go.%s)
 `,
-					strings.TrimPrefix(packageQuotedImportList(pi.importsAutoGen, " "), " "),
+					strings.TrimPrefix(packageQuotedImportList(pi.importsAutoGen, " ", false), " "),
 					pkgDir,
 					func() string {
 						if pi.nonEmpty {
@@ -1333,7 +1338,7 @@ package %s
 import (%s%s
 )
 `,
-					p, packageQuotedImportList(pi.importsNative, "\n\t"),
+					p, packageQuotedImportList(pi.importsNative, "\n\t", true),
 					importCore)
 			}
 			sortedCodeMap(v,

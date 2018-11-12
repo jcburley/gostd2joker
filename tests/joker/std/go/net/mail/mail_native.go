@@ -3,12 +3,12 @@
 package mail
 
 import (
-	"net/mail"
+	_mail "net/mail"
 	. "github.com/candid82/joker/core"
 )
 
 func parseAddress(address string) Object {
-	res1, res2 := mail.ParseAddress(address)
+	res1, res2 := _mail.ParseAddress(address)
 	res := EmptyVector
 	map1 := EmptyArrayMap()
 	map1.Add(MakeKeyword("Name"), MakeString((*res1).Name))
@@ -19,7 +19,7 @@ func parseAddress(address string) Object {
 }
 
 func parseAddressList(list string) Object {
-	res1, res2 := mail.ParseAddressList(list)
+	res1, res2 := _mail.ParseAddressList(list)
 	res := EmptyVector
 	vec1 := EmptyVector
 	for _, elem1 := range res1 {
@@ -34,7 +34,7 @@ func parseAddressList(list string) Object {
 }
 
 // func parseDate(date string) Object {
-// 	res1, res2 := mail.ParseDate(date)
+// 	res1, res2 := _mail.ParseDate(date)
 // 	res := EmptyVector
 // 	res = res.Conjoin(res1)
 // 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
@@ -42,7 +42,7 @@ func parseAddressList(list string) Object {
 // }
 
 // func readMessage(r ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/mail/message.go:52:20)) Object {
-// 	msg, err := mail.ReadMessage(r)
+// 	msg, err := _mail.ReadMessage(r)
 // 	res := EmptyVector
 // 	map1 := EmptyArrayMap()
 // 	map1.Add(MakeKeyword("Header"), (*msg).Header)
