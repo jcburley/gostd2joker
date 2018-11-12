@@ -163,9 +163,7 @@ type typeInfo struct {
 	gol string
 }
 
-type typeInfoArray []*typeInfo
-
-func sortedTypeInfoMap(m map[string]typeInfoArray, f func(k string, v typeInfoArray)) {
+func sortedTypeInfoMap(m map[string]*typeInfo, f func(k string, v *typeInfo)) {
 	var keys []string
 	for k, _ := range m {
 		keys = append(keys, k)
@@ -176,25 +174,19 @@ func sortedTypeInfoMap(m map[string]typeInfoArray, f func(k string, v typeInfoAr
 	}
 }
 
-var types = map[string]typeInfoArray {}
+var types = map[string]*typeInfo {}
 
 func processTypeSpec(pkg string, filename string, f *File, ts *TypeSpec) {
 	if (dump) {
 		Print(fset, ts)
 	}
 	typename := pkg + "." + ts.Name.Name
-	var candidates typeInfoArray
-	if candidates, ok := types[typename]; ok {
-		for _, c := range candidates {
-			if c.file == filename {
-				panic(fmt.Sprintf("type %s defined twice in file %s", typename, filename))
-			}
+	if c, ok := types[typename]; ok {
+		if c.file == filename {
+			panic(fmt.Sprintf("type %s defined twice in file %s", typename, filename))
 		}
-	} else {
-		candidates = typeInfoArray {}
 	}
-	candidates = append(candidates, &typeInfo{ts, filename, false, false, "", ""})
-	types[typename] = candidates
+	types[typename] = &typeInfo{ts, filename, false, false, "", ""}
 }
 
 func processTypeSpecs(pkg string, filename string, f *File, tss []Spec) {
@@ -573,18 +565,18 @@ func exprIsUseful(rtn string) bool {
 func genGoPostNamed(indent, pkg, in, t string) (jok, gol, goc, out string) {
 	qt := pkg + "." + t
 	if v, ok := types[qt]; ok {
-		if v[0].building { // Mutually-referring types currently not supported
+		if v.building { // Mutually-referring types currently not supported
 			jok = fmt.Sprintf("ABEND947(recursive type reference involving %s)",
 				path.Base(qt))  // TODO: handle these, e.g. http Request/Response; TODO ~~~ just use qt
 			gol = jok
 			goc = ""
 		} else {
-			v[0].building = true
-			jok, gol, goc, out = genGoPostExpr(indent, pkg, in, v[0].td.Type)
-			v[0].jok = jok
-			v[0].gol = gol
-			v[0].building = false
-			v[0].built = true
+			v.building = true
+			jok, gol, goc, out = genGoPostExpr(indent, pkg, in, v.td.Type)
+			v.jok = jok
+			v.gol = gol
+			v.building = false
+			v.built = true
 		}
 	} else {
 		jok = fmt.Sprintf("ABEND042(cannot find typename %s)", path.Base(qt))  // TODO: use qt ~~~
@@ -1264,11 +1256,9 @@ func main() {
 	if verbose {
 		/* Output map in sorted order to stabilize for testing. */
 		sortedTypeInfoMap(types,
-			func(t string, v typeInfoArray) {
+			func(t string, ti *typeInfo) {
 				fmt.Printf("TYPE %s:\n", path.Base(t))  // TODO: log all of t ~~~
-				for _, ts := range v {
-					fmt.Printf("  %s\n", ts.file)
-				}
+				fmt.Printf("  %s\n", ti.file)
 			})
 	}
 

@@ -4048,9 +4048,9 @@ TYPE scanner.Mode:
 TYPE scanner.Position:
   GO.link/src/text/scanner/scanner.go
 TYPE scanner.Scanner:
-  GO.link/src/go/scanner/scanner.go
-TYPE scanner.Scanner:
   GO.link/src/text/scanner/scanner.go
+TYPE scanner.Scanner:
+  GO.link/src/go/scanner/scanner.go
 TYPE smtp.Auth:
   GO.link/src/net/smtp/auth.go
 TYPE smtp.Client:
@@ -4310,9 +4310,9 @@ TYPE template.ErrorCode:
 TYPE template.ExecError:
   GO.link/src/text/template/exec.go
 TYPE template.FuncMap:
-  GO.link/src/text/template/funcs.go
-TYPE template.FuncMap:
   GO.link/src/html/template/template.go
+TYPE template.FuncMap:
+  GO.link/src/text/template/funcs.go
 TYPE template.HTML:
   GO.link/src/html/template/content.go
 TYPE template.HTMLAttr:
@@ -10114,48 +10114,6 @@ JOKER FUNC png.Encode has:
 ;;    :go "png.Encode(w, m)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/image/png/writer.go:523:15) w, ^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/image/png/writer.go:523:28) m])
 
-JOKER FUNC pprof.Cmdline has:
-;; (defn Cmdline
-;;   "Cmdline responds with the running program's\ncommand line, with arguments separated by NUL bytes.\nThe package initialization registers it as /debug/pprof/cmdline.\n"
-;;   {:added "1.0"
-;;    :go "cmdline(w, r)"}
-;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/net/http/pprof/pprof.go:83:16) w, ^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/net/http/pprof/pprof.go:83:39) r])
-
-JOKER FUNC pprof.Handler has:
-;; (defn Handler
-;;   "Handler returns an HTTP handler that serves the named profile.\n\nGo return type: ...\n\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/net/http/pprof/pprof.go:221:27)"
-;;   {:added "1.0"
-;;    :go "handler(name)"}
-;;   [^String name])
-
-JOKER FUNC pprof.Index has:
-;; (defn Index
-;;   "Index responds with the pprof-formatted profile named by the request.\nFor example, \"/debug/pprof/heap\" serves the \"heap\" profile.\nIndex responds to a request for \"/debug/pprof/\" with an HTML page\nlisting the available profiles.\n"
-;;   {:added "1.0"
-;;    :go "index(w, r)"}
-;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/net/http/pprof/pprof.go:264:14) w, ^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/net/http/pprof/pprof.go:264:37) r])
-
-JOKER FUNC pprof.Profile has:
-;; (defn Profile
-;;   "Profile responds with the pprof-formatted cpu profile.\nProfiling lasts for duration specified in seconds GET parameter, or for 30 seconds if not specified.\nThe package initialization registers it as /debug/pprof/profile.\n"
-;;   {:added "1.0"
-;;    :go "profile(w, r)"}
-;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/net/http/pprof/pprof.go:116:16) w, ^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/net/http/pprof/pprof.go:116:39) r])
-
-JOKER FUNC pprof.Symbol has:
-;; (defn Symbol
-;;   "Symbol looks up the program counters listed in the request,\nresponding with a table mapping program counters to function names.\nThe package initialization registers it as /debug/pprof/symbol.\n"
-;;   {:added "1.0"
-;;    :go "symbol(w, r)"}
-;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/net/http/pprof/pprof.go:174:15) w, ^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/net/http/pprof/pprof.go:174:38) r])
-
-JOKER FUNC pprof.Trace has:
-;; (defn Trace
-;;   "Trace responds with the execution trace in binary form.\nTracing lasts for duration specified in seconds GET parameter, or for 1 second if not specified.\nThe package initialization registers it as /debug/pprof/trace.\n"
-;;   {:added "1.0"
-;;    :go "trace(w, r)"}
-;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/net/http/pprof/pprof.go:145:14) w, ^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/net/http/pprof/pprof.go:145:37) r])
-
 JOKER FUNC pprof.Do has:
 ;; (defn Do
 ;;   "Do calls f with a copy of the parent context with the\ngiven labels added to the parent's label map.\nEach key/value pair in labels is inserted into the label map in the\norder provided, overriding any previous value for the same key.\nThe augmented label map will be set for the duration of the call to f\nand restored once f returns.\n"
@@ -10240,6 +10198,48 @@ JOKER FUNC pprof.WriteHeapProfile has:
 ;;    :go "pprof.WriteHeapProfile(w)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/runtime/pprof/pprof.go:520:25) w])
 
+JOKER FUNC pprof.Cmdline has:
+;; (defn Cmdline
+;;   "Cmdline responds with the running program's\ncommand line, with arguments separated by NUL bytes.\nThe package initialization registers it as /debug/pprof/cmdline.\n"
+;;   {:added "1.0"
+;;    :go "cmdline(w, r)"}
+;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/net/http/pprof/pprof.go:83:16) w, ^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/net/http/pprof/pprof.go:83:39) r])
+
+JOKER FUNC pprof.Handler has:
+;; (defn Handler
+;;   "Handler returns an HTTP handler that serves the named profile.\n\nGo return type: ...\n\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/net/http/pprof/pprof.go:221:27)"
+;;   {:added "1.0"
+;;    :go "handler(name)"}
+;;   [^String name])
+
+JOKER FUNC pprof.Index has:
+;; (defn Index
+;;   "Index responds with the pprof-formatted profile named by the request.\nFor example, \"/debug/pprof/heap\" serves the \"heap\" profile.\nIndex responds to a request for \"/debug/pprof/\" with an HTML page\nlisting the available profiles.\n"
+;;   {:added "1.0"
+;;    :go "index(w, r)"}
+;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/net/http/pprof/pprof.go:264:14) w, ^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/net/http/pprof/pprof.go:264:37) r])
+
+JOKER FUNC pprof.Profile has:
+;; (defn Profile
+;;   "Profile responds with the pprof-formatted cpu profile.\nProfiling lasts for duration specified in seconds GET parameter, or for 30 seconds if not specified.\nThe package initialization registers it as /debug/pprof/profile.\n"
+;;   {:added "1.0"
+;;    :go "profile(w, r)"}
+;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/net/http/pprof/pprof.go:116:16) w, ^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/net/http/pprof/pprof.go:116:39) r])
+
+JOKER FUNC pprof.Symbol has:
+;; (defn Symbol
+;;   "Symbol looks up the program counters listed in the request,\nresponding with a table mapping program counters to function names.\nThe package initialization registers it as /debug/pprof/symbol.\n"
+;;   {:added "1.0"
+;;    :go "symbol(w, r)"}
+;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/net/http/pprof/pprof.go:174:15) w, ^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/net/http/pprof/pprof.go:174:38) r])
+
+JOKER FUNC pprof.Trace has:
+;; (defn Trace
+;;   "Trace responds with the execution trace in binary form.\nTracing lasts for duration specified in seconds GET parameter, or for 1 second if not specified.\nThe package initialization registers it as /debug/pprof/trace.\n"
+;;   {:added "1.0"
+;;    :go "trace(w, r)"}
+;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/net/http/pprof/pprof.go:145:14) w, ^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/net/http/pprof/pprof.go:145:37) r])
+
 JOKER FUNC printer.Fprint has:
 ;; (defn ^Error Fprint
 ;;   "Fprint \"pretty-prints\" an AST node to output.\nIt calls Config.Fprint with default settings.\nNote that gofmt uses tabs for indentation but spaces for alignment;\nuse format.Node (package go/format) for output that matches gofmt.\n\nGo return type: error\n\nJoker return type: Error"
@@ -10281,6 +10281,27 @@ JOKER FUNC quotedprintable.NewWriter has:
 ;;   {:added "1.0"
 ;;    :go "newWriter(w)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/mime/quotedprintable/writer.go:24:18) w])
+
+JOKER FUNC rand.Int has:
+;; (defn Int
+;;   "Int returns a uniform random value in [0, max). It panics if max <= 0.\n\nGo return type: (n *..., err error)\n\nJoker return type: [ABEND883(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/crypto/rand/util.go:106:44) Error]"
+;;   {:added "1.0"
+;;    :go "int(rand, max)"}
+;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/crypto/rand/util.go:106:15) rand, ^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/crypto/rand/util.go:106:30) max])
+
+JOKER FUNC rand.Prime has:
+;; (defn Prime
+;;   "Prime returns a number, p, of the given size, such that p is prime\nwith high probability.\nPrime will return error for any error returned by rand.Read or if bits < 2.\n\nGo return type: (p *..., err error)\n\nJoker return type: [ABEND883(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/crypto/rand/util.go:31:42) Error]"
+;;   {:added "1.0"
+;;    :go "prime(rand, bits)"}
+;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/crypto/rand/util.go:31:17) rand, ^Int bits])
+
+JOKER FUNC rand.Read has:
+;; (defn Read
+;;   "Read is a helper function that calls Reader.Read using io.ReadFull.\nOn return, n == len(b) if and only if err == nil.\n\nGo return type: (n int, err error)\n\nJoker return type: [Int Error]"
+;;   {:added "1.0"
+;;    :go "read(b)"}
+;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: GO.link/src/crypto/rand/rand.go:23:13) b])
 
 JOKER FUNC rand.ExpFloat64 has:
 ;; (defn ExpFloat64
@@ -10414,27 +10435,6 @@ JOKER FUNC rand.Uint64 has:
 ;;   {:added "1.0"
 ;;    :go "uint64()"}
 ;;   [])
-
-JOKER FUNC rand.Int has:
-;; (defn Int
-;;   "Int returns a uniform random value in [0, max). It panics if max <= 0.\n\nGo return type: (n *..., err error)\n\nJoker return type: [ABEND883(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/crypto/rand/util.go:106:44) Error]"
-;;   {:added "1.0"
-;;    :go "int(rand, max)"}
-;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/crypto/rand/util.go:106:15) rand, ^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/crypto/rand/util.go:106:30) max])
-
-JOKER FUNC rand.Prime has:
-;; (defn Prime
-;;   "Prime returns a number, p, of the given size, such that p is prime\nwith high probability.\nPrime will return error for any error returned by rand.Read or if bits < 2.\n\nGo return type: (p *..., err error)\n\nJoker return type: [ABEND883(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/crypto/rand/util.go:31:42) Error]"
-;;   {:added "1.0"
-;;    :go "prime(rand, bits)"}
-;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/crypto/rand/util.go:31:17) rand, ^Int bits])
-
-JOKER FUNC rand.Read has:
-;; (defn Read
-;;   "Read is a helper function that calls Reader.Read using io.ReadFull.\nOn return, n == len(b) if and only if err == nil.\n\nGo return type: (n int, err error)\n\nJoker return type: [Int Error]"
-;;   {:added "1.0"
-;;    :go "read(b)"}
-;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: GO.link/src/crypto/rand/rand.go:23:13) b])
 
 JOKER FUNC rc4.NewCipher has:
 ;; (defn NewCipher
@@ -11122,19 +11122,19 @@ JOKER FUNC runtime._cgo_panic_internal has:
 ;;    :go "_cgo_panic_internal(p)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/runtime/cgocallback.go:11:28) p])
 
-JOKER FUNC scanner.TokenString has:
-;; (defn ^String TokenString
-;;   "TokenString returns a printable string for a token or Unicode character.\n\nGo return type: string\n\nJoker return type: String"
-;;   {:added "1.0"
-;;    :go "scanner.TokenString(tok)"}
-;;   [^ABEND885(unrecognized type rune at: GO.link/src/text/scanner/scanner.go:98:22) tok])
-
 JOKER FUNC scanner.PrintError has:
 ;; (defn PrintError
 ;;   "PrintError is a utility function that prints a list of errors to w,\none error per line, if the err parameter is an ErrorList. Otherwise\nit prints the err string.\n"
 ;;   {:added "1.0"
 ;;    :go "printError(w, err)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/go/scanner/errors.go:116:19) w, ^ABEND885(unrecognized type error at: GO.link/src/go/scanner/errors.go:116:34) err])
+
+JOKER FUNC scanner.TokenString has:
+;; (defn ^String TokenString
+;;   "TokenString returns a printable string for a token or Unicode character.\n\nGo return type: string\n\nJoker return type: String"
+;;   {:added "1.0"
+;;    :go "scanner.TokenString(tok)"}
+;;   [^ABEND885(unrecognized type rune at: GO.link/src/text/scanner/scanner.go:98:22) tok])
 
 JOKER FUNC sha1.New has:
 ;; (defn New
@@ -20913,41 +20913,6 @@ GO FUNC png.DecodeConfig has:
 // 	return res
 // }
 
-GO FUNC pprof.Cmdline has:
-// func cmdline(w ABEND882(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/net/http/pprof/pprof.go:83:16), r ABEND882(unrecognized Expr type *ast.StarExpr at: GO.link/src/net/http/pprof/pprof.go:83:39)) Object {
-// 	_pprof.Cmdline(w, r)
-// 	...ABEND675: TODO...
-// }
-
-GO FUNC pprof.Handler has:
-// func handler(name string) Object {
-// 	return _pprof.Handler(name)
-// }
-
-GO FUNC pprof.Index has:
-// func index(w ABEND882(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/net/http/pprof/pprof.go:264:14), r ABEND882(unrecognized Expr type *ast.StarExpr at: GO.link/src/net/http/pprof/pprof.go:264:37)) Object {
-// 	_pprof.Index(w, r)
-// 	...ABEND675: TODO...
-// }
-
-GO FUNC pprof.Profile has:
-// func profile(w ABEND882(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/net/http/pprof/pprof.go:116:16), r ABEND882(unrecognized Expr type *ast.StarExpr at: GO.link/src/net/http/pprof/pprof.go:116:39)) Object {
-// 	_pprof.Profile(w, r)
-// 	...ABEND675: TODO...
-// }
-
-GO FUNC pprof.Symbol has:
-// func symbol(w ABEND882(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/net/http/pprof/pprof.go:174:15), r ABEND882(unrecognized Expr type *ast.StarExpr at: GO.link/src/net/http/pprof/pprof.go:174:38)) Object {
-// 	_pprof.Symbol(w, r)
-// 	...ABEND675: TODO...
-// }
-
-GO FUNC pprof.Trace has:
-// func trace(w ABEND882(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/net/http/pprof/pprof.go:145:14), r ABEND882(unrecognized Expr type *ast.StarExpr at: GO.link/src/net/http/pprof/pprof.go:145:37)) Object {
-// 	_pprof.Trace(w, r)
-// 	...ABEND675: TODO...
-// }
-
 GO FUNC pprof.Do has:
 // func do(ctx ABEND882(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/runtime/pprof/runtime.go:31:13), labels ABEND884(unrecognized type LabelSet at: GO.link/src/runtime/pprof/runtime.go:31:37), f ABEND882(unrecognized Expr type *ast.FuncType at: GO.link/src/runtime/pprof/runtime.go:31:49)) Object {
 // 	_pprof.Do(ctx, labels, f)
@@ -21014,6 +20979,41 @@ GO FUNC pprof.WithLabels has:
 // 	return _pprof.WithLabels(ctx, labels)
 // }
 
+GO FUNC pprof.Cmdline has:
+// func cmdline(w ABEND882(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/net/http/pprof/pprof.go:83:16), r ABEND882(unrecognized Expr type *ast.StarExpr at: GO.link/src/net/http/pprof/pprof.go:83:39)) Object {
+// 	_pprof.Cmdline(w, r)
+// 	...ABEND675: TODO...
+// }
+
+GO FUNC pprof.Handler has:
+// func handler(name string) Object {
+// 	return _pprof.Handler(name)
+// }
+
+GO FUNC pprof.Index has:
+// func index(w ABEND882(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/net/http/pprof/pprof.go:264:14), r ABEND882(unrecognized Expr type *ast.StarExpr at: GO.link/src/net/http/pprof/pprof.go:264:37)) Object {
+// 	_pprof.Index(w, r)
+// 	...ABEND675: TODO...
+// }
+
+GO FUNC pprof.Profile has:
+// func profile(w ABEND882(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/net/http/pprof/pprof.go:116:16), r ABEND882(unrecognized Expr type *ast.StarExpr at: GO.link/src/net/http/pprof/pprof.go:116:39)) Object {
+// 	_pprof.Profile(w, r)
+// 	...ABEND675: TODO...
+// }
+
+GO FUNC pprof.Symbol has:
+// func symbol(w ABEND882(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/net/http/pprof/pprof.go:174:15), r ABEND882(unrecognized Expr type *ast.StarExpr at: GO.link/src/net/http/pprof/pprof.go:174:38)) Object {
+// 	_pprof.Symbol(w, r)
+// 	...ABEND675: TODO...
+// }
+
+GO FUNC pprof.Trace has:
+// func trace(w ABEND882(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/net/http/pprof/pprof.go:145:14), r ABEND882(unrecognized Expr type *ast.StarExpr at: GO.link/src/net/http/pprof/pprof.go:145:37)) Object {
+// 	_pprof.Trace(w, r)
+// 	...ABEND675: TODO...
+// }
+
 GO FUNC quick.Value has:
 // func value(t ABEND882(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/testing/quick/quick.go:59:14), rand ABEND882(unrecognized Expr type *ast.StarExpr at: GO.link/src/testing/quick/quick.go:59:33)) Object {
 // 	value, ok := _quick.Value(t, rand)
@@ -21035,33 +21035,6 @@ GO FUNC quotedprintable.NewWriter has:
 // 	map1 := EmptyArrayMap()
 // 	map1.Add(MakeKeyword("Binary"), MakeBool((*res).Binary))
 // 	return map1
-// }
-
-GO FUNC rand.Int has:
-// func int(rand ABEND882(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/crypto/rand/util.go:106:15), max ABEND882(unrecognized Expr type *ast.StarExpr at: GO.link/src/crypto/rand/util.go:106:30)) Object {
-// 	n, err := _rand.Int(rand, max)
-// 	res := EmptyVector
-// 	res = res.Conjoin((*n))
-// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
-// 	return res
-// }
-
-GO FUNC rand.Prime has:
-// func prime(rand ABEND882(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/crypto/rand/util.go:31:17), bits int) Object {
-// 	p, err := _rand.Prime(rand, bits)
-// 	res := EmptyVector
-// 	res = res.Conjoin((*p))
-// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
-// 	return res
-// }
-
-GO FUNC rand.Read has:
-// func read(b ABEND882(unrecognized Expr type *ast.ArrayType at: GO.link/src/crypto/rand/rand.go:23:13)) Object {
-// 	n, err := _rand.Read(b)
-// 	res := EmptyVector
-// 	res = res.Conjoin(MakeInt(int(n)))
-// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
-// 	return res
 // }
 
 GO FUNC rand.ExpFloat64 has:
@@ -21135,6 +21108,33 @@ GO FUNC rand.Shuffle has:
 GO FUNC rand.Uint64 has:
 // func uint64() Object {
 // 	return _rand.Uint64()
+// }
+
+GO FUNC rand.Int has:
+// func int(rand ABEND882(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/crypto/rand/util.go:106:15), max ABEND882(unrecognized Expr type *ast.StarExpr at: GO.link/src/crypto/rand/util.go:106:30)) Object {
+// 	n, err := _rand.Int(rand, max)
+// 	res := EmptyVector
+// 	res = res.Conjoin((*n))
+// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
+// 	return res
+// }
+
+GO FUNC rand.Prime has:
+// func prime(rand ABEND882(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/crypto/rand/util.go:31:17), bits int) Object {
+// 	p, err := _rand.Prime(rand, bits)
+// 	res := EmptyVector
+// 	res = res.Conjoin((*p))
+// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
+// 	return res
+// }
+
+GO FUNC rand.Read has:
+// func read(b ABEND882(unrecognized Expr type *ast.ArrayType at: GO.link/src/crypto/rand/rand.go:23:13)) Object {
+// 	n, err := _rand.Read(b)
+// 	res := EmptyVector
+// 	res = res.Conjoin(MakeInt(int(n)))
+// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
+// 	return res
 // }
 
 GO FUNC rc4.NewCipher has:
