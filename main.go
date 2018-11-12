@@ -71,41 +71,6 @@ func commentGroupInQuotes(doc *CommentGroup, jok, gol string) string {
 	return `  ` + strings.Trim(strconv.Quote(d), " \t\n") + "\n"
 }
 
-type By func(p1, p2 *string) bool
-
-type pathSorter struct {
-	paths []string
-	by By
-}
-
-func (s *pathSorter) Len() int {
-	return len(s.paths)
-}
-
-func (s *pathSorter) Less(i1, i2 int) bool {
-	return s.by(&s.paths[i1], &s.paths[i2])
-}
-
-func (s *pathSorter) Swap(i, j int) {
-	s.paths[i], s.paths[j] = s.paths[j], s.paths[i]
-}
-
-func (by By) Sort(paths []string) {
-	s := &pathSorter{
-		paths: paths,
-		by: by,
-	}
-	sort.Sort(s)
-}
-
-func fullName(p1, p2 *string) bool {
-	return *p1 < *p2
-}
-
-func baseName(p1, p2 *string) bool {
-	return path.Base(*p1) < path.Base(*p2)
-}
-
 type funcInfo struct {
 	fd *FuncDecl
 	pkg string // base package name
@@ -141,7 +106,7 @@ func processFuncDecl(pkg, pkgDirUnix, filename string, f *File, fn *FuncDecl) bo
 	if (dump) {
 		Print(fset, fn)
 	}
-	fname := pkg + "." + fn.Name.Name + " " + pkgDirUnix // TODO ~~~ sort differently
+	fname := pkgDirUnix + "." + fn.Name.Name
 	if v, ok := unqualifiedFunctions[fname]; ok {
 		if v.fd != DUPLICATEFUNCTION {
 			alreadySeen = append(alreadySeen,
@@ -168,7 +133,7 @@ func sortedTypeInfoMap(m map[string]*typeInfo, f func(k string, v *typeInfo)) {
 	for k, _ := range m {
 		keys = append(keys, k)
 	}
-	By(baseName).Sort(keys)  // TODO: By(fullName) (or just sort.Strings())
+	sort.Strings(keys)
 	for _, k := range keys {
 		f(k, m[k])
 	}
@@ -567,7 +532,7 @@ func genGoPostNamed(indent, pkg, in, t string) (jok, gol, goc, out string) {
 	if v, ok := types[qt]; ok {
 		if v.building { // Mutually-referring types currently not supported
 			jok = fmt.Sprintf("ABEND947(recursive type reference involving %s)",
-				path.Base(qt))  // TODO: handle these, e.g. http Request/Response; TODO ~~~ just use qt
+				qt)  // TODO: handle these, e.g. http Request/Response
 			gol = jok
 			goc = ""
 		} else {
@@ -579,7 +544,7 @@ func genGoPostNamed(indent, pkg, in, t string) (jok, gol, goc, out string) {
 			v.built = true
 		}
 	} else {
-		jok = fmt.Sprintf("ABEND042(cannot find typename %s)", path.Base(qt))  // TODO: use qt ~~~
+		jok = fmt.Sprintf("ABEND042(cannot find typename %s)", qt)
 	}
 	return
 }
@@ -822,7 +787,7 @@ func sortedPackageMap(m map[string]codeInfo, f func(k string, v codeInfo)) {
 	for k, _ := range m {
 		keys = append(keys, k)
 	}
-	By(baseName).Sort(keys)  // TODO: By(fullName) (or just sort.Strings())
+	sort.Strings(keys)
 	for _, k := range keys {
 		f(k, m[k])
 	}
@@ -1257,7 +1222,7 @@ func main() {
 		/* Output map in sorted order to stabilize for testing. */
 		sortedTypeInfoMap(types,
 			func(t string, ti *typeInfo) {
-				fmt.Printf("TYPE %s:\n", path.Base(t))  // TODO: log all of t ~~~
+				fmt.Printf("TYPE %s:\n", t)
 				fmt.Printf("  %s\n", ti.file)
 			})
 	}

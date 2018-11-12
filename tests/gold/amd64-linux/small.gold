@@ -19,17 +19,17 @@ TYPE net.Resolver:
   tests/small/src/net/lookup.go
 TYPE net.SRV:
   tests/small/src/net/dnsclient.go
-TYPE url.Error:
+TYPE net/url.Error:
   tests/small/src/net/url/url.go
-TYPE url.EscapeError:
+TYPE net/url.EscapeError:
   tests/small/src/net/url/url.go
-TYPE url.InvalidHostError:
+TYPE net/url.InvalidHostError:
   tests/small/src/net/url/url.go
-TYPE url.URL:
+TYPE net/url.URL:
   tests/small/src/net/url/url.go
-TYPE url.Userinfo:
+TYPE net/url.Userinfo:
   tests/small/src/net/url/url.go
-TYPE url.Values:
+TYPE net/url.Values:
   tests/small/src/net/url/url.go
 JOKER FUNC net.LookupAddr has:
 (defn LookupAddr
