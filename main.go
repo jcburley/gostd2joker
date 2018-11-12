@@ -319,6 +319,7 @@ var excludeDirs = map[string]bool {
 	"cmd": true,
 	"internal": true, // look into this later?
 	"testdata": true,
+	"vendor": true,
 }
 
 

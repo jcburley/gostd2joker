@@ -2700,224 +2700,7 @@ Processing unsafe:
 Matchfile(GO.link/src/unsafe/unsafe.go) => true <nil>
 Package unsafe:
 Processing package=unsafe in unsafe:
-Walking from GO.link/src to GO.link/src/vendor
-Processing vendor:
-Walking from GO.link/src to GO.link/src/vendor/golang_org
-Processing vendor/golang_org:
-Walking from GO.link/src to GO.link/src/vendor/golang_org/x
-Processing vendor/golang_org/x:
-Walking from GO.link/src to GO.link/src/vendor/golang_org/x/crypto
-Processing vendor/golang_org/x/crypto:
-Walking from GO.link/src to GO.link/src/vendor/golang_org/x/crypto/chacha20poly1305
-Processing vendor/golang_org/x/crypto/chacha20poly1305:
-Matchfile(GO.link/src/vendor/golang_org/x/crypto/chacha20poly1305/chacha20poly1305_amd64.go) => true <nil>
-Matchfile(GO.link/src/vendor/golang_org/x/crypto/chacha20poly1305/chacha20poly1305_generic.go) => true <nil>
-Matchfile(GO.link/src/vendor/golang_org/x/crypto/chacha20poly1305/chacha20poly1305_noasm.go) => false <nil>
-Ignoring test code in chacha20poly1305_vectors_test.go
-Matchfile(GO.link/src/vendor/golang_org/x/crypto/chacha20poly1305/chacha20poly1305.go) => true <nil>
-Ignoring test code in chacha20poly1305_test.go
-Package chacha20poly1305:
-Processing package=chacha20poly1305 in vendor/golang_org/x/crypto/chacha20poly1305:
-Walking from GO.link/src to GO.link/src/vendor/golang_org/x/crypto/cryptobyte
-Processing vendor/golang_org/x/crypto/cryptobyte:
-Ignoring test code in example_test.go
-Ignoring test code in cryptobyte_test.go
-Matchfile(GO.link/src/vendor/golang_org/x/crypto/cryptobyte/builder.go) => true <nil>
-Matchfile(GO.link/src/vendor/golang_org/x/crypto/cryptobyte/asn1.go) => true <nil>
-Matchfile(GO.link/src/vendor/golang_org/x/crypto/cryptobyte/string.go) => true <nil>
-Ignoring test code in asn1_test.go
-Package cryptobyte:
-Processing package=cryptobyte in vendor/golang_org/x/crypto/cryptobyte:
-Walking from GO.link/src to GO.link/src/vendor/golang_org/x/crypto/cryptobyte/asn1
-Processing vendor/golang_org/x/crypto/cryptobyte/asn1:
-Matchfile(GO.link/src/vendor/golang_org/x/crypto/cryptobyte/asn1/asn1.go) => true <nil>
-Package asn1:
-Processing package=asn1 in vendor/golang_org/x/crypto/cryptobyte/asn1:
-Skipping asn1 as it was already processed in encoding/asn1 before being seen in vendor/golang_org/x/crypto/cryptobyte/asn1.
-Walking from GO.link/src to GO.link/src/vendor/golang_org/x/crypto/curve25519
-Processing vendor/golang_org/x/crypto/curve25519:
-Matchfile(GO.link/src/vendor/golang_org/x/crypto/curve25519/doc.go) => true <nil>
-Matchfile(GO.link/src/vendor/golang_org/x/crypto/curve25519/curve25519.go) => false <nil>
-Matchfile(GO.link/src/vendor/golang_org/x/crypto/curve25519/mont25519_amd64.go) => true <nil>
-Ignoring test code in curve25519_test.go
-Package curve25519:
-Processing package=curve25519 in vendor/golang_org/x/crypto/curve25519:
-Excluding GO.link/src/vendor/golang_org/x/crypto/internal
-Walking from GO.link/src to GO.link/src/vendor/golang_org/x/crypto/poly1305
-Processing vendor/golang_org/x/crypto/poly1305:
-Matchfile(GO.link/src/vendor/golang_org/x/crypto/poly1305/sum_amd64.go) => true <nil>
-Matchfile(GO.link/src/vendor/golang_org/x/crypto/poly1305/sum_noasm.go) => false <nil>
-Matchfile(GO.link/src/vendor/golang_org/x/crypto/poly1305/sum_ref.go) => true <nil>
-Ignoring test code in vectors_test.go
-Matchfile(GO.link/src/vendor/golang_org/x/crypto/poly1305/sum_s390x.go) => false <nil>
-Matchfile(GO.link/src/vendor/golang_org/x/crypto/poly1305/poly1305.go) => true <nil>
-Matchfile(GO.link/src/vendor/golang_org/x/crypto/poly1305/sum_arm.go) => false <nil>
-Ignoring test code in poly1305_test.go
-Package poly1305:
-Processing package=poly1305 in vendor/golang_org/x/crypto/poly1305:
-Walking from GO.link/src to GO.link/src/vendor/golang_org/x/net
-Processing vendor/golang_org/x/net:
-Walking from GO.link/src to GO.link/src/vendor/golang_org/x/net/dns
-Processing vendor/golang_org/x/net/dns:
-Walking from GO.link/src to GO.link/src/vendor/golang_org/x/net/dns/dnsmessage
-Processing vendor/golang_org/x/net/dns/dnsmessage:
-Ignoring test code in example_test.go
-Matchfile(GO.link/src/vendor/golang_org/x/net/dns/dnsmessage/message.go) => true <nil>
-Ignoring test code in message_test.go
-Package dnsmessage:
-Processing package=dnsmessage in vendor/golang_org/x/net/dns/dnsmessage:
-Walking from GO.link/src to GO.link/src/vendor/golang_org/x/net/http
-Processing vendor/golang_org/x/net/http:
-Walking from GO.link/src to GO.link/src/vendor/golang_org/x/net/http/httpguts
-Processing vendor/golang_org/x/net/http/httpguts:
-Ignoring test code in httplex_test.go
-Matchfile(GO.link/src/vendor/golang_org/x/net/http/httpguts/httplex.go) => true <nil>
-Matchfile(GO.link/src/vendor/golang_org/x/net/http/httpguts/guts.go) => true <nil>
-Package httpguts:
-Processing package=httpguts in vendor/golang_org/x/net/http/httpguts:
-Walking from GO.link/src to GO.link/src/vendor/golang_org/x/net/http/httpproxy
-Processing vendor/golang_org/x/net/http/httpproxy:
-Matchfile(GO.link/src/vendor/golang_org/x/net/http/httpproxy/proxy.go) => true <nil>
-Ignoring test code in export_test.go
-Ignoring test code in proxy_test.go
-Package httpproxy:
-Processing package=httpproxy in vendor/golang_org/x/net/http/httpproxy:
-Walking from GO.link/src to GO.link/src/vendor/golang_org/x/net/http2
-Processing vendor/golang_org/x/net/http2:
-Walking from GO.link/src to GO.link/src/vendor/golang_org/x/net/http2/hpack
-Processing vendor/golang_org/x/net/http2/hpack:
-Matchfile(GO.link/src/vendor/golang_org/x/net/http2/hpack/hpack.go) => true <nil>
-Matchfile(GO.link/src/vendor/golang_org/x/net/http2/hpack/encode.go) => true <nil>
-Ignoring test code in tables_test.go
-Matchfile(GO.link/src/vendor/golang_org/x/net/http2/hpack/huffman.go) => true <nil>
-Matchfile(GO.link/src/vendor/golang_org/x/net/http2/hpack/tables.go) => true <nil>
-Ignoring test code in hpack_test.go
-Ignoring test code in encode_test.go
-Package hpack:
-Processing package=hpack in vendor/golang_org/x/net/http2/hpack:
-Walking from GO.link/src to GO.link/src/vendor/golang_org/x/net/idna
-Processing vendor/golang_org/x/net/idna:
-Matchfile(GO.link/src/vendor/golang_org/x/net/idna/punycode.go) => true <nil>
-Matchfile(GO.link/src/vendor/golang_org/x/net/idna/idna.go) => true <nil>
-Ignoring test code in punycode_test.go
-Matchfile(GO.link/src/vendor/golang_org/x/net/idna/tables.go) => true <nil>
-Matchfile(GO.link/src/vendor/golang_org/x/net/idna/trieval.go) => true <nil>
-Matchfile(GO.link/src/vendor/golang_org/x/net/idna/trie.go) => true <nil>
-Package idna:
-Processing package=idna in vendor/golang_org/x/net/idna:
-Excluding GO.link/src/vendor/golang_org/x/net/internal
-Walking from GO.link/src to GO.link/src/vendor/golang_org/x/net/lif
-Processing vendor/golang_org/x/net/lif:
-Matchfile(GO.link/src/vendor/golang_org/x/net/lif/lif.go) => false <nil>
-Matchfile(GO.link/src/vendor/golang_org/x/net/lif/binary.go) => false <nil>
-Ignoring test code in link_test.go
-Ignoring test code in address_test.go
-Matchfile(GO.link/src/vendor/golang_org/x/net/lif/address.go) => false <nil>
-Matchfile(GO.link/src/vendor/golang_org/x/net/lif/link.go) => false <nil>
-Matchfile(GO.link/src/vendor/golang_org/x/net/lif/defs_solaris.go) => false <nil>
-Matchfile(GO.link/src/vendor/golang_org/x/net/lif/zsys_solaris_amd64.go) => false <nil>
-Matchfile(GO.link/src/vendor/golang_org/x/net/lif/syscall.go) => false <nil>
-Matchfile(GO.link/src/vendor/golang_org/x/net/lif/sys.go) => false <nil>
-Walking from GO.link/src to GO.link/src/vendor/golang_org/x/net/nettest
-Processing vendor/golang_org/x/net/nettest:
-Ignoring test code in conntest_test.go
-Matchfile(GO.link/src/vendor/golang_org/x/net/nettest/conntest_go17.go) => true <nil>
-Matchfile(GO.link/src/vendor/golang_org/x/net/nettest/conntest_go16.go) => false <nil>
-Matchfile(GO.link/src/vendor/golang_org/x/net/nettest/conntest.go) => true <nil>
-Package nettest:
-Processing package=nettest in vendor/golang_org/x/net/nettest:
-Walking from GO.link/src to GO.link/src/vendor/golang_org/x/net/route
-Processing vendor/golang_org/x/net/route:
-Matchfile(GO.link/src/vendor/golang_org/x/net/route/zsys_dragonfly.go) => false <nil>
-Matchfile(GO.link/src/vendor/golang_org/x/net/route/interface_freebsd.go) => false <nil>
-Matchfile(GO.link/src/vendor/golang_org/x/net/route/binary.go) => true <nil>
-Ignoring test code in address_darwin_test.go
-Ignoring test code in message_darwin_test.go
-Ignoring test code in address_test.go
-Matchfile(GO.link/src/vendor/golang_org/x/net/route/address.go) => true <nil>
-Matchfile(GO.link/src/vendor/golang_org/x/net/route/zsys_freebsd_amd64.go) => false <nil>
-Matchfile(GO.link/src/vendor/golang_org/x/net/route/interface_multicast.go) => true <nil>
-Matchfile(GO.link/src/vendor/golang_org/x/net/route/sys_netbsd.go) => false <nil>
-Matchfile(GO.link/src/vendor/golang_org/x/net/route/interface_openbsd.go) => false <nil>
-Matchfile(GO.link/src/vendor/golang_org/x/net/route/message.go) => true <nil>
-Matchfile(GO.link/src/vendor/golang_org/x/net/route/defs_darwin.go) => false <nil>
-Matchfile(GO.link/src/vendor/golang_org/x/net/route/zsys_freebsd_386.go) => false <nil>
-Matchfile(GO.link/src/vendor/golang_org/x/net/route/route.go) => true <nil>
-Matchfile(GO.link/src/vendor/golang_org/x/net/route/interface.go) => true <nil>
-Matchfile(GO.link/src/vendor/golang_org/x/net/route/zsys_netbsd.go) => false <nil>
-Ignoring test code in message_test.go
-Matchfile(GO.link/src/vendor/golang_org/x/net/route/sys_dragonfly.go) => false <nil>
-Ignoring test code in route_test.go
-Ignoring test code in message_freebsd_test.go
-Matchfile(GO.link/src/vendor/golang_org/x/net/route/defs_dragonfly.go) => false <nil>
-Matchfile(GO.link/src/vendor/golang_org/x/net/route/route_classic.go) => true <nil>
-Matchfile(GO.link/src/vendor/golang_org/x/net/route/interface_announce.go) => false <nil>
-Matchfile(GO.link/src/vendor/golang_org/x/net/route/syscall.go) => true <nil>
-Matchfile(GO.link/src/vendor/golang_org/x/net/route/sys_freebsd.go) => false <nil>
-Matchfile(GO.link/src/vendor/golang_org/x/net/route/defs_freebsd.go) => false <nil>
-Matchfile(GO.link/src/vendor/golang_org/x/net/route/zsys_freebsd_arm.go) => false <nil>
-Matchfile(GO.link/src/vendor/golang_org/x/net/route/sys_openbsd.go) => false <nil>
-Matchfile(GO.link/src/vendor/golang_org/x/net/route/sys.go) => true <nil>
-Matchfile(GO.link/src/vendor/golang_org/x/net/route/route_openbsd.go) => false <nil>
-Matchfile(GO.link/src/vendor/golang_org/x/net/route/zsys_openbsd.go) => false <nil>
-Matchfile(GO.link/src/vendor/golang_org/x/net/route/zsys_darwin.go) => true <nil>
-Matchfile(GO.link/src/vendor/golang_org/x/net/route/interface_classic.go) => true <nil>
-Matchfile(GO.link/src/vendor/golang_org/x/net/route/defs_netbsd.go) => false <nil>
-Matchfile(GO.link/src/vendor/golang_org/x/net/route/defs_openbsd.go) => false <nil>
-Matchfile(GO.link/src/vendor/golang_org/x/net/route/sys_darwin.go) => true <nil>
-Package route:
-Processing package=route in vendor/golang_org/x/net/route:
-Walking from GO.link/src to GO.link/src/vendor/golang_org/x/text
-Processing vendor/golang_org/x/text:
-Walking from GO.link/src to GO.link/src/vendor/golang_org/x/text/secure
-Processing vendor/golang_org/x/text/secure:
-Matchfile(GO.link/src/vendor/golang_org/x/text/secure/doc.go) => true <nil>
-Package secure:
-Processing package=secure in vendor/golang_org/x/text/secure:
-Walking from GO.link/src to GO.link/src/vendor/golang_org/x/text/secure/bidirule
-Processing vendor/golang_org/x/text/secure/bidirule:
-Matchfile(GO.link/src/vendor/golang_org/x/text/secure/bidirule/bidirule.go) => true <nil>
-Package bidirule:
-Processing package=bidirule in vendor/golang_org/x/text/secure/bidirule:
-Walking from GO.link/src to GO.link/src/vendor/golang_org/x/text/transform
-Processing vendor/golang_org/x/text/transform:
-Ignoring test code in examples_test.go
-Matchfile(GO.link/src/vendor/golang_org/x/text/transform/transform.go) => true <nil>
-Package transform:
-Processing package=transform in vendor/golang_org/x/text/transform:
-Walking from GO.link/src to GO.link/src/vendor/golang_org/x/text/unicode
-Processing vendor/golang_org/x/text/unicode:
-Matchfile(GO.link/src/vendor/golang_org/x/text/unicode/doc.go) => true <nil>
-Package unicode:
-Processing package=unicode in vendor/golang_org/x/text/unicode:
-Skipping unicode as it was already processed in unicode before being seen in vendor/golang_org/x/text/unicode.
-Walking from GO.link/src to GO.link/src/vendor/golang_org/x/text/unicode/bidi
-Processing vendor/golang_org/x/text/unicode/bidi:
-Ignoring test code in example_test.go
-Matchfile(GO.link/src/vendor/golang_org/x/text/unicode/bidi/core.go) => true <nil>
-Matchfile(GO.link/src/vendor/golang_org/x/text/unicode/bidi/prop.go) => true <nil>
-Matchfile(GO.link/src/vendor/golang_org/x/text/unicode/bidi/tables.go) => true <nil>
-Matchfile(GO.link/src/vendor/golang_org/x/text/unicode/bidi/trieval.go) => true <nil>
-Matchfile(GO.link/src/vendor/golang_org/x/text/unicode/bidi/bidi.go) => true <nil>
-Matchfile(GO.link/src/vendor/golang_org/x/text/unicode/bidi/bracket.go) => true <nil>
-Package bidi:
-Processing package=bidi in vendor/golang_org/x/text/unicode/bidi:
-Walking from GO.link/src to GO.link/src/vendor/golang_org/x/text/unicode/norm
-Processing vendor/golang_org/x/text/unicode/norm:
-Ignoring test code in example_test.go
-Matchfile(GO.link/src/vendor/golang_org/x/text/unicode/norm/iter.go) => true <nil>
-Matchfile(GO.link/src/vendor/golang_org/x/text/unicode/norm/normalize.go) => true <nil>
-Matchfile(GO.link/src/vendor/golang_org/x/text/unicode/norm/tables.go) => true <nil>
-Matchfile(GO.link/src/vendor/golang_org/x/text/unicode/norm/transform.go) => true <nil>
-Matchfile(GO.link/src/vendor/golang_org/x/text/unicode/norm/input.go) => true <nil>
-Matchfile(GO.link/src/vendor/golang_org/x/text/unicode/norm/readwriter.go) => true <nil>
-Matchfile(GO.link/src/vendor/golang_org/x/text/unicode/norm/forminfo.go) => true <nil>
-Matchfile(GO.link/src/vendor/golang_org/x/text/unicode/norm/triegen.go) => false <nil>
-Matchfile(GO.link/src/vendor/golang_org/x/text/unicode/norm/trie.go) => true <nil>
-Ignoring test code in example_iter_test.go
-Matchfile(GO.link/src/vendor/golang_org/x/text/unicode/norm/composition.go) => true <nil>
-Package norm:
-Processing package=norm in vendor/golang_org/x/text/unicode/norm:
+Excluding GO.link/src/vendor
 TYPE aes.KeySizeError:
   GO.link/src/crypto/aes/cipher.go
 TYPE ascii85.CorruptInputError:
@@ -3088,22 +2871,6 @@ TYPE base64.CorruptInputError:
   GO.link/src/encoding/base64/base64.go
 TYPE base64.Encoding:
   GO.link/src/encoding/base64/base64.go
-TYPE bidi.Class:
-  GO.link/src/vendor/golang_org/x/text/unicode/bidi/trieval.go
-TYPE bidi.Direction:
-  GO.link/src/vendor/golang_org/x/text/unicode/bidi/bidi.go
-TYPE bidi.Option:
-  GO.link/src/vendor/golang_org/x/text/unicode/bidi/bidi.go
-TYPE bidi.Ordering:
-  GO.link/src/vendor/golang_org/x/text/unicode/bidi/bidi.go
-TYPE bidi.Paragraph:
-  GO.link/src/vendor/golang_org/x/text/unicode/bidi/bidi.go
-TYPE bidi.Properties:
-  GO.link/src/vendor/golang_org/x/text/unicode/bidi/prop.go
-TYPE bidi.Run:
-  GO.link/src/vendor/golang_org/x/text/unicode/bidi/bidi.go
-TYPE bidirule.Transformer:
-  GO.link/src/vendor/golang_org/x/text/secure/bidirule/bidirule.go
 TYPE big.Accuracy:
   GO.link/src/math/big/float.go
 TYPE big.ErrNaN:
@@ -3220,16 +2987,6 @@ TYPE crypto.Signer:
   GO.link/src/crypto/crypto.go
 TYPE crypto.SignerOpts:
   GO.link/src/crypto/crypto.go
-TYPE cryptobyte.BuildError:
-  GO.link/src/vendor/golang_org/x/crypto/cryptobyte/builder.go
-TYPE cryptobyte.Builder:
-  GO.link/src/vendor/golang_org/x/crypto/cryptobyte/builder.go
-TYPE cryptobyte.BuilderContinuation:
-  GO.link/src/vendor/golang_org/x/crypto/cryptobyte/builder.go
-TYPE cryptobyte.MarshalingValue:
-  GO.link/src/vendor/golang_org/x/crypto/cryptobyte/builder.go
-TYPE cryptobyte.String:
-  GO.link/src/vendor/golang_org/x/crypto/cryptobyte/string.go
 TYPE csv.ParseError:
   GO.link/src/encoding/csv/reader.go
 TYPE csv.Reader:
@@ -3240,50 +2997,6 @@ TYPE debug.GCStats:
   GO.link/src/runtime/debug/garbage.go
 TYPE des.KeySizeError:
   GO.link/src/crypto/des/cipher.go
-TYPE dnsmessage.AAAAResource:
-  GO.link/src/vendor/golang_org/x/net/dns/dnsmessage/message.go
-TYPE dnsmessage.AResource:
-  GO.link/src/vendor/golang_org/x/net/dns/dnsmessage/message.go
-TYPE dnsmessage.Builder:
-  GO.link/src/vendor/golang_org/x/net/dns/dnsmessage/message.go
-TYPE dnsmessage.CNAMEResource:
-  GO.link/src/vendor/golang_org/x/net/dns/dnsmessage/message.go
-TYPE dnsmessage.Class:
-  GO.link/src/vendor/golang_org/x/net/dns/dnsmessage/message.go
-TYPE dnsmessage.Header:
-  GO.link/src/vendor/golang_org/x/net/dns/dnsmessage/message.go
-TYPE dnsmessage.MXResource:
-  GO.link/src/vendor/golang_org/x/net/dns/dnsmessage/message.go
-TYPE dnsmessage.Message:
-  GO.link/src/vendor/golang_org/x/net/dns/dnsmessage/message.go
-TYPE dnsmessage.NSResource:
-  GO.link/src/vendor/golang_org/x/net/dns/dnsmessage/message.go
-TYPE dnsmessage.Name:
-  GO.link/src/vendor/golang_org/x/net/dns/dnsmessage/message.go
-TYPE dnsmessage.OpCode:
-  GO.link/src/vendor/golang_org/x/net/dns/dnsmessage/message.go
-TYPE dnsmessage.PTRResource:
-  GO.link/src/vendor/golang_org/x/net/dns/dnsmessage/message.go
-TYPE dnsmessage.Parser:
-  GO.link/src/vendor/golang_org/x/net/dns/dnsmessage/message.go
-TYPE dnsmessage.Question:
-  GO.link/src/vendor/golang_org/x/net/dns/dnsmessage/message.go
-TYPE dnsmessage.RCode:
-  GO.link/src/vendor/golang_org/x/net/dns/dnsmessage/message.go
-TYPE dnsmessage.Resource:
-  GO.link/src/vendor/golang_org/x/net/dns/dnsmessage/message.go
-TYPE dnsmessage.ResourceBody:
-  GO.link/src/vendor/golang_org/x/net/dns/dnsmessage/message.go
-TYPE dnsmessage.ResourceHeader:
-  GO.link/src/vendor/golang_org/x/net/dns/dnsmessage/message.go
-TYPE dnsmessage.SOAResource:
-  GO.link/src/vendor/golang_org/x/net/dns/dnsmessage/message.go
-TYPE dnsmessage.SRVResource:
-  GO.link/src/vendor/golang_org/x/net/dns/dnsmessage/message.go
-TYPE dnsmessage.TXTResource:
-  GO.link/src/vendor/golang_org/x/net/dns/dnsmessage/message.go
-TYPE dnsmessage.Type:
-  GO.link/src/vendor/golang_org/x/net/dns/dnsmessage/message.go
 TYPE doc.Example:
   GO.link/src/go/doc/example.go
 TYPE doc.Filter:
@@ -3686,16 +3399,6 @@ TYPE heap.Interface:
   GO.link/src/container/heap/heap.go
 TYPE hex.InvalidByteError:
   GO.link/src/encoding/hex/hex.go
-TYPE hpack.Decoder:
-  GO.link/src/vendor/golang_org/x/net/http2/hpack/hpack.go
-TYPE hpack.DecodingError:
-  GO.link/src/vendor/golang_org/x/net/http2/hpack/hpack.go
-TYPE hpack.Encoder:
-  GO.link/src/vendor/golang_org/x/net/http2/hpack/encode.go
-TYPE hpack.HeaderField:
-  GO.link/src/vendor/golang_org/x/net/http2/hpack/hpack.go
-TYPE hpack.InvalidIndexError:
-  GO.link/src/vendor/golang_org/x/net/http2/hpack/hpack.go
 TYPE http.Client:
   GO.link/src/net/http/client.go
 TYPE http.CloseNotifier:
@@ -3744,8 +3447,6 @@ TYPE http.Server:
   GO.link/src/net/http/server.go
 TYPE http.Transport:
   GO.link/src/net/http/transport.go
-TYPE httpproxy.Config:
-  GO.link/src/vendor/golang_org/x/net/http/httpproxy/proxy.go
 TYPE httptest.ResponseRecorder:
   GO.link/src/net/http/httptest/recorder.go
 TYPE httptest.Server:
@@ -3768,10 +3469,6 @@ TYPE httputil.ReverseProxy:
   GO.link/src/net/http/httputil/reverseproxy.go
 TYPE httputil.ServerConn:
   GO.link/src/net/http/httputil/persist.go
-TYPE idna.Option:
-  GO.link/src/vendor/golang_org/x/net/idna/idna.go
-TYPE idna.Profile:
-  GO.link/src/vendor/golang_org/x/net/idna/idna.go
 TYPE image.Alpha:
   GO.link/src/image/image.go
 TYPE image.Alpha16:
@@ -4078,14 +3775,6 @@ TYPE net.UnixListener:
   GO.link/src/net/unixsock.go
 TYPE net.UnknownNetworkError:
   GO.link/src/net/net.go
-TYPE nettest.MakePipe:
-  GO.link/src/vendor/golang_org/x/net/nettest/conntest.go
-TYPE norm.Form:
-  GO.link/src/vendor/golang_org/x/text/unicode/norm/normalize.go
-TYPE norm.Iter:
-  GO.link/src/vendor/golang_org/x/text/unicode/norm/iter.go
-TYPE norm.Properties:
-  GO.link/src/vendor/golang_org/x/text/unicode/norm/forminfo.go
 TYPE os.File:
   GO.link/src/os/types.go
 TYPE os.FileInfo:
@@ -4282,38 +3971,6 @@ TYPE regexp.Regexp:
   GO.link/src/regexp/regexp.go
 TYPE ring.Ring:
   GO.link/src/container/ring/ring.go
-TYPE route.Addr:
-  GO.link/src/vendor/golang_org/x/net/route/address.go
-TYPE route.DefaultAddr:
-  GO.link/src/vendor/golang_org/x/net/route/address.go
-TYPE route.Inet4Addr:
-  GO.link/src/vendor/golang_org/x/net/route/address.go
-TYPE route.Inet6Addr:
-  GO.link/src/vendor/golang_org/x/net/route/address.go
-TYPE route.InterfaceAddrMessage:
-  GO.link/src/vendor/golang_org/x/net/route/interface.go
-TYPE route.InterfaceAnnounceMessage:
-  GO.link/src/vendor/golang_org/x/net/route/interface.go
-TYPE route.InterfaceMessage:
-  GO.link/src/vendor/golang_org/x/net/route/interface.go
-TYPE route.InterfaceMetrics:
-  GO.link/src/vendor/golang_org/x/net/route/sys_darwin.go
-TYPE route.InterfaceMulticastAddrMessage:
-  GO.link/src/vendor/golang_org/x/net/route/interface.go
-TYPE route.LinkAddr:
-  GO.link/src/vendor/golang_org/x/net/route/address.go
-TYPE route.Message:
-  GO.link/src/vendor/golang_org/x/net/route/message.go
-TYPE route.RIBType:
-  GO.link/src/vendor/golang_org/x/net/route/route.go
-TYPE route.RouteMessage:
-  GO.link/src/vendor/golang_org/x/net/route/route.go
-TYPE route.RouteMetrics:
-  GO.link/src/vendor/golang_org/x/net/route/sys_darwin.go
-TYPE route.Sys:
-  GO.link/src/vendor/golang_org/x/net/route/message.go
-TYPE route.SysType:
-  GO.link/src/vendor/golang_org/x/net/route/message.go
 TYPE rpc.Call:
   GO.link/src/net/rpc/client.go
 TYPE rpc.Client:
@@ -4746,16 +4403,6 @@ TYPE trace.Region:
   GO.link/src/runtime/trace/annotation.go
 TYPE trace.Task:
   GO.link/src/runtime/trace/annotation.go
-TYPE transform.NopResetter:
-  GO.link/src/vendor/golang_org/x/text/transform/transform.go
-TYPE transform.Reader:
-  GO.link/src/vendor/golang_org/x/text/transform/transform.go
-TYPE transform.SpanningTransformer:
-  GO.link/src/vendor/golang_org/x/text/transform/transform.go
-TYPE transform.Transformer:
-  GO.link/src/vendor/golang_org/x/text/transform/transform.go
-TYPE transform.Writer:
-  GO.link/src/vendor/golang_org/x/text/transform/transform.go
 TYPE types.Array:
   GO.link/src/go/types/type.go
 TYPE types.Basic:
@@ -5422,83 +5069,6 @@ JOKER FUNC base64.NewEncoding has:
 ;;   {:added "1.0"
 ;;    :go "newEncoding(encoder)"}
 ;;   [^String encoder])
-
-JOKER FUNC bidi.AppendReverse has:
-;; (defn AppendReverse
-;;   "AppendReverse reverses the order of characters of in, appends them to out,\nand returns the result. Modifiers will still follow the runes they modify.\nBrackets are replaced with their counterparts.\n\nGo return type: []int\n\nJoker return type: (vector-of Int)"
-;;   {:added "1.0"
-;;    :go "appendReverse(out, in)"}
-;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: GO.link/src/vendor/golang_org/x/text/unicode/bidi/bidi.go:189:28) out, ^ABEND881(unrecognized Expr type *ast.ArrayType at: GO.link/src/vendor/golang_org/x/text/unicode/bidi/bidi.go:189:28) in])
-
-JOKER FUNC bidi.DefaultDirection has:
-;; (defn DefaultDirection
-;;   "DefaultDirection sets the default direction for a Paragraph. The direction is\noverridden if the text contains directional characters.\n\nGo return type: Option\n\nJoker return type: ABEND883(unrecognized Expr type *ast.FuncType at: GO.link/src/vendor/golang_org/x/text/unicode/bidi/bidi.go:55:13)"
-;;   {:added "1.0"
-;;    :go "defaultDirection(d)"}
-;;   [^ABEND885(unrecognized type Direction at: GO.link/src/vendor/golang_org/x/text/unicode/bidi/bidi.go:68:25) d])
-
-JOKER FUNC bidi.Lookup has:
-;; (defn Lookup
-;;   "Lookup returns properties for the first rune in s and the width in bytes of\nits encoding. The size will be 0 if s does not hold enough bytes to complete\nthe encoding.\n\nGo return type: (p Properties, sz int)\n\nJoker return type: [{} Int]"
-;;   {:added "1.0"
-;;    :go "lookup(s)"}
-;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: GO.link/src/vendor/golang_org/x/text/unicode/bidi/prop.go:87:15) s])
-
-JOKER FUNC bidi.LookupRune has:
-;; (defn LookupRune
-;;   "LookupRune returns properties for r.\n\nGo return type: (p Properties, size int)\n\nJoker return type: [{} Int]"
-;;   {:added "1.0"
-;;    :go "lookupRune(r)"}
-;;   [^ABEND885(unrecognized type rune at: GO.link/src/vendor/golang_org/x/text/unicode/bidi/prop.go:63:19) r])
-
-JOKER FUNC bidi.LookupString has:
-(defn LookupString
-  "LookupString returns properties for the first rune in s and the width in\nbytes of its encoding. The size will be 0 if s does not hold enough bytes to\ncomplete the encoding.\n\nGo return type: (p Properties, sz int)\n\nJoker return type: [{} Int]"
-  {:added "1.0"
-   :go "lookupString(s)"}
-  [^String s])
-
-JOKER FUNC bidi.ReverseString has:
-(defn ^String ReverseString
-  "ReverseString reverses the order of characters in s and returns a new string.\nModifiers will still follow the runes they modify. Brackets are replaced with\ntheir counterparts.\n\nGo return type: string\n\nJoker return type: String"
-  {:added "1.0"
-   :go "bidi.ReverseString(s)"}
-  [^String s])
-
-JOKER FUNC bidirule.Direction has:
-;; (defn Direction
-;;   "Direction reports the direction of the given label as defined by RFC 5893.\nThe Bidi Rule does not have to be applied to labels of the category\nLeftToRight.\n\nGo return type: ...\n\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/vendor/golang_org/x/text/secure/bidirule/bidirule.go:137:26)"
-;;   {:added "1.0"
-;;    :go "direction(b)"}
-;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: GO.link/src/vendor/golang_org/x/text/secure/bidirule/bidirule.go:137:18) b])
-
-JOKER FUNC bidirule.DirectionString has:
-;; (defn DirectionString
-;;   "DirectionString reports the direction of the given label as defined by RFC\n5893. The Bidi Rule does not have to be applied to labels of the category\nLeftToRight.\n\nGo return type: ...\n\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/vendor/golang_org/x/text/secure/bidirule/bidirule.go:155:32)"
-;;   {:added "1.0"
-;;    :go "directionString(s)"}
-;;   [^String s])
-
-JOKER FUNC bidirule.New has:
-;; (defn New
-;;   "New returns a Transformer that verifies that input adheres to the Bidi Rule.\n\nGo return type: *Transformer\n\nJoker return type: {}"
-;;   {:added "1.0"
-;;    :go "new()"}
-;;   [])
-
-JOKER FUNC bidirule.Valid has:
-;; (defn ^Bool Valid
-;;   "Valid reports whether b conforms to the BiDi rule.\n\nGo return type: bool\n\nJoker return type: Bool"
-;;   {:added "1.0"
-;;    :go "bidirule.Valid(b)"}
-;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: GO.link/src/vendor/golang_org/x/text/secure/bidirule/bidirule.go:172:14) b])
-
-JOKER FUNC bidirule.ValidString has:
-(defn ^Bool ValidString
-  "ValidString reports whether s conforms to the BiDi rule.\n\nGo return type: bool\n\nJoker return type: Bool"
-  {:added "1.0"
-   :go "bidirule.ValidString(s)"}
-  [^String s])
 
 JOKER FUNC big.Jacobi has:
 ;; (defn ^Int Jacobi
@@ -6312,13 +5882,6 @@ JOKER FUNC cgo._runtime_cgocallback has:
 ;;    :go "_runtime_cgocallback()"}
 ;;   [])
 
-JOKER FUNC chacha20poly1305.New has:
-;; (defn New
-;;   "New returns a ChaCha20-Poly1305 AEAD that uses the given, 256-bit key.\n\nGo return type: (..., error)\n\nJoker return type: [ABEND883(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/vendor/golang_org/x/crypto/chacha20poly1305/chacha20poly1305.go:26:23) Error]"
-;;   {:added "1.0"
-;;    :go "new(key)"}
-;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: GO.link/src/vendor/golang_org/x/crypto/chacha20poly1305/chacha20poly1305.go:26:14) key])
-
 JOKER FUNC cipher.NewCBCDecrypter has:
 ;; (defn NewCBCDecrypter
 ;;   "NewCBCDecrypter returns a BlockMode which decrypts in cipher block chaining\nmode, using the given Block. The length of iv must be the same as the\nBlock's block size and must match the iv used to encrypt the data.\n\nGo return type: BlockMode\n\nJoker return type: ABEND883(unrecognized Expr type *ast.InterfaceType at: GO.link/src/crypto/cipher/cipher.go:45:16)"
@@ -6935,20 +6498,6 @@ JOKER FUNC crypto.RegisterHash has:
 ;;    :go "registerHash(h, f)"}
 ;;   [^ABEND885(unrecognized type Hash at: GO.link/src/crypto/crypto.go:100:21) h, ^ABEND881(unrecognized Expr type *ast.FuncType at: GO.link/src/crypto/crypto.go:100:29) f])
 
-JOKER FUNC cryptobyte.NewBuilder has:
-;; (defn NewBuilder
-;;   "NewBuilder creates a Builder that appends its output to the given buffer.\nLike append(), the slice will be reallocated if its capacity is exceeded.\nUse Bytes to get the final buffer.\n\nGo return type: *Builder\n\nJoker return type: {}"
-;;   {:added "1.0"
-;;    :go "newBuilder(buffer)"}
-;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: GO.link/src/vendor/golang_org/x/crypto/cryptobyte/builder.go:37:24) buffer])
-
-JOKER FUNC cryptobyte.NewFixedBuilder has:
-;; (defn NewFixedBuilder
-;;   "NewFixedBuilder creates a Builder that appends its output into the given\nbuffer. This builder does not reallocate the output buffer. Writes that\nwould exceed the buffer's capacity are treated as an error.\n\nGo return type: *Builder\n\nJoker return type: {}"
-;;   {:added "1.0"
-;;    :go "newFixedBuilder(buffer)"}
-;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: GO.link/src/vendor/golang_org/x/crypto/cryptobyte/builder.go:46:29) buffer])
-
 JOKER FUNC csv.NewReader has:
 ;; (defn NewReader
 ;;   "NewReader returns a new Reader that reads from r.\n\nGo return type: *Reader\n\nJoker return type: {:Comma ^ABEND042(cannot find typename csv.rune), :Comment ^ABEND042(cannot find typename csv.rune), :FieldsPerRecord ^Int, :LazyQuotes ^Bool, :TrimLeadingSpace ^Bool, :ReuseRecord ^Bool, :TrailingComma ^Bool}"
@@ -6962,20 +6511,6 @@ JOKER FUNC csv.NewWriter has:
 ;;   {:added "1.0"
 ;;    :go "newWriter(w)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/encoding/csv/writer.go:31:18) w])
-
-JOKER FUNC curve25519.ScalarBaseMult has:
-;; (defn ScalarBaseMult
-;;   "ScalarBaseMult sets dst to the product in*base where dst and base are the x\ncoordinates of group points, base is the standard generator and all values\nare in little-endian form.\n"
-;;   {:added "1.0"
-;;    :go "scalarBaseMult(dst, in)"}
-;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/vendor/golang_org/x/crypto/curve25519/doc.go:21:29) dst, ^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/vendor/golang_org/x/crypto/curve25519/doc.go:21:29) in])
-
-JOKER FUNC curve25519.ScalarMult has:
-;; (defn ScalarMult
-;;   "ScalarMult sets dst to the product in*base where dst and base are the x\ncoordinates of group points and all values are in little-endian form.\n"
-;;   {:added "1.0"
-;;    :go "scalarMult(dst, in, base)"}
-;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/vendor/golang_org/x/crypto/curve25519/doc.go:14:31) dst, ^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/vendor/golang_org/x/crypto/curve25519/doc.go:14:31) in, ^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/vendor/golang_org/x/crypto/curve25519/doc.go:14:31) base])
 
 JOKER FUNC debug.FreeOSMemory has:
 ;; (defn FreeOSMemory
@@ -7060,20 +6595,6 @@ JOKER FUNC des.NewTripleDESCipher has:
 ;;   {:added "1.0"
 ;;    :go "newTripleDESCipher(key)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: GO.link/src/crypto/des/cipher.go:73:29) key])
-
-JOKER FUNC dnsmessage.NewBuilder has:
-;; (defn NewBuilder
-;;   "NewBuilder creates a new builder with compression disabled.\n\nNote: Most users will want to immediately enable compression with the\nEnableCompression method. See that method's comment for why you may or may\nnot want to enable compression.\n\nThe DNS message is appended to the provided initial buffer buf (which may be\nnil) as it is built. The final message is returned by the (*Builder).Finish\nmethod, which may return the same underlying array if there was sufficient\ncapacity in the slice.\n\nGo return type: Builder\n\nJoker return type: {}"
-;;   {:added "1.0"
-;;    :go "newBuilder(buf, h)"}
-;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: GO.link/src/vendor/golang_org/x/net/dns/dnsmessage/message.go:939:21) buf, ^ABEND885(unrecognized type Header at: GO.link/src/vendor/golang_org/x/net/dns/dnsmessage/message.go:939:31) h])
-
-JOKER FUNC dnsmessage.NewName has:
-;; (defn NewName
-;;   "NewName creates a new Name from a string.\n\nGo return type: (Name, error)\n\nJoker return type: [{:Data ^(vector-of Int), :Length ^ABEND042(cannot find typename dnsmessage.uint8)} Error]"
-;;   {:added "1.0"
-;;    :go "newName(name)"}
-;;   [^String name])
 
 JOKER FUNC doc.Examples has:
 ;; (defn Examples
@@ -8202,48 +7723,6 @@ JOKER FUNC hmac.New has:
 ;;    :go "new(h, key)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.FuncType at: GO.link/src/crypto/hmac/hmac.go:70:12) h, ^ABEND881(unrecognized Expr type *ast.ArrayType at: GO.link/src/crypto/hmac/hmac.go:70:34) key])
 
-JOKER FUNC hpack.AppendHuffmanString has:
-;; (defn AppendHuffmanString
-;;   "AppendHuffmanString appends s, as encoded in Huffman codes, to dst\nand returns the extended buffer.\n\nGo return type: []int\n\nJoker return type: (vector-of Int)"
-;;   {:added "1.0"
-;;    :go "appendHuffmanString(dst, s)"}
-;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: GO.link/src/vendor/golang_org/x/net/http2/hpack/huffman.go:160:30) dst, ^String s])
-
-JOKER FUNC hpack.HuffmanDecode has:
-;; (defn HuffmanDecode
-;;   "HuffmanDecode decodes the string in v and writes the expanded\nresult to w, returning the number of bytes written to w and the\nWrite call's return value. At most one Write call is made.\n\nGo return type: (int, error)\n\nJoker return type: [Int Error]"
-;;   {:added "1.0"
-;;    :go "huffmanDecode(w, v)"}
-;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/vendor/golang_org/x/net/http2/hpack/huffman.go:21:22) w, ^ABEND881(unrecognized Expr type *ast.ArrayType at: GO.link/src/vendor/golang_org/x/net/http2/hpack/huffman.go:21:35) v])
-
-JOKER FUNC hpack.HuffmanDecodeToString has:
-;; (defn HuffmanDecodeToString
-;;   "HuffmanDecodeToString decodes the string in v.\n\nGo return type: (string, error)\n\nJoker return type: [String Error]"
-;;   {:added "1.0"
-;;    :go "huffmanDecodeToString(v)"}
-;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: GO.link/src/vendor/golang_org/x/net/http2/hpack/huffman.go:32:30) v])
-
-JOKER FUNC hpack.HuffmanEncodeLength has:
-;; (defn HuffmanEncodeLength
-;;   "HuffmanEncodeLength returns the number of bytes required to encode\ns in Huffman codes. The result is round up to byte boundary.\n\nGo return type: uint64\n\nJoker return type: ABEND042(cannot find typename hpack.uint64)"
-;;   {:added "1.0"
-;;    :go "huffmanEncodeLength(s)"}
-;;   [^String s])
-
-JOKER FUNC hpack.NewDecoder has:
-;; (defn NewDecoder
-;;   "NewDecoder returns a new decoder with the provided maximum dynamic\ntable size. The emitFunc will be called for each valid field\nparsed, in the same goroutine as calls to Write, before Write returns.\n\nGo return type: *Decoder\n\nJoker return type: {}"
-;;   {:added "1.0"
-;;    :go "newDecoder(maxDynamicTableSize, emitFunc)"}
-;;   [^Int maxDynamicTableSize, ^ABEND881(unrecognized Expr type *ast.FuncType at: GO.link/src/vendor/golang_org/x/net/http2/hpack/hpack.go:100:54) emitFunc])
-
-JOKER FUNC hpack.NewEncoder has:
-;; (defn NewEncoder
-;;   "NewEncoder returns a new Encoder which performs HPACK encoding. An\nencoded data is written to w.\n\nGo return type: *Encoder\n\nJoker return type: {}"
-;;   {:added "1.0"
-;;    :go "newEncoder(w)"}
-;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/vendor/golang_org/x/net/http2/hpack/encode.go:35:19) w])
-
 JOKER FUNC html.EscapeString has:
 (defn ^String EscapeString
   "EscapeString escapes special characters like \"<\" to become \"&lt;\". It\nescapes only five such characters: <, >, &, ' and \".\nUnescapeString(EscapeString(s)) == s always holds, but the converse isn't\nalways true.\n\nGo return type: string\n\nJoker return type: String"
@@ -8496,62 +7975,6 @@ JOKER FUNC http.TimeoutHandler has:
 ;;    :go "timeoutHandler(h, dt, msg)"}
 ;;   [^ABEND885(unrecognized type Handler at: GO.link/src/net/http/server.go:3106:23) h, ^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/net/http/server.go:3106:35) dt, ^String msg])
 
-JOKER FUNC httpguts.HeaderValuesContainsToken has:
-;; (defn ^Bool HeaderValuesContainsToken
-;;   "HeaderValuesContainsToken reports whether any string in values\ncontains the provided token, ASCII case-insensitively.\n\nGo return type: bool\n\nJoker return type: Bool"
-;;   {:added "1.0"
-;;    :go "httpguts.HeaderValuesContainsToken(values, token)"}
-;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: GO.link/src/vendor/golang_org/x/net/http/httpguts/httplex.go:106:39) values, ^String token])
-
-JOKER FUNC httpguts.IsTokenRune has:
-;; (defn ^Bool IsTokenRune
-;;   "Go return type: bool\n\nJoker return type: Bool"
-;;   {:added "1.0"
-;;    :go "httpguts.IsTokenRune(r)"}
-;;   [^ABEND885(unrecognized type rune at: GO.link/src/vendor/golang_org/x/net/http/httpguts/httplex.go:95:20) r])
-
-JOKER FUNC httpguts.PunycodeHostPort has:
-(defn PunycodeHostPort
-  "PunycodeHostPort returns the IDNA Punycode version\nof the provided \"host\" or \"host:port\" string.\n\nGo return type: (string, error)\n\nJoker return type: [String Error]"
-  {:added "1.0"
-   :go "punycodeHostPort(v)"}
-  [^String v])
-
-JOKER FUNC httpguts.ValidHeaderFieldName has:
-(defn ^Bool ValidHeaderFieldName
-  "ValidHeaderFieldName reports whether v is a valid HTTP/1.x header name.\nHTTP/2 imposes the additional restriction that uppercase ASCII\nletters are not allowed.\n\n RFC 7230 says:\n  header-field   = field-name \":\" OWS field-value OWS\n  field-name     = token\n  token          = 1*tchar\n  tchar = \"!\" / \"#\" / \"$\" / \"%\" / \"&\" / \"'\" / \"*\" / \"+\" / \"-\" / \".\" /\n          \"^\" / \"_\" / \"`\" / \"|\" / \"~\" / DIGIT / ALPHA\n\nGo return type: bool\n\nJoker return type: Bool"
-  {:added "1.0"
-   :go "httpguts.ValidHeaderFieldName(v)"}
-  [^String v])
-
-JOKER FUNC httpguts.ValidHeaderFieldValue has:
-(defn ^Bool ValidHeaderFieldValue
-  "ValidHeaderFieldValue reports whether v is a valid \"field-value\" according to\nhttp://www.w3.org/Protocols/rfc2616/rfc2616-sec4.html#sec4.2 :\n\n       message-header = field-name \":\" [ field-value ]\n       field-value    = *( field-content | LWS )\n       field-content  = <the OCTETs making up the field-value\n                        and consisting of either *TEXT or combinations\n                        of token, separators, and quoted-string>\n\nhttp://www.w3.org/Protocols/rfc2616/rfc2616-sec2.html#sec2.2 :\n\n       TEXT           = <any OCTET except CTLs,\n                         but including LWS>\n       LWS            = [CRLF] 1*( SP | HT )\n       CTL            = <any US-ASCII control character\n                        (octets 0 - 31) and DEL (127)>\n\nRFC 7230 says:\n field-value    = *( field-content / obs-fold )\n obj-fold       =  N/A to http2, and deprecated\n field-content  = field-vchar [ 1*( SP / HTAB ) field-vchar ]\n field-vchar    = VCHAR / obs-text\n obs-text       = %x80-FF\n VCHAR          = \"any visible [USASCII] character\"\n\nhttp2 further says: \"Similarly, HTTP/2 allows header field values\nthat are not valid. While most of the values that can be encoded\nwill not alter header field parsing, carriage return (CR, ASCII\n0xd), line feed (LF, ASCII 0xa), and the zero character (NUL, ASCII\n0x0) might be exploited by an attacker if they are translated\nverbatim. Any request or response that contains a character not\npermitted in a header field value MUST be treated as malformed\n(Section 8.1.2.6). Valid characters are defined by the\nfield-content ABNF rule in Section 3.2 of [RFC7230].\"\n\nThis function does not (yet?) properly handle the rejection of\nstrings that begin or end with SP or HTAB.\n\nGo return type: bool\n\nJoker return type: Bool"
-  {:added "1.0"
-   :go "httpguts.ValidHeaderFieldValue(v)"}
-  [^String v])
-
-JOKER FUNC httpguts.ValidHostHeader has:
-(defn ^Bool ValidHostHeader
-  "ValidHostHeader reports whether h is a valid host header.\n\nGo return type: bool\n\nJoker return type: Bool"
-  {:added "1.0"
-   :go "httpguts.ValidHostHeader(h)"}
-  [^String h])
-
-JOKER FUNC httpguts.ValidTrailerHeader has:
-(defn ^Bool ValidTrailerHeader
-  "ValidTrailerHeader reports whether name is a valid header field name to appear\nin trailers.\nSee RFC 7230, Section 4.1.2\n\nGo return type: bool\n\nJoker return type: Bool"
-  {:added "1.0"
-   :go "httpguts.ValidTrailerHeader(name)"}
-  [^String name])
-
-JOKER FUNC httpproxy.FromEnvironment has:
-(defn FromEnvironment
-  "FromEnvironment returns a Config instance populated from the\nenvironment variables HTTP_PROXY, HTTPS_PROXY and NO_PROXY (or the\nlowercase versions thereof). HTTPS_PROXY takes precedence over\nHTTP_PROXY for https requests.\n\nThe environment values may be either a complete URL or a\n\"host[:port]\", in which case the \"http\" scheme is assumed. An error\nis returned if the value is a different form.\n\nGo return type: *Config\n\nJoker return type: {:HTTPProxy ^String, :HTTPSProxy ^String, :NoProxy ^String, :CGI ^Bool}"
-  {:added "1.0"
-   :go "fromEnvironment()"}
-  [])
-
 JOKER FUNC httptest.NewRecorder has:
 ;; (defn NewRecorder
 ;;   "NewRecorder returns an initialized ResponseRecorder.\n\nGo return type: *ResponseRecorder\n\nJoker return type: {:Code ^Int, :HeaderMap ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/net/http/httptest/recorder.go:35:12), :Body ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/net/http/httptest/recorder.go:39:8), :Flushed ^Bool}"
@@ -8663,83 +8086,6 @@ JOKER FUNC httputil.NewSingleHostReverseProxy has:
 ;;   {:added "1.0"
 ;;    :go "newSingleHostReverseProxy(target)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/net/http/httputil/reverseproxy.go:103:39) target])
-
-JOKER FUNC idna.BidiRule has:
-;; (defn BidiRule
-;;   "BidiRule enables the Bidi rule as defined in RFC 5893. Any application\nthat relies on proper validation of labels should include this rule.\n\nGo return type: Option\n\nJoker return type: ABEND883(unrecognized Expr type *ast.FuncType at: GO.link/src/vendor/golang_org/x/net/idna/idna.go:54:13)"
-;;   {:added "1.0"
-;;    :go "bidiRule()"}
-;;   [])
-
-JOKER FUNC idna.MapForLookup has:
-;; (defn MapForLookup
-;;   "MapForLookup sets validation and mapping options such that a given IDN is\ntransformed for domain name lookup according to the requirements set out in\nSection 5 of RFC 5891. The mappings follow the recommendations of RFC 5894,\nRFC 5895 and UTS 46. It does not add the Bidi Rule. Use the BidiRule option\nto add this check.\n\nThe mappings include normalization and mapping case, width and other\ncompatibility mappings.\n\nGo return type: Option\n\nJoker return type: ABEND883(unrecognized Expr type *ast.FuncType at: GO.link/src/vendor/golang_org/x/net/idna/idna.go:54:13)"
-;;   {:added "1.0"
-;;    :go "mapForLookup()"}
-;;   [])
-
-JOKER FUNC idna.New has:
-;; (defn New
-;;   "New creates a new Profile.\n\nWith no options, the returned Profile is the most permissive and equals the\nPunycode Profile. Options can be passed to further restrict the Profile. The\nMapForLookup and ValidateForRegistration options set a collection of options,\nfor lookup and registration purposes respectively, which can be tailored by\nadding more fine-grained options, where later options override earlier\noptions.\n\nGo return type: *Profile\n\nJoker return type: {}"
-;;   {:added "1.0"
-;;    :go "new(o)"}
-;;   [^ABEND881(unrecognized Expr type *ast.Ellipsis at: GO.link/src/vendor/golang_org/x/net/idna/idna.go:189:12) o])
-
-JOKER FUNC idna.RemoveLeadingDots has:
-;; (defn RemoveLeadingDots
-;;   "RemoveLeadingDots removes leading label separators. Leading runes that map to\ndots, such as U+3002 IDEOGRAPHIC FULL STOP, are removed as well.\n\nThis is the behavior suggested by the UTS #46 and is adopted by some\nbrowsers.\n\nGo return type: Option\n\nJoker return type: ABEND883(unrecognized Expr type *ast.FuncType at: GO.link/src/vendor/golang_org/x/net/idna/idna.go:54:13)"
-;;   {:added "1.0"
-;;    :go "removeLeadingDots(remove)"}
-;;   [^Bool remove])
-
-JOKER FUNC idna.StrictDomainName has:
-;; (defn StrictDomainName
-;;   "StrictDomainName limits the set of permissible ASCII characters to those\nallowed in domain names as defined in RFC 1034 (A-Z, a-z, 0-9 and the\nhyphen). This is set by default for MapForLookup and ValidateForRegistration.\n\nThis option is useful, for instance, for browsers that allow characters\noutside this range, for example a '_' (U+005F LOW LINE). See\nhttp://www.rfc-editor.org/std/std3.txt for more details This option\ncorresponds to the UseSTD3ASCIIRules option in UTS #46.\n\nGo return type: Option\n\nJoker return type: ABEND883(unrecognized Expr type *ast.FuncType at: GO.link/src/vendor/golang_org/x/net/idna/idna.go:54:13)"
-;;   {:added "1.0"
-;;    :go "strictDomainName(use)"}
-;;   [^Bool use])
-
-JOKER FUNC idna.ToASCII has:
-(defn ToASCII
-  "ToASCII is a wrapper for Punycode.ToASCII.\n\nGo return type: (string, error)\n\nJoker return type: [String Error]"
-  {:added "1.0"
-   :go "toASCII(s)"}
-  [^String s])
-
-JOKER FUNC idna.ToUnicode has:
-(defn ToUnicode
-  "ToUnicode is a wrapper for Punycode.ToUnicode.\n\nGo return type: (string, error)\n\nJoker return type: [String Error]"
-  {:added "1.0"
-   :go "toUnicode(s)"}
-  [^String s])
-
-JOKER FUNC idna.Transitional has:
-;; (defn Transitional
-;;   "Transitional sets a Profile to use the Transitional mapping as defined in UTS\n#46. This will cause, for example, \"ß\" to be mapped to \"ss\". Using the\ntransitional mapping provides a compromise between IDNA2003 and IDNA2008\ncompatibility. It is used by most browsers when resolving domain names. This\noption is only meaningful if combined with MapForLookup.\n\nGo return type: Option\n\nJoker return type: ABEND883(unrecognized Expr type *ast.FuncType at: GO.link/src/vendor/golang_org/x/net/idna/idna.go:54:13)"
-;;   {:added "1.0"
-;;    :go "transitional(transitional)"}
-;;   [^Bool transitional])
-
-JOKER FUNC idna.ValidateForRegistration has:
-;; (defn ValidateForRegistration
-;;   "ValidateForRegistration sets validation options to verify that a given IDN is\nproperly formatted for registration as defined by Section 4 of RFC 5891.\n\nGo return type: Option\n\nJoker return type: ABEND883(unrecognized Expr type *ast.FuncType at: GO.link/src/vendor/golang_org/x/net/idna/idna.go:54:13)"
-;;   {:added "1.0"
-;;    :go "validateForRegistration()"}
-;;   [])
-
-JOKER FUNC idna.ValidateLabels has:
-;; (defn ValidateLabels
-;;   "ValidateLabels sets whether to check the mandatory label validation criteria\nas defined in Section 5.4 of RFC 5891. This includes testing for correct use\nof hyphens ('-'), normalization, validity of runes, and the context rules.\n\nGo return type: Option\n\nJoker return type: ABEND883(unrecognized Expr type *ast.FuncType at: GO.link/src/vendor/golang_org/x/net/idna/idna.go:54:13)"
-;;   {:added "1.0"
-;;    :go "validateLabels(enable)"}
-;;   [^Bool enable])
-
-JOKER FUNC idna.VerifyDNSLength has:
-;; (defn VerifyDNSLength
-;;   "VerifyDNSLength sets whether a Profile should fail if any of the IDN parts\nare longer than allowed by the RFC.\n\nGo return type: Option\n\nJoker return type: ABEND883(unrecognized Expr type *ast.FuncType at: GO.link/src/vendor/golang_org/x/net/idna/idna.go:54:13)"
-;;   {:added "1.0"
-;;    :go "verifyDNSLength(verify)"}
-;;   [^Bool verify])
 
 JOKER FUNC image.Decode has:
 ;; (defn Decode
@@ -10197,13 +9543,6 @@ JOKER FUNC net.SplitHostPort has:
    :go "splitHostPort(hostport)"}
   [^String hostport])
 
-JOKER FUNC nettest.TestConn has:
-;; (defn TestConn
-;;   "TestConn tests that a net.Conn implementation properly satisfies the interface.\nThe tests should not produce any false positives, but may experience\nfalse negatives. Thus, some issues may only be detected when the test is\nrun multiple times. For maximal effectiveness, run the tests under the\nrace detector.\n"
-;;   {:added "1.0"
-;;    :go "testConn(t, mp)"}
-;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/vendor/golang_org/x/net/nettest/conntest.go:37:17) t, ^ABEND885(unrecognized type MakePipe at: GO.link/src/vendor/golang_org/x/net/nettest/conntest.go:37:32) mp])
-
 JOKER FUNC os.Chdir has:
 (defn ^Error Chdir
   "Chdir changes the current working directory to the named directory.\nIf there is an error, it will be of type *PathError.\n\nGo return type: error\n\nJoker return type: Error"
@@ -10757,20 +10096,6 @@ JOKER FUNC png.Encode has:
 ;;    :go "png.Encode(w, m)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/image/png/writer.go:523:15) w, ^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/image/png/writer.go:523:28) m])
 
-JOKER FUNC poly1305.Sum has:
-;; (defn Sum
-;;   "Sum generates an authenticator for m using a one-time key and puts the\n16-byte result into out. Authenticating two different messages with the same\nkey allows an attacker to forge messages at will.\n"
-;;   {:added "1.0"
-;;    :go "sum(out, m, key)"}
-;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/vendor/golang_org/x/crypto/poly1305/sum_amd64.go:16:14) out, ^ABEND881(unrecognized Expr type *ast.ArrayType at: GO.link/src/vendor/golang_org/x/crypto/poly1305/sum_amd64.go:16:27) m, ^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/vendor/golang_org/x/crypto/poly1305/sum_amd64.go:16:39) key])
-
-JOKER FUNC poly1305.Verify has:
-;; (defn ^Bool Verify
-;;   "Verify returns true if mac is a valid authenticator for m with the given\nkey.\n\nGo return type: bool\n\nJoker return type: Bool"
-;;   {:added "1.0"
-;;    :go "poly1305.Verify(mac, m, key)"}
-;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/vendor/golang_org/x/crypto/poly1305/poly1305.go:29:17) mac, ^ABEND881(unrecognized Expr type *ast.ArrayType at: GO.link/src/vendor/golang_org/x/crypto/poly1305/poly1305.go:29:30) m, ^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/vendor/golang_org/x/crypto/poly1305/poly1305.go:29:42) key])
-
 JOKER FUNC pprof.Cmdline has:
 ;; (defn Cmdline
 ;;   "Cmdline responds with the running program's\ncommand line, with arguments separated by NUL bytes.\nThe package initialization registers it as /debug/pprof/cmdline.\n"
@@ -11113,20 +10438,6 @@ JOKER FUNC ring.New has:
 ;;   {:added "1.0"
 ;;    :go "new(n)"}
 ;;   [^Int n])
-
-JOKER FUNC route.FetchRIB has:
-;; (defn FetchRIB
-;;   "FetchRIB fetches a routing information base from the operating\nsystem.\n\nThe provided af must be an address family.\n\nThe provided arg must be a RIBType-specific argument.\nWhen RIBType is related to routes, arg might be a set of route\nflags. When RIBType is related to network interfaces, arg might be\nan interface index or a set of interface flags. In most cases, zero\nmeans a wildcard.\n\nGo return type: ([]int, error)\n\nJoker return type: [(vector-of Int) Error]"
-;;   {:added "1.0"
-;;    :go "fetchRIB(af, typ, arg)"}
-;;   [^Int af, ^ABEND885(unrecognized type RIBType at: GO.link/src/vendor/golang_org/x/net/route/route.go:109:27) typ, ^Int arg])
-
-JOKER FUNC route.ParseRIB has:
-;; (defn ParseRIB
-;;   "ParseRIB parses b as a routing information base and returns a list\nof routing messages.\n\nGo return type: ([]Message, error)\n\nJoker return type: [(vector-of ABEND883(unrecognized Expr type *ast.InterfaceType at: GO.link/src/vendor/golang_org/x/net/route/message.go:10:14)) Error]"
-;;   {:added "1.0"
-;;    :go "parseRIB(typ, b)"}
-;;   [^ABEND885(unrecognized type RIBType at: GO.link/src/vendor/golang_org/x/net/route/message.go:33:19) typ, ^ABEND881(unrecognized Expr type *ast.ArrayType at: GO.link/src/vendor/golang_org/x/net/route/message.go:33:30) b])
 
 JOKER FUNC rpc.Accept has:
 ;; (defn Accept
@@ -14355,55 +13666,6 @@ JOKER FUNC trace.WithRegion has:
 ;;    :go "withRegion(ctx, regionType, fn)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/runtime/trace/annotation.go:118:21) ctx, ^String regionType, ^ABEND881(unrecognized Expr type *ast.FuncType at: GO.link/src/runtime/trace/annotation.go:118:60) fn])
 
-JOKER FUNC transform.Append has:
-;; (defn Append
-;;   "Append appends the result of converting src[:n] using t to dst, where\nn <= len(src), If err == nil, n will be len(src). It calls Reset on t.\n\nGo return type: (result []int, n int, err error)\n\nJoker return type: [(vector-of Int) Int Error]"
-;;   {:added "1.0"
-;;    :go "append(t, dst, src)"}
-;;   [^ABEND885(unrecognized type Transformer at: GO.link/src/vendor/golang_org/x/text/transform/transform.go:681:15) t, ^ABEND881(unrecognized Expr type *ast.ArrayType at: GO.link/src/vendor/golang_org/x/text/transform/transform.go:681:37) dst, ^ABEND881(unrecognized Expr type *ast.ArrayType at: GO.link/src/vendor/golang_org/x/text/transform/transform.go:681:37) src])
-
-JOKER FUNC transform.Bytes has:
-;; (defn Bytes
-;;   "Bytes returns a new byte slice with the result of converting b[:n] using t,\nwhere n <= len(b). If err == nil, n will be len(b). It calls Reset on t.\n\nGo return type: (result []int, n int, err error)\n\nJoker return type: [(vector-of Int) Int Error]"
-;;   {:added "1.0"
-;;    :go "bytes(t, b)"}
-;;   [^ABEND885(unrecognized type Transformer at: GO.link/src/vendor/golang_org/x/text/transform/transform.go:675:14) t, ^ABEND881(unrecognized Expr type *ast.ArrayType at: GO.link/src/vendor/golang_org/x/text/transform/transform.go:675:29) b])
-
-JOKER FUNC transform.Chain has:
-;; (defn Chain
-;;   "Chain returns a Transformer that applies t in sequence.\n\nGo return type: Transformer\n\nJoker return type: ABEND883(unrecognized Expr type *ast.InterfaceType at: GO.link/src/vendor/golang_org/x/text/transform/transform.go:43:18)"
-;;   {:added "1.0"
-;;    :go "chain(t)"}
-;;   [^ABEND881(unrecognized Expr type *ast.Ellipsis at: GO.link/src/vendor/golang_org/x/text/transform/transform.go:380:14) t])
-
-JOKER FUNC transform.NewReader has:
-;; (defn NewReader
-;;   "NewReader returns a new Reader that wraps r by transforming the bytes read\nvia t. It calls Reset on t.\n\nGo return type: *Reader\n\nJoker return type: {}"
-;;   {:added "1.0"
-;;    :go "newReader(r, t)"}
-;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/vendor/golang_org/x/text/transform/transform.go:136:18) r, ^ABEND885(unrecognized type Transformer at: GO.link/src/vendor/golang_org/x/text/transform/transform.go:136:31) t])
-
-JOKER FUNC transform.NewWriter has:
-;; (defn NewWriter
-;;   "NewWriter returns a new Writer that wraps w by transforming the bytes written\nvia t. It calls Reset on t.\n\nGo return type: *Writer\n\nJoker return type: {}"
-;;   {:added "1.0"
-;;    :go "newWriter(w, t)"}
-;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/vendor/golang_org/x/text/transform/transform.go:223:18) w, ^ABEND885(unrecognized type Transformer at: GO.link/src/vendor/golang_org/x/text/transform/transform.go:223:31) t])
-
-JOKER FUNC transform.RemoveFunc has:
-;; (defn RemoveFunc
-;;   "Deprecated: use runes.Remove instead.\n\nGo return type: Transformer\n\nJoker return type: ABEND883(unrecognized Expr type *ast.InterfaceType at: GO.link/src/vendor/golang_org/x/text/transform/transform.go:43:18)"
-;;   {:added "1.0"
-;;    :go "removeFunc(f)"}
-;;   [^ABEND881(unrecognized Expr type *ast.FuncType at: GO.link/src/vendor/golang_org/x/text/transform/transform.go:499:19) f])
-
-JOKER FUNC transform.String has:
-;; (defn String
-;;   "String returns a string with the result of converting s[:n] using t, where\nn <= len(s). If err == nil, n will be len(s). It calls Reset on t.\n\nGo return type: (result string, n int, err error)\n\nJoker return type: [String Int Error]"
-;;   {:added "1.0"
-;;    :go "string(t, s)"}
-;;   [^ABEND885(unrecognized type Transformer at: GO.link/src/vendor/golang_org/x/text/transform/transform.go:570:15) t, ^String s])
-
 JOKER FUNC types.AssertableTo has:
 ;; (defn ^Bool AssertableTo
 ;;   "AssertableTo reports whether a value of type V can be asserted to have type T.\n\nGo return type: bool\n\nJoker return type: Bool"
@@ -15800,64 +15062,6 @@ GO FUNC base64.NewEncoding has:
 // 	ABEND124(no public information returned)
 // }
 
-GO FUNC bidi.AppendReverse has:
-// func appendReverse(out ABEND882(unrecognized Expr type *ast.ArrayType at: GO.link/src/vendor/golang_org/x/text/unicode/bidi/bidi.go:189:28), in ABEND882(unrecognized Expr type *ast.ArrayType at: GO.link/src/vendor/golang_org/x/text/unicode/bidi/bidi.go:189:28)) Object {
-// 	res := bidi.AppendReverse(out, in)
-// 	vec1 := EmptyVector
-// 	for _, elem1 := range res {
-// 		vec1 = vec1.Conjoin(MakeInt(int(elem1)))
-// 	}
-// 	return vec1
-// }
-
-GO FUNC bidi.DefaultDirection has:
-// func defaultDirection(d ABEND884(unrecognized type Direction at: GO.link/src/vendor/golang_org/x/text/unicode/bidi/bidi.go:68:25)) Object {
-// 	return bidi.DefaultDirection(d)
-// }
-
-GO FUNC bidi.Lookup has:
-// func lookup(s ABEND882(unrecognized Expr type *ast.ArrayType at: GO.link/src/vendor/golang_org/x/text/unicode/bidi/prop.go:87:15)) Object {
-// 	_, sz := bidi.Lookup(s)
-// 	res := EmptyVector
-// 	res = res.Conjoin(NIL)
-// 	res = res.Conjoin(MakeInt(int(sz)))
-// 	return res
-// }
-
-GO FUNC bidi.LookupRune has:
-// func lookupRune(r ABEND884(unrecognized type rune at: GO.link/src/vendor/golang_org/x/text/unicode/bidi/prop.go:63:19)) Object {
-// 	_, size := bidi.LookupRune(r)
-// 	res := EmptyVector
-// 	res = res.Conjoin(NIL)
-// 	res = res.Conjoin(MakeInt(int(size)))
-// 	return res
-// }
-
-GO FUNC bidi.LookupString has:
-func lookupString(s string) Object {
-	_, sz := bidi.LookupString(s)
-	res := EmptyVector
-	res = res.Conjoin(NIL)
-	res = res.Conjoin(MakeInt(int(sz)))
-	return res
-}
-
-GO FUNC bidirule.Direction has:
-// func direction(b ABEND882(unrecognized Expr type *ast.ArrayType at: GO.link/src/vendor/golang_org/x/text/secure/bidirule/bidirule.go:137:18)) Object {
-// 	return bidirule.Direction(b)
-// }
-
-GO FUNC bidirule.DirectionString has:
-// func directionString(s string) Object {
-// 	return bidirule.DirectionString(s)
-// }
-
-GO FUNC bidirule.New has:
-// func new() Object {
-// 	return bidirule.New()
-// 	ABEND124(no public information returned)
-// }
-
 GO FUNC big.NewFloat has:
 // func newFloat(x ABEND884(unrecognized type float64 at: GO.link/src/math/big/float.go:82:17)) Object {
 // 	return big.NewFloat(x)
@@ -16699,15 +15903,6 @@ GO FUNC cgo._runtime_cgocallback has:
 // 	...ABEND675: TODO...
 // }
 
-GO FUNC chacha20poly1305.New has:
-// func new(key ABEND882(unrecognized Expr type *ast.ArrayType at: GO.link/src/vendor/golang_org/x/crypto/chacha20poly1305/chacha20poly1305.go:26:14)) Object {
-// 	res1, res2 := chacha20poly1305.New(key)
-// 	res := EmptyVector
-// 	res = res.Conjoin(res1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
-// 	return res
-// }
-
 GO FUNC cipher.NewCBCDecrypter has:
 // func newCBCDecrypter(b ABEND884(unrecognized type Block at: GO.link/src/crypto/cipher/cbc.go:105:24), iv ABEND882(unrecognized Expr type *ast.ArrayType at: GO.link/src/crypto/cipher/cbc.go:105:34)) Object {
 // 	return cipher.NewCBCDecrypter(b, iv)
@@ -17183,18 +16378,6 @@ GO FUNC crypto.RegisterHash has:
 // 	...ABEND675: TODO...
 // }
 
-GO FUNC cryptobyte.NewBuilder has:
-// func newBuilder(buffer ABEND882(unrecognized Expr type *ast.ArrayType at: GO.link/src/vendor/golang_org/x/crypto/cryptobyte/builder.go:37:24)) Object {
-// 	return cryptobyte.NewBuilder(buffer)
-// 	ABEND124(no public information returned)
-// }
-
-GO FUNC cryptobyte.NewFixedBuilder has:
-// func newFixedBuilder(buffer ABEND882(unrecognized Expr type *ast.ArrayType at: GO.link/src/vendor/golang_org/x/crypto/cryptobyte/builder.go:46:29)) Object {
-// 	return cryptobyte.NewFixedBuilder(buffer)
-// 	ABEND124(no public information returned)
-// }
-
 GO FUNC csv.NewReader has:
 // func newReader(r ABEND882(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/encoding/csv/reader.go:168:18)) Object {
 // 	res := csv.NewReader(r)
@@ -17216,18 +16399,6 @@ GO FUNC csv.NewWriter has:
 // 	map1.Add(MakeKeyword("Comma"), )
 // 	map1.Add(MakeKeyword("UseCRLF"), MakeBool((*res).UseCRLF))
 // 	return map1
-// }
-
-GO FUNC curve25519.ScalarBaseMult has:
-// func scalarBaseMult(dst ABEND882(unrecognized Expr type *ast.StarExpr at: GO.link/src/vendor/golang_org/x/crypto/curve25519/doc.go:21:29), in ABEND882(unrecognized Expr type *ast.StarExpr at: GO.link/src/vendor/golang_org/x/crypto/curve25519/doc.go:21:29)) Object {
-// 	curve25519.ScalarBaseMult(dst, in)
-// 	...ABEND675: TODO...
-// }
-
-GO FUNC curve25519.ScalarMult has:
-// func scalarMult(dst ABEND882(unrecognized Expr type *ast.StarExpr at: GO.link/src/vendor/golang_org/x/crypto/curve25519/doc.go:14:31), in ABEND882(unrecognized Expr type *ast.StarExpr at: GO.link/src/vendor/golang_org/x/crypto/curve25519/doc.go:14:31), base ABEND882(unrecognized Expr type *ast.StarExpr at: GO.link/src/vendor/golang_org/x/crypto/curve25519/doc.go:14:31)) Object {
-// 	curve25519.ScalarMult(dst, in, base)
-// 	...ABEND675: TODO...
 // }
 
 GO FUNC debug.FreeOSMemory has:
@@ -17284,28 +16455,6 @@ GO FUNC des.NewTripleDESCipher has:
 // 	res1, res2 := des.NewTripleDESCipher(key)
 // 	res := EmptyVector
 // 	res = res.Conjoin(res1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
-// 	return res
-// }
-
-GO FUNC dnsmessage.NewBuilder has:
-// func newBuilder(buf ABEND882(unrecognized Expr type *ast.ArrayType at: GO.link/src/vendor/golang_org/x/net/dns/dnsmessage/message.go:939:21), h ABEND884(unrecognized type Header at: GO.link/src/vendor/golang_org/x/net/dns/dnsmessage/message.go:939:31)) Object {
-// 	return dnsmessage.NewBuilder(buf, h)
-// 	ABEND124(no public information returned)
-// }
-
-GO FUNC dnsmessage.NewName has:
-// func newName(name string) Object {
-// 	res1, res2 := dnsmessage.NewName(name)
-// 	res := EmptyVector
-// 	map1 := EmptyArrayMap()
-// 	vec2 := EmptyVector
-// 	for _, elem2 := range res1.Data {
-// 		vec2 = vec2.Conjoin(MakeInt(int(elem2)))
-// 	}
-// 	map1.Add(MakeKeyword("Data"), vec2)
-// 	map1.Add(MakeKeyword("Length"), )
-// 	res = res.Conjoin(map1)
 // 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
 // 	return res
 // }
@@ -18525,51 +17674,6 @@ GO FUNC hmac.New has:
 // 	return hmac.New(h, key)
 // }
 
-GO FUNC hpack.AppendHuffmanString has:
-// func appendHuffmanString(dst ABEND882(unrecognized Expr type *ast.ArrayType at: GO.link/src/vendor/golang_org/x/net/http2/hpack/huffman.go:160:30), s string) Object {
-// 	res := hpack.AppendHuffmanString(dst, s)
-// 	vec1 := EmptyVector
-// 	for _, elem1 := range res {
-// 		vec1 = vec1.Conjoin(MakeInt(int(elem1)))
-// 	}
-// 	return vec1
-// }
-
-GO FUNC hpack.HuffmanDecode has:
-// func huffmanDecode(w ABEND882(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/vendor/golang_org/x/net/http2/hpack/huffman.go:21:22), v ABEND882(unrecognized Expr type *ast.ArrayType at: GO.link/src/vendor/golang_org/x/net/http2/hpack/huffman.go:21:35)) Object {
-// 	res1, res2 := hpack.HuffmanDecode(w, v)
-// 	res := EmptyVector
-// 	res = res.Conjoin(MakeInt(int(res1)))
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
-// 	return res
-// }
-
-GO FUNC hpack.HuffmanDecodeToString has:
-// func huffmanDecodeToString(v ABEND882(unrecognized Expr type *ast.ArrayType at: GO.link/src/vendor/golang_org/x/net/http2/hpack/huffman.go:32:30)) Object {
-// 	res1, res2 := hpack.HuffmanDecodeToString(v)
-// 	res := EmptyVector
-// 	res = res.Conjoin(MakeString(res1))
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
-// 	return res
-// }
-
-GO FUNC hpack.HuffmanEncodeLength has:
-// func huffmanEncodeLength(s string) Object {
-// 	return hpack.HuffmanEncodeLength(s)
-// }
-
-GO FUNC hpack.NewDecoder has:
-// func newDecoder(maxDynamicTableSize uint32, emitFunc ABEND882(unrecognized Expr type *ast.FuncType at: GO.link/src/vendor/golang_org/x/net/http2/hpack/hpack.go:100:54)) Object {
-// 	return hpack.NewDecoder(maxDynamicTableSize, emitFunc)
-// 	ABEND124(no public information returned)
-// }
-
-GO FUNC hpack.NewEncoder has:
-// func newEncoder(w ABEND882(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/vendor/golang_org/x/net/http2/hpack/encode.go:35:19)) Object {
-// 	return hpack.NewEncoder(w)
-// 	ABEND124(no public information returned)
-// }
-
 GO FUNC http.Error has:
 // func error(w ABEND884(unrecognized type ResponseWriter at: GO.link/src/net/http/server.go:1973:14), error string, code int) Object {
 // 	http.Error(w, error, code)
@@ -19070,26 +18174,6 @@ GO FUNC http.TimeoutHandler has:
 // 	return http.TimeoutHandler(h, dt, msg)
 // }
 
-GO FUNC httpguts.PunycodeHostPort has:
-func punycodeHostPort(v string) Object {
-	res1, res2 := httpguts.PunycodeHostPort(v)
-	res := EmptyVector
-	res = res.Conjoin(MakeString(res1))
-	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
-	return res
-}
-
-GO FUNC httpproxy.FromEnvironment has:
-func fromEnvironment() Object {
-	res := httpproxy.FromEnvironment()
-	map1 := EmptyArrayMap()
-	map1.Add(MakeKeyword("HTTPProxy"), MakeString((*res).HTTPProxy))
-	map1.Add(MakeKeyword("HTTPSProxy"), MakeString((*res).HTTPSProxy))
-	map1.Add(MakeKeyword("NoProxy"), MakeString((*res).NoProxy))
-	map1.Add(MakeKeyword("CGI"), MakeBool((*res).CGI))
-	return map1
-}
-
 GO FUNC httptest.NewRecorder has:
 // func newRecorder() Object {
 // 	res := httptest.NewRecorder()
@@ -19246,70 +18330,6 @@ GO FUNC httputil.NewSingleHostReverseProxy has:
 // 	map1.Add(MakeKeyword("ModifyResponse"), (*res).ModifyResponse)
 // 	map1.Add(MakeKeyword("ErrorHandler"), (*res).ErrorHandler)
 // 	return map1
-// }
-
-GO FUNC idna.BidiRule has:
-// func bidiRule() Object {
-// 	return idna.BidiRule()
-// }
-
-GO FUNC idna.MapForLookup has:
-// func mapForLookup() Object {
-// 	return idna.MapForLookup()
-// }
-
-GO FUNC idna.New has:
-// func new(o ABEND882(unrecognized Expr type *ast.Ellipsis at: GO.link/src/vendor/golang_org/x/net/idna/idna.go:189:12)) Object {
-// 	return idna.New(o)
-// 	ABEND124(no public information returned)
-// }
-
-GO FUNC idna.RemoveLeadingDots has:
-// func removeLeadingDots(remove bool) Object {
-// 	return idna.RemoveLeadingDots(remove)
-// }
-
-GO FUNC idna.StrictDomainName has:
-// func strictDomainName(use bool) Object {
-// 	return idna.StrictDomainName(use)
-// }
-
-GO FUNC idna.ToASCII has:
-func toASCII(s string) Object {
-	res1, res2 := idna.ToASCII(s)
-	res := EmptyVector
-	res = res.Conjoin(MakeString(res1))
-	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
-	return res
-}
-
-GO FUNC idna.ToUnicode has:
-func toUnicode(s string) Object {
-	res1, res2 := idna.ToUnicode(s)
-	res := EmptyVector
-	res = res.Conjoin(MakeString(res1))
-	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
-	return res
-}
-
-GO FUNC idna.Transitional has:
-// func transitional(transitional bool) Object {
-// 	return idna.Transitional(transitional)
-// }
-
-GO FUNC idna.ValidateForRegistration has:
-// func validateForRegistration() Object {
-// 	return idna.ValidateForRegistration()
-// }
-
-GO FUNC idna.ValidateLabels has:
-// func validateLabels(enable bool) Object {
-// 	return idna.ValidateLabels(enable)
-// }
-
-GO FUNC idna.VerifyDNSLength has:
-// func verifyDNSLength(verify bool) Object {
-// 	return idna.VerifyDNSLength(verify)
 // }
 
 GO FUNC image.Decode has:
@@ -21104,12 +20124,6 @@ func splitHostPort(hostport string) Object {
 	return res
 }
 
-GO FUNC nettest.TestConn has:
-// func testConn(t ABEND882(unrecognized Expr type *ast.StarExpr at: GO.link/src/vendor/golang_org/x/net/nettest/conntest.go:37:17), mp ABEND884(unrecognized type MakePipe at: GO.link/src/vendor/golang_org/x/net/nettest/conntest.go:37:32)) Object {
-// 	nettest.TestConn(t, mp)
-// 	...ABEND675: TODO...
-// }
-
 GO FUNC os.Clearenv has:
 // func clearenv() Object {
 // 	os.Clearenv()
@@ -21573,12 +20587,6 @@ GO FUNC png.DecodeConfig has:
 // 	return res
 // }
 
-GO FUNC poly1305.Sum has:
-// func sum(out ABEND882(unrecognized Expr type *ast.StarExpr at: GO.link/src/vendor/golang_org/x/crypto/poly1305/sum_amd64.go:16:14), m ABEND882(unrecognized Expr type *ast.ArrayType at: GO.link/src/vendor/golang_org/x/crypto/poly1305/sum_amd64.go:16:27), key ABEND882(unrecognized Expr type *ast.StarExpr at: GO.link/src/vendor/golang_org/x/crypto/poly1305/sum_amd64.go:16:39)) Object {
-// 	poly1305.Sum(out, m, key)
-// 	...ABEND675: TODO...
-// }
-
 GO FUNC pprof.Cmdline has:
 // func cmdline(w ABEND882(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/net/http/pprof/pprof.go:83:16), r ABEND882(unrecognized Expr type *ast.StarExpr at: GO.link/src/net/http/pprof/pprof.go:83:39)) Object {
 // 	pprof.Cmdline(w, r)
@@ -21863,32 +20871,6 @@ GO FUNC ring.New has:
 // 	map1 := EmptyArrayMap()
 // 	map1.Add(MakeKeyword("Value"), (*res).Value)
 // 	return map1
-// }
-
-GO FUNC route.FetchRIB has:
-// func fetchRIB(af int, typ ABEND884(unrecognized type RIBType at: GO.link/src/vendor/golang_org/x/net/route/route.go:109:27), arg int) Object {
-// 	res1, res2 := route.FetchRIB(af, typ, arg)
-// 	res := EmptyVector
-// 	vec1 := EmptyVector
-// 	for _, elem1 := range res1 {
-// 		vec1 = vec1.Conjoin(MakeInt(int(elem1)))
-// 	}
-// 	res = res.Conjoin(vec1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
-// 	return res
-// }
-
-GO FUNC route.ParseRIB has:
-// func parseRIB(typ ABEND884(unrecognized type RIBType at: GO.link/src/vendor/golang_org/x/net/route/message.go:33:19), b ABEND882(unrecognized Expr type *ast.ArrayType at: GO.link/src/vendor/golang_org/x/net/route/message.go:33:30)) Object {
-// 	res1, res2 := route.ParseRIB(typ, b)
-// 	res := EmptyVector
-// 	vec1 := EmptyVector
-// 	for _, elem1 := range res1 {
-// 		vec1 = vec1.Conjoin(elem1)
-// 	}
-// 	res = res.Conjoin(vec1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
-// 	return res
 // }
 
 GO FUNC rpc.Accept has:
@@ -24199,66 +23181,6 @@ GO FUNC trace.WithRegion has:
 // 	...ABEND675: TODO...
 // }
 
-GO FUNC transform.Append has:
-// func append(t ABEND884(unrecognized type Transformer at: GO.link/src/vendor/golang_org/x/text/transform/transform.go:681:15), dst ABEND882(unrecognized Expr type *ast.ArrayType at: GO.link/src/vendor/golang_org/x/text/transform/transform.go:681:37), src ABEND882(unrecognized Expr type *ast.ArrayType at: GO.link/src/vendor/golang_org/x/text/transform/transform.go:681:37)) Object {
-// 	result, n, err := transform.Append(t, dst, src)
-// 	res := EmptyVector
-// 	vec1 := EmptyVector
-// 	for _, elem1 := range result {
-// 		vec1 = vec1.Conjoin(MakeInt(int(elem1)))
-// 	}
-// 	res = res.Conjoin(vec1)
-// 	res = res.Conjoin(MakeInt(int(n)))
-// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
-// 	return res
-// }
-
-GO FUNC transform.Bytes has:
-// func bytes(t ABEND884(unrecognized type Transformer at: GO.link/src/vendor/golang_org/x/text/transform/transform.go:675:14), b ABEND882(unrecognized Expr type *ast.ArrayType at: GO.link/src/vendor/golang_org/x/text/transform/transform.go:675:29)) Object {
-// 	result, n, err := transform.Bytes(t, b)
-// 	res := EmptyVector
-// 	vec1 := EmptyVector
-// 	for _, elem1 := range result {
-// 		vec1 = vec1.Conjoin(MakeInt(int(elem1)))
-// 	}
-// 	res = res.Conjoin(vec1)
-// 	res = res.Conjoin(MakeInt(int(n)))
-// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
-// 	return res
-// }
-
-GO FUNC transform.Chain has:
-// func chain(t ABEND882(unrecognized Expr type *ast.Ellipsis at: GO.link/src/vendor/golang_org/x/text/transform/transform.go:380:14)) Object {
-// 	return transform.Chain(t)
-// }
-
-GO FUNC transform.NewReader has:
-// func newReader(r ABEND882(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/vendor/golang_org/x/text/transform/transform.go:136:18), t ABEND884(unrecognized type Transformer at: GO.link/src/vendor/golang_org/x/text/transform/transform.go:136:31)) Object {
-// 	return transform.NewReader(r, t)
-// 	ABEND124(no public information returned)
-// }
-
-GO FUNC transform.NewWriter has:
-// func newWriter(w ABEND882(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/vendor/golang_org/x/text/transform/transform.go:223:18), t ABEND884(unrecognized type Transformer at: GO.link/src/vendor/golang_org/x/text/transform/transform.go:223:31)) Object {
-// 	return transform.NewWriter(w, t)
-// 	ABEND124(no public information returned)
-// }
-
-GO FUNC transform.RemoveFunc has:
-// func removeFunc(f ABEND882(unrecognized Expr type *ast.FuncType at: GO.link/src/vendor/golang_org/x/text/transform/transform.go:499:19)) Object {
-// 	return transform.RemoveFunc(f)
-// }
-
-GO FUNC transform.String has:
-// func string(t ABEND884(unrecognized type Transformer at: GO.link/src/vendor/golang_org/x/text/transform/transform.go:570:15), s string) Object {
-// 	result, n, err := transform.String(t, s)
-// 	res := EmptyVector
-// 	res = res.Conjoin(MakeString(result))
-// 	res = res.Conjoin(MakeInt(int(n)))
-// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
-// 	return res
-// }
-
 GO FUNC types.DefPredeclaredTestFuncs has:
 // func defPredeclaredTestFuncs() Object {
 // 	types.DefPredeclaredTestFuncs()
@@ -25522,4 +24444,4 @@ GO FUNC zlib.NewWriterLevelDict has:
 // 	return res
 // }
 
-Totals: types=1025 functions=1493 receivers=5934
+Totals: types=957 functions=1438 receivers=5477
