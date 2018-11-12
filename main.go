@@ -123,9 +123,6 @@ type typeInfo struct {
 	td *TypeSpec
 	file string // Relative (Unix-style) path to defining file
 	building bool
-	built bool
-	jok string
-	gol string
 }
 
 func sortedTypeInfoMap(m map[string]*typeInfo, f func(k string, v *typeInfo)) {
@@ -151,7 +148,7 @@ func processTypeSpec(pkg string, filename string, f *File, ts *TypeSpec) {
 			panic(fmt.Sprintf("type %s defined twice in file %s", typename, filename))
 		}
 	}
-	types[typename] = &typeInfo{ts, filename, false, false, "", ""}
+	types[typename] = &typeInfo{ts, filename, false}
 }
 
 func processTypeSpecs(pkg string, filename string, f *File, tss []Spec) {
@@ -538,10 +535,7 @@ func genGoPostNamed(indent, pkg, in, t string) (jok, gol, goc, out string) {
 		} else {
 			v.building = true
 			jok, gol, goc, out = genGoPostExpr(indent, pkg, in, v.td.Type)
-			v.jok = jok
-			v.gol = gol
 			v.building = false
-			v.built = true
 		}
 	} else {
 		jok = fmt.Sprintf("ABEND042(cannot find typename %s)", qt)
