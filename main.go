@@ -1031,7 +1031,7 @@ func updateCoreDotJoke(pkgs []string, f string) {
 	importPrefix := " 'joker.go."
 	curLine := ""
 	for _, p := range pkgs {
-		more := importPrefix + strings.Replace(p, string(filepath.Separator), ".", -1)
+		more := importPrefix + strings.Replace(p, "/", ".", -1)
 		if curLine != "" && len(curLine) + len(more) > 77 {
 			newImports += curLine + "\n  "
 			curLine = more
@@ -1071,7 +1071,7 @@ func updateGenerateSTD(pkgs []string, f string) {
 	importPrefix := " 'go."
 	curLine := ""
 	for _, p := range pkgs {
-		more := importPrefix + strings.Replace(p, string(filepath.Separator), ".", -1)
+		more := importPrefix + strings.Replace(p, "/", ".", -1)
 		if curLine != "" && len(curLine) + len(more) > 77 {
 			newImports += curLine + "\n "
 			curLine = more
@@ -1167,8 +1167,23 @@ func main() {
 
 	if sourceDir == "" {
 		goLink := "GO.link"
-		if si, e := os.Stat(goLink); e != nil || !si.IsDir() {
-			panic("Must specify --go <go-source-dir-name> option, or make ./GO.link a symlink to the golang/go/ source directory")
+		si, e := os.Stat(goLink)
+		if e == nil && !si.IsDir() {
+			var by []byte
+			by, e = ioutil.ReadFile(goLink)
+			if e != nil {
+				panic("Must specify --go <go-source-dir-name> option, or put <go-source-dir-name> as the first line of a file named ./GO.link")
+			}
+			m := string(by)
+			if idx := strings.IndexAny(m, "\r\n"); idx == -1 {
+				goLink = m
+			} else {
+				goLink = m[0:idx]
+			}
+			si, e = os.Stat(goLink)
+		}
+		if e != nil || !si.IsDir() {
+			panic(fmt.Sprintf("Must specify --go <go-source-dir-name> option, or make %s a symlink (or text file containing the native path) pointing to the golang/go/ source directory", goLink))
 		}
 		sourceDir = goLink
 	}
