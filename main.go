@@ -1357,7 +1357,7 @@ import (%s%s
 
 		sortedPackagesInfo(packagesInfo,
 			func (p string, i *packageInfo) {
-				if i.nonEmpty && i.hasGoFiles {
+				if i.hasGoFiles {
 					packagesArray = append(packagesArray, p)
 				}
 			})

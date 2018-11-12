@@ -5,8 +5,17 @@ package main
 import ( // Imports added by gostd2joker
 	_ "github.com/candid82/joker/std/go/net"
 	_ "github.com/candid82/joker/std/go/net/http"
+	_ "github.com/candid82/joker/std/go/net/http/cgi"
+	_ "github.com/candid82/joker/std/go/net/http/cookiejar"
+	_ "github.com/candid82/joker/std/go/net/http/fcgi"
+	_ "github.com/candid82/joker/std/go/net/http/httptest"
+	_ "github.com/candid82/joker/std/go/net/http/httptrace"
+	_ "github.com/candid82/joker/std/go/net/http/httputil"
+	_ "github.com/candid82/joker/std/go/net/http/pprof"
 	_ "github.com/candid82/joker/std/go/net/mail"
 	_ "github.com/candid82/joker/std/go/net/rpc"
+	_ "github.com/candid82/joker/std/go/net/rpc/jsonrpc"
+	_ "github.com/candid82/joker/std/go/net/smtp"
 	_ "github.com/candid82/joker/std/go/net/textproto"
 	_ "github.com/candid82/joker/std/go/net/url"
 ) // End gostd2joker-added imports
