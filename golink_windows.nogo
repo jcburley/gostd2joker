@@ -1,0 +1,22 @@
+package main
+
+import (
+	"fmt"
+	"io/ioutil"
+	"strings"
+)
+
+func golink(link string) (target string) {
+	by, e := ioutil.ReadFile(link)
+	if e != nil {
+		panic("Must specify --go <go-source-dir-name> option, or put <go-source-dir-name> as the first line of a file named ./GO.link")
+	}
+	m := string(by)
+	if idx := strings.IndexAny(m, "\r\n"); idx == -1 {
+		target = m
+	} else {
+		target = m[0:idx-1]
+	}
+	fmt.Printf("target=%s\n", target)
+	return
+}

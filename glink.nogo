@@ -1,0 +1,15 @@
+package main
+
+// +build !windows
+
+import (
+	"os"
+)
+
+func golink(link string) (target string) {
+	if si, e := os.Stat(link); e != nil || !si.IsDir() {
+		panic("Must specify --go <go-source-dir-name> option, or make ./GO.link a symlink to the golang/go/ source directory")
+	}
+	target = link
+	return
+}
