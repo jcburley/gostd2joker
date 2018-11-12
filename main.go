@@ -1192,7 +1192,7 @@ func main() {
 
 		if !overwrite {
 			if _, e := os.Stat(jokerLibDir); e == nil ||
-				(e.Error() != "no such file or directory" &&
+				(!strings.Contains(e.Error(), "no such file or directory") &&
 				!strings.Contains(e.Error(), "The system cannot find the file specified.")) {
 				msg := "already exists"
 				if e != nil {
