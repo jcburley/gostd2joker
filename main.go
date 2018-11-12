@@ -71,6 +71,41 @@ func commentGroupInQuotes(doc *CommentGroup, jok, gol string) string {
 	return `  ` + strings.Trim(strconv.Quote(d), " \t\n") + "\n"
 }
 
+type By func(p1, p2 *string) bool
+
+type pathSorter struct {
+	paths []string
+	by By
+}
+
+func (s *pathSorter) Len() int {
+	return len(s.paths)
+}
+
+func (s *pathSorter) Less(i1, i2 int) bool {
+	return s.by(&s.paths[i1], &s.paths[i2])
+}
+
+func (s *pathSorter) Swap(i, j int) {
+	s.paths[i], s.paths[j] = s.paths[j], s.paths[i]
+}
+
+func (by By) Sort(paths []string) {
+	s := &pathSorter{
+		paths: paths,
+		by: by,
+	}
+	sort.Sort(s)
+}
+
+func fullName(p1, p2 *string) bool {
+	return *p1 < *p2
+}
+
+func baseName(p1, p2 *string) bool {
+	return path.Base(*p1) < path.Base(*p2)
+}
+
 type funcInfo struct {
 	fd *FuncDecl
 	pkg string // base package name
@@ -106,7 +141,7 @@ func processFuncDecl(pkg, pkgDirUnix, filename string, f *File, fn *FuncDecl) bo
 	if (dump) {
 		Print(fset, fn)
 	}
-	fname := pkg + "." + fn.Name.Name
+	fname := pkg + "." + fn.Name.Name + " " + pkgDirUnix // TODO ~~~ sort differently
 	if v, ok := unqualifiedFunctions[fname]; ok {
 		if v.fd != DUPLICATEFUNCTION {
 			alreadySeen = append(alreadySeen,
@@ -135,7 +170,7 @@ func sortedTypeInfoMap(m map[string]typeInfoArray, f func(k string, v typeInfoAr
 	for k, _ := range m {
 		keys = append(keys, k)
 	}
-	sort.Strings(keys)
+	By(baseName).Sort(keys)  // TODO: By(fullName) (or just sort.Strings())
 	for _, k := range keys {
 		f(k, m[k])
 	}
@@ -192,7 +227,7 @@ func processDecls(pkg, pkgDirUnix, filename string, f *File) (found bool) {
 			if v.Tok != token.TYPE {
 				continue
 			}
-			processTypeSpecs(pkg, filename, f, v.Specs)
+			processTypeSpecs(pkgDirUnix, filename, f, v.Specs)
 		default:
 			panic(fmt.Sprintf("unrecognized Decl type %T at: %s", v, whereAt(v.Pos())))
 		}
@@ -236,25 +271,10 @@ func sortedPackageImports(pi packageImports, f func(k string)) {
 	}
 }
 
-/* Maps simple (base) package names to their (relative) source
-/* directories. */
-type pathName struct {
-	native string // Unix or Windows (with backslashes), for example
-	unix string // Forward slashes
-}
-var packageDirs = map[string]pathName {}
-
 func processPackage(pkgDir, pkgDirUnix, pkg string, p *Package) {
 	if verbose {
 		fmt.Printf("Processing package=%s in %s:\n", pkg, pkgDirUnix)
 	}
-	if pd, ok := packageDirs[pkg]; ok {
-		fmt.Fprintf(os.Stderr,
-			"Skipping %s as it was already processed in %s before being seen in %s.\n",
-			pkg, pd.unix, pkgDirUnix)
-		return
-	}
-	packageDirs[pkg] = pathName { pkgDir, pkgDirUnix }
 	found := false
 	for filename, f := range p.Files {
 		if processDecls(pkg, pkgDirUnix, filepath.ToSlash(filename), f) {
@@ -554,7 +574,8 @@ func genGoPostNamed(indent, pkg, in, t string) (jok, gol, goc, out string) {
 	qt := pkg + "." + t
 	if v, ok := types[qt]; ok {
 		if v[0].building { // Mutually-referring types currently not supported
-			jok = fmt.Sprintf("ABEND947(recursive type reference involving %s)", qt)  // TODO: handle these, e.g. http Request/Response
+			jok = fmt.Sprintf("ABEND947(recursive type reference involving %s)",
+				path.Base(qt))  // TODO: handle these, e.g. http Request/Response; TODO ~~~ just use qt
 			gol = jok
 			goc = ""
 		} else {
@@ -566,7 +587,7 @@ func genGoPostNamed(indent, pkg, in, t string) (jok, gol, goc, out string) {
 			v[0].built = true
 		}
 	} else {
-		jok = fmt.Sprintf("ABEND042(cannot find typename %s)", qt)
+		jok = fmt.Sprintf("ABEND042(cannot find typename %s)", path.Base(qt))  // TODO: use qt ~~~
 	}
 	return
 }
@@ -804,47 +825,12 @@ type codeInfo map[string]string
 var jokerCode = map[string]codeInfo {}
 var goCode = map[string]codeInfo {}
 
-type By func(p1, p2 *string) bool
-
-type pkgSorter struct {
-	pkgs []string
-	by By
-}
-
-func (s *pkgSorter) Len() int {
-	return len(s.pkgs)
-}
-
-func (s *pkgSorter) Less(i1, i2 int) bool {
-	return s.by(&s.pkgs[i1], &s.pkgs[i2])
-}
-
-func (s *pkgSorter) Swap(i, j int) {
-	s.pkgs[i], s.pkgs[j] = s.pkgs[j], s.pkgs[i]
-}
-
-func (by By) Sort(pkgs []string) {
-	s := &pkgSorter{
-		pkgs: pkgs,
-		by: by,
-	}
-	sort.Sort(s)
-}
-
-func fullName(p1, p2 *string) bool {
-	return *p1 < *p2
-}
-
-func baseName(p1, p2 *string) bool {
-	return path.Base(*p1) < path.Base(*p2)
-}
-
 func sortedPackageMap(m map[string]codeInfo, f func(k string, v codeInfo)) {
 	var keys []string
 	for k, _ := range m {
 		keys = append(keys, k)
 	}
-	By(baseName).Sort(keys)
+	By(baseName).Sort(keys)  // TODO: By(fullName) (or just sort.Strings())
 	for _, k := range keys {
 		f(k, m[k])
 	}
@@ -894,13 +880,14 @@ func genGoPost(indent string, pkg string, d *FuncDecl) (goResultAssign, jokerRet
 	return
 }
 
-func genFuncCode(pkg string, d *FuncDecl, goFname string) (fc funcCode) {
+func genFuncCode(pkgBaseName, pkgDirUnix string, d *FuncDecl, goFname string) (fc funcCode) {
 	var goPreCode, goParams, goResultAssign, goPostCode string
 
 	fc.jokerParamList, fc.jokerGoParams, fc.goParamList, goPreCode, goParams =
 		genGoPre("\t", d.Type.Params, goFname)
-	goCall := genGoCall(pkg, d.Name.Name, goParams)
-	goResultAssign, fc.jokerReturnTypeForDoc, fc.goReturnTypeForDoc, goPostCode = genGoPost("\t", pkg, d)
+	goCall := genGoCall(pkgBaseName, d.Name.Name, goParams)
+	goResultAssign, fc.jokerReturnTypeForDoc, fc.goReturnTypeForDoc, goPostCode =
+		genGoPost("\t", pkgDirUnix, d)
 
 	if goPostCode == "" && goResultAssign == "" {
 		goPostCode = "\t...ABEND675: TODO...\n"
@@ -924,7 +911,7 @@ func genFunction(f string, fn *funcInfo) {
   [%s])
 `
 	goFname := funcNameAsGoPrivate(d.Name.Name)
-	fc := genFuncCode(pkgBaseName, d, goFname)
+	fc := genFuncCode(pkgBaseName, pkgDirUnix, d, goFname)
 	jokerReturnType, goReturnType := jokerReturnTypeForGenerateSTD(fc.jokerReturnTypeForDoc, fc.goReturnTypeForDoc)
 
 	var jok2gol string
@@ -1278,7 +1265,7 @@ func main() {
 		/* Output map in sorted order to stabilize for testing. */
 		sortedTypeInfoMap(types,
 			func(t string, v typeInfoArray) {
-				fmt.Printf("TYPE %s:\n", t)
+				fmt.Printf("TYPE %s:\n", path.Base(t))  // TODO: log all of t ~~~
 				for _, ts := range v {
 					fmt.Printf("  %s\n", ts.file)
 				}

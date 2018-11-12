@@ -1178,7 +1178,6 @@ Matchfile(GO.link/src/math/rand/exp.go) => true <nil>
 Matchfile(GO.link/src/math/rand/zipf.go) => true <nil>
 Package rand:
 Processing package=rand in math/rand:
-Skipping rand as it was already processed in crypto/rand before being seen in math/rand.
 Walking from GO.link/src to GO.link/src/mime
 Processing mime:
 Ignoring test code in encodedword_test.go
@@ -2186,7 +2185,6 @@ Matchfile(GO.link/src/runtime/pprof/protobuf.go) => true <nil>
 Ignoring test code in protomem_test.go
 Package pprof:
 Processing package=pprof in runtime/pprof:
-Skipping pprof as it was already processed in net/http/pprof before being seen in runtime/pprof.
 Excluding GO.link/src/runtime/pprof/internal
 Excluding GO.link/src/runtime/pprof/testdata
 Walking from GO.link/src to GO.link/src/runtime/race
@@ -2599,7 +2597,6 @@ Matchfile(GO.link/src/text/scanner/scanner.go) => true <nil>
 Ignoring test code in scanner_test.go
 Package scanner:
 Processing package=scanner in text/scanner:
-Skipping scanner as it was already processed in go/scanner before being seen in text/scanner.
 Walking from GO.link/src to GO.link/src/text/tabwriter
 Processing text/tabwriter:
 Ignoring test code in tabwriter_test.go
@@ -2622,7 +2619,6 @@ Matchfile(GO.link/src/text/template/doc.go) => true <nil>
 Matchfile(GO.link/src/text/template/funcs.go) => true <nil>
 Package template:
 Processing package=template in text/template:
-Skipping template as it was already processed in html/template before being seen in text/template.
 Walking from GO.link/src to GO.link/src/text/template/parse
 Processing text/template/parse:
 Ignoring test code in lex_test.go
@@ -3919,6 +3915,10 @@ TYPE png.FormatError:
   GO.link/src/image/png/reader.go
 TYPE png.UnsupportedError:
   GO.link/src/image/png/reader.go
+TYPE pprof.LabelSet:
+  GO.link/src/runtime/pprof/label.go
+TYPE pprof.Profile:
+  GO.link/src/runtime/pprof/pprof.go
 TYPE printer.CommentedNode:
   GO.link/src/go/printer/printer.go
 TYPE printer.Config:
@@ -3939,6 +3939,14 @@ TYPE quotedprintable.Reader:
   GO.link/src/mime/quotedprintable/reader.go
 TYPE quotedprintable.Writer:
   GO.link/src/mime/quotedprintable/writer.go
+TYPE rand.Rand:
+  GO.link/src/math/rand/rand.go
+TYPE rand.Source:
+  GO.link/src/math/rand/rand.go
+TYPE rand.Source64:
+  GO.link/src/math/rand/rand.go
+TYPE rand.Zipf:
+  GO.link/src/math/rand/zipf.go
 TYPE rc4.Cipher:
   GO.link/src/crypto/rc4/rc4.go
 TYPE rc4.KeySizeError:
@@ -4037,8 +4045,12 @@ TYPE scanner.ErrorList:
   GO.link/src/go/scanner/errors.go
 TYPE scanner.Mode:
   GO.link/src/go/scanner/scanner.go
+TYPE scanner.Position:
+  GO.link/src/text/scanner/scanner.go
 TYPE scanner.Scanner:
   GO.link/src/go/scanner/scanner.go
+TYPE scanner.Scanner:
+  GO.link/src/text/scanner/scanner.go
 TYPE smtp.Auth:
   GO.link/src/net/smtp/auth.go
 TYPE smtp.Client:
@@ -4295,6 +4307,10 @@ TYPE template.Error:
   GO.link/src/html/template/error.go
 TYPE template.ErrorCode:
   GO.link/src/html/template/error.go
+TYPE template.ExecError:
+  GO.link/src/text/template/exec.go
+TYPE template.FuncMap:
+  GO.link/src/text/template/funcs.go
 TYPE template.FuncMap:
   GO.link/src/html/template/template.go
 TYPE template.HTML:
@@ -4309,6 +4325,8 @@ TYPE template.Srcset:
   GO.link/src/html/template/content.go
 TYPE template.Template:
   GO.link/src/html/template/template.go
+TYPE template.Template:
+  GO.link/src/text/template/template.go
 TYPE template.URL:
   GO.link/src/html/template/content.go
 TYPE testing.B:
@@ -10138,6 +10156,90 @@ JOKER FUNC pprof.Trace has:
 ;;    :go "trace(w, r)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/net/http/pprof/pprof.go:145:14) w, ^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/net/http/pprof/pprof.go:145:37) r])
 
+JOKER FUNC pprof.Do has:
+;; (defn Do
+;;   "Do calls f with a copy of the parent context with the\ngiven labels added to the parent's label map.\nEach key/value pair in labels is inserted into the label map in the\norder provided, overriding any previous value for the same key.\nThe augmented label map will be set for the duration of the call to f\nand restored once f returns.\n"
+;;   {:added "1.0"
+;;    :go "do(ctx, labels, f)"}
+;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/runtime/pprof/runtime.go:31:13) ctx, ^ABEND885(unrecognized type LabelSet at: GO.link/src/runtime/pprof/runtime.go:31:37) labels, ^ABEND881(unrecognized Expr type *ast.FuncType at: GO.link/src/runtime/pprof/runtime.go:31:49) f])
+
+JOKER FUNC pprof.ForLabels has:
+;; (defn ForLabels
+;;   "ForLabels invokes f with each label set on the context.\nThe function f should return true to continue iteration or false to stop iteration early.\n"
+;;   {:added "1.0"
+;;    :go "forLabels(ctx, f)"}
+;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/runtime/pprof/label.go:78:20) ctx, ^ABEND881(unrecognized Expr type *ast.FuncType at: GO.link/src/runtime/pprof/label.go:78:39) f])
+
+JOKER FUNC pprof.Label has:
+;; (defn Label
+;;   "Label returns the value of the label with the given key on ctx, and a boolean indicating\nwhether that label exists.\n\nGo return type: (string, bool)\n\nJoker return type: [String Bool]"
+;;   {:added "1.0"
+;;    :go "label(ctx, key)"}
+;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/runtime/pprof/label.go:70:16) ctx, ^String key])
+
+JOKER FUNC pprof.Labels has:
+;; (defn Labels
+;;   "Labels takes an even number of strings representing key-value pairs\nand makes a LabelSet containing them.\nA label overwrites a prior label with the same key.\n\nGo return type: LabelSet\n\nJoker return type: {}"
+;;   {:added "1.0"
+;;    :go "labels(args)"}
+;;   [^ABEND881(unrecognized Expr type *ast.Ellipsis at: GO.link/src/runtime/pprof/label.go:57:18) args])
+
+JOKER FUNC pprof.Lookup has:
+;; (defn Lookup
+;;   "Lookup returns the profile with the given name, or nil if no such profile exists.\n\nGo return type: *Profile\n\nJoker return type: {}"
+;;   {:added "1.0"
+;;    :go "lookup(name)"}
+;;   [^String name])
+
+JOKER FUNC pprof.NewProfile has:
+;; (defn NewProfile
+;;   "NewProfile creates a new profile with the given name.\nIf a profile with that name already exists, NewProfile panics.\nThe convention is to use a 'import/path.' prefix to create\nseparate name spaces for each package.\nFor compatibility with various tools that read pprof data,\nprofile names should not contain spaces.\n\nGo return type: *Profile\n\nJoker return type: {}"
+;;   {:added "1.0"
+;;    :go "newProfile(name)"}
+;;   [^String name])
+
+JOKER FUNC pprof.Profiles has:
+(defn Profiles
+  "Profiles returns a slice of all the known profiles, sorted by name.\n\nGo return type: []*Profile\n\nJoker return type: (vector-of {})"
+  {:added "1.0"
+   :go "profiles()"}
+  [])
+
+JOKER FUNC pprof.SetGoroutineLabels has:
+;; (defn SetGoroutineLabels
+;;   "SetGoroutineLabels sets the current goroutine's labels to match ctx.\nThis is a lower-level API than Do, which should be used instead when possible.\n"
+;;   {:added "1.0"
+;;    :go "setGoroutineLabels(ctx)"}
+;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/runtime/pprof/runtime.go:20:29) ctx])
+
+JOKER FUNC pprof.StartCPUProfile has:
+;; (defn ^Error StartCPUProfile
+;;   "StartCPUProfile enables CPU profiling for the current process.\nWhile profiling, the profile will be buffered and written to w.\nStartCPUProfile returns an error if profiling is already enabled.\n\nOn Unix-like systems, StartCPUProfile does not work by default for\nGo code built with -buildmode=c-archive or -buildmode=c-shared.\nStartCPUProfile relies on the SIGPROF signal, but that signal will\nbe delivered to the main program's SIGPROF signal handler (if any)\nnot to the one used by Go. To make it work, call os/signal.Notify\nfor syscall.SIGPROF, but note that doing so may break any profiling\nbeing done by the main program.\n\nGo return type: error\n\nJoker return type: Error"
+;;   {:added "1.0"
+;;    :go "pprof.StartCPUProfile(w)"}
+;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/runtime/pprof/pprof.go:740:24) w])
+
+JOKER FUNC pprof.StopCPUProfile has:
+;; (defn StopCPUProfile
+;;   "StopCPUProfile stops the current CPU profile, if any.\nStopCPUProfile only returns after all the writes for the\nprofile have completed.\n"
+;;   {:added "1.0"
+;;    :go "stopCPUProfile()"}
+;;   [])
+
+JOKER FUNC pprof.WithLabels has:
+;; (defn WithLabels
+;;   "WithLabels returns a new context.Context with the given labels added.\nA label overwrites a prior label with the same key.\n\nGo return type: ...\n\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/runtime/pprof/label.go:39:55)"
+;;   {:added "1.0"
+;;    :go "withLabels(ctx, labels)"}
+;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/runtime/pprof/label.go:39:21) ctx, ^ABEND885(unrecognized type LabelSet at: GO.link/src/runtime/pprof/label.go:39:45) labels])
+
+JOKER FUNC pprof.WriteHeapProfile has:
+;; (defn ^Error WriteHeapProfile
+;;   "WriteHeapProfile is shorthand for Lookup(\"heap\").WriteTo(w, 0).\nIt is preserved for backwards compatibility.\n\nGo return type: error\n\nJoker return type: Error"
+;;   {:added "1.0"
+;;    :go "pprof.WriteHeapProfile(w)"}
+;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/runtime/pprof/pprof.go:520:25) w])
+
 JOKER FUNC printer.Fprint has:
 ;; (defn ^Error Fprint
 ;;   "Fprint \"pretty-prints\" an AST node to output.\nIt calls Config.Fprint with default settings.\nNote that gofmt uses tabs for indentation but spaces for alignment;\nuse format.Node (package go/format) for output that matches gofmt.\n\nGo return type: error\n\nJoker return type: Error"
@@ -10179,6 +10281,139 @@ JOKER FUNC quotedprintable.NewWriter has:
 ;;   {:added "1.0"
 ;;    :go "newWriter(w)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/mime/quotedprintable/writer.go:24:18) w])
+
+JOKER FUNC rand.ExpFloat64 has:
+;; (defn ExpFloat64
+;;   "ExpFloat64 returns an exponentially distributed float64 in the range\n(0, +math.MaxFloat64] with an exponential distribution whose rate parameter\n(lambda) is 1 and whose mean is 1/lambda (1) from the default Source.\nTo produce a distribution with a different rate parameter,\ncallers can adjust the output using:\n\n sample = ExpFloat64() / desiredRateParameter\n\nGo return type: float64\n\nJoker return type: ABEND042(cannot find typename rand.float64)"
+;;   {:added "1.0"
+;;    :go "expFloat64()"}
+;;   [])
+
+JOKER FUNC rand.Float32 has:
+;; (defn Float32
+;;   "Float32 returns, as a float32, a pseudo-random number in [0.0,1.0)\nfrom the default Source.\n\nGo return type: float32\n\nJoker return type: ABEND042(cannot find typename rand.float32)"
+;;   {:added "1.0"
+;;    :go "float32()"}
+;;   [])
+
+JOKER FUNC rand.Float64 has:
+;; (defn Float64
+;;   "Float64 returns, as a float64, a pseudo-random number in [0.0,1.0)\nfrom the default Source.\n\nGo return type: float64\n\nJoker return type: ABEND042(cannot find typename rand.float64)"
+;;   {:added "1.0"
+;;    :go "float64()"}
+;;   [])
+
+JOKER FUNC rand.Int has:
+(defn ^Int Int
+  "Int returns a non-negative pseudo-random int from the default Source.\n\nGo return type: int\n\nJoker return type: Int"
+  {:added "1.0"
+   :go "rand.Int()"}
+  [])
+
+JOKER FUNC rand.Int31 has:
+(defn ^Int Int31
+  "Int31 returns a non-negative pseudo-random 31-bit integer as an int32\nfrom the default Source.\n\nGo return type: int\n\nJoker return type: Int"
+  {:added "1.0"
+   :go "rand.Int31()"}
+  [])
+
+JOKER FUNC rand.Int31n has:
+(defn ^Int Int31n
+  "Int31n returns, as an int32, a non-negative pseudo-random number in [0,n)\nfrom the default Source.\nIt panics if n <= 0.\n\nGo return type: int\n\nJoker return type: Int"
+  {:added "1.0"
+   :go "rand.Int31n(n)"}
+  [^Int n])
+
+JOKER FUNC rand.Int63 has:
+(defn ^Int Int63
+  "Int63 returns a non-negative pseudo-random 63-bit integer as an int64\nfrom the default Source.\n\nGo return type: int\n\nJoker return type: Int"
+  {:added "1.0"
+   :go "rand.Int63()"}
+  [])
+
+JOKER FUNC rand.Int63n has:
+(defn ^Int Int63n
+  "Int63n returns, as an int64, a non-negative pseudo-random number in [0,n)\nfrom the default Source.\nIt panics if n <= 0.\n\nGo return type: int\n\nJoker return type: Int"
+  {:added "1.0"
+   :go "rand.Int63n(n)"}
+  [^Int n])
+
+JOKER FUNC rand.Intn has:
+(defn ^Int Intn
+  "Intn returns, as an int, a non-negative pseudo-random number in [0,n)\nfrom the default Source.\nIt panics if n <= 0.\n\nGo return type: int\n\nJoker return type: Int"
+  {:added "1.0"
+   :go "rand.Intn(n)"}
+  [^Int n])
+
+JOKER FUNC rand.New has:
+;; (defn New
+;;   "New returns a new Rand that uses random values from src\nto generate other random values.\n\nGo return type: *Rand\n\nJoker return type: {}"
+;;   {:added "1.0"
+;;    :go "new(src)"}
+;;   [^ABEND885(unrecognized type Source at: GO.link/src/math/rand/rand.go:67:14) src])
+
+JOKER FUNC rand.NewSource has:
+;; (defn NewSource
+;;   "NewSource returns a new pseudo-random Source seeded with the given value.\nUnlike the default Source used by top-level functions, this source is not\nsafe for concurrent use by multiple goroutines.\n\nGo return type: Source\n\nJoker return type: ABEND883(unrecognized Expr type *ast.InterfaceType at: GO.link/src/math/rand/rand.go:25:13)"
+;;   {:added "1.0"
+;;    :go "newSource(seed)"}
+;;   [^Int seed])
+
+JOKER FUNC rand.NewZipf has:
+;; (defn NewZipf
+;;   "NewZipf returns a Zipf variate generator.\nThe generator generates values k ∈ [0, imax]\nsuch that P(k) is proportional to (v + k) ** (-s).\nRequirements: s > 1 and v >= 1.\n\nGo return type: *Zipf\n\nJoker return type: {}"
+;;   {:added "1.0"
+;;    :go "newZipf(r, s, v, imax)"}
+;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/math/rand/zipf.go:39:16) r, ^ABEND885(unrecognized type float64 at: GO.link/src/math/rand/zipf.go:39:25) s, ^ABEND885(unrecognized type float64 at: GO.link/src/math/rand/zipf.go:39:36) v, ^ABEND885(unrecognized type uint64 at: GO.link/src/math/rand/zipf.go:39:50) imax])
+
+JOKER FUNC rand.NormFloat64 has:
+;; (defn NormFloat64
+;;   "NormFloat64 returns a normally distributed float64 in the range\n[-math.MaxFloat64, +math.MaxFloat64] with\nstandard normal distribution (mean = 0, stddev = 1)\nfrom the default Source.\nTo produce a different normal distribution, callers can\nadjust the output using:\n\n sample = NormFloat64() * desiredStdDev + desiredMean\n\nGo return type: float64\n\nJoker return type: ABEND042(cannot find typename rand.float64)"
+;;   {:added "1.0"
+;;    :go "normFloat64()"}
+;;   [])
+
+JOKER FUNC rand.Perm has:
+(defn Perm
+  "Perm returns, as a slice of n ints, a pseudo-random permutation of the integers [0,n)\nfrom the default Source.\n\nGo return type: []int\n\nJoker return type: (vector-of Int)"
+  {:added "1.0"
+   :go "perm(n)"}
+  [^Int n])
+
+JOKER FUNC rand.Read has:
+;; (defn Read
+;;   "Read generates len(p) random bytes from the default Source and\nwrites them into p. It always returns len(p) and a nil error.\nRead, unlike the Rand.Read method, is safe for concurrent use.\n\nGo return type: (n int, err error)\n\nJoker return type: [Int Error]"
+;;   {:added "1.0"
+;;    :go "read(p)"}
+;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: GO.link/src/math/rand/rand.go:351:13) p])
+
+JOKER FUNC rand.Seed has:
+;; (defn Seed
+;;   "Seed uses the provided seed value to initialize the default Source to a\ndeterministic state. If Seed is not called, the generator behaves as\nif seeded by Seed(1). Seed values that have the same remainder when\ndivided by 2^31-1 generate the same pseudo-random sequence.\nSeed, unlike the Rand.Seed method, is safe for concurrent use.\n"
+;;   {:added "1.0"
+;;    :go "seed(seed)"}
+;;   [^Int seed])
+
+JOKER FUNC rand.Shuffle has:
+;; (defn Shuffle
+;;   "Shuffle pseudo-randomizes the order of elements using the default Source.\nn is the number of elements. Shuffle panics if n < 0.\nswap swaps the elements with indexes i and j.\n"
+;;   {:added "1.0"
+;;    :go "shuffle(n, swap)"}
+;;   [^Int n, ^ABEND881(unrecognized Expr type *ast.FuncType at: GO.link/src/math/rand/rand.go:346:26) swap])
+
+JOKER FUNC rand.Uint32 has:
+(defn ^Int Uint32
+  "Uint32 returns a pseudo-random 32-bit value as a uint32\nfrom the default Source.\n\nGo return type: int\n\nJoker return type: Int"
+  {:added "1.0"
+   :go "rand.Uint32()"}
+  [])
+
+JOKER FUNC rand.Uint64 has:
+;; (defn Uint64
+;;   "Uint64 returns a pseudo-random 64-bit value as a uint64\nfrom the default Source.\n\nGo return type: uint64\n\nJoker return type: ABEND042(cannot find typename rand.uint64)"
+;;   {:added "1.0"
+;;    :go "uint64()"}
+;;   [])
 
 JOKER FUNC rand.Int has:
 ;; (defn Int
@@ -10886,6 +11121,13 @@ JOKER FUNC runtime._cgo_panic_internal has:
 ;;   {:added "1.0"
 ;;    :go "_cgo_panic_internal(p)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/runtime/cgocallback.go:11:28) p])
+
+JOKER FUNC scanner.TokenString has:
+;; (defn ^String TokenString
+;;   "TokenString returns a printable string for a token or Unicode character.\n\nGo return type: string\n\nJoker return type: String"
+;;   {:added "1.0"
+;;    :go "scanner.TokenString(tok)"}
+;;   [^ABEND885(unrecognized type rune at: GO.link/src/text/scanner/scanner.go:98:22) tok])
 
 JOKER FUNC scanner.PrintError has:
 ;; (defn PrintError
@@ -13196,6 +13438,90 @@ JOKER FUNC tar.NewWriter has:
 ;;   {:added "1.0"
 ;;    :go "newWriter(w)"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/archive/tar/writer.go:33:18) w])
+
+JOKER FUNC template.HTMLEscape has:
+;; (defn HTMLEscape
+;;   "HTMLEscape writes to w the escaped HTML equivalent of the plain text data b.\n"
+;;   {:added "1.0"
+;;    :go "hTMLEscape(w, b)"}
+;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/text/template/funcs.go:510:19) w, ^ABEND881(unrecognized Expr type *ast.ArrayType at: GO.link/src/text/template/funcs.go:510:32) b])
+
+JOKER FUNC template.HTMLEscapeString has:
+(defn ^String HTMLEscapeString
+  "HTMLEscapeString returns the escaped HTML equivalent of the plain text data s.\n\nGo return type: string\n\nJoker return type: String"
+  {:added "1.0"
+   :go "template.HTMLEscapeString(s)"}
+  [^String s])
+
+JOKER FUNC template.HTMLEscaper has:
+;; (defn ^String HTMLEscaper
+;;   "HTMLEscaper returns the escaped HTML equivalent of the textual\nrepresentation of its arguments.\n\nGo return type: string\n\nJoker return type: String"
+;;   {:added "1.0"
+;;    :go "template.HTMLEscaper(args)"}
+;;   [^ABEND881(unrecognized Expr type *ast.Ellipsis at: GO.link/src/text/template/funcs.go:550:23) args])
+
+JOKER FUNC template.IsTrue has:
+;; (defn IsTrue
+;;   "IsTrue reports whether the value is 'true', in the sense of not the zero of its type,\nand whether the value has a meaningful truth value. This is the definition of\ntruth used by if and other such actions.\n\nGo return type: (truth bool, ok bool)\n\nJoker return type: [Bool Bool]"
+;;   {:added "1.0"
+;;    :go "isTrue(val)"}
+;;   [^ABEND881(unrecognized Expr type *ast.InterfaceType at: GO.link/src/text/template/exec.go:302:17) val])
+
+JOKER FUNC template.JSEscape has:
+;; (defn JSEscape
+;;   "JSEscape writes to w the escaped JavaScript equivalent of the plain text data b.\n"
+;;   {:added "1.0"
+;;    :go "jSEscape(w, b)"}
+;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/text/template/funcs.go:568:17) w, ^ABEND881(unrecognized Expr type *ast.ArrayType at: GO.link/src/text/template/funcs.go:568:30) b])
+
+JOKER FUNC template.JSEscapeString has:
+(defn ^String JSEscapeString
+  "JSEscapeString returns the escaped JavaScript equivalent of the plain text data s.\n\nGo return type: string\n\nJoker return type: String"
+  {:added "1.0"
+   :go "template.JSEscapeString(s)"}
+  [^String s])
+
+JOKER FUNC template.JSEscaper has:
+;; (defn ^String JSEscaper
+;;   "JSEscaper returns the escaped JavaScript equivalent of the textual\nrepresentation of its arguments.\n\nGo return type: string\n\nJoker return type: String"
+;;   {:added "1.0"
+;;    :go "template.JSEscaper(args)"}
+;;   [^ABEND881(unrecognized Expr type *ast.Ellipsis at: GO.link/src/text/template/funcs.go:635:21) args])
+
+JOKER FUNC template.Must has:
+;; (defn Must
+;;   "Must is a helper that wraps a call to a function returning (*Template, error)\nand panics if the error is non-nil. It is intended for use in variable\ninitializations such as\n\tvar t = template.Must(template.New(\"name\").Parse(\"text\"))\n\nGo return type: *Template\n\nJoker return type: {}"
+;;   {:added "1.0"
+;;    :go "must(t, err)"}
+;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/text/template/helper.go:21:13) t, ^ABEND885(unrecognized type error at: GO.link/src/text/template/helper.go:21:28) err])
+
+JOKER FUNC template.New has:
+;; (defn New
+;;   "New allocates a new, undefined template with the given name.\n\nGo return type: *Template\n\nJoker return type: {}"
+;;   {:added "1.0"
+;;    :go "new(name)"}
+;;   [^String name])
+
+JOKER FUNC template.ParseFiles has:
+;; (defn ParseFiles
+;;   "ParseFiles creates a new Template and parses the template definitions from\nthe named files. The returned template's name will have the base name and\nparsed contents of the first file. There must be at least one file.\nIf an error occurs, parsing stops and the returned *Template is nil.\n\nWhen parsing multiple files with the same name in different directories,\nthe last one mentioned will be the one that results.\nFor instance, ParseFiles(\"a/foo\", \"b/foo\") stores \"b/foo\" as the template\nnamed \"foo\", while \"a/foo\" is unavailable.\n\nGo return type: (*Template, error)\n\nJoker return type: [{} Error]"
+;;   {:added "1.0"
+;;    :go "parseFiles(filenames)"}
+;;   [^ABEND881(unrecognized Expr type *ast.Ellipsis at: GO.link/src/text/template/helper.go:37:27) filenames])
+
+JOKER FUNC template.ParseGlob has:
+(defn ParseGlob
+  "ParseGlob creates a new Template and parses the template definitions from the\nfiles identified by the pattern, which must match at least one file. The\nreturned template will have the (base) name and (parsed) contents of the\nfirst file matched by the pattern. ParseGlob is equivalent to calling\nParseFiles with the list of files matched by the pattern.\n\nWhen parsing multiple files with the same name in different directories,\nthe last one mentioned will be the one that results.\n\nGo return type: (*Template, error)\n\nJoker return type: [{} Error]"
+  {:added "1.0"
+   :go "parseGlob(pattern)"}
+  [^String pattern])
+
+JOKER FUNC template.URLQueryEscaper has:
+;; (defn ^String URLQueryEscaper
+;;   "URLQueryEscaper returns the escaped value of the textual representation of\nits arguments in a form suitable for embedding in a URL query.\n\nGo return type: string\n\nJoker return type: String"
+;;   {:added "1.0"
+;;    :go "template.URLQueryEscaper(args)"}
+;;   [^ABEND881(unrecognized Expr type *ast.Ellipsis at: GO.link/src/text/template/funcs.go:641:27) args])
 
 JOKER FUNC template.HTMLEscape has:
 ;; (defn HTMLEscape
@@ -20622,6 +20948,72 @@ GO FUNC pprof.Trace has:
 // 	...ABEND675: TODO...
 // }
 
+GO FUNC pprof.Do has:
+// func do(ctx ABEND882(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/runtime/pprof/runtime.go:31:13), labels ABEND884(unrecognized type LabelSet at: GO.link/src/runtime/pprof/runtime.go:31:37), f ABEND882(unrecognized Expr type *ast.FuncType at: GO.link/src/runtime/pprof/runtime.go:31:49)) Object {
+// 	_pprof.Do(ctx, labels, f)
+// 	...ABEND675: TODO...
+// }
+
+GO FUNC pprof.ForLabels has:
+// func forLabels(ctx ABEND882(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/runtime/pprof/label.go:78:20), f ABEND882(unrecognized Expr type *ast.FuncType at: GO.link/src/runtime/pprof/label.go:78:39)) Object {
+// 	_pprof.ForLabels(ctx, f)
+// 	...ABEND675: TODO...
+// }
+
+GO FUNC pprof.Label has:
+// func label(ctx ABEND882(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/runtime/pprof/label.go:70:16), key string) Object {
+// 	res1, res2 := _pprof.Label(ctx, key)
+// 	res := EmptyVector
+// 	res = res.Conjoin(MakeString(res1))
+// 	res = res.Conjoin(MakeBool(res2))
+// 	return res
+// }
+
+GO FUNC pprof.Labels has:
+// func labels(args ABEND882(unrecognized Expr type *ast.Ellipsis at: GO.link/src/runtime/pprof/label.go:57:18)) Object {
+// 	return _pprof.Labels(args)
+// 	ABEND124(no public information returned)
+// }
+
+GO FUNC pprof.Lookup has:
+// func lookup(name string) Object {
+// 	return _pprof.Lookup(name)
+// 	ABEND124(no public information returned)
+// }
+
+GO FUNC pprof.NewProfile has:
+// func newProfile(name string) Object {
+// 	return _pprof.NewProfile(name)
+// 	ABEND124(no public information returned)
+// }
+
+GO FUNC pprof.Profiles has:
+func profiles() Object {
+	res := _pprof.Profiles()
+	vec1 := EmptyVector
+	for _, elem1 := range res {
+		vec1 = vec1.Conjoin(NIL)
+	}
+	return vec1
+}
+
+GO FUNC pprof.SetGoroutineLabels has:
+// func setGoroutineLabels(ctx ABEND882(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/runtime/pprof/runtime.go:20:29)) Object {
+// 	_pprof.SetGoroutineLabels(ctx)
+// 	...ABEND675: TODO...
+// }
+
+GO FUNC pprof.StopCPUProfile has:
+// func stopCPUProfile() Object {
+// 	_pprof.StopCPUProfile()
+// 	...ABEND675: TODO...
+// }
+
+GO FUNC pprof.WithLabels has:
+// func withLabels(ctx ABEND882(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/runtime/pprof/label.go:39:21), labels ABEND884(unrecognized type LabelSet at: GO.link/src/runtime/pprof/label.go:39:45)) Object {
+// 	return _pprof.WithLabels(ctx, labels)
+// }
+
 GO FUNC quick.Value has:
 // func value(t ABEND882(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/testing/quick/quick.go:59:14), rand ABEND882(unrecognized Expr type *ast.StarExpr at: GO.link/src/testing/quick/quick.go:59:33)) Object {
 // 	value, ok := _quick.Value(t, rand)
@@ -20670,6 +21062,79 @@ GO FUNC rand.Read has:
 // 	res = res.Conjoin(MakeInt(int(n)))
 // 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 // 	return res
+// }
+
+GO FUNC rand.ExpFloat64 has:
+// func expFloat64() Object {
+// 	return _rand.ExpFloat64()
+// }
+
+GO FUNC rand.Float32 has:
+// func float32() Object {
+// 	return _rand.Float32()
+// }
+
+GO FUNC rand.Float64 has:
+// func float64() Object {
+// 	return _rand.Float64()
+// }
+
+GO FUNC rand.New has:
+// func new(src ABEND884(unrecognized type Source at: GO.link/src/math/rand/rand.go:67:14)) Object {
+// 	return _rand.New(src)
+// 	ABEND124(no public information returned)
+// }
+
+GO FUNC rand.NewSource has:
+// func newSource(seed int64) Object {
+// 	return _rand.NewSource(seed)
+// }
+
+GO FUNC rand.NewZipf has:
+// func newZipf(r ABEND882(unrecognized Expr type *ast.StarExpr at: GO.link/src/math/rand/zipf.go:39:16), s ABEND884(unrecognized type float64 at: GO.link/src/math/rand/zipf.go:39:25), v ABEND884(unrecognized type float64 at: GO.link/src/math/rand/zipf.go:39:36), imax ABEND884(unrecognized type uint64 at: GO.link/src/math/rand/zipf.go:39:50)) Object {
+// 	return _rand.NewZipf(r, s, v, imax)
+// 	ABEND124(no public information returned)
+// }
+
+GO FUNC rand.NormFloat64 has:
+// func normFloat64() Object {
+// 	return _rand.NormFloat64()
+// }
+
+GO FUNC rand.Perm has:
+func perm(n int) Object {
+	res := _rand.Perm(n)
+	vec1 := EmptyVector
+	for _, elem1 := range res {
+		vec1 = vec1.Conjoin(MakeInt(int(elem1)))
+	}
+	return vec1
+}
+
+GO FUNC rand.Read has:
+// func read(p ABEND882(unrecognized Expr type *ast.ArrayType at: GO.link/src/math/rand/rand.go:351:13)) Object {
+// 	n, err := _rand.Read(p)
+// 	res := EmptyVector
+// 	res = res.Conjoin(MakeInt(int(n)))
+// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
+// 	return res
+// }
+
+GO FUNC rand.Seed has:
+// func seed(seed int64) Object {
+// 	_rand.Seed(seed)
+// 	...ABEND675: TODO...
+// }
+
+GO FUNC rand.Shuffle has:
+// func shuffle(n int, swap ABEND882(unrecognized Expr type *ast.FuncType at: GO.link/src/math/rand/rand.go:346:26)) Object {
+// 	_rand.Shuffle(n, swap)
+// 	...ABEND675: TODO...
+// }
+
+GO FUNC rand.Uint64 has:
+// func uint64() Object {
+// 	return _rand.Uint64()
 // }
 
 GO FUNC rc4.NewCipher has:
@@ -22763,6 +23228,57 @@ GO FUNC tar.NewWriter has:
 // }
 
 GO FUNC template.HTMLEscape has:
+// func hTMLEscape(w ABEND882(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/text/template/funcs.go:510:19), b ABEND882(unrecognized Expr type *ast.ArrayType at: GO.link/src/text/template/funcs.go:510:32)) Object {
+// 	_template.HTMLEscape(w, b)
+// 	...ABEND675: TODO...
+// }
+
+GO FUNC template.IsTrue has:
+// func isTrue(val ABEND882(unrecognized Expr type *ast.InterfaceType at: GO.link/src/text/template/exec.go:302:17)) Object {
+// 	truth, ok := _template.IsTrue(val)
+// 	res := EmptyVector
+// 	res = res.Conjoin(MakeBool(truth))
+// 	res = res.Conjoin(MakeBool(ok))
+// 	return res
+// }
+
+GO FUNC template.JSEscape has:
+// func jSEscape(w ABEND882(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/text/template/funcs.go:568:17), b ABEND882(unrecognized Expr type *ast.ArrayType at: GO.link/src/text/template/funcs.go:568:30)) Object {
+// 	_template.JSEscape(w, b)
+// 	...ABEND675: TODO...
+// }
+
+GO FUNC template.Must has:
+// func must(t ABEND882(unrecognized Expr type *ast.StarExpr at: GO.link/src/text/template/helper.go:21:13), err error) Object {
+// 	return _template.Must(t, err)
+// 	ABEND124(no public information returned)
+// }
+
+GO FUNC template.New has:
+// func new(name string) Object {
+// 	return _template.New(name)
+// 	ABEND124(no public information returned)
+// }
+
+GO FUNC template.ParseFiles has:
+// func parseFiles(filenames ABEND882(unrecognized Expr type *ast.Ellipsis at: GO.link/src/text/template/helper.go:37:27)) Object {
+// 	_, res2 := _template.ParseFiles(filenames)
+// 	res := EmptyVector
+// 	res = res.Conjoin(NIL)
+// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
+// 	return res
+// }
+
+GO FUNC template.ParseGlob has:
+func parseGlob(pattern string) Object {
+	_, res2 := _template.ParseGlob(pattern)
+	res := EmptyVector
+	res = res.Conjoin(NIL)
+	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
+	return res
+}
+
+GO FUNC template.HTMLEscape has:
 // func hTMLEscape(w ABEND882(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/html/template/escape.go:855:19), b ABEND882(unrecognized Expr type *ast.ArrayType at: GO.link/src/html/template/escape.go:855:32)) Object {
 // 	_template.HTMLEscape(w, b)
 // 	...ABEND675: TODO...
@@ -24444,4 +24960,4 @@ GO FUNC zlib.NewWriterLevelDict has:
 // 	return res
 // }
 
-Totals: types=957 functions=1438 receivers=5477
+Totals: types=968 functions=1482 receivers=5623
