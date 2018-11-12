@@ -14,7 +14,6 @@ import (
 	"path/filepath"
 	"sort"
 	"strconv"
-	"syscall"
 	"time"
 	"unicode"
 )
@@ -1182,8 +1181,7 @@ func main() {
 		}
 
 		if !overwrite {
-			var stat syscall.Stat_t
-			if e := syscall.Stat(jokerLibDir, &stat); e == nil || e.Error() != "no such file or directory" {
+			if _, e := os.Stat(jokerLibDir); e == nil || e.Error() != "no such file or directory" {
 				msg := "already exists"
 				if e != nil {
 					msg = e.Error()
