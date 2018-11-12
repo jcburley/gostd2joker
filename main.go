@@ -617,9 +617,7 @@ func genGoPostArray(indent, pkg, in string, el Expr) (jok, gol, goc, out string)
 
 // TODO: Maybe return a ref or something Joker (someday) supports?
 func genGoPostStar(indent, pkg, in string, e Expr) (jok, gol, goc, out string) {
-	var new_out string
-	jok, gol, goc, new_out = genGoPostExpr(indent, pkg, "(*" + in + ")", e)
-	out = new_out
+	jok, gol, goc, out = genGoPostExpr(indent, pkg, "(*" + in + ")", e)
 	gol = "*" + gol
 	return
 }
