@@ -47,7 +47,7 @@ var verbose bool
 var receivers int
 
 func whereAt(p token.Pos) string {
-	return fmt.Sprintf("%s", fset.Position(p).String())
+	return fmt.Sprintf("%s", filepath.ToSlash(fset.Position(p).String()))
 }
 
 func commentGroupInQuotes(doc *CommentGroup, jok, gol string) string {
@@ -72,9 +72,9 @@ func commentGroupInQuotes(doc *CommentGroup, jok, gol string) string {
 
 type funcInfo struct {
 	fd *FuncDecl
-	pkg string // full path to package
-	pkgDir string // relative path to package
-	filename string // filename within package
+	pkg string // base package name
+	pkgDirUnix string // relative (Unix-style) path to package
+	filename string // relative (Unix-style) filename within package
 }
 
 /* Go apparently doesn't support/allow 'interface{}' as the value (or
@@ -101,7 +101,7 @@ var DUPLICATEFUNCTION = &FuncDecl {}
 var alreadySeen = []string {}
 
 // Returns whether any public functions were actually processed.
-func processFuncDecl(pkg, pkgDir, filename string, f *File, fn *FuncDecl) bool {
+func processFuncDecl(pkg, pkgDirUnix, filename string, f *File, fn *FuncDecl) bool {
 	if (dump) {
 		Print(fset, fn)
 	}
@@ -114,13 +114,13 @@ func processFuncDecl(pkg, pkgDir, filename string, f *File, fn *FuncDecl) bool {
 			fn = DUPLICATEFUNCTION
 		}
 	}
-	unqualifiedFunctions[fname] = &funcInfo{fn, pkg, pkgDir, filename}
+	unqualifiedFunctions[fname] = &funcInfo{fn, pkg, pkgDirUnix, filename}
 	return true
 }
 
 type typeInfo struct {
 	td *TypeSpec
-	file string
+	file string // Relative (Unix-style) path to defining file
 	building bool
 	built bool
 	jok string
@@ -172,7 +172,7 @@ func processTypeSpecs(pkg string, filename string, f *File, tss []Spec) {
 }
 
 // Returns whether any public functions were actually processed.
-func processDecls(pkg, pkgDir, filename string, f *File) (found bool) {
+func processDecls(pkg, pkgDirUnix, filename string, f *File) (found bool) {
 	for _, s := range f.Decls {
 		switch v := s.(type) {
 		case *FuncDecl:
@@ -184,7 +184,7 @@ func processDecls(pkg, pkgDir, filename string, f *File) (found bool) {
 			if unicode.IsLower(rune(v.Name.Name[0])) {
 				continue  // Skipping non-exported functions
 			}
-			if processFuncDecl(pkg, pkgDir, filename, f, v) {
+			if processFuncDecl(pkg, pkgDirUnix, filename, f, v) {
 				found = true
 			}
 		case *GenDecl:
@@ -201,7 +201,7 @@ func processDecls(pkg, pkgDir, filename string, f *File) (found bool) {
 
 var exists = struct{}{}
 
-/* Maps relative package names to their imports, non-emptiness, etc. */
+/* Maps relative package (unix-style) names to their imports, non-emptiness, etc. */
 type packageImports map[string]struct{}
 type packageInfo struct {
 	importsNative packageImports
@@ -236,36 +236,41 @@ func sortedPackageImports(pi packageImports, f func(k string)) {
 
 /* Maps simple (base) package names to their (relative) source
 /* directories. */
-var packageDirs = map[string]string {}
+type pathName struct {
+	native string // Unix or Windows (with backslashes), for example
+	unix string // Forward slashes
+}
+var packageDirs = map[string]pathName {}
 
-func processPackage(pkgDir string, pkg string, p *Package) {
+func processPackage(pkgDir, pkgDirUnix, pkg string, p *Package) {
 	if verbose {
-		fmt.Printf("Processing package=%s in %s:\n", pkg, pkgDir)
+		fmt.Printf("Processing package=%s in %s:\n", pkg, pkgDirUnix)
 	}
 	if pd, ok := packageDirs[pkg]; ok {
 		fmt.Fprintf(os.Stderr,
 			"Skipping %s as it was already processed in %s before being seen in %s.\n",
-			pkg, pd, pkgDir)
+			pkg, pd.unix, pkgDirUnix)
 		return
 	}
-	packageDirs[pkg] = pkgDir
+	packageDirs[pkg] = pathName { pkgDir, pkgDirUnix }
 	found := false
 	for filename, f := range p.Files {
-		if processDecls(pkg, pkgDir, filename, f) {
+		if processDecls(pkg, pkgDirUnix, filepath.ToSlash(filename), f) {
 			found = true
 		}
 	}
 	if found {
-		if _, ok := packagesInfo[pkgDir]; !ok {
-			packagesInfo[pkgDir] = &packageInfo{packageImports{}, packageImports{}, false}
+		if _, ok := packagesInfo[pkgDirUnix]; !ok {
+			packagesInfo[pkgDirUnix] = &packageInfo{packageImports{}, packageImports{}, false}
 		}
 	}
 }
 
 func processDir(d string, path string, mode parser.Mode) error {
 	pkgDir := strings.TrimPrefix(path, d + string(filepath.Separator))
+	pkgDirUnix := filepath.ToSlash(pkgDir)
 	if verbose {
-		fmt.Printf("Processing %s:\n", pkgDir)
+		fmt.Printf("Processing %s:\n", pkgDirUnix)
 	}
 
 	pkgs, err := parser.ParseDir(fset, path,
@@ -279,7 +284,9 @@ func processDir(d string, path string, mode parser.Mode) error {
 			}
 			b, e := build.Default.MatchFile(path, info.Name());
 			if verbose {
-				fmt.Printf("Matchfile(%s) => %v %v\n", filepath.Join(path, info.Name()), b, e)
+				fmt.Printf("Matchfile(%s) => %v %v\n",
+					filepath.ToSlash(filepath.Join(path, info.Name())),
+					b, e)
 			}
 			return b && e == nil
 		},
@@ -299,7 +306,7 @@ func processDir(d string, path string, mode parser.Mode) error {
 			if verbose {
 				fmt.Printf("Package %s:\n", k)
 			}
-			processPackage(pkgDir, k, v) // processPackage(strings.Replace(path, d + "/", "", 1) + "/" + k, v)
+			processPackage(pkgDir, pkgDirUnix, k, v) // processPackage(strings.Replace(path, d + "/", "", 1) + "/" + k, v)
 		}
 	}
 
@@ -321,7 +328,8 @@ func walkDirs(d string, mode parser.Mode) error {
 		func(path string, info os.FileInfo, err error) error {
 			rel := strings.Replace(path, target, d, 1)
 			if err != nil {
-				fmt.Fprintf(os.Stderr, "Skipping %s due to: %v\n", rel, err)
+				fmt.Fprintf(os.Stderr, "Skipping %s due to: %v\n",
+					filepath.ToSlash(rel), err)
 				return err
 			}
 			if rel == d {
@@ -329,13 +337,15 @@ func walkDirs(d string, mode parser.Mode) error {
 			}
 			if excludeDirs[filepath.Base(rel)] {
 				if verbose {
-					fmt.Printf("Excluding %s\n", rel)
+					fmt.Printf("Excluding %s\n",
+						filepath.ToSlash(rel))
 				}
 				return filepath.SkipDir
 			}
 			if info.IsDir() {
 				if verbose {
-					fmt.Printf("Walking from %s to %s\n", d, rel)
+					fmt.Printf("Walking from %s to %s\n",
+						filepath.ToSlash(d), filepath.ToSlash(rel))
 				}
 				return processDir(d, rel, mode)
 			}
@@ -868,7 +878,7 @@ func genFuncCode(pkg string, d *FuncDecl, goFname string) (fc funcCode) {
 func genFunction(f string, fn *funcInfo) {
 	genSymReset()
 	d := fn.fd
-	pkg := filepath.Base(fn.pkg)
+	pkg := filepath.Base(fn.pkgDirUnix)
 	jfmt := `
 (defn %s%s
 %s  {:added "1.0"
@@ -885,8 +895,8 @@ func genFunction(f string, fn *funcInfo) {
 	} else {
 		jokerReturnType += " "
 		jok2gol = pkg + "." + d.Name.Name
-		if _, found := packagesInfo[fn.pkgDir]; !found {
-			panic(fmt.Sprintf("Cannot find package %s", fn.pkgDir))
+		if _, found := packagesInfo[fn.pkgDirUnix]; !found {
+			panic(fmt.Sprintf("Cannot find package %s", fn.pkgDirUnix))
 		}
 	}
 
@@ -908,11 +918,11 @@ func %s(%s) %s {
 		jokerFn = nonEmptyLineRegexp.ReplaceAllString(jokerFn, `;; $1`)
 		goFn = nonEmptyLineRegexp.ReplaceAllString(goFn, `// $1`)
 	} else {
-		packagesInfo[fn.pkgDir].nonEmpty = true
+		packagesInfo[fn.pkgDirUnix].nonEmpty = true
 		if jokerReturnType == "" {
-			packagesInfo[fn.pkgDir].importsNative[fn.pkgDir] = exists
+			packagesInfo[fn.pkgDirUnix].importsNative[fn.pkgDirUnix] = exists
 		} else {
-			packagesInfo[fn.pkgDir].importsAutoGen[fn.pkgDir] = exists
+			packagesInfo[fn.pkgDirUnix].importsAutoGen[fn.pkgDirUnix] = exists
 		}
 	}
 
@@ -978,7 +988,7 @@ func updateJokerMain(pkgs []string, f string) {
 
 	if !strings.Contains(m, flag) {
 		if verbose {
-			fmt.Printf("Adding custom import line to %s\n", f)
+			fmt.Printf("Adding custom import line to %s\n", filepath.ToSlash(f))
 		}
 		m = strings.Replace(m, "import", "import ( // " + flag + "\n) // " + endflag + "\n\nimport", 1)
 		m = "// Auto-modified by gostd2joker at " + curTimeAndVersion() + "\n\n" + m
@@ -993,7 +1003,7 @@ func updateJokerMain(pkgs []string, f string) {
 	m = reImport.ReplaceAllString(m, flag + newImports + ") // " + endflag)
 
 	if verbose {
-		fmt.Printf("Writing %s\n", f)
+		fmt.Printf("Writing %s\n", filepath.ToSlash(f))
 	}
 	err = ioutil.WriteFile(f, []byte(m), 0777)
 	check(err)
@@ -1009,7 +1019,7 @@ func updateCoreDotJoke(pkgs []string, f string) {
 
 	if !strings.Contains(m, flag) {
 		if verbose {
-			fmt.Printf("Adding custom loaded libraries to %s\n", f)
+			fmt.Printf("Adding custom loaded libraries to %s\n", filepath.ToSlash(f))
 		}
 		m = strings.Replace(m, "\n  *loaded-libs* #{",
 			"\n  *loaded-libs* #{\n   ;; " + flag + "\n   ;; " + endflag + "\n", 1)
@@ -1033,7 +1043,7 @@ func updateCoreDotJoke(pkgs []string, f string) {
 	m = reImport.ReplaceAllString(m, flag + newImports + "\n   ;; " + endflag + "\n   ")
 
 	if verbose {
-		fmt.Printf("Writing %s\n", f)
+		fmt.Printf("Writing %s\n", filepath.ToSlash(f))
 	}
 	err = ioutil.WriteFile(f, []byte(m), 0777)
 	check(err)
@@ -1049,7 +1059,7 @@ func updateGenerateSTD(pkgs []string, f string) {
 
 	if !strings.Contains(m, flag) {
 		if verbose {
-			fmt.Printf("Adding custom namespaces to %s\n", f)
+			fmt.Printf("Adding custom namespaces to %s\n", filepath.ToSlash(f))
 		}
 		m = strings.Replace(m, "(def namespaces [",
 			"(def namespaces [\n  ;; " + flag + "\n  ;; " + endflag + "\n  ", 1)
@@ -1073,7 +1083,7 @@ func updateGenerateSTD(pkgs []string, f string) {
 	m = reImport.ReplaceAllString(m, flag + newImports + "\n  ;; " + endflag + "\n  ")
 
 	if verbose {
-		fmt.Printf("Writing %s\n", f)
+		fmt.Printf("Writing %s\n", filepath.ToSlash(f))
 	}
 	err = ioutil.WriteFile(f, []byte(m), 0777)
 	check(err)
@@ -1181,7 +1191,9 @@ func main() {
 		}
 
 		if !overwrite {
-			if _, e := os.Stat(jokerLibDir); e == nil || e.Error() != "no such file or directory" {
+			if _, e := os.Stat(jokerLibDir); e == nil ||
+				(e.Error() != "no such file or directory" &&
+				!strings.Contains(e.Error(), "The system cannot find the file specified.")) {
 				msg := "already exists"
 				if e != nil {
 					msg = e.Error()
@@ -1230,14 +1242,14 @@ func main() {
 	sortedPackageMap(jokerCode,
 		func(p string, v codeInfo) {
 			if jokerLibDir != "" && jokerLibDir != "-" {
-				jf := filepath.Join(jokerLibDir, packageDirs[p] + ".joke")
+				jf := filepath.Join(jokerLibDir, packageDirs[p].native + ".joke")
 				var e error
 				e = os.MkdirAll(filepath.Dir(jf), 0777)
 				unbuf_out, e = os.Create(jf)
 				check(e)
 				out = bufio.NewWriterSize(unbuf_out, 16384)
 
-				pkgDir := packageDirs[p]
+				pkgDir := packageDirs[p].unix
 				pi := packagesInfo[pkgDir]
 
 				fmt.Fprintf(out,
@@ -1252,7 +1264,7 @@ func main() {
 					strings.TrimPrefix(packageQuotedImportList(pi.importsAutoGen, " "), " "),
 					pkgDir,
 					func() string { if pi.nonEmpty { return "false" } else { return "true" } }(),
-					strings.Replace(pkgDir, string(filepath.Separator), ".", -1))
+					strings.Replace(pkgDir, "/", ".", -1))
 				}
 			sortedCodeMap(v,
 				func(f string, w string) {
@@ -1272,7 +1284,7 @@ func main() {
 	sortedPackageMap(goCode,
 		func(p string, v codeInfo) {
 			if jokerLibDir != "" && jokerLibDir != "-" {
-				gf := filepath.Join(jokerLibDir, packageDirs[p], p + "_native.go")
+				gf := filepath.Join(jokerLibDir, packageDirs[p].native, p + "_native.go")
 				var e error
 				e = os.MkdirAll(filepath.Dir(gf), 0777)
 				check(e)
@@ -1280,7 +1292,7 @@ func main() {
 				check(e)
 				out = bufio.NewWriterSize(unbuf_out, 16384)
 
-				pkgDir := packageDirs[p]
+				pkgDir := packageDirs[p].unix
 				pi := packagesInfo[pkgDir]
 
 				fmt.Fprintf(out,

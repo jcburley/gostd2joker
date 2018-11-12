@@ -2,7 +2,7 @@
 
 (def namespaces [
   ;; Namespaces added by gostd2joker
-  'go.net 'go.net.http 'go.net.mail 'go.net.rpc 'go.net.textproto 'go.net.url
+  'go.net 'go.net/http 'go.net/mail 'go.net/rpc 'go.net/textproto 'go.net/url
   ;; End gostd2joker-added namespaces
   'string 'json 'base64 'os 'time 'yaml 'http 'math 'html 'url])
 

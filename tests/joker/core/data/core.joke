@@ -3185,8 +3185,8 @@
     :doc "A set of symbols representing loaded libs"}
   *loaded-libs* #{
    ;; Loaded-libraries added by gostd2joker
-   'joker.go.net 'joker.go.net.http 'joker.go.net.mail 'joker.go.net.rpc
-   'joker.go.net.textproto 'joker.go.net.url
+   'joker.go.net 'joker.go.net/http 'joker.go.net/mail 'joker.go.net/rpc
+   'joker.go.net/textproto 'joker.go.net/url
    ;; End gostd2joker-added loaded-libraries
    'joker.core 'joker.os 'joker.base64 'joker.json 'joker.string 'joker.yaml})
 
