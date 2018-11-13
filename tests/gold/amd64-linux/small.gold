@@ -211,10 +211,16 @@ func lookupMX(name string) Object {
 	_res := EmptyVector
 	_vec1 := EmptyVector
 	for _, _elem1 := range _res1 {
-		_map2 := EmptyArrayMap()
-		_map2.Add(MakeKeyword("Host"), MakeString((*_elem1).Host))
-		_map2.Add(MakeKeyword("Pref"), MakeInt(int((*_elem1).Pref)))
-		_vec1 = _vec1.Conjoin(_map2)
+		var _obj_map2 Object
+		if _elem1 != nil {
+			_map2 := EmptyArrayMap()
+			_map2.Add(MakeKeyword("Host"), MakeString((*_elem1).Host))
+			_map2.Add(MakeKeyword("Pref"), MakeInt(int((*_elem1).Pref)))
+			_obj_map2 = Object(_map2)
+		} else {
+			_obj_map2 = NIL
+		}
+		_vec1 = _vec1.Conjoin(_obj_map2)
 	}
 	_res = _res.Conjoin(_vec1)
 	_res = _res.Conjoin(func () Object { if (_res2) == nil { return NIL } else { return MakeError(_res2) } }())
@@ -227,9 +233,15 @@ func lookupNS(name string) Object {
 	_res := EmptyVector
 	_vec1 := EmptyVector
 	for _, _elem1 := range _res1 {
-		_map2 := EmptyArrayMap()
-		_map2.Add(MakeKeyword("Host"), MakeString((*_elem1).Host))
-		_vec1 = _vec1.Conjoin(_map2)
+		var _obj_map2 Object
+		if _elem1 != nil {
+			_map2 := EmptyArrayMap()
+			_map2.Add(MakeKeyword("Host"), MakeString((*_elem1).Host))
+			_obj_map2 = Object(_map2)
+		} else {
+			_obj_map2 = NIL
+		}
+		_vec1 = _vec1.Conjoin(_obj_map2)
 	}
 	_res = _res.Conjoin(_vec1)
 	_res = _res.Conjoin(func () Object { if (_res2) == nil { return NIL } else { return MakeError(_res2) } }())
@@ -252,12 +264,18 @@ func lookupSRV(service string, proto string, name string) Object {
 	_res = _res.Conjoin(MakeString(cname))
 	_vec1 := EmptyVector
 	for _, _elem1 := range addrs {
-		_map2 := EmptyArrayMap()
-		_map2.Add(MakeKeyword("Target"), MakeString((*_elem1).Target))
-		_map2.Add(MakeKeyword("Port"), MakeInt(int((*_elem1).Port)))
-		_map2.Add(MakeKeyword("Priority"), MakeInt(int((*_elem1).Priority)))
-		_map2.Add(MakeKeyword("Weight"), MakeInt(int((*_elem1).Weight)))
-		_vec1 = _vec1.Conjoin(_map2)
+		var _obj_map2 Object
+		if _elem1 != nil {
+			_map2 := EmptyArrayMap()
+			_map2.Add(MakeKeyword("Target"), MakeString((*_elem1).Target))
+			_map2.Add(MakeKeyword("Port"), MakeInt(int((*_elem1).Port)))
+			_map2.Add(MakeKeyword("Priority"), MakeInt(int((*_elem1).Priority)))
+			_map2.Add(MakeKeyword("Weight"), MakeInt(int((*_elem1).Weight)))
+			_obj_map2 = Object(_map2)
+		} else {
+			_obj_map2 = NIL
+		}
+		_vec1 = _vec1.Conjoin(_obj_map2)
 	}
 	_res = _res.Conjoin(_vec1)
 	_res = _res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
@@ -281,17 +299,23 @@ GO FUNC url.Parse has:
 func parse(rawurl string) Object {
 	_res1, _res2 := _url.Parse(rawurl)
 	_res := EmptyVector
-	_map1 := EmptyArrayMap()
-	_map1.Add(MakeKeyword("Scheme"), MakeString((*_res1).Scheme))
-	_map1.Add(MakeKeyword("Opaque"), MakeString((*_res1).Opaque))
-	_map1.Add(MakeKeyword("User"), NIL)
-	_map1.Add(MakeKeyword("Host"), MakeString((*_res1).Host))
-	_map1.Add(MakeKeyword("Path"), MakeString((*_res1).Path))
-	_map1.Add(MakeKeyword("RawPath"), MakeString((*_res1).RawPath))
-	_map1.Add(MakeKeyword("ForceQuery"), MakeBool((*_res1).ForceQuery))
-	_map1.Add(MakeKeyword("RawQuery"), MakeString((*_res1).RawQuery))
-	_map1.Add(MakeKeyword("Fragment"), MakeString((*_res1).Fragment))
-	_res = _res.Conjoin(_map1)
+	var _obj_map1 Object
+	if _res1 != nil {
+		_map1 := EmptyArrayMap()
+		_map1.Add(MakeKeyword("Scheme"), MakeString((*_res1).Scheme))
+		_map1.Add(MakeKeyword("Opaque"), MakeString((*_res1).Opaque))
+		_map1.Add(MakeKeyword("User"), NIL)
+		_map1.Add(MakeKeyword("Host"), MakeString((*_res1).Host))
+		_map1.Add(MakeKeyword("Path"), MakeString((*_res1).Path))
+		_map1.Add(MakeKeyword("RawPath"), MakeString((*_res1).RawPath))
+		_map1.Add(MakeKeyword("ForceQuery"), MakeBool((*_res1).ForceQuery))
+		_map1.Add(MakeKeyword("RawQuery"), MakeString((*_res1).RawQuery))
+		_map1.Add(MakeKeyword("Fragment"), MakeString((*_res1).Fragment))
+		_obj_map1 = Object(_map1)
+	} else {
+		_obj_map1 = NIL
+	}
+	_res = _res.Conjoin(_obj_map1)
 	_res = _res.Conjoin(func () Object { if (_res2) == nil { return NIL } else { return MakeError(_res2) } }())
 	return _res
 }
@@ -309,17 +333,23 @@ GO FUNC url.ParseRequestURI has:
 func parseRequestURI(rawurl string) Object {
 	_res1, _res2 := _url.ParseRequestURI(rawurl)
 	_res := EmptyVector
-	_map1 := EmptyArrayMap()
-	_map1.Add(MakeKeyword("Scheme"), MakeString((*_res1).Scheme))
-	_map1.Add(MakeKeyword("Opaque"), MakeString((*_res1).Opaque))
-	_map1.Add(MakeKeyword("User"), NIL)
-	_map1.Add(MakeKeyword("Host"), MakeString((*_res1).Host))
-	_map1.Add(MakeKeyword("Path"), MakeString((*_res1).Path))
-	_map1.Add(MakeKeyword("RawPath"), MakeString((*_res1).RawPath))
-	_map1.Add(MakeKeyword("ForceQuery"), MakeBool((*_res1).ForceQuery))
-	_map1.Add(MakeKeyword("RawQuery"), MakeString((*_res1).RawQuery))
-	_map1.Add(MakeKeyword("Fragment"), MakeString((*_res1).Fragment))
-	_res = _res.Conjoin(_map1)
+	var _obj_map1 Object
+	if _res1 != nil {
+		_map1 := EmptyArrayMap()
+		_map1.Add(MakeKeyword("Scheme"), MakeString((*_res1).Scheme))
+		_map1.Add(MakeKeyword("Opaque"), MakeString((*_res1).Opaque))
+		_map1.Add(MakeKeyword("User"), NIL)
+		_map1.Add(MakeKeyword("Host"), MakeString((*_res1).Host))
+		_map1.Add(MakeKeyword("Path"), MakeString((*_res1).Path))
+		_map1.Add(MakeKeyword("RawPath"), MakeString((*_res1).RawPath))
+		_map1.Add(MakeKeyword("ForceQuery"), MakeBool((*_res1).ForceQuery))
+		_map1.Add(MakeKeyword("RawQuery"), MakeString((*_res1).RawQuery))
+		_map1.Add(MakeKeyword("Fragment"), MakeString((*_res1).Fragment))
+		_obj_map1 = Object(_map1)
+	} else {
+		_obj_map1 = NIL
+	}
+	_res = _res.Conjoin(_obj_map1)
 	_res = _res.Conjoin(func () Object { if (_res2) == nil { return NIL } else { return MakeError(_res2) } }())
 	return _res
 }
