@@ -930,7 +930,7 @@ JOKER FUNC http.MaxBytesReader has:
 ;;   "MaxBytesReader is similar to io.LimitReader but is intended for\nlimiting the size of incoming request bodies. In contrast to\nio.LimitReader, MaxBytesReader's result is a ReadCloser, returns a\nnon-EOF error for a Read beyond the limit, and closes the\nunderlying reader when its Close method is called.\n\nMaxBytesReader prevents clients from accidentally or maliciously\nsending a large request and wasting server resources.\n\nGo return type: ...\n\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/request.go:1056:65)"
 ;;   {:added "1.0"
 ;;    :go "maxBytesReader(_w, _r, _n)"}
-;;   [^ABEND885(unrecognized type ResponseWriter at: tests/big/src/net/http/request.go:1056:23) _w, ^ABEND881(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/request.go:1056:41) _r, ^Int _n])
+;;   [^ABEND885(unrecognized type ResponseWriter at: tests/big/src/net/http/request.go:1056:23) _w, ^ABEND881(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/request.go:1056:41) _r, ^ABEND885(unrecognized type int64 at: tests/big/src/net/http/request.go:1056:58) _n])
 
 JOKER FUNC http.NewFileTransport has:
 ;; (defn NewFileTransport
