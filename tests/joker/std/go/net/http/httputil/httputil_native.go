@@ -66,13 +66,19 @@ import (
 
 // func newSingleHostReverseProxy(target ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/http/httputil/reverseproxy.go:103:39)) Object {
 // 	_res := _httputil.NewSingleHostReverseProxy(target)
-// 	_map1 := EmptyArrayMap()
-// 	_map1.Add(MakeKeyword("Director"), (*_res).Director)
-// 	_map1.Add(MakeKeyword("Transport"), (*_res).Transport)
-// 	_map1.Add(MakeKeyword("FlushInterval"), (*_res).FlushInterval)
-// 	_map1.Add(MakeKeyword("ErrorLog"), (*(*_res).ErrorLog))
-// 	_map1.Add(MakeKeyword("BufferPool"), (*_res).BufferPool)
-// 	_map1.Add(MakeKeyword("ModifyResponse"), (*_res).ModifyResponse)
-// 	_map1.Add(MakeKeyword("ErrorHandler"), (*_res).ErrorHandler)
-// 	return _map1
+// 	var _obj_map1 Object
+// 	if _res != nil {
+// 		_map1 := EmptyArrayMap()
+// 		_map1.Add(MakeKeyword("Director"), (*_res).Director)
+// 		_map1.Add(MakeKeyword("Transport"), (*_res).Transport)
+// 		_map1.Add(MakeKeyword("FlushInterval"), (*_res).FlushInterval)
+// 		_map1.Add(MakeKeyword("ErrorLog"), (*(*_res).ErrorLog))
+// 		_map1.Add(MakeKeyword("BufferPool"), (*_res).BufferPool)
+// 		_map1.Add(MakeKeyword("ModifyResponse"), (*_res).ModifyResponse)
+// 		_map1.Add(MakeKeyword("ErrorHandler"), (*_res).ErrorHandler)
+// 		_obj_map1 = Object(_map1)
+// 	} else {
+// 		_obj_map1 = NIL
+// 	}
+// 	return _obj_map1
 // }

@@ -7,24 +7,30 @@ import (
 
 // func contextClientTrace(ctx ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/httptrace/trace.go:24:29)) Object {
 // 	_res := _httptrace.ContextClientTrace(ctx)
-// 	_map1 := EmptyArrayMap()
-// 	_map1.Add(MakeKeyword("GetConn"), (*_res).GetConn)
-// 	_map1.Add(MakeKeyword("GotConn"), (*_res).GotConn)
-// 	_map1.Add(MakeKeyword("PutIdleConn"), (*_res).PutIdleConn)
-// 	_map1.Add(MakeKeyword("GotFirstResponseByte"), (*_res).GotFirstResponseByte)
-// 	_map1.Add(MakeKeyword("Got100Continue"), (*_res).Got100Continue)
-// 	_map1.Add(MakeKeyword("Got1xxResponse"), (*_res).Got1xxResponse)
-// 	_map1.Add(MakeKeyword("DNSStart"), (*_res).DNSStart)
-// 	_map1.Add(MakeKeyword("DNSDone"), (*_res).DNSDone)
-// 	_map1.Add(MakeKeyword("ConnectStart"), (*_res).ConnectStart)
-// 	_map1.Add(MakeKeyword("ConnectDone"), (*_res).ConnectDone)
-// 	_map1.Add(MakeKeyword("TLSHandshakeStart"), (*_res).TLSHandshakeStart)
-// 	_map1.Add(MakeKeyword("TLSHandshakeDone"), (*_res).TLSHandshakeDone)
-// 	_map1.Add(MakeKeyword("WroteHeaderField"), (*_res).WroteHeaderField)
-// 	_map1.Add(MakeKeyword("WroteHeaders"), (*_res).WroteHeaders)
-// 	_map1.Add(MakeKeyword("Wait100Continue"), (*_res).Wait100Continue)
-// 	_map1.Add(MakeKeyword("WroteRequest"), (*_res).WroteRequest)
-// 	return _map1
+// 	var _obj_map1 Object
+// 	if _res != nil {
+// 		_map1 := EmptyArrayMap()
+// 		_map1.Add(MakeKeyword("GetConn"), (*_res).GetConn)
+// 		_map1.Add(MakeKeyword("GotConn"), (*_res).GotConn)
+// 		_map1.Add(MakeKeyword("PutIdleConn"), (*_res).PutIdleConn)
+// 		_map1.Add(MakeKeyword("GotFirstResponseByte"), (*_res).GotFirstResponseByte)
+// 		_map1.Add(MakeKeyword("Got100Continue"), (*_res).Got100Continue)
+// 		_map1.Add(MakeKeyword("Got1xxResponse"), (*_res).Got1xxResponse)
+// 		_map1.Add(MakeKeyword("DNSStart"), (*_res).DNSStart)
+// 		_map1.Add(MakeKeyword("DNSDone"), (*_res).DNSDone)
+// 		_map1.Add(MakeKeyword("ConnectStart"), (*_res).ConnectStart)
+// 		_map1.Add(MakeKeyword("ConnectDone"), (*_res).ConnectDone)
+// 		_map1.Add(MakeKeyword("TLSHandshakeStart"), (*_res).TLSHandshakeStart)
+// 		_map1.Add(MakeKeyword("TLSHandshakeDone"), (*_res).TLSHandshakeDone)
+// 		_map1.Add(MakeKeyword("WroteHeaderField"), (*_res).WroteHeaderField)
+// 		_map1.Add(MakeKeyword("WroteHeaders"), (*_res).WroteHeaders)
+// 		_map1.Add(MakeKeyword("Wait100Continue"), (*_res).Wait100Continue)
+// 		_map1.Add(MakeKeyword("WroteRequest"), (*_res).WroteRequest)
+// 		_obj_map1 = Object(_map1)
+// 	} else {
+// 		_obj_map1 = NIL
+// 	}
+// 	return _obj_map1
 // }
 
 // func withClientTrace(ctx ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/httptrace/trace.go:34:26), trace ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/http/httptrace/trace.go:34:49)) Object {

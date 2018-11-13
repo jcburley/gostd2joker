@@ -12,9 +12,15 @@ import (
 // func dial(addr string) Object {
 // 	_res1, _res2 := _smtp.Dial(addr)
 // 	_res := EmptyVector
-// 	_map1 := EmptyArrayMap()
-// 	_map1.Add(MakeKeyword("Text"), (*(*_res1).Text))
-// 	_res = _res.Conjoin(_map1)
+// 	var _obj_map1 Object
+// 	if _res1 != nil {
+// 		_map1 := EmptyArrayMap()
+// 		_map1.Add(MakeKeyword("Text"), (*(*_res1).Text))
+// 		_obj_map1 = Object(_map1)
+// 	} else {
+// 		_obj_map1 = NIL
+// 	}
+// 	_res = _res.Conjoin(_obj_map1)
 // 	_res = _res.Conjoin(func () Object { if (_res2) == nil { return NIL } else { return MakeError(_res2) } }())
 // 	return _res
 // }
@@ -22,9 +28,15 @@ import (
 // func newClient(conn ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/smtp/smtp.go:62:21), host string) Object {
 // 	_res1, _res2 := _smtp.NewClient(conn, host)
 // 	_res := EmptyVector
-// 	_map1 := EmptyArrayMap()
-// 	_map1.Add(MakeKeyword("Text"), (*(*_res1).Text))
-// 	_res = _res.Conjoin(_map1)
+// 	var _obj_map1 Object
+// 	if _res1 != nil {
+// 		_map1 := EmptyArrayMap()
+// 		_map1.Add(MakeKeyword("Text"), (*(*_res1).Text))
+// 		_obj_map1 = Object(_map1)
+// 	} else {
+// 		_obj_map1 = NIL
+// 	}
+// 	_res = _res.Conjoin(_obj_map1)
 // 	_res = _res.Conjoin(func () Object { if (_res2) == nil { return NIL } else { return MakeError(_res2) } }())
 // 	return _res
 // }

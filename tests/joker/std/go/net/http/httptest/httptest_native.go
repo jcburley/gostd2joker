@@ -7,12 +7,18 @@ import (
 
 // func newRecorder() Object {
 // 	_res := _httptest.NewRecorder()
-// 	_map1 := EmptyArrayMap()
-// 	_map1.Add(MakeKeyword("Code"), MakeInt(int((*_res).Code)))
-// 	_map1.Add(MakeKeyword("HeaderMap"), (*_res).HeaderMap)
-// 	_map1.Add(MakeKeyword("Body"), (*(*_res).Body))
-// 	_map1.Add(MakeKeyword("Flushed"), MakeBool((*_res).Flushed))
-// 	return _map1
+// 	var _obj_map1 Object
+// 	if _res != nil {
+// 		_map1 := EmptyArrayMap()
+// 		_map1.Add(MakeKeyword("Code"), MakeInt(int((*_res).Code)))
+// 		_map1.Add(MakeKeyword("HeaderMap"), (*_res).HeaderMap)
+// 		_map1.Add(MakeKeyword("Body"), (*(*_res).Body))
+// 		_map1.Add(MakeKeyword("Flushed"), MakeBool((*_res).Flushed))
+// 		_obj_map1 = Object(_map1)
+// 	} else {
+// 		_obj_map1 = NIL
+// 	}
+// 	return _obj_map1
 // }
 
 // func newRequest(method string, target string, body ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/httptest/httptest.go:41:45)) Object {
@@ -21,30 +27,48 @@ import (
 
 // func newServer(handler ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/httptest/server.go:80:24)) Object {
 // 	_res := _httptest.NewServer(handler)
-// 	_map1 := EmptyArrayMap()
-// 	_map1.Add(MakeKeyword("URL"), MakeString((*_res).URL))
-// 	_map1.Add(MakeKeyword("Listener"), (*_res).Listener)
-// 	_map1.Add(MakeKeyword("TLS"), (*(*_res).TLS))
-// 	_map1.Add(MakeKeyword("Config"), (*(*_res).Config))
-// 	return _map1
+// 	var _obj_map1 Object
+// 	if _res != nil {
+// 		_map1 := EmptyArrayMap()
+// 		_map1.Add(MakeKeyword("URL"), MakeString((*_res).URL))
+// 		_map1.Add(MakeKeyword("Listener"), (*_res).Listener)
+// 		_map1.Add(MakeKeyword("TLS"), (*(*_res).TLS))
+// 		_map1.Add(MakeKeyword("Config"), (*(*_res).Config))
+// 		_obj_map1 = Object(_map1)
+// 	} else {
+// 		_obj_map1 = NIL
+// 	}
+// 	return _obj_map1
 // }
 
 // func newTLSServer(handler ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/httptest/server.go:160:27)) Object {
 // 	_res := _httptest.NewTLSServer(handler)
-// 	_map1 := EmptyArrayMap()
-// 	_map1.Add(MakeKeyword("URL"), MakeString((*_res).URL))
-// 	_map1.Add(MakeKeyword("Listener"), (*_res).Listener)
-// 	_map1.Add(MakeKeyword("TLS"), (*(*_res).TLS))
-// 	_map1.Add(MakeKeyword("Config"), (*(*_res).Config))
-// 	return _map1
+// 	var _obj_map1 Object
+// 	if _res != nil {
+// 		_map1 := EmptyArrayMap()
+// 		_map1.Add(MakeKeyword("URL"), MakeString((*_res).URL))
+// 		_map1.Add(MakeKeyword("Listener"), (*_res).Listener)
+// 		_map1.Add(MakeKeyword("TLS"), (*(*_res).TLS))
+// 		_map1.Add(MakeKeyword("Config"), (*(*_res).Config))
+// 		_obj_map1 = Object(_map1)
+// 	} else {
+// 		_obj_map1 = NIL
+// 	}
+// 	return _obj_map1
 // }
 
 // func newUnstartedServer(handler ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/httptest/server.go:92:33)) Object {
 // 	_res := _httptest.NewUnstartedServer(handler)
-// 	_map1 := EmptyArrayMap()
-// 	_map1.Add(MakeKeyword("URL"), MakeString((*_res).URL))
-// 	_map1.Add(MakeKeyword("Listener"), (*_res).Listener)
-// 	_map1.Add(MakeKeyword("TLS"), (*(*_res).TLS))
-// 	_map1.Add(MakeKeyword("Config"), (*(*_res).Config))
-// 	return _map1
+// 	var _obj_map1 Object
+// 	if _res != nil {
+// 		_map1 := EmptyArrayMap()
+// 		_map1.Add(MakeKeyword("URL"), MakeString((*_res).URL))
+// 		_map1.Add(MakeKeyword("Listener"), (*_res).Listener)
+// 		_map1.Add(MakeKeyword("TLS"), (*(*_res).TLS))
+// 		_map1.Add(MakeKeyword("Config"), (*(*_res).Config))
+// 		_obj_map1 = Object(_map1)
+// 	} else {
+// 		_obj_map1 = NIL
+// 	}
+// 	return _obj_map1
 // }

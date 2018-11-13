@@ -121,17 +121,23 @@ func iPv4Mask(a byte, b byte, c byte, d byte) Object {
 func interfaceByIndex(index int) Object {
 	_res1, _res2 := _net.InterfaceByIndex(index)
 	_res := EmptyVector
-	_map1 := EmptyArrayMap()
-	_map1.Add(MakeKeyword("Index"), MakeInt(int((*_res1).Index)))
-	_map1.Add(MakeKeyword("MTU"), MakeInt(int((*_res1).MTU)))
-	_map1.Add(MakeKeyword("Name"), MakeString((*_res1).Name))
-	_vec2 := EmptyVector
-	for _, _elem2 := range (*_res1).HardwareAddr {
-		_vec2 = _vec2.Conjoin(MakeInt(int(_elem2)))
+	var _obj_map1 Object
+	if _res1 != nil {
+		_map1 := EmptyArrayMap()
+		_map1.Add(MakeKeyword("Index"), MakeInt(int((*_res1).Index)))
+		_map1.Add(MakeKeyword("MTU"), MakeInt(int((*_res1).MTU)))
+		_map1.Add(MakeKeyword("Name"), MakeString((*_res1).Name))
+		_vec2 := EmptyVector
+		for _, _elem2 := range (*_res1).HardwareAddr {
+			_vec2 = _vec2.Conjoin(MakeInt(int(_elem2)))
+		}
+		_map1.Add(MakeKeyword("HardwareAddr"), _vec2)
+		_map1.Add(MakeKeyword("Flags"), MakeInt(int((*_res1).Flags)))
+		_obj_map1 = Object(_map1)
+	} else {
+		_obj_map1 = NIL
 	}
-	_map1.Add(MakeKeyword("HardwareAddr"), _vec2)
-	_map1.Add(MakeKeyword("Flags"), MakeInt(int((*_res1).Flags)))
-	_res = _res.Conjoin(_map1)
+	_res = _res.Conjoin(_obj_map1)
 	_res = _res.Conjoin(func () Object { if (_res2) == nil { return NIL } else { return MakeError(_res2) } }())
 	return _res
 }
@@ -139,17 +145,23 @@ func interfaceByIndex(index int) Object {
 func interfaceByName(name string) Object {
 	_res1, _res2 := _net.InterfaceByName(name)
 	_res := EmptyVector
-	_map1 := EmptyArrayMap()
-	_map1.Add(MakeKeyword("Index"), MakeInt(int((*_res1).Index)))
-	_map1.Add(MakeKeyword("MTU"), MakeInt(int((*_res1).MTU)))
-	_map1.Add(MakeKeyword("Name"), MakeString((*_res1).Name))
-	_vec2 := EmptyVector
-	for _, _elem2 := range (*_res1).HardwareAddr {
-		_vec2 = _vec2.Conjoin(MakeInt(int(_elem2)))
+	var _obj_map1 Object
+	if _res1 != nil {
+		_map1 := EmptyArrayMap()
+		_map1.Add(MakeKeyword("Index"), MakeInt(int((*_res1).Index)))
+		_map1.Add(MakeKeyword("MTU"), MakeInt(int((*_res1).MTU)))
+		_map1.Add(MakeKeyword("Name"), MakeString((*_res1).Name))
+		_vec2 := EmptyVector
+		for _, _elem2 := range (*_res1).HardwareAddr {
+			_vec2 = _vec2.Conjoin(MakeInt(int(_elem2)))
+		}
+		_map1.Add(MakeKeyword("HardwareAddr"), _vec2)
+		_map1.Add(MakeKeyword("Flags"), MakeInt(int((*_res1).Flags)))
+		_obj_map1 = Object(_map1)
+	} else {
+		_obj_map1 = NIL
 	}
-	_map1.Add(MakeKeyword("HardwareAddr"), _vec2)
-	_map1.Add(MakeKeyword("Flags"), MakeInt(int((*_res1).Flags)))
-	_res = _res.Conjoin(_map1)
+	_res = _res.Conjoin(_obj_map1)
 	_res = _res.Conjoin(func () Object { if (_res2) == nil { return NIL } else { return MakeError(_res2) } }())
 	return _res
 }
@@ -293,10 +305,16 @@ func lookupMX(name string) Object {
 	_res := EmptyVector
 	_vec1 := EmptyVector
 	for _, _elem1 := range _res1 {
-		_map2 := EmptyArrayMap()
-		_map2.Add(MakeKeyword("Host"), MakeString((*_elem1).Host))
-		_map2.Add(MakeKeyword("Pref"), MakeInt(int((*_elem1).Pref)))
-		_vec1 = _vec1.Conjoin(_map2)
+		var _obj_map2 Object
+		if _elem1 != nil {
+			_map2 := EmptyArrayMap()
+			_map2.Add(MakeKeyword("Host"), MakeString((*_elem1).Host))
+			_map2.Add(MakeKeyword("Pref"), MakeInt(int((*_elem1).Pref)))
+			_obj_map2 = Object(_map2)
+		} else {
+			_obj_map2 = NIL
+		}
+		_vec1 = _vec1.Conjoin(_obj_map2)
 	}
 	_res = _res.Conjoin(_vec1)
 	_res = _res.Conjoin(func () Object { if (_res2) == nil { return NIL } else { return MakeError(_res2) } }())
@@ -308,9 +326,15 @@ func lookupNS(name string) Object {
 	_res := EmptyVector
 	_vec1 := EmptyVector
 	for _, _elem1 := range _res1 {
-		_map2 := EmptyArrayMap()
-		_map2.Add(MakeKeyword("Host"), MakeString((*_elem1).Host))
-		_vec1 = _vec1.Conjoin(_map2)
+		var _obj_map2 Object
+		if _elem1 != nil {
+			_map2 := EmptyArrayMap()
+			_map2.Add(MakeKeyword("Host"), MakeString((*_elem1).Host))
+			_obj_map2 = Object(_map2)
+		} else {
+			_obj_map2 = NIL
+		}
+		_vec1 = _vec1.Conjoin(_obj_map2)
 	}
 	_res = _res.Conjoin(_vec1)
 	_res = _res.Conjoin(func () Object { if (_res2) == nil { return NIL } else { return MakeError(_res2) } }())
@@ -331,12 +355,18 @@ func lookupSRV(service string, proto string, name string) Object {
 	_res = _res.Conjoin(MakeString(cname))
 	_vec1 := EmptyVector
 	for _, _elem1 := range addrs {
-		_map2 := EmptyArrayMap()
-		_map2.Add(MakeKeyword("Target"), MakeString((*_elem1).Target))
-		_map2.Add(MakeKeyword("Port"), MakeInt(int((*_elem1).Port)))
-		_map2.Add(MakeKeyword("Priority"), MakeInt(int((*_elem1).Priority)))
-		_map2.Add(MakeKeyword("Weight"), MakeInt(int((*_elem1).Weight)))
-		_vec1 = _vec1.Conjoin(_map2)
+		var _obj_map2 Object
+		if _elem1 != nil {
+			_map2 := EmptyArrayMap()
+			_map2.Add(MakeKeyword("Target"), MakeString((*_elem1).Target))
+			_map2.Add(MakeKeyword("Port"), MakeInt(int((*_elem1).Port)))
+			_map2.Add(MakeKeyword("Priority"), MakeInt(int((*_elem1).Priority)))
+			_map2.Add(MakeKeyword("Weight"), MakeInt(int((*_elem1).Weight)))
+			_obj_map2 = Object(_map2)
+		} else {
+			_obj_map2 = NIL
+		}
+		_vec1 = _vec1.Conjoin(_obj_map2)
 	}
 	_res = _res.Conjoin(_vec1)
 	_res = _res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
@@ -363,18 +393,24 @@ func parseCIDR(s string) Object {
 		_vec1 = _vec1.Conjoin(MakeInt(int(_elem1)))
 	}
 	_res = _res.Conjoin(_vec1)
-	_map2 := EmptyArrayMap()
-	_vec3 := EmptyVector
-	for _, _elem3 := range (*_res2).IP {
-		_vec3 = _vec3.Conjoin(MakeInt(int(_elem3)))
+	var _obj_map2 Object
+	if _res2 != nil {
+		_map2 := EmptyArrayMap()
+		_vec3 := EmptyVector
+		for _, _elem3 := range (*_res2).IP {
+			_vec3 = _vec3.Conjoin(MakeInt(int(_elem3)))
+		}
+		_map2.Add(MakeKeyword("IP"), _vec3)
+		_vec4 := EmptyVector
+		for _, _elem4 := range (*_res2).Mask {
+			_vec4 = _vec4.Conjoin(MakeInt(int(_elem4)))
+		}
+		_map2.Add(MakeKeyword("Mask"), _vec4)
+		_obj_map2 = Object(_map2)
+	} else {
+		_obj_map2 = NIL
 	}
-	_map2.Add(MakeKeyword("IP"), _vec3)
-	_vec4 := EmptyVector
-	for _, _elem4 := range (*_res2).Mask {
-		_vec4 = _vec4.Conjoin(MakeInt(int(_elem4)))
-	}
-	_map2.Add(MakeKeyword("Mask"), _vec4)
-	_res = _res.Conjoin(_map2)
+	_res = _res.Conjoin(_obj_map2)
 	_res = _res.Conjoin(func () Object { if (_res3) == nil { return NIL } else { return MakeError(_res3) } }())
 	return _res
 }
@@ -411,14 +447,20 @@ func parseMAC(s string) Object {
 func resolveIPAddr(network string, address string) Object {
 	_res1, _res2 := _net.ResolveIPAddr(network, address)
 	_res := EmptyVector
-	_map1 := EmptyArrayMap()
-	_vec2 := EmptyVector
-	for _, _elem2 := range (*_res1).IP {
-		_vec2 = _vec2.Conjoin(MakeInt(int(_elem2)))
+	var _obj_map1 Object
+	if _res1 != nil {
+		_map1 := EmptyArrayMap()
+		_vec2 := EmptyVector
+		for _, _elem2 := range (*_res1).IP {
+			_vec2 = _vec2.Conjoin(MakeInt(int(_elem2)))
+		}
+		_map1.Add(MakeKeyword("IP"), _vec2)
+		_map1.Add(MakeKeyword("Zone"), MakeString((*_res1).Zone))
+		_obj_map1 = Object(_map1)
+	} else {
+		_obj_map1 = NIL
 	}
-	_map1.Add(MakeKeyword("IP"), _vec2)
-	_map1.Add(MakeKeyword("Zone"), MakeString((*_res1).Zone))
-	_res = _res.Conjoin(_map1)
+	_res = _res.Conjoin(_obj_map1)
 	_res = _res.Conjoin(func () Object { if (_res2) == nil { return NIL } else { return MakeError(_res2) } }())
 	return _res
 }
@@ -426,15 +468,21 @@ func resolveIPAddr(network string, address string) Object {
 func resolveTCPAddr(network string, address string) Object {
 	_res1, _res2 := _net.ResolveTCPAddr(network, address)
 	_res := EmptyVector
-	_map1 := EmptyArrayMap()
-	_vec2 := EmptyVector
-	for _, _elem2 := range (*_res1).IP {
-		_vec2 = _vec2.Conjoin(MakeInt(int(_elem2)))
+	var _obj_map1 Object
+	if _res1 != nil {
+		_map1 := EmptyArrayMap()
+		_vec2 := EmptyVector
+		for _, _elem2 := range (*_res1).IP {
+			_vec2 = _vec2.Conjoin(MakeInt(int(_elem2)))
+		}
+		_map1.Add(MakeKeyword("IP"), _vec2)
+		_map1.Add(MakeKeyword("Port"), MakeInt(int((*_res1).Port)))
+		_map1.Add(MakeKeyword("Zone"), MakeString((*_res1).Zone))
+		_obj_map1 = Object(_map1)
+	} else {
+		_obj_map1 = NIL
 	}
-	_map1.Add(MakeKeyword("IP"), _vec2)
-	_map1.Add(MakeKeyword("Port"), MakeInt(int((*_res1).Port)))
-	_map1.Add(MakeKeyword("Zone"), MakeString((*_res1).Zone))
-	_res = _res.Conjoin(_map1)
+	_res = _res.Conjoin(_obj_map1)
 	_res = _res.Conjoin(func () Object { if (_res2) == nil { return NIL } else { return MakeError(_res2) } }())
 	return _res
 }
@@ -442,15 +490,21 @@ func resolveTCPAddr(network string, address string) Object {
 func resolveUDPAddr(network string, address string) Object {
 	_res1, _res2 := _net.ResolveUDPAddr(network, address)
 	_res := EmptyVector
-	_map1 := EmptyArrayMap()
-	_vec2 := EmptyVector
-	for _, _elem2 := range (*_res1).IP {
-		_vec2 = _vec2.Conjoin(MakeInt(int(_elem2)))
+	var _obj_map1 Object
+	if _res1 != nil {
+		_map1 := EmptyArrayMap()
+		_vec2 := EmptyVector
+		for _, _elem2 := range (*_res1).IP {
+			_vec2 = _vec2.Conjoin(MakeInt(int(_elem2)))
+		}
+		_map1.Add(MakeKeyword("IP"), _vec2)
+		_map1.Add(MakeKeyword("Port"), MakeInt(int((*_res1).Port)))
+		_map1.Add(MakeKeyword("Zone"), MakeString((*_res1).Zone))
+		_obj_map1 = Object(_map1)
+	} else {
+		_obj_map1 = NIL
 	}
-	_map1.Add(MakeKeyword("IP"), _vec2)
-	_map1.Add(MakeKeyword("Port"), MakeInt(int((*_res1).Port)))
-	_map1.Add(MakeKeyword("Zone"), MakeString((*_res1).Zone))
-	_res = _res.Conjoin(_map1)
+	_res = _res.Conjoin(_obj_map1)
 	_res = _res.Conjoin(func () Object { if (_res2) == nil { return NIL } else { return MakeError(_res2) } }())
 	return _res
 }
@@ -458,10 +512,16 @@ func resolveUDPAddr(network string, address string) Object {
 func resolveUnixAddr(network string, address string) Object {
 	_res1, _res2 := _net.ResolveUnixAddr(network, address)
 	_res := EmptyVector
-	_map1 := EmptyArrayMap()
-	_map1.Add(MakeKeyword("Name"), MakeString((*_res1).Name))
-	_map1.Add(MakeKeyword("Net"), MakeString((*_res1).Net))
-	_res = _res.Conjoin(_map1)
+	var _obj_map1 Object
+	if _res1 != nil {
+		_map1 := EmptyArrayMap()
+		_map1.Add(MakeKeyword("Name"), MakeString((*_res1).Name))
+		_map1.Add(MakeKeyword("Net"), MakeString((*_res1).Net))
+		_obj_map1 = Object(_map1)
+	} else {
+		_obj_map1 = NIL
+	}
+	_res = _res.Conjoin(_obj_map1)
 	_res = _res.Conjoin(func () Object { if (_res2) == nil { return NIL } else { return MakeError(_res2) } }())
 	return _res
 }

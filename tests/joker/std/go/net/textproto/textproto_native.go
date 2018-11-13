@@ -22,16 +22,28 @@ func dial(network string, addr string) Object {
 
 // func newReader(r ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/textproto/reader.go:29:18)) Object {
 // 	_res := _textproto.NewReader(r)
-// 	_map1 := EmptyArrayMap()
-// 	_map1.Add(MakeKeyword("R"), (*(*_res).R))
-// 	return _map1
+// 	var _obj_map1 Object
+// 	if _res != nil {
+// 		_map1 := EmptyArrayMap()
+// 		_map1.Add(MakeKeyword("R"), (*(*_res).R))
+// 		_obj_map1 = Object(_map1)
+// 	} else {
+// 		_obj_map1 = NIL
+// 	}
+// 	return _obj_map1
 // }
 
 // func newWriter(w ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/textproto/writer.go:21:18)) Object {
 // 	_res := _textproto.NewWriter(w)
-// 	_map1 := EmptyArrayMap()
-// 	_map1.Add(MakeKeyword("W"), (*(*_res).W))
-// 	return _map1
+// 	var _obj_map1 Object
+// 	if _res != nil {
+// 		_map1 := EmptyArrayMap()
+// 		_map1.Add(MakeKeyword("W"), (*(*_res).W))
+// 		_obj_map1 = Object(_map1)
+// 	} else {
+// 		_obj_map1 = NIL
+// 	}
+// 	return _obj_map1
 // }
 
 // func trimBytes(b ABEND882(unrecognized Expr type *ast.ArrayType at: tests/big/src/net/textproto/textproto.go:137:18)) Object {
