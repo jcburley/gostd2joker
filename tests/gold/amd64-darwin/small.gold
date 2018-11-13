@@ -160,186 +160,186 @@ JOKER FUNC url.UserPassword has:
 GO FUNC net.LookupAddr has:
 func lookupAddr(addr string) Object {
 	names, err := _net.LookupAddr(addr)
-	res := EmptyVector
-	vec1 := EmptyVector
-	for _, elem1 := range names {
-		vec1 = vec1.Conjoin(MakeString(elem1))
+	_res := EmptyVector
+	_vec1 := EmptyVector
+	for _, _elem1 := range names {
+		_vec1 = _vec1.Conjoin(MakeString(_elem1))
 	}
-	res = res.Conjoin(vec1)
-	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
-	return res
+	_res = _res.Conjoin(_vec1)
+	_res = _res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
+	return _res
 }
 
 GO FUNC net.LookupCNAME has:
 func lookupCNAME(host string) Object {
 	cname, err := _net.LookupCNAME(host)
-	res := EmptyVector
-	res = res.Conjoin(MakeString(cname))
-	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
-	return res
+	_res := EmptyVector
+	_res = _res.Conjoin(MakeString(cname))
+	_res = _res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
+	return _res
 }
 
 GO FUNC net.LookupHost has:
 func lookupHost(host string) Object {
 	addrs, err := _net.LookupHost(host)
-	res := EmptyVector
-	vec1 := EmptyVector
-	for _, elem1 := range addrs {
-		vec1 = vec1.Conjoin(MakeString(elem1))
+	_res := EmptyVector
+	_vec1 := EmptyVector
+	for _, _elem1 := range addrs {
+		_vec1 = _vec1.Conjoin(MakeString(_elem1))
 	}
-	res = res.Conjoin(vec1)
-	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
-	return res
+	_res = _res.Conjoin(_vec1)
+	_res = _res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
+	return _res
 }
 
 GO FUNC net.LookupIP has:
 // func lookupIP(host string) Object {
-// 	res1, res2 := _net.LookupIP(host)
-// 	res := EmptyVector
-// 	vec1 := EmptyVector
-// 	for _, elem1 := range res1 {
-// 		vec1 = vec1.Conjoin()
+// 	_res1, _res2 := _net.LookupIP(host)
+// 	_res := EmptyVector
+// 	_vec1 := EmptyVector
+// 	for _, _elem1 := range _res1 {
+// 		_vec1 = _vec1.Conjoin()
 // 	}
-// 	res = res.Conjoin(vec1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
-// 	return res
+// 	_res = _res.Conjoin(_vec1)
+// 	_res = _res.Conjoin(func () Object { if (_res2) == nil { return NIL } else { return MakeError(_res2) } }())
+// 	return _res
 // }
 
 GO FUNC net.LookupMX has:
 func lookupMX(name string) Object {
-	res1, res2 := _net.LookupMX(name)
-	res := EmptyVector
-	vec1 := EmptyVector
-	for _, elem1 := range res1 {
-		map2 := EmptyArrayMap()
-		map2.Add(MakeKeyword("Host"), MakeString((*elem1).Host))
-		map2.Add(MakeKeyword("Pref"), MakeInt(int((*elem1).Pref)))
-		vec1 = vec1.Conjoin(map2)
+	_res1, _res2 := _net.LookupMX(name)
+	_res := EmptyVector
+	_vec1 := EmptyVector
+	for _, _elem1 := range _res1 {
+		_map2 := EmptyArrayMap()
+		_map2.Add(MakeKeyword("Host"), MakeString((*_elem1).Host))
+		_map2.Add(MakeKeyword("Pref"), MakeInt(int((*_elem1).Pref)))
+		_vec1 = _vec1.Conjoin(_map2)
 	}
-	res = res.Conjoin(vec1)
-	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
-	return res
+	_res = _res.Conjoin(_vec1)
+	_res = _res.Conjoin(func () Object { if (_res2) == nil { return NIL } else { return MakeError(_res2) } }())
+	return _res
 }
 
 GO FUNC net.LookupNS has:
 func lookupNS(name string) Object {
-	res1, res2 := _net.LookupNS(name)
-	res := EmptyVector
-	vec1 := EmptyVector
-	for _, elem1 := range res1 {
-		map2 := EmptyArrayMap()
-		map2.Add(MakeKeyword("Host"), MakeString((*elem1).Host))
-		vec1 = vec1.Conjoin(map2)
+	_res1, _res2 := _net.LookupNS(name)
+	_res := EmptyVector
+	_vec1 := EmptyVector
+	for _, _elem1 := range _res1 {
+		_map2 := EmptyArrayMap()
+		_map2.Add(MakeKeyword("Host"), MakeString((*_elem1).Host))
+		_vec1 = _vec1.Conjoin(_map2)
 	}
-	res = res.Conjoin(vec1)
-	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
-	return res
+	_res = _res.Conjoin(_vec1)
+	_res = _res.Conjoin(func () Object { if (_res2) == nil { return NIL } else { return MakeError(_res2) } }())
+	return _res
 }
 
 GO FUNC net.LookupPort has:
 func lookupPort(network string, service string) Object {
 	port, err := _net.LookupPort(network, service)
-	res := EmptyVector
-	res = res.Conjoin(MakeInt(int(port)))
-	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
-	return res
+	_res := EmptyVector
+	_res = _res.Conjoin(MakeInt(int(port)))
+	_res = _res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
+	return _res
 }
 
 GO FUNC net.LookupSRV has:
 func lookupSRV(service string, proto string, name string) Object {
 	cname, addrs, err := _net.LookupSRV(service, proto, name)
-	res := EmptyVector
-	res = res.Conjoin(MakeString(cname))
-	vec1 := EmptyVector
-	for _, elem1 := range addrs {
-		map2 := EmptyArrayMap()
-		map2.Add(MakeKeyword("Target"), MakeString((*elem1).Target))
-		map2.Add(MakeKeyword("Port"), MakeInt(int((*elem1).Port)))
-		map2.Add(MakeKeyword("Priority"), MakeInt(int((*elem1).Priority)))
-		map2.Add(MakeKeyword("Weight"), MakeInt(int((*elem1).Weight)))
-		vec1 = vec1.Conjoin(map2)
+	_res := EmptyVector
+	_res = _res.Conjoin(MakeString(cname))
+	_vec1 := EmptyVector
+	for _, _elem1 := range addrs {
+		_map2 := EmptyArrayMap()
+		_map2.Add(MakeKeyword("Target"), MakeString((*_elem1).Target))
+		_map2.Add(MakeKeyword("Port"), MakeInt(int((*_elem1).Port)))
+		_map2.Add(MakeKeyword("Priority"), MakeInt(int((*_elem1).Priority)))
+		_map2.Add(MakeKeyword("Weight"), MakeInt(int((*_elem1).Weight)))
+		_vec1 = _vec1.Conjoin(_map2)
 	}
-	res = res.Conjoin(vec1)
-	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
-	return res
+	_res = _res.Conjoin(_vec1)
+	_res = _res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
+	return _res
 }
 
 GO FUNC net.LookupTXT has:
 func lookupTXT(name string) Object {
-	res1, res2 := _net.LookupTXT(name)
-	res := EmptyVector
-	vec1 := EmptyVector
-	for _, elem1 := range res1 {
-		vec1 = vec1.Conjoin(MakeString(elem1))
+	_res1, _res2 := _net.LookupTXT(name)
+	_res := EmptyVector
+	_vec1 := EmptyVector
+	for _, _elem1 := range _res1 {
+		_vec1 = _vec1.Conjoin(MakeString(_elem1))
 	}
-	res = res.Conjoin(vec1)
-	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
-	return res
+	_res = _res.Conjoin(_vec1)
+	_res = _res.Conjoin(func () Object { if (_res2) == nil { return NIL } else { return MakeError(_res2) } }())
+	return _res
 }
 
 GO FUNC url.Parse has:
 func parse(rawurl string) Object {
-	res1, res2 := _url.Parse(rawurl)
-	res := EmptyVector
-	map1 := EmptyArrayMap()
-	map1.Add(MakeKeyword("Scheme"), MakeString((*res1).Scheme))
-	map1.Add(MakeKeyword("Opaque"), MakeString((*res1).Opaque))
-	map1.Add(MakeKeyword("User"), NIL)
-	map1.Add(MakeKeyword("Host"), MakeString((*res1).Host))
-	map1.Add(MakeKeyword("Path"), MakeString((*res1).Path))
-	map1.Add(MakeKeyword("RawPath"), MakeString((*res1).RawPath))
-	map1.Add(MakeKeyword("ForceQuery"), MakeBool((*res1).ForceQuery))
-	map1.Add(MakeKeyword("RawQuery"), MakeString((*res1).RawQuery))
-	map1.Add(MakeKeyword("Fragment"), MakeString((*res1).Fragment))
-	res = res.Conjoin(map1)
-	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
-	return res
+	_res1, _res2 := _url.Parse(rawurl)
+	_res := EmptyVector
+	_map1 := EmptyArrayMap()
+	_map1.Add(MakeKeyword("Scheme"), MakeString((*_res1).Scheme))
+	_map1.Add(MakeKeyword("Opaque"), MakeString((*_res1).Opaque))
+	_map1.Add(MakeKeyword("User"), NIL)
+	_map1.Add(MakeKeyword("Host"), MakeString((*_res1).Host))
+	_map1.Add(MakeKeyword("Path"), MakeString((*_res1).Path))
+	_map1.Add(MakeKeyword("RawPath"), MakeString((*_res1).RawPath))
+	_map1.Add(MakeKeyword("ForceQuery"), MakeBool((*_res1).ForceQuery))
+	_map1.Add(MakeKeyword("RawQuery"), MakeString((*_res1).RawQuery))
+	_map1.Add(MakeKeyword("Fragment"), MakeString((*_res1).Fragment))
+	_res = _res.Conjoin(_map1)
+	_res = _res.Conjoin(func () Object { if (_res2) == nil { return NIL } else { return MakeError(_res2) } }())
+	return _res
 }
 
 GO FUNC url.ParseQuery has:
 // func parseQuery(query string) Object {
-// 	res1, res2 := _url.ParseQuery(query)
-// 	res := EmptyVector
-// 	res = res.Conjoin(res1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
-// 	return res
+// 	_res1, _res2 := _url.ParseQuery(query)
+// 	_res := EmptyVector
+// 	_res = _res.Conjoin(_res1)
+// 	_res = _res.Conjoin(func () Object { if (_res2) == nil { return NIL } else { return MakeError(_res2) } }())
+// 	return _res
 // }
 
 GO FUNC url.ParseRequestURI has:
 func parseRequestURI(rawurl string) Object {
-	res1, res2 := _url.ParseRequestURI(rawurl)
-	res := EmptyVector
-	map1 := EmptyArrayMap()
-	map1.Add(MakeKeyword("Scheme"), MakeString((*res1).Scheme))
-	map1.Add(MakeKeyword("Opaque"), MakeString((*res1).Opaque))
-	map1.Add(MakeKeyword("User"), NIL)
-	map1.Add(MakeKeyword("Host"), MakeString((*res1).Host))
-	map1.Add(MakeKeyword("Path"), MakeString((*res1).Path))
-	map1.Add(MakeKeyword("RawPath"), MakeString((*res1).RawPath))
-	map1.Add(MakeKeyword("ForceQuery"), MakeBool((*res1).ForceQuery))
-	map1.Add(MakeKeyword("RawQuery"), MakeString((*res1).RawQuery))
-	map1.Add(MakeKeyword("Fragment"), MakeString((*res1).Fragment))
-	res = res.Conjoin(map1)
-	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
-	return res
+	_res1, _res2 := _url.ParseRequestURI(rawurl)
+	_res := EmptyVector
+	_map1 := EmptyArrayMap()
+	_map1.Add(MakeKeyword("Scheme"), MakeString((*_res1).Scheme))
+	_map1.Add(MakeKeyword("Opaque"), MakeString((*_res1).Opaque))
+	_map1.Add(MakeKeyword("User"), NIL)
+	_map1.Add(MakeKeyword("Host"), MakeString((*_res1).Host))
+	_map1.Add(MakeKeyword("Path"), MakeString((*_res1).Path))
+	_map1.Add(MakeKeyword("RawPath"), MakeString((*_res1).RawPath))
+	_map1.Add(MakeKeyword("ForceQuery"), MakeBool((*_res1).ForceQuery))
+	_map1.Add(MakeKeyword("RawQuery"), MakeString((*_res1).RawQuery))
+	_map1.Add(MakeKeyword("Fragment"), MakeString((*_res1).Fragment))
+	_res = _res.Conjoin(_map1)
+	_res = _res.Conjoin(func () Object { if (_res2) == nil { return NIL } else { return MakeError(_res2) } }())
+	return _res
 }
 
 GO FUNC url.PathUnescape has:
 func pathUnescape(s string) Object {
-	res1, res2 := _url.PathUnescape(s)
-	res := EmptyVector
-	res = res.Conjoin(MakeString(res1))
-	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
-	return res
+	_res1, _res2 := _url.PathUnescape(s)
+	_res := EmptyVector
+	_res = _res.Conjoin(MakeString(_res1))
+	_res = _res.Conjoin(func () Object { if (_res2) == nil { return NIL } else { return MakeError(_res2) } }())
+	return _res
 }
 
 GO FUNC url.QueryUnescape has:
 func queryUnescape(s string) Object {
-	res1, res2 := _url.QueryUnescape(s)
-	res := EmptyVector
-	res = res.Conjoin(MakeString(res1))
-	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
-	return res
+	_res1, _res2 := _url.QueryUnescape(s)
+	_res := EmptyVector
+	_res = _res.Conjoin(MakeString(_res1))
+	_res = _res.Conjoin(func () Object { if (_res2) == nil { return NIL } else { return MakeError(_res2) } }())
+	return _res
 }
 
 GO FUNC url.User has:
