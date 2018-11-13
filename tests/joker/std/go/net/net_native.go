@@ -328,6 +328,7 @@ func lookupPort(network string, service string) Object {
 func lookupSRV(service string, proto string, name string) Object {
 	cname, addrs, err := _net.LookupSRV(service, proto, name)
 	res := EmptyVector
+	res = res.Conjoin(MakeString(cname))
 	vec1 := EmptyVector
 	for _, elem1 := range addrs {
 		map2 := EmptyArrayMap()
@@ -337,7 +338,6 @@ func lookupSRV(service string, proto string, name string) Object {
 		map2.Add(MakeKeyword("Weight"), MakeInt(int((*elem1).Weight)))
 		vec1 = vec1.Conjoin(map2)
 	}
-	res = res.Conjoin(MakeString(cname))
 	res = res.Conjoin(vec1)
 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 	return res
@@ -358,6 +358,11 @@ func lookupTXT(name string) Object {
 func parseCIDR(s string) Object {
 	res1, res2, res3 := _net.ParseCIDR(s)
 	res := EmptyVector
+	vec1 := EmptyVector
+	for _, elem1 := range res1 {
+		vec1 = vec1.Conjoin(MakeInt(int(elem1)))
+	}
+	res = res.Conjoin(vec1)
 	map2 := EmptyArrayMap()
 	vec3 := EmptyVector
 	for _, elem3 := range (*res2).IP {
@@ -369,11 +374,6 @@ func parseCIDR(s string) Object {
 		vec4 = vec4.Conjoin(MakeInt(int(elem4)))
 	}
 	map2.Add(MakeKeyword("Mask"), vec4)
-	vec1 := EmptyVector
-	for _, elem1 := range res1 {
-		vec1 = vec1.Conjoin(MakeInt(int(elem1)))
-	}
-	res = res.Conjoin(vec1)
 	res = res.Conjoin(map2)
 	res = res.Conjoin(func () Object { if (res3) == nil { return NIL } else { return MakeError(res3) } }())
 	return res

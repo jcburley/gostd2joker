@@ -668,92 +668,105 @@ func genGoPostExpr(indent, pkg, in string, e Expr) (jok, gol, goc, out string) {
 	return
 }
 
-func genGoPostItem(indent, pkg string, f *Field, idx *int, p *Ident, gores, jok, gol, goc *string) string {
-	var rtn string
-	*idx += 1
-	if (*idx > 1) {
-		*gores += ", "
+func genGoPostItem(indent, pkg, in string, multipleCaptures bool, f *Field) (captureVar, jok, gol, goc, out string, useful bool) {
+	captureVar = in
+	if in == "" {
+		captureVar = genSym("res")
 	}
-	if gores == nil {
-		rtn = ""
-	} else if *gores == "res" {
-		rtn = *gores
-		gores = nil // Don't need to update this anymore
-	} else {
-		if p == nil || p.Name == "" {
-			rtn = genSym("res")
-		} else {
-			rtn = p.Name
-		}
+	jok, gol, goc, out = genGoPostExpr(indent, pkg, captureVar, f.Type)
+	if in != "" && in != "res" && multipleCaptures { // TODO: Drop multipleCaptures; okay to have Go return type doc'ed with name
+		gol = paramNameAsGo(in) + " " + gol
 	}
-	joktype, goltype, goc_pre, val := genGoPostExpr(indent, pkg, rtn, f.Type)
-	*goc = goc_pre + *goc
-	if *jok != "" {
-		*jok += " "
+	useful = exprIsUseful(out)
+	if !useful {
+		captureVar = "_"
 	}
-	*jok += joktype  // TODO: Someday '"^" + joktype', but only after generate-std.joke supports it
-	if *gol != "" {
-		*gol += ", "
-	}
-	if p != nil {
-		if false {  // TODO: Someday enable this code, but only after generate-std.joke supports it
-			*jok += " " + paramNameAsClojure(p.Name)
-		}
-		*gol += paramNameAsGo(p.Name) + " "
-	}
-	*gol += goltype
-	if gores != nil {
-		if exprIsUseful(val) {
-			*gores += rtn
-		} else {
-			*gores += "_"
-		}
-	}
-	return val
+	return
 }
 
-func genGoPostList(indent string, pkg string, fl *FieldList) (gores, jok, gol, goc string) {
-	idx := 0
-	multiple := len(fl.List) > 1 || (fl.List[0].Names != nil && len(fl.List[0].Names) > 1)
-	if multiple {
-		useful := false
-		for _, f := range fl.List {
-			if f.Names == nil {
-				rtn := genGoPostItem(indent, pkg, f, &idx, nil, &gores, &jok, &gol, &goc)
-				useful = useful || exprIsUseful(rtn)
-				goc += indent + "res = res.Conjoin(" + rtn + ")\n"
+// Caller generates "outGOCALL;goc" while saving jok and gol for type info (they go into .joke as metadata and docstrings)
+func genGoPostList(indent string, pkg string, fl FieldList) (jok, gol, goc, out string) {
+	useful := false
+	captureVars := []string {}
+	jokType := []string {}
+	golType := []string {}
+	goCode := []string {}
+	//goPreCode := []string {}
+
+	result := "res"
+	multipleCaptures := len(fl.List) > 1 || (fl.List[0].Names != nil && len(fl.List[0].Names) > 1)
+	for _, f := range fl.List {
+		if f.Names == nil {
+			captureName := "res"
+			if multipleCaptures {
+				captureName = ""
+			}
+			captureVar, jok, gol, goc, out, usefulItem := genGoPostItem(indent, pkg, captureName, multipleCaptures, f)
+			useful = useful || usefulItem
+			if multipleCaptures {
+				goc += indent + "res = res.Conjoin(" + out + ")\n"
 			} else {
-				for _, p := range f.Names {
-					rtn := genGoPostItem(indent, pkg, f, &idx, p, &gores, &jok, &gol, &goc)
-					useful = useful || exprIsUseful(rtn)
-					goc += indent + "res = res.Conjoin(" + rtn + ")\n"
+				result = out
+			}
+			captureVars = append(captureVars, captureVar)
+			jokType = append(jokType, jok)
+			golType = append(golType, gol)
+			goCode = append(goCode, goc)
+		} else {
+			for _, n := range f.Names {
+				captureName := "res"
+				if multipleCaptures {
+					captureName = n.Name
 				}
+				captureVar, jok, gol, goc, out, usefulItem := genGoPostItem(indent, pkg, captureName, multipleCaptures, f)
+				useful = useful || usefulItem
+				if multipleCaptures {
+					goc += indent + "res = res.Conjoin(" + out + ")\n"
+				} else {
+					result = out
+				}
+				captureVars = append(captureVars, captureVar)
+				jokType = append(jokType, jok)
+				golType = append(golType, gol)
+				goCode = append(goCode, goc)
 			}
 		}
+	}
+
+	out = strings.Join(captureVars, ", ")
+	if out != "" {
+		out += " := "
+	}
+
+	jok = strings.Join(jokType, " ")
+	if len(jokType) > 1 && jok != "" {
 		jok = "[" + jok + "]"
-		if gol != "" {
-			gol = "(" + gol + ")"
-		}
-		gores += " := "
+	}
+
+	gol = strings.Join(golType, ", ")
+	if len(golType) > 1 && gol != "" {
+		gol = "(" + gol + ")"
+	}
+
+	goc = strings.Join(goCode, "")
+
+	if multipleCaptures {
 		if useful {
 			goc = indent + "res := EmptyVector\n" + goc + indent + "return res\n"
 		} else {
 			goc = indent + "ABEND123(no public information returned)\n"
 		}
 	} else {
-		gores = "res"
-		rtn := genGoPostItem(indent, pkg, fl.List[0], &idx, nil,
-			&gores, &jok, &gol, &goc)
 		if goc == "" {
-			gores = "return " // No code generated, so no need to use rtn as intermediary
+			out = "return " // No code generated, so no need to use intermediary
 		} else {
-			goc += indent + "return " + rtn + "\n"
-			gores += " := "
+			goc += indent + "return " + result + "\n"
 		}
-		if !exprIsUseful(rtn) {
+		if !useful {
 			goc += indent + "ABEND124(no public information returned)\n"
 		}
 	}
+
 	return
 }
 
@@ -829,7 +842,8 @@ func genGoPost(indent string, pkg string, d *FuncDecl) (goResultAssign, jokerRet
 	if fl == nil || fl.List == nil {
 		return
 	}
-	goResultAssign, jokerReturnTypeForDoc, goReturnTypeForDoc, goReturnCode = genGoPostList(indent, pkg, fl)
+//	goResultAssign, jokerReturnTypeForDoc, goReturnTypeForDoc, goReturnCode = genGoPostListOld(indent, pkg, *fl)
+	jokerReturnTypeForDoc, goReturnTypeForDoc, goReturnCode, goResultAssign = genGoPostList(indent, pkg, *fl)
 	return
 }
 
