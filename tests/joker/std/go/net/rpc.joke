@@ -9,26 +9,26 @@
 ;; (defn Accept
 ;;   "Accept accepts connections on the listener and serves requests\nto DefaultServer for each incoming connection.\nAccept blocks; the caller typically invokes it in a go statement.\n"
 ;;   {:added "1.0"
-;;    :go "accept(lis)"}
-;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/rpc/server.go:692:17) lis])
+;;    :go "accept(_lis)"}
+;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/rpc/server.go:692:17) _lis])
 
 (defn Dial
   "Dial connects to an RPC server at the specified network address.\n\nGo return type: (*Client, error)\n\nJoker return type: [{} Error]"
   {:added "1.0"
-   :go "dial(network, address)"}
-  [^String network, ^String address])
+   :go "dial(_network, _address)"}
+  [^String _network, ^String _address])
 
 (defn DialHTTP
   "DialHTTP connects to an HTTP RPC server at the specified network address\nlistening on the default HTTP RPC path.\n\nGo return type: (*Client, error)\n\nJoker return type: [{} Error]"
   {:added "1.0"
-   :go "dialHTTP(network, address)"}
-  [^String network, ^String address])
+   :go "dialHTTP(_network, _address)"}
+  [^String _network, ^String _address])
 
 (defn DialHTTPPath
   "DialHTTPPath connects to an HTTP RPC server\nat the specified network address and path.\n\nGo return type: (*Client, error)\n\nJoker return type: [{} Error]"
   {:added "1.0"
-   :go "dialHTTPPath(network, address, path)"}
-  [^String network, ^String address, ^String path])
+   :go "dialHTTPPath(_network, _address, _path)"}
+  [^String _network, ^String _address, ^String _path])
 
 ;; (defn HandleHTTP
 ;;   "HandleHTTP registers an HTTP handler for RPC messages to DefaultServer\non DefaultRPCPath and a debugging handler on DefaultDebugPath.\nIt is still necessary to invoke http.Serve(), typically in a go statement.\n"
@@ -39,14 +39,14 @@
 ;; (defn NewClient
 ;;   "NewClient returns a new Client to handle requests to the\nset of services at the other end of the connection.\nIt adds a buffer to the write side of the connection so\nthe header and payload are sent as a unit.\n\nThe read and write halves of the connection are serialized independently,\nso no interlocking is required. However each half may be accessed\nconcurrently so the implementation of conn should protect against\nconcurrent reads or concurrent writes.\n\nGo return type: *Client\n\nJoker return type: {}"
 ;;   {:added "1.0"
-;;    :go "newClient(conn)"}
-;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/rpc/client.go:193:21) conn])
+;;    :go "newClient(_conn)"}
+;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/rpc/client.go:193:21) _conn])
 
 ;; (defn NewClientWithCodec
 ;;   "NewClientWithCodec is like NewClient but uses the specified\ncodec to encode requests and decode responses.\n\nGo return type: *Client\n\nJoker return type: {}"
 ;;   {:added "1.0"
-;;    :go "newClientWithCodec(codec)"}
-;;   [^ABEND885(unrecognized type ClientCodec at: tests/big/src/net/rpc/client.go:201:31) codec])
+;;    :go "newClientWithCodec(_codec)"}
+;;   [^ABEND885(unrecognized type ClientCodec at: tests/big/src/net/rpc/client.go:201:31) _codec])
 
 ;; (defn NewServer
 ;;   "NewServer returns a new Server.\n\nGo return type: *Server\n\nJoker return type: {}"
@@ -54,32 +54,32 @@
 ;;    :go "newServer()"}
 ;;   [])
 
-;; (defn ^Error Register
+;; (defn ^"Error" Register
 ;;   "Register publishes the receiver's methods in the DefaultServer.\n\nGo return type: error\n\nJoker return type: Error"
 ;;   {:added "1.0"
-;;    :go "rpc.Register(rcvr)"}
-;;   [^ABEND881(unrecognized Expr type *ast.InterfaceType at: tests/big/src/net/rpc/server.go:642:20) rcvr])
+;;    :go "rpc.Register(_rcvr)"}
+;;   [^ABEND881(unrecognized Expr type *ast.InterfaceType at: tests/big/src/net/rpc/server.go:642:20) _rcvr])
 
-;; (defn ^Error RegisterName
+;; (defn ^"Error" RegisterName
 ;;   "RegisterName is like Register but uses the provided name for the type\ninstead of the receiver's concrete type.\n\nGo return type: error\n\nJoker return type: Error"
 ;;   {:added "1.0"
-;;    :go "rpc.RegisterName(name, rcvr)"}
-;;   [^String name, ^ABEND881(unrecognized Expr type *ast.InterfaceType at: tests/big/src/net/rpc/server.go:646:37) rcvr])
+;;    :go "rpc.RegisterName(_name, _rcvr)"}
+;;   [^String _name, ^ABEND881(unrecognized Expr type *ast.InterfaceType at: tests/big/src/net/rpc/server.go:646:37) _rcvr])
 
 ;; (defn ServeCodec
 ;;   "ServeCodec is like ServeConn but uses the specified codec to\ndecode requests and encode responses.\n"
 ;;   {:added "1.0"
-;;    :go "serveCodec(codec)"}
-;;   [^ABEND885(unrecognized type ServerCodec at: tests/big/src/net/rpc/server.go:679:23) codec])
+;;    :go "serveCodec(_codec)"}
+;;   [^ABEND885(unrecognized type ServerCodec at: tests/big/src/net/rpc/server.go:679:23) _codec])
 
 ;; (defn ServeConn
 ;;   "ServeConn runs the DefaultServer on a single connection.\nServeConn blocks, serving the connection until the client hangs up.\nThe caller typically invokes ServeConn in a go statement.\nServeConn uses the gob wire format (see package gob) on the\nconnection. To use an alternate codec, use ServeCodec.\nSee NewClient's comment for information about concurrent access.\n"
 ;;   {:added "1.0"
-;;    :go "serveConn(conn)"}
-;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/rpc/server.go:673:21) conn])
+;;    :go "serveConn(_conn)"}
+;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/rpc/server.go:673:21) _conn])
 
-;; (defn ^Error ServeRequest
+;; (defn ^"Error" ServeRequest
 ;;   "ServeRequest is like ServeCodec but synchronously serves a single request.\nIt does not close the codec upon completion.\n\nGo return type: error\n\nJoker return type: Error"
 ;;   {:added "1.0"
-;;    :go "rpc.ServeRequest(codec)"}
-;;   [^ABEND885(unrecognized type ServerCodec at: tests/big/src/net/rpc/server.go:685:25) codec])
+;;    :go "rpc.ServeRequest(_codec)"}
+;;   [^ABEND885(unrecognized type ServerCodec at: tests/big/src/net/rpc/server.go:685:25) _codec])

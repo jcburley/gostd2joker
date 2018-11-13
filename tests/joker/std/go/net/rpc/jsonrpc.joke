@@ -9,29 +9,29 @@
 ;; (defn Dial
 ;;   "Dial connects to a JSON-RPC server at the specified network address.\n\nGo return type: (*..., error)\n\nJoker return type: [ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/rpc/jsonrpc/client.go:118:38) Error]"
 ;;   {:added "1.0"
-;;    :go "dial(network, address)"}
-;;   [^String network, ^String address])
+;;    :go "dial(_network, _address)"}
+;;   [^String _network, ^String _address])
 
 ;; (defn NewClient
 ;;   "NewClient returns a new rpc.Client to handle requests to the\nset of services at the other end of the connection.\n\nGo return type: *...\n\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/rpc/jsonrpc/client.go:113:42)"
 ;;   {:added "1.0"
-;;    :go "newClient(conn)"}
-;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/rpc/jsonrpc/client.go:113:21) conn])
+;;    :go "newClient(_conn)"}
+;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/rpc/jsonrpc/client.go:113:21) _conn])
 
 ;; (defn NewClientCodec
 ;;   "NewClientCodec returns a new rpc.ClientCodec using JSON-RPC on conn.\n\nGo return type: ...\n\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/rpc/jsonrpc/client.go:37:46)"
 ;;   {:added "1.0"
-;;    :go "newClientCodec(conn)"}
-;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/rpc/jsonrpc/client.go:37:26) conn])
+;;    :go "newClientCodec(_conn)"}
+;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/rpc/jsonrpc/client.go:37:26) _conn])
 
 ;; (defn NewServerCodec
 ;;   "NewServerCodec returns a new rpc.ServerCodec using JSON-RPC on conn.\n\nGo return type: ...\n\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/rpc/jsonrpc/server.go:37:46)"
 ;;   {:added "1.0"
-;;    :go "newServerCodec(conn)"}
-;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/rpc/jsonrpc/server.go:37:26) conn])
+;;    :go "newServerCodec(_conn)"}
+;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/rpc/jsonrpc/server.go:37:26) _conn])
 
 ;; (defn ServeConn
 ;;   "ServeConn runs the JSON-RPC server on a single connection.\nServeConn blocks, serving the connection until the client hangs up.\nThe caller typically invokes ServeConn in a go statement.\n"
 ;;   {:added "1.0"
-;;    :go "serveConn(conn)"}
-;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/rpc/jsonrpc/server.go:132:21) conn])
+;;    :go "serveConn(_conn)"}
+;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/rpc/jsonrpc/server.go:132:21) _conn])

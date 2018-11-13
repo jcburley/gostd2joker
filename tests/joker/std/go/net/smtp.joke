@@ -9,29 +9,29 @@
 ;; (defn CRAMMD5Auth
 ;;   "CRAMMD5Auth returns an Auth that implements the CRAM-MD5 authentication\nmechanism as defined in RFC 2195.\nThe returned Auth uses the given username and secret to authenticate\nto the server using the challenge-response mechanism.\n\nGo return type: Auth\n\nJoker return type: ABEND883(unrecognized Expr type *ast.InterfaceType at: tests/big/src/net/smtp/auth.go:15:11)"
 ;;   {:added "1.0"
-;;    :go "cRAMMD5Auth(username, secret)"}
-;;   [^String username, ^String secret])
+;;    :go "cRAMMD5Auth(_username, _secret)"}
+;;   [^String _username, ^String _secret])
 
 ;; (defn Dial
 ;;   "Dial returns a new Client connected to an SMTP server at addr.\nThe addr must include a port, as in \"mail.example.com:smtp\".\n\nGo return type: (*Client, error)\n\nJoker return type: [{:Text ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/smtp/smtp.go:33:8)} Error]"
 ;;   {:added "1.0"
-;;    :go "dial(addr)"}
-;;   [^String addr])
+;;    :go "dial(_addr)"}
+;;   [^String _addr])
 
 ;; (defn NewClient
 ;;   "NewClient returns a new Client using an existing connection and host as a\nserver name to be used when authenticating.\n\nGo return type: (*Client, error)\n\nJoker return type: [{:Text ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/smtp/smtp.go:33:8)} Error]"
 ;;   {:added "1.0"
-;;    :go "newClient(conn, host)"}
-;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/smtp/smtp.go:62:21) conn, ^String host])
+;;    :go "newClient(_conn, _host)"}
+;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/smtp/smtp.go:62:21) _conn, ^String _host])
 
 ;; (defn PlainAuth
 ;;   "PlainAuth returns an Auth that implements the PLAIN authentication\nmechanism as defined in RFC 4616. The returned Auth uses the given\nusername and password to authenticate to host and act as identity.\nUsually identity should be the empty string, to act as username.\n\nPlainAuth will only send the credentials if the connection is using TLS\nor is connected to localhost. Otherwise authentication will fail with an\nerror, without sending the credentials.\n\nGo return type: Auth\n\nJoker return type: ABEND883(unrecognized Expr type *ast.InterfaceType at: tests/big/src/net/smtp/auth.go:15:11)"
 ;;   {:added "1.0"
-;;    :go "plainAuth(identity, username, password, host)"}
-;;   [^String identity, ^String username, ^String password, ^String host])
+;;    :go "plainAuth(_identity, _username, _password, _host)"}
+;;   [^String _identity, ^String _username, ^String _password, ^String _host])
 
-;; (defn ^Error SendMail
+;; (defn ^"Error" SendMail
 ;;   "SendMail connects to the server at addr, switches to TLS if\npossible, authenticates with the optional mechanism a if possible,\nand then sends an email from address from, to addresses to, with\nmessage msg.\nThe addr must include a port, as in \"mail.example.com:smtp\".\n\nThe addresses in the to parameter are the SMTP RCPT addresses.\n\nThe msg parameter should be an RFC 822-style email with headers\nfirst, a blank line, and then the message body. The lines of msg\nshould be CRLF terminated. The msg headers should usually include\nfields such as \"From\", \"To\", \"Subject\", and \"Cc\".  Sending \"Bcc\"\nmessages is accomplished by including an email address in the to\nparameter but not including it in the msg headers.\n\nThe SendMail function and the net/smtp package are low-level\nmechanisms and provide no support for DKIM signing, MIME\nattachments (see the mime/multipart package), or other mail\nfunctionality. Higher-level packages exist outside of the standard\nlibrary.\n\nGo return type: error\n\nJoker return type: Error"
 ;;   {:added "1.0"
-;;    :go "smtp.SendMail(addr, a, from, to, msg)"}
-;;   [^String addr, ^ABEND885(unrecognized type Auth at: tests/big/src/net/smtp/smtp.go:319:30) a, ^String from, ^ABEND881(unrecognized Expr type *ast.ArrayType at: tests/big/src/net/smtp/smtp.go:319:52) to, ^ABEND881(unrecognized Expr type *ast.ArrayType at: tests/big/src/net/smtp/smtp.go:319:66) msg])
+;;    :go "smtp.SendMail(_addr, _a, _from, _to, _msg)"}
+;;   [^String _addr, ^ABEND885(unrecognized type Auth at: tests/big/src/net/smtp/smtp.go:319:30) _a, ^String _from, ^ABEND881(unrecognized Expr type *ast.ArrayType at: tests/big/src/net/smtp/smtp.go:319:52) _to, ^ABEND881(unrecognized Expr type *ast.ArrayType at: tests/big/src/net/smtp/smtp.go:319:66) _msg])

@@ -396,7 +396,7 @@ func fieldListAsClojure(fl *FieldList) string {
 			if p == nil {
 				s += "_"
 			} else {
-				s += paramNameAsClojure(p.Name)
+				s += "_" + paramNameAsClojure(p.Name)
 			}
 		}
 	}
@@ -413,7 +413,7 @@ func fieldListToGo(fl *FieldList) string {
 			if p == nil {
 				s += "ABEND922"
 			} else {
-				s += p.Name
+				s += "_" + p.Name
 			}
 		}
 	}
@@ -818,7 +818,7 @@ func genGoPostList(indent string, pkg string, fl FieldList) (jok, gol, goc, out 
 func jokerReturnTypeForGenerateSTD(in_jok, in_gol string) (jok, gol string) {
 	switch in_jok {
 	case "String", "Int", "Byte", "Double", "Bool", "Time", "Error":  // TODO: Have tested only String so far
-		jok = "^" + in_jok
+		jok = `^"` + in_jok + `"`
 	default:
 		jok = ""
 		gol = "Object"
