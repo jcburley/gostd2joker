@@ -15160,11 +15160,11 @@ GO FUNC bufio.ScanBytes has:
 // func scanBytes(data ABEND882(unrecognized Expr type *ast.ArrayType at: GO.link/src/bufio/scan.go:284:21), atEOF bool) Object {
 // 	advance, token, err := _bufio.ScanBytes(data, atEOF)
 // 	res := EmptyVector
+// 	res = res.Conjoin(MakeInt(int(advance)))
 // 	vec1 := EmptyVector
 // 	for _, elem1 := range token {
 // 		vec1 = vec1.Conjoin(MakeInt(int(elem1)))
 // 	}
-// 	res = res.Conjoin(MakeInt(int(advance)))
 // 	res = res.Conjoin(vec1)
 // 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 // 	return res
@@ -15174,11 +15174,11 @@ GO FUNC bufio.ScanLines has:
 // func scanLines(data ABEND882(unrecognized Expr type *ast.ArrayType at: GO.link/src/bufio/scan.go:345:21), atEOF bool) Object {
 // 	advance, token, err := _bufio.ScanLines(data, atEOF)
 // 	res := EmptyVector
+// 	res = res.Conjoin(MakeInt(int(advance)))
 // 	vec1 := EmptyVector
 // 	for _, elem1 := range token {
 // 		vec1 = vec1.Conjoin(MakeInt(int(elem1)))
 // 	}
-// 	res = res.Conjoin(MakeInt(int(advance)))
 // 	res = res.Conjoin(vec1)
 // 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 // 	return res
@@ -15188,11 +15188,11 @@ GO FUNC bufio.ScanRunes has:
 // func scanRunes(data ABEND882(unrecognized Expr type *ast.ArrayType at: GO.link/src/bufio/scan.go:299:21), atEOF bool) Object {
 // 	advance, token, err := _bufio.ScanRunes(data, atEOF)
 // 	res := EmptyVector
+// 	res = res.Conjoin(MakeInt(int(advance)))
 // 	vec1 := EmptyVector
 // 	for _, elem1 := range token {
 // 		vec1 = vec1.Conjoin(MakeInt(int(elem1)))
 // 	}
-// 	res = res.Conjoin(MakeInt(int(advance)))
 // 	res = res.Conjoin(vec1)
 // 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 // 	return res
@@ -15202,11 +15202,11 @@ GO FUNC bufio.ScanWords has:
 // func scanWords(data ABEND882(unrecognized Expr type *ast.ArrayType at: GO.link/src/bufio/scan.go:390:21), atEOF bool) Object {
 // 	advance, token, err := _bufio.ScanWords(data, atEOF)
 // 	res := EmptyVector
+// 	res = res.Conjoin(MakeInt(int(advance)))
 // 	vec1 := EmptyVector
 // 	for _, elem1 := range token {
 // 		vec1 = vec1.Conjoin(MakeInt(int(elem1)))
 // 	}
-// 	res = res.Conjoin(MakeInt(int(advance)))
 // 	res = res.Conjoin(vec1)
 // 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 // 	return res
@@ -17791,10 +17791,6 @@ GO FUNC pem.Decode has:
 // func decode(data ABEND882(unrecognized Expr type *ast.ArrayType at: GO.link/src/encoding/pem/pem.go:78:18)) Object {
 // 	p, rest := _pem.Decode(data)
 // 	res := EmptyVector
-// 	vec3 := EmptyVector
-// 	for _, elem3 := range rest {
-// 		vec3 = vec3.Conjoin(MakeInt(int(elem3)))
-// 	}
 // 	map1 := EmptyArrayMap()
 // 	map1.Add(MakeKeyword("Type"), MakeString((*p).Type))
 // 	map1.Add(MakeKeyword("Headers"), (*p).Headers)
@@ -17804,6 +17800,10 @@ GO FUNC pem.Decode has:
 // 	}
 // 	map1.Add(MakeKeyword("Bytes"), vec2)
 // 	res = res.Conjoin(map1)
+// 	vec3 := EmptyVector
+// 	for _, elem3 := range rest {
+// 		vec3 = vec3.Conjoin(MakeInt(int(elem3)))
+// 	}
 // 	res = res.Conjoin(vec3)
 // 	return res
 // }
@@ -19103,11 +19103,11 @@ GO FUNC types.LookupFieldOrMethod has:
 // func lookupFieldOrMethod(T ABEND884(unrecognized type Type at: GO.link/src/go/types/lookup.go:35:28), addressable bool, pkg ABEND882(unrecognized Expr type *ast.StarExpr at: GO.link/src/go/types/lookup.go:35:56), name string) Object {
 // 	obj, index, indirect := _types.LookupFieldOrMethod(T, addressable, pkg, name)
 // 	res := EmptyVector
+// 	res = res.Conjoin(obj)
 // 	vec1 := EmptyVector
 // 	for _, elem1 := range index {
 // 		vec1 = vec1.Conjoin(MakeInt(int(elem1)))
 // 	}
-// 	res = res.Conjoin(obj)
 // 	res = res.Conjoin(vec1)
 // 	res = res.Conjoin(MakeBool(indirect))
 // 	return res
@@ -21145,6 +21145,7 @@ GO FUNC net.LookupSRV has:
 func lookupSRV(service string, proto string, name string) Object {
 	cname, addrs, err := _net.LookupSRV(service, proto, name)
 	res := EmptyVector
+	res = res.Conjoin(MakeString(cname))
 	vec1 := EmptyVector
 	for _, elem1 := range addrs {
 		map2 := EmptyArrayMap()
@@ -21154,7 +21155,6 @@ func lookupSRV(service string, proto string, name string) Object {
 		map2.Add(MakeKeyword("Weight"), MakeInt(int((*elem1).Weight)))
 		vec1 = vec1.Conjoin(map2)
 	}
-	res = res.Conjoin(MakeString(cname))
 	res = res.Conjoin(vec1)
 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 	return res
@@ -21177,6 +21177,11 @@ GO FUNC net.ParseCIDR has:
 func parseCIDR(s string) Object {
 	res1, res2, res3 := _net.ParseCIDR(s)
 	res := EmptyVector
+	vec1 := EmptyVector
+	for _, elem1 := range res1 {
+		vec1 = vec1.Conjoin(MakeInt(int(elem1)))
+	}
+	res = res.Conjoin(vec1)
 	map2 := EmptyArrayMap()
 	vec3 := EmptyVector
 	for _, elem3 := range (*res2).IP {
@@ -21188,11 +21193,6 @@ func parseCIDR(s string) Object {
 		vec4 = vec4.Conjoin(MakeInt(int(elem4)))
 	}
 	map2.Add(MakeKeyword("Mask"), vec4)
-	vec1 := EmptyVector
-	for _, elem1 := range res1 {
-		vec1 = vec1.Conjoin(MakeInt(int(elem1)))
-	}
-	res = res.Conjoin(vec1)
 	res = res.Conjoin(map2)
 	res = res.Conjoin(func () Object { if (res3) == nil { return NIL } else { return MakeError(res3) } }())
 	return res
@@ -24178,12 +24178,12 @@ GO FUNC syscall.ParseDirent has:
 // func parseDirent(buf ABEND882(unrecognized Expr type *ast.ArrayType at: GO.link/src/syscall/dirent.go:64:22), max int, names ABEND882(unrecognized Expr type *ast.ArrayType at: GO.link/src/syscall/dirent.go:64:45)) Object {
 // 	consumed, count, newnames := _syscall.ParseDirent(buf, max, names)
 // 	res := EmptyVector
+// 	res = res.Conjoin(MakeInt(int(consumed)))
+// 	res = res.Conjoin(MakeInt(int(count)))
 // 	vec1 := EmptyVector
 // 	for _, elem1 := range newnames {
 // 		vec1 = vec1.Conjoin(MakeString(elem1))
 // 	}
-// 	res = res.Conjoin(MakeInt(int(consumed)))
-// 	res = res.Conjoin(MakeInt(int(count)))
 // 	res = res.Conjoin(vec1)
 // 	return res
 // }
