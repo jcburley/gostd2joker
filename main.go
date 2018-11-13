@@ -548,7 +548,7 @@ func genGoPostNamed(indent, pkg, in, t, onlyIf string) (jok, gol, goc, out strin
 }
 
 func isPrivate(p string) bool {
-	return p[0] == '_' || unicode.IsLower(rune(p[0]))
+	return !unicode.IsUpper(rune(p[0]))
 }
 
 // func tryThis(s string) struct { a int; b string } {
