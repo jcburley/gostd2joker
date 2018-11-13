@@ -4681,7 +4681,7 @@ JOKER FUNC zip.NewReader has:
 ;;   "NewReader returns a new Reader reading from r, which is assumed to\nhave the given size in bytes.\n\nGo return type: (*Reader, error)\n\nJoker return type: [{:File ^(vector-of {}), :Comment ^String} Error]"
 ;;   {:added "1.0"
 ;;    :go "newReader(_r, _size)"}
-;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/archive/zip/reader.go:71:18) _r, ^Int _size])
+;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/archive/zip/reader.go:71:18) _r, ^ABEND885(unrecognized type int64 at: GO.link/src/archive/zip/reader.go:71:36) _size])
 
 JOKER FUNC zip.NewWriter has:
 ;; (defn NewWriter
@@ -4702,14 +4702,14 @@ JOKER FUNC zip.RegisterCompressor has:
 ;;   "RegisterCompressor registers custom compressors for a specified method ID.\nThe common methods Store and Deflate are built in.\n"
 ;;   {:added "1.0"
 ;;    :go "registerCompressor(_method, _comp)"}
-;;   [^Int _method, ^ABEND885(unrecognized type Compressor at: GO.link/src/archive/zip/register.go:128:45) _comp])
+;;   [^ABEND885(unrecognized type uint16 at: GO.link/src/archive/zip/register.go:128:32) _method, ^ABEND885(unrecognized type Compressor at: GO.link/src/archive/zip/register.go:128:45) _comp])
 
 JOKER FUNC zip.RegisterDecompressor has:
 ;; (defn RegisterDecompressor
 ;;   "RegisterDecompressor allows custom decompressors for a specified method ID.\nThe common methods Store and Deflate are built in.\n"
 ;;   {:added "1.0"
 ;;    :go "registerDecompressor(_method, _dcomp)"}
-;;   [^Int _method, ^ABEND885(unrecognized type Decompressor at: GO.link/src/archive/zip/register.go:120:48) _dcomp])
+;;   [^ABEND885(unrecognized type uint16 at: GO.link/src/archive/zip/register.go:120:34) _method, ^ABEND885(unrecognized type Decompressor at: GO.link/src/archive/zip/register.go:120:48) _dcomp])
 
 JOKER FUNC bufio.NewReadWriter has:
 ;; (defn NewReadWriter
@@ -5755,11 +5755,11 @@ JOKER FUNC subtle.ConstantTimeCopy has:
 ;;   [^Int _v, ^ABEND881(unrecognized Expr type *ast.ArrayType at: GO.link/src/crypto/subtle/constant_time.go:43:35) _x, ^ABEND881(unrecognized Expr type *ast.ArrayType at: GO.link/src/crypto/subtle/constant_time.go:43:35) _y])
 
 JOKER FUNC subtle.ConstantTimeEq has:
-(defn ^"Int" ConstantTimeEq
-  "ConstantTimeEq returns 1 if x == y and 0 otherwise.\n\nGo return type: int\n\nJoker return type: Int"
-  {:added "1.0"
-   :go "subtle.ConstantTimeEq(_x, _y)"}
-  [^Int _x, ^Int _y])
+;; (defn ^"Int" ConstantTimeEq
+;;   "ConstantTimeEq returns 1 if x == y and 0 otherwise.\n\nGo return type: int\n\nJoker return type: Int"
+;;   {:added "1.0"
+;;    :go "subtle.ConstantTimeEq(_x, _y)"}
+;;   [^ABEND885(unrecognized type int32 at: GO.link/src/crypto/subtle/constant_time.go:36:26) _x, ^ABEND885(unrecognized type int32 at: GO.link/src/crypto/subtle/constant_time.go:36:26) _y])
 
 JOKER FUNC subtle.ConstantTimeLessOrEq has:
 (defn ^"Int" ConstantTimeLessOrEq
@@ -6067,21 +6067,21 @@ JOKER FUNC elf.R_INFO has:
 ;;   "Go return type: uint64\n\nJoker return type: ABEND042(cannot find typename debug/elf.uint64)"
 ;;   {:added "1.0"
 ;;    :go "r_INFO(_sym, _typ)"}
-;;   [^Int _sym, ^Int _typ])
+;;   [^ABEND885(unrecognized type uint32 at: GO.link/src/debug/elf/elf.go:2927:22) _sym, ^ABEND885(unrecognized type uint32 at: GO.link/src/debug/elf/elf.go:2927:22) _typ])
 
 JOKER FUNC elf.R_INFO32 has:
-(defn ^"Int" R_INFO32
-  "Go return type: int\n\nJoker return type: Int"
-  {:added "1.0"
-   :go "elf.R_INFO32(_sym, _typ)"}
-  [^Int _sym, ^Int _typ])
+;; (defn ^"Int" R_INFO32
+;;   "Go return type: int\n\nJoker return type: Int"
+;;   {:added "1.0"
+;;    :go "elf.R_INFO32(_sym, _typ)"}
+;;   [^ABEND885(unrecognized type uint32 at: GO.link/src/debug/elf/elf.go:2825:24) _sym, ^ABEND885(unrecognized type uint32 at: GO.link/src/debug/elf/elf.go:2825:24) _typ])
 
 JOKER FUNC elf.R_SYM32 has:
-(defn ^"Int" R_SYM32
-  "Go return type: int\n\nJoker return type: Int"
-  {:added "1.0"
-   :go "elf.R_SYM32(_info)"}
-  [^Int _info])
+;; (defn ^"Int" R_SYM32
+;;   "Go return type: int\n\nJoker return type: Int"
+;;   {:added "1.0"
+;;    :go "elf.R_SYM32(_info)"}
+;;   [^ABEND885(unrecognized type uint32 at: GO.link/src/debug/elf/elf.go:2823:19) _info])
 
 JOKER FUNC elf.R_SYM64 has:
 ;; (defn ^"Int" R_SYM64
@@ -6091,11 +6091,11 @@ JOKER FUNC elf.R_SYM64 has:
 ;;   [^ABEND885(unrecognized type uint64 at: GO.link/src/debug/elf/elf.go:2925:19) _info])
 
 JOKER FUNC elf.R_TYPE32 has:
-(defn ^"Int" R_TYPE32
-  "Go return type: int\n\nJoker return type: Int"
-  {:added "1.0"
-   :go "elf.R_TYPE32(_info)"}
-  [^Int _info])
+;; (defn ^"Int" R_TYPE32
+;;   "Go return type: int\n\nJoker return type: Int"
+;;   {:added "1.0"
+;;    :go "elf.R_TYPE32(_info)"}
+;;   [^ABEND885(unrecognized type uint32 at: GO.link/src/debug/elf/elf.go:2824:20) _info])
 
 JOKER FUNC elf.R_TYPE64 has:
 ;; (defn ^"Int" R_TYPE64
@@ -6319,7 +6319,7 @@ JOKER FUNC binary.PutVarint has:
 ;;   "PutVarint encodes an int64 into buf and returns the number of bytes written.\nIf the buffer is too small, PutVarint will panic.\n\nGo return type: int\n\nJoker return type: Int"
 ;;   {:added "1.0"
 ;;    :go "binary.PutVarint(_buf, _x)"}
-;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: GO.link/src/encoding/binary/varint.go:78:20) _buf, ^Int _x])
+;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: GO.link/src/encoding/binary/varint.go:78:20) _buf, ^ABEND885(unrecognized type int64 at: GO.link/src/encoding/binary/varint.go:78:30) _x])
 
 JOKER FUNC binary.Read has:
 ;; (defn ^"Error" Read
@@ -6756,18 +6756,18 @@ JOKER FUNC flag.Int has:
   [^String _name, ^Int _value, ^String _usage])
 
 JOKER FUNC flag.Int64 has:
-(defn ^"Int" Int64
-  "Int64 defines an int64 flag with specified name, default value, and usage string.\nThe return value is the address of an int64 variable that stores the value of the flag.\n\nGo return type: *int\n\nJoker return type: Int"
-  {:added "1.0"
-   :go "flag.Int64(_name, _value, _usage)"}
-  [^String _name, ^Int _value, ^String _usage])
+;; (defn ^"Int" Int64
+;;   "Int64 defines an int64 flag with specified name, default value, and usage string.\nThe return value is the address of an int64 variable that stores the value of the flag.\n\nGo return type: *int\n\nJoker return type: Int"
+;;   {:added "1.0"
+;;    :go "flag.Int64(_name, _value, _usage)"}
+;;   [^String _name, ^ABEND885(unrecognized type int64 at: GO.link/src/flag/flag.go:649:31) _value, ^String _usage])
 
 JOKER FUNC flag.Int64Var has:
 ;; (defn Int64Var
 ;;   "Int64Var defines an int64 flag with specified name, default value, and usage string.\nThe argument p points to an int64 variable in which to store the value of the flag.\n"
 ;;   {:added "1.0"
 ;;    :go "int64Var(_p, _name, _value, _usage)"}
-;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/flag/flag.go:635:17) _p, ^String _name, ^Int _value, ^String _usage])
+;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/flag/flag.go:635:17) _p, ^String _name, ^ABEND885(unrecognized type int64 at: GO.link/src/flag/flag.go:635:44) _value, ^String _usage])
 
 JOKER FUNC flag.IntVar has:
 ;; (defn IntVar
@@ -6847,11 +6847,11 @@ JOKER FUNC flag.StringVar has:
 ;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/flag/flag.go:713:18) _p, ^String _name, ^String _value, ^String _usage])
 
 JOKER FUNC flag.Uint has:
-(defn ^"Int" Uint
-  "Uint defines a uint flag with specified name, default value, and usage string.\nThe return value is the address of a uint variable that stores the value of the flag.\n\nGo return type: *int\n\nJoker return type: Int"
-  {:added "1.0"
-   :go "flag.Uint(_name, _value, _usage)"}
-  [^String _name, ^Int _value, ^String _usage])
+;; (defn ^"Int" Uint
+;;   "Uint defines a uint flag with specified name, default value, and usage string.\nThe return value is the address of a uint variable that stores the value of the flag.\n\nGo return type: *int\n\nJoker return type: Int"
+;;   {:added "1.0"
+;;    :go "flag.Uint(_name, _value, _usage)"}
+;;   [^String _name, ^ABEND885(unrecognized type uint at: GO.link/src/flag/flag.go:675:30) _value, ^String _usage])
 
 JOKER FUNC flag.Uint64 has:
 ;; (defn Uint64
@@ -6872,7 +6872,7 @@ JOKER FUNC flag.UintVar has:
 ;;   "UintVar defines a uint flag with specified name, default value, and usage string.\nThe argument p points to a uint variable in which to store the value of the flag.\n"
 ;;   {:added "1.0"
 ;;    :go "uintVar(_p, _name, _value, _usage)"}
-;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/flag/flag.go:661:16) _p, ^String _name, ^Int _value, ^String _usage])
+;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/flag/flag.go:661:16) _p, ^String _name, ^ABEND885(unrecognized type uint at: GO.link/src/flag/flag.go:661:42) _value, ^String _usage])
 
 JOKER FUNC flag.UnquoteUsage has:
 ;; (defn UnquoteUsage
@@ -7285,7 +7285,7 @@ JOKER FUNC constant.MakeFromLiteral has:
 ;;   "MakeFromLiteral returns the corresponding integer, floating-point,\nimaginary, character, or string value for a Go literal string. The\ntok value must be one of token.INT, token.FLOAT, token.IMAG,\ntoken.CHAR, or token.STRING. The final argument must be zero.\nIf the literal string syntax is invalid, the result is an Unknown.\n\nGo return type: Value\n\nJoker return type: ABEND883(unrecognized Expr type *ast.InterfaceType at: GO.link/src/go/constant/value.go:44:12)"
 ;;   {:added "1.0"
 ;;    :go "makeFromLiteral(_lit, _tok, _zero)"}
-;;   [^String _lit, ^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/go/constant/value.go:378:38) _tok, ^Int _zero])
+;;   [^String _lit, ^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/go/constant/value.go:378:38) _tok, ^ABEND885(unrecognized type uint at: GO.link/src/go/constant/value.go:378:56) _zero])
 
 JOKER FUNC constant.MakeImag has:
 ;; (defn MakeImag
@@ -7299,7 +7299,7 @@ JOKER FUNC constant.MakeInt64 has:
 ;;   "MakeInt64 returns the Int value for x.\n\nGo return type: Value\n\nJoker return type: ABEND883(unrecognized Expr type *ast.InterfaceType at: GO.link/src/go/constant/value.go:44:12)"
 ;;   {:added "1.0"
 ;;    :go "makeInt64(_x)"}
-;;   [^Int _x])
+;;   [^ABEND885(unrecognized type int64 at: GO.link/src/go/constant/value.go:350:18) _x])
 
 JOKER FUNC constant.MakeString has:
 ;; (defn MakeString
@@ -7341,7 +7341,7 @@ JOKER FUNC constant.Shift has:
 ;;   "Shift returns the result of the shift expression x op s\nwith op == token.SHL or token.SHR (<< or >>). x must be\nan Int or an Unknown. If x is Unknown, the result is x.\n\nGo return type: Value\n\nJoker return type: ABEND883(unrecognized Expr type *ast.InterfaceType at: GO.link/src/go/constant/value.go:44:12)"
 ;;   {:added "1.0"
 ;;    :go "shift(_x, _op, _s)"}
-;;   [^ABEND885(unrecognized type Value at: GO.link/src/go/constant/value.go:1191:14) _x, ^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/go/constant/value.go:1191:24) _op, ^Int _s])
+;;   [^ABEND885(unrecognized type Value at: GO.link/src/go/constant/value.go:1191:14) _x, ^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/go/constant/value.go:1191:24) _op, ^ABEND885(unrecognized type uint at: GO.link/src/go/constant/value.go:1191:39) _s])
 
 JOKER FUNC constant.Sign has:
 ;; (defn ^"Int" Sign
@@ -7390,7 +7390,7 @@ JOKER FUNC constant.UnaryOp has:
 ;;   "UnaryOp returns the result of the unary expression op y.\nThe operation must be defined for the operand.\nIf prec > 0 it specifies the ^ (xor) result size in bits.\nIf y is Unknown, the result is Unknown.\n\nGo return type: Value\n\nJoker return type: ABEND883(unrecognized Expr type *ast.InterfaceType at: GO.link/src/go/constant/value.go:44:12)"
 ;;   {:added "1.0"
 ;;    :go "unaryOp(_op, _y, _prec)"}
-;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/go/constant/value.go:850:17) _op, ^ABEND885(unrecognized type Value at: GO.link/src/go/constant/value.go:850:32) _y, ^Int _prec])
+;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/go/constant/value.go:850:17) _op, ^ABEND885(unrecognized type Value at: GO.link/src/go/constant/value.go:850:32) _y, ^ABEND885(unrecognized type uint at: GO.link/src/go/constant/value.go:850:44) _prec])
 
 JOKER FUNC doc.Examples has:
 ;; (defn Examples
@@ -7628,7 +7628,7 @@ JOKER FUNC types.NewArray has:
 ;;   "NewArray returns a new array type for the given element type and length.\nA negative length indicates an unknown length.\n\nGo return type: *Array\n\nJoker return type: {}"
 ;;   {:added "1.0"
 ;;    :go "newArray(_elem, _len)"}
-;;   [^ABEND885(unrecognized type Type at: GO.link/src/go/types/type.go:101:20) _elem, ^Int _len])
+;;   [^ABEND885(unrecognized type Type at: GO.link/src/go/types/type.go:101:20) _elem, ^ABEND885(unrecognized type int64 at: GO.link/src/go/types/type.go:101:30) _len])
 
 JOKER FUNC types.NewChan has:
 ;; (defn NewChan
@@ -7869,11 +7869,11 @@ JOKER FUNC crc32.ChecksumIEEE has:
 ;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: GO.link/src/hash/crc32/crc32.go:251:24) _data])
 
 JOKER FUNC crc32.MakeTable has:
-(defn MakeTable
-  "MakeTable returns a Table constructed from the specified polynomial.\nThe contents of this Table must not be modified.\n\nGo return type: *Table\n\nJoker return type: (vector-of Int)"
-  {:added "1.0"
-   :go "makeTable(_poly)"}
-  [^Int _poly])
+;; (defn MakeTable
+;;   "MakeTable returns a Table constructed from the specified polynomial.\nThe contents of this Table must not be modified.\n\nGo return type: *Table\n\nJoker return type: (vector-of Int)"
+;;   {:added "1.0"
+;;    :go "makeTable(_poly)"}
+;;   [^ABEND885(unrecognized type uint32 at: GO.link/src/hash/crc32/crc32.go:124:21) _poly])
 
 JOKER FUNC crc32.New has:
 ;; (defn New
@@ -7894,7 +7894,7 @@ JOKER FUNC crc32.Update has:
 ;;   "Update returns the result of adding the bytes in p to the crc.\n\nGo return type: int\n\nJoker return type: Int"
 ;;   {:added "1.0"
 ;;    :go "crc32.Update(_crc, _tab, _p)"}
-;;   [^Int _crc, ^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/hash/crc32/crc32.go:210:29) _tab, ^ABEND881(unrecognized Expr type *ast.ArrayType at: GO.link/src/hash/crc32/crc32.go:210:39) _p])
+;;   [^ABEND885(unrecognized type uint32 at: GO.link/src/hash/crc32/crc32.go:210:17) _crc, ^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/hash/crc32/crc32.go:210:29) _tab, ^ABEND881(unrecognized Expr type *ast.ArrayType at: GO.link/src/hash/crc32/crc32.go:210:39) _p])
 
 JOKER FUNC crc64.Checksum has:
 ;; (defn Checksum
@@ -8342,14 +8342,14 @@ JOKER FUNC io.CopyN has:
 ;;   "CopyN copies n bytes (or until an error) from src to dst.\nIt returns the number of bytes copied and the earliest\nerror encountered while copying.\nOn return, written == n if and only if err == nil.\n\nIf dst implements the ReaderFrom interface,\nthe copy is implemented using it.\n\nGo return type: (written int, err error)\n\nJoker return type: [Int Error]"
 ;;   {:added "1.0"
 ;;    :go "copyN(_dst, _src, _n)"}
-;;   [^ABEND885(unrecognized type Writer at: GO.link/src/io/io.go:339:16) _dst, ^ABEND885(unrecognized type Reader at: GO.link/src/io/io.go:339:28) _src, ^Int _n])
+;;   [^ABEND885(unrecognized type Writer at: GO.link/src/io/io.go:339:16) _dst, ^ABEND885(unrecognized type Reader at: GO.link/src/io/io.go:339:28) _src, ^ABEND885(unrecognized type int64 at: GO.link/src/io/io.go:339:38) _n])
 
 JOKER FUNC io.LimitReader has:
 ;; (defn LimitReader
 ;;   "LimitReader returns a Reader that reads from r\nbut stops with EOF after n bytes.\nThe underlying implementation is a *LimitedReader.\n\nGo return type: Reader\n\nJoker return type: ABEND883(unrecognized Expr type *ast.InterfaceType at: GO.link/src/io/io.go:77:13)"
 ;;   {:added "1.0"
 ;;    :go "limitReader(_r, _n)"}
-;;   [^ABEND885(unrecognized type Reader at: GO.link/src/io/io.go:430:20) _r, ^Int _n])
+;;   [^ABEND885(unrecognized type Reader at: GO.link/src/io/io.go:430:20) _r, ^ABEND885(unrecognized type int64 at: GO.link/src/io/io.go:430:30) _n])
 
 JOKER FUNC io.MultiReader has:
 ;; (defn MultiReader
@@ -8370,7 +8370,7 @@ JOKER FUNC io.NewSectionReader has:
 ;;   "NewSectionReader returns a SectionReader that reads from r\nstarting at offset off and stops with EOF after n bytes.\n\nGo return type: *SectionReader\n\nJoker return type: {}"
 ;;   {:added "1.0"
 ;;    :go "newSectionReader(_r, _off, _n)"}
-;;   [^ABEND885(unrecognized type ReaderAt at: GO.link/src/io/io.go:455:25) _r, ^Int _off, ^Int _n])
+;;   [^ABEND885(unrecognized type ReaderAt at: GO.link/src/io/io.go:455:25) _r, ^ABEND885(unrecognized type int64 at: GO.link/src/io/io.go:455:39) _off, ^ABEND885(unrecognized type int64 at: GO.link/src/io/io.go:455:48) _n])
 
 JOKER FUNC io.Pipe has:
 ;; (defn Pipe
@@ -8748,7 +8748,7 @@ JOKER FUNC math.Float32frombits has:
 ;;   "Float32frombits returns the floating point number corresponding\nto the IEEE 754 binary representation b.\n\nGo return type: float32\n\nJoker return type: ABEND042(cannot find typename math.float32)"
 ;;   {:added "1.0"
 ;;    :go "float32frombits(_b)"}
-;;   [^Int _b])
+;;   [^ABEND885(unrecognized type uint32 at: GO.link/src/math/unsafe.go:14:24) _b])
 
 JOKER FUNC math.Float64bits has:
 ;; (defn Float64bits
@@ -9070,42 +9070,42 @@ JOKER FUNC big.NewInt has:
 ;;   "NewInt allocates and returns a new Int set to x.\n\nGo return type: *Int\n\nJoker return type: {}"
 ;;   {:added "1.0"
 ;;    :go "newInt(_x)"}
-;;   [^Int _x])
+;;   [^ABEND885(unrecognized type int64 at: GO.link/src/math/big/int.go:61:15) _x])
 
 JOKER FUNC big.NewRat has:
 ;; (defn NewRat
 ;;   "NewRat creates a new Rat with numerator a and denominator b.\n\nGo return type: *Rat\n\nJoker return type: {}"
 ;;   {:added "1.0"
 ;;    :go "newRat(_a, _b)"}
-;;   [^Int _a, ^Int _b])
+;;   [^ABEND885(unrecognized type int64 at: GO.link/src/math/big/rat.go:24:18) _a, ^ABEND885(unrecognized type int64 at: GO.link/src/math/big/rat.go:24:18) _b])
 
 JOKER FUNC big.ParseFloat has:
 ;; (defn ParseFloat
 ;;   "ParseFloat is like f.Parse(s, base) with f set to the given precision\nand rounding mode.\n\nGo return type: (f *Float, b int, err error)\n\nJoker return type: [{} Int Error]"
 ;;   {:added "1.0"
 ;;    :go "parseFloat(_s, _base, _prec, _mode)"}
-;;   [^String _s, ^Int _base, ^Int _prec, ^ABEND885(unrecognized type RoundingMode at: GO.link/src/math/big/floatconv.go:278:53) _mode])
+;;   [^String _s, ^Int _base, ^ABEND885(unrecognized type uint at: GO.link/src/math/big/floatconv.go:278:42) _prec, ^ABEND885(unrecognized type RoundingMode at: GO.link/src/math/big/floatconv.go:278:53) _mode])
 
 JOKER FUNC bits.LeadingZeros has:
-(defn ^"Int" LeadingZeros
-  "LeadingZeros returns the number of leading zero bits in x; the result is UintSize for x == 0.\n\nGo return type: int\n\nJoker return type: Int"
-  {:added "1.0"
-   :go "bits.LeadingZeros(_x)"}
-  [^Int _x])
+;; (defn ^"Int" LeadingZeros
+;;   "LeadingZeros returns the number of leading zero bits in x; the result is UintSize for x == 0.\n\nGo return type: int\n\nJoker return type: Int"
+;;   {:added "1.0"
+;;    :go "bits.LeadingZeros(_x)"}
+;;   [^ABEND885(unrecognized type uint at: GO.link/src/math/bits/bits.go:19:21) _x])
 
 JOKER FUNC bits.LeadingZeros16 has:
-(defn ^"Int" LeadingZeros16
-  "LeadingZeros16 returns the number of leading zero bits in x; the result is 16 for x == 0.\n\nGo return type: int\n\nJoker return type: Int"
-  {:added "1.0"
-   :go "bits.LeadingZeros16(_x)"}
-  [^Int _x])
+;; (defn ^"Int" LeadingZeros16
+;;   "LeadingZeros16 returns the number of leading zero bits in x; the result is 16 for x == 0.\n\nGo return type: int\n\nJoker return type: Int"
+;;   {:added "1.0"
+;;    :go "bits.LeadingZeros16(_x)"}
+;;   [^ABEND885(unrecognized type uint16 at: GO.link/src/math/bits/bits.go:25:23) _x])
 
 JOKER FUNC bits.LeadingZeros32 has:
-(defn ^"Int" LeadingZeros32
-  "LeadingZeros32 returns the number of leading zero bits in x; the result is 32 for x == 0.\n\nGo return type: int\n\nJoker return type: Int"
-  {:added "1.0"
-   :go "bits.LeadingZeros32(_x)"}
-  [^Int _x])
+;; (defn ^"Int" LeadingZeros32
+;;   "LeadingZeros32 returns the number of leading zero bits in x; the result is 32 for x == 0.\n\nGo return type: int\n\nJoker return type: Int"
+;;   {:added "1.0"
+;;    :go "bits.LeadingZeros32(_x)"}
+;;   [^ABEND885(unrecognized type uint32 at: GO.link/src/math/bits/bits.go:28:23) _x])
 
 JOKER FUNC bits.LeadingZeros64 has:
 ;; (defn ^"Int" LeadingZeros64
@@ -9122,25 +9122,25 @@ JOKER FUNC bits.LeadingZeros8 has:
 ;;   [^ABEND885(unrecognized type uint8 at: GO.link/src/math/bits/bits.go:22:22) _x])
 
 JOKER FUNC bits.Len has:
-(defn ^"Int" Len
-  "Len returns the minimum number of bits required to represent x; the result is 0 for x == 0.\n\nGo return type: int\n\nJoker return type: Int"
-  {:added "1.0"
-   :go "bits.Len(_x)"}
-  [^Int _x])
+;; (defn ^"Int" Len
+;;   "Len returns the minimum number of bits required to represent x; the result is 0 for x == 0.\n\nGo return type: int\n\nJoker return type: Int"
+;;   {:added "1.0"
+;;    :go "bits.Len(_x)"}
+;;   [^ABEND885(unrecognized type uint at: GO.link/src/math/bits/bits.go:281:12) _x])
 
 JOKER FUNC bits.Len16 has:
-(defn ^"Int" Len16
-  "Len16 returns the minimum number of bits required to represent x; the result is 0 for x == 0.\n\nGo return type: int\n\nJoker return type: Int"
-  {:added "1.0"
-   :go "bits.Len16(_x)"}
-  [^Int _x])
+;; (defn ^"Int" Len16
+;;   "Len16 returns the minimum number of bits required to represent x; the result is 0 for x == 0.\n\nGo return type: int\n\nJoker return type: Int"
+;;   {:added "1.0"
+;;    :go "bits.Len16(_x)"}
+;;   [^ABEND885(unrecognized type uint16 at: GO.link/src/math/bits/bits.go:294:14) _x])
 
 JOKER FUNC bits.Len32 has:
-(defn ^"Int" Len32
-  "Len32 returns the minimum number of bits required to represent x; the result is 0 for x == 0.\n\nGo return type: int\n\nJoker return type: Int"
-  {:added "1.0"
-   :go "bits.Len32(_x)"}
-  [^Int _x])
+;; (defn ^"Int" Len32
+;;   "Len32 returns the minimum number of bits required to represent x; the result is 0 for x == 0.\n\nGo return type: int\n\nJoker return type: Int"
+;;   {:added "1.0"
+;;    :go "bits.Len32(_x)"}
+;;   [^ABEND885(unrecognized type uint32 at: GO.link/src/math/bits/bits.go:303:14) _x])
 
 JOKER FUNC bits.Len64 has:
 ;; (defn ^"Int" Len64
@@ -9157,25 +9157,25 @@ JOKER FUNC bits.Len8 has:
 ;;   [^ABEND885(unrecognized type uint8 at: GO.link/src/math/bits/bits.go:289:13) _x])
 
 JOKER FUNC bits.OnesCount has:
-(defn ^"Int" OnesCount
-  "OnesCount returns the number of one bits (\"population count\") in x.\n\nGo return type: int\n\nJoker return type: Int"
-  {:added "1.0"
-   :go "bits.OnesCount(_x)"}
-  [^Int _x])
+;; (defn ^"Int" OnesCount
+;;   "OnesCount returns the number of one bits (\"population count\") in x.\n\nGo return type: int\n\nJoker return type: Int"
+;;   {:added "1.0"
+;;    :go "bits.OnesCount(_x)"}
+;;   [^ABEND885(unrecognized type uint at: GO.link/src/math/bits/bits.go:111:18) _x])
 
 JOKER FUNC bits.OnesCount16 has:
-(defn ^"Int" OnesCount16
-  "OnesCount16 returns the number of one bits (\"population count\") in x.\n\nGo return type: int\n\nJoker return type: Int"
-  {:added "1.0"
-   :go "bits.OnesCount16(_x)"}
-  [^Int _x])
+;; (defn ^"Int" OnesCount16
+;;   "OnesCount16 returns the number of one bits (\"population count\") in x.\n\nGo return type: int\n\nJoker return type: Int"
+;;   {:added "1.0"
+;;    :go "bits.OnesCount16(_x)"}
+;;   [^ABEND885(unrecognized type uint16 at: GO.link/src/math/bits/bits.go:124:20) _x])
 
 JOKER FUNC bits.OnesCount32 has:
-(defn ^"Int" OnesCount32
-  "OnesCount32 returns the number of one bits (\"population count\") in x.\n\nGo return type: int\n\nJoker return type: Int"
-  {:added "1.0"
-   :go "bits.OnesCount32(_x)"}
-  [^Int _x])
+;; (defn ^"Int" OnesCount32
+;;   "OnesCount32 returns the number of one bits (\"population count\") in x.\n\nGo return type: int\n\nJoker return type: Int"
+;;   {:added "1.0"
+;;    :go "bits.OnesCount32(_x)"}
+;;   [^ABEND885(unrecognized type uint32 at: GO.link/src/math/bits/bits.go:129:20) _x])
 
 JOKER FUNC bits.OnesCount64 has:
 ;; (defn ^"Int" OnesCount64
@@ -9192,25 +9192,25 @@ JOKER FUNC bits.OnesCount8 has:
 ;;   [^ABEND885(unrecognized type uint8 at: GO.link/src/math/bits/bits.go:119:19) _x])
 
 JOKER FUNC bits.Reverse has:
-(defn ^"Int" Reverse
-  "Reverse returns the value of x with its bits in reversed order.\n\nGo return type: int\n\nJoker return type: Int"
-  {:added "1.0"
-   :go "bits.Reverse(_x)"}
-  [^Int _x])
+;; (defn ^"Int" Reverse
+;;   "Reverse returns the value of x with its bits in reversed order.\n\nGo return type: int\n\nJoker return type: Int"
+;;   {:added "1.0"
+;;    :go "bits.Reverse(_x)"}
+;;   [^ABEND885(unrecognized type uint at: GO.link/src/math/bits/bits.go:210:16) _x])
 
 JOKER FUNC bits.Reverse16 has:
-(defn ^"Int" Reverse16
-  "Reverse16 returns the value of x with its bits in reversed order.\n\nGo return type: int\n\nJoker return type: Int"
-  {:added "1.0"
-   :go "bits.Reverse16(_x)"}
-  [^Int _x])
+;; (defn ^"Int" Reverse16
+;;   "Reverse16 returns the value of x with its bits in reversed order.\n\nGo return type: int\n\nJoker return type: Int"
+;;   {:added "1.0"
+;;    :go "bits.Reverse16(_x)"}
+;;   [^ABEND885(unrecognized type uint16 at: GO.link/src/math/bits/bits.go:223:18) _x])
 
 JOKER FUNC bits.Reverse32 has:
-(defn ^"Int" Reverse32
-  "Reverse32 returns the value of x with its bits in reversed order.\n\nGo return type: int\n\nJoker return type: Int"
-  {:added "1.0"
-   :go "bits.Reverse32(_x)"}
-  [^Int _x])
+;; (defn ^"Int" Reverse32
+;;   "Reverse32 returns the value of x with its bits in reversed order.\n\nGo return type: int\n\nJoker return type: Int"
+;;   {:added "1.0"
+;;    :go "bits.Reverse32(_x)"}
+;;   [^ABEND885(unrecognized type uint32 at: GO.link/src/math/bits/bits.go:228:18) _x])
 
 JOKER FUNC bits.Reverse64 has:
 ;; (defn Reverse64
@@ -9227,25 +9227,25 @@ JOKER FUNC bits.Reverse8 has:
 ;;   [^ABEND885(unrecognized type uint8 at: GO.link/src/math/bits/bits.go:218:17) _x])
 
 JOKER FUNC bits.ReverseBytes has:
-(defn ^"Int" ReverseBytes
-  "ReverseBytes returns the value of x with its bytes in reversed order.\n\nGo return type: int\n\nJoker return type: Int"
-  {:added "1.0"
-   :go "bits.ReverseBytes(_x)"}
-  [^Int _x])
+;; (defn ^"Int" ReverseBytes
+;;   "ReverseBytes returns the value of x with its bytes in reversed order.\n\nGo return type: int\n\nJoker return type: Int"
+;;   {:added "1.0"
+;;    :go "bits.ReverseBytes(_x)"}
+;;   [^ABEND885(unrecognized type uint at: GO.link/src/math/bits/bits.go:251:21) _x])
 
 JOKER FUNC bits.ReverseBytes16 has:
-(defn ^"Int" ReverseBytes16
-  "ReverseBytes16 returns the value of x with its bytes in reversed order.\n\nGo return type: int\n\nJoker return type: Int"
-  {:added "1.0"
-   :go "bits.ReverseBytes16(_x)"}
-  [^Int _x])
+;; (defn ^"Int" ReverseBytes16
+;;   "ReverseBytes16 returns the value of x with its bytes in reversed order.\n\nGo return type: int\n\nJoker return type: Int"
+;;   {:added "1.0"
+;;    :go "bits.ReverseBytes16(_x)"}
+;;   [^ABEND885(unrecognized type uint16 at: GO.link/src/math/bits/bits.go:259:23) _x])
 
 JOKER FUNC bits.ReverseBytes32 has:
-(defn ^"Int" ReverseBytes32
-  "ReverseBytes32 returns the value of x with its bytes in reversed order.\n\nGo return type: int\n\nJoker return type: Int"
-  {:added "1.0"
-   :go "bits.ReverseBytes32(_x)"}
-  [^Int _x])
+;; (defn ^"Int" ReverseBytes32
+;;   "ReverseBytes32 returns the value of x with its bytes in reversed order.\n\nGo return type: int\n\nJoker return type: Int"
+;;   {:added "1.0"
+;;    :go "bits.ReverseBytes32(_x)"}
+;;   [^ABEND885(unrecognized type uint32 at: GO.link/src/math/bits/bits.go:264:23) _x])
 
 JOKER FUNC bits.ReverseBytes64 has:
 ;; (defn ReverseBytes64
@@ -9255,25 +9255,25 @@ JOKER FUNC bits.ReverseBytes64 has:
 ;;   [^ABEND885(unrecognized type uint64 at: GO.link/src/math/bits/bits.go:271:23) _x])
 
 JOKER FUNC bits.RotateLeft has:
-(defn ^"Int" RotateLeft
-  "RotateLeft returns the value of x rotated left by (k mod UintSize) bits.\nTo rotate x right by k bits, call RotateLeft(x, -k).\n\nGo return type: int\n\nJoker return type: Int"
-  {:added "1.0"
-   :go "bits.RotateLeft(_x, _k)"}
-  [^Int _x, ^Int _k])
+;; (defn ^"Int" RotateLeft
+;;   "RotateLeft returns the value of x rotated left by (k mod UintSize) bits.\nTo rotate x right by k bits, call RotateLeft(x, -k).\n\nGo return type: int\n\nJoker return type: Int"
+;;   {:added "1.0"
+;;    :go "bits.RotateLeft(_x, _k)"}
+;;   [^ABEND885(unrecognized type uint at: GO.link/src/math/bits/bits.go:168:19) _x, ^Int _k])
 
 JOKER FUNC bits.RotateLeft16 has:
-(defn ^"Int" RotateLeft16
-  "RotateLeft16 returns the value of x rotated left by (k mod 16) bits.\nTo rotate x right by k bits, call RotateLeft16(x, -k).\n\nGo return type: int\n\nJoker return type: Int"
-  {:added "1.0"
-   :go "bits.RotateLeft16(_x, _k)"}
-  [^Int _x, ^Int _k])
+;; (defn ^"Int" RotateLeft16
+;;   "RotateLeft16 returns the value of x rotated left by (k mod 16) bits.\nTo rotate x right by k bits, call RotateLeft16(x, -k).\n\nGo return type: int\n\nJoker return type: Int"
+;;   {:added "1.0"
+;;    :go "bits.RotateLeft16(_x, _k)"}
+;;   [^ABEND885(unrecognized type uint16 at: GO.link/src/math/bits/bits.go:185:21) _x, ^Int _k])
 
 JOKER FUNC bits.RotateLeft32 has:
-(defn ^"Int" RotateLeft32
-  "RotateLeft32 returns the value of x rotated left by (k mod 32) bits.\nTo rotate x right by k bits, call RotateLeft32(x, -k).\n\nGo return type: int\n\nJoker return type: Int"
-  {:added "1.0"
-   :go "bits.RotateLeft32(_x, _k)"}
-  [^Int _x, ^Int _k])
+;; (defn ^"Int" RotateLeft32
+;;   "RotateLeft32 returns the value of x rotated left by (k mod 32) bits.\nTo rotate x right by k bits, call RotateLeft32(x, -k).\n\nGo return type: int\n\nJoker return type: Int"
+;;   {:added "1.0"
+;;    :go "bits.RotateLeft32(_x, _k)"}
+;;   [^ABEND885(unrecognized type uint32 at: GO.link/src/math/bits/bits.go:193:21) _x, ^Int _k])
 
 JOKER FUNC bits.RotateLeft64 has:
 ;; (defn RotateLeft64
@@ -9290,25 +9290,25 @@ JOKER FUNC bits.RotateLeft8 has:
 ;;   [^ABEND885(unrecognized type uint8 at: GO.link/src/math/bits/bits.go:177:20) _x, ^Int _k])
 
 JOKER FUNC bits.TrailingZeros has:
-(defn ^"Int" TrailingZeros
-  "TrailingZeros returns the number of trailing zero bits in x; the result is UintSize for x == 0.\n\nGo return type: int\n\nJoker return type: Int"
-  {:added "1.0"
-   :go "bits.TrailingZeros(_x)"}
-  [^Int _x])
+;; (defn ^"Int" TrailingZeros
+;;   "TrailingZeros returns the number of trailing zero bits in x; the result is UintSize for x == 0.\n\nGo return type: int\n\nJoker return type: Int"
+;;   {:added "1.0"
+;;    :go "bits.TrailingZeros(_x)"}
+;;   [^ABEND885(unrecognized type uint at: GO.link/src/math/bits/bits.go:53:22) _x])
 
 JOKER FUNC bits.TrailingZeros16 has:
-(defn ^"Int" TrailingZeros16
-  "TrailingZeros16 returns the number of trailing zero bits in x; the result is 16 for x == 0.\n\nGo return type: int\n\nJoker return type: Int"
-  {:added "1.0"
-   :go "bits.TrailingZeros16(_x)"}
-  [^Int _x])
+;; (defn ^"Int" TrailingZeros16
+;;   "TrailingZeros16 returns the number of trailing zero bits in x; the result is 16 for x == 0.\n\nGo return type: int\n\nJoker return type: Int"
+;;   {:added "1.0"
+;;    :go "bits.TrailingZeros16(_x)"}
+;;   [^ABEND885(unrecognized type uint16 at: GO.link/src/math/bits/bits.go:66:24) _x])
 
 JOKER FUNC bits.TrailingZeros32 has:
-(defn ^"Int" TrailingZeros32
-  "TrailingZeros32 returns the number of trailing zero bits in x; the result is 32 for x == 0.\n\nGo return type: int\n\nJoker return type: Int"
-  {:added "1.0"
-   :go "bits.TrailingZeros32(_x)"}
-  [^Int _x])
+;; (defn ^"Int" TrailingZeros32
+;;   "TrailingZeros32 returns the number of trailing zero bits in x; the result is 32 for x == 0.\n\nGo return type: int\n\nJoker return type: Int"
+;;   {:added "1.0"
+;;    :go "bits.TrailingZeros32(_x)"}
+;;   [^ABEND885(unrecognized type uint32 at: GO.link/src/math/bits/bits.go:75:24) _x])
 
 JOKER FUNC bits.TrailingZeros64 has:
 ;; (defn ^"Int" TrailingZeros64
@@ -9549,11 +9549,11 @@ JOKER FUNC rand.Int31 has:
   [])
 
 JOKER FUNC rand.Int31n has:
-(defn ^"Int" Int31n
-  "Int31n returns, as an int32, a non-negative pseudo-random number in [0,n)\nfrom the default Source.\nIt panics if n <= 0.\n\nGo return type: int\n\nJoker return type: Int"
-  {:added "1.0"
-   :go "rand.Int31n(_n)"}
-  [^Int _n])
+;; (defn ^"Int" Int31n
+;;   "Int31n returns, as an int32, a non-negative pseudo-random number in [0,n)\nfrom the default Source.\nIt panics if n <= 0.\n\nGo return type: int\n\nJoker return type: Int"
+;;   {:added "1.0"
+;;    :go "rand.Int31n(_n)"}
+;;   [^ABEND885(unrecognized type int32 at: GO.link/src/math/rand/rand.go:324:15) _n])
 
 JOKER FUNC rand.Int63 has:
 (defn ^"Int" Int63
@@ -9563,11 +9563,11 @@ JOKER FUNC rand.Int63 has:
   [])
 
 JOKER FUNC rand.Int63n has:
-(defn ^"Int" Int63n
-  "Int63n returns, as an int64, a non-negative pseudo-random number in [0,n)\nfrom the default Source.\nIt panics if n <= 0.\n\nGo return type: int\n\nJoker return type: Int"
-  {:added "1.0"
-   :go "rand.Int63n(_n)"}
-  [^Int _n])
+;; (defn ^"Int" Int63n
+;;   "Int63n returns, as an int64, a non-negative pseudo-random number in [0,n)\nfrom the default Source.\nIt panics if n <= 0.\n\nGo return type: int\n\nJoker return type: Int"
+;;   {:added "1.0"
+;;    :go "rand.Int63n(_n)"}
+;;   [^ABEND885(unrecognized type int64 at: GO.link/src/math/rand/rand.go:319:15) _n])
 
 JOKER FUNC rand.Intn has:
 (defn ^"Int" Intn
@@ -9588,7 +9588,7 @@ JOKER FUNC rand.NewSource has:
 ;;   "NewSource returns a new pseudo-random Source seeded with the given value.\nUnlike the default Source used by top-level functions, this source is not\nsafe for concurrent use by multiple goroutines.\n\nGo return type: Source\n\nJoker return type: ABEND883(unrecognized Expr type *ast.InterfaceType at: GO.link/src/math/rand/rand.go:25:13)"
 ;;   {:added "1.0"
 ;;    :go "newSource(_seed)"}
-;;   [^Int _seed])
+;;   [^ABEND885(unrecognized type int64 at: GO.link/src/math/rand/rand.go:44:21) _seed])
 
 JOKER FUNC rand.NewZipf has:
 ;; (defn NewZipf
@@ -9623,7 +9623,7 @@ JOKER FUNC rand.Seed has:
 ;;   "Seed uses the provided seed value to initialize the default Source to a\ndeterministic state. If Seed is not called, the generator behaves as\nif seeded by Seed(1). Seed values that have the same remainder when\ndivided by 2^31-1 generate the same pseudo-random sequence.\nSeed, unlike the Rand.Seed method, is safe for concurrent use.\n"
 ;;   {:added "1.0"
 ;;    :go "seed(_seed)"}
-;;   [^Int _seed])
+;;   [^ABEND885(unrecognized type int64 at: GO.link/src/math/rand/rand.go:295:16) _seed])
 
 JOKER FUNC rand.Shuffle has:
 ;; (defn Shuffle
@@ -10085,7 +10085,7 @@ JOKER FUNC http.MaxBytesReader has:
 ;;   "MaxBytesReader is similar to io.LimitReader but is intended for\nlimiting the size of incoming request bodies. In contrast to\nio.LimitReader, MaxBytesReader's result is a ReadCloser, returns a\nnon-EOF error for a Read beyond the limit, and closes the\nunderlying reader when its Close method is called.\n\nMaxBytesReader prevents clients from accidentally or maliciously\nsending a large request and wasting server resources.\n\nGo return type: ...\n\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/net/http/request.go:1056:65)"
 ;;   {:added "1.0"
 ;;    :go "maxBytesReader(_w, _r, _n)"}
-;;   [^ABEND885(unrecognized type ResponseWriter at: GO.link/src/net/http/request.go:1056:23) _w, ^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/net/http/request.go:1056:41) _r, ^Int _n])
+;;   [^ABEND885(unrecognized type ResponseWriter at: GO.link/src/net/http/request.go:1056:23) _w, ^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/net/http/request.go:1056:41) _r, ^ABEND885(unrecognized type int64 at: GO.link/src/net/http/request.go:1056:58) _n])
 
 JOKER FUNC http.NewFileTransport has:
 ;; (defn NewFileTransport
@@ -11089,11 +11089,11 @@ JOKER FUNC os.TempDir has:
   [])
 
 JOKER FUNC os.Truncate has:
-(defn ^"Error" Truncate
-  "Truncate changes the size of the named file.\nIf the file is a symbolic link, it changes the size of the link's target.\nIf there is an error, it will be of type *PathError.\n\nGo return type: error\n\nJoker return type: Error"
-  {:added "1.0"
-   :go "os.Truncate(_name, _size)"}
-  [^String _name, ^Int _size])
+;; (defn ^"Error" Truncate
+;;   "Truncate changes the size of the named file.\nIf the file is a symbolic link, it changes the size of the link's target.\nIf there is an error, it will be of type *PathError.\n\nGo return type: error\n\nJoker return type: Error"
+;;   {:added "1.0"
+;;    :go "os.Truncate(_name, _size)"}
+;;   [^String _name, ^ABEND885(unrecognized type int64 at: GO.link/src/os/file_unix.go:292:33) _size])
 
 JOKER FUNC os.Unsetenv has:
 (defn ^"Error" Unsetenv
@@ -11940,7 +11940,7 @@ JOKER FUNC cgo._cgo_panic has:
 ;;   "go:linkname _cgo_panic _cgo_panic\ngo:cgo_export_static _cgo_panic\ngo:cgo_export_dynamic _cgo_panic\ngo:nosplit\ngo:norace\n"
 ;;   {:added "1.0"
 ;;    :go "_cgo_panic(_a, _n)"}
-;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/runtime/cgo/callbacks.go:45:19) _a, ^Int _n])
+;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/runtime/cgo/callbacks.go:45:19) _a, ^ABEND885(unrecognized type int32 at: GO.link/src/runtime/cgo/callbacks.go:45:37) _n])
 
 JOKER FUNC cgo._runtime_cgocallback has:
 ;; (defn _runtime_cgocallback
@@ -12297,7 +12297,7 @@ JOKER FUNC strconv.AppendInt has:
 ;;   "AppendInt appends the string form of the integer i,\nas generated by FormatInt, to dst and returns the extended buffer.\n\nGo return type: []int\n\nJoker return type: (vector-of Int)"
 ;;   {:added "1.0"
 ;;    :go "appendInt(_dst, _i, _base)"}
-;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: GO.link/src/strconv/itoa.go:40:20) _dst, ^Int _i, ^Int _base])
+;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: GO.link/src/strconv/itoa.go:40:20) _dst, ^ABEND885(unrecognized type int64 at: GO.link/src/strconv/itoa.go:40:30) _i, ^Int _base])
 
 JOKER FUNC strconv.AppendQuote has:
 ;; (defn AppendQuote
@@ -12377,11 +12377,11 @@ JOKER FUNC strconv.FormatFloat has:
 ;;   [^ABEND885(unrecognized type float64 at: GO.link/src/strconv/ftoa.go:45:20) _f, ^Byte _fmt, ^Int _prec, ^Int _bitSize])
 
 JOKER FUNC strconv.FormatInt has:
-(defn ^"String" FormatInt
-  "FormatInt returns the string representation of i in the given base,\nfor 2 <= base <= 36. The result uses the lower-case letters 'a' to 'z'\nfor digit values >= 10.\n\nGo return type: string\n\nJoker return type: String"
-  {:added "1.0"
-   :go "strconv.FormatInt(_i, _base)"}
-  [^Int _i, ^Int _base])
+;; (defn ^"String" FormatInt
+;;   "FormatInt returns the string representation of i in the given base,\nfor 2 <= base <= 36. The result uses the lower-case letters 'a' to 'z'\nfor digit values >= 10.\n\nGo return type: string\n\nJoker return type: String"
+;;   {:added "1.0"
+;;    :go "strconv.FormatInt(_i, _base)"}
+;;   [^ABEND885(unrecognized type int64 at: GO.link/src/strconv/itoa.go:25:18) _i, ^Int _base])
 
 JOKER FUNC strconv.FormatUint has:
 ;; (defn ^"String" FormatUint
@@ -12822,21 +12822,21 @@ JOKER FUNC atomic.AddInt32 has:
 ;;   "AddInt32 atomically adds delta to *addr and returns the new value.\n\nGo return type: int\n\nJoker return type: Int"
 ;;   {:added "1.0"
 ;;    :go "atomic.AddInt32(_addr, _delta)"}
-;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/sync/atomic/doc.go:92:20) _addr, ^Int _delta])
+;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/sync/atomic/doc.go:92:20) _addr, ^ABEND885(unrecognized type int32 at: GO.link/src/sync/atomic/doc.go:92:34) _delta])
 
 JOKER FUNC atomic.AddInt64 has:
 ;; (defn ^"Int" AddInt64
 ;;   "AddInt64 atomically adds delta to *addr and returns the new value.\n\nGo return type: int\n\nJoker return type: Int"
 ;;   {:added "1.0"
 ;;    :go "atomic.AddInt64(_addr, _delta)"}
-;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/sync/atomic/doc.go:100:20) _addr, ^Int _delta])
+;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/sync/atomic/doc.go:100:20) _addr, ^ABEND885(unrecognized type int64 at: GO.link/src/sync/atomic/doc.go:100:34) _delta])
 
 JOKER FUNC atomic.AddUint32 has:
 ;; (defn ^"Int" AddUint32
 ;;   "AddUint32 atomically adds delta to *addr and returns the new value.\nTo subtract a signed positive constant value c from x, do AddUint32(&x, ^uint32(c-1)).\nIn particular, to decrement x, do AddUint32(&x, ^uint32(0)).\n\nGo return type: int\n\nJoker return type: Int"
 ;;   {:added "1.0"
 ;;    :go "atomic.AddUint32(_addr, _delta)"}
-;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/sync/atomic/doc.go:97:21) _addr, ^Int _delta])
+;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/sync/atomic/doc.go:97:21) _addr, ^ABEND885(unrecognized type uint32 at: GO.link/src/sync/atomic/doc.go:97:36) _delta])
 
 JOKER FUNC atomic.AddUint64 has:
 ;; (defn AddUint64
@@ -12857,14 +12857,14 @@ JOKER FUNC atomic.CompareAndSwapInt32 has:
 ;;   "CompareAndSwapInt32 executes the compare-and-swap operation for an int32 value.\n\nGo return type: bool\n\nJoker return type: Bool"
 ;;   {:added "1.0"
 ;;    :go "atomic.CompareAndSwapInt32(_addr, _old, _new)"}
-;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/sync/atomic/doc.go:74:31) _addr, ^Int _old, ^Int _new])
+;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/sync/atomic/doc.go:74:31) _addr, ^ABEND885(unrecognized type int32 at: GO.link/src/sync/atomic/doc.go:74:48) _old, ^ABEND885(unrecognized type int32 at: GO.link/src/sync/atomic/doc.go:74:48) _new])
 
 JOKER FUNC atomic.CompareAndSwapInt64 has:
 ;; (defn ^"Bool" CompareAndSwapInt64
 ;;   "CompareAndSwapInt64 executes the compare-and-swap operation for an int64 value.\n\nGo return type: bool\n\nJoker return type: Bool"
 ;;   {:added "1.0"
 ;;    :go "atomic.CompareAndSwapInt64(_addr, _old, _new)"}
-;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/sync/atomic/doc.go:77:31) _addr, ^Int _old, ^Int _new])
+;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/sync/atomic/doc.go:77:31) _addr, ^ABEND885(unrecognized type int64 at: GO.link/src/sync/atomic/doc.go:77:48) _old, ^ABEND885(unrecognized type int64 at: GO.link/src/sync/atomic/doc.go:77:48) _new])
 
 JOKER FUNC atomic.CompareAndSwapPointer has:
 ;; (defn ^"Bool" CompareAndSwapPointer
@@ -12878,7 +12878,7 @@ JOKER FUNC atomic.CompareAndSwapUint32 has:
 ;;   "CompareAndSwapUint32 executes the compare-and-swap operation for a uint32 value.\n\nGo return type: bool\n\nJoker return type: Bool"
 ;;   {:added "1.0"
 ;;    :go "atomic.CompareAndSwapUint32(_addr, _old, _new)"}
-;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/sync/atomic/doc.go:80:32) _addr, ^Int _old, ^Int _new])
+;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/sync/atomic/doc.go:80:32) _addr, ^ABEND885(unrecognized type uint32 at: GO.link/src/sync/atomic/doc.go:80:50) _old, ^ABEND885(unrecognized type uint32 at: GO.link/src/sync/atomic/doc.go:80:50) _new])
 
 JOKER FUNC atomic.CompareAndSwapUint64 has:
 ;; (defn ^"Bool" CompareAndSwapUint64
@@ -12941,14 +12941,14 @@ JOKER FUNC atomic.StoreInt32 has:
 ;;   "StoreInt32 atomically stores val into *addr.\n"
 ;;   {:added "1.0"
 ;;    :go "storeInt32(_addr, _val)"}
-;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/sync/atomic/doc.go:129:22) _addr, ^Int _val])
+;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/sync/atomic/doc.go:129:22) _addr, ^ABEND885(unrecognized type int32 at: GO.link/src/sync/atomic/doc.go:129:34) _val])
 
 JOKER FUNC atomic.StoreInt64 has:
 ;; (defn StoreInt64
 ;;   "StoreInt64 atomically stores val into *addr.\n"
 ;;   {:added "1.0"
 ;;    :go "storeInt64(_addr, _val)"}
-;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/sync/atomic/doc.go:132:22) _addr, ^Int _val])
+;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/sync/atomic/doc.go:132:22) _addr, ^ABEND885(unrecognized type int64 at: GO.link/src/sync/atomic/doc.go:132:34) _val])
 
 JOKER FUNC atomic.StorePointer has:
 ;; (defn StorePointer
@@ -12962,7 +12962,7 @@ JOKER FUNC atomic.StoreUint32 has:
 ;;   "StoreUint32 atomically stores val into *addr.\n"
 ;;   {:added "1.0"
 ;;    :go "storeUint32(_addr, _val)"}
-;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/sync/atomic/doc.go:135:23) _addr, ^Int _val])
+;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/sync/atomic/doc.go:135:23) _addr, ^ABEND885(unrecognized type uint32 at: GO.link/src/sync/atomic/doc.go:135:36) _val])
 
 JOKER FUNC atomic.StoreUint64 has:
 ;; (defn StoreUint64
@@ -12983,14 +12983,14 @@ JOKER FUNC atomic.SwapInt32 has:
 ;;   "SwapInt32 atomically stores new into *addr and returns the previous *addr value.\n\nGo return type: int\n\nJoker return type: Int"
 ;;   {:added "1.0"
 ;;    :go "atomic.SwapInt32(_addr, _new)"}
-;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/sync/atomic/doc.go:56:21) _addr, ^Int _new])
+;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/sync/atomic/doc.go:56:21) _addr, ^ABEND885(unrecognized type int32 at: GO.link/src/sync/atomic/doc.go:56:33) _new])
 
 JOKER FUNC atomic.SwapInt64 has:
 ;; (defn ^"Int" SwapInt64
 ;;   "SwapInt64 atomically stores new into *addr and returns the previous *addr value.\n\nGo return type: int\n\nJoker return type: Int"
 ;;   {:added "1.0"
 ;;    :go "atomic.SwapInt64(_addr, _new)"}
-;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/sync/atomic/doc.go:59:21) _addr, ^Int _new])
+;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/sync/atomic/doc.go:59:21) _addr, ^ABEND885(unrecognized type int64 at: GO.link/src/sync/atomic/doc.go:59:33) _new])
 
 JOKER FUNC atomic.SwapPointer has:
 ;; (defn SwapPointer
@@ -13004,7 +13004,7 @@ JOKER FUNC atomic.SwapUint32 has:
 ;;   "SwapUint32 atomically stores new into *addr and returns the previous *addr value.\n\nGo return type: int\n\nJoker return type: Int"
 ;;   {:added "1.0"
 ;;    :go "atomic.SwapUint32(_addr, _new)"}
-;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/sync/atomic/doc.go:62:22) _addr, ^Int _new])
+;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/sync/atomic/doc.go:62:22) _addr, ^ABEND885(unrecognized type uint32 at: GO.link/src/sync/atomic/doc.go:62:35) _new])
 
 JOKER FUNC atomic.SwapUint64 has:
 ;; (defn SwapUint64
@@ -13035,11 +13035,11 @@ JOKER FUNC syscall.Accept4 has:
 ;;   [^Int _fd, ^Int _flags])
 
 JOKER FUNC syscall.Access has:
-(defn ^"Error" Access
-  "Go return type: error\n\nJoker return type: Error"
-  {:added "1.0"
-   :go "syscall.Access(_path, _mode)"}
-  [^String _path, ^Int _mode])
+;; (defn ^"Error" Access
+;;   "Go return type: error\n\nJoker return type: Error"
+;;   {:added "1.0"
+;;    :go "syscall.Access(_path, _mode)"}
+;;   [^String _path, ^ABEND885(unrecognized type uint32 at: GO.link/src/syscall/syscall_linux.go:22:31) _mode])
 
 JOKER FUNC syscall.Acct has:
 (defn ^"Error" Acct
@@ -13098,11 +13098,11 @@ JOKER FUNC syscall.Chdir has:
   [^String _path])
 
 JOKER FUNC syscall.Chmod has:
-(defn ^"Error" Chmod
-  "Go return type: error\n\nJoker return type: Error"
-  {:added "1.0"
-   :go "syscall.Chmod(_path, _mode)"}
-  [^String _path, ^Int _mode])
+;; (defn ^"Error" Chmod
+;;   "Go return type: error\n\nJoker return type: Error"
+;;   {:added "1.0"
+;;    :go "syscall.Chmod(_path, _mode)"}
+;;   [^String _path, ^ABEND885(unrecognized type uint32 at: GO.link/src/syscall/syscall_linux.go:26:30) _mode])
 
 JOKER FUNC syscall.Chown has:
 (defn ^"Error" Chown
@@ -13161,11 +13161,11 @@ JOKER FUNC syscall.Connect has:
 ;;   [^Int _fd, ^ABEND885(unrecognized type Sockaddr at: GO.link/src/syscall/syscall_unix.go:235:25) _sa])
 
 JOKER FUNC syscall.Creat has:
-(defn Creat
-  "Go return type: (fd int, err error)\n\nJoker return type: [Int Error]"
-  {:added "1.0"
-   :go "creat(_path, _mode)"}
-  [^String _path, ^Int _mode])
+;; (defn Creat
+;;   "Go return type: (fd int, err error)\n\nJoker return type: [Int Error]"
+;;   {:added "1.0"
+;;    :go "creat(_path, _mode)"}
+;;   [^String _path, ^ABEND885(unrecognized type uint32 at: GO.link/src/syscall/syscall_linux.go:34:30) _mode])
 
 JOKER FUNC syscall.DetachLsf has:
 (defn ^"Error" DetachLsf
@@ -13245,18 +13245,18 @@ JOKER FUNC syscall.Exit has:
 ;;   [^Int _code])
 
 JOKER FUNC syscall.Faccessat has:
-(defn ^"Error" Faccessat
-  "Go return type: error\n\nJoker return type: Error"
-  {:added "1.0"
-   :go "syscall.Faccessat(_dirfd, _path, _mode, _flags)"}
-  [^Int _dirfd, ^String _path, ^Int _mode, ^Int _flags])
+;; (defn ^"Error" Faccessat
+;;   "Go return type: error\n\nJoker return type: Error"
+;;   {:added "1.0"
+;;    :go "syscall.Faccessat(_dirfd, _path, _mode, _flags)"}
+;;   [^Int _dirfd, ^String _path, ^ABEND885(unrecognized type uint32 at: GO.link/src/syscall/syscall_linux.go:40:45) _mode, ^Int _flags])
 
 JOKER FUNC syscall.Fallocate has:
-(defn ^"Error" Fallocate
-  "Go return type: error\n\nJoker return type: Error"
-  {:added "1.0"
-   :go "syscall.Fallocate(_fd, _mode, _off, _len)"}
-  [^Int _fd, ^Int _mode, ^Int _off, ^Int _len])
+;; (defn ^"Error" Fallocate
+;;   "Go return type: error\n\nJoker return type: Error"
+;;   {:added "1.0"
+;;    :go "syscall.Fallocate(_fd, _mode, _off, _len)"}
+;;   [^Int _fd, ^ABEND885(unrecognized type uint32 at: GO.link/src/syscall/zsyscall_linux_amd64.go:372:29) _mode, ^ABEND885(unrecognized type int64 at: GO.link/src/syscall/zsyscall_linux_amd64.go:372:41) _off, ^ABEND885(unrecognized type int64 at: GO.link/src/syscall/zsyscall_linux_amd64.go:372:52) _len])
 
 JOKER FUNC syscall.Fchdir has:
 (defn ^"Error" Fchdir
@@ -13266,18 +13266,18 @@ JOKER FUNC syscall.Fchdir has:
   [^Int _fd])
 
 JOKER FUNC syscall.Fchmod has:
-(defn ^"Error" Fchmod
-  "Go return type: error\n\nJoker return type: Error"
-  {:added "1.0"
-   :go "syscall.Fchmod(_fd, _mode)"}
-  [^Int _fd, ^Int _mode])
+;; (defn ^"Error" Fchmod
+;;   "Go return type: error\n\nJoker return type: Error"
+;;   {:added "1.0"
+;;    :go "syscall.Fchmod(_fd, _mode)"}
+;;   [^Int _fd, ^ABEND885(unrecognized type uint32 at: GO.link/src/syscall/zsyscall_linux_amd64.go:392:26) _mode])
 
 JOKER FUNC syscall.Fchmodat has:
-(defn ^"Error" Fchmodat
-  "Go return type: error\n\nJoker return type: Error"
-  {:added "1.0"
-   :go "syscall.Fchmodat(_dirfd, _path, _mode, _flags)"}
-  [^Int _dirfd, ^String _path, ^Int _mode, ^Int _flags])
+;; (defn ^"Error" Fchmodat
+;;   "Go return type: error\n\nJoker return type: Error"
+;;   {:added "1.0"
+;;    :go "syscall.Fchmodat(_dirfd, _path, _mode, _flags)"}
+;;   [^Int _dirfd, ^String _path, ^ABEND885(unrecognized type uint32 at: GO.link/src/syscall/syscall_linux.go:111:44) _mode, ^Int _flags])
 
 JOKER FUNC syscall.Fchown has:
 (defn ^"Error" Fchown
@@ -13343,11 +13343,11 @@ JOKER FUNC syscall.Fsync has:
   [^Int _fd])
 
 JOKER FUNC syscall.Ftruncate has:
-(defn ^"Error" Ftruncate
-  "Go return type: error\n\nJoker return type: Error"
-  {:added "1.0"
-   :go "syscall.Ftruncate(_fd, _length)"}
-  [^Int _fd, ^Int _length])
+;; (defn ^"Error" Ftruncate
+;;   "Go return type: error\n\nJoker return type: Error"
+;;   {:added "1.0"
+;;    :go "syscall.Ftruncate(_fd, _length)"}
+;;   [^Int _fd, ^ABEND885(unrecognized type int64 at: GO.link/src/syscall/zsyscall_linux_amd64.go:1181:31) _length])
 
 JOKER FUNC syscall.Futimes has:
 ;; (defn ^"Error" Futimes
@@ -13574,11 +13574,11 @@ JOKER FUNC syscall.Getxattr has:
 ;;   [^String _path, ^String _attr, ^ABEND881(unrecognized Expr type *ast.ArrayType at: GO.link/src/syscall/zsyscall_linux_amd64.go:531:46) _dest])
 
 JOKER FUNC syscall.InotifyAddWatch has:
-(defn InotifyAddWatch
-  "Go return type: (watchdesc int, err error)\n\nJoker return type: [Int Error]"
-  {:added "1.0"
-   :go "inotifyAddWatch(_fd, _pathname, _mask)"}
-  [^Int _fd, ^String _pathname, ^Int _mask])
+;; (defn InotifyAddWatch
+;;   "Go return type: (watchdesc int, err error)\n\nJoker return type: [Int Error]"
+;;   {:added "1.0"
+;;    :go "inotifyAddWatch(_fd, _pathname, _mask)"}
+;;   [^Int _fd, ^String _pathname, ^ABEND885(unrecognized type uint32 at: GO.link/src/syscall/zsyscall_linux_amd64.go:558:52) _mask])
 
 JOKER FUNC syscall.InotifyInit has:
 (defn InotifyInit
@@ -13595,11 +13595,11 @@ JOKER FUNC syscall.InotifyInit1 has:
   [^Int _flags])
 
 JOKER FUNC syscall.InotifyRmWatch has:
-(defn InotifyRmWatch
-  "Go return type: (success int, err error)\n\nJoker return type: [Int Error]"
-  {:added "1.0"
-   :go "inotifyRmWatch(_fd, _watchdesc)"}
-  [^Int _fd, ^Int _watchdesc])
+;; (defn InotifyRmWatch
+;;   "Go return type: (success int, err error)\n\nJoker return type: [Int Error]"
+;;   {:added "1.0"
+;;    :go "inotifyRmWatch(_fd, _watchdesc)"}
+;;   [^Int _fd, ^ABEND885(unrecognized type uint32 at: GO.link/src/syscall/zsyscall_linux_amd64.go:585:39) _watchdesc])
 
 JOKER FUNC syscall.Ioperm has:
 (defn ^"Error" Ioperm
@@ -13693,39 +13693,39 @@ JOKER FUNC syscall.Madvise has:
 ;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: GO.link/src/syscall/zsyscall_linux_amd64.go:1057:16) _b, ^Int _advice])
 
 JOKER FUNC syscall.Mkdir has:
-(defn ^"Error" Mkdir
-  "Go return type: error\n\nJoker return type: Error"
-  {:added "1.0"
-   :go "syscall.Mkdir(_path, _mode)"}
-  [^String _path, ^Int _mode])
+;; (defn ^"Error" Mkdir
+;;   "Go return type: error\n\nJoker return type: Error"
+;;   {:added "1.0"
+;;    :go "syscall.Mkdir(_path, _mode)"}
+;;   [^String _path, ^ABEND885(unrecognized type uint32 at: GO.link/src/syscall/syscall_linux.go:129:30) _mode])
 
 JOKER FUNC syscall.Mkdirat has:
-(defn ^"Error" Mkdirat
-  "Go return type: error\n\nJoker return type: Error"
-  {:added "1.0"
-   :go "syscall.Mkdirat(_dirfd, _path, _mode)"}
-  [^Int _dirfd, ^String _path, ^Int _mode])
+;; (defn ^"Error" Mkdirat
+;;   "Go return type: error\n\nJoker return type: Error"
+;;   {:added "1.0"
+;;    :go "syscall.Mkdirat(_dirfd, _path, _mode)"}
+;;   [^Int _dirfd, ^String _path, ^ABEND885(unrecognized type uint32 at: GO.link/src/syscall/zsyscall_linux_amd64.go:645:43) _mode])
 
 JOKER FUNC syscall.Mkfifo has:
-(defn ^"Error" Mkfifo
-  "Go return type: error\n\nJoker return type: Error"
-  {:added "1.0"
-   :go "syscall.Mkfifo(_path, _mode)"}
-  [^String _path, ^Int _mode])
+;; (defn ^"Error" Mkfifo
+;;   "Go return type: error\n\nJoker return type: Error"
+;;   {:added "1.0"
+;;    :go "syscall.Mkfifo(_path, _mode)"}
+;;   [^String _path, ^ABEND885(unrecognized type uint32 at: GO.link/src/syscall/syscall_linux.go:348:31) _mode])
 
 JOKER FUNC syscall.Mknod has:
-(defn ^"Error" Mknod
-  "Go return type: error\n\nJoker return type: Error"
-  {:added "1.0"
-   :go "syscall.Mknod(_path, _mode, _dev)"}
-  [^String _path, ^Int _mode, ^Int _dev])
+;; (defn ^"Error" Mknod
+;;   "Go return type: error\n\nJoker return type: Error"
+;;   {:added "1.0"
+;;    :go "syscall.Mknod(_path, _mode, _dev)"}
+;;   [^String _path, ^ABEND885(unrecognized type uint32 at: GO.link/src/syscall/syscall_linux.go:133:30) _mode, ^Int _dev])
 
 JOKER FUNC syscall.Mknodat has:
-(defn ^"Error" Mknodat
-  "Go return type: error\n\nJoker return type: Error"
-  {:added "1.0"
-   :go "syscall.Mknodat(_dirfd, _path, _mode, _dev)"}
-  [^Int _dirfd, ^String _path, ^Int _mode, ^Int _dev])
+;; (defn ^"Error" Mknodat
+;;   "Go return type: error\n\nJoker return type: Error"
+;;   {:added "1.0"
+;;    :go "syscall.Mknodat(_dirfd, _path, _mode, _dev)"}
+;;   [^Int _dirfd, ^String _path, ^ABEND885(unrecognized type uint32 at: GO.link/src/syscall/zsyscall_linux_amd64.go:660:43) _mode, ^Int _dev])
 
 JOKER FUNC syscall.Mlock has:
 ;; (defn ^"Error" Mlock
@@ -13742,11 +13742,11 @@ JOKER FUNC syscall.Mlockall has:
   [^Int _flags])
 
 JOKER FUNC syscall.Mmap has:
-(defn Mmap
-  "Go return type: (data []int, err error)\n\nJoker return type: [(vector-of Int) Error]"
-  {:added "1.0"
-   :go "mmap(_fd, _offset, _length, _prot, _flags)"}
-  [^Int _fd, ^Int _offset, ^Int _length, ^Int _prot, ^Int _flags])
+;; (defn Mmap
+;;   "Go return type: (data []int, err error)\n\nJoker return type: [(vector-of Int) Error]"
+;;   {:added "1.0"
+;;    :go "mmap(_fd, _offset, _length, _prot, _flags)"}
+;;   [^Int _fd, ^ABEND885(unrecognized type int64 at: GO.link/src/syscall/syscall_linux.go:997:26) _offset, ^Int _length, ^Int _prot, ^Int _flags])
 
 JOKER FUNC syscall.Mount has:
 ;; (defn ^"Error" Mount
@@ -13798,32 +13798,32 @@ JOKER FUNC syscall.NetlinkRIB has:
   [^Int _proto, ^Int _family])
 
 JOKER FUNC syscall.NsecToTimespec has:
-(defn NsecToTimespec
-  "NsecToTimespec takes a number of nanoseconds since the Unix epoch\nand returns the corresponding Timespec value.\n\nGo return type: Timespec\n\nJoker return type: {:Sec ^Int, :Nsec ^Int}"
-  {:added "1.0"
-   :go "nsecToTimespec(_nsec)"}
-  [^Int _nsec])
+;; (defn NsecToTimespec
+;;   "NsecToTimespec takes a number of nanoseconds since the Unix epoch\nand returns the corresponding Timespec value.\n\nGo return type: Timespec\n\nJoker return type: {:Sec ^Int, :Nsec ^Int}"
+;;   {:added "1.0"
+;;    :go "nsecToTimespec(_nsec)"}
+;;   [^ABEND885(unrecognized type int64 at: GO.link/src/syscall/timestruct.go:15:26) _nsec])
 
 JOKER FUNC syscall.NsecToTimeval has:
-(defn NsecToTimeval
-  "NsecToTimeval takes a number of nanoseconds since the Unix epoch\nand returns the corresponding Timeval value.\n\nGo return type: Timeval\n\nJoker return type: {:Sec ^Int, :Usec ^Int}"
-  {:added "1.0"
-   :go "nsecToTimeval(_nsec)"}
-  [^Int _nsec])
+;; (defn NsecToTimeval
+;;   "NsecToTimeval takes a number of nanoseconds since the Unix epoch\nand returns the corresponding Timeval value.\n\nGo return type: Timeval\n\nJoker return type: {:Sec ^Int, :Usec ^Int}"
+;;   {:added "1.0"
+;;    :go "nsecToTimeval(_nsec)"}
+;;   [^ABEND885(unrecognized type int64 at: GO.link/src/syscall/timestruct.go:31:25) _nsec])
 
 JOKER FUNC syscall.Open has:
-(defn Open
-  "Go return type: (fd int, err error)\n\nJoker return type: [Int Error]"
-  {:added "1.0"
-   :go "open(_path, _mode, _perm)"}
-  [^String _path, ^Int _mode, ^Int _perm])
+;; (defn Open
+;;   "Go return type: (fd int, err error)\n\nJoker return type: [Int Error]"
+;;   {:added "1.0"
+;;    :go "open(_path, _mode, _perm)"}
+;;   [^String _path, ^Int _mode, ^ABEND885(unrecognized type uint32 at: GO.link/src/syscall/syscall_linux.go:137:39) _perm])
 
 JOKER FUNC syscall.Openat has:
-(defn Openat
-  "Go return type: (fd int, err error)\n\nJoker return type: [Int Error]"
-  {:added "1.0"
-   :go "openat(_dirfd, _path, _flags, _mode)"}
-  [^Int _dirfd, ^String _path, ^Int _flags, ^Int _mode])
+;; (defn Openat
+;;   "Go return type: (fd int, err error)\n\nJoker return type: [Int Error]"
+;;   {:added "1.0"
+;;    :go "openat(_dirfd, _path, _flags, _mode)"}
+;;   [^Int _dirfd, ^String _path, ^Int _flags, ^ABEND885(unrecognized type uint32 at: GO.link/src/syscall/syscall_linux.go:143:53) _mode])
 
 JOKER FUNC syscall.ParseDirent has:
 ;; (defn ParseDirent
@@ -13900,7 +13900,7 @@ JOKER FUNC syscall.Pread has:
 ;;   "Go return type: (n int, err error)\n\nJoker return type: [Int Error]"
 ;;   {:added "1.0"
 ;;    :go "pread(_fd, _p, _offset)"}
-;;   [^Int _fd, ^ABEND881(unrecognized Expr type *ast.ArrayType at: GO.link/src/syscall/zsyscall_linux_amd64.go:1304:22) _p, ^Int _offset])
+;;   [^Int _fd, ^ABEND881(unrecognized Expr type *ast.ArrayType at: GO.link/src/syscall/zsyscall_linux_amd64.go:1304:22) _p, ^ABEND885(unrecognized type int64 at: GO.link/src/syscall/zsyscall_linux_amd64.go:1304:37) _offset])
 
 JOKER FUNC syscall.PtraceAttach has:
 (defn ^"Error" PtraceAttach
@@ -13998,7 +13998,7 @@ JOKER FUNC syscall.Pwrite has:
 ;;   "Go return type: (n int, err error)\n\nJoker return type: [Int Error]"
 ;;   {:added "1.0"
 ;;    :go "pwrite(_fd, _p, _offset)"}
-;;   [^Int _fd, ^ABEND881(unrecognized Expr type *ast.ArrayType at: GO.link/src/syscall/zsyscall_linux_amd64.go:1321:23) _p, ^Int _offset])
+;;   [^Int _fd, ^ABEND881(unrecognized Expr type *ast.ArrayType at: GO.link/src/syscall/zsyscall_linux_amd64.go:1321:23) _p, ^ABEND885(unrecognized type int64 at: GO.link/src/syscall/zsyscall_linux_amd64.go:1321:38) _offset])
 
 JOKER FUNC syscall.RawSyscall has:
 ;; (defn RawSyscall
@@ -14085,11 +14085,11 @@ JOKER FUNC syscall.Rmdir has:
   [^String _path])
 
 JOKER FUNC syscall.Seek has:
-(defn Seek
-  "Go return type: (off int, err error)\n\nJoker return type: [Int Error]"
-  {:added "1.0"
-   :go "seek(_fd, _offset, _whence)"}
-  [^Int _fd, ^Int _offset, ^Int _whence])
+;; (defn Seek
+;;   "Go return type: (off int, err error)\n\nJoker return type: [Int Error]"
+;;   {:added "1.0"
+;;    :go "seek(_fd, _offset, _whence)"}
+;;   [^Int _fd, ^ABEND885(unrecognized type int64 at: GO.link/src/syscall/zsyscall_linux_amd64.go:1338:26) _offset, ^Int _whence])
 
 JOKER FUNC syscall.Select has:
 ;; (defn Select
@@ -14428,11 +14428,11 @@ JOKER FUNC syscall.Sync has:
 ;;   [])
 
 JOKER FUNC syscall.SyncFileRange has:
-(defn ^"Error" SyncFileRange
-  "Go return type: error\n\nJoker return type: Error"
-  {:added "1.0"
-   :go "syscall.SyncFileRange(_fd, _off, _n, _flags)"}
-  [^Int _fd, ^Int _off, ^Int _n, ^Int _flags])
+;; (defn ^"Error" SyncFileRange
+;;   "Go return type: error\n\nJoker return type: Error"
+;;   {:added "1.0"
+;;    :go "syscall.SyncFileRange(_fd, _off, _n, _flags)"}
+;;   [^Int _fd, ^ABEND885(unrecognized type int64 at: GO.link/src/syscall/zsyscall_linux_amd64.go:1477:32) _off, ^ABEND885(unrecognized type int64 at: GO.link/src/syscall/zsyscall_linux_amd64.go:1477:41) _n, ^Int _flags])
 
 JOKER FUNC syscall.Syscall has:
 ;; (defn Syscall
@@ -14498,11 +14498,11 @@ JOKER FUNC syscall.TimevalToNsec has:
 ;;   [^ABEND885(unrecognized type Timeval at: GO.link/src/syscall/timestruct.go:27:23) _tv])
 
 JOKER FUNC syscall.Truncate has:
-(defn ^"Error" Truncate
-  "Go return type: error\n\nJoker return type: Error"
-  {:added "1.0"
-   :go "syscall.Truncate(_path, _length)"}
-  [^String _path, ^Int _length])
+;; (defn ^"Error" Truncate
+;;   "Go return type: error\n\nJoker return type: Error"
+;;   {:added "1.0"
+;;    :go "syscall.Truncate(_path, _length)"}
+;;   [^String _path, ^ABEND885(unrecognized type int64 at: GO.link/src/syscall/zsyscall_linux_amd64.go:1487:35) _length])
 
 JOKER FUNC syscall.Umask has:
 (defn ^"Int" Umask
@@ -14740,7 +14740,7 @@ JOKER FUNC iotest.TruncateWriter has:
 ;;   "TruncateWriter returns a Writer that writes to w\nbut stops silently after n bytes.\n\nGo return type: ...\n\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/testing/iotest/writer.go:11:43)"
 ;;   {:added "1.0"
 ;;    :go "truncateWriter(_w, _n)"}
-;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/testing/iotest/writer.go:11:23) _w, ^Int _n])
+;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/testing/iotest/writer.go:11:23) _w, ^ABEND885(unrecognized type int64 at: GO.link/src/testing/iotest/writer.go:11:36) _n])
 
 JOKER FUNC quick.Check has:
 ;; (defn ^"Error" Check
@@ -14775,7 +14775,7 @@ JOKER FUNC tabwriter.NewWriter has:
 ;;   "NewWriter allocates and initializes a new tabwriter.Writer.\nThe parameters are the same as for the Init function.\n\nGo return type: *Writer\n\nJoker return type: {}"
 ;;   {:added "1.0"
 ;;    :go "newWriter(_output, _minwidth, _tabwidth, _padding, _padchar, _flags)"}
-;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/text/tabwriter/tabwriter.go:597:23) _output, ^Int _minwidth, ^Int _tabwidth, ^Int _padding, ^Byte _padchar, ^Int _flags])
+;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/text/tabwriter/tabwriter.go:597:23) _output, ^Int _minwidth, ^Int _tabwidth, ^Int _padding, ^Byte _padchar, ^ABEND885(unrecognized type uint at: GO.link/src/text/tabwriter/tabwriter.go:597:87) _flags])
 
 JOKER FUNC template.HTMLEscape has:
 ;; (defn HTMLEscape
@@ -14999,7 +14999,7 @@ JOKER FUNC time.Unix has:
 ;;   "Unix returns the local Time corresponding to the given Unix time,\nsec seconds and nsec nanoseconds since January 1, 1970 UTC.\nIt is valid to pass nsec outside the range [0, 999999999].\nNot all sec values have a corresponding time value. One such\nvalue is 1<<63-1 (the largest int64 value).\n\nGo return type: Time\n\nJoker return type: {}"
 ;;   {:added "1.0"
 ;;    :go "unix(_sec, _nsec)"}
-;;   [^Int _sec, ^Int _nsec])
+;;   [^ABEND885(unrecognized type int64 at: GO.link/src/time/time.go:1276:15) _sec, ^ABEND885(unrecognized type int64 at: GO.link/src/time/time.go:1276:27) _nsec])
 
 JOKER FUNC time.Until has:
 ;; (defn ^"Int" Until
@@ -20048,20 +20048,20 @@ GO FUNC adler32.New has:
 // }
 
 GO FUNC crc32.MakeTable has:
-func makeTable(poly uint32) Object {
-	_res := _crc32.MakeTable(poly)
-	var _obj_vec1 Object
-	if _res != nil {
-		_vec1 := EmptyVector
-		for _, _elem1 := range (*_res) {
-			_vec1 = _vec1.Conjoin(MakeInt(int(_elem1)))
-		}
-		_obj_vec1 = Object(_vec1)
-	} else {
-		_obj_vec1 = NIL
-	}
-	return _obj_vec1
-}
+// func makeTable(poly uint32) Object {
+// 	_res := _crc32.MakeTable(poly)
+// 	var _obj_vec1 Object
+// 	if _res != nil {
+// 		_vec1 := EmptyVector
+// 		for _, _elem1 := range (*_res) {
+// 			_vec1 = _vec1.Conjoin(MakeInt(int(_elem1)))
+// 		}
+// 		_obj_vec1 = Object(_vec1)
+// 	} else {
+// 		_obj_vec1 = NIL
+// 	}
+// 	return _obj_vec1
+// }
 
 GO FUNC crc32.New has:
 // func new(tab ABEND882(unrecognized Expr type *ast.StarExpr at: GO.link/src/hash/crc32/crc32.go:147:14)) Object {
@@ -24984,13 +24984,13 @@ GO FUNC syscall.CloseOnExec has:
 // }
 
 GO FUNC syscall.Creat has:
-func creat(path string, mode uint32) Object {
-	fd, err := _syscall.Creat(path, mode)
-	_res := EmptyVector
-	_res = _res.Conjoin(MakeInt(int(fd)))
-	_res = _res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
-	return _res
-}
+// func creat(path string, mode uint32) Object {
+// 	fd, err := _syscall.Creat(path, mode)
+// 	_res := EmptyVector
+// 	_res = _res.Conjoin(MakeInt(int(fd)))
+// 	_res = _res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
+// 	return _res
+// }
 
 GO FUNC syscall.Dup has:
 func dup(oldfd int) Object {
@@ -25313,13 +25313,13 @@ GO FUNC syscall.Getxattr has:
 // }
 
 GO FUNC syscall.InotifyAddWatch has:
-func inotifyAddWatch(fd int, pathname string, mask uint32) Object {
-	watchdesc, err := _syscall.InotifyAddWatch(fd, pathname, mask)
-	_res := EmptyVector
-	_res = _res.Conjoin(MakeInt(int(watchdesc)))
-	_res = _res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
-	return _res
-}
+// func inotifyAddWatch(fd int, pathname string, mask uint32) Object {
+// 	watchdesc, err := _syscall.InotifyAddWatch(fd, pathname, mask)
+// 	_res := EmptyVector
+// 	_res = _res.Conjoin(MakeInt(int(watchdesc)))
+// 	_res = _res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
+// 	return _res
+// }
 
 GO FUNC syscall.InotifyInit has:
 func inotifyInit() Object {
@@ -25340,13 +25340,13 @@ func inotifyInit1(flags int) Object {
 }
 
 GO FUNC syscall.InotifyRmWatch has:
-func inotifyRmWatch(fd int, watchdesc uint32) Object {
-	success, err := _syscall.InotifyRmWatch(fd, watchdesc)
-	_res := EmptyVector
-	_res = _res.Conjoin(MakeInt(int(success)))
-	_res = _res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
-	return _res
-}
+// func inotifyRmWatch(fd int, watchdesc uint32) Object {
+// 	success, err := _syscall.InotifyRmWatch(fd, watchdesc)
+// 	_res := EmptyVector
+// 	_res = _res.Conjoin(MakeInt(int(success)))
+// 	_res = _res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
+// 	return _res
+// }
 
 GO FUNC syscall.Klogctl has:
 // func klogctl(typ int, buf ABEND882(unrecognized Expr type *ast.ArrayType at: GO.link/src/syscall/zsyscall_linux_amd64.go:606:27)) Object {
@@ -25410,17 +25410,17 @@ GO FUNC syscall.LsfStmt has:
 // }
 
 GO FUNC syscall.Mmap has:
-func mmap(fd int, offset int64, length int, prot int, flags int) Object {
-	data, err := _syscall.Mmap(fd, offset, length, prot, flags)
-	_res := EmptyVector
-	_vec1 := EmptyVector
-	for _, _elem1 := range data {
-		_vec1 = _vec1.Conjoin(MakeInt(int(_elem1)))
-	}
-	_res = _res.Conjoin(_vec1)
-	_res = _res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
-	return _res
-}
+// func mmap(fd int, offset int64, length int, prot int, flags int) Object {
+// 	data, err := _syscall.Mmap(fd, offset, length, prot, flags)
+// 	_res := EmptyVector
+// 	_vec1 := EmptyVector
+// 	for _, _elem1 := range data {
+// 		_vec1 = _vec1.Conjoin(MakeInt(int(_elem1)))
+// 	}
+// 	_res = _res.Conjoin(_vec1)
+// 	_res = _res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
+// 	return _res
+// }
 
 GO FUNC syscall.NetlinkRIB has:
 func netlinkRIB(proto int, family int) Object {
@@ -25436,40 +25436,40 @@ func netlinkRIB(proto int, family int) Object {
 }
 
 GO FUNC syscall.NsecToTimespec has:
-func nsecToTimespec(nsec int64) Object {
-	_res := _syscall.NsecToTimespec(nsec)
-	_map1 := EmptyArrayMap()
-	_map1.Add(MakeKeyword("Sec"), MakeInt(int(_res.Sec)))
-	_map1.Add(MakeKeyword("Nsec"), MakeInt(int(_res.Nsec)))
-	return _map1
-}
+// func nsecToTimespec(nsec int64) Object {
+// 	_res := _syscall.NsecToTimespec(nsec)
+// 	_map1 := EmptyArrayMap()
+// 	_map1.Add(MakeKeyword("Sec"), MakeInt(int(_res.Sec)))
+// 	_map1.Add(MakeKeyword("Nsec"), MakeInt(int(_res.Nsec)))
+// 	return _map1
+// }
 
 GO FUNC syscall.NsecToTimeval has:
-func nsecToTimeval(nsec int64) Object {
-	_res := _syscall.NsecToTimeval(nsec)
-	_map1 := EmptyArrayMap()
-	_map1.Add(MakeKeyword("Sec"), MakeInt(int(_res.Sec)))
-	_map1.Add(MakeKeyword("Usec"), MakeInt(int(_res.Usec)))
-	return _map1
-}
+// func nsecToTimeval(nsec int64) Object {
+// 	_res := _syscall.NsecToTimeval(nsec)
+// 	_map1 := EmptyArrayMap()
+// 	_map1.Add(MakeKeyword("Sec"), MakeInt(int(_res.Sec)))
+// 	_map1.Add(MakeKeyword("Usec"), MakeInt(int(_res.Usec)))
+// 	return _map1
+// }
 
 GO FUNC syscall.Open has:
-func open(path string, mode int, perm uint32) Object {
-	fd, err := _syscall.Open(path, mode, perm)
-	_res := EmptyVector
-	_res = _res.Conjoin(MakeInt(int(fd)))
-	_res = _res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
-	return _res
-}
+// func open(path string, mode int, perm uint32) Object {
+// 	fd, err := _syscall.Open(path, mode, perm)
+// 	_res := EmptyVector
+// 	_res = _res.Conjoin(MakeInt(int(fd)))
+// 	_res = _res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
+// 	return _res
+// }
 
 GO FUNC syscall.Openat has:
-func openat(dirfd int, path string, flags int, mode uint32) Object {
-	fd, err := _syscall.Openat(dirfd, path, flags, mode)
-	_res := EmptyVector
-	_res = _res.Conjoin(MakeInt(int(fd)))
-	_res = _res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
-	return _res
-}
+// func openat(dirfd int, path string, flags int, mode uint32) Object {
+// 	fd, err := _syscall.Openat(dirfd, path, flags, mode)
+// 	_res := EmptyVector
+// 	_res = _res.Conjoin(MakeInt(int(fd)))
+// 	_res = _res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
+// 	return _res
+// }
 
 GO FUNC syscall.ParseDirent has:
 // func parseDirent(buf ABEND882(unrecognized Expr type *ast.ArrayType at: GO.link/src/syscall/dirent.go:64:22), max int, names ABEND882(unrecognized Expr type *ast.ArrayType at: GO.link/src/syscall/dirent.go:64:45)) Object {
@@ -25723,13 +25723,13 @@ GO FUNC syscall.Recvmsg has:
 // }
 
 GO FUNC syscall.Seek has:
-func seek(fd int, offset int64, whence int) Object {
-	off, err := _syscall.Seek(fd, offset, whence)
-	_res := EmptyVector
-	_res = _res.Conjoin(MakeInt(int(off)))
-	_res = _res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
-	return _res
-}
+// func seek(fd int, offset int64, whence int) Object {
+// 	off, err := _syscall.Seek(fd, offset, whence)
+// 	_res := EmptyVector
+// 	_res = _res.Conjoin(MakeInt(int(off)))
+// 	_res = _res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
+// 	return _res
+// }
 
 GO FUNC syscall.Select has:
 // func select(nfd int, r ABEND882(unrecognized Expr type *ast.StarExpr at: GO.link/src/syscall/zsyscall_linux_amd64.go:1349:24), w ABEND882(unrecognized Expr type *ast.StarExpr at: GO.link/src/syscall/zsyscall_linux_amd64.go:1349:34), e ABEND882(unrecognized Expr type *ast.StarExpr at: GO.link/src/syscall/zsyscall_linux_amd64.go:1349:44), timeout ABEND882(unrecognized Expr type *ast.StarExpr at: GO.link/src/syscall/zsyscall_linux_amd64.go:1349:60)) Object {

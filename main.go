@@ -347,7 +347,7 @@ func exprAsClojure(e Expr) string {
 		switch v.Name {
 		case "string":
 			return "String"
-		case "int", "uint", "int16", "uint16", "int32", "uint32", "int64":
+		case "int":
 			return "Int"
 		case "byte":
 			return "Byte"
