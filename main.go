@@ -48,7 +48,11 @@ var verbose bool
 var receivers int
 
 func whereAt(p token.Pos) string {
-	return fmt.Sprintf("%s", filepath.ToSlash(fset.Position(p).String()))
+	return fmt.Sprintf("%s", fset.Position(p).String())
+}
+
+func unix(p string) string {
+	return filepath.ToSlash(p)
 }
 
 func commentGroupInQuotes(doc *CommentGroup, jok, gol string) string {
@@ -657,7 +661,7 @@ func genGoPostExpr(indent, pkg, in string, e Expr) (jok, gol, goc, out string) {
 	case *StructType:
 		jok, gol, goc, out = genGoPostStruct(indent, pkg, in, v.Fields)
 	default:
-		jok = fmt.Sprintf("ABEND883(unrecognized Expr type %T at: %s)", e, whereAt(e.Pos()))
+		jok = fmt.Sprintf("ABEND883(unrecognized Expr type %T at: %s)", e, unix(whereAt(e.Pos())))
 		gol = "..."
 		out = in
 	}
