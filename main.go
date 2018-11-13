@@ -668,13 +668,13 @@ func genGoPostExpr(indent, pkg, in string, e Expr) (jok, gol, goc, out string) {
 	return
 }
 
-func genGoPostItem(indent, pkg, in string, multipleCaptures bool, f *Field) (captureVar, jok, gol, goc, out string, useful bool) {
+func genGoPostItem(indent, pkg, in string, f *Field) (captureVar, jok, gol, goc, out string, useful bool) {
 	captureVar = in
 	if in == "" {
 		captureVar = genSym("res")
 	}
 	jok, gol, goc, out = genGoPostExpr(indent, pkg, captureVar, f.Type)
-	if in != "" && in != "res" && multipleCaptures { // TODO: Drop multipleCaptures; okay to have Go return type doc'ed with name
+	if in != "" && in != "res" {
 		gol = paramNameAsGo(in) + " " + gol
 	}
 	useful = exprIsUseful(out)
@@ -696,12 +696,20 @@ func genGoPostList(indent string, pkg string, fl FieldList) (jok, gol, goc, out 
 	result := "res"
 	multipleCaptures := len(fl.List) > 1 || (fl.List[0].Names != nil && len(fl.List[0].Names) > 1)
 	for _, f := range fl.List {
+		names := []string {}
 		if f.Names == nil {
+			names = append(names, "")
+		} else {
+			for _, n := range f.Names {
+				names = append(names, n.Name)
+			}
+		}
+		for _, n := range names {
 			captureName := "res"
 			if multipleCaptures {
-				captureName = ""
+				captureName = n
 			}
-			captureVar, jok, gol, goc, out, usefulItem := genGoPostItem(indent, pkg, captureName, multipleCaptures, f)
+			captureVar, jok, gol, goc, out, usefulItem := genGoPostItem(indent, pkg, captureName, f)
 			useful = useful || usefulItem
 			if multipleCaptures {
 				goc += indent + "res = res.Conjoin(" + out + ")\n"
@@ -712,24 +720,6 @@ func genGoPostList(indent string, pkg string, fl FieldList) (jok, gol, goc, out 
 			jokType = append(jokType, jok)
 			golType = append(golType, gol)
 			goCode = append(goCode, goc)
-		} else {
-			for _, n := range f.Names {
-				captureName := "res"
-				if multipleCaptures {
-					captureName = n.Name
-				}
-				captureVar, jok, gol, goc, out, usefulItem := genGoPostItem(indent, pkg, captureName, multipleCaptures, f)
-				useful = useful || usefulItem
-				if multipleCaptures {
-					goc += indent + "res = res.Conjoin(" + out + ")\n"
-				} else {
-					result = out
-				}
-				captureVars = append(captureVars, captureVar)
-				jokType = append(jokType, jok)
-				golType = append(golType, gol)
-				goCode = append(goCode, goc)
-			}
 		}
 	}
 
