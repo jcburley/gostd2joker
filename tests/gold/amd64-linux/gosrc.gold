@@ -4320,16 +4320,6 @@ TYPE runtime.StackRecord:
   GO.link/src/runtime/mprof.go
 TYPE runtime.TypeAssertionError:
   GO.link/src/runtime/error.go
-TYPE runtime._defer:
-  GO.link/src/runtime/runtime2.go
-TYPE runtime._func:
-  GO.link/src/runtime/runtime2.go
-TYPE runtime._panic:
-  GO.link/src/runtime/runtime2.go
-TYPE runtime._type:
-  GO.link/src/runtime/type.go
-TYPE runtime._typePair:
-  GO.link/src/runtime/type.go
 TYPE runtime/debug.GCStats:
   GO.link/src/runtime/debug/garbage.go
 TYPE runtime/pprof.LabelSet:
@@ -4516,18 +4506,6 @@ TYPE syscall.Utsname:
   GO.link/src/syscall/ztypes_linux_amd64.go
 TYPE syscall.WaitStatus:
   GO.link/src/syscall/syscall_linux.go
-TYPE syscall._C_int:
-  GO.link/src/syscall/ztypes_linux_amd64.go
-TYPE syscall._C_long:
-  GO.link/src/syscall/ztypes_linux_amd64.go
-TYPE syscall._C_long_long:
-  GO.link/src/syscall/ztypes_linux_amd64.go
-TYPE syscall._C_short:
-  GO.link/src/syscall/ztypes_linux_amd64.go
-TYPE syscall._Gid_t:
-  GO.link/src/syscall/ztypes_linux_amd64.go
-TYPE syscall._Socklen:
-  GO.link/src/syscall/ztypes_linux_amd64.go
 TYPE testing.B:
   GO.link/src/testing/benchmark.go
 TYPE testing.BenchmarkResult:
@@ -6001,7 +5979,7 @@ JOKER FUNC sql.Drivers has:
 
 JOKER FUNC sql.Named has:
 ;; (defn Named
-;;   "Named provides a more concise way to create NamedArg values.\n\nExample usage:\n\n    db.ExecContext(ctx, `\n        delete from Invoice\n        where\n            TimeCreated < @end\n            and TimeCreated >= @start;`,\n        sql.Named(\"start\", startTime),\n        sql.Named(\"end\", endTime),\n    )\n\nGo return type: NamedArg\n\nJoker return type: {:_Named_Fields_Required ^{}, :Name ^String, :Value ^ABEND883(unrecognized Expr type *ast.InterfaceType at: GO.link/src/database/sql/sql.go:95:8)}"
+;;   "Named provides a more concise way to create NamedArg values.\n\nExample usage:\n\n    db.ExecContext(ctx, `\n        delete from Invoice\n        where\n            TimeCreated < @end\n            and TimeCreated >= @start;`,\n        sql.Named(\"start\", startTime),\n        sql.Named(\"end\", endTime),\n    )\n\nGo return type: NamedArg\n\nJoker return type: {:Name ^String, :Value ^ABEND883(unrecognized Expr type *ast.InterfaceType at: GO.link/src/database/sql/sql.go:95:8)}"
 ;;   {:added "1.0"
 ;;    :go "named(_name, _value)"}
 ;;   [^String _name, ^ABEND881(unrecognized Expr type *ast.InterfaceType at: GO.link/src/database/sql/sql.go:110:31) _value])
@@ -11872,83 +11850,6 @@ JOKER FUNC runtime.Version has:
    :go "runtime.Version()"}
   [])
 
-JOKER FUNC runtime._ELF_ST_BIND has:
-(defn ^"Int" _ELF_ST_BIND
-  "How to extract and insert information held in the st_info field.\n\nGo return type: int\n\nJoker return type: Int"
-  {:added "1.0"
-   :go "runtime._ELF_ST_BIND(_val)"}
-  [^Byte _val])
-
-JOKER FUNC runtime._ELF_ST_TYPE has:
-(defn ^"Int" _ELF_ST_TYPE
-  "Go return type: int\n\nJoker return type: Int"
-  {:added "1.0"
-   :go "runtime._ELF_ST_TYPE(_val)"}
-  [^Byte _val])
-
-JOKER FUNC runtime._ExternalCode has:
-;; (defn _ExternalCode
-;;   ""
-;;   {:added "1.0"
-;;    :go "_ExternalCode()"}
-;;   [])
-
-JOKER FUNC runtime._GC has:
-;; (defn _GC
-;;   ""
-;;   {:added "1.0"
-;;    :go "_GC()"}
-;;   [])
-
-JOKER FUNC runtime._LostExternalCode has:
-;; (defn _LostExternalCode
-;;   ""
-;;   {:added "1.0"
-;;    :go "_LostExternalCode()"}
-;;   [])
-
-JOKER FUNC runtime._LostSIGPROFDuringAtomic64 has:
-;; (defn _LostSIGPROFDuringAtomic64
-;;   ""
-;;   {:added "1.0"
-;;    :go "_LostSIGPROFDuringAtomic64()"}
-;;   [])
-
-JOKER FUNC runtime._System has:
-;; (defn _System
-;;   ""
-;;   {:added "1.0"
-;;    :go "_System()"}
-;;   [])
-
-JOKER FUNC runtime._VDSO has:
-;; (defn _VDSO
-;;   ""
-;;   {:added "1.0"
-;;    :go "_VDSO()"}
-;;   [])
-
-JOKER FUNC runtime._cgo_panic_internal has:
-;; (defn _cgo_panic_internal
-;;   ""
-;;   {:added "1.0"
-;;    :go "_cgo_panic_internal(_p)"}
-;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/runtime/cgocallback.go:11:28) _p])
-
-JOKER FUNC cgo._cgo_panic has:
-;; (defn _cgo_panic
-;;   "go:linkname _cgo_panic _cgo_panic\ngo:cgo_export_static _cgo_panic\ngo:cgo_export_dynamic _cgo_panic\ngo:nosplit\ngo:norace\n"
-;;   {:added "1.0"
-;;    :go "_cgo_panic(_a, _n)"}
-;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/runtime/cgo/callbacks.go:45:19) _a, ^ABEND885(unrecognized type int32 at: GO.link/src/runtime/cgo/callbacks.go:45:37) _n])
-
-JOKER FUNC cgo._runtime_cgocallback has:
-;; (defn _runtime_cgocallback
-;;   "cgocallback is defined in runtime\ngo:linkname _runtime_cgocallback runtime.cgocallback\n"
-;;   {:added "1.0"
-;;    :go "_runtime_cgocallback()"}
-;;   [])
-
 JOKER FUNC debug.FreeOSMemory has:
 ;; (defn FreeOSMemory
 ;;   "FreeOSMemory forces a garbage collection followed by an\nattempt to return as much memory to the operating system\nas possible. (Even if this is not called, the runtime gradually\nreturns memory to the operating system in a background task.)\n"
@@ -17292,7 +17193,6 @@ GO FUNC sql.Named has:
 // func named(name string, value ABEND882(unrecognized Expr type *ast.InterfaceType at: GO.link/src/database/sql/sql.go:110:31)) Object {
 // 	_res := _sql.Named(name, value)
 // 	_map1 := EmptyArrayMap()
-// 	_map1.Add(MakeKeyword("_Named_Fields_Required"), NIL)
 // 	_map1.Add(MakeKeyword("Name"), MakeString(_res.Name))
 // 	_map1.Add(MakeKeyword("Value"), _res.Value)
 // 	return _map1
@@ -24351,60 +24251,6 @@ GO FUNC runtime.UnlockOSThread has:
 // 	...ABEND675: TODO...
 // }
 
-GO FUNC runtime._ExternalCode has:
-// func _ExternalCode() Object {
-// 	_runtime._ExternalCode()
-// 	...ABEND675: TODO...
-// }
-
-GO FUNC runtime._GC has:
-// func _GC() Object {
-// 	_runtime._GC()
-// 	...ABEND675: TODO...
-// }
-
-GO FUNC runtime._LostExternalCode has:
-// func _LostExternalCode() Object {
-// 	_runtime._LostExternalCode()
-// 	...ABEND675: TODO...
-// }
-
-GO FUNC runtime._LostSIGPROFDuringAtomic64 has:
-// func _LostSIGPROFDuringAtomic64() Object {
-// 	_runtime._LostSIGPROFDuringAtomic64()
-// 	...ABEND675: TODO...
-// }
-
-GO FUNC runtime._System has:
-// func _System() Object {
-// 	_runtime._System()
-// 	...ABEND675: TODO...
-// }
-
-GO FUNC runtime._VDSO has:
-// func _VDSO() Object {
-// 	_runtime._VDSO()
-// 	...ABEND675: TODO...
-// }
-
-GO FUNC runtime._cgo_panic_internal has:
-// func _cgo_panic_internal(p ABEND882(unrecognized Expr type *ast.StarExpr at: GO.link/src/runtime/cgocallback.go:11:28)) Object {
-// 	_runtime._cgo_panic_internal(p)
-// 	...ABEND675: TODO...
-// }
-
-GO FUNC cgo._cgo_panic has:
-// func _cgo_panic(a ABEND882(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/runtime/cgo/callbacks.go:45:19), n int32) Object {
-// 	_cgo._cgo_panic(a, n)
-// 	...ABEND675: TODO...
-// }
-
-GO FUNC cgo._runtime_cgocallback has:
-// func _runtime_cgocallback() Object {
-// 	_cgo._runtime_cgocallback()
-// 	...ABEND675: TODO...
-// }
-
 GO FUNC debug.FreeOSMemory has:
 // func freeOSMemory() Object {
 // 	_debug.FreeOSMemory()
@@ -26367,4 +26213,4 @@ GO FUNC unsafe.Sizeof has:
 // 	return _unsafe.Sizeof(x)
 // }
 
-Totals: types=975 functions=1523 receivers=5623
+Totals: types=964 functions=1512 receivers=5623

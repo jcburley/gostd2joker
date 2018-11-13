@@ -158,7 +158,7 @@ func processTypeSpec(pkg string, filename string, f *File, ts *TypeSpec) {
 func processTypeSpecs(pkg string, filename string, f *File, tss []Spec) {
 	for _, spec := range tss {
 		ts := spec.(*TypeSpec)
-		if unicode.IsLower(rune(ts.Name.Name[0])) {
+		if isPrivate(ts.Name.Name) {
 			continue  // Skipping non-exported functions
 		}
 		processTypeSpec(pkg, filename, f, ts)
@@ -175,7 +175,7 @@ func processDecls(pkg, pkgDirUnix, filename string, f *File) (found bool) {
 				receivers += 1
 				continue  // Skipping these for now
 			}
-			if unicode.IsLower(rune(v.Name.Name[0])) {
+			if isPrivate(v.Name.Name) {
 				continue  // Skipping non-exported functions
 			}
 			if processFuncDecl(pkg, pkgDirUnix, filename, f, v) {
@@ -547,6 +547,10 @@ func genGoPostNamed(indent, pkg, in, t, onlyIf string) (jok, gol, goc, out strin
 	return
 }
 
+func isPrivate(p string) bool {
+	return p[0] == '_' || unicode.IsLower(rune(p[0]))
+}
+
 // func tryThis(s string) struct { a int; b string } {
 //	return struct { a int; b string }{ 5, "hey" }
 // }
@@ -558,7 +562,7 @@ func genGoPostStruct(indent, pkg, in string, fl *FieldList, onlyIf string) (jok,
 	useful := false
 	for _, f := range fl.List {
 		for _, p := range f.Names {
-			if unicode.IsLower(rune(p.Name[0])) {
+			if isPrivate(p.Name) {
 				continue  // Skipping non-exported fields
 			}
 			var joktype, goltype, more_goc string
