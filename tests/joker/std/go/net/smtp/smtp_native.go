@@ -10,23 +10,23 @@ import (
 // }
 
 // func dial(addr string) Object {
-// 	res1, res2 := _smtp.Dial(addr)
-// 	res := EmptyVector
-// 	map1 := EmptyArrayMap()
-// 	map1.Add(MakeKeyword("Text"), (*(*res1).Text))
-// 	res = res.Conjoin(map1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
-// 	return res
+// 	_res1, _res2 := _smtp.Dial(addr)
+// 	_res := EmptyVector
+// 	_map1 := EmptyArrayMap()
+// 	_map1.Add(MakeKeyword("Text"), (*(*_res1).Text))
+// 	_res = _res.Conjoin(_map1)
+// 	_res = _res.Conjoin(func () Object { if (_res2) == nil { return NIL } else { return MakeError(_res2) } }())
+// 	return _res
 // }
 
 // func newClient(conn ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/smtp/smtp.go:62:21), host string) Object {
-// 	res1, res2 := _smtp.NewClient(conn, host)
-// 	res := EmptyVector
-// 	map1 := EmptyArrayMap()
-// 	map1.Add(MakeKeyword("Text"), (*(*res1).Text))
-// 	res = res.Conjoin(map1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
-// 	return res
+// 	_res1, _res2 := _smtp.NewClient(conn, host)
+// 	_res := EmptyVector
+// 	_map1 := EmptyArrayMap()
+// 	_map1.Add(MakeKeyword("Text"), (*(*_res1).Text))
+// 	_res = _res.Conjoin(_map1)
+// 	_res = _res.Conjoin(func () Object { if (_res2) == nil { return NIL } else { return MakeError(_res2) } }())
+// 	return _res
 // }
 
 // func plainAuth(identity string, username string, password string, host string) Object {

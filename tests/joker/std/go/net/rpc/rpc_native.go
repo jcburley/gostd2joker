@@ -13,27 +13,27 @@ import (
 // }
 
 func dial(network string, address string) Object {
-	_, res2 := _rpc.Dial(network, address)
-	res := EmptyVector
-	res = res.Conjoin(NIL)
-	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
-	return res
+	_, _res2 := _rpc.Dial(network, address)
+	_res := EmptyVector
+	_res = _res.Conjoin(NIL)
+	_res = _res.Conjoin(func () Object { if (_res2) == nil { return NIL } else { return MakeError(_res2) } }())
+	return _res
 }
 
 func dialHTTP(network string, address string) Object {
-	_, res2 := _rpc.DialHTTP(network, address)
-	res := EmptyVector
-	res = res.Conjoin(NIL)
-	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
-	return res
+	_, _res2 := _rpc.DialHTTP(network, address)
+	_res := EmptyVector
+	_res = _res.Conjoin(NIL)
+	_res = _res.Conjoin(func () Object { if (_res2) == nil { return NIL } else { return MakeError(_res2) } }())
+	return _res
 }
 
 func dialHTTPPath(network string, address string, path string) Object {
-	_, res2 := _rpc.DialHTTPPath(network, address, path)
-	res := EmptyVector
-	res = res.Conjoin(NIL)
-	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
-	return res
+	_, _res2 := _rpc.DialHTTPPath(network, address, path)
+	_res := EmptyVector
+	_res = _res.Conjoin(NIL)
+	_res = _res.Conjoin(func () Object { if (_res2) == nil { return NIL } else { return MakeError(_res2) } }())
+	return _res
 }
 
 // func handleHTTP() Object {

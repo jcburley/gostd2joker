@@ -6,9 +6,9 @@ import (
 )
 
 // func new(o ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/http/cookiejar/jar.go:77:12)) Object {
-// 	_, res2 := _cookiejar.New(o)
-// 	res := EmptyVector
-// 	res = res.Conjoin(NIL)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
-// 	return res
+// 	_, _res2 := _cookiejar.New(o)
+// 	_res := EmptyVector
+// 	_res = _res.Conjoin(NIL)
+// 	_res = _res.Conjoin(func () Object { if (_res2) == nil { return NIL } else { return MakeError(_res2) } }())
+// 	return _res
 // }

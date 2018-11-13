@@ -18,55 +18,55 @@ import (
 
 // func get(url string) Object {
 // 	resp, err := _http.Get(url)
-// 	res := EmptyVector
-// 	map1 := EmptyArrayMap()
-// 	map1.Add(MakeKeyword("Status"), MakeString((*resp).Status))
-// 	map1.Add(MakeKeyword("StatusCode"), MakeInt(int((*resp).StatusCode)))
-// 	map1.Add(MakeKeyword("Proto"), MakeString((*resp).Proto))
-// 	map1.Add(MakeKeyword("ProtoMajor"), MakeInt(int((*resp).ProtoMajor)))
-// 	map1.Add(MakeKeyword("ProtoMinor"), MakeInt(int((*resp).ProtoMinor)))
-// 	map1.Add(MakeKeyword("Header"), (*resp).Header)
-// 	map1.Add(MakeKeyword("Body"), (*resp).Body)
-// 	map1.Add(MakeKeyword("ContentLength"), MakeInt(int((*resp).ContentLength)))
-// 	vec2 := EmptyVector
-// 	for _, elem2 := range (*resp).TransferEncoding {
-// 		vec2 = vec2.Conjoin(MakeString(elem2))
+// 	_res := EmptyVector
+// 	_map1 := EmptyArrayMap()
+// 	_map1.Add(MakeKeyword("Status"), MakeString((*resp).Status))
+// 	_map1.Add(MakeKeyword("StatusCode"), MakeInt(int((*resp).StatusCode)))
+// 	_map1.Add(MakeKeyword("Proto"), MakeString((*resp).Proto))
+// 	_map1.Add(MakeKeyword("ProtoMajor"), MakeInt(int((*resp).ProtoMajor)))
+// 	_map1.Add(MakeKeyword("ProtoMinor"), MakeInt(int((*resp).ProtoMinor)))
+// 	_map1.Add(MakeKeyword("Header"), (*resp).Header)
+// 	_map1.Add(MakeKeyword("Body"), (*resp).Body)
+// 	_map1.Add(MakeKeyword("ContentLength"), MakeInt(int((*resp).ContentLength)))
+// 	_vec2 := EmptyVector
+// 	for _, _elem2 := range (*resp).TransferEncoding {
+// 		_vec2 = _vec2.Conjoin(MakeString(_elem2))
 // 	}
-// 	map1.Add(MakeKeyword("TransferEncoding"), vec2)
-// 	map1.Add(MakeKeyword("Close"), MakeBool((*resp).Close))
-// 	map1.Add(MakeKeyword("Uncompressed"), MakeBool((*resp).Uncompressed))
-// 	map1.Add(MakeKeyword("Trailer"), (*resp).Trailer)
-// 	map3 := EmptyArrayMap()
-// 	map3.Add(MakeKeyword("Method"), MakeString((*(*resp).Request).Method))
-// 	map3.Add(MakeKeyword("URL"), (*(*(*resp).Request).URL))
-// 	map3.Add(MakeKeyword("Proto"), MakeString((*(*resp).Request).Proto))
-// 	map3.Add(MakeKeyword("ProtoMajor"), MakeInt(int((*(*resp).Request).ProtoMajor)))
-// 	map3.Add(MakeKeyword("ProtoMinor"), MakeInt(int((*(*resp).Request).ProtoMinor)))
-// 	map3.Add(MakeKeyword("Header"), (*(*resp).Request).Header)
-// 	map3.Add(MakeKeyword("Body"), (*(*resp).Request).Body)
-// 	map3.Add(MakeKeyword("GetBody"), (*(*resp).Request).GetBody)
-// 	map3.Add(MakeKeyword("ContentLength"), MakeInt(int((*(*resp).Request).ContentLength)))
-// 	vec4 := EmptyVector
-// 	for _, elem4 := range (*(*resp).Request).TransferEncoding {
-// 		vec4 = vec4.Conjoin(MakeString(elem4))
+// 	_map1.Add(MakeKeyword("TransferEncoding"), _vec2)
+// 	_map1.Add(MakeKeyword("Close"), MakeBool((*resp).Close))
+// 	_map1.Add(MakeKeyword("Uncompressed"), MakeBool((*resp).Uncompressed))
+// 	_map1.Add(MakeKeyword("Trailer"), (*resp).Trailer)
+// 	_map3 := EmptyArrayMap()
+// 	_map3.Add(MakeKeyword("Method"), MakeString((*(*resp).Request).Method))
+// 	_map3.Add(MakeKeyword("URL"), (*(*(*resp).Request).URL))
+// 	_map3.Add(MakeKeyword("Proto"), MakeString((*(*resp).Request).Proto))
+// 	_map3.Add(MakeKeyword("ProtoMajor"), MakeInt(int((*(*resp).Request).ProtoMajor)))
+// 	_map3.Add(MakeKeyword("ProtoMinor"), MakeInt(int((*(*resp).Request).ProtoMinor)))
+// 	_map3.Add(MakeKeyword("Header"), (*(*resp).Request).Header)
+// 	_map3.Add(MakeKeyword("Body"), (*(*resp).Request).Body)
+// 	_map3.Add(MakeKeyword("GetBody"), (*(*resp).Request).GetBody)
+// 	_map3.Add(MakeKeyword("ContentLength"), MakeInt(int((*(*resp).Request).ContentLength)))
+// 	_vec4 := EmptyVector
+// 	for _, _elem4 := range (*(*resp).Request).TransferEncoding {
+// 		_vec4 = _vec4.Conjoin(MakeString(_elem4))
 // 	}
-// 	map3.Add(MakeKeyword("TransferEncoding"), vec4)
-// 	map3.Add(MakeKeyword("Close"), MakeBool((*(*resp).Request).Close))
-// 	map3.Add(MakeKeyword("Host"), MakeString((*(*resp).Request).Host))
-// 	map3.Add(MakeKeyword("Form"), (*(*resp).Request).Form)
-// 	map3.Add(MakeKeyword("PostForm"), (*(*resp).Request).PostForm)
-// 	map3.Add(MakeKeyword("MultipartForm"), (*(*(*resp).Request).MultipartForm))
-// 	map3.Add(MakeKeyword("Trailer"), (*(*resp).Request).Trailer)
-// 	map3.Add(MakeKeyword("RemoteAddr"), MakeString((*(*resp).Request).RemoteAddr))
-// 	map3.Add(MakeKeyword("RequestURI"), MakeString((*(*resp).Request).RequestURI))
-// 	map3.Add(MakeKeyword("TLS"), (*(*(*resp).Request).TLS))
-// 	map3.Add(MakeKeyword("Cancel"), (*(*resp).Request).Cancel)
-// 	map3.Add(MakeKeyword("Response"), )
-// 	map1.Add(MakeKeyword("Request"), map3)
-// 	map1.Add(MakeKeyword("TLS"), (*(*resp).TLS))
-// 	res = res.Conjoin(map1)
-// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
-// 	return res
+// 	_map3.Add(MakeKeyword("TransferEncoding"), _vec4)
+// 	_map3.Add(MakeKeyword("Close"), MakeBool((*(*resp).Request).Close))
+// 	_map3.Add(MakeKeyword("Host"), MakeString((*(*resp).Request).Host))
+// 	_map3.Add(MakeKeyword("Form"), (*(*resp).Request).Form)
+// 	_map3.Add(MakeKeyword("PostForm"), (*(*resp).Request).PostForm)
+// 	_map3.Add(MakeKeyword("MultipartForm"), (*(*(*resp).Request).MultipartForm))
+// 	_map3.Add(MakeKeyword("Trailer"), (*(*resp).Request).Trailer)
+// 	_map3.Add(MakeKeyword("RemoteAddr"), MakeString((*(*resp).Request).RemoteAddr))
+// 	_map3.Add(MakeKeyword("RequestURI"), MakeString((*(*resp).Request).RequestURI))
+// 	_map3.Add(MakeKeyword("TLS"), (*(*(*resp).Request).TLS))
+// 	_map3.Add(MakeKeyword("Cancel"), (*(*resp).Request).Cancel)
+// 	_map3.Add(MakeKeyword("Response"), )
+// 	_map1.Add(MakeKeyword("Request"), _map3)
+// 	_map1.Add(MakeKeyword("TLS"), (*(*resp).TLS))
+// 	_res = _res.Conjoin(_map1)
+// 	_res = _res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
+// 	return _res
 // }
 
 // func handle(pattern string, handler ABEND884(unrecognized type Handler at: tests/big/src/net/http/server.go:2401:37)) Object {
@@ -81,55 +81,55 @@ import (
 
 // func head(url string) Object {
 // 	resp, err := _http.Head(url)
-// 	res := EmptyVector
-// 	map1 := EmptyArrayMap()
-// 	map1.Add(MakeKeyword("Status"), MakeString((*resp).Status))
-// 	map1.Add(MakeKeyword("StatusCode"), MakeInt(int((*resp).StatusCode)))
-// 	map1.Add(MakeKeyword("Proto"), MakeString((*resp).Proto))
-// 	map1.Add(MakeKeyword("ProtoMajor"), MakeInt(int((*resp).ProtoMajor)))
-// 	map1.Add(MakeKeyword("ProtoMinor"), MakeInt(int((*resp).ProtoMinor)))
-// 	map1.Add(MakeKeyword("Header"), (*resp).Header)
-// 	map1.Add(MakeKeyword("Body"), (*resp).Body)
-// 	map1.Add(MakeKeyword("ContentLength"), MakeInt(int((*resp).ContentLength)))
-// 	vec2 := EmptyVector
-// 	for _, elem2 := range (*resp).TransferEncoding {
-// 		vec2 = vec2.Conjoin(MakeString(elem2))
+// 	_res := EmptyVector
+// 	_map1 := EmptyArrayMap()
+// 	_map1.Add(MakeKeyword("Status"), MakeString((*resp).Status))
+// 	_map1.Add(MakeKeyword("StatusCode"), MakeInt(int((*resp).StatusCode)))
+// 	_map1.Add(MakeKeyword("Proto"), MakeString((*resp).Proto))
+// 	_map1.Add(MakeKeyword("ProtoMajor"), MakeInt(int((*resp).ProtoMajor)))
+// 	_map1.Add(MakeKeyword("ProtoMinor"), MakeInt(int((*resp).ProtoMinor)))
+// 	_map1.Add(MakeKeyword("Header"), (*resp).Header)
+// 	_map1.Add(MakeKeyword("Body"), (*resp).Body)
+// 	_map1.Add(MakeKeyword("ContentLength"), MakeInt(int((*resp).ContentLength)))
+// 	_vec2 := EmptyVector
+// 	for _, _elem2 := range (*resp).TransferEncoding {
+// 		_vec2 = _vec2.Conjoin(MakeString(_elem2))
 // 	}
-// 	map1.Add(MakeKeyword("TransferEncoding"), vec2)
-// 	map1.Add(MakeKeyword("Close"), MakeBool((*resp).Close))
-// 	map1.Add(MakeKeyword("Uncompressed"), MakeBool((*resp).Uncompressed))
-// 	map1.Add(MakeKeyword("Trailer"), (*resp).Trailer)
-// 	map3 := EmptyArrayMap()
-// 	map3.Add(MakeKeyword("Method"), MakeString((*(*resp).Request).Method))
-// 	map3.Add(MakeKeyword("URL"), (*(*(*resp).Request).URL))
-// 	map3.Add(MakeKeyword("Proto"), MakeString((*(*resp).Request).Proto))
-// 	map3.Add(MakeKeyword("ProtoMajor"), MakeInt(int((*(*resp).Request).ProtoMajor)))
-// 	map3.Add(MakeKeyword("ProtoMinor"), MakeInt(int((*(*resp).Request).ProtoMinor)))
-// 	map3.Add(MakeKeyword("Header"), (*(*resp).Request).Header)
-// 	map3.Add(MakeKeyword("Body"), (*(*resp).Request).Body)
-// 	map3.Add(MakeKeyword("GetBody"), (*(*resp).Request).GetBody)
-// 	map3.Add(MakeKeyword("ContentLength"), MakeInt(int((*(*resp).Request).ContentLength)))
-// 	vec4 := EmptyVector
-// 	for _, elem4 := range (*(*resp).Request).TransferEncoding {
-// 		vec4 = vec4.Conjoin(MakeString(elem4))
+// 	_map1.Add(MakeKeyword("TransferEncoding"), _vec2)
+// 	_map1.Add(MakeKeyword("Close"), MakeBool((*resp).Close))
+// 	_map1.Add(MakeKeyword("Uncompressed"), MakeBool((*resp).Uncompressed))
+// 	_map1.Add(MakeKeyword("Trailer"), (*resp).Trailer)
+// 	_map3 := EmptyArrayMap()
+// 	_map3.Add(MakeKeyword("Method"), MakeString((*(*resp).Request).Method))
+// 	_map3.Add(MakeKeyword("URL"), (*(*(*resp).Request).URL))
+// 	_map3.Add(MakeKeyword("Proto"), MakeString((*(*resp).Request).Proto))
+// 	_map3.Add(MakeKeyword("ProtoMajor"), MakeInt(int((*(*resp).Request).ProtoMajor)))
+// 	_map3.Add(MakeKeyword("ProtoMinor"), MakeInt(int((*(*resp).Request).ProtoMinor)))
+// 	_map3.Add(MakeKeyword("Header"), (*(*resp).Request).Header)
+// 	_map3.Add(MakeKeyword("Body"), (*(*resp).Request).Body)
+// 	_map3.Add(MakeKeyword("GetBody"), (*(*resp).Request).GetBody)
+// 	_map3.Add(MakeKeyword("ContentLength"), MakeInt(int((*(*resp).Request).ContentLength)))
+// 	_vec4 := EmptyVector
+// 	for _, _elem4 := range (*(*resp).Request).TransferEncoding {
+// 		_vec4 = _vec4.Conjoin(MakeString(_elem4))
 // 	}
-// 	map3.Add(MakeKeyword("TransferEncoding"), vec4)
-// 	map3.Add(MakeKeyword("Close"), MakeBool((*(*resp).Request).Close))
-// 	map3.Add(MakeKeyword("Host"), MakeString((*(*resp).Request).Host))
-// 	map3.Add(MakeKeyword("Form"), (*(*resp).Request).Form)
-// 	map3.Add(MakeKeyword("PostForm"), (*(*resp).Request).PostForm)
-// 	map3.Add(MakeKeyword("MultipartForm"), (*(*(*resp).Request).MultipartForm))
-// 	map3.Add(MakeKeyword("Trailer"), (*(*resp).Request).Trailer)
-// 	map3.Add(MakeKeyword("RemoteAddr"), MakeString((*(*resp).Request).RemoteAddr))
-// 	map3.Add(MakeKeyword("RequestURI"), MakeString((*(*resp).Request).RequestURI))
-// 	map3.Add(MakeKeyword("TLS"), (*(*(*resp).Request).TLS))
-// 	map3.Add(MakeKeyword("Cancel"), (*(*resp).Request).Cancel)
-// 	map3.Add(MakeKeyword("Response"), )
-// 	map1.Add(MakeKeyword("Request"), map3)
-// 	map1.Add(MakeKeyword("TLS"), (*(*resp).TLS))
-// 	res = res.Conjoin(map1)
-// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
-// 	return res
+// 	_map3.Add(MakeKeyword("TransferEncoding"), _vec4)
+// 	_map3.Add(MakeKeyword("Close"), MakeBool((*(*resp).Request).Close))
+// 	_map3.Add(MakeKeyword("Host"), MakeString((*(*resp).Request).Host))
+// 	_map3.Add(MakeKeyword("Form"), (*(*resp).Request).Form)
+// 	_map3.Add(MakeKeyword("PostForm"), (*(*resp).Request).PostForm)
+// 	_map3.Add(MakeKeyword("MultipartForm"), (*(*(*resp).Request).MultipartForm))
+// 	_map3.Add(MakeKeyword("Trailer"), (*(*resp).Request).Trailer)
+// 	_map3.Add(MakeKeyword("RemoteAddr"), MakeString((*(*resp).Request).RemoteAddr))
+// 	_map3.Add(MakeKeyword("RequestURI"), MakeString((*(*resp).Request).RequestURI))
+// 	_map3.Add(MakeKeyword("TLS"), (*(*(*resp).Request).TLS))
+// 	_map3.Add(MakeKeyword("Cancel"), (*(*resp).Request).Cancel)
+// 	_map3.Add(MakeKeyword("Response"), )
+// 	_map1.Add(MakeKeyword("Request"), _map3)
+// 	_map1.Add(MakeKeyword("TLS"), (*(*resp).TLS))
+// 	_res = _res.Conjoin(_map1)
+// 	_res = _res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
+// 	return _res
 // }
 
 // func maxBytesReader(w ABEND884(unrecognized type ResponseWriter at: tests/big/src/net/http/request.go:1056:23), r ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/request.go:1056:41), n int64) Object {
@@ -141,56 +141,56 @@ import (
 // }
 
 // func newRequest(method string, url string, body ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/request.go:792:42)) Object {
-// 	res1, res2 := _http.NewRequest(method, url, body)
-// 	res := EmptyVector
-// 	map1 := EmptyArrayMap()
-// 	map1.Add(MakeKeyword("Method"), MakeString((*res1).Method))
-// 	map1.Add(MakeKeyword("URL"), (*(*res1).URL))
-// 	map1.Add(MakeKeyword("Proto"), MakeString((*res1).Proto))
-// 	map1.Add(MakeKeyword("ProtoMajor"), MakeInt(int((*res1).ProtoMajor)))
-// 	map1.Add(MakeKeyword("ProtoMinor"), MakeInt(int((*res1).ProtoMinor)))
-// 	map1.Add(MakeKeyword("Header"), (*res1).Header)
-// 	map1.Add(MakeKeyword("Body"), (*res1).Body)
-// 	map1.Add(MakeKeyword("GetBody"), (*res1).GetBody)
-// 	map1.Add(MakeKeyword("ContentLength"), MakeInt(int((*res1).ContentLength)))
-// 	vec2 := EmptyVector
-// 	for _, elem2 := range (*res1).TransferEncoding {
-// 		vec2 = vec2.Conjoin(MakeString(elem2))
+// 	_res1, _res2 := _http.NewRequest(method, url, body)
+// 	_res := EmptyVector
+// 	_map1 := EmptyArrayMap()
+// 	_map1.Add(MakeKeyword("Method"), MakeString((*_res1).Method))
+// 	_map1.Add(MakeKeyword("URL"), (*(*_res1).URL))
+// 	_map1.Add(MakeKeyword("Proto"), MakeString((*_res1).Proto))
+// 	_map1.Add(MakeKeyword("ProtoMajor"), MakeInt(int((*_res1).ProtoMajor)))
+// 	_map1.Add(MakeKeyword("ProtoMinor"), MakeInt(int((*_res1).ProtoMinor)))
+// 	_map1.Add(MakeKeyword("Header"), (*_res1).Header)
+// 	_map1.Add(MakeKeyword("Body"), (*_res1).Body)
+// 	_map1.Add(MakeKeyword("GetBody"), (*_res1).GetBody)
+// 	_map1.Add(MakeKeyword("ContentLength"), MakeInt(int((*_res1).ContentLength)))
+// 	_vec2 := EmptyVector
+// 	for _, _elem2 := range (*_res1).TransferEncoding {
+// 		_vec2 = _vec2.Conjoin(MakeString(_elem2))
 // 	}
-// 	map1.Add(MakeKeyword("TransferEncoding"), vec2)
-// 	map1.Add(MakeKeyword("Close"), MakeBool((*res1).Close))
-// 	map1.Add(MakeKeyword("Host"), MakeString((*res1).Host))
-// 	map1.Add(MakeKeyword("Form"), (*res1).Form)
-// 	map1.Add(MakeKeyword("PostForm"), (*res1).PostForm)
-// 	map1.Add(MakeKeyword("MultipartForm"), (*(*res1).MultipartForm))
-// 	map1.Add(MakeKeyword("Trailer"), (*res1).Trailer)
-// 	map1.Add(MakeKeyword("RemoteAddr"), MakeString((*res1).RemoteAddr))
-// 	map1.Add(MakeKeyword("RequestURI"), MakeString((*res1).RequestURI))
-// 	map1.Add(MakeKeyword("TLS"), (*(*res1).TLS))
-// 	map1.Add(MakeKeyword("Cancel"), (*res1).Cancel)
-// 	map3 := EmptyArrayMap()
-// 	map3.Add(MakeKeyword("Status"), MakeString((*(*res1).Response).Status))
-// 	map3.Add(MakeKeyword("StatusCode"), MakeInt(int((*(*res1).Response).StatusCode)))
-// 	map3.Add(MakeKeyword("Proto"), MakeString((*(*res1).Response).Proto))
-// 	map3.Add(MakeKeyword("ProtoMajor"), MakeInt(int((*(*res1).Response).ProtoMajor)))
-// 	map3.Add(MakeKeyword("ProtoMinor"), MakeInt(int((*(*res1).Response).ProtoMinor)))
-// 	map3.Add(MakeKeyword("Header"), (*(*res1).Response).Header)
-// 	map3.Add(MakeKeyword("Body"), (*(*res1).Response).Body)
-// 	map3.Add(MakeKeyword("ContentLength"), MakeInt(int((*(*res1).Response).ContentLength)))
-// 	vec4 := EmptyVector
-// 	for _, elem4 := range (*(*res1).Response).TransferEncoding {
-// 		vec4 = vec4.Conjoin(MakeString(elem4))
+// 	_map1.Add(MakeKeyword("TransferEncoding"), _vec2)
+// 	_map1.Add(MakeKeyword("Close"), MakeBool((*_res1).Close))
+// 	_map1.Add(MakeKeyword("Host"), MakeString((*_res1).Host))
+// 	_map1.Add(MakeKeyword("Form"), (*_res1).Form)
+// 	_map1.Add(MakeKeyword("PostForm"), (*_res1).PostForm)
+// 	_map1.Add(MakeKeyword("MultipartForm"), (*(*_res1).MultipartForm))
+// 	_map1.Add(MakeKeyword("Trailer"), (*_res1).Trailer)
+// 	_map1.Add(MakeKeyword("RemoteAddr"), MakeString((*_res1).RemoteAddr))
+// 	_map1.Add(MakeKeyword("RequestURI"), MakeString((*_res1).RequestURI))
+// 	_map1.Add(MakeKeyword("TLS"), (*(*_res1).TLS))
+// 	_map1.Add(MakeKeyword("Cancel"), (*_res1).Cancel)
+// 	_map3 := EmptyArrayMap()
+// 	_map3.Add(MakeKeyword("Status"), MakeString((*(*_res1).Response).Status))
+// 	_map3.Add(MakeKeyword("StatusCode"), MakeInt(int((*(*_res1).Response).StatusCode)))
+// 	_map3.Add(MakeKeyword("Proto"), MakeString((*(*_res1).Response).Proto))
+// 	_map3.Add(MakeKeyword("ProtoMajor"), MakeInt(int((*(*_res1).Response).ProtoMajor)))
+// 	_map3.Add(MakeKeyword("ProtoMinor"), MakeInt(int((*(*_res1).Response).ProtoMinor)))
+// 	_map3.Add(MakeKeyword("Header"), (*(*_res1).Response).Header)
+// 	_map3.Add(MakeKeyword("Body"), (*(*_res1).Response).Body)
+// 	_map3.Add(MakeKeyword("ContentLength"), MakeInt(int((*(*_res1).Response).ContentLength)))
+// 	_vec4 := EmptyVector
+// 	for _, _elem4 := range (*(*_res1).Response).TransferEncoding {
+// 		_vec4 = _vec4.Conjoin(MakeString(_elem4))
 // 	}
-// 	map3.Add(MakeKeyword("TransferEncoding"), vec4)
-// 	map3.Add(MakeKeyword("Close"), MakeBool((*(*res1).Response).Close))
-// 	map3.Add(MakeKeyword("Uncompressed"), MakeBool((*(*res1).Response).Uncompressed))
-// 	map3.Add(MakeKeyword("Trailer"), (*(*res1).Response).Trailer)
-// 	map3.Add(MakeKeyword("Request"), )
-// 	map3.Add(MakeKeyword("TLS"), (*(*(*res1).Response).TLS))
-// 	map1.Add(MakeKeyword("Response"), map3)
-// 	res = res.Conjoin(map1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
-// 	return res
+// 	_map3.Add(MakeKeyword("TransferEncoding"), _vec4)
+// 	_map3.Add(MakeKeyword("Close"), MakeBool((*(*_res1).Response).Close))
+// 	_map3.Add(MakeKeyword("Uncompressed"), MakeBool((*(*_res1).Response).Uncompressed))
+// 	_map3.Add(MakeKeyword("Trailer"), (*(*_res1).Response).Trailer)
+// 	_map3.Add(MakeKeyword("Request"), )
+// 	_map3.Add(MakeKeyword("TLS"), (*(*(*_res1).Response).TLS))
+// 	_map1.Add(MakeKeyword("Response"), _map3)
+// 	_res = _res.Conjoin(_map1)
+// 	_res = _res.Conjoin(func () Object { if (_res2) == nil { return NIL } else { return MakeError(_res2) } }())
+// 	return _res
 // }
 
 // func newServeMux() Object {
@@ -209,133 +209,133 @@ import (
 
 func parseHTTPVersion(vers string) Object {
 	major, minor, ok := _http.ParseHTTPVersion(vers)
-	res := EmptyVector
-	res = res.Conjoin(MakeInt(int(major)))
-	res = res.Conjoin(MakeInt(int(minor)))
-	res = res.Conjoin(MakeBool(ok))
-	return res
+	_res := EmptyVector
+	_res = _res.Conjoin(MakeInt(int(major)))
+	_res = _res.Conjoin(MakeInt(int(minor)))
+	_res = _res.Conjoin(MakeBool(ok))
+	return _res
 }
 
 // func parseTime(text string) Object {
 // 	t, err := _http.ParseTime(text)
-// 	res := EmptyVector
-// 	res = res.Conjoin(t)
-// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
-// 	return res
+// 	_res := EmptyVector
+// 	_res = _res.Conjoin(t)
+// 	_res = _res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
+// 	return _res
 // }
 
 // func post(url string, contentType string, body ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/client.go:748:41)) Object {
 // 	resp, err := _http.Post(url, contentType, body)
-// 	res := EmptyVector
-// 	map1 := EmptyArrayMap()
-// 	map1.Add(MakeKeyword("Status"), MakeString((*resp).Status))
-// 	map1.Add(MakeKeyword("StatusCode"), MakeInt(int((*resp).StatusCode)))
-// 	map1.Add(MakeKeyword("Proto"), MakeString((*resp).Proto))
-// 	map1.Add(MakeKeyword("ProtoMajor"), MakeInt(int((*resp).ProtoMajor)))
-// 	map1.Add(MakeKeyword("ProtoMinor"), MakeInt(int((*resp).ProtoMinor)))
-// 	map1.Add(MakeKeyword("Header"), (*resp).Header)
-// 	map1.Add(MakeKeyword("Body"), (*resp).Body)
-// 	map1.Add(MakeKeyword("ContentLength"), MakeInt(int((*resp).ContentLength)))
-// 	vec2 := EmptyVector
-// 	for _, elem2 := range (*resp).TransferEncoding {
-// 		vec2 = vec2.Conjoin(MakeString(elem2))
+// 	_res := EmptyVector
+// 	_map1 := EmptyArrayMap()
+// 	_map1.Add(MakeKeyword("Status"), MakeString((*resp).Status))
+// 	_map1.Add(MakeKeyword("StatusCode"), MakeInt(int((*resp).StatusCode)))
+// 	_map1.Add(MakeKeyword("Proto"), MakeString((*resp).Proto))
+// 	_map1.Add(MakeKeyword("ProtoMajor"), MakeInt(int((*resp).ProtoMajor)))
+// 	_map1.Add(MakeKeyword("ProtoMinor"), MakeInt(int((*resp).ProtoMinor)))
+// 	_map1.Add(MakeKeyword("Header"), (*resp).Header)
+// 	_map1.Add(MakeKeyword("Body"), (*resp).Body)
+// 	_map1.Add(MakeKeyword("ContentLength"), MakeInt(int((*resp).ContentLength)))
+// 	_vec2 := EmptyVector
+// 	for _, _elem2 := range (*resp).TransferEncoding {
+// 		_vec2 = _vec2.Conjoin(MakeString(_elem2))
 // 	}
-// 	map1.Add(MakeKeyword("TransferEncoding"), vec2)
-// 	map1.Add(MakeKeyword("Close"), MakeBool((*resp).Close))
-// 	map1.Add(MakeKeyword("Uncompressed"), MakeBool((*resp).Uncompressed))
-// 	map1.Add(MakeKeyword("Trailer"), (*resp).Trailer)
-// 	map3 := EmptyArrayMap()
-// 	map3.Add(MakeKeyword("Method"), MakeString((*(*resp).Request).Method))
-// 	map3.Add(MakeKeyword("URL"), (*(*(*resp).Request).URL))
-// 	map3.Add(MakeKeyword("Proto"), MakeString((*(*resp).Request).Proto))
-// 	map3.Add(MakeKeyword("ProtoMajor"), MakeInt(int((*(*resp).Request).ProtoMajor)))
-// 	map3.Add(MakeKeyword("ProtoMinor"), MakeInt(int((*(*resp).Request).ProtoMinor)))
-// 	map3.Add(MakeKeyword("Header"), (*(*resp).Request).Header)
-// 	map3.Add(MakeKeyword("Body"), (*(*resp).Request).Body)
-// 	map3.Add(MakeKeyword("GetBody"), (*(*resp).Request).GetBody)
-// 	map3.Add(MakeKeyword("ContentLength"), MakeInt(int((*(*resp).Request).ContentLength)))
-// 	vec4 := EmptyVector
-// 	for _, elem4 := range (*(*resp).Request).TransferEncoding {
-// 		vec4 = vec4.Conjoin(MakeString(elem4))
+// 	_map1.Add(MakeKeyword("TransferEncoding"), _vec2)
+// 	_map1.Add(MakeKeyword("Close"), MakeBool((*resp).Close))
+// 	_map1.Add(MakeKeyword("Uncompressed"), MakeBool((*resp).Uncompressed))
+// 	_map1.Add(MakeKeyword("Trailer"), (*resp).Trailer)
+// 	_map3 := EmptyArrayMap()
+// 	_map3.Add(MakeKeyword("Method"), MakeString((*(*resp).Request).Method))
+// 	_map3.Add(MakeKeyword("URL"), (*(*(*resp).Request).URL))
+// 	_map3.Add(MakeKeyword("Proto"), MakeString((*(*resp).Request).Proto))
+// 	_map3.Add(MakeKeyword("ProtoMajor"), MakeInt(int((*(*resp).Request).ProtoMajor)))
+// 	_map3.Add(MakeKeyword("ProtoMinor"), MakeInt(int((*(*resp).Request).ProtoMinor)))
+// 	_map3.Add(MakeKeyword("Header"), (*(*resp).Request).Header)
+// 	_map3.Add(MakeKeyword("Body"), (*(*resp).Request).Body)
+// 	_map3.Add(MakeKeyword("GetBody"), (*(*resp).Request).GetBody)
+// 	_map3.Add(MakeKeyword("ContentLength"), MakeInt(int((*(*resp).Request).ContentLength)))
+// 	_vec4 := EmptyVector
+// 	for _, _elem4 := range (*(*resp).Request).TransferEncoding {
+// 		_vec4 = _vec4.Conjoin(MakeString(_elem4))
 // 	}
-// 	map3.Add(MakeKeyword("TransferEncoding"), vec4)
-// 	map3.Add(MakeKeyword("Close"), MakeBool((*(*resp).Request).Close))
-// 	map3.Add(MakeKeyword("Host"), MakeString((*(*resp).Request).Host))
-// 	map3.Add(MakeKeyword("Form"), (*(*resp).Request).Form)
-// 	map3.Add(MakeKeyword("PostForm"), (*(*resp).Request).PostForm)
-// 	map3.Add(MakeKeyword("MultipartForm"), (*(*(*resp).Request).MultipartForm))
-// 	map3.Add(MakeKeyword("Trailer"), (*(*resp).Request).Trailer)
-// 	map3.Add(MakeKeyword("RemoteAddr"), MakeString((*(*resp).Request).RemoteAddr))
-// 	map3.Add(MakeKeyword("RequestURI"), MakeString((*(*resp).Request).RequestURI))
-// 	map3.Add(MakeKeyword("TLS"), (*(*(*resp).Request).TLS))
-// 	map3.Add(MakeKeyword("Cancel"), (*(*resp).Request).Cancel)
-// 	map3.Add(MakeKeyword("Response"), )
-// 	map1.Add(MakeKeyword("Request"), map3)
-// 	map1.Add(MakeKeyword("TLS"), (*(*resp).TLS))
-// 	res = res.Conjoin(map1)
-// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
-// 	return res
+// 	_map3.Add(MakeKeyword("TransferEncoding"), _vec4)
+// 	_map3.Add(MakeKeyword("Close"), MakeBool((*(*resp).Request).Close))
+// 	_map3.Add(MakeKeyword("Host"), MakeString((*(*resp).Request).Host))
+// 	_map3.Add(MakeKeyword("Form"), (*(*resp).Request).Form)
+// 	_map3.Add(MakeKeyword("PostForm"), (*(*resp).Request).PostForm)
+// 	_map3.Add(MakeKeyword("MultipartForm"), (*(*(*resp).Request).MultipartForm))
+// 	_map3.Add(MakeKeyword("Trailer"), (*(*resp).Request).Trailer)
+// 	_map3.Add(MakeKeyword("RemoteAddr"), MakeString((*(*resp).Request).RemoteAddr))
+// 	_map3.Add(MakeKeyword("RequestURI"), MakeString((*(*resp).Request).RequestURI))
+// 	_map3.Add(MakeKeyword("TLS"), (*(*(*resp).Request).TLS))
+// 	_map3.Add(MakeKeyword("Cancel"), (*(*resp).Request).Cancel)
+// 	_map3.Add(MakeKeyword("Response"), )
+// 	_map1.Add(MakeKeyword("Request"), _map3)
+// 	_map1.Add(MakeKeyword("TLS"), (*(*resp).TLS))
+// 	_res = _res.Conjoin(_map1)
+// 	_res = _res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
+// 	return _res
 // }
 
 // func postForm(url string, data ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/client.go:785:32)) Object {
 // 	resp, err := _http.PostForm(url, data)
-// 	res := EmptyVector
-// 	map1 := EmptyArrayMap()
-// 	map1.Add(MakeKeyword("Status"), MakeString((*resp).Status))
-// 	map1.Add(MakeKeyword("StatusCode"), MakeInt(int((*resp).StatusCode)))
-// 	map1.Add(MakeKeyword("Proto"), MakeString((*resp).Proto))
-// 	map1.Add(MakeKeyword("ProtoMajor"), MakeInt(int((*resp).ProtoMajor)))
-// 	map1.Add(MakeKeyword("ProtoMinor"), MakeInt(int((*resp).ProtoMinor)))
-// 	map1.Add(MakeKeyword("Header"), (*resp).Header)
-// 	map1.Add(MakeKeyword("Body"), (*resp).Body)
-// 	map1.Add(MakeKeyword("ContentLength"), MakeInt(int((*resp).ContentLength)))
-// 	vec2 := EmptyVector
-// 	for _, elem2 := range (*resp).TransferEncoding {
-// 		vec2 = vec2.Conjoin(MakeString(elem2))
+// 	_res := EmptyVector
+// 	_map1 := EmptyArrayMap()
+// 	_map1.Add(MakeKeyword("Status"), MakeString((*resp).Status))
+// 	_map1.Add(MakeKeyword("StatusCode"), MakeInt(int((*resp).StatusCode)))
+// 	_map1.Add(MakeKeyword("Proto"), MakeString((*resp).Proto))
+// 	_map1.Add(MakeKeyword("ProtoMajor"), MakeInt(int((*resp).ProtoMajor)))
+// 	_map1.Add(MakeKeyword("ProtoMinor"), MakeInt(int((*resp).ProtoMinor)))
+// 	_map1.Add(MakeKeyword("Header"), (*resp).Header)
+// 	_map1.Add(MakeKeyword("Body"), (*resp).Body)
+// 	_map1.Add(MakeKeyword("ContentLength"), MakeInt(int((*resp).ContentLength)))
+// 	_vec2 := EmptyVector
+// 	for _, _elem2 := range (*resp).TransferEncoding {
+// 		_vec2 = _vec2.Conjoin(MakeString(_elem2))
 // 	}
-// 	map1.Add(MakeKeyword("TransferEncoding"), vec2)
-// 	map1.Add(MakeKeyword("Close"), MakeBool((*resp).Close))
-// 	map1.Add(MakeKeyword("Uncompressed"), MakeBool((*resp).Uncompressed))
-// 	map1.Add(MakeKeyword("Trailer"), (*resp).Trailer)
-// 	map3 := EmptyArrayMap()
-// 	map3.Add(MakeKeyword("Method"), MakeString((*(*resp).Request).Method))
-// 	map3.Add(MakeKeyword("URL"), (*(*(*resp).Request).URL))
-// 	map3.Add(MakeKeyword("Proto"), MakeString((*(*resp).Request).Proto))
-// 	map3.Add(MakeKeyword("ProtoMajor"), MakeInt(int((*(*resp).Request).ProtoMajor)))
-// 	map3.Add(MakeKeyword("ProtoMinor"), MakeInt(int((*(*resp).Request).ProtoMinor)))
-// 	map3.Add(MakeKeyword("Header"), (*(*resp).Request).Header)
-// 	map3.Add(MakeKeyword("Body"), (*(*resp).Request).Body)
-// 	map3.Add(MakeKeyword("GetBody"), (*(*resp).Request).GetBody)
-// 	map3.Add(MakeKeyword("ContentLength"), MakeInt(int((*(*resp).Request).ContentLength)))
-// 	vec4 := EmptyVector
-// 	for _, elem4 := range (*(*resp).Request).TransferEncoding {
-// 		vec4 = vec4.Conjoin(MakeString(elem4))
+// 	_map1.Add(MakeKeyword("TransferEncoding"), _vec2)
+// 	_map1.Add(MakeKeyword("Close"), MakeBool((*resp).Close))
+// 	_map1.Add(MakeKeyword("Uncompressed"), MakeBool((*resp).Uncompressed))
+// 	_map1.Add(MakeKeyword("Trailer"), (*resp).Trailer)
+// 	_map3 := EmptyArrayMap()
+// 	_map3.Add(MakeKeyword("Method"), MakeString((*(*resp).Request).Method))
+// 	_map3.Add(MakeKeyword("URL"), (*(*(*resp).Request).URL))
+// 	_map3.Add(MakeKeyword("Proto"), MakeString((*(*resp).Request).Proto))
+// 	_map3.Add(MakeKeyword("ProtoMajor"), MakeInt(int((*(*resp).Request).ProtoMajor)))
+// 	_map3.Add(MakeKeyword("ProtoMinor"), MakeInt(int((*(*resp).Request).ProtoMinor)))
+// 	_map3.Add(MakeKeyword("Header"), (*(*resp).Request).Header)
+// 	_map3.Add(MakeKeyword("Body"), (*(*resp).Request).Body)
+// 	_map3.Add(MakeKeyword("GetBody"), (*(*resp).Request).GetBody)
+// 	_map3.Add(MakeKeyword("ContentLength"), MakeInt(int((*(*resp).Request).ContentLength)))
+// 	_vec4 := EmptyVector
+// 	for _, _elem4 := range (*(*resp).Request).TransferEncoding {
+// 		_vec4 = _vec4.Conjoin(MakeString(_elem4))
 // 	}
-// 	map3.Add(MakeKeyword("TransferEncoding"), vec4)
-// 	map3.Add(MakeKeyword("Close"), MakeBool((*(*resp).Request).Close))
-// 	map3.Add(MakeKeyword("Host"), MakeString((*(*resp).Request).Host))
-// 	map3.Add(MakeKeyword("Form"), (*(*resp).Request).Form)
-// 	map3.Add(MakeKeyword("PostForm"), (*(*resp).Request).PostForm)
-// 	map3.Add(MakeKeyword("MultipartForm"), (*(*(*resp).Request).MultipartForm))
-// 	map3.Add(MakeKeyword("Trailer"), (*(*resp).Request).Trailer)
-// 	map3.Add(MakeKeyword("RemoteAddr"), MakeString((*(*resp).Request).RemoteAddr))
-// 	map3.Add(MakeKeyword("RequestURI"), MakeString((*(*resp).Request).RequestURI))
-// 	map3.Add(MakeKeyword("TLS"), (*(*(*resp).Request).TLS))
-// 	map3.Add(MakeKeyword("Cancel"), (*(*resp).Request).Cancel)
-// 	map3.Add(MakeKeyword("Response"), )
-// 	map1.Add(MakeKeyword("Request"), map3)
-// 	map1.Add(MakeKeyword("TLS"), (*(*resp).TLS))
-// 	res = res.Conjoin(map1)
-// 	res = res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
-// 	return res
+// 	_map3.Add(MakeKeyword("TransferEncoding"), _vec4)
+// 	_map3.Add(MakeKeyword("Close"), MakeBool((*(*resp).Request).Close))
+// 	_map3.Add(MakeKeyword("Host"), MakeString((*(*resp).Request).Host))
+// 	_map3.Add(MakeKeyword("Form"), (*(*resp).Request).Form)
+// 	_map3.Add(MakeKeyword("PostForm"), (*(*resp).Request).PostForm)
+// 	_map3.Add(MakeKeyword("MultipartForm"), (*(*(*resp).Request).MultipartForm))
+// 	_map3.Add(MakeKeyword("Trailer"), (*(*resp).Request).Trailer)
+// 	_map3.Add(MakeKeyword("RemoteAddr"), MakeString((*(*resp).Request).RemoteAddr))
+// 	_map3.Add(MakeKeyword("RequestURI"), MakeString((*(*resp).Request).RequestURI))
+// 	_map3.Add(MakeKeyword("TLS"), (*(*(*resp).Request).TLS))
+// 	_map3.Add(MakeKeyword("Cancel"), (*(*resp).Request).Cancel)
+// 	_map3.Add(MakeKeyword("Response"), )
+// 	_map1.Add(MakeKeyword("Request"), _map3)
+// 	_map1.Add(MakeKeyword("TLS"), (*(*resp).TLS))
+// 	_res = _res.Conjoin(_map1)
+// 	_res = _res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
+// 	return _res
 // }
 
 // func proxyFromEnvironment(req ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/http/transport.go:345:31)) Object {
-// 	res1, res2 := _http.ProxyFromEnvironment(req)
-// 	res := EmptyVector
-// 	res = res.Conjoin((*res1))
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
-// 	return res
+// 	_res1, _res2 := _http.ProxyFromEnvironment(req)
+// 	_res := EmptyVector
+// 	_res = _res.Conjoin((*_res1))
+// 	_res = _res.Conjoin(func () Object { if (_res2) == nil { return NIL } else { return MakeError(_res2) } }())
+// 	return _res
 // }
 
 // func proxyURL(fixedURL ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/http/transport.go:351:24)) Object {
@@ -343,109 +343,109 @@ func parseHTTPVersion(vers string) Object {
 // }
 
 // func readRequest(b ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/http/request.go:942:20)) Object {
-// 	res1, res2 := _http.ReadRequest(b)
-// 	res := EmptyVector
-// 	map1 := EmptyArrayMap()
-// 	map1.Add(MakeKeyword("Method"), MakeString((*res1).Method))
-// 	map1.Add(MakeKeyword("URL"), (*(*res1).URL))
-// 	map1.Add(MakeKeyword("Proto"), MakeString((*res1).Proto))
-// 	map1.Add(MakeKeyword("ProtoMajor"), MakeInt(int((*res1).ProtoMajor)))
-// 	map1.Add(MakeKeyword("ProtoMinor"), MakeInt(int((*res1).ProtoMinor)))
-// 	map1.Add(MakeKeyword("Header"), (*res1).Header)
-// 	map1.Add(MakeKeyword("Body"), (*res1).Body)
-// 	map1.Add(MakeKeyword("GetBody"), (*res1).GetBody)
-// 	map1.Add(MakeKeyword("ContentLength"), MakeInt(int((*res1).ContentLength)))
-// 	vec2 := EmptyVector
-// 	for _, elem2 := range (*res1).TransferEncoding {
-// 		vec2 = vec2.Conjoin(MakeString(elem2))
+// 	_res1, _res2 := _http.ReadRequest(b)
+// 	_res := EmptyVector
+// 	_map1 := EmptyArrayMap()
+// 	_map1.Add(MakeKeyword("Method"), MakeString((*_res1).Method))
+// 	_map1.Add(MakeKeyword("URL"), (*(*_res1).URL))
+// 	_map1.Add(MakeKeyword("Proto"), MakeString((*_res1).Proto))
+// 	_map1.Add(MakeKeyword("ProtoMajor"), MakeInt(int((*_res1).ProtoMajor)))
+// 	_map1.Add(MakeKeyword("ProtoMinor"), MakeInt(int((*_res1).ProtoMinor)))
+// 	_map1.Add(MakeKeyword("Header"), (*_res1).Header)
+// 	_map1.Add(MakeKeyword("Body"), (*_res1).Body)
+// 	_map1.Add(MakeKeyword("GetBody"), (*_res1).GetBody)
+// 	_map1.Add(MakeKeyword("ContentLength"), MakeInt(int((*_res1).ContentLength)))
+// 	_vec2 := EmptyVector
+// 	for _, _elem2 := range (*_res1).TransferEncoding {
+// 		_vec2 = _vec2.Conjoin(MakeString(_elem2))
 // 	}
-// 	map1.Add(MakeKeyword("TransferEncoding"), vec2)
-// 	map1.Add(MakeKeyword("Close"), MakeBool((*res1).Close))
-// 	map1.Add(MakeKeyword("Host"), MakeString((*res1).Host))
-// 	map1.Add(MakeKeyword("Form"), (*res1).Form)
-// 	map1.Add(MakeKeyword("PostForm"), (*res1).PostForm)
-// 	map1.Add(MakeKeyword("MultipartForm"), (*(*res1).MultipartForm))
-// 	map1.Add(MakeKeyword("Trailer"), (*res1).Trailer)
-// 	map1.Add(MakeKeyword("RemoteAddr"), MakeString((*res1).RemoteAddr))
-// 	map1.Add(MakeKeyword("RequestURI"), MakeString((*res1).RequestURI))
-// 	map1.Add(MakeKeyword("TLS"), (*(*res1).TLS))
-// 	map1.Add(MakeKeyword("Cancel"), (*res1).Cancel)
-// 	map3 := EmptyArrayMap()
-// 	map3.Add(MakeKeyword("Status"), MakeString((*(*res1).Response).Status))
-// 	map3.Add(MakeKeyword("StatusCode"), MakeInt(int((*(*res1).Response).StatusCode)))
-// 	map3.Add(MakeKeyword("Proto"), MakeString((*(*res1).Response).Proto))
-// 	map3.Add(MakeKeyword("ProtoMajor"), MakeInt(int((*(*res1).Response).ProtoMajor)))
-// 	map3.Add(MakeKeyword("ProtoMinor"), MakeInt(int((*(*res1).Response).ProtoMinor)))
-// 	map3.Add(MakeKeyword("Header"), (*(*res1).Response).Header)
-// 	map3.Add(MakeKeyword("Body"), (*(*res1).Response).Body)
-// 	map3.Add(MakeKeyword("ContentLength"), MakeInt(int((*(*res1).Response).ContentLength)))
-// 	vec4 := EmptyVector
-// 	for _, elem4 := range (*(*res1).Response).TransferEncoding {
-// 		vec4 = vec4.Conjoin(MakeString(elem4))
+// 	_map1.Add(MakeKeyword("TransferEncoding"), _vec2)
+// 	_map1.Add(MakeKeyword("Close"), MakeBool((*_res1).Close))
+// 	_map1.Add(MakeKeyword("Host"), MakeString((*_res1).Host))
+// 	_map1.Add(MakeKeyword("Form"), (*_res1).Form)
+// 	_map1.Add(MakeKeyword("PostForm"), (*_res1).PostForm)
+// 	_map1.Add(MakeKeyword("MultipartForm"), (*(*_res1).MultipartForm))
+// 	_map1.Add(MakeKeyword("Trailer"), (*_res1).Trailer)
+// 	_map1.Add(MakeKeyword("RemoteAddr"), MakeString((*_res1).RemoteAddr))
+// 	_map1.Add(MakeKeyword("RequestURI"), MakeString((*_res1).RequestURI))
+// 	_map1.Add(MakeKeyword("TLS"), (*(*_res1).TLS))
+// 	_map1.Add(MakeKeyword("Cancel"), (*_res1).Cancel)
+// 	_map3 := EmptyArrayMap()
+// 	_map3.Add(MakeKeyword("Status"), MakeString((*(*_res1).Response).Status))
+// 	_map3.Add(MakeKeyword("StatusCode"), MakeInt(int((*(*_res1).Response).StatusCode)))
+// 	_map3.Add(MakeKeyword("Proto"), MakeString((*(*_res1).Response).Proto))
+// 	_map3.Add(MakeKeyword("ProtoMajor"), MakeInt(int((*(*_res1).Response).ProtoMajor)))
+// 	_map3.Add(MakeKeyword("ProtoMinor"), MakeInt(int((*(*_res1).Response).ProtoMinor)))
+// 	_map3.Add(MakeKeyword("Header"), (*(*_res1).Response).Header)
+// 	_map3.Add(MakeKeyword("Body"), (*(*_res1).Response).Body)
+// 	_map3.Add(MakeKeyword("ContentLength"), MakeInt(int((*(*_res1).Response).ContentLength)))
+// 	_vec4 := EmptyVector
+// 	for _, _elem4 := range (*(*_res1).Response).TransferEncoding {
+// 		_vec4 = _vec4.Conjoin(MakeString(_elem4))
 // 	}
-// 	map3.Add(MakeKeyword("TransferEncoding"), vec4)
-// 	map3.Add(MakeKeyword("Close"), MakeBool((*(*res1).Response).Close))
-// 	map3.Add(MakeKeyword("Uncompressed"), MakeBool((*(*res1).Response).Uncompressed))
-// 	map3.Add(MakeKeyword("Trailer"), (*(*res1).Response).Trailer)
-// 	map3.Add(MakeKeyword("Request"), )
-// 	map3.Add(MakeKeyword("TLS"), (*(*(*res1).Response).TLS))
-// 	map1.Add(MakeKeyword("Response"), map3)
-// 	res = res.Conjoin(map1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
-// 	return res
+// 	_map3.Add(MakeKeyword("TransferEncoding"), _vec4)
+// 	_map3.Add(MakeKeyword("Close"), MakeBool((*(*_res1).Response).Close))
+// 	_map3.Add(MakeKeyword("Uncompressed"), MakeBool((*(*_res1).Response).Uncompressed))
+// 	_map3.Add(MakeKeyword("Trailer"), (*(*_res1).Response).Trailer)
+// 	_map3.Add(MakeKeyword("Request"), )
+// 	_map3.Add(MakeKeyword("TLS"), (*(*(*_res1).Response).TLS))
+// 	_map1.Add(MakeKeyword("Response"), _map3)
+// 	_res = _res.Conjoin(_map1)
+// 	_res = _res.Conjoin(func () Object { if (_res2) == nil { return NIL } else { return MakeError(_res2) } }())
+// 	return _res
 // }
 
 // func readResponse(r ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/http/response.go:148:21), req ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/http/response.go:148:40)) Object {
-// 	res1, res2 := _http.ReadResponse(r, req)
-// 	res := EmptyVector
-// 	map1 := EmptyArrayMap()
-// 	map1.Add(MakeKeyword("Status"), MakeString((*res1).Status))
-// 	map1.Add(MakeKeyword("StatusCode"), MakeInt(int((*res1).StatusCode)))
-// 	map1.Add(MakeKeyword("Proto"), MakeString((*res1).Proto))
-// 	map1.Add(MakeKeyword("ProtoMajor"), MakeInt(int((*res1).ProtoMajor)))
-// 	map1.Add(MakeKeyword("ProtoMinor"), MakeInt(int((*res1).ProtoMinor)))
-// 	map1.Add(MakeKeyword("Header"), (*res1).Header)
-// 	map1.Add(MakeKeyword("Body"), (*res1).Body)
-// 	map1.Add(MakeKeyword("ContentLength"), MakeInt(int((*res1).ContentLength)))
-// 	vec2 := EmptyVector
-// 	for _, elem2 := range (*res1).TransferEncoding {
-// 		vec2 = vec2.Conjoin(MakeString(elem2))
+// 	_res1, _res2 := _http.ReadResponse(r, req)
+// 	_res := EmptyVector
+// 	_map1 := EmptyArrayMap()
+// 	_map1.Add(MakeKeyword("Status"), MakeString((*_res1).Status))
+// 	_map1.Add(MakeKeyword("StatusCode"), MakeInt(int((*_res1).StatusCode)))
+// 	_map1.Add(MakeKeyword("Proto"), MakeString((*_res1).Proto))
+// 	_map1.Add(MakeKeyword("ProtoMajor"), MakeInt(int((*_res1).ProtoMajor)))
+// 	_map1.Add(MakeKeyword("ProtoMinor"), MakeInt(int((*_res1).ProtoMinor)))
+// 	_map1.Add(MakeKeyword("Header"), (*_res1).Header)
+// 	_map1.Add(MakeKeyword("Body"), (*_res1).Body)
+// 	_map1.Add(MakeKeyword("ContentLength"), MakeInt(int((*_res1).ContentLength)))
+// 	_vec2 := EmptyVector
+// 	for _, _elem2 := range (*_res1).TransferEncoding {
+// 		_vec2 = _vec2.Conjoin(MakeString(_elem2))
 // 	}
-// 	map1.Add(MakeKeyword("TransferEncoding"), vec2)
-// 	map1.Add(MakeKeyword("Close"), MakeBool((*res1).Close))
-// 	map1.Add(MakeKeyword("Uncompressed"), MakeBool((*res1).Uncompressed))
-// 	map1.Add(MakeKeyword("Trailer"), (*res1).Trailer)
-// 	map3 := EmptyArrayMap()
-// 	map3.Add(MakeKeyword("Method"), MakeString((*(*res1).Request).Method))
-// 	map3.Add(MakeKeyword("URL"), (*(*(*res1).Request).URL))
-// 	map3.Add(MakeKeyword("Proto"), MakeString((*(*res1).Request).Proto))
-// 	map3.Add(MakeKeyword("ProtoMajor"), MakeInt(int((*(*res1).Request).ProtoMajor)))
-// 	map3.Add(MakeKeyword("ProtoMinor"), MakeInt(int((*(*res1).Request).ProtoMinor)))
-// 	map3.Add(MakeKeyword("Header"), (*(*res1).Request).Header)
-// 	map3.Add(MakeKeyword("Body"), (*(*res1).Request).Body)
-// 	map3.Add(MakeKeyword("GetBody"), (*(*res1).Request).GetBody)
-// 	map3.Add(MakeKeyword("ContentLength"), MakeInt(int((*(*res1).Request).ContentLength)))
-// 	vec4 := EmptyVector
-// 	for _, elem4 := range (*(*res1).Request).TransferEncoding {
-// 		vec4 = vec4.Conjoin(MakeString(elem4))
+// 	_map1.Add(MakeKeyword("TransferEncoding"), _vec2)
+// 	_map1.Add(MakeKeyword("Close"), MakeBool((*_res1).Close))
+// 	_map1.Add(MakeKeyword("Uncompressed"), MakeBool((*_res1).Uncompressed))
+// 	_map1.Add(MakeKeyword("Trailer"), (*_res1).Trailer)
+// 	_map3 := EmptyArrayMap()
+// 	_map3.Add(MakeKeyword("Method"), MakeString((*(*_res1).Request).Method))
+// 	_map3.Add(MakeKeyword("URL"), (*(*(*_res1).Request).URL))
+// 	_map3.Add(MakeKeyword("Proto"), MakeString((*(*_res1).Request).Proto))
+// 	_map3.Add(MakeKeyword("ProtoMajor"), MakeInt(int((*(*_res1).Request).ProtoMajor)))
+// 	_map3.Add(MakeKeyword("ProtoMinor"), MakeInt(int((*(*_res1).Request).ProtoMinor)))
+// 	_map3.Add(MakeKeyword("Header"), (*(*_res1).Request).Header)
+// 	_map3.Add(MakeKeyword("Body"), (*(*_res1).Request).Body)
+// 	_map3.Add(MakeKeyword("GetBody"), (*(*_res1).Request).GetBody)
+// 	_map3.Add(MakeKeyword("ContentLength"), MakeInt(int((*(*_res1).Request).ContentLength)))
+// 	_vec4 := EmptyVector
+// 	for _, _elem4 := range (*(*_res1).Request).TransferEncoding {
+// 		_vec4 = _vec4.Conjoin(MakeString(_elem4))
 // 	}
-// 	map3.Add(MakeKeyword("TransferEncoding"), vec4)
-// 	map3.Add(MakeKeyword("Close"), MakeBool((*(*res1).Request).Close))
-// 	map3.Add(MakeKeyword("Host"), MakeString((*(*res1).Request).Host))
-// 	map3.Add(MakeKeyword("Form"), (*(*res1).Request).Form)
-// 	map3.Add(MakeKeyword("PostForm"), (*(*res1).Request).PostForm)
-// 	map3.Add(MakeKeyword("MultipartForm"), (*(*(*res1).Request).MultipartForm))
-// 	map3.Add(MakeKeyword("Trailer"), (*(*res1).Request).Trailer)
-// 	map3.Add(MakeKeyword("RemoteAddr"), MakeString((*(*res1).Request).RemoteAddr))
-// 	map3.Add(MakeKeyword("RequestURI"), MakeString((*(*res1).Request).RequestURI))
-// 	map3.Add(MakeKeyword("TLS"), (*(*(*res1).Request).TLS))
-// 	map3.Add(MakeKeyword("Cancel"), (*(*res1).Request).Cancel)
-// 	map3.Add(MakeKeyword("Response"), )
-// 	map1.Add(MakeKeyword("Request"), map3)
-// 	map1.Add(MakeKeyword("TLS"), (*(*res1).TLS))
-// 	res = res.Conjoin(map1)
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
-// 	return res
+// 	_map3.Add(MakeKeyword("TransferEncoding"), _vec4)
+// 	_map3.Add(MakeKeyword("Close"), MakeBool((*(*_res1).Request).Close))
+// 	_map3.Add(MakeKeyword("Host"), MakeString((*(*_res1).Request).Host))
+// 	_map3.Add(MakeKeyword("Form"), (*(*_res1).Request).Form)
+// 	_map3.Add(MakeKeyword("PostForm"), (*(*_res1).Request).PostForm)
+// 	_map3.Add(MakeKeyword("MultipartForm"), (*(*(*_res1).Request).MultipartForm))
+// 	_map3.Add(MakeKeyword("Trailer"), (*(*_res1).Request).Trailer)
+// 	_map3.Add(MakeKeyword("RemoteAddr"), MakeString((*(*_res1).Request).RemoteAddr))
+// 	_map3.Add(MakeKeyword("RequestURI"), MakeString((*(*_res1).Request).RequestURI))
+// 	_map3.Add(MakeKeyword("TLS"), (*(*(*_res1).Request).TLS))
+// 	_map3.Add(MakeKeyword("Cancel"), (*(*_res1).Request).Cancel)
+// 	_map3.Add(MakeKeyword("Response"), )
+// 	_map1.Add(MakeKeyword("Request"), _map3)
+// 	_map1.Add(MakeKeyword("TLS"), (*(*_res1).TLS))
+// 	_res = _res.Conjoin(_map1)
+// 	_res = _res.Conjoin(func () Object { if (_res2) == nil { return NIL } else { return MakeError(_res2) } }())
+// 	return _res
 // }
 
 // func redirect(w ABEND884(unrecognized type ResponseWriter at: tests/big/src/net/http/server.go:2020:17), r ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/http/server.go:2020:35), url string, code int) Object {

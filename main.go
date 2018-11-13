@@ -554,7 +554,7 @@ func genGoPostNamed(indent, pkg, in, t string) (jok, gol, goc, out string) {
 // Joker: { :a ^Int, :b ^String }
 // Go: struct { a int; b string }
 func genGoPostStruct(indent, pkg, in string, fl *FieldList) (jok, gol, goc, out string) {
-	tmpmap := "map" + genSym("")
+	tmpmap := "_map" + genSym("")
 	goc += indent + tmpmap + " := EmptyArrayMap()\n"
 	useful := false
 	for _, f := range fl.List {
@@ -602,8 +602,8 @@ func genGoPostStruct(indent, pkg, in string, fl *FieldList) (jok, gol, goc, out 
 
 func genGoPostArray(indent, pkg, in string, el Expr) (jok, gol, goc, out string) {
 	tmp := genSym("")
-	tmpvec := "vec" + tmp
-	tmpelem := "elem" + tmp
+	tmpvec := "_vec" + tmp
+	tmpelem := "_elem" + tmp
 	goc += indent + tmpvec + " := EmptyVector\n"
 	goc += indent + "for _, " + tmpelem + " := range " + in + " {\n"
 
@@ -668,13 +668,15 @@ func genGoPostExpr(indent, pkg, in string, e Expr) (jok, gol, goc, out string) {
 	return
 }
 
+const resultName = "_res"
+
 func genGoPostItem(indent, pkg, in string, f *Field) (captureVar, jok, gol, goc, out string, useful bool) {
 	captureVar = in
 	if in == "" {
-		captureVar = genSym("res")
+		captureVar = genSym(resultName)
 	}
 	jok, gol, goc, out = genGoPostExpr(indent, pkg, captureVar, f.Type)
-	if in != "" && in != "res" {
+	if in != "" && in != resultName {
 		gol = paramNameAsGo(in) + " " + gol
 	}
 	useful = exprIsUseful(out)
@@ -693,7 +695,7 @@ func genGoPostList(indent string, pkg string, fl FieldList) (jok, gol, goc, out 
 	goCode := []string {}
 	//goPreCode := []string {}
 
-	result := "res"
+	result := resultName
 	multipleCaptures := len(fl.List) > 1 || (fl.List[0].Names != nil && len(fl.List[0].Names) > 1)
 	for _, f := range fl.List {
 		names := []string {}
@@ -705,14 +707,14 @@ func genGoPostList(indent string, pkg string, fl FieldList) (jok, gol, goc, out 
 			}
 		}
 		for _, n := range names {
-			captureName := "res"
+			captureName := result
 			if multipleCaptures {
 				captureName = n
 			}
 			captureVar, jok, gol, goc, out, usefulItem := genGoPostItem(indent, pkg, captureName, f)
 			useful = useful || usefulItem
 			if multipleCaptures {
-				goc += indent + "res = res.Conjoin(" + out + ")\n"
+				goc += indent + result + " = " + result + ".Conjoin(" + out + ")\n"
 			} else {
 				result = out
 			}
@@ -742,7 +744,7 @@ func genGoPostList(indent string, pkg string, fl FieldList) (jok, gol, goc, out 
 
 	if multipleCaptures {
 		if useful {
-			goc = indent + "res := EmptyVector\n" + goc + indent + "return res\n"
+			goc = indent + result + " := EmptyVector\n" + goc + indent + "return " + result + "\n"
 		} else {
 			goc = indent + "ABEND123(no public information returned)\n"
 		}

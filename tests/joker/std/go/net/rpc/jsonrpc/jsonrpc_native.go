@@ -6,11 +6,11 @@ import (
 )
 
 // func dial(network string, address string) Object {
-// 	res1, res2 := _jsonrpc.Dial(network, address)
-// 	res := EmptyVector
-// 	res = res.Conjoin((*res1))
-// 	res = res.Conjoin(func () Object { if (res2) == nil { return NIL } else { return MakeError(res2) } }())
-// 	return res
+// 	_res1, _res2 := _jsonrpc.Dial(network, address)
+// 	_res := EmptyVector
+// 	_res = _res.Conjoin((*_res1))
+// 	_res = _res.Conjoin(func () Object { if (_res2) == nil { return NIL } else { return MakeError(_res2) } }())
+// 	return _res
 // }
 
 // func newClient(conn ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/rpc/jsonrpc/client.go:113:21)) Object {
