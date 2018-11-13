@@ -528,7 +528,7 @@ func exprIsUseful(rtn string) bool {
 	return rtn != "NIL"
 }
 
-func genGoPostNamed(indent, pkg, in, t string) (jok, gol, goc, out string) {
+func genGoPostNamed(indent, pkg, in, t, onlyIf string) (jok, gol, goc, out string) {
 	qt := pkg + "." + t
 	if v, ok := types[qt]; ok {
 		if v.building { // Mutually-referring types currently not supported
@@ -538,7 +538,7 @@ func genGoPostNamed(indent, pkg, in, t string) (jok, gol, goc, out string) {
 			goc = ""
 		} else {
 			v.building = true
-			jok, gol, goc, out = genGoPostExpr(indent, pkg, in, v.td.Type)
+			jok, gol, goc, out = genGoPostExpr(indent, pkg, in, v.td.Type, onlyIf)
 			v.building = false
 		}
 	} else {
@@ -553,9 +553,8 @@ func genGoPostNamed(indent, pkg, in, t string) (jok, gol, goc, out string) {
 
 // Joker: { :a ^Int, :b ^String }
 // Go: struct { a int; b string }
-func genGoPostStruct(indent, pkg, in string, fl *FieldList) (jok, gol, goc, out string) {
+func genGoPostStruct(indent, pkg, in string, fl *FieldList, onlyIf string) (jok, gol, goc, out string) {
 	tmpmap := "_map" + genSym("")
-	goc += indent + tmpmap + " := EmptyArrayMap()\n"
 	useful := false
 	for _, f := range fl.List {
 		for _, p := range f.Names {
@@ -564,12 +563,13 @@ func genGoPostStruct(indent, pkg, in string, fl *FieldList) (jok, gol, goc, out 
 			}
 			var joktype, goltype, more_goc string
 			joktype, goltype, more_goc, out =
-				genGoPostExpr(indent, pkg, in + "." + p.Name, f.Type)
+				genGoPostExpr(indent, pkg, in + "." + p.Name, f.Type, "")
 			if useful || exprIsUseful(out) {
 				useful = true
 			}
 			goc += more_goc
-			goc += indent + tmpmap + ".Add(MakeKeyword(\"" + p.Name + "\"), " + out + ")\n"
+			goc += indent + tmpmap +
+				".Add(MakeKeyword(\"" + p.Name + "\"), " + out + ")\n"
 			if jok != "" {
 				jok += ", "
 			}
@@ -592,36 +592,41 @@ func genGoPostStruct(indent, pkg, in string, fl *FieldList) (jok, gol, goc, out 
 	}
 	jok = "{" + jok + "}"
 	gol = "struct {" + gol + "}"
-	out = tmpmap
-	if !useful {
+	if useful {
+		goc = wrapStmtOnlyIfs(indent, tmpmap, "ArrayMap", "EmptyArrayMap()", onlyIf, goc, &out)
+	} else {
 		goc = ""
 		out = "NIL"
 	}
 	return
 }
 
-func genGoPostArray(indent, pkg, in string, el Expr) (jok, gol, goc, out string) {
+func genGoPostArray(indent, pkg, in string, el Expr, onlyIf string) (jok, gol, goc, out string) {
 	tmp := genSym("")
 	tmpvec := "_vec" + tmp
 	tmpelem := "_elem" + tmp
-	goc += indent + tmpvec + " := EmptyVector\n"
-	goc += indent + "for _, " + tmpelem + " := range " + in + " {\n"
 
 	var goc_pre string
-	jok, gol, goc_pre, out = genGoPostExpr(indent + "\t", pkg, tmpelem, el)
+	jok, gol, goc_pre, out = genGoPostExpr(indent + "\t", pkg, tmpelem, el, "")
 	jok = "(vector-of " + jok + ")"
 	gol = "[]" + gol
 
+	goc = indent + "for _, " + tmpelem + " := range " + in + " {\n"
 	goc += goc_pre
 	goc += indent + "\t" + tmpvec + " = " + tmpvec + ".Conjoin(" + out + ")\n"
 	goc += indent + "}\n"
-	out = tmpvec
+	goc = wrapStmtOnlyIfs(indent, tmpvec, "Vector", "EmptyVector", onlyIf, goc, &out)
 	return
 }
 
-// TODO: Maybe return a ref or something Joker (someday) supports?
-func genGoPostStar(indent, pkg, in string, e Expr) (jok, gol, goc, out string) {
-	jok, gol, goc, out = genGoPostExpr(indent, pkg, "(*" + in + ")", e)
+// TODO: Maybe return a ref or something Joker (someday) supports? flag.String() is useful only as it returns a ref;
+// whereas net.LookupMX() returns []*MX, and these are not only populated, it's unclear there's any utility in
+// modifying them (it could just as well return []MX AFAICT).
+func genGoPostStar(indent, pkg, in string, e Expr, onlyIf string) (jok, gol, goc, out string) {
+	if onlyIf != "" {
+		panic(fmt.Sprintf("pkg=%s in=%s e=%v onlyIf=%s\n", pkg, in, e, onlyIf))
+	}
+	jok, gol, goc, out = genGoPostExpr(indent, pkg, "(*" + in + ")", e, in + " != nil")
 	gol = "*" + gol
 	return
 }
@@ -630,7 +635,7 @@ func maybeNil(expr, in string) string {
 	return "func () Object { if (" + expr + ") == nil { return NIL } else { return " + in + " } }()"
 }
 
-func genGoPostExpr(indent, pkg, in string, e Expr) (jok, gol, goc, out string) {
+func genGoPostExpr(indent, pkg, in string, e Expr, onlyIf string) (jok, gol, goc, out string) {
 	switch v := e.(type) {
 	case *Ident:
 		switch v.Name {
@@ -651,15 +656,15 @@ func genGoPostExpr(indent, pkg, in string, e Expr) (jok, gol, goc, out string) {
 			gol = "error"
 			out = maybeNil(in, "MakeError(" + in + ")")  // TODO: Test this against the MakeError() added to joker/core/object.go
 		default:
-			jok, _, goc, out = genGoPostNamed(indent, pkg, in, v.Name)
+			jok, _, goc, out = genGoPostNamed(indent, pkg, in, v.Name, onlyIf)
 			gol = v.Name  // This is as far as Go needs to go for a type signature
 		}
 	case *ArrayType:
-		jok, gol, goc, out = genGoPostArray(indent, pkg, in, v.Elt)
+		jok, gol, goc, out = genGoPostArray(indent, pkg, in, v.Elt, onlyIf)
 	case *StarExpr:
-		jok, gol, goc, out = genGoPostStar(indent, pkg, in, v.X)
+		jok, gol, goc, out = genGoPostStar(indent, pkg, in, v.X, onlyIf)
 	case *StructType:
-		jok, gol, goc, out = genGoPostStruct(indent, pkg, in, v.Fields)
+		jok, gol, goc, out = genGoPostStruct(indent, pkg, in, v.Fields, onlyIf)
 	default:
 		jok = fmt.Sprintf("ABEND883(unrecognized Expr type %T at: %s)", e, unix(whereAt(e.Pos())))
 		gol = "..."
@@ -670,12 +675,12 @@ func genGoPostExpr(indent, pkg, in string, e Expr) (jok, gol, goc, out string) {
 
 const resultName = "_res"
 
-func genGoPostItem(indent, pkg, in string, f *Field) (captureVar, jok, gol, goc, out string, useful bool) {
+func genGoPostItem(indent, pkg, in string, f *Field, onlyIf string) (captureVar, jok, gol, goc, out string, useful bool) {
 	captureVar = in
 	if in == "" {
 		captureVar = genSym(resultName)
 	}
-	jok, gol, goc, out = genGoPostExpr(indent, pkg, captureVar, f.Type)
+	jok, gol, goc, out = genGoPostExpr(indent, pkg, captureVar, f.Type, onlyIf)
 	if in != "" && in != resultName {
 		gol = paramNameAsGo(in) + " " + gol
 	}
@@ -686,6 +691,46 @@ func genGoPostItem(indent, pkg, in string, f *Field) (captureVar, jok, gol, goc,
 	return
 }
 
+func reverseJoin(a []string, infix string) string {
+	j := ""
+	for idx := len(a) - 1; idx >= 0; idx-- {
+		if idx != len(a) - 1 {
+			j += infix
+		}
+		j += a[idx]
+	}
+	return j
+}
+
+// Generates code that, at run time, tests each of the onlyIf's and, if all true, returns the expr; else returns NIL.
+func wrapOnlyIfs(onlyIf string, e string) string {
+	if len(onlyIf) == 0 {
+		return e
+	}
+	return "func() Object { if " + onlyIf + " { return " + e + " } else { return NIL } }()"
+}
+
+// Add one level of indent to each line
+func indentedCode(c string) string {
+	return "\t" + strings.Replace(c, "\n", "\n\t", -1)
+}
+
+func wrapStmtOnlyIfs(indent, v, t, e string, onlyIf string, c string, out *string) string {
+	if len(onlyIf) == 0 {
+		*out = v
+		return indent + v + " := " + e + "\n" + c
+	}
+	*out = "_obj" + v
+	return indent + "var " + *out + " Object\n" +
+		indent + "if " + onlyIf + " {\n" +
+		indent + "\t" + v + " := " + e + "\n" +
+		strings.TrimRight(indentedCode(c), "\t") +
+		indent + "\t" + *out + " = Object(" + v + ")\n" +
+		indent + "} else {\n" +
+		indent + "\t" + *out + " = NIL\n" +
+		indent + "}\n"
+}
+
 // Caller generates "outGOCALL;goc" while saving jok and gol for type info (they go into .joke as metadata and docstrings)
 func genGoPostList(indent string, pkg string, fl FieldList) (jok, gol, goc, out string) {
 	useful := false
@@ -693,7 +738,6 @@ func genGoPostList(indent string, pkg string, fl FieldList) (jok, gol, goc, out 
 	jokType := []string {}
 	golType := []string {}
 	goCode := []string {}
-	//goPreCode := []string {}
 
 	result := resultName
 	multipleCaptures := len(fl.List) > 1 || (fl.List[0].Names != nil && len(fl.List[0].Names) > 1)
@@ -711,7 +755,7 @@ func genGoPostList(indent string, pkg string, fl FieldList) (jok, gol, goc, out 
 			if multipleCaptures {
 				captureName = n
 			}
-			captureVar, jok, gol, goc, out, usefulItem := genGoPostItem(indent, pkg, captureName, f)
+			captureVar, jok, gol, goc, out, usefulItem := genGoPostItem(indent, pkg, captureName, f, "")
 			useful = useful || usefulItem
 			if multipleCaptures {
 				goc += indent + result + " = " + result + ".Conjoin(" + out + ")\n"
