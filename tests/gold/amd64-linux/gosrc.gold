@@ -12062,11 +12062,11 @@ JOKER FUNC pprof.NewProfile has:
 ;;   [^String name])
 
 JOKER FUNC pprof.Profiles has:
-(defn Profiles
-  "Profiles returns a slice of all the known profiles, sorted by name.\n\nGo return type: []*Profile\n\nJoker return type: (vector-of {})"
-  {:added "1.0"
-   :go "profiles()"}
-  [])
+;; (defn Profiles
+;;   "Profiles returns a slice of all the known profiles, sorted by name.\n\nGo return type: []*Profile\n\nJoker return type: (vector-of {})"
+;;   {:added "1.0"
+;;    :go "profiles()"}
+;;   [])
 
 JOKER FUNC pprof.SetGoroutineLabels has:
 ;; (defn SetGoroutineLabels
@@ -15398,11 +15398,7 @@ GO FUNC zip.NewReader has:
 // 	var _obj_map1 Object
 // 	if _res1 != nil {
 // 		_map1 := EmptyArrayMap()
-// 		_vec2 := EmptyVector
-// 		for _, _elem2 := range (*_res1).File {
-// 			_vec2 = _vec2.Conjoin(NIL)
-// 		}
-// 		_map1.Add(MakeKeyword("File"), _vec2)
+// 		_map1.Add(MakeKeyword("File"), NIL)
 // 		_map1.Add(MakeKeyword("Comment"), MakeString((*_res1).Comment))
 // 		_obj_map1 = Object(_map1)
 // 	} else {
@@ -17334,52 +17330,18 @@ GO FUNC dwarf.New has:
 
 GO FUNC elf.NewFile has:
 // func newFile(r ABEND882(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/debug/elf/file.go:235:16)) Object {
-// 	_res1, _res2 := _elf.NewFile(r)
+// 	_, _res2 := _elf.NewFile(r)
 // 	_res := EmptyVector
-// 	var _obj_map1 Object
-// 	if _res1 != nil {
-// 		_map1 := EmptyArrayMap()
-// 		_vec2 := EmptyVector
-// 		for _, _elem2 := range (*_res1).Sections {
-// 			_vec2 = _vec2.Conjoin(NIL)
-// 		}
-// 		_map1.Add(MakeKeyword("Sections"), _vec2)
-// 		_vec4 := EmptyVector
-// 		for _, _elem4 := range (*_res1).Progs {
-// 			_vec4 = _vec4.Conjoin(NIL)
-// 		}
-// 		_map1.Add(MakeKeyword("Progs"), _vec4)
-// 		_obj_map1 = Object(_map1)
-// 	} else {
-// 		_obj_map1 = NIL
-// 	}
-// 	_res = _res.Conjoin(_obj_map1)
+// 	_res = _res.Conjoin(NIL)
 // 	_res = _res.Conjoin(func () Object { if (_res2) == nil { return NIL } else { return MakeError(_res2) } }())
 // 	return _res
 // }
 
 GO FUNC elf.Open has:
 func open(name string) Object {
-	_res1, _res2 := _elf.Open(name)
+	_, _res2 := _elf.Open(name)
 	_res := EmptyVector
-	var _obj_map1 Object
-	if _res1 != nil {
-		_map1 := EmptyArrayMap()
-		_vec2 := EmptyVector
-		for _, _elem2 := range (*_res1).Sections {
-			_vec2 = _vec2.Conjoin(NIL)
-		}
-		_map1.Add(MakeKeyword("Sections"), _vec2)
-		_vec4 := EmptyVector
-		for _, _elem4 := range (*_res1).Progs {
-			_vec4 = _vec4.Conjoin(NIL)
-		}
-		_map1.Add(MakeKeyword("Progs"), _vec4)
-		_obj_map1 = Object(_map1)
-	} else {
-		_obj_map1 = NIL
-	}
-	_res = _res.Conjoin(_obj_map1)
+	_res = _res.Conjoin(NIL)
 	_res = _res.Conjoin(func () Object { if (_res2) == nil { return NIL } else { return MakeError(_res2) } }())
 	return _res
 }
@@ -17697,11 +17659,7 @@ GO FUNC macho.NewFatFile has:
 // 	if _res1 != nil {
 // 		_map1 := EmptyArrayMap()
 // 		_map1.Add(MakeKeyword("Magic"), MakeInt(int((*_res1).Magic)))
-// 		_vec2 := EmptyVector
-// 		for _, _elem2 := range (*_res1).Arches {
-// 			_vec2 = _vec2.Conjoin(NIL)
-// 		}
-// 		_map1.Add(MakeKeyword("Arches"), _vec2)
+// 		_map1.Add(MakeKeyword("Arches"), NIL)
 // 		_obj_map1 = Object(_map1)
 // 	} else {
 // 		_obj_map1 = NIL
@@ -17877,11 +17835,7 @@ func openFat(name string) Object {
 	if _res1 != nil {
 		_map1 := EmptyArrayMap()
 		_map1.Add(MakeKeyword("Magic"), MakeInt(int((*_res1).Magic)))
-		_vec2 := EmptyVector
-		for _, _elem2 := range (*_res1).Arches {
-			_vec2 = _vec2.Conjoin(NIL)
-		}
-		_map1.Add(MakeKeyword("Arches"), _vec2)
+		_map1.Add(MakeKeyword("Arches"), NIL)
 		_obj_map1 = Object(_map1)
 	} else {
 		_obj_map1 = NIL
@@ -18045,42 +17999,18 @@ GO FUNC pe.Open has:
 
 GO FUNC plan9obj.NewFile has:
 // func newFile(r ABEND882(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/debug/plan9obj/file.go:135:16)) Object {
-// 	_res1, _res2 := _plan9obj.NewFile(r)
+// 	_, _res2 := _plan9obj.NewFile(r)
 // 	_res := EmptyVector
-// 	var _obj_map1 Object
-// 	if _res1 != nil {
-// 		_map1 := EmptyArrayMap()
-// 		_vec2 := EmptyVector
-// 		for _, _elem2 := range (*_res1).Sections {
-// 			_vec2 = _vec2.Conjoin(NIL)
-// 		}
-// 		_map1.Add(MakeKeyword("Sections"), _vec2)
-// 		_obj_map1 = Object(_map1)
-// 	} else {
-// 		_obj_map1 = NIL
-// 	}
-// 	_res = _res.Conjoin(_obj_map1)
+// 	_res = _res.Conjoin(NIL)
 // 	_res = _res.Conjoin(func () Object { if (_res2) == nil { return NIL } else { return MakeError(_res2) } }())
 // 	return _res
 // }
 
 GO FUNC plan9obj.Open has:
 func open(name string) Object {
-	_res1, _res2 := _plan9obj.Open(name)
+	_, _res2 := _plan9obj.Open(name)
 	_res := EmptyVector
-	var _obj_map1 Object
-	if _res1 != nil {
-		_map1 := EmptyArrayMap()
-		_vec2 := EmptyVector
-		for _, _elem2 := range (*_res1).Sections {
-			_vec2 = _vec2.Conjoin(NIL)
-		}
-		_map1.Add(MakeKeyword("Sections"), _vec2)
-		_obj_map1 = Object(_map1)
-	} else {
-		_obj_map1 = NIL
-	}
-	_res = _res.Conjoin(_obj_map1)
+	_res = _res.Conjoin(NIL)
 	_res = _res.Conjoin(func () Object { if (_res2) == nil { return NIL } else { return MakeError(_res2) } }())
 	return _res
 }
@@ -24555,14 +24485,10 @@ GO FUNC pprof.NewProfile has:
 // }
 
 GO FUNC pprof.Profiles has:
-func profiles() Object {
-	_res := _pprof.Profiles()
-	_vec1 := EmptyVector
-	for _, _elem1 := range _res {
-		_vec1 = _vec1.Conjoin(NIL)
-	}
-	return _vec1
-}
+// func profiles() Object {
+// 	return _pprof.Profiles()
+// 	ABEND124(no public information returned)
+// }
 
 GO FUNC pprof.SetGoroutineLabels has:
 // func setGoroutineLabels(ctx ABEND882(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/runtime/pprof/runtime.go:20:29)) Object {

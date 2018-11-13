@@ -608,14 +608,19 @@ func genGoPostArray(indent, pkg, in string, el Expr, onlyIf string) (jok, gol, g
 
 	var goc_pre string
 	jok, gol, goc_pre, out = genGoPostExpr(indent + "\t", pkg, tmpelem, el, "")
+	useful := exprIsUseful(out)
 	jok = "(vector-of " + jok + ")"
 	gol = "[]" + gol
 
-	goc = indent + "for _, " + tmpelem + " := range " + in + " {\n"
-	goc += goc_pre
-	goc += indent + "\t" + tmpvec + " = " + tmpvec + ".Conjoin(" + out + ")\n"
-	goc += indent + "}\n"
-	goc = wrapStmtOnlyIfs(indent, tmpvec, "Vector", "EmptyVector", onlyIf, goc, &out)
+	if useful {
+		goc = indent + "for _, " + tmpelem + " := range " + in + " {\n"
+		goc += goc_pre
+		goc += indent + "\t" + tmpvec + " = " + tmpvec + ".Conjoin(" + out + ")\n"
+		goc += indent + "}\n"
+		goc = wrapStmtOnlyIfs(indent, tmpvec, "Vector", "EmptyVector", onlyIf, goc, &out)
+	} else {
+		goc = ""
+	}
 	return
 }
 
