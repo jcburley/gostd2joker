@@ -1032,6 +1032,7 @@ Options:
   --joker <joker-source-dir-name>  # Modify pertinent source files to reflect packages being created
   --verbose, -v                  # Print info on what's going on
   --summary                      # Print summary of #s of types, functions, etc.
+  --empty                        # Generate empty packages (those with no Joker code)
   --dump                         # Use go's AST dump API on pertinent elements (functions, types, etc.)
   --no-timestamp                 # Don't put the time (and version) info in generated/modified files
   --help, -h                     # Print this information
@@ -1190,6 +1191,7 @@ func main() {
 	replace := false
 	overwrite := false
 	summary := false
+	generateEmpty := false
 
 	var mode parser.Mode = parser.ParseComments
 
@@ -1218,6 +1220,8 @@ func main() {
 				verbose = true
 			case "--summary":
 				summary = true
+			case "--empty":
+				generateEmpty = true
 			case "--go":
 				if sourceDir != "" {
 					panic("cannot specify --go <go-source-dir-name> more than once")
@@ -1338,7 +1342,8 @@ func main() {
 	sortedPackageMap(jokerCode,
 		func(pkgDirUnix string, v codeInfo) {
 			pkgBaseName := path.Base(pkgDirUnix)
-			if jokerLibDir != "" && jokerLibDir != "-" {
+			if jokerLibDir != "" && jokerLibDir != "-" &&
+				(generateEmpty || packagesInfo[pkgDirUnix].nonEmpty) {
 				jf := filepath.Join(jokerLibDir, filepath.FromSlash(pkgDirUnix) + ".joke")
 				var e error
 				e = os.MkdirAll(filepath.Dir(jf), 0777)
@@ -1391,7 +1396,8 @@ func main() {
 			packagesInfo[pkgDirUnix].hasGoFiles = true
 			pkgDirNative := filepath.FromSlash(pkgDirUnix)
 
-			if jokerLibDir != "" && jokerLibDir != "-" {
+			if jokerLibDir != "" && jokerLibDir != "-" &&
+				(generateEmpty || packagesInfo[pkgDirUnix].nonEmpty) {
 				gf := filepath.Join(jokerLibDir, pkgDirNative,
 					pkgBaseName + "_native.go")
 				var e error
