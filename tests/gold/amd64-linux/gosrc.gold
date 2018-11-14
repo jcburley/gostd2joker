@@ -4637,14 +4637,14 @@ JOKER FUNC tar.NewReader has:
 ;; (defn NewReader
 ;;   "NewReader creates a new Reader reading from r.\n\nGo return type: *Reader\n\nJoker return type: {}"
 ;;   {:added "1.0"
-;;    :go "newReader(_r)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newReader(_r))"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/archive/tar/reader.go:39:18) _r])
 
 JOKER FUNC tar.NewWriter has:
 ;; (defn NewWriter
 ;;   "NewWriter creates a new Writer writing to w.\n\nGo return type: *Writer\n\nJoker return type: {}"
 ;;   {:added "1.0"
-;;    :go "newWriter(_w)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newWriter(_w))"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/archive/tar/writer.go:33:18) _w])
 
 JOKER FUNC zip.FileInfoHeader has:
@@ -4665,7 +4665,7 @@ JOKER FUNC zip.NewWriter has:
 ;; (defn NewWriter
 ;;   "NewWriter returns a new Writer writing a zip file to w.\n\nGo return type: *Writer\n\nJoker return type: {}"
 ;;   {:added "1.0"
-;;    :go "newWriter(_w)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newWriter(_w))"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/archive/zip/writer.go:43:18) _w])
 
 JOKER FUNC zip.OpenReader has:
@@ -4693,42 +4693,42 @@ JOKER FUNC bufio.NewReadWriter has:
 ;; (defn NewReadWriter
 ;;   "NewReadWriter allocates a new ReadWriter that dispatches to r and w.\n\nGo return type: *ReadWriter\n\nJoker return type: {}"
 ;;   {:added "1.0"
-;;    :go "newReadWriter(_r, _w)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newReadWriter(_r, _w))"}
 ;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/bufio/bufio.go:743:22) _r, ^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/bufio/bufio.go:743:33) _w])
 
 JOKER FUNC bufio.NewReader has:
 ;; (defn NewReader
 ;;   "NewReader returns a new Reader whose buffer has the default size.\n\nGo return type: *Reader\n\nJoker return type: {}"
 ;;   {:added "1.0"
-;;    :go "newReader(_rd)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newReader(_rd))"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/bufio/bufio.go:61:19) _rd])
 
 JOKER FUNC bufio.NewReaderSize has:
 ;; (defn NewReaderSize
 ;;   "NewReaderSize returns a new Reader whose buffer has at least the specified\nsize. If the argument io.Reader is already a Reader with large enough\nsize, it returns the underlying Reader.\n\nGo return type: *Reader\n\nJoker return type: {}"
 ;;   {:added "1.0"
-;;    :go "newReaderSize(_rd, _size)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newReaderSize(_rd, _size))"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/bufio/bufio.go:46:23) _rd, ^Int _size])
 
 JOKER FUNC bufio.NewScanner has:
 ;; (defn NewScanner
 ;;   "NewScanner returns a new Scanner to read from r.\nThe split function defaults to ScanLines.\n\nGo return type: *Scanner\n\nJoker return type: {}"
 ;;   {:added "1.0"
-;;    :go "newScanner(_r)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newScanner(_r))"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/bufio/scan.go:86:19) _r])
 
 JOKER FUNC bufio.NewWriter has:
 ;; (defn NewWriter
 ;;   "NewWriter returns a new Writer whose buffer has the default size.\n\nGo return type: *Writer\n\nJoker return type: {}"
 ;;   {:added "1.0"
-;;    :go "newWriter(_w)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newWriter(_w))"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/bufio/bufio.go:552:18) _w])
 
 JOKER FUNC bufio.NewWriterSize has:
 ;; (defn NewWriterSize
 ;;   "NewWriterSize returns a new Writer whose buffer has at least the specified\nsize. If the argument io.Writer is already a Writer with large enough\nsize, it returns the underlying Writer.\n\nGo return type: *Writer\n\nJoker return type: {}"
 ;;   {:added "1.0"
-;;    :go "newWriterSize(_w, _size)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newWriterSize(_w, _size))"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/bufio/bufio.go:536:22) _w, ^Int _size])
 
 JOKER FUNC bufio.ScanBytes has:
@@ -4917,21 +4917,21 @@ JOKER FUNC bytes.NewBuffer has:
 ;; (defn NewBuffer
 ;;   "NewBuffer creates and initializes a new Buffer using buf as its\ninitial contents. The new Buffer takes ownership of buf, and the\ncaller should not use buf after this call. NewBuffer is intended to\nprepare a Buffer to read existing data. It can also be used to size\nthe internal buffer for writing. To do that, buf should have the\ndesired capacity but a length of zero.\n\nIn most cases, new(Buffer) (or just declaring a Buffer variable) is\nsufficient to initialize a Buffer.\n\nGo return type: *Buffer\n\nJoker return type: {}"
 ;;   {:added "1.0"
-;;    :go "newBuffer(_buf)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newBuffer(_buf))"}
 ;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: GO.link/src/bytes/buffer.go:450:20) _buf])
 
 JOKER FUNC bytes.NewBufferString has:
 ;; (defn NewBufferString
 ;;   "NewBufferString creates and initializes a new Buffer using string s as its\ninitial contents. It is intended to prepare a buffer to read an existing\nstring.\n\nIn most cases, new(Buffer) (or just declaring a Buffer variable) is\nsufficient to initialize a Buffer.\n\nGo return type: *Buffer\n\nJoker return type: {}"
 ;;   {:added "1.0"
-;;    :go "newBufferString(_s)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newBufferString(_s))"}
 ;;   [^String _s])
 
 JOKER FUNC bytes.NewReader has:
 ;; (defn NewReader
 ;;   "NewReader returns a new Reader reading from b.\n\nGo return type: *Reader\n\nJoker return type: {}"
 ;;   {:added "1.0"
-;;    :go "newReader(_b)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newReader(_b))"}
 ;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: GO.link/src/bytes/reader.go:156:18) _b])
 
 JOKER FUNC bytes.Repeat has:
@@ -5141,7 +5141,7 @@ JOKER FUNC gzip.NewWriter has:
 ;; (defn NewWriter
 ;;   "NewWriter returns a new Writer.\nWrites to the returned writer are compressed and written to w.\n\nIt is the caller's responsibility to call Close on the Writer when done.\nWrites may be buffered and not flushed until Close.\n\nCallers that wish to set the fields in Writer.Header must do so before\nthe first call to Write, Flush, or Close.\n\nGo return type: *Writer\n\nJoker return type: {}"
 ;;   {:added "1.0"
-;;    :go "newWriter(_w)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newWriter(_w))"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/compress/gzip/gzip.go:49:18) _w])
 
 JOKER FUNC gzip.NewWriterLevel has:
@@ -5183,7 +5183,7 @@ JOKER FUNC zlib.NewWriter has:
 ;; (defn NewWriter
 ;;   "NewWriter creates a new Writer.\nWrites to the returned Writer are compressed and written to w.\n\nIt is the caller's responsibility to call Close on the Writer when done.\nWrites may be buffered and not flushed until Close.\n\nGo return type: *Writer\n\nJoker return type: {}"
 ;;   {:added "1.0"
-;;    :go "newWriter(_w)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newWriter(_w))"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/compress/zlib/writer.go:43:18) _w])
 
 JOKER FUNC zlib.NewWriterLevel has:
@@ -5239,14 +5239,14 @@ JOKER FUNC list.New has:
 ;; (defn New
 ;;   "New returns an initialized list.\n\nGo return type: *List\n\nJoker return type: {}"
 ;;   {:added "1.0"
-;;    :go "new()"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: new())"}
 ;;   [])
 
 JOKER FUNC ring.New has:
 ;; (defn New
 ;;   "New creates a ring of n elements.\n\nGo return type: *Ring\n\nJoker return type: {:Value ^ABEND883(unrecognized Expr type *ast.InterfaceType at: GO.link/src/container/ring/ring.go:16:13)}"
 ;;   {:added "1.0"
-;;    :go "new(_n)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: new(_n))"}
 ;;   [^Int _n])
 
 JOKER FUNC context.Background has:
@@ -5757,7 +5757,7 @@ JOKER FUNC tls.Client has:
 ;; (defn Client
 ;;   "Client returns a new TLS client side connection\nusing conn as the underlying transport.\nThe config cannot be nil: users must set either ServerName or\nInsecureSkipVerify in the config.\n\nGo return type: *Conn\n\nJoker return type: {}"
 ;;   {:added "1.0"
-;;    :go "client(_conn, _config)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: client(_conn, _config))"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/crypto/tls/tls.go:39:18) _conn, ^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/crypto/tls/tls.go:39:35) _config])
 
 JOKER FUNC tls.Dial has:
@@ -5806,7 +5806,7 @@ JOKER FUNC tls.Server has:
 ;; (defn Server
 ;;   "Server returns a new TLS server side connection\nusing conn as the underlying transport.\nThe configuration config must be non-nil and must include\nat least one certificate or else set GetCertificate.\n\nGo return type: *Conn\n\nJoker return type: {}"
 ;;   {:added "1.0"
-;;    :go "server(_conn, _config)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: server(_conn, _config))"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/crypto/tls/tls.go:31:18) _conn, ^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/crypto/tls/tls.go:31:35) _config])
 
 JOKER FUNC tls.X509KeyPair has:
@@ -5890,7 +5890,7 @@ JOKER FUNC x509.NewCertPool has:
 ;; (defn NewCertPool
 ;;   "NewCertPool returns a new, empty CertPool.\n\nGo return type: *CertPool\n\nJoker return type: {}"
 ;;   {:added "1.0"
-;;    :go "newCertPool()"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newCertPool())"}
 ;;   [])
 
 JOKER FUNC x509.ParseCRL has:
@@ -5995,7 +5995,7 @@ JOKER FUNC sql.OpenDB has:
 ;; (defn OpenDB
 ;;   "OpenDB opens a database using a Connector, allowing drivers to\nbypass a string based data source name.\n\nMost users will open a database via a driver-specific connection\nhelper function that returns a *DB. No database drivers are included\nin the Go standard library. See https://golang.org/s/sqldrivers for\na list of third-party drivers.\n\nOpenDB may just validate its arguments without creating a connection\nto the database. To verify that the data source name is valid, call\nPing.\n\nThe returned DB is safe for concurrent use by multiple goroutines\nand maintains its own pool of idle connections. Thus, the OpenDB\nfunction should be called just once. It is rarely necessary to\nclose a DB.\n\nGo return type: *DB\n\nJoker return type: {}"
 ;;   {:added "1.0"
-;;    :go "openDB(_c)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: openDB(_c))"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/database/sql/sql.go:660:15) _c])
 
 JOKER FUNC sql.Register has:
@@ -6114,7 +6114,7 @@ JOKER FUNC gosym.NewLineTable has:
 ;; (defn NewLineTable
 ;;   "NewLineTable returns a new PC/line table\ncorresponding to the encoded data.\nText must be the start address of the\ncorresponding text segment.\n\nGo return type: *LineTable\n\nJoker return type: {:Data ^(vector-of Int), :PC ^ABEND042(cannot find typename debug/gosym.uint64), :Line ^Int}"
 ;;   {:added "1.0"
-;;    :go "newLineTable(_data, _text)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newLineTable(_data, _text))"}
 ;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: GO.link/src/debug/gosym/pclntab.go:124:24) _data, ^ABEND885(unrecognized type uint64 at: GO.link/src/debug/gosym/pclntab.go:124:37) _text])
 
 JOKER FUNC gosym.NewTable has:
@@ -6261,7 +6261,7 @@ JOKER FUNC base32.NewEncoding has:
 ;; (defn NewEncoding
 ;;   "NewEncoding returns a new Encoding defined by the given alphabet,\nwhich must be a 32-byte string.\n\nGo return type: *Encoding\n\nJoker return type: {}"
 ;;   {:added "1.0"
-;;    :go "newEncoding(_encoder)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newEncoding(_encoder))"}
 ;;   [^String _encoder])
 
 JOKER FUNC base64.NewDecoder has:
@@ -6282,7 +6282,7 @@ JOKER FUNC base64.NewEncoding has:
 ;; (defn NewEncoding
 ;;   "NewEncoding returns a new padded Encoding defined by the given alphabet,\nwhich must be a 64-byte string that does not contain the padding character\nor CR / LF ('\\r', '\\n').\nThe resulting Encoding uses the default padding character ('='),\nwhich may be changed or disabled via WithPadding.\n\nGo return type: *Encoding\n\nJoker return type: {}"
 ;;   {:added "1.0"
-;;    :go "newEncoding(_encoder)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newEncoding(_encoder))"}
 ;;   [^String _encoder])
 
 JOKER FUNC binary.PutUvarint has:
@@ -6352,28 +6352,28 @@ JOKER FUNC csv.NewReader has:
 ;; (defn NewReader
 ;;   "NewReader returns a new Reader that reads from r.\n\nGo return type: *Reader\n\nJoker return type: {:Comma ^ABEND042(cannot find typename encoding/csv.rune), :Comment ^ABEND042(cannot find typename encoding/csv.rune), :FieldsPerRecord ^Int, :LazyQuotes ^Bool, :TrimLeadingSpace ^Bool, :ReuseRecord ^Bool, :TrailingComma ^Bool}"
 ;;   {:added "1.0"
-;;    :go "newReader(_r)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newReader(_r))"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/encoding/csv/reader.go:168:18) _r])
 
 JOKER FUNC csv.NewWriter has:
 ;; (defn NewWriter
 ;;   "NewWriter returns a new Writer that writes to w.\n\nGo return type: *Writer\n\nJoker return type: {:Comma ^ABEND042(cannot find typename encoding/csv.rune), :UseCRLF ^Bool}"
 ;;   {:added "1.0"
-;;    :go "newWriter(_w)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newWriter(_w))"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/encoding/csv/writer.go:31:18) _w])
 
 JOKER FUNC gob.NewDecoder has:
 ;; (defn NewDecoder
 ;;   "NewDecoder returns a new decoder that reads from the io.Reader.\nIf r does not also implement io.ByteReader, it will be wrapped in a\nbufio.Reader.\n\nGo return type: *Decoder\n\nJoker return type: {}"
 ;;   {:added "1.0"
-;;    :go "newDecoder(_r)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newDecoder(_r))"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/encoding/gob/decoder.go:41:19) _r])
 
 JOKER FUNC gob.NewEncoder has:
 ;; (defn NewEncoder
 ;;   "NewEncoder returns a new encoder that will transmit on the io.Writer.\n\nGo return type: *Encoder\n\nJoker return type: {}"
 ;;   {:added "1.0"
-;;    :go "newEncoder(_w)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newEncoder(_w))"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/encoding/gob/encoder.go:33:19) _w])
 
 JOKER FUNC gob.Register has:
@@ -6499,14 +6499,14 @@ JOKER FUNC json.NewDecoder has:
 ;; (defn NewDecoder
 ;;   "NewDecoder returns a new decoder that reads from r.\n\nThe decoder introduces its own buffering and may\nread data from r beyond the JSON values requested.\n\nGo return type: *Decoder\n\nJoker return type: {}"
 ;;   {:added "1.0"
-;;    :go "newDecoder(_r)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newDecoder(_r))"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/encoding/json/stream.go:31:19) _r])
 
 JOKER FUNC json.NewEncoder has:
 ;; (defn NewEncoder
 ;;   "NewEncoder returns a new encoder that writes to w.\n\nGo return type: *Encoder\n\nJoker return type: {}"
 ;;   {:added "1.0"
-;;    :go "newEncoder(_w)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newEncoder(_w))"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/encoding/json/stream.go:186:19) _w])
 
 JOKER FUNC json.Unmarshal has:
@@ -6583,21 +6583,21 @@ JOKER FUNC xml.NewDecoder has:
 ;; (defn NewDecoder
 ;;   "NewDecoder creates a new XML parser reading from r.\nIf r does not implement io.ByteReader, NewDecoder will\ndo its own buffering.\n\nGo return type: *Decoder\n\nJoker return type: {:Strict ^Bool, :AutoClose ^(vector-of String), :Entity ^ABEND883(unrecognized Expr type *ast.MapType at: GO.link/src/encoding/xml/xml.go:195:9), :CharsetReader ^ABEND883(unrecognized Expr type *ast.FuncType at: GO.link/src/encoding/xml/xml.go:202:16), :DefaultSpace ^String}"
 ;;   {:added "1.0"
-;;    :go "newDecoder(_r)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newDecoder(_r))"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/encoding/xml/xml.go:229:19) _r])
 
 JOKER FUNC xml.NewEncoder has:
 ;; (defn NewEncoder
 ;;   "NewEncoder returns a new encoder that writes to w.\n\nGo return type: *Encoder\n\nJoker return type: {}"
 ;;   {:added "1.0"
-;;    :go "newEncoder(_w)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newEncoder(_w))"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/encoding/xml/marshal.go:137:19) _w])
 
 JOKER FUNC xml.NewTokenDecoder has:
 ;; (defn NewTokenDecoder
 ;;   "NewTokenDecoder creates a new XML parser using an underlying token stream.\n\nGo return type: *Decoder\n\nJoker return type: {:Strict ^Bool, :AutoClose ^(vector-of String), :Entity ^ABEND883(unrecognized Expr type *ast.MapType at: GO.link/src/encoding/xml/xml.go:195:9), :CharsetReader ^ABEND883(unrecognized Expr type *ast.FuncType at: GO.link/src/encoding/xml/xml.go:202:16), :DefaultSpace ^String}"
 ;;   {:added "1.0"
-;;    :go "newTokenDecoder(_t)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newTokenDecoder(_t))"}
 ;;   [^ABEND885(unrecognized type TokenReader at: GO.link/src/encoding/xml/xml.go:241:24) _t])
 
 JOKER FUNC xml.Unmarshal has:
@@ -6639,28 +6639,28 @@ JOKER FUNC expvar.NewFloat has:
 ;; (defn NewFloat
 ;;   "Go return type: *Float\n\nJoker return type: {}"
 ;;   {:added "1.0"
-;;    :go "newFloat(_name)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newFloat(_name))"}
 ;;   [^String _name])
 
 JOKER FUNC expvar.NewInt has:
 ;; (defn NewInt
 ;;   "Go return type: *Int\n\nJoker return type: {}"
 ;;   {:added "1.0"
-;;    :go "newInt(_name)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newInt(_name))"}
 ;;   [^String _name])
 
 JOKER FUNC expvar.NewMap has:
 ;; (defn NewMap
 ;;   "Go return type: *Map\n\nJoker return type: {}"
 ;;   {:added "1.0"
-;;    :go "newMap(_name)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newMap(_name))"}
 ;;   [^String _name])
 
 JOKER FUNC expvar.NewString has:
 ;; (defn NewString
 ;;   "Go return type: *String\n\nJoker return type: {}"
 ;;   {:added "1.0"
-;;    :go "newString(_name)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newString(_name))"}
 ;;   [^String _name])
 
 JOKER FUNC expvar.Publish has:
@@ -6685,11 +6685,11 @@ JOKER FUNC flag.Args has:
   [])
 
 JOKER FUNC flag.Bool has:
-(defn ^"Bool" Bool
-  "Bool defines a bool flag with specified name, default value, and usage string.\nThe return value is the address of a bool variable that stores the value of the flag.\n\nGo return type: *bool\n\nJoker return type: Bool"
-  {:added "1.0"
-   :go "flag.Bool(_name, _value, _usage)"}
-  [^String _name, ^Bool _value, ^String _usage])
+;; (defn ^"Bool" Bool
+;;   "Bool defines a bool flag with specified name, default value, and usage string.\nThe return value is the address of a bool variable that stores the value of the flag.\n\nGo return type: *bool\n\nJoker return type: Bool"
+;;   {:added "1.0"
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: flag.Bool(_name, _value, _usage))"}
+;;   [^String _name, ^Bool _value, ^String _usage])
 
 JOKER FUNC flag.BoolVar has:
 ;; (defn BoolVar
@@ -6702,7 +6702,7 @@ JOKER FUNC flag.Duration has:
 ;; (defn Duration
 ;;   "Duration defines a time.Duration flag with specified name, default value, and usage string.\nThe return value is the address of a time.Duration variable that stores the value of the flag.\nThe flag accepts a value acceptable to time.ParseDuration.\n\nGo return type: *...\n\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/flag/flag.go:783:64)"
 ;;   {:added "1.0"
-;;    :go "duration(_name, _value, _usage)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: duration(_name, _value, _usage))"}
 ;;   [^String _name, ^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/flag/flag.go:783:34) _value, ^String _usage])
 
 JOKER FUNC flag.DurationVar has:
@@ -6716,7 +6716,7 @@ JOKER FUNC flag.Float64 has:
 ;; (defn Float64
 ;;   "Float64 defines a float64 flag with specified name, default value, and usage string.\nThe return value is the address of a float64 variable that stores the value of the flag.\n\nGo return type: *float64\n\nJoker return type: ABEND042(cannot find typename flag.float64)"
 ;;   {:added "1.0"
-;;    :go "float64(_name, _value, _usage)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: float64(_name, _value, _usage))"}
 ;;   [^String _name, ^ABEND885(unrecognized type float64 at: GO.link/src/flag/flag.go:753:33) _value, ^String _usage])
 
 JOKER FUNC flag.Float64Var has:
@@ -6727,17 +6727,17 @@ JOKER FUNC flag.Float64Var has:
 ;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/flag/flag.go:739:19) _p, ^String _name, ^ABEND885(unrecognized type float64 at: GO.link/src/flag/flag.go:739:48) _value, ^String _usage])
 
 JOKER FUNC flag.Int has:
-(defn ^"Int" Int
-  "Int defines an int flag with specified name, default value, and usage string.\nThe return value is the address of an int variable that stores the value of the flag.\n\nGo return type: *int\n\nJoker return type: Int"
-  {:added "1.0"
-   :go "flag.Int(_name, _value, _usage)"}
-  [^String _name, ^Int _value, ^String _usage])
+;; (defn ^"Int" Int
+;;   "Int defines an int flag with specified name, default value, and usage string.\nThe return value is the address of an int variable that stores the value of the flag.\n\nGo return type: *int\n\nJoker return type: Int"
+;;   {:added "1.0"
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: flag.Int(_name, _value, _usage))"}
+;;   [^String _name, ^Int _value, ^String _usage])
 
 JOKER FUNC flag.Int64 has:
 ;; (defn ^"Int" Int64
 ;;   "Int64 defines an int64 flag with specified name, default value, and usage string.\nThe return value is the address of an int64 variable that stores the value of the flag.\n\nGo return type: *int\n\nJoker return type: Int"
 ;;   {:added "1.0"
-;;    :go "flag.Int64(_name, _value, _usage)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: flag.Int64(_name, _value, _usage))"}
 ;;   [^String _name, ^ABEND885(unrecognized type int64 at: GO.link/src/flag/flag.go:649:31) _value, ^String _usage])
 
 JOKER FUNC flag.Int64Var has:
@@ -6758,7 +6758,7 @@ JOKER FUNC flag.Lookup has:
 ;; (defn Lookup
 ;;   "Lookup returns the Flag structure of the named command-line flag,\nreturning nil if none exists.\n\nGo return type: *Flag\n\nJoker return type: {:Name ^String, :Usage ^String, :Value ^ABEND883(unrecognized Expr type *ast.InterfaceType at: GO.link/src/flag/flag.go:248:12), :DefValue ^String}"
 ;;   {:added "1.0"
-;;    :go "lookup(_name)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: lookup(_name))"}
 ;;   [^String _name])
 
 JOKER FUNC flag.NArg has:
@@ -6779,7 +6779,7 @@ JOKER FUNC flag.NewFlagSet has:
 ;; (defn NewFlagSet
 ;;   "NewFlagSet returns a new, empty flag set with the specified name and\nerror handling property. If the name is not empty, it will be printed\nin the default usage message and in error messages.\n\nGo return type: *FlagSet\n\nJoker return type: {:Usage ^ABEND883(unrecognized Expr type *ast.FuncType at: GO.link/src/flag/flag.go:280:8)}"
 ;;   {:added "1.0"
-;;    :go "newFlagSet(_name, _errorHandling)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newFlagSet(_name, _errorHandling))"}
 ;;   [^String _name, ^ABEND885(unrecognized type ErrorHandling at: GO.link/src/flag/flag.go:981:44) _errorHandling])
 
 JOKER FUNC flag.Parse has:
@@ -6811,11 +6811,11 @@ JOKER FUNC flag.Set has:
   [^String _name, ^String _value])
 
 JOKER FUNC flag.String has:
-(defn ^"String" String
-  "String defines a string flag with specified name, default value, and usage string.\nThe return value is the address of a string variable that stores the value of the flag.\n\nGo return type: *string\n\nJoker return type: String"
-  {:added "1.0"
-   :go "flag.String(_name, _value, _usage)"}
-  [^String _name, ^String _value, ^String _usage])
+;; (defn ^"String" String
+;;   "String defines a string flag with specified name, default value, and usage string.\nThe return value is the address of a string variable that stores the value of the flag.\n\nGo return type: *string\n\nJoker return type: String"
+;;   {:added "1.0"
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: flag.String(_name, _value, _usage))"}
+;;   [^String _name, ^String _value, ^String _usage])
 
 JOKER FUNC flag.StringVar has:
 ;; (defn StringVar
@@ -6828,14 +6828,14 @@ JOKER FUNC flag.Uint has:
 ;; (defn ^"Int" Uint
 ;;   "Uint defines a uint flag with specified name, default value, and usage string.\nThe return value is the address of a uint variable that stores the value of the flag.\n\nGo return type: *int\n\nJoker return type: Int"
 ;;   {:added "1.0"
-;;    :go "flag.Uint(_name, _value, _usage)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: flag.Uint(_name, _value, _usage))"}
 ;;   [^String _name, ^ABEND885(unrecognized type uint at: GO.link/src/flag/flag.go:675:30) _value, ^String _usage])
 
 JOKER FUNC flag.Uint64 has:
 ;; (defn Uint64
 ;;   "Uint64 defines a uint64 flag with specified name, default value, and usage string.\nThe return value is the address of a uint64 variable that stores the value of the flag.\n\nGo return type: *uint64\n\nJoker return type: ABEND042(cannot find typename flag.uint64)"
 ;;   {:added "1.0"
-;;    :go "uint64(_name, _value, _usage)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: uint64(_name, _value, _usage))"}
 ;;   [^String _name, ^ABEND885(unrecognized type uint64 at: GO.link/src/flag/flag.go:701:32) _value, ^String _usage])
 
 JOKER FUNC flag.Uint64Var has:
@@ -7066,7 +7066,7 @@ JOKER FUNC ast.MergePackageFiles has:
 ;; (defn MergePackageFiles
 ;;   "MergePackageFiles creates a file AST by merging the ASTs of the\nfiles belonging to a package. The mode flags control merging behavior.\n\nGo return type: *File\n\nJoker return type: {:Doc ^{:List ^(vector-of {:Slash ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/go/ast/ast.go:63:8), :Text ^String})}, :Package ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/go/ast/ast.go:988:13), :Name ^{:NamePos ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/go/ast/ast.go:241:11), :Name ^String, :Obj ^{:Kind ^Int, :Name ^String, :Decl ^ABEND883(unrecognized Expr type *ast.InterfaceType at: GO.link/src/go/ast/scope.go:79:7), :Data ^ABEND883(unrecognized Expr type *ast.InterfaceType at: GO.link/src/go/ast/scope.go:80:7), :Type ^ABEND883(unrecognized Expr type *ast.InterfaceType at: GO.link/src/go/ast/scope.go:81:7)}}, :Decls ^(vector-of ABEND883(unrecognized Expr type *ast.InterfaceType at: GO.link/src/go/ast/ast.go:53:11)), :Scope ^{:Outer ^ABEND947(recursive type reference involving go/ast.Scope), :Objects ^ABEND883(unrecognized Expr type *ast.MapType at: GO.link/src/go/ast/scope.go:21:10)}, :Imports ^(vector-of {:Doc ^{:List ^(vector-of {:Slash ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/go/ast/ast.go:63:8), :Text ^String})}, :Name ^{:NamePos ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/go/ast/ast.go:241:11), :Name ^String, :Obj ^{:Kind ^Int, :Name ^String, :Decl ^ABEND883(unrecognized Expr type *ast.InterfaceType at: GO.link/src/go/ast/scope.go:79:7), :Data ^ABEND883(unrecognized Expr type *ast.InterfaceType at: GO.link/src/go/ast/scope.go:80:7), :Type ^ABEND883(unrecognized Expr type *ast.InterfaceType at: GO.link/src/go/ast/scope.go:81:7)}}, :Path ^{:ValuePos ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/go/ast/ast.go:256:12), :Kind ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/go/ast/ast.go:257:12), :Value ^String}, :Comment ^{:List ^(vector-of {:Slash ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/go/ast/ast.go:63:8), :Text ^String})}, :EndPos ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/go/ast/ast.go:836:11)}), :Unresolved ^(vector-of {:NamePos ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/go/ast/ast.go:241:11), :Name ^String, :Obj ^{:Kind ^Int, :Name ^String, :Decl ^ABEND883(unrecognized Expr type *ast.InterfaceType at: GO.link/src/go/ast/scope.go:79:7), :Data ^ABEND883(unrecognized Expr type *ast.InterfaceType at: GO.link/src/go/ast/scope.go:80:7), :Type ^ABEND883(unrecognized Expr type *ast.InterfaceType at: GO.link/src/go/ast/scope.go:81:7)}}), :Comments ^(vector-of {:List ^(vector-of {:Slash ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/go/ast/ast.go:63:8), :Text ^String})})}"
 ;;   {:added "1.0"
-;;    :go "mergePackageFiles(_pkg, _mode)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: mergePackageFiles(_pkg, _mode))"}
 ;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/go/ast/filter.go:344:28) _pkg, ^ABEND885(unrecognized type MergeMode at: GO.link/src/go/ast/filter.go:344:43) _mode])
 
 JOKER FUNC ast.NewCommentMap has:
@@ -7080,14 +7080,14 @@ JOKER FUNC ast.NewIdent has:
 ;; (defn NewIdent
 ;;   "NewIdent creates a new Ident without position.\nUseful for ASTs generated by code other than the Go parser.\n\nGo return type: *Ident\n\nJoker return type: {:NamePos ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/go/ast/ast.go:241:11), :Name ^String, :Obj ^{:Kind ^Int, :Name ^String, :Decl ^ABEND883(unrecognized Expr type *ast.InterfaceType at: GO.link/src/go/ast/scope.go:79:7), :Data ^ABEND883(unrecognized Expr type *ast.InterfaceType at: GO.link/src/go/ast/scope.go:80:7), :Type ^ABEND883(unrecognized Expr type *ast.InterfaceType at: GO.link/src/go/ast/scope.go:81:7)}}"
 ;;   {:added "1.0"
-;;    :go "newIdent(_name)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newIdent(_name))"}
 ;;   [^String _name])
 
 JOKER FUNC ast.NewObj has:
 ;; (defn NewObj
 ;;   "NewObj creates a new object of a given kind and name.\n\nGo return type: *Object\n\nJoker return type: {:Kind ^Int, :Name ^String, :Decl ^ABEND883(unrecognized Expr type *ast.InterfaceType at: GO.link/src/go/ast/scope.go:79:7), :Data ^ABEND883(unrecognized Expr type *ast.InterfaceType at: GO.link/src/go/ast/scope.go:80:7), :Type ^ABEND883(unrecognized Expr type *ast.InterfaceType at: GO.link/src/go/ast/scope.go:81:7)}"
 ;;   {:added "1.0"
-;;    :go "newObj(_kind, _name)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newObj(_kind, _name))"}
 ;;   [^ABEND885(unrecognized type ObjKind at: GO.link/src/go/ast/scope.go:85:18) _kind, ^String _name])
 
 JOKER FUNC ast.NewPackage has:
@@ -7101,7 +7101,7 @@ JOKER FUNC ast.NewScope has:
 ;; (defn NewScope
 ;;   "NewScope creates a new scope nested in the outer scope.\n\nGo return type: *Scope\n\nJoker return type: {:Outer ^ABEND947(recursive type reference involving go/ast.Scope), :Objects ^ABEND883(unrecognized Expr type *ast.MapType at: GO.link/src/go/ast/scope.go:21:10)}"
 ;;   {:added "1.0"
-;;    :go "newScope(_outer)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newScope(_outer))"}
 ;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/go/ast/scope.go:25:21) _outer])
 
 JOKER FUNC ast.NotNilFilter has:
@@ -7388,7 +7388,7 @@ JOKER FUNC doc.New has:
 ;; (defn New
 ;;   "New computes the package documentation for the given package AST.\nNew takes ownership of the AST pkg and may edit or overwrite it.\n\nGo return type: *Package\n\nJoker return type: {:Doc ^String, :Name ^String, :ImportPath ^String, :Imports ^(vector-of String), :Filenames ^(vector-of String), :Notes ^ABEND883(unrecognized Expr type *ast.MapType at: GO.link/src/go/doc/doc.go:20:13), :Bugs ^(vector-of String), :Consts ^(vector-of {:Doc ^String, :Names ^(vector-of String), :Decl ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/go/doc/doc.go:37:9)}), :Types ^(vector-of {:Doc ^String, :Name ^String, :Decl ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/go/doc/doc.go:46:8), :Consts ^(vector-of {:Doc ^String, :Names ^(vector-of String), :Decl ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/go/doc/doc.go:37:9)}), :Vars ^(vector-of {:Doc ^String, :Names ^(vector-of String), :Decl ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/go/doc/doc.go:37:9)}), :Funcs ^(vector-of {:Doc ^String, :Name ^String, :Decl ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/go/doc/doc.go:59:8), :Recv ^String, :Orig ^String, :Level ^Int}), :Methods ^(vector-of {:Doc ^String, :Name ^String, :Decl ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/go/doc/doc.go:59:8), :Recv ^String, :Orig ^String, :Level ^Int})}), :Vars ^(vector-of {:Doc ^String, :Names ^(vector-of String), :Decl ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/go/doc/doc.go:37:9)}), :Funcs ^(vector-of {:Doc ^String, :Name ^String, :Decl ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/go/doc/doc.go:59:8), :Recv ^String, :Orig ^String, :Level ^Int})}"
 ;;   {:added "1.0"
-;;    :go "new(_pkg, _importPath, _mode)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: new(_pkg, _importPath, _mode))"}
 ;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/go/doc/doc.go:94:14) _pkg, ^String _importPath, ^ABEND885(unrecognized type Mode at: GO.link/src/go/doc/doc.go:94:52) _mode])
 
 JOKER FUNC doc.Synopsis has:
@@ -7493,7 +7493,7 @@ JOKER FUNC token.NewFileSet has:
 ;; (defn NewFileSet
 ;;   "NewFileSet creates a new file set.\n\nGo return type: *FileSet\n\nJoker return type: {}"
 ;;   {:added "1.0"
-;;    :go "newFileSet()"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newFileSet())"}
 ;;   [])
 
 JOKER FUNC types.AssertableTo has:
@@ -7605,161 +7605,161 @@ JOKER FUNC types.NewArray has:
 ;; (defn NewArray
 ;;   "NewArray returns a new array type for the given element type and length.\nA negative length indicates an unknown length.\n\nGo return type: *Array\n\nJoker return type: {}"
 ;;   {:added "1.0"
-;;    :go "newArray(_elem, _len)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newArray(_elem, _len))"}
 ;;   [^ABEND885(unrecognized type Type at: GO.link/src/go/types/type.go:101:20) _elem, ^ABEND885(unrecognized type int64 at: GO.link/src/go/types/type.go:101:30) _len])
 
 JOKER FUNC types.NewChan has:
 ;; (defn NewChan
 ;;   "NewChan returns a new channel type for the given direction and element type.\n\nGo return type: *Chan\n\nJoker return type: {}"
 ;;   {:added "1.0"
-;;    :go "newChan(_dir, _elem)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newChan(_dir, _elem))"}
 ;;   [^ABEND885(unrecognized type ChanDir at: GO.link/src/go/types/type.go:413:18) _dir, ^ABEND885(unrecognized type Type at: GO.link/src/go/types/type.go:413:32) _elem])
 
 JOKER FUNC types.NewChecker has:
 ;; (defn NewChecker
 ;;   "NewChecker returns a new Checker instance for a given package.\nPackage files may be added incrementally via checker.Files.\n\nGo return type: *Checker\n\nJoker return type: {}"
 ;;   {:added "1.0"
-;;    :go "newChecker(_conf, _fset, _pkg, _info)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newChecker(_conf, _fset, _pkg, _info))"}
 ;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/go/types/check.go:170:22) _conf, ^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/go/types/check.go:170:36) _fset, ^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/go/types/check.go:170:56) _pkg, ^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/go/types/check.go:170:71) _info])
 
 JOKER FUNC types.NewConst has:
 ;; (defn NewConst
 ;;   "NewConst returns a new constant with value val.\nThe remaining arguments set the attributes found with all Objects.\n\nGo return type: *Const\n\nJoker return type: {}"
 ;;   {:added "1.0"
-;;    :go "newConst(_pos, _pkg, _name, _typ, _val)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newConst(_pos, _pkg, _name, _typ, _val))"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/go/types/object.go:205:19) _pos, ^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/go/types/object.go:205:34) _pkg, ^String _name, ^ABEND885(unrecognized type Type at: GO.link/src/go/types/object.go:205:61) _typ, ^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/go/types/object.go:205:71) _val])
 
 JOKER FUNC types.NewField has:
 ;; (defn NewField
 ;;   "NewField returns a new variable representing a struct field.\nFor embedded fields, the name is the unqualified type name\n/ under which the field is accessible.\n\nGo return type: *Var\n\nJoker return type: {}"
 ;;   {:added "1.0"
-;;    :go "newField(_pos, _pkg, _name, _typ, _embedded)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newField(_pos, _pkg, _name, _typ, _embedded))"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/go/types/object.go:276:19) _pos, ^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/go/types/object.go:276:34) _pkg, ^String _name, ^ABEND885(unrecognized type Type at: GO.link/src/go/types/object.go:276:61) _typ, ^Bool _embedded])
 
 JOKER FUNC types.NewFunc has:
 ;; (defn NewFunc
 ;;   "NewFunc returns a new function with the given signature, representing\nthe function's type.\n\nGo return type: *Func\n\nJoker return type: {}"
 ;;   {:added "1.0"
-;;    :go "newFunc(_pos, _pkg, _name, _sig)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newFunc(_pos, _pkg, _name, _sig))"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/go/types/object.go:301:18) _pos, ^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/go/types/object.go:301:33) _pkg, ^String _name, ^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/go/types/object.go:301:60) _sig])
 
 JOKER FUNC types.NewInterface has:
 ;; (defn NewInterface
 ;;   "NewInterface returns a new (incomplete) interface for the given methods and embedded types.\nEach embedded type must have an underlying type of interface type.\nNewInterface takes ownership of the provided methods and may modify their types by setting\nmissing receivers. To compute the method set of the interface, Complete must be called.\n\nDeprecated: Use NewInterfaceType instead which allows any (even non-defined) interface types\nto be embedded. This is necessary for interfaces that embed alias type names referring to\nnon-defined (literal) interface types.\n\nGo return type: *Interface\n\nJoker return type: {}"
 ;;   {:added "1.0"
-;;    :go "newInterface(_methods, _embeddeds)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newInterface(_methods, _embeddeds))"}
 ;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: GO.link/src/go/types/type.go:266:27) _methods, ^ABEND881(unrecognized Expr type *ast.ArrayType at: GO.link/src/go/types/type.go:266:46) _embeddeds])
 
 JOKER FUNC types.NewInterfaceType has:
 ;; (defn NewInterfaceType
 ;;   "NewInterfaceType returns a new (incomplete) interface for the given methods and embedded types.\nEach embedded type must have an underlying type of interface type (this property is not\nverified for defined types, which may be in the process of being set up and which don't\nhave a valid underlying type yet).\nNewInterfaceType takes ownership of the provided methods and may modify their types by setting\nmissing receivers. To compute the method set of the interface, Complete must be called.\n\nGo return type: *Interface\n\nJoker return type: {}"
 ;;   {:added "1.0"
-;;    :go "newInterfaceType(_methods, _embeddeds)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newInterfaceType(_methods, _embeddeds))"}
 ;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: GO.link/src/go/types/type.go:280:31) _methods, ^ABEND881(unrecognized Expr type *ast.ArrayType at: GO.link/src/go/types/type.go:280:50) _embeddeds])
 
 JOKER FUNC types.NewLabel has:
 ;; (defn NewLabel
 ;;   "NewLabel returns a new label.\n\nGo return type: *Label\n\nJoker return type: {}"
 ;;   {:added "1.0"
-;;    :go "newLabel(_pos, _pkg, _name)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newLabel(_pos, _pkg, _name))"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/go/types/object.go:331:19) _pos, ^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/go/types/object.go:331:34) _pkg, ^String _name])
 
 JOKER FUNC types.NewMap has:
 ;; (defn NewMap
 ;;   "NewMap returns a new map for the given key and element types.\n\nGo return type: *Map\n\nJoker return type: {}"
 ;;   {:added "1.0"
-;;    :go "newMap(_key, _elem)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newMap(_key, _elem))"}
 ;;   [^ABEND885(unrecognized type Type at: GO.link/src/go/types/type.go:386:23) _key, ^ABEND885(unrecognized type Type at: GO.link/src/go/types/type.go:386:23) _elem])
 
 JOKER FUNC types.NewMethodSet has:
 ;; (defn NewMethodSet
 ;;   "NewMethodSet returns the method set for the given type T.\nIt always returns a non-nil method set, even if it is empty.\n\nGo return type: *MethodSet\n\nJoker return type: {}"
 ;;   {:added "1.0"
-;;    :go "newMethodSet(_T)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newMethodSet(_T))"}
 ;;   [^ABEND885(unrecognized type Type at: GO.link/src/go/types/methodset.go:67:21) _T])
 
 JOKER FUNC types.NewNamed has:
 ;; (defn NewNamed
 ;;   "NewNamed returns a new named type for the given type name, underlying type, and associated methods.\nIf the given type name obj doesn't have a type yet, its type is set to the returned named type.\nThe underlying type must not be a *Named.\n\nGo return type: *Named\n\nJoker return type: {}"
 ;;   {:added "1.0"
-;;    :go "newNamed(_obj, _underlying, _methods)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newNamed(_obj, _underlying, _methods))"}
 ;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/go/types/type.go:433:19) _obj, ^ABEND885(unrecognized type Type at: GO.link/src/go/types/type.go:433:41) _underlying, ^ABEND881(unrecognized Expr type *ast.ArrayType at: GO.link/src/go/types/type.go:433:55) _methods])
 
 JOKER FUNC types.NewPackage has:
 ;; (defn NewPackage
 ;;   "NewPackage returns a new Package for the given package path and name.\nThe package is not complete and contains no explicit imports.\n\nGo return type: *Package\n\nJoker return type: {}"
 ;;   {:added "1.0"
-;;    :go "newPackage(_path, _name)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newPackage(_path, _name))"}
 ;;   [^String _path, ^String _name])
 
 JOKER FUNC types.NewParam has:
 ;; (defn NewParam
 ;;   "NewParam returns a new variable representing a function parameter.\n\nGo return type: *Var\n\nJoker return type: {}"
 ;;   {:added "1.0"
-;;    :go "newParam(_pos, _pkg, _name, _typ)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newParam(_pos, _pkg, _name, _typ))"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/go/types/object.go:269:19) _pos, ^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/go/types/object.go:269:34) _pkg, ^String _name, ^ABEND885(unrecognized type Type at: GO.link/src/go/types/object.go:269:61) _typ])
 
 JOKER FUNC types.NewPkgName has:
 ;; (defn NewPkgName
 ;;   "NewPkgName returns a new PkgName object representing an imported package.\nThe remaining arguments set the attributes found with all Objects.\n\nGo return type: *PkgName\n\nJoker return type: {}"
 ;;   {:added "1.0"
-;;    :go "newPkgName(_pos, _pkg, _name, _imported)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newPkgName(_pos, _pkg, _name, _imported))"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/go/types/object.go:189:21) _pos, ^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/go/types/object.go:189:36) _pkg, ^String _name, ^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/go/types/object.go:189:68) _imported])
 
 JOKER FUNC types.NewPointer has:
 ;; (defn NewPointer
 ;;   "NewPointer returns a new pointer type for the given element (base) type.\n\nGo return type: *Pointer\n\nJoker return type: {}"
 ;;   {:added "1.0"
-;;    :go "newPointer(_elem)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newPointer(_elem))"}
 ;;   [^ABEND885(unrecognized type Type at: GO.link/src/go/types/type.go:164:22) _elem])
 
 JOKER FUNC types.NewScope has:
 ;; (defn NewScope
 ;;   "NewScope returns a new, empty scope contained in the given parent\nscope, if any. The comment is for debugging only.\n\nGo return type: *Scope\n\nJoker return type: {}"
 ;;   {:added "1.0"
-;;    :go "newScope(_parent, _pos, _end, _comment)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newScope(_parent, _pos, _end, _comment))"}
 ;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/go/types/scope.go:36:22) _parent, ^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/go/types/scope.go:36:39) _pos, ^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/go/types/scope.go:36:39) _end, ^String _comment])
 
 JOKER FUNC types.NewSignature has:
 ;; (defn NewSignature
 ;;   "NewSignature returns a new function type for the given receiver, parameters,\nand results, either of which may be nil. If variadic is set, the function\nis variadic, it must have at least one parameter, and the last parameter\nmust be of unnamed slice type.\n\nGo return type: *Signature\n\nJoker return type: {}"
 ;;   {:added "1.0"
-;;    :go "newSignature(_recv, _params, _results, _variadic)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newSignature(_recv, _params, _results, _variadic))"}
 ;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/go/types/type.go:213:24) _recv, ^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/go/types/type.go:213:46) _params, ^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/go/types/type.go:213:46) _results, ^Bool _variadic])
 
 JOKER FUNC types.NewSlice has:
 ;; (defn NewSlice
 ;;   "NewSlice returns a new slice type for the given element type.\n\nGo return type: *Slice\n\nJoker return type: {}"
 ;;   {:added "1.0"
-;;    :go "newSlice(_elem)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newSlice(_elem))"}
 ;;   [^ABEND885(unrecognized type Type at: GO.link/src/go/types/type.go:116:20) _elem])
 
 JOKER FUNC types.NewStruct has:
 ;; (defn NewStruct
 ;;   "NewStruct returns a new struct with the given fields and corresponding field tags.\nIf a field with index i has a tag, tags[i] must be that tag, but len(tags) may be\nonly as long as required to hold the tag with the largest index i. Consequently,\nif no field has a tag, tags may be nil.\n\nGo return type: *Struct\n\nJoker return type: {}"
 ;;   {:added "1.0"
-;;    :go "newStruct(_fields, _tags)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newStruct(_fields, _tags))"}
 ;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: GO.link/src/go/types/type.go:131:23) _fields, ^ABEND881(unrecognized Expr type *ast.ArrayType at: GO.link/src/go/types/type.go:131:36) _tags])
 
 JOKER FUNC types.NewTuple has:
 ;; (defn NewTuple
 ;;   "NewTuple returns a new tuple for the given variables.\n\nGo return type: *Tuple\n\nJoker return type: {}"
 ;;   {:added "1.0"
-;;    :go "newTuple(_x)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newTuple(_x))"}
 ;;   [^ABEND881(unrecognized Expr type *ast.Ellipsis at: GO.link/src/go/types/type.go:177:17) _x])
 
 JOKER FUNC types.NewTypeName has:
 ;; (defn NewTypeName
 ;;   "NewTypeName returns a new type name denoting the given typ.\nThe remaining arguments set the attributes found with all Objects.\n\nThe typ argument may be a defined (Named) type or an alias type.\nIt may also be nil such that the returned TypeName can be used as\nargument for NewNamed, which will set the TypeName's type as a side-\neffect.\n\nGo return type: *TypeName\n\nJoker return type: {}"
 ;;   {:added "1.0"
-;;    :go "newTypeName(_pos, _pkg, _name, _typ)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newTypeName(_pos, _pkg, _name, _typ))"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/go/types/object.go:226:22) _pos, ^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/go/types/object.go:226:37) _pkg, ^String _name, ^ABEND885(unrecognized type Type at: GO.link/src/go/types/object.go:226:64) _typ])
 
 JOKER FUNC types.NewVar has:
 ;; (defn NewVar
 ;;   "NewVar returns a new variable.\nThe arguments set the attributes found with all Objects.\n\nGo return type: *Var\n\nJoker return type: {}"
 ;;   {:added "1.0"
-;;    :go "newVar(_pos, _pkg, _name, _typ)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newVar(_pos, _pkg, _name, _typ))"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/go/types/object.go:264:17) _pos, ^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/go/types/object.go:264:32) _pkg, ^String _name, ^ABEND885(unrecognized type Type at: GO.link/src/go/types/object.go:264:59) _typ])
 
 JOKER FUNC types.ObjectString has:
@@ -7850,7 +7850,7 @@ JOKER FUNC crc32.MakeTable has:
 ;; (defn MakeTable
 ;;   "MakeTable returns a Table constructed from the specified polynomial.\nThe contents of this Table must not be modified.\n\nGo return type: *Table\n\nJoker return type: (vector-of Int)"
 ;;   {:added "1.0"
-;;    :go "makeTable(_poly)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: makeTable(_poly))"}
 ;;   [^ABEND885(unrecognized type uint32 at: GO.link/src/hash/crc32/crc32.go:124:21) _poly])
 
 JOKER FUNC crc32.New has:
@@ -7885,7 +7885,7 @@ JOKER FUNC crc64.MakeTable has:
 ;; (defn MakeTable
 ;;   "MakeTable returns a Table constructed from the specified polynomial.\nThe contents of this Table must not be modified.\n\nGo return type: *Table\n\nJoker return type: (vector-of ABEND042(cannot find typename hash/crc64.uint64))"
 ;;   {:added "1.0"
-;;    :go "makeTable(_poly)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: makeTable(_poly))"}
 ;;   [^ABEND885(unrecognized type uint64 at: GO.link/src/hash/crc64/crc64.go:37:21) _poly])
 
 JOKER FUNC crc64.New has:
@@ -8011,14 +8011,14 @@ JOKER FUNC template.Must has:
 ;; (defn Must
 ;;   "Must is a helper that wraps a call to a function returning (*Template, error)\nand panics if the error is non-nil. It is intended for use in variable initializations\nsuch as\n\tvar t = template.Must(template.New(\"name\").Parse(\"html\"))\n\nGo return type: *Template\n\nJoker return type: {:Tree ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/html/template/template.go:27:14)}"
 ;;   {:added "1.0"
-;;    :go "must(_t, _err)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: must(_t, _err))"}
 ;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/html/template/template.go:370:13) _t, ^ABEND885(unrecognized type error at: GO.link/src/html/template/template.go:370:28) _err])
 
 JOKER FUNC template.New has:
 ;; (defn New
 ;;   "New allocates a new HTML template with the given name.\n\nGo return type: *Template\n\nJoker return type: {:Tree ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/html/template/template.go:27:14)}"
 ;;   {:added "1.0"
-;;    :go "new(_name)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: new(_name))"}
 ;;   [^String _name])
 
 JOKER FUNC template.ParseFiles has:
@@ -8060,91 +8060,91 @@ JOKER FUNC image.NewAlpha has:
 ;; (defn NewAlpha
 ;;   "NewAlpha returns a new Alpha image with the given bounds.\n\nGo return type: *Alpha\n\nJoker return type: {:Pix ^(vector-of ABEND042(cannot find typename image.uint8)), :Stride ^Int, :Rect ^{:Min ^{:X ^Int, :Y ^Int}, :Max ^{:X ^Int, :Y ^Int}}}"
 ;;   {:added "1.0"
-;;    :go "newAlpha(_r)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newAlpha(_r))"}
 ;;   [^ABEND885(unrecognized type Rectangle at: GO.link/src/image/image.go:567:17) _r])
 
 JOKER FUNC image.NewAlpha16 has:
 ;; (defn NewAlpha16
 ;;   "NewAlpha16 returns a new Alpha16 image with the given bounds.\n\nGo return type: *Alpha16\n\nJoker return type: {:Pix ^(vector-of ABEND042(cannot find typename image.uint8)), :Stride ^Int, :Rect ^{:Min ^{:X ^Int, :Y ^Int}, :Max ^{:X ^Int, :Y ^Int}}}"
 ;;   {:added "1.0"
-;;    :go "newAlpha16(_r)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newAlpha16(_r))"}
 ;;   [^ABEND885(unrecognized type Rectangle at: GO.link/src/image/image.go:662:19) _r])
 
 JOKER FUNC image.NewCMYK has:
 ;; (defn NewCMYK
 ;;   "NewCMYK returns a new CMYK image with the given bounds.\n\nGo return type: *CMYK\n\nJoker return type: {:Pix ^(vector-of ABEND042(cannot find typename image.uint8)), :Stride ^Int, :Rect ^{:Min ^{:X ^Int, :Y ^Int}, :Max ^{:X ^Int, :Y ^Int}}}"
 ;;   {:added "1.0"
-;;    :go "newCMYK(_r)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newCMYK(_r))"}
 ;;   [^ABEND885(unrecognized type Rectangle at: GO.link/src/image/image.go:909:16) _r])
 
 JOKER FUNC image.NewGray has:
 ;; (defn NewGray
 ;;   "NewGray returns a new Gray image with the given bounds.\n\nGo return type: *Gray\n\nJoker return type: {:Pix ^(vector-of ABEND042(cannot find typename image.uint8)), :Stride ^Int, :Rect ^{:Min ^{:X ^Int, :Y ^Int}, :Max ^{:X ^Int, :Y ^Int}}}"
 ;;   {:added "1.0"
-;;    :go "newGray(_r)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newGray(_r))"}
 ;;   [^ABEND885(unrecognized type Rectangle at: GO.link/src/image/image.go:741:16) _r])
 
 JOKER FUNC image.NewGray16 has:
 ;; (defn NewGray16
 ;;   "NewGray16 returns a new Gray16 image with the given bounds.\n\nGo return type: *Gray16\n\nJoker return type: {:Pix ^(vector-of ABEND042(cannot find typename image.uint8)), :Stride ^Int, :Rect ^{:Min ^{:X ^Int, :Y ^Int}, :Max ^{:X ^Int, :Y ^Int}}}"
 ;;   {:added "1.0"
-;;    :go "newGray16(_r)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newGray16(_r))"}
 ;;   [^ABEND885(unrecognized type Rectangle at: GO.link/src/image/image.go:823:18) _r])
 
 JOKER FUNC image.NewNRGBA has:
 ;; (defn NewNRGBA
 ;;   "NewNRGBA returns a new NRGBA image with the given bounds.\n\nGo return type: *NRGBA\n\nJoker return type: {:Pix ^(vector-of ABEND042(cannot find typename image.uint8)), :Stride ^Int, :Rect ^{:Min ^{:X ^Int, :Y ^Int}, :Max ^{:X ^Int, :Y ^Int}}}"
 ;;   {:added "1.0"
-;;    :go "newNRGBA(_r)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newNRGBA(_r))"}
 ;;   [^ABEND885(unrecognized type Rectangle at: GO.link/src/image/image.go:363:17) _r])
 
 JOKER FUNC image.NewNRGBA64 has:
 ;; (defn NewNRGBA64
 ;;   "NewNRGBA64 returns a new NRGBA64 image with the given bounds.\n\nGo return type: *NRGBA64\n\nJoker return type: {:Pix ^(vector-of ABEND042(cannot find typename image.uint8)), :Stride ^Int, :Rect ^{:Min ^{:X ^Int, :Y ^Int}, :Max ^{:X ^Int, :Y ^Int}}}"
 ;;   {:added "1.0"
-;;    :go "newNRGBA64(_r)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newNRGBA64(_r))"}
 ;;   [^ABEND885(unrecognized type Rectangle at: GO.link/src/image/image.go:475:19) _r])
 
 JOKER FUNC image.NewNYCbCrA has:
 ;; (defn NewNYCbCrA
 ;;   "NewNYCbCrA returns a new NYCbCrA image with the given bounds and subsample\nratio.\n\nGo return type: *NYCbCrA\n\nJoker return type: {:A ^(vector-of ABEND042(cannot find typename image.uint8)), :AStride ^Int}"
 ;;   {:added "1.0"
-;;    :go "newNYCbCrA(_r, _subsampleRatio)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newNYCbCrA(_r, _subsampleRatio))"}
 ;;   [^ABEND885(unrecognized type Rectangle at: GO.link/src/image/ycbcr.go:278:19) _r, ^ABEND885(unrecognized type YCbCrSubsampleRatio at: GO.link/src/image/ycbcr.go:278:45) _subsampleRatio])
 
 JOKER FUNC image.NewPaletted has:
 ;; (defn NewPaletted
 ;;   "NewPaletted returns a new Paletted image with the given width, height and\npalette.\n\nGo return type: *Paletted\n\nJoker return type: {:Pix ^(vector-of ABEND042(cannot find typename image.uint8)), :Stride ^Int, :Rect ^{:Min ^{:X ^Int, :Y ^Int}, :Max ^{:X ^Int, :Y ^Int}}, :Palette ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/image/image.go:925:10)}"
 ;;   {:added "1.0"
-;;    :go "newPaletted(_r, _p)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newPaletted(_r, _p))"}
 ;;   [^ABEND885(unrecognized type Rectangle at: GO.link/src/image/image.go:1019:20) _r, ^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/image/image.go:1019:33) _p])
 
 JOKER FUNC image.NewRGBA has:
 ;; (defn NewRGBA
 ;;   "NewRGBA returns a new RGBA image with the given bounds.\n\nGo return type: *RGBA\n\nJoker return type: {:Pix ^(vector-of ABEND042(cannot find typename image.uint8)), :Stride ^Int, :Rect ^{:Min ^{:X ^Int, :Y ^Int}, :Max ^{:X ^Int, :Y ^Int}}}"
 ;;   {:added "1.0"
-;;    :go "newRGBA(_r)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newRGBA(_r))"}
 ;;   [^ABEND885(unrecognized type Rectangle at: GO.link/src/image/image.go:152:16) _r])
 
 JOKER FUNC image.NewRGBA64 has:
 ;; (defn NewRGBA64
 ;;   "NewRGBA64 returns a new RGBA64 image with the given bounds.\n\nGo return type: *RGBA64\n\nJoker return type: {:Pix ^(vector-of ABEND042(cannot find typename image.uint8)), :Stride ^Int, :Rect ^{:Min ^{:X ^Int, :Y ^Int}, :Max ^{:X ^Int, :Y ^Int}}}"
 ;;   {:added "1.0"
-;;    :go "newRGBA64(_r)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newRGBA64(_r))"}
 ;;   [^ABEND885(unrecognized type Rectangle at: GO.link/src/image/image.go:264:18) _r])
 
 JOKER FUNC image.NewUniform has:
 ;; (defn NewUniform
 ;;   "Go return type: *Uniform\n\nJoker return type: {:C ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/image/names.go:25:4)}"
 ;;   {:added "1.0"
-;;    :go "newUniform(_c)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newUniform(_c))"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/image/names.go:50:19) _c])
 
 JOKER FUNC image.NewYCbCr has:
 ;; (defn NewYCbCr
 ;;   "NewYCbCr returns a new YCbCr image with the given bounds and subsample\nratio.\n\nGo return type: *YCbCr\n\nJoker return type: {:Y ^(vector-of ABEND042(cannot find typename image.uint8)), :Cb ^(vector-of ABEND042(cannot find typename image.uint8)), :Cr ^(vector-of ABEND042(cannot find typename image.uint8)), :YStride ^Int, :CStride ^Int, :SubsampleRatio ^Int, :Rect ^{:Min ^{:X ^Int, :Y ^Int}, :Max ^{:X ^Int, :Y ^Int}}}"
 ;;   {:added "1.0"
-;;    :go "newYCbCr(_r, _subsampleRatio)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newYCbCr(_r, _subsampleRatio))"}
 ;;   [^ABEND885(unrecognized type Rectangle at: GO.link/src/image/ycbcr.go:169:17) _r, ^ABEND885(unrecognized type YCbCrSubsampleRatio at: GO.link/src/image/ycbcr.go:169:43) _subsampleRatio])
 
 JOKER FUNC image.Pt has:
@@ -8298,7 +8298,7 @@ JOKER FUNC suffixarray.New has:
 ;; (defn New
 ;;   "New creates a new Index for data.\nIndex creation time is O(N*log(N)) for N = len(data).\n\nGo return type: *Index\n\nJoker return type: {}"
 ;;   {:added "1.0"
-;;    :go "new(_data)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: new(_data))"}
 ;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: GO.link/src/index/suffixarray/suffixarray.go:35:15) _data])
 
 JOKER FUNC io.Copy has:
@@ -8347,7 +8347,7 @@ JOKER FUNC io.NewSectionReader has:
 ;; (defn NewSectionReader
 ;;   "NewSectionReader returns a SectionReader that reads from r\nstarting at offset off and stops with EOF after n bytes.\n\nGo return type: *SectionReader\n\nJoker return type: {}"
 ;;   {:added "1.0"
-;;    :go "newSectionReader(_r, _off, _n)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newSectionReader(_r, _off, _n))"}
 ;;   [^ABEND885(unrecognized type ReaderAt at: GO.link/src/io/io.go:455:25) _r, ^ABEND885(unrecognized type int64 at: GO.link/src/io/io.go:455:39) _off, ^ABEND885(unrecognized type int64 at: GO.link/src/io/io.go:455:48) _n])
 
 JOKER FUNC io.Pipe has:
@@ -8466,7 +8466,7 @@ JOKER FUNC log.New has:
 ;; (defn New
 ;;   "New creates a new Logger. The out variable sets the\ndestination to which log data will be written.\nThe prefix appears at the beginning of each generated log line.\nThe flag argument defines the logging properties.\n\nGo return type: *Logger\n\nJoker return type: {}"
 ;;   {:added "1.0"
-;;    :go "new(_out, _prefix, _flag)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: new(_out, _prefix, _flag))"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/log/log.go:62:14) _out, ^String _prefix, ^Int _flag])
 
 JOKER FUNC log.Output has:
@@ -9040,21 +9040,21 @@ JOKER FUNC big.NewFloat has:
 ;; (defn NewFloat
 ;;   "NewFloat allocates and returns a new Float set to x,\nwith precision 53 and rounding mode ToNearestEven.\nNewFloat panics with ErrNaN if x is a NaN.\n\nGo return type: *Float\n\nJoker return type: {}"
 ;;   {:added "1.0"
-;;    :go "newFloat(_x)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newFloat(_x))"}
 ;;   [^ABEND885(unrecognized type float64 at: GO.link/src/math/big/float.go:82:17) _x])
 
 JOKER FUNC big.NewInt has:
 ;; (defn NewInt
 ;;   "NewInt allocates and returns a new Int set to x.\n\nGo return type: *Int\n\nJoker return type: {}"
 ;;   {:added "1.0"
-;;    :go "newInt(_x)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newInt(_x))"}
 ;;   [^ABEND885(unrecognized type int64 at: GO.link/src/math/big/int.go:61:15) _x])
 
 JOKER FUNC big.NewRat has:
 ;; (defn NewRat
 ;;   "NewRat creates a new Rat with numerator a and denominator b.\n\nGo return type: *Rat\n\nJoker return type: {}"
 ;;   {:added "1.0"
-;;    :go "newRat(_a, _b)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newRat(_a, _b))"}
 ;;   [^ABEND885(unrecognized type int64 at: GO.link/src/math/big/rat.go:24:18) _a, ^ABEND885(unrecognized type int64 at: GO.link/src/math/big/rat.go:24:18) _b])
 
 JOKER FUNC big.ParseFloat has:
@@ -9558,7 +9558,7 @@ JOKER FUNC rand.New has:
 ;; (defn New
 ;;   "New returns a new Rand that uses random values from src\nto generate other random values.\n\nGo return type: *Rand\n\nJoker return type: {}"
 ;;   {:added "1.0"
-;;    :go "new(_src)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: new(_src))"}
 ;;   [^ABEND885(unrecognized type Source at: GO.link/src/math/rand/rand.go:67:14) _src])
 
 JOKER FUNC rand.NewSource has:
@@ -9572,7 +9572,7 @@ JOKER FUNC rand.NewZipf has:
 ;; (defn NewZipf
 ;;   "NewZipf returns a Zipf variate generator.\nThe generator generates values k ∈ [0, imax]\nsuch that P(k) is proportional to (v + k) ** (-s).\nRequirements: s > 1 and v >= 1.\n\nGo return type: *Zipf\n\nJoker return type: {}"
 ;;   {:added "1.0"
-;;    :go "newZipf(_r, _s, _v, _imax)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newZipf(_r, _s, _v, _imax))"}
 ;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/math/rand/zipf.go:39:16) _r, ^ABEND885(unrecognized type float64 at: GO.link/src/math/rand/zipf.go:39:25) _s, ^ABEND885(unrecognized type float64 at: GO.link/src/math/rand/zipf.go:39:36) _v, ^ABEND885(unrecognized type uint64 at: GO.link/src/math/rand/zipf.go:39:50) _imax])
 
 JOKER FUNC rand.NormFloat64 has:
@@ -9663,28 +9663,28 @@ JOKER FUNC multipart.NewReader has:
 ;; (defn NewReader
 ;;   "NewReader creates a new multipart Reader reading from r using the\ngiven MIME boundary.\n\nThe boundary is usually obtained from the \"boundary\" parameter of\nthe message's \"Content-Type\" header. Use mime.ParseMediaType to\nparse such headers.\n\nGo return type: *Reader\n\nJoker return type: {}"
 ;;   {:added "1.0"
-;;    :go "newReader(_r, _boundary)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newReader(_r, _boundary))"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/mime/multipart/multipart.go:99:18) _r, ^String _boundary])
 
 JOKER FUNC multipart.NewWriter has:
 ;; (defn NewWriter
 ;;   "NewWriter returns a new multipart Writer with a random boundary,\nwriting to w.\n\nGo return type: *Writer\n\nJoker return type: {}"
 ;;   {:added "1.0"
-;;    :go "newWriter(_w)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newWriter(_w))"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/mime/multipart/writer.go:27:18) _w])
 
 JOKER FUNC quotedprintable.NewReader has:
 ;; (defn NewReader
 ;;   "NewReader returns a quoted-printable reader, decoding from r.\n\nGo return type: *Reader\n\nJoker return type: {}"
 ;;   {:added "1.0"
-;;    :go "newReader(_r)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newReader(_r))"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/mime/quotedprintable/reader.go:24:18) _r])
 
 JOKER FUNC quotedprintable.NewWriter has:
 ;; (defn NewWriter
 ;;   "NewWriter returns a new Writer that writes to w.\n\nGo return type: *Writer\n\nJoker return type: {:Binary ^Bool}"
 ;;   {:added "1.0"
-;;    :go "newWriter(_w)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newWriter(_w))"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/mime/quotedprintable/writer.go:24:18) _w])
 
 JOKER FUNC net.CIDRMask has:
@@ -10083,7 +10083,7 @@ JOKER FUNC http.NewServeMux has:
 ;; (defn NewServeMux
 ;;   "NewServeMux allocates and returns a new ServeMux.\n\nGo return type: *ServeMux\n\nJoker return type: {}"
 ;;   {:added "1.0"
-;;    :go "newServeMux()"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newServeMux())"}
 ;;   [])
 
 JOKER FUNC http.NotFound has:
@@ -10272,42 +10272,42 @@ JOKER FUNC httptest.NewRecorder has:
 ;; (defn NewRecorder
 ;;   "NewRecorder returns an initialized ResponseRecorder.\n\nGo return type: *ResponseRecorder\n\nJoker return type: {:Code ^Int, :HeaderMap ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/net/http/httptest/recorder.go:35:12), :Body ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/net/http/httptest/recorder.go:39:8), :Flushed ^Bool}"
 ;;   {:added "1.0"
-;;    :go "newRecorder()"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newRecorder())"}
 ;;   [])
 
 JOKER FUNC httptest.NewRequest has:
 ;; (defn NewRequest
 ;;   "NewRequest returns a new incoming server Request, suitable\nfor passing to an http.Handler for testing.\n\nThe target is the RFC 7230 \"request-target\": it may be either a\npath or an absolute URL. If target is an absolute URL, the host name\nfrom the URL is used. Otherwise, \"example.com\" is used.\n\nThe TLS field is set to a non-nil dummy value if target has scheme\n\"https\".\n\nThe Request.Proto is always HTTP/1.1.\n\nAn empty method means \"GET\".\n\nThe provided body may be nil. If the body is of type *bytes.Reader,\n*strings.Reader, or *bytes.Buffer, the Request.ContentLength is\nset.\n\nNewRequest panics on error for ease of use in testing, where a\npanic is acceptable.\n\nTo generate a client HTTP request instead of a server request, see\nthe NewRequest function in the net/http package.\n\nGo return type: *...\n\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/net/http/httptest/httptest.go:41:57)"
 ;;   {:added "1.0"
-;;    :go "newRequest(_method, _target, _body)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newRequest(_method, _target, _body))"}
 ;;   [^String _method, ^String _target, ^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/net/http/httptest/httptest.go:41:45) _body])
 
 JOKER FUNC httptest.NewServer has:
 ;; (defn NewServer
 ;;   "NewServer starts and returns a new Server.\nThe caller should call Close when finished, to shut it down.\n\nGo return type: *Server\n\nJoker return type: {:URL ^String, :Listener ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/net/http/httptest/server.go:28:11), :TLS ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/net/http/httptest/server.go:33:7), :Config ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/net/http/httptest/server.go:37:10)}"
 ;;   {:added "1.0"
-;;    :go "newServer(_handler)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newServer(_handler))"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/net/http/httptest/server.go:80:24) _handler])
 
 JOKER FUNC httptest.NewTLSServer has:
 ;; (defn NewTLSServer
 ;;   "NewTLSServer starts and returns a new Server using TLS.\nThe caller should call Close when finished, to shut it down.\n\nGo return type: *Server\n\nJoker return type: {:URL ^String, :Listener ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/net/http/httptest/server.go:28:11), :TLS ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/net/http/httptest/server.go:33:7), :Config ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/net/http/httptest/server.go:37:10)}"
 ;;   {:added "1.0"
-;;    :go "newTLSServer(_handler)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newTLSServer(_handler))"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/net/http/httptest/server.go:160:27) _handler])
 
 JOKER FUNC httptest.NewUnstartedServer has:
 ;; (defn NewUnstartedServer
 ;;   "NewUnstartedServer returns a new Server but doesn't start it.\n\nAfter changing its configuration, the caller should call Start or\nStartTLS.\n\nThe caller should call Close when finished, to shut it down.\n\nGo return type: *Server\n\nJoker return type: {:URL ^String, :Listener ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/net/http/httptest/server.go:28:11), :TLS ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/net/http/httptest/server.go:33:7), :Config ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/net/http/httptest/server.go:37:10)}"
 ;;   {:added "1.0"
-;;    :go "newUnstartedServer(_handler)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newUnstartedServer(_handler))"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/net/http/httptest/server.go:92:33) _handler])
 
 JOKER FUNC httptrace.ContextClientTrace has:
 ;; (defn ContextClientTrace
 ;;   "ContextClientTrace returns the ClientTrace associated with the\nprovided context. If none, it returns nil.\n\nGo return type: *ClientTrace\n\nJoker return type: {:GetConn ^ABEND883(unrecognized Expr type *ast.FuncType at: GO.link/src/net/http/httptrace/trace.go:85:10), :GotConn ^ABEND883(unrecognized Expr type *ast.FuncType at: GO.link/src/net/http/httptrace/trace.go:91:10), :PutIdleConn ^ABEND883(unrecognized Expr type *ast.FuncType at: GO.link/src/net/http/httptrace/trace.go:101:14), :GotFirstResponseByte ^ABEND883(unrecognized Expr type *ast.FuncType at: GO.link/src/net/http/httptrace/trace.go:105:23), :Got100Continue ^ABEND883(unrecognized Expr type *ast.FuncType at: GO.link/src/net/http/httptrace/trace.go:109:17), :Got1xxResponse ^ABEND883(unrecognized Expr type *ast.FuncType at: GO.link/src/net/http/httptrace/trace.go:115:17), :DNSStart ^ABEND883(unrecognized Expr type *ast.FuncType at: GO.link/src/net/http/httptrace/trace.go:118:11), :DNSDone ^ABEND883(unrecognized Expr type *ast.FuncType at: GO.link/src/net/http/httptrace/trace.go:121:10), :ConnectStart ^ABEND883(unrecognized Expr type *ast.FuncType at: GO.link/src/net/http/httptrace/trace.go:126:15), :ConnectDone ^ABEND883(unrecognized Expr type *ast.FuncType at: GO.link/src/net/http/httptrace/trace.go:133:14), :TLSHandshakeStart ^ABEND883(unrecognized Expr type *ast.FuncType at: GO.link/src/net/http/httptrace/trace.go:138:20), :TLSHandshakeDone ^ABEND883(unrecognized Expr type *ast.FuncType at: GO.link/src/net/http/httptrace/trace.go:143:19), :WroteHeaderField ^ABEND883(unrecognized Expr type *ast.FuncType at: GO.link/src/net/http/httptrace/trace.go:148:19), :WroteHeaders ^ABEND883(unrecognized Expr type *ast.FuncType at: GO.link/src/net/http/httptrace/trace.go:152:15), :Wait100Continue ^ABEND883(unrecognized Expr type *ast.FuncType at: GO.link/src/net/http/httptrace/trace.go:158:18), :WroteRequest ^ABEND883(unrecognized Expr type *ast.FuncType at: GO.link/src/net/http/httptrace/trace.go:163:15)}"
 ;;   {:added "1.0"
-;;    :go "contextClientTrace(_ctx)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: contextClientTrace(_ctx))"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/net/http/httptrace/trace.go:24:29) _ctx])
 
 JOKER FUNC httptrace.WithClientTrace has:
@@ -10356,28 +10356,28 @@ JOKER FUNC httputil.NewClientConn has:
 ;; (defn NewClientConn
 ;;   "NewClientConn is an artifact of Go's early HTTP implementation.\nIt is low-level, old, and unused by Go's current HTTP stack.\nWe should have deleted it before Go 1.\n\nDeprecated: Use the Client or Transport in package net/http instead.\n\nGo return type: *ClientConn\n\nJoker return type: {}"
 ;;   {:added "1.0"
-;;    :go "newClientConn(_c, _r)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newClientConn(_c, _r))"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/net/http/httputil/persist.go:248:22) _c, ^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/net/http/httputil/persist.go:248:34) _r])
 
 JOKER FUNC httputil.NewProxyClientConn has:
 ;; (defn NewProxyClientConn
 ;;   "NewProxyClientConn is an artifact of Go's early HTTP implementation.\nIt is low-level, old, and unused by Go's current HTTP stack.\nWe should have deleted it before Go 1.\n\nDeprecated: Use the Client or Transport in package net/http instead.\n\nGo return type: *ClientConn\n\nJoker return type: {}"
 ;;   {:added "1.0"
-;;    :go "newProxyClientConn(_c, _r)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newProxyClientConn(_c, _r))"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/net/http/httputil/persist.go:265:27) _c, ^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/net/http/httputil/persist.go:265:39) _r])
 
 JOKER FUNC httputil.NewServerConn has:
 ;; (defn NewServerConn
 ;;   "NewServerConn is an artifact of Go's early HTTP implementation.\nIt is low-level, old, and unused by Go's current HTTP stack.\nWe should have deleted it before Go 1.\n\nDeprecated: Use the Server in package net/http instead.\n\nGo return type: *ServerConn\n\nJoker return type: {}"
 ;;   {:added "1.0"
-;;    :go "newServerConn(_c, _r)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newServerConn(_c, _r))"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/net/http/httputil/persist.go:54:22) _c, ^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/net/http/httputil/persist.go:54:34) _r])
 
 JOKER FUNC httputil.NewSingleHostReverseProxy has:
 ;; (defn NewSingleHostReverseProxy
 ;;   "NewSingleHostReverseProxy returns a new ReverseProxy that routes\nURLs to the scheme, host, and base path provided in target. If the\ntarget's path is \"/base\" and the incoming request was for \"/dir\",\nthe target request will be for /base/dir.\nNewSingleHostReverseProxy does not rewrite the Host header.\nTo rewrite Host headers, use ReverseProxy directly with a custom\nDirector policy.\n\nGo return type: *ReverseProxy\n\nJoker return type: {:Director ^ABEND883(unrecognized Expr type *ast.FuncType at: GO.link/src/net/http/httputil/reverseproxy.go:35:11), :Transport ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/net/http/httputil/reverseproxy.go:39:12), :FlushInterval ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/net/http/httputil/reverseproxy.go:45:16), :ErrorLog ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/net/http/httputil/reverseproxy.go:51:12), :BufferPool ^ABEND883(unrecognized Expr type *ast.InterfaceType at: GO.link/src/net/http/httputil/reverseproxy.go:79:17), :ModifyResponse ^ABEND883(unrecognized Expr type *ast.FuncType at: GO.link/src/net/http/httputil/reverseproxy.go:67:17), :ErrorHandler ^ABEND883(unrecognized Expr type *ast.FuncType at: GO.link/src/net/http/httputil/reverseproxy.go:74:15)}"
 ;;   {:added "1.0"
-;;    :go "newSingleHostReverseProxy(_target)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newSingleHostReverseProxy(_target))"}
 ;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/net/http/httputil/reverseproxy.go:103:39) _target])
 
 JOKER FUNC pprof.Cmdline has:
@@ -10489,21 +10489,21 @@ JOKER FUNC rpc.NewClient has:
 ;; (defn NewClient
 ;;   "NewClient returns a new Client to handle requests to the\nset of services at the other end of the connection.\nIt adds a buffer to the write side of the connection so\nthe header and payload are sent as a unit.\n\nThe read and write halves of the connection are serialized independently,\nso no interlocking is required. However each half may be accessed\nconcurrently so the implementation of conn should protect against\nconcurrent reads or concurrent writes.\n\nGo return type: *Client\n\nJoker return type: {}"
 ;;   {:added "1.0"
-;;    :go "newClient(_conn)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newClient(_conn))"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/net/rpc/client.go:193:21) _conn])
 
 JOKER FUNC rpc.NewClientWithCodec has:
 ;; (defn NewClientWithCodec
 ;;   "NewClientWithCodec is like NewClient but uses the specified\ncodec to encode requests and decode responses.\n\nGo return type: *Client\n\nJoker return type: {}"
 ;;   {:added "1.0"
-;;    :go "newClientWithCodec(_codec)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newClientWithCodec(_codec))"}
 ;;   [^ABEND885(unrecognized type ClientCodec at: GO.link/src/net/rpc/client.go:201:31) _codec])
 
 JOKER FUNC rpc.NewServer has:
 ;; (defn NewServer
 ;;   "NewServer returns a new Server.\n\nGo return type: *Server\n\nJoker return type: {}"
 ;;   {:added "1.0"
-;;    :go "newServer()"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newServer())"}
 ;;   [])
 
 JOKER FUNC rpc.Register has:
@@ -10552,7 +10552,7 @@ JOKER FUNC jsonrpc.NewClient has:
 ;; (defn NewClient
 ;;   "NewClient returns a new rpc.Client to handle requests to the\nset of services at the other end of the connection.\n\nGo return type: *...\n\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/net/rpc/jsonrpc/client.go:113:42)"
 ;;   {:added "1.0"
-;;    :go "newClient(_conn)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newClient(_conn))"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/net/rpc/jsonrpc/client.go:113:21) _conn])
 
 JOKER FUNC jsonrpc.NewClientCodec has:
@@ -10629,21 +10629,21 @@ JOKER FUNC textproto.NewConn has:
 ;; (defn NewConn
 ;;   "NewConn returns a new Conn using conn for I/O.\n\nGo return type: *Conn\n\nJoker return type: {}"
 ;;   {:added "1.0"
-;;    :go "newConn(_conn)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newConn(_conn))"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/net/textproto/textproto.go:66:19) _conn])
 
 JOKER FUNC textproto.NewReader has:
 ;; (defn NewReader
 ;;   "NewReader returns a new Reader reading from r.\n\nTo avoid denial of service attacks, the provided bufio.Reader\nshould be reading from an io.LimitReader or similar Reader to bound\nthe size of responses.\n\nGo return type: *Reader\n\nJoker return type: {:R ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/net/textproto/reader.go:19:7)}"
 ;;   {:added "1.0"
-;;    :go "newReader(_r)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newReader(_r))"}
 ;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/net/textproto/reader.go:29:18) _r])
 
 JOKER FUNC textproto.NewWriter has:
 ;; (defn NewWriter
 ;;   "NewWriter returns a new Writer writing to w.\n\nGo return type: *Writer\n\nJoker return type: {:W ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/net/textproto/writer.go:16:7)}"
 ;;   {:added "1.0"
-;;    :go "newWriter(_w)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newWriter(_w))"}
 ;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/net/textproto/writer.go:21:18) _w])
 
 JOKER FUNC textproto.TrimBytes has:
@@ -10713,14 +10713,14 @@ JOKER FUNC url.User has:
 ;; (defn User
 ;;   "User returns a Userinfo containing the provided username\nand no password set.\n\nGo return type: *Userinfo\n\nJoker return type: {}"
 ;;   {:added "1.0"
-;;    :go "user(_username)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: user(_username))"}
 ;;   [^String _username])
 
 JOKER FUNC url.UserPassword has:
 ;; (defn UserPassword
 ;;   "UserPassword returns a Userinfo containing the provided username\nand password.\n\nThis functionality should only be used with legacy web sites.\nRFC 2396 warns that interpreting Userinfo this way\n``is NOT RECOMMENDED, because the passing of authentication\ninformation in clear text (such as URI) has proven to be a\nsecurity risk in almost every case where it has been used.''\n\nGo return type: *Userinfo\n\nJoker return type: {}"
 ;;   {:added "1.0"
-;;    :go "userPassword(_username, _password)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: userPassword(_username, _password))"}
 ;;   [^String _username, ^String _password])
 
 JOKER FUNC os.Chdir has:
@@ -10965,7 +10965,7 @@ JOKER FUNC os.NewFile has:
 ;; (defn NewFile
 ;;   "NewFile returns a new File with the given file descriptor and\nname. The returned value will be nil if fd is not a valid file\ndescriptor. On Unix systems, if the file descriptor is in\nnon-blocking mode, NewFile will attempt to return a pollable File\n(one for which the SetDeadline methods work).\n\nGo return type: *File\n\nJoker return type: {}"
 ;;   {:added "1.0"
-;;    :go "newFile(_fd, _name)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newFile(_fd, _name))"}
 ;;   [^ABEND885(unrecognized type uintptr at: GO.link/src/os/file_unix.go:81:17) _fd, ^String _name])
 
 JOKER FUNC os.NewSyscallError has:
@@ -11091,14 +11091,14 @@ JOKER FUNC exec.Command has:
 ;; (defn Command
 ;;   "Command returns the Cmd struct to execute the named program with\nthe given arguments.\n\nIt sets only the Path and Args in the returned structure.\n\nIf name contains no path separators, Command uses LookPath to\nresolve name to a complete path if possible. Otherwise it uses name\ndirectly as Path.\n\nThe returned Cmd's Args field is constructed from the command name\nfollowed by the elements of arg, so arg should not include the\ncommand name itself. For example, Command(\"echo\", \"hello\").\nArgs[0] is always name, not the possibly resolved Path.\n\nGo return type: *Cmd\n\nJoker return type: {:Path ^String, :Args ^(vector-of String), :Env ^(vector-of String), :Dir ^String, :Stdin ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/os/exec/exec.go:93:8), :Stdout ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/os/exec/exec.go:110:9), :Stderr ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/os/exec/exec.go:111:9), :ExtraFiles ^(vector-of ABEND883(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/os/exec/exec.go:118:16)), :SysProcAttr ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/os/exec/exec.go:122:15), :Process ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/os/exec/exec.go:125:11), :ProcessState ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/os/exec/exec.go:129:16)}"
 ;;   {:added "1.0"
-;;    :go "command(_name, _arg)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: command(_name, _arg))"}
 ;;   [^String _name, ^ABEND881(unrecognized Expr type *ast.Ellipsis at: GO.link/src/os/exec/exec.go:155:31) _arg])
 
 JOKER FUNC exec.CommandContext has:
 ;; (defn CommandContext
 ;;   "CommandContext is like Command but includes a context.\n\nThe provided context is used to kill the process (by calling\nos.Process.Kill) if the context becomes done before the command\ncompletes on its own.\n\nGo return type: *Cmd\n\nJoker return type: {:Path ^String, :Args ^(vector-of String), :Env ^(vector-of String), :Dir ^String, :Stdin ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/os/exec/exec.go:93:8), :Stdout ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/os/exec/exec.go:110:9), :Stderr ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/os/exec/exec.go:111:9), :ExtraFiles ^(vector-of ABEND883(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/os/exec/exec.go:118:16)), :SysProcAttr ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/os/exec/exec.go:122:15), :Process ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/os/exec/exec.go:125:11), :ProcessState ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/os/exec/exec.go:129:16)}"
 ;;   {:added "1.0"
-;;    :go "commandContext(_ctx, _name, _arg)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: commandContext(_ctx, _name, _arg))"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/os/exec/exec.go:175:25) _ctx, ^String _name, ^ABEND881(unrecognized Expr type *ast.Ellipsis at: GO.link/src/os/exec/exec.go:175:59) _arg])
 
 JOKER FUNC exec.LookPath has:
@@ -11574,14 +11574,14 @@ JOKER FUNC regexp.MustCompile has:
 ;; (defn MustCompile
 ;;   "MustCompile is like Compile but panics if the expression cannot be parsed.\nIt simplifies safe initialization of global variables holding compiled regular\nexpressions.\n\nGo return type: *Regexp\n\nJoker return type: {}"
 ;;   {:added "1.0"
-;;    :go "mustCompile(_str)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: mustCompile(_str))"}
 ;;   [^String _str])
 
 JOKER FUNC regexp.MustCompilePOSIX has:
 ;; (defn MustCompilePOSIX
 ;;   "MustCompilePOSIX is like CompilePOSIX but panics if the expression cannot be parsed.\nIt simplifies safe initialization of global variables holding compiled regular\nexpressions.\n\nGo return type: *Regexp\n\nJoker return type: {}"
 ;;   {:added "1.0"
-;;    :go "mustCompilePOSIX(_str)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: mustCompilePOSIX(_str))"}
 ;;   [^String _str])
 
 JOKER FUNC regexp.QuoteMeta has:
@@ -11658,14 +11658,14 @@ JOKER FUNC runtime.CallersFrames has:
 ;; (defn CallersFrames
 ;;   "CallersFrames takes a slice of PC values returned by Callers and\nprepares to return function/file/line information.\nDo not change the slice until you are done with the Frames.\n\nGo return type: *Frames\n\nJoker return type: {}"
 ;;   {:added "1.0"
-;;    :go "callersFrames(_callers)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: callersFrames(_callers))"}
 ;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: GO.link/src/runtime/symtab.go:91:28) _callers])
 
 JOKER FUNC runtime.FuncForPC has:
 ;; (defn FuncForPC
 ;;   "FuncForPC returns a *Func describing the function that contains the\ngiven program counter address, or else nil.\n\nIf pc represents multiple functions because of inlining, it returns\nthe *Func describing the outermost function.\n\nGo return type: *Func\n\nJoker return type: {}"
 ;;   {:added "1.0"
-;;    :go "funcForPC(_pc)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: funcForPC(_pc))"}
 ;;   [^ABEND885(unrecognized type uintptr at: GO.link/src/runtime/symtab.go:609:19) _pc])
 
 JOKER FUNC runtime.GC has:
@@ -11952,14 +11952,14 @@ JOKER FUNC pprof.Lookup has:
 ;; (defn Lookup
 ;;   "Lookup returns the profile with the given name, or nil if no such profile exists.\n\nGo return type: *Profile\n\nJoker return type: {}"
 ;;   {:added "1.0"
-;;    :go "lookup(_name)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: lookup(_name))"}
 ;;   [^String _name])
 
 JOKER FUNC pprof.NewProfile has:
 ;; (defn NewProfile
 ;;   "NewProfile creates a new profile with the given name.\nIf a profile with that name already exists, NewProfile panics.\nThe convention is to use a 'import/path.' prefix to create\nseparate name spaces for each package.\nFor compatibility with various tools that read pprof data,\nprofile names should not contain spaces.\n\nGo return type: *Profile\n\nJoker return type: {}"
 ;;   {:added "1.0"
-;;    :go "newProfile(_name)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newProfile(_name))"}
 ;;   [^String _name])
 
 JOKER FUNC pprof.Profiles has:
@@ -12043,7 +12043,7 @@ JOKER FUNC trace.StartRegion has:
 ;; (defn StartRegion
 ;;   "StartRegion starts a region and returns a function for marking the\nend of the region. The returned Region's End function must be called\nfrom the same goroutine where the region was started.\nWithin each goroutine, regions must nest. That is, regions started\nafter this region must be ended before this region can be ended.\nRecommended usage is\n\n    defer trace.StartRegion(ctx, \"myTracedRegion\").End()\n\nGo return type: *Region\n\nJoker return type: {}"
 ;;   {:added "1.0"
-;;    :go "startRegion(_ctx, _regionType)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: startRegion(_ctx, _regionType))"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/runtime/trace/annotation.go:149:22) _ctx, ^String _regionType])
 
 JOKER FUNC trace.Stop has:
@@ -12547,14 +12547,14 @@ JOKER FUNC strings.NewReader has:
 ;; (defn NewReader
 ;;   "NewReader returns a new Reader reading from s.\nIt is similar to bytes.NewBufferString but more efficient and read-only.\n\nGo return type: *Reader\n\nJoker return type: {}"
 ;;   {:added "1.0"
-;;    :go "newReader(_s)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newReader(_s))"}
 ;;   [^String _s])
 
 JOKER FUNC strings.NewReplacer has:
 ;; (defn NewReplacer
 ;;   "NewReplacer returns a new Replacer from a list of old, new string\npairs. Replacements are performed in the order they appear in the\ntarget string, without overlapping matches.\n\nGo return type: *Replacer\n\nJoker return type: {}"
 ;;   {:added "1.0"
-;;    :go "newReplacer(_oldnew)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newReplacer(_oldnew))"}
 ;;   [^ABEND881(unrecognized Expr type *ast.Ellipsis at: GO.link/src/strings/replace.go:24:25) _oldnew])
 
 JOKER FUNC strings.Repeat has:
@@ -12715,7 +12715,7 @@ JOKER FUNC sync.NewCond has:
 ;; (defn NewCond
 ;;   "NewCond returns a new Cond with Locker l.\n\nGo return type: *Cond\n\nJoker return type: {:L ^ABEND883(unrecognized Expr type *ast.InterfaceType at: GO.link/src/sync/mutex.go:31:13)}"
 ;;   {:added "1.0"
-;;    :go "newCond(_l)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newCond(_l))"}
 ;;   [^ABEND885(unrecognized type Locker at: GO.link/src/sync/cond.go:32:16) _l])
 
 JOKER FUNC atomic.AddInt32 has:
@@ -13562,7 +13562,7 @@ JOKER FUNC syscall.LsfJump has:
 ;; (defn LsfJump
 ;;   "Deprecated: Use golang.org/x/net/bpf instead.\n\nGo return type: *SockFilter\n\nJoker return type: {:Code ^Int, :Jt ^ABEND042(cannot find typename syscall.uint8), :Jf ^ABEND042(cannot find typename syscall.uint8), :K ^Int}"
 ;;   {:added "1.0"
-;;    :go "lsfJump(_code, _k, _jt, _jf)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: lsfJump(_code, _k, _jt, _jf))"}
 ;;   [^Int _code, ^Int _k, ^Int _jt, ^Int _jf])
 
 JOKER FUNC syscall.LsfSocket has:
@@ -13576,7 +13576,7 @@ JOKER FUNC syscall.LsfStmt has:
 ;; (defn LsfStmt
 ;;   "Deprecated: Use golang.org/x/net/bpf instead.\n\nGo return type: *SockFilter\n\nJoker return type: {:Code ^Int, :Jt ^ABEND042(cannot find typename syscall.uint8), :Jf ^ABEND042(cannot find typename syscall.uint8), :K ^Int}"
 ;;   {:added "1.0"
-;;    :go "lsfStmt(_code, _k)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: lsfStmt(_code, _k))"}
 ;;   [^Int _code, ^Int _k])
 
 JOKER FUNC syscall.Lstat has:
@@ -14294,11 +14294,11 @@ JOKER FUNC syscall.Statfs has:
 ;;   [^String _path, ^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/syscall/zsyscall_linux_amd64.go:1462:30) _buf])
 
 JOKER FUNC syscall.StringBytePtr has:
-(defn ^"Int" StringBytePtr
-  "StringBytePtr returns a pointer to a NUL-terminated array of bytes.\nIf s contains a NUL byte this function panics instead of returning\nan error.\n\nDeprecated: Use BytePtrFromString instead.\n\nGo return type: *int\n\nJoker return type: Int"
-  {:added "1.0"
-   :go "syscall.StringBytePtr(_s)"}
-  [^String _s])
+;; (defn ^"Int" StringBytePtr
+;;   "StringBytePtr returns a pointer to a NUL-terminated array of bytes.\nIf s contains a NUL byte this function panics instead of returning\nan error.\n\nDeprecated: Use BytePtrFromString instead.\n\nGo return type: *int\n\nJoker return type: Int"
+;;   {:added "1.0"
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: syscall.StringBytePtr(_s))"}
+;;   [^String _s])
 
 JOKER FUNC syscall.StringByteSlice has:
 (defn StringByteSlice
@@ -14549,7 +14549,7 @@ JOKER FUNC testing.MainStart has:
 ;; (defn MainStart
 ;;   "MainStart is meant for use by tests generated by 'go test'.\nIt is not meant to be called directly and is not subject to the Go 1 compatibility document.\nIt may change signature from release to release.\n\nGo return type: *M\n\nJoker return type: {}"
 ;;   {:added "1.0"
-;;    :go "mainStart(_deps, _tests, _benchmarks, _examples)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: mainStart(_deps, _tests, _benchmarks, _examples))"}
 ;;   [^ABEND885(unrecognized type testDeps at: GO.link/src/testing/testing.go:995:21) _deps, ^ABEND881(unrecognized Expr type *ast.ArrayType at: GO.link/src/testing/testing.go:995:37) _tests, ^ABEND881(unrecognized Expr type *ast.ArrayType at: GO.link/src/testing/testing.go:995:64) _benchmarks, ^ABEND881(unrecognized Expr type *ast.ArrayType at: GO.link/src/testing/testing.go:995:94) _examples])
 
 JOKER FUNC testing.RegisterCover has:
@@ -14675,7 +14675,7 @@ JOKER FUNC tabwriter.NewWriter has:
 ;; (defn NewWriter
 ;;   "NewWriter allocates and initializes a new tabwriter.Writer.\nThe parameters are the same as for the Init function.\n\nGo return type: *Writer\n\nJoker return type: {}"
 ;;   {:added "1.0"
-;;    :go "newWriter(_output, _minwidth, _tabwidth, _padding, _padchar, _flags)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newWriter(_output, _minwidth, _tabwidth, _padding, _padchar, _flags))"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: GO.link/src/text/tabwriter/tabwriter.go:597:23) _output, ^Int _minwidth, ^Int _tabwidth, ^Int _padding, ^Byte _padchar, ^ABEND885(unrecognized type uint at: GO.link/src/text/tabwriter/tabwriter.go:597:87) _flags])
 
 JOKER FUNC template.HTMLEscape has:
@@ -14731,14 +14731,14 @@ JOKER FUNC template.Must has:
 ;; (defn Must
 ;;   "Must is a helper that wraps a call to a function returning (*Template, error)\nand panics if the error is non-nil. It is intended for use in variable\ninitializations such as\n\tvar t = template.Must(template.New(\"name\").Parse(\"text\"))\n\nGo return type: *Template\n\nJoker return type: {}"
 ;;   {:added "1.0"
-;;    :go "must(_t, _err)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: must(_t, _err))"}
 ;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/text/template/helper.go:21:13) _t, ^ABEND885(unrecognized type error at: GO.link/src/text/template/helper.go:21:28) _err])
 
 JOKER FUNC template.New has:
 ;; (defn New
 ;;   "New allocates a new, undefined template with the given name.\n\nGo return type: *Template\n\nJoker return type: {}"
 ;;   {:added "1.0"
-;;    :go "new(_name)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: new(_name))"}
 ;;   [^String _name])
 
 JOKER FUNC template.ParseFiles has:
@@ -14773,15 +14773,15 @@ JOKER FUNC parse.New has:
 ;; (defn New
 ;;   "New allocates a new parse tree with the given name.\n\nGo return type: *Tree\n\nJoker return type: {:Name ^String, :ParseName ^String, :Root ^{:Nodes ^(vector-of ABEND883(unrecognized Expr type *ast.InterfaceType at: GO.link/src/text/template/parse/node.go:21:11))}}"
 ;;   {:added "1.0"
-;;    :go "new(_name, _funcs)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: new(_name, _funcs))"}
 ;;   [^String _name, ^ABEND881(unrecognized Expr type *ast.Ellipsis at: GO.link/src/text/template/parse/parse.go:125:29) _funcs])
 
 JOKER FUNC parse.NewIdentifier has:
-(defn NewIdentifier
-  "NewIdentifier returns a new IdentifierNode with the given identifier name.\n\nGo return type: *IdentifierNode\n\nJoker return type: {:Ident ^String}"
-  {:added "1.0"
-   :go "newIdentifier(_ident)"}
-  [^String _ident])
+;; (defn NewIdentifier
+;;   "NewIdentifier returns a new IdentifierNode with the given identifier name.\n\nGo return type: *IdentifierNode\n\nJoker return type: {:Ident ^String}"
+;;   {:added "1.0"
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newIdentifier(_ident))"}
+;;   [^String _ident])
 
 JOKER FUNC parse.Parse has:
 ;; (defn Parse
@@ -14801,7 +14801,7 @@ JOKER FUNC time.AfterFunc has:
 ;; (defn AfterFunc
 ;;   "AfterFunc waits for the duration to elapse and then calls f\nin its own goroutine. It returns a Timer that can\nbe used to cancel the call using its Stop method.\n\nGo return type: *Timer\n\nJoker return type: {:C ^ABEND883(unrecognized Expr type *ast.ChanType at: GO.link/src/time/sleep.go:50:4)}"
 ;;   {:added "1.0"
-;;    :go "afterFunc(_d, _f)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: afterFunc(_d, _f))"}
 ;;   [^ABEND885(unrecognized type Duration at: GO.link/src/time/sleep.go:159:18) _d, ^ABEND881(unrecognized Expr type *ast.FuncType at: GO.link/src/time/sleep.go:159:30) _f])
 
 JOKER FUNC time.Date has:
@@ -14815,7 +14815,7 @@ JOKER FUNC time.FixedZone has:
 ;; (defn FixedZone
 ;;   "FixedZone returns a Location that always uses\nthe given zone name and offset (seconds east of UTC).\n\nGo return type: *Location\n\nJoker return type: {}"
 ;;   {:added "1.0"
-;;    :go "fixedZone(_name, _offset)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: fixedZone(_name, _offset))"}
 ;;   [^String _name, ^Int _offset])
 
 JOKER FUNC time.LoadLocation has:
@@ -14836,14 +14836,14 @@ JOKER FUNC time.NewTicker has:
 ;; (defn NewTicker
 ;;   "NewTicker returns a new Ticker containing a channel that will send the\ntime with a period specified by the duration argument.\nIt adjusts the intervals or drops ticks to make up for slow receivers.\nThe duration d must be greater than zero; if not, NewTicker will panic.\nStop the ticker to release associated resources.\n\nGo return type: *Ticker\n\nJoker return type: {:C ^ABEND883(unrecognized Expr type *ast.ChanType at: GO.link/src/time/tick.go:12:4)}"
 ;;   {:added "1.0"
-;;    :go "newTicker(_d)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newTicker(_d))"}
 ;;   [^ABEND885(unrecognized type Duration at: GO.link/src/time/tick.go:21:18) _d])
 
 JOKER FUNC time.NewTimer has:
 ;; (defn NewTimer
 ;;   "NewTimer creates a new Timer that will send\nthe current time on its channel after at least duration d.\n\nGo return type: *Timer\n\nJoker return type: {:C ^ABEND883(unrecognized Expr type *ast.ChanType at: GO.link/src/time/sleep.go:50:4)}"
 ;;   {:added "1.0"
-;;    :go "newTimer(_d)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newTimer(_d))"}
 ;;   [^ABEND885(unrecognized type Duration at: GO.link/src/time/sleep.go:85:17) _d])
 
 JOKER FUNC time.Now has:
@@ -25954,18 +25954,18 @@ GO FUNC parse.New has:
 // }
 
 GO FUNC parse.NewIdentifier has:
-func newIdentifier(ident string) Object {
-	_res := _parse.NewIdentifier(ident)
-	var _obj_map1 Object
-	if _res != nil {
-		_map1 := EmptyArrayMap()
-		_map1.Add(MakeKeyword("Ident"), MakeString((*_res).Ident))
-		_obj_map1 = Object(_map1)
-	} else {
-		_obj_map1 = NIL
-	}
-	return _obj_map1
-}
+// func newIdentifier(ident string) Object {
+// 	_res := _parse.NewIdentifier(ident)
+// 	var _obj_map1 Object
+// 	if _res != nil {
+// 		_map1 := EmptyArrayMap()
+// 		_map1.Add(MakeKeyword("Ident"), MakeString((*_res).Ident))
+// 		_obj_map1 = Object(_map1)
+// 	} else {
+// 		_obj_map1 = NIL
+// 	}
+// 	return _obj_map1
+// }
 
 GO FUNC parse.Parse has:
 // func parse(name string, text string, leftDelim string, rightDelim string, funcs ABEND882(unrecognized Expr type *ast.Ellipsis at: GO.link/src/text/template/parse/parse.go:51:60)) Object {

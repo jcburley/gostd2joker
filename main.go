@@ -910,7 +910,8 @@ func genFuncCode(pkgBaseName, pkgDirUnix string, d *FuncDecl, goFname string) (f
 	return
 }
 
-// If the Go API returns a single result, and it's an Int, wrap the call in "int()".
+// If the Go API returns a single result, and it's an Int, wrap the call in "int()". If a StarExpr is found, ABEND for now
+// TODO: Return ref's for StarExpr?
 func maybeConvertGoResult(pkg, call string, fl *FieldList) string {
 	if fl == nil || len(fl.List) != 1 || (fl.List[0].Names != nil && len(fl.List[0].Names) > 1) {
 		return call
@@ -945,6 +946,8 @@ func maybeConvertGoResult(pkg, call string, fl *FieldList) string {
 				return "int(" + call + ")"
 			} // Else it's already an int, so don't bother wrapping it.
 		}
+	case *StarExpr:
+		return fmt.Sprintf("ABEND401(StarExpr not supported -- no refs returned just yet: %s)", call)
 	}
 	return call
 }

@@ -39,23 +39,23 @@
 ;; (defn NewClientConn
 ;;   "NewClientConn is an artifact of Go's early HTTP implementation.\nIt is low-level, old, and unused by Go's current HTTP stack.\nWe should have deleted it before Go 1.\n\nDeprecated: Use the Client or Transport in package net/http instead.\n\nGo return type: *ClientConn\n\nJoker return type: {}"
 ;;   {:added "1.0"
-;;    :go "newClientConn(_c, _r)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newClientConn(_c, _r))"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/httputil/persist.go:248:22) _c, ^ABEND881(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/http/httputil/persist.go:248:34) _r])
 
 ;; (defn NewProxyClientConn
 ;;   "NewProxyClientConn is an artifact of Go's early HTTP implementation.\nIt is low-level, old, and unused by Go's current HTTP stack.\nWe should have deleted it before Go 1.\n\nDeprecated: Use the Client or Transport in package net/http instead.\n\nGo return type: *ClientConn\n\nJoker return type: {}"
 ;;   {:added "1.0"
-;;    :go "newProxyClientConn(_c, _r)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newProxyClientConn(_c, _r))"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/httputil/persist.go:265:27) _c, ^ABEND881(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/http/httputil/persist.go:265:39) _r])
 
 ;; (defn NewServerConn
 ;;   "NewServerConn is an artifact of Go's early HTTP implementation.\nIt is low-level, old, and unused by Go's current HTTP stack.\nWe should have deleted it before Go 1.\n\nDeprecated: Use the Server in package net/http instead.\n\nGo return type: *ServerConn\n\nJoker return type: {}"
 ;;   {:added "1.0"
-;;    :go "newServerConn(_c, _r)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newServerConn(_c, _r))"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/httputil/persist.go:54:22) _c, ^ABEND881(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/http/httputil/persist.go:54:34) _r])
 
 ;; (defn NewSingleHostReverseProxy
 ;;   "NewSingleHostReverseProxy returns a new ReverseProxy that routes\nURLs to the scheme, host, and base path provided in target. If the\ntarget's path is \"/base\" and the incoming request was for \"/dir\",\nthe target request will be for /base/dir.\nNewSingleHostReverseProxy does not rewrite the Host header.\nTo rewrite Host headers, use ReverseProxy directly with a custom\nDirector policy.\n\nGo return type: *ReverseProxy\n\nJoker return type: {:Director ^ABEND883(unrecognized Expr type *ast.FuncType at: tests/big/src/net/http/httputil/reverseproxy.go:35:11), :Transport ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/httputil/reverseproxy.go:39:12), :FlushInterval ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/httputil/reverseproxy.go:45:16), :ErrorLog ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/httputil/reverseproxy.go:51:12), :BufferPool ^ABEND883(unrecognized Expr type *ast.InterfaceType at: tests/big/src/net/http/httputil/reverseproxy.go:79:17), :ModifyResponse ^ABEND883(unrecognized Expr type *ast.FuncType at: tests/big/src/net/http/httputil/reverseproxy.go:67:17), :ErrorHandler ^ABEND883(unrecognized Expr type *ast.FuncType at: tests/big/src/net/http/httputil/reverseproxy.go:74:15)}"
 ;;   {:added "1.0"
-;;    :go "newSingleHostReverseProxy(_target)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newSingleHostReverseProxy(_target))"}
 ;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/http/httputil/reverseproxy.go:103:39) _target])

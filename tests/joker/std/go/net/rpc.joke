@@ -39,19 +39,19 @@
 ;; (defn NewClient
 ;;   "NewClient returns a new Client to handle requests to the\nset of services at the other end of the connection.\nIt adds a buffer to the write side of the connection so\nthe header and payload are sent as a unit.\n\nThe read and write halves of the connection are serialized independently,\nso no interlocking is required. However each half may be accessed\nconcurrently so the implementation of conn should protect against\nconcurrent reads or concurrent writes.\n\nGo return type: *Client\n\nJoker return type: {}"
 ;;   {:added "1.0"
-;;    :go "newClient(_conn)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newClient(_conn))"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/rpc/client.go:193:21) _conn])
 
 ;; (defn NewClientWithCodec
 ;;   "NewClientWithCodec is like NewClient but uses the specified\ncodec to encode requests and decode responses.\n\nGo return type: *Client\n\nJoker return type: {}"
 ;;   {:added "1.0"
-;;    :go "newClientWithCodec(_codec)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newClientWithCodec(_codec))"}
 ;;   [^ABEND885(unrecognized type ClientCodec at: tests/big/src/net/rpc/client.go:201:31) _codec])
 
 ;; (defn NewServer
 ;;   "NewServer returns a new Server.\n\nGo return type: *Server\n\nJoker return type: {}"
 ;;   {:added "1.0"
-;;    :go "newServer()"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newServer())"}
 ;;   [])
 
 ;; (defn ^"Error" Register

@@ -15,7 +15,7 @@
 ;; (defn NewClient
 ;;   "NewClient returns a new rpc.Client to handle requests to the\nset of services at the other end of the connection.\n\nGo return type: *...\n\nJoker return type: ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/rpc/jsonrpc/client.go:113:42)"
 ;;   {:added "1.0"
-;;    :go "newClient(_conn)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newClient(_conn))"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/rpc/jsonrpc/client.go:113:21) _conn])
 
 ;; (defn NewClientCodec

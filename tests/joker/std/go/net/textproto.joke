@@ -21,19 +21,19 @@
 ;; (defn NewConn
 ;;   "NewConn returns a new Conn using conn for I/O.\n\nGo return type: *Conn\n\nJoker return type: {}"
 ;;   {:added "1.0"
-;;    :go "newConn(_conn)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newConn(_conn))"}
 ;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/textproto/textproto.go:66:19) _conn])
 
 ;; (defn NewReader
 ;;   "NewReader returns a new Reader reading from r.\n\nTo avoid denial of service attacks, the provided bufio.Reader\nshould be reading from an io.LimitReader or similar Reader to bound\nthe size of responses.\n\nGo return type: *Reader\n\nJoker return type: {:R ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/textproto/reader.go:19:7)}"
 ;;   {:added "1.0"
-;;    :go "newReader(_r)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newReader(_r))"}
 ;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/textproto/reader.go:29:18) _r])
 
 ;; (defn NewWriter
 ;;   "NewWriter returns a new Writer writing to w.\n\nGo return type: *Writer\n\nJoker return type: {:W ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/textproto/writer.go:16:7)}"
 ;;   {:added "1.0"
-;;    :go "newWriter(_w)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newWriter(_w))"}
 ;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/textproto/writer.go:21:18) _w])
 
 ;; (defn TrimBytes

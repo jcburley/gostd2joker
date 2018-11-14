@@ -87,7 +87,7 @@
 ;; (defn NewServeMux
 ;;   "NewServeMux allocates and returns a new ServeMux.\n\nGo return type: *ServeMux\n\nJoker return type: {}"
 ;;   {:added "1.0"
-;;    :go "newServeMux()"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: newServeMux())"}
 ;;   [])
 
 ;; (defn NotFound
