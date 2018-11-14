@@ -1010,10 +1010,10 @@ func %s(%s) %s {
 	}
 	jokerCode[pkgDirUnix][d.Name.Name] = jokerFn
 
+	if _, ok := goCode[pkgDirUnix]; !ok {
+		goCode[pkgDirUnix] = codeInfo {} // There'll at least be a .joke file
+	}
 	if goFn != "" {
-		if _, ok := goCode[pkgDirUnix]; !ok {
-			goCode[pkgDirUnix] = codeInfo {}
-		}
 		goCode[pkgDirUnix][d.Name.Name] = goFn
 	}
 }
@@ -1438,15 +1438,17 @@ import (%s%s
 
 	if jokerSourceDir != "" && jokerSourceDir != "-" {
 		var packagesArray = []string{} // Relative package pathnames in alphabetical order
+		var dotJokeArray = []string{} // Relative package pathnames in alphabetical order
 
 		sortedPackagesInfo(packagesInfo,
 			func (p string, i *packageInfo) {
 				if i.hasGoFiles {
 					packagesArray = append(packagesArray, p)
 				}
+				dotJokeArray = append(dotJokeArray, p)
 			})
 		updateJokerMain(packagesArray, filepath.Join(jokerSourceDir, "main.go"))
-		updateCoreDotJoke(packagesArray, filepath.Join(jokerSourceDir, "core", "data", "core.joke"))
+		updateCoreDotJoke(dotJokeArray, filepath.Join(jokerSourceDir, "core", "data", "core.joke"))
 		updateGenerateSTD(packagesArray, filepath.Join(jokerSourceDir, "std", "generate-std.joke"))
 	}
 
