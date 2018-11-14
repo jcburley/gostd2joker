@@ -4,9 +4,9 @@
 
 To make this "magic" happen:
 
-* Ensure you're running Go version 1.11.2 (see `go version`), as the copy of the subset of some supported Go packages, that comes with `gostd2joker`, comes from that version
+* Ensure you're running Go version 1.11.2 (see `go version`), as the copy of the subset of some supported Go packages, that comes with `gostd2joker`, comes from that version (which will matter only if you want to run tests, as described below)
 * `go get github.com/jcburley/gostd2joker`, which should build and install `gostd2joker`
-* (Not yet supported nor needed:) Get a copy of the Go source tree, e.g. [https://github.com/golang/go](from Github), and check out the tag/branch corresponding to the version of Go you're running (see `go version`)
+* Get a copy of the Go source tree, e.g. [https://github.com/golang/go](from Github), and check out the tag/branch corresponding to the version of Go you're running (see `go version`)
 * Check out the `gostd2joker` branch of [https://github.com/jcburley/joker.git](my fork of Joker) and `cd` to it
 * Create a symlink from that copy of the Go source tree you checked out (above) to `./GO.link` (in the top-level Joker source directory)
 * `./run.sh`, specifying optional args such as `--version`, `-e '(println "i am here")'`, or even:
@@ -19,11 +19,11 @@ To make this "magic" happen:
 
 Before building Joker, one can optionally run this tool against a Go source tree, which _must_ correspond to the version of Go used to build Joker itself, to populate `joker/std/go/` and modify related Joker source files. Further, the build parameters (`$GOARCH`, `$GOOS`, etc.) must match -- so `build-all.sh` would have to pass those to this tool (if it was to be used) for each of the targets.
 
-At the moment, this is just a proof of concept, focusing initially on `net.LookupMX()`. E.g. run it like this:
+At the moment, this is just a proof of concept, focusing initially on `net.LookupMX()`. E.g. run it standalone like this:
 
 ```
 $ cd joker # Joker source directory
-$ ln -s <gostd2joker-source-directory>/tests/big GO.link  # Someday hope to link to the complete Go source directory!
+$ ln -s <go-source-directory> GO.link
 $ gostd2joker 2>&1 | less
 ```
 
