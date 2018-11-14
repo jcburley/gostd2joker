@@ -6051,42 +6051,42 @@ JOKER FUNC elf.R_INFO32 has:
 ;; (defn ^"Int" R_INFO32
 ;;   "Go return type: int\n\nJoker return type: Int"
 ;;   {:added "1.0"
-;;    :go "elf.R_INFO32(_sym, _typ)"}
+;;    :go "int(elf.R_INFO32(_sym, _typ))"}
 ;;   [^ABEND885(unrecognized type uint32 at: GO.link/src/debug/elf/elf.go:2825:24) _sym, ^ABEND885(unrecognized type uint32 at: GO.link/src/debug/elf/elf.go:2825:24) _typ])
 
 JOKER FUNC elf.R_SYM32 has:
 ;; (defn ^"Int" R_SYM32
 ;;   "Go return type: int\n\nJoker return type: Int"
 ;;   {:added "1.0"
-;;    :go "elf.R_SYM32(_info)"}
+;;    :go "int(elf.R_SYM32(_info))"}
 ;;   [^ABEND885(unrecognized type uint32 at: GO.link/src/debug/elf/elf.go:2823:19) _info])
 
 JOKER FUNC elf.R_SYM64 has:
 ;; (defn ^"Int" R_SYM64
 ;;   "Go return type: int\n\nJoker return type: Int"
 ;;   {:added "1.0"
-;;    :go "elf.R_SYM64(_info)"}
+;;    :go "int(elf.R_SYM64(_info))"}
 ;;   [^ABEND885(unrecognized type uint64 at: GO.link/src/debug/elf/elf.go:2925:19) _info])
 
 JOKER FUNC elf.R_TYPE32 has:
 ;; (defn ^"Int" R_TYPE32
 ;;   "Go return type: int\n\nJoker return type: Int"
 ;;   {:added "1.0"
-;;    :go "elf.R_TYPE32(_info)"}
+;;    :go "int(elf.R_TYPE32(_info))"}
 ;;   [^ABEND885(unrecognized type uint32 at: GO.link/src/debug/elf/elf.go:2824:20) _info])
 
 JOKER FUNC elf.R_TYPE64 has:
 ;; (defn ^"Int" R_TYPE64
 ;;   "Go return type: int\n\nJoker return type: Int"
 ;;   {:added "1.0"
-;;    :go "elf.R_TYPE64(_info)"}
+;;    :go "int(elf.R_TYPE64(_info))"}
 ;;   [^ABEND885(unrecognized type uint64 at: GO.link/src/debug/elf/elf.go:2926:20) _info])
 
 JOKER FUNC elf.ST_BIND has:
 ;; (defn ^"Int" ST_BIND
 ;;   "Go return type: SymBind\n\nJoker return type: Int"
 ;;   {:added "1.0"
-;;    :go "elf.ST_BIND(_info)"}
+;;    :go "int(elf.ST_BIND(_info))"}
 ;;   [^ABEND885(unrecognized type uint8 at: GO.link/src/debug/elf/elf.go:2839:19) _info])
 
 JOKER FUNC elf.ST_INFO has:
@@ -6100,14 +6100,14 @@ JOKER FUNC elf.ST_TYPE has:
 ;; (defn ^"Int" ST_TYPE
 ;;   "Go return type: SymType\n\nJoker return type: Int"
 ;;   {:added "1.0"
-;;    :go "elf.ST_TYPE(_info)"}
+;;    :go "int(elf.ST_TYPE(_info))"}
 ;;   [^ABEND885(unrecognized type uint8 at: GO.link/src/debug/elf/elf.go:2840:19) _info])
 
 JOKER FUNC elf.ST_VISIBILITY has:
 ;; (defn ^"Int" ST_VISIBILITY
 ;;   "Go return type: SymVis\n\nJoker return type: Int"
 ;;   {:added "1.0"
-;;    :go "elf.ST_VISIBILITY(_other)"}
+;;    :go "int(elf.ST_VISIBILITY(_other))"}
 ;;   [^ABEND885(unrecognized type uint8 at: GO.link/src/debug/elf/elf.go:2844:26) _other])
 
 JOKER FUNC gosym.NewLineTable has:
@@ -7486,7 +7486,7 @@ JOKER FUNC token.Lookup has:
 (defn ^"Int" Lookup
   "Lookup maps an identifier to its keyword token or IDENT (if not a keyword).\n\nGo return type: Token\n\nJoker return type: Int"
   {:added "1.0"
-   :go "token.Lookup(_ident)"}
+   :go "int(token.Lookup(_ident))"}
   [^String _ident])
 
 JOKER FUNC token.NewFileSet has:
@@ -7822,7 +7822,7 @@ JOKER FUNC adler32.Checksum has:
 ;; (defn ^"Int" Checksum
 ;;   "Checksum returns the Adler-32 checksum of data.\n\nGo return type: int\n\nJoker return type: Int"
 ;;   {:added "1.0"
-;;    :go "adler32.Checksum(_data)"}
+;;    :go "int(adler32.Checksum(_data))"}
 ;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: GO.link/src/hash/adler32/adler32.go:134:20) _data])
 
 JOKER FUNC adler32.New has:
@@ -7836,14 +7836,14 @@ JOKER FUNC crc32.Checksum has:
 ;; (defn ^"Int" Checksum
 ;;   "Checksum returns the CRC-32 checksum of data\nusing the polynomial represented by the Table.\n\nGo return type: int\n\nJoker return type: Int"
 ;;   {:added "1.0"
-;;    :go "crc32.Checksum(_data, _tab)"}
+;;    :go "int(crc32.Checksum(_data, _tab))"}
 ;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: GO.link/src/hash/crc32/crc32.go:247:20) _data, ^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/hash/crc32/crc32.go:247:32) _tab])
 
 JOKER FUNC crc32.ChecksumIEEE has:
 ;; (defn ^"Int" ChecksumIEEE
 ;;   "ChecksumIEEE returns the CRC-32 checksum of data\nusing the IEEE polynomial.\n\nGo return type: int\n\nJoker return type: Int"
 ;;   {:added "1.0"
-;;    :go "crc32.ChecksumIEEE(_data)"}
+;;    :go "int(crc32.ChecksumIEEE(_data))"}
 ;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: GO.link/src/hash/crc32/crc32.go:251:24) _data])
 
 JOKER FUNC crc32.MakeTable has:
@@ -7871,7 +7871,7 @@ JOKER FUNC crc32.Update has:
 ;; (defn ^"Int" Update
 ;;   "Update returns the result of adding the bytes in p to the crc.\n\nGo return type: int\n\nJoker return type: Int"
 ;;   {:added "1.0"
-;;    :go "crc32.Update(_crc, _tab, _p)"}
+;;    :go "int(crc32.Update(_crc, _tab, _p))"}
 ;;   [^ABEND885(unrecognized type uint32 at: GO.link/src/hash/crc32/crc32.go:210:17) _crc, ^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/hash/crc32/crc32.go:210:29) _tab, ^ABEND881(unrecognized Expr type *ast.ArrayType at: GO.link/src/hash/crc32/crc32.go:210:39) _p])
 
 JOKER FUNC crc64.Checksum has:
@@ -8718,7 +8718,7 @@ JOKER FUNC math.Float32bits has:
 ;; (defn ^"Int" Float32bits
 ;;   "Float32bits returns the IEEE 754 binary representation of f.\n\nGo return type: int\n\nJoker return type: Int"
 ;;   {:added "1.0"
-;;    :go "math.Float32bits(_f)"}
+;;    :go "int(math.Float32bits(_f))"}
 ;;   [^ABEND885(unrecognized type float32 at: GO.link/src/math/unsafe.go:10:20) _f])
 
 JOKER FUNC math.Float32frombits has:
@@ -9173,21 +9173,21 @@ JOKER FUNC bits.Reverse has:
 ;; (defn ^"Int" Reverse
 ;;   "Reverse returns the value of x with its bits in reversed order.\n\nGo return type: int\n\nJoker return type: Int"
 ;;   {:added "1.0"
-;;    :go "bits.Reverse(_x)"}
+;;    :go "int(bits.Reverse(_x))"}
 ;;   [^ABEND885(unrecognized type uint at: GO.link/src/math/bits/bits.go:210:16) _x])
 
 JOKER FUNC bits.Reverse16 has:
 ;; (defn ^"Int" Reverse16
 ;;   "Reverse16 returns the value of x with its bits in reversed order.\n\nGo return type: int\n\nJoker return type: Int"
 ;;   {:added "1.0"
-;;    :go "bits.Reverse16(_x)"}
+;;    :go "int(bits.Reverse16(_x))"}
 ;;   [^ABEND885(unrecognized type uint16 at: GO.link/src/math/bits/bits.go:223:18) _x])
 
 JOKER FUNC bits.Reverse32 has:
 ;; (defn ^"Int" Reverse32
 ;;   "Reverse32 returns the value of x with its bits in reversed order.\n\nGo return type: int\n\nJoker return type: Int"
 ;;   {:added "1.0"
-;;    :go "bits.Reverse32(_x)"}
+;;    :go "int(bits.Reverse32(_x))"}
 ;;   [^ABEND885(unrecognized type uint32 at: GO.link/src/math/bits/bits.go:228:18) _x])
 
 JOKER FUNC bits.Reverse64 has:
@@ -9208,21 +9208,21 @@ JOKER FUNC bits.ReverseBytes has:
 ;; (defn ^"Int" ReverseBytes
 ;;   "ReverseBytes returns the value of x with its bytes in reversed order.\n\nGo return type: int\n\nJoker return type: Int"
 ;;   {:added "1.0"
-;;    :go "bits.ReverseBytes(_x)"}
+;;    :go "int(bits.ReverseBytes(_x))"}
 ;;   [^ABEND885(unrecognized type uint at: GO.link/src/math/bits/bits.go:251:21) _x])
 
 JOKER FUNC bits.ReverseBytes16 has:
 ;; (defn ^"Int" ReverseBytes16
 ;;   "ReverseBytes16 returns the value of x with its bytes in reversed order.\n\nGo return type: int\n\nJoker return type: Int"
 ;;   {:added "1.0"
-;;    :go "bits.ReverseBytes16(_x)"}
+;;    :go "int(bits.ReverseBytes16(_x))"}
 ;;   [^ABEND885(unrecognized type uint16 at: GO.link/src/math/bits/bits.go:259:23) _x])
 
 JOKER FUNC bits.ReverseBytes32 has:
 ;; (defn ^"Int" ReverseBytes32
 ;;   "ReverseBytes32 returns the value of x with its bytes in reversed order.\n\nGo return type: int\n\nJoker return type: Int"
 ;;   {:added "1.0"
-;;    :go "bits.ReverseBytes32(_x)"}
+;;    :go "int(bits.ReverseBytes32(_x))"}
 ;;   [^ABEND885(unrecognized type uint32 at: GO.link/src/math/bits/bits.go:264:23) _x])
 
 JOKER FUNC bits.ReverseBytes64 has:
@@ -9236,21 +9236,21 @@ JOKER FUNC bits.RotateLeft has:
 ;; (defn ^"Int" RotateLeft
 ;;   "RotateLeft returns the value of x rotated left by (k mod UintSize) bits.\nTo rotate x right by k bits, call RotateLeft(x, -k).\n\nGo return type: int\n\nJoker return type: Int"
 ;;   {:added "1.0"
-;;    :go "bits.RotateLeft(_x, _k)"}
+;;    :go "int(bits.RotateLeft(_x, _k))"}
 ;;   [^ABEND885(unrecognized type uint at: GO.link/src/math/bits/bits.go:168:19) _x, ^Int _k])
 
 JOKER FUNC bits.RotateLeft16 has:
 ;; (defn ^"Int" RotateLeft16
 ;;   "RotateLeft16 returns the value of x rotated left by (k mod 16) bits.\nTo rotate x right by k bits, call RotateLeft16(x, -k).\n\nGo return type: int\n\nJoker return type: Int"
 ;;   {:added "1.0"
-;;    :go "bits.RotateLeft16(_x, _k)"}
+;;    :go "int(bits.RotateLeft16(_x, _k))"}
 ;;   [^ABEND885(unrecognized type uint16 at: GO.link/src/math/bits/bits.go:185:21) _x, ^Int _k])
 
 JOKER FUNC bits.RotateLeft32 has:
 ;; (defn ^"Int" RotateLeft32
 ;;   "RotateLeft32 returns the value of x rotated left by (k mod 32) bits.\nTo rotate x right by k bits, call RotateLeft32(x, -k).\n\nGo return type: int\n\nJoker return type: Int"
 ;;   {:added "1.0"
-;;    :go "bits.RotateLeft32(_x, _k)"}
+;;    :go "int(bits.RotateLeft32(_x, _k))"}
 ;;   [^ABEND885(unrecognized type uint32 at: GO.link/src/math/bits/bits.go:193:21) _x, ^Int _k])
 
 JOKER FUNC bits.RotateLeft64 has:
@@ -9523,28 +9523,28 @@ JOKER FUNC rand.Int31 has:
 (defn ^"Int" Int31
   "Int31 returns a non-negative pseudo-random 31-bit integer as an int32\nfrom the default Source.\n\nGo return type: int\n\nJoker return type: Int"
   {:added "1.0"
-   :go "rand.Int31()"}
+   :go "int(rand.Int31())"}
   [])
 
 JOKER FUNC rand.Int31n has:
 ;; (defn ^"Int" Int31n
 ;;   "Int31n returns, as an int32, a non-negative pseudo-random number in [0,n)\nfrom the default Source.\nIt panics if n <= 0.\n\nGo return type: int\n\nJoker return type: Int"
 ;;   {:added "1.0"
-;;    :go "rand.Int31n(_n)"}
+;;    :go "int(rand.Int31n(_n))"}
 ;;   [^ABEND885(unrecognized type int32 at: GO.link/src/math/rand/rand.go:324:15) _n])
 
 JOKER FUNC rand.Int63 has:
 (defn ^"Int" Int63
   "Int63 returns a non-negative pseudo-random 63-bit integer as an int64\nfrom the default Source.\n\nGo return type: int\n\nJoker return type: Int"
   {:added "1.0"
-   :go "rand.Int63()"}
+   :go "int(rand.Int63())"}
   [])
 
 JOKER FUNC rand.Int63n has:
 ;; (defn ^"Int" Int63n
 ;;   "Int63n returns, as an int64, a non-negative pseudo-random number in [0,n)\nfrom the default Source.\nIt panics if n <= 0.\n\nGo return type: int\n\nJoker return type: Int"
 ;;   {:added "1.0"
-;;    :go "rand.Int63n(_n)"}
+;;    :go "int(rand.Int63n(_n))"}
 ;;   [^ABEND885(unrecognized type int64 at: GO.link/src/math/rand/rand.go:319:15) _n])
 
 JOKER FUNC rand.Intn has:
@@ -9614,7 +9614,7 @@ JOKER FUNC rand.Uint32 has:
 (defn ^"Int" Uint32
   "Uint32 returns a pseudo-random 32-bit value as a uint32\nfrom the default Source.\n\nGo return type: int\n\nJoker return type: Int"
   {:added "1.0"
-   :go "rand.Uint32()"}
+   :go "int(rand.Uint32())"}
   [])
 
 JOKER FUNC rand.Uint64 has:
@@ -11749,7 +11749,7 @@ JOKER FUNC runtime.NumCgoCall has:
 (defn ^"Int" NumCgoCall
   "NumCgoCall returns the number of cgo calls made by the current process.\n\nGo return type: int\n\nJoker return type: Int"
   {:added "1.0"
-   :go "runtime.NumCgoCall()"}
+   :go "int(runtime.NumCgoCall())"}
   [])
 
 JOKER FUNC runtime.NumGoroutine has:
@@ -12722,21 +12722,21 @@ JOKER FUNC atomic.AddInt32 has:
 ;; (defn ^"Int" AddInt32
 ;;   "AddInt32 atomically adds delta to *addr and returns the new value.\n\nGo return type: int\n\nJoker return type: Int"
 ;;   {:added "1.0"
-;;    :go "atomic.AddInt32(_addr, _delta)"}
+;;    :go "int(atomic.AddInt32(_addr, _delta))"}
 ;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/sync/atomic/doc.go:92:20) _addr, ^ABEND885(unrecognized type int32 at: GO.link/src/sync/atomic/doc.go:92:34) _delta])
 
 JOKER FUNC atomic.AddInt64 has:
 ;; (defn ^"Int" AddInt64
 ;;   "AddInt64 atomically adds delta to *addr and returns the new value.\n\nGo return type: int\n\nJoker return type: Int"
 ;;   {:added "1.0"
-;;    :go "atomic.AddInt64(_addr, _delta)"}
+;;    :go "int(atomic.AddInt64(_addr, _delta))"}
 ;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/sync/atomic/doc.go:100:20) _addr, ^ABEND885(unrecognized type int64 at: GO.link/src/sync/atomic/doc.go:100:34) _delta])
 
 JOKER FUNC atomic.AddUint32 has:
 ;; (defn ^"Int" AddUint32
 ;;   "AddUint32 atomically adds delta to *addr and returns the new value.\nTo subtract a signed positive constant value c from x, do AddUint32(&x, ^uint32(c-1)).\nIn particular, to decrement x, do AddUint32(&x, ^uint32(0)).\n\nGo return type: int\n\nJoker return type: Int"
 ;;   {:added "1.0"
-;;    :go "atomic.AddUint32(_addr, _delta)"}
+;;    :go "int(atomic.AddUint32(_addr, _delta))"}
 ;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/sync/atomic/doc.go:97:21) _addr, ^ABEND885(unrecognized type uint32 at: GO.link/src/sync/atomic/doc.go:97:36) _delta])
 
 JOKER FUNC atomic.AddUint64 has:
@@ -12799,14 +12799,14 @@ JOKER FUNC atomic.LoadInt32 has:
 ;; (defn ^"Int" LoadInt32
 ;;   "LoadInt32 atomically loads *addr.\n\nGo return type: int\n\nJoker return type: Int"
 ;;   {:added "1.0"
-;;    :go "atomic.LoadInt32(_addr)"}
+;;    :go "int(atomic.LoadInt32(_addr))"}
 ;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/sync/atomic/doc.go:111:21) _addr])
 
 JOKER FUNC atomic.LoadInt64 has:
 ;; (defn ^"Int" LoadInt64
 ;;   "LoadInt64 atomically loads *addr.\n\nGo return type: int\n\nJoker return type: Int"
 ;;   {:added "1.0"
-;;    :go "atomic.LoadInt64(_addr)"}
+;;    :go "int(atomic.LoadInt64(_addr))"}
 ;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/sync/atomic/doc.go:114:21) _addr])
 
 JOKER FUNC atomic.LoadPointer has:
@@ -12820,7 +12820,7 @@ JOKER FUNC atomic.LoadUint32 has:
 ;; (defn ^"Int" LoadUint32
 ;;   "LoadUint32 atomically loads *addr.\n\nGo return type: int\n\nJoker return type: Int"
 ;;   {:added "1.0"
-;;    :go "atomic.LoadUint32(_addr)"}
+;;    :go "int(atomic.LoadUint32(_addr))"}
 ;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/sync/atomic/doc.go:117:22) _addr])
 
 JOKER FUNC atomic.LoadUint64 has:
@@ -12883,14 +12883,14 @@ JOKER FUNC atomic.SwapInt32 has:
 ;; (defn ^"Int" SwapInt32
 ;;   "SwapInt32 atomically stores new into *addr and returns the previous *addr value.\n\nGo return type: int\n\nJoker return type: Int"
 ;;   {:added "1.0"
-;;    :go "atomic.SwapInt32(_addr, _new)"}
+;;    :go "int(atomic.SwapInt32(_addr, _new))"}
 ;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/sync/atomic/doc.go:56:21) _addr, ^ABEND885(unrecognized type int32 at: GO.link/src/sync/atomic/doc.go:56:33) _new])
 
 JOKER FUNC atomic.SwapInt64 has:
 ;; (defn ^"Int" SwapInt64
 ;;   "SwapInt64 atomically stores new into *addr and returns the previous *addr value.\n\nGo return type: int\n\nJoker return type: Int"
 ;;   {:added "1.0"
-;;    :go "atomic.SwapInt64(_addr, _new)"}
+;;    :go "int(atomic.SwapInt64(_addr, _new))"}
 ;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/sync/atomic/doc.go:59:21) _addr, ^ABEND885(unrecognized type int64 at: GO.link/src/sync/atomic/doc.go:59:33) _new])
 
 JOKER FUNC atomic.SwapPointer has:
@@ -12904,7 +12904,7 @@ JOKER FUNC atomic.SwapUint32 has:
 ;; (defn ^"Int" SwapUint32
 ;;   "SwapUint32 atomically stores new into *addr and returns the previous *addr value.\n\nGo return type: int\n\nJoker return type: Int"
 ;;   {:added "1.0"
-;;    :go "atomic.SwapUint32(_addr, _new)"}
+;;    :go "int(atomic.SwapUint32(_addr, _new))"}
 ;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/sync/atomic/doc.go:62:22) _addr, ^ABEND885(unrecognized type uint32 at: GO.link/src/sync/atomic/doc.go:62:35) _new])
 
 JOKER FUNC atomic.SwapUint64 has:
@@ -14388,14 +14388,14 @@ JOKER FUNC syscall.TimespecToNsec has:
 ;; (defn ^"Int" TimespecToNsec
 ;;   "TimespecToNsec converts a Timespec value into a number of\nnanoseconds since the Unix epoch.\n\nGo return type: int\n\nJoker return type: Int"
 ;;   {:added "1.0"
-;;    :go "syscall.TimespecToNsec(_ts)"}
+;;    :go "int(syscall.TimespecToNsec(_ts))"}
 ;;   [^ABEND885(unrecognized type Timespec at: GO.link/src/syscall/timestruct.go:11:24) _ts])
 
 JOKER FUNC syscall.TimevalToNsec has:
 ;; (defn ^"Int" TimevalToNsec
 ;;   "TimevalToNsec converts a Timeval value into a number of nanoseconds\nsince the Unix epoch.\n\nGo return type: int\n\nJoker return type: Int"
 ;;   {:added "1.0"
-;;    :go "syscall.TimevalToNsec(_tv)"}
+;;    :go "int(syscall.TimevalToNsec(_tv))"}
 ;;   [^ABEND885(unrecognized type Timeval at: GO.link/src/syscall/timestruct.go:27:23) _tv])
 
 JOKER FUNC syscall.Truncate has:
@@ -14878,7 +14878,7 @@ JOKER FUNC time.Since has:
 ;; (defn ^"Int" Since
 ;;   "Since returns the time elapsed since t.\nIt is shorthand for time.Now().Sub(t).\n\nGo return type: Duration\n\nJoker return type: Int"
 ;;   {:added "1.0"
-;;    :go "time.Since(_t)"}
+;;    :go "int(time.Since(_t))"}
 ;;   [^ABEND885(unrecognized type Time at: GO.link/src/time/time.go:910:14) _t])
 
 JOKER FUNC time.Sleep has:
@@ -14906,7 +14906,7 @@ JOKER FUNC time.Until has:
 ;; (defn ^"Int" Until
 ;;   "Until returns the duration until t.\nIt is shorthand for t.Sub(time.Now()).\n\nGo return type: Duration\n\nJoker return type: Int"
 ;;   {:added "1.0"
-;;    :go "time.Until(_t)"}
+;;    :go "int(time.Until(_t))"}
 ;;   [^ABEND885(unrecognized type Time at: GO.link/src/time/time.go:916:14) _t])
 
 JOKER FUNC unicode.In has:

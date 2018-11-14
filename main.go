@@ -887,7 +887,6 @@ func genGoPost(indent string, pkg string, d *FuncDecl) (goResultAssign, jokerRet
 	if fl == nil || fl.List == nil {
 		return
 	}
-//	goResultAssign, jokerReturnTypeForDoc, goReturnTypeForDoc, goReturnCode = genGoPostListOld(indent, pkg, *fl)
 	jokerReturnTypeForDoc, goReturnTypeForDoc, goReturnCode, goResultAssign = genGoPostList(indent, pkg, *fl)
 	return
 }
@@ -911,6 +910,45 @@ func genFuncCode(pkgBaseName, pkgDirUnix string, d *FuncDecl, goFname string) (f
 	return
 }
 
+// If the Go API returns a single result, and it's an Int, wrap the call in "int()".
+func maybeConvertGoResult(pkg, call string, fl *FieldList) string {
+	if fl == nil || len(fl.List) != 1 || (fl.List[0].Names != nil && len(fl.List[0].Names) > 1) {
+		return call
+	}
+	named := false
+	t := fl.List[0].Type
+	for {
+		stop := false
+		switch v := t.(type) {
+		case *Ident:
+			qt := pkg + "." + v.Name
+			if v, ok := types[qt]; ok {
+				named = true
+				t = v.td.Type
+			} else {
+				stop = true
+			}
+		default:
+			stop = true
+		}
+		if stop {
+			break
+		}
+	}
+	switch v := t.(type) {
+	case *Ident:
+		switch v.Name {
+		case "int16", "uint", "uint16", "int32", "uint32", "int64", "byte":  // TODO: Does Joker always have 64-bit signed ints?
+			return "int(" + call + ")"
+		case "int":
+			if named {
+				return "int(" + call + ")"
+			} // Else it's already an int, so don't bother wrapping it.
+		}
+	}
+	return call
+}
+
 func genFunction(f string, fn *funcInfo) {
 	genSymReset()
 	d := fn.fd
@@ -919,7 +957,7 @@ func genFunction(f string, fn *funcInfo) {
 	jfmt := `
 (defn %s%s
 %s  {:added "1.0"
-   :go "%s%s"}
+   :go "%s"}
   [%s])
 `
 	goFname := funcNameAsGoPrivate(d.Name.Name)
@@ -936,10 +974,11 @@ func genFunction(f string, fn *funcInfo) {
 			panic(fmt.Sprintf("Cannot find package %s", pkgDirUnix))
 		}
 	}
+	jok2golCall := maybeConvertGoResult(pkgDirUnix, jok2gol + fc.jokerGoParams, fn.fd.Type.Results)
 
 	jokerFn := fmt.Sprintf(jfmt, jokerReturnType, d.Name.Name,
 		commentGroupInQuotes(d.Doc, fc.jokerReturnTypeForDoc, fc.goReturnTypeForDoc),
-		jok2gol, fc.jokerGoParams, fc.jokerParamList)
+		jok2golCall, fc.jokerParamList)
 
 	gfmt := `
 func %s(%s) %s {
