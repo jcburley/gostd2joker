@@ -26213,4 +26213,4 @@ GO FUNC unsafe.Sizeof has:
 // 	return _unsafe.Sizeof(x)
 // }
 
-Totals: types=964 functions=1512 receivers=5623
+Totals: types=964 functions=7135 methods=5623 (78.81%) standalone=1512 (21.19%) generated=321 (21.23%)

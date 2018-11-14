@@ -45,7 +45,8 @@ func check(e error) {
 var fset *token.FileSet
 var dump bool
 var verbose bool
-var receivers int
+var methods int
+var generatedFunctions int
 
 func whereAt(p token.Pos) string {
 	return fmt.Sprintf("%s", fset.Position(p).String())
@@ -99,9 +100,8 @@ func sortedFuncInfoMap(m map[string]*funcInfo, f func(k string, v *funcInfo)) {
 	}
 }
 
-// Map (unqualified) function names to info on each.
-var unqualifiedFunctions = map[string]*funcInfo {}
-var DUPLICATEFUNCTION = &FuncDecl {}
+// Map qualified function names to info on each.
+var qualifiedFunctions = map[string]*funcInfo {}
 
 var alreadySeen = []string {}
 
@@ -111,15 +111,12 @@ func processFuncDecl(pkg, pkgDirUnix, filename string, f *File, fn *FuncDecl) bo
 		Print(fset, fn)
 	}
 	fname := pkgDirUnix + "." + fn.Name.Name
-	if v, ok := unqualifiedFunctions[fname]; ok {
-		if v.fd != DUPLICATEFUNCTION {
-			alreadySeen = append(alreadySeen,
-				fmt.Sprintf("NOTE: Already seen function %s in %s, yet again in %s",
-					fname, v.filename, filename))
-			fn = DUPLICATEFUNCTION
-		}
+	if v, ok := qualifiedFunctions[fname]; ok {
+		alreadySeen = append(alreadySeen,
+			fmt.Sprintf("NOTE: Already seen function %s in %s, yet again in %s",
+				fname, v.filename, filename))
 	}
-	unqualifiedFunctions[fname] = &funcInfo{fn, pkg, pkgDirUnix, filename}
+	qualifiedFunctions[fname] = &funcInfo{fn, pkg, pkgDirUnix, filename}
 	return true
 }
 
@@ -170,9 +167,9 @@ func processDecls(pkg, pkgDirUnix, filename string, f *File) (found bool) {
 	for _, s := range f.Decls {
 		switch v := s.(type) {
 		case *FuncDecl:
-			rcv := v.Recv // *FieldList of receivers or nil (functions)
+			rcv := v.Recv // *FieldList of methods or nil (functions)
 			if rcv != nil {
-				receivers += 1
+				methods += 1
 				continue  // Skipping these for now
 			}
 			if isPrivate(v.Name.Name) {
@@ -997,6 +994,7 @@ func %s(%s) %s {
 		jokerFn = nonEmptyLineRegexp.ReplaceAllString(jokerFn, `;; $1`)
 		goFn = nonEmptyLineRegexp.ReplaceAllString(goFn, `// $1`)
 	} else {
+		generatedFunctions++
 		packagesInfo[pkgDirUnix].nonEmpty = true
 		if jokerReturnType == "" {
 			packagesInfo[pkgDirUnix].importsNative[pkgDirUnix] = exists
@@ -1033,6 +1031,7 @@ Options:
   --fresh                        # (Default) Refuse to overwrite existing <joker-std-subdir> directory
   --joker <joker-source-dir-name>  # Modify pertinent source files to reflect packages being created
   --verbose, -v                  # Print info on what's going on
+  --summary                      # Print summary of #s of types, functions, etc.
   --dump                         # Use go's AST dump API on pertinent elements (functions, types, etc.)
   --no-timestamp                 # Don't put the time (and version) info in generated/modified files
   --help, -h                     # Print this information
@@ -1190,6 +1189,7 @@ func main() {
 	jokerSourceDir := ""
 	replace := false
 	overwrite := false
+	summary := false
 
 	var mode parser.Mode = parser.ParseComments
 
@@ -1216,6 +1216,8 @@ func main() {
 				overwrite = false
 			case "--verbose", "-v":
 				verbose = true
+			case "--summary":
+				summary = true
 			case "--go":
 				if sourceDir != "" {
 					panic("cannot specify --go <go-source-dir-name> more than once")
@@ -1325,11 +1327,9 @@ func main() {
 	}
 
 	/* Generate function code snippets in alphabetical order, to stabilize test output in re unsupported types. */
-	sortedFuncInfoMap(unqualifiedFunctions,
+	sortedFuncInfoMap(qualifiedFunctions,
 		func(f string, v *funcInfo) {
-			if v.fd != DUPLICATEFUNCTION {
-				genFunction(f, v)
-			}
+			genFunction(f, v)
 		})
 
 	var out *bufio.Writer
@@ -1452,12 +1452,22 @@ import (%s%s
 		updateGenerateSTD(packagesArray, filepath.Join(jokerSourceDir, "std", "generate-std.joke"))
 	}
 
-	if verbose {
-		fmt.Printf("Totals: types=%d functions=%d receivers=%d\n",
-			len(types), len(unqualifiedFunctions), receivers)
+	if verbose || summary{
+		fmt.Printf("Totals: types=%d functions=%d methods=%d (%s%%) standalone=%d (%s%%) generated=%d (%s%%)\n",
+			len(types), len(qualifiedFunctions) + methods, methods,
+			pct(methods, len(qualifiedFunctions) + methods),
+			len(qualifiedFunctions), pct(len(qualifiedFunctions), len(qualifiedFunctions) + methods),
+			generatedFunctions, pct(generatedFunctions, len(qualifiedFunctions)))
 	}
 
 	os.Exit(0)
+}
+
+func pct(i, j int) string {
+	if j == 0 {
+		return "--"
+	}
+	return fmt.Sprintf("%0.2f", (float64(i) / float64(j)) * 100.0)
 }
 
 func init() {
