@@ -147,14 +147,14 @@ JOKER FUNC url.User has:
 ;; (defn User
 ;;   "User returns a Userinfo containing the provided username\nand no password set.\n\nGo return type: *Userinfo\n\nJoker return type: {}"
 ;;   {:added "1.0"
-;;    :go "user(_username)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: user(_username))"}
 ;;   [^String _username])
 
 JOKER FUNC url.UserPassword has:
 ;; (defn UserPassword
 ;;   "UserPassword returns a Userinfo containing the provided username\nand password.\n\nThis functionality should only be used with legacy web sites.\nRFC 2396 warns that interpreting Userinfo this way\n``is NOT RECOMMENDED, because the passing of authentication\ninformation in clear text (such as URI) has proven to be a\nsecurity risk in almost every case where it has been used.''\n\nGo return type: *Userinfo\n\nJoker return type: {}"
 ;;   {:added "1.0"
-;;    :go "userPassword(_username, _password)"}
+;;    :go "ABEND401(StarExpr not supported -- no refs returned just yet: userPassword(_username, _password))"}
 ;;   [^String _username, ^String _password])
 
 GO FUNC net.LookupAddr has:
