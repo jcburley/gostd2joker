@@ -949,6 +949,40 @@ func maybeConvertGoResult(pkg, call string, fl *FieldList) string {
 	return call
 }
 
+var abendRegexp *regexp.Regexp
+
+var abends = map[string]int {}
+
+func trackAbends(a string) {
+	subMatches := abendRegexp.FindAllStringSubmatch(a, -1)
+	//	fmt.Printf("trackAbends: %v %s => %#v\n", abendRegexp, a, subMatches)
+	for _, m := range subMatches {
+		if len(m) != 2 {
+			panic(fmt.Sprintf("len(%v) != 2", m))
+		}
+		n := m[1]
+		if _, ok := abends[n]; !ok {
+			abends[n] = 0
+		}
+		abends[n] += 1
+	}
+}
+
+func printAbends(m map[string]int) {
+	type ac struct {
+		abendCode string
+		abendCount int
+	}
+	a := []ac {}
+	for k, v := range m {
+		a = append(a, ac{abendCode: k, abendCount: v})
+	}
+	sort.Slice(a, func(i, j int) bool { return a[i].abendCount > a[j].abendCount })
+	for _, v := range a {
+		fmt.Printf(" %s(%d)", v.abendCode, v.abendCount)
+	}
+}
+
 func genFunction(f string, fn *funcInfo) {
 	genSymReset()
 	d := fn.fd
@@ -993,6 +1027,8 @@ func %s(%s) %s {
 	if strings.Contains(jokerFn, "ABEND") || strings.Contains(goFn, "ABEND") {
 		jokerFn = nonEmptyLineRegexp.ReplaceAllString(jokerFn, `;; $1`)
 		goFn = nonEmptyLineRegexp.ReplaceAllString(goFn, `// $1`)
+		trackAbends(jokerFn)
+		trackAbends(goFn)
 	} else {
 		generatedFunctions++
 		packagesInfo[pkgDirUnix].nonEmpty = true
@@ -1462,7 +1498,9 @@ import (%s%s
 	}
 
 	if verbose || summary{
-		fmt.Printf("Totals: types=%d functions=%d methods=%d (%s%%) standalone=%d (%s%%) generated=%d (%s%%)\n",
+		fmt.Printf("ABENDs:")
+		printAbends(abends)
+		fmt.Printf("\nTotals: types=%d functions=%d methods=%d (%s%%) standalone=%d (%s%%) generated=%d (%s%%)\n",
 			len(types), len(qualifiedFunctions) + methods, methods,
 			pct(methods, len(qualifiedFunctions) + methods),
 			len(qualifiedFunctions), pct(len(qualifiedFunctions), len(qualifiedFunctions) + methods),
@@ -1480,6 +1518,6 @@ func pct(i, j int) string {
 }
 
 func init() {
-	p := `(?m)^(.)`
-	nonEmptyLineRegexp = regexp.MustCompile(p)
+	nonEmptyLineRegexp = regexp.MustCompile(`(?m)^(.)`)
+	abendRegexp = regexp.MustCompile(`ABEND([0-9]+)`)
 }

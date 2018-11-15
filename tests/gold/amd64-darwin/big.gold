@@ -3363,4 +3363,5 @@ Adding custom loaded libraries to tests/joker/core/data/core.joke
 Writing tests/joker/core/data/core.joke
 Adding custom namespaces to tests/joker/std/generate-std.joke
 Writing tests/joker/std/generate-std.joke
+ABENDs: 883(174) 881(92) 882(82) 885(21) 401(20) 675(18) 884(14) 124(10) 947(7)
 Totals: types=102 functions=1348 methods=1200 (89.02%) standalone=148 (10.98%) generated=41 (27.70%)

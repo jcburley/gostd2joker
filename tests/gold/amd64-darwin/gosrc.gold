@@ -25784,4 +25784,5 @@ GO FUNC unsafe.Sizeof has:
 // 	return _unsafe.Sizeof(x)
 // }
 
+ABENDs: 881(926) 882(672) 885(578) 883(505) 884(356) 042(247) 401(150) 675(129) 124(107) 947(26) 123(1)
 Totals: types=957 functions=7096 methods=5623 (79.24%) standalone=1473 (20.76%) generated=319 (21.66%)
