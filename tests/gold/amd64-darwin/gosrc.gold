@@ -681,6 +681,7 @@ Package ast:
 Processing package=ast in go/ast:
 Walking from GO.link/src to GO.link/src/go/build
 Processing go/build:
+Matchfile(GO.link/src/go/build/zcgo.go) => true <nil>
 Matchfile(GO.link/src/go/build/gc.go) => true <nil>
 Ignoring test code in read_test.go
 Matchfile(GO.link/src/go/build/build.go) => true <nil>
