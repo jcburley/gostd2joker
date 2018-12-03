@@ -48,6 +48,8 @@ $ ./joker
 Welcome to joker v0.10.1. Use EOF (Ctrl-D) or SIGINT (Ctrl-C) to exit.
 user=> (require '[joker.go.net :as n])
 nil
+user=> (ns-map 'joker.go.net)
+{ParseMAC #'joker.go.net/ParseMAC, ResolveUnixAddr #'joker.go.net/ResolveUnixAddr, SplitHostPort #'joker.go.net/SplitHostPort, IPv4Mask #'joker.go.net/IPv4Mask, InterfaceByName #'joker.go.net/InterfaceByName, Interfaces #'joker.go.net/Interfaces, LookupMX #'joker.go.net/LookupMX, LookupNS #'joker.go.net/LookupNS, LookupIP #'joker.go.net/LookupIP, LookupSRV #'joker.go.net/LookupSRV, ParseCIDR #'joker.go.net/ParseCIDR, ParseIP #'joker.go.net/ParseIP, JoinHostPort #'joker.go.net/JoinHostPort, LookupCNAME #'joker.go.net/LookupCNAME, LookupHost #'joker.go.net/LookupHost, LookupTXT #'joker.go.net/LookupTXT, ResolveIPAddr #'joker.go.net/ResolveIPAddr, ResolveTCPAddr #'joker.go.net/ResolveTCPAddr, ResolveUDPAddr #'joker.go.net/ResolveUDPAddr, CIDRMask #'joker.go.net/CIDRMask, IPv4 #'joker.go.net/IPv4, InterfaceByIndex #'joker.go.net/InterfaceByIndex, LookupAddr #'joker.go.net/LookupAddr, LookupPort #'joker.go.net/LookupPort}
 user=> (n/Interfaces)
 [[{:Index 1, :MTU 65536, :Name "lo", :HardwareAddr [], :Flags 5} {:Index 2, :MTU 1500, :Name "eth0", :HardwareAddr [20 218 233 31 200 87], :Flags 19} {:Index 3, :MTU 1500, :Name "docker0", :HardwareAddr [2 66 188 97 92 58], :Flags 19}] nil]
 user=>
