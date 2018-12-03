@@ -7,7 +7,7 @@ import (
 	. "github.com/candid82/joker/core"
 )
 
-// func accept(lis ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/rpc/server.go:692:17)) Object {
+// func accept(lis ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests\big\src\net\rpc\server.go:692:17)) Object {
 // 	_rpc.Accept(lis)
 // 	...ABEND675: TODO...
 // }
@@ -41,12 +41,12 @@ func dialHTTPPath(network string, address string, path string) Object {
 // 	...ABEND675: TODO...
 // }
 
-// func newClient(conn ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/rpc/client.go:193:21)) Object {
+// func newClient(conn ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests\big\src\net\rpc\client.go:193:21)) Object {
 // 	return _rpc.NewClient(conn)
 // 	ABEND124(no public information returned)
 // }
 
-// func newClientWithCodec(codec ABEND884(unrecognized type ClientCodec at: tests/big/src/net/rpc/client.go:201:31)) Object {
+// func newClientWithCodec(codec ABEND884(unrecognized type ClientCodec at: tests\big\src\net\rpc\client.go:201:31)) Object {
 // 	return _rpc.NewClientWithCodec(codec)
 // 	ABEND124(no public information returned)
 // }
@@ -56,12 +56,12 @@ func dialHTTPPath(network string, address string, path string) Object {
 // 	ABEND124(no public information returned)
 // }
 
-// func serveCodec(codec ABEND884(unrecognized type ServerCodec at: tests/big/src/net/rpc/server.go:679:23)) Object {
+// func serveCodec(codec ABEND884(unrecognized type ServerCodec at: tests\big\src\net\rpc\server.go:679:23)) Object {
 // 	_rpc.ServeCodec(codec)
 // 	...ABEND675: TODO...
 // }
 
-// func serveConn(conn ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/rpc/server.go:673:21)) Object {
+// func serveConn(conn ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests\big\src\net\rpc\server.go:673:21)) Object {
 // 	_rpc.ServeConn(conn)
 // 	...ABEND675: TODO...
 // }

@@ -53,7 +53,7 @@ func parseAddressList(list string) Object {
 // 	return _res
 // }
 
-// func readMessage(r ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/mail/message.go:52:20)) Object {
+// func readMessage(r ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests\big\src\net\mail\message.go:52:20)) Object {
 // 	msg, err := _mail.ReadMessage(r)
 // 	_res := EmptyVector
 // 	var _obj_map1 Object
