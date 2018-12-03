@@ -629,10 +629,12 @@ func genGoPostArray(indent, pkg, in string, el Expr, onlyIf string) (jok, gol, g
 // whereas net.LookupMX() returns []*MX, and these are not only populated, it's unclear there's any utility in
 // modifying them (it could just as well return []MX AFAICT).
 func genGoPostStar(indent, pkg, in string, e Expr, onlyIf string) (jok, gol, goc, out string) {
-	if onlyIf != "" {
-		panic(fmt.Sprintf("pkg=%s in=%s e=%v onlyIf=%s\n", pkg, in, e, onlyIf))
+	if onlyIf == "" {
+		onlyIf = in + " != nil"
+	} else {
+		onlyIf = in + " != nil && " + onlyIf
 	}
-	jok, gol, goc, out = genGoPostExpr(indent, pkg, "(*" + in + ")", e, in + " != nil")
+	jok, gol, goc, out = genGoPostExpr(indent, pkg, "(*" + in + ")", e, onlyIf)
 	gol = "*" + gol
 	return
 }
