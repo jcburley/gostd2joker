@@ -15,12 +15,12 @@ func dial(network string, addr string) Object {
 	return _res
 }
 
-// func newConn(conn ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/textproto/textproto.go:66:19)) Object {
+// func newConn(conn ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests\big\src\net\textproto\textproto.go:66:19)) Object {
 // 	return _textproto.NewConn(conn)
 // 	ABEND124(no public information returned)
 // }
 
-// func newReader(r ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/textproto/reader.go:29:18)) Object {
+// func newReader(r ABEND882(unrecognized Expr type *ast.StarExpr at: tests\big\src\net\textproto\reader.go:29:18)) Object {
 // 	_res := _textproto.NewReader(r)
 // 	var _obj_map1 Object
 // 	if _res != nil {
@@ -33,7 +33,7 @@ func dial(network string, addr string) Object {
 // 	return _obj_map1
 // }
 
-// func newWriter(w ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/textproto/writer.go:21:18)) Object {
+// func newWriter(w ABEND882(unrecognized Expr type *ast.StarExpr at: tests\big\src\net\textproto\writer.go:21:18)) Object {
 // 	_res := _textproto.NewWriter(w)
 // 	var _obj_map1 Object
 // 	if _res != nil {
@@ -46,7 +46,7 @@ func dial(network string, addr string) Object {
 // 	return _obj_map1
 // }
 
-// func trimBytes(b ABEND882(unrecognized Expr type *ast.ArrayType at: tests/big/src/net/textproto/textproto.go:137:18)) Object {
+// func trimBytes(b ABEND882(unrecognized Expr type *ast.ArrayType at: tests\big\src\net\textproto\textproto.go:137:18)) Object {
 // 	_res := _textproto.TrimBytes(b)
 // 	_vec1 := EmptyVector
 // 	for _, _elem1 := range _res {

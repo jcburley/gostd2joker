@@ -384,5 +384,5 @@ GO FUNC url.UserPassword has:
 // 	ABEND124(no public information returned)
 // }
 
-ABENDs: 401(2) 124(2) 042(1) 883(1)
+ABENDs: 401(2) 124(2) 883(1) 042(1)
 Totals: types=10 functions=64 methods=46 (71.88%) standalone=18 (28.12%) generated=14 (77.78%)

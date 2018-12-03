@@ -24,7 +24,7 @@ func cIDRMask(ones int, bits int) Object {
 // 	return _res
 // }
 
-// func dialIP(network string, laddr ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/iprawsock.go:211:42), raddr ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/iprawsock.go:211:42)) Object {
+// func dialIP(network string, laddr ABEND882(unrecognized Expr type *ast.StarExpr at: tests\big\src\net\iprawsock.go:211:42), raddr ABEND882(unrecognized Expr type *ast.StarExpr at: tests\big\src\net\iprawsock.go:211:42)) Object {
 // 	_, _res2 := _net.DialIP(network, laddr, raddr)
 // 	_res := EmptyVector
 // 	_res = _res.Conjoin(NIL)
@@ -32,7 +32,7 @@ func cIDRMask(ones int, bits int) Object {
 // 	return _res
 // }
 
-// func dialTCP(network string, laddr ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/tcpsock.go:206:43), raddr ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/tcpsock.go:206:43)) Object {
+// func dialTCP(network string, laddr ABEND882(unrecognized Expr type *ast.StarExpr at: tests\big\src\net\tcpsock.go:206:43), raddr ABEND882(unrecognized Expr type *ast.StarExpr at: tests\big\src\net\tcpsock.go:206:43)) Object {
 // 	_, _res2 := _net.DialTCP(network, laddr, raddr)
 // 	_res := EmptyVector
 // 	_res = _res.Conjoin(NIL)
@@ -40,7 +40,7 @@ func cIDRMask(ones int, bits int) Object {
 // 	return _res
 // }
 
-// func dialTimeout(network string, address string, timeout ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/dial.go:313:51)) Object {
+// func dialTimeout(network string, address string, timeout ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests\big\src\net\dial.go:313:51)) Object {
 // 	_res1, _res2 := _net.DialTimeout(network, address, timeout)
 // 	_res := EmptyVector
 // 	_res = _res.Conjoin(_res1)
@@ -48,7 +48,7 @@ func cIDRMask(ones int, bits int) Object {
 // 	return _res
 // }
 
-// func dialUDP(network string, laddr ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/udpsock.go:205:43), raddr ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/udpsock.go:205:43)) Object {
+// func dialUDP(network string, laddr ABEND882(unrecognized Expr type *ast.StarExpr at: tests\big\src\net\udpsock.go:205:43), raddr ABEND882(unrecognized Expr type *ast.StarExpr at: tests\big\src\net\udpsock.go:205:43)) Object {
 // 	_, _res2 := _net.DialUDP(network, laddr, raddr)
 // 	_res := EmptyVector
 // 	_res = _res.Conjoin(NIL)
@@ -56,7 +56,7 @@ func cIDRMask(ones int, bits int) Object {
 // 	return _res
 // }
 
-// func dialUnix(network string, laddr ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/unixsock.go:200:44), raddr ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/unixsock.go:200:44)) Object {
+// func dialUnix(network string, laddr ABEND882(unrecognized Expr type *ast.StarExpr at: tests\big\src\net\unixsock.go:200:44), raddr ABEND882(unrecognized Expr type *ast.StarExpr at: tests\big\src\net\unixsock.go:200:44)) Object {
 // 	_, _res2 := _net.DialUnix(network, laddr, raddr)
 // 	_res := EmptyVector
 // 	_res = _res.Conjoin(NIL)
@@ -64,7 +64,7 @@ func cIDRMask(ones int, bits int) Object {
 // 	return _res
 // }
 
-// func fileConn(f ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/file.go:21:17)) Object {
+// func fileConn(f ABEND882(unrecognized Expr type *ast.StarExpr at: tests\big\src\net\file.go:21:17)) Object {
 // 	c, err := _net.FileConn(f)
 // 	_res := EmptyVector
 // 	_res = _res.Conjoin(c)
@@ -72,7 +72,7 @@ func cIDRMask(ones int, bits int) Object {
 // 	return _res
 // }
 
-// func fileListener(f ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/file.go:33:21)) Object {
+// func fileListener(f ABEND882(unrecognized Expr type *ast.StarExpr at: tests\big\src\net\file.go:33:21)) Object {
 // 	ln, err := _net.FileListener(f)
 // 	_res := EmptyVector
 // 	_res = _res.Conjoin(ln)
@@ -80,7 +80,7 @@ func cIDRMask(ones int, bits int) Object {
 // 	return _res
 // }
 
-// func filePacketConn(f ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/file.go:45:23)) Object {
+// func filePacketConn(f ABEND882(unrecognized Expr type *ast.StarExpr at: tests\big\src\net\file.go:45:23)) Object {
 // 	c, err := _net.FilePacketConn(f)
 // 	_res := EmptyVector
 // 	_res = _res.Conjoin(c)
@@ -196,7 +196,7 @@ func interfaces() Object {
 // 	return _res
 // }
 
-// func listenIP(network string, laddr ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/iprawsock.go:230:37)) Object {
+// func listenIP(network string, laddr ABEND882(unrecognized Expr type *ast.StarExpr at: tests\big\src\net\iprawsock.go:230:37)) Object {
 // 	_, _res2 := _net.ListenIP(network, laddr)
 // 	_res := EmptyVector
 // 	_res = _res.Conjoin(NIL)
@@ -204,7 +204,7 @@ func interfaces() Object {
 // 	return _res
 // }
 
-// func listenMulticastUDP(network string, ifi ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/udpsock.go:265:45), gaddr ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/udpsock.go:265:63)) Object {
+// func listenMulticastUDP(network string, ifi ABEND882(unrecognized Expr type *ast.StarExpr at: tests\big\src\net\udpsock.go:265:45), gaddr ABEND882(unrecognized Expr type *ast.StarExpr at: tests\big\src\net\udpsock.go:265:63)) Object {
 // 	_, _res2 := _net.ListenMulticastUDP(network, ifi, gaddr)
 // 	_res := EmptyVector
 // 	_res = _res.Conjoin(NIL)
@@ -220,7 +220,7 @@ func interfaces() Object {
 // 	return _res
 // }
 
-// func listenTCP(network string, laddr ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/tcpsock.go:323:38)) Object {
+// func listenTCP(network string, laddr ABEND882(unrecognized Expr type *ast.StarExpr at: tests\big\src\net\tcpsock.go:323:38)) Object {
 // 	_, _res2 := _net.ListenTCP(network, laddr)
 // 	_res := EmptyVector
 // 	_res = _res.Conjoin(NIL)
@@ -228,7 +228,7 @@ func interfaces() Object {
 // 	return _res
 // }
 
-// func listenUDP(network string, laddr ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/udpsock.go:231:38)) Object {
+// func listenUDP(network string, laddr ABEND882(unrecognized Expr type *ast.StarExpr at: tests\big\src\net\udpsock.go:231:38)) Object {
 // 	_, _res2 := _net.ListenUDP(network, laddr)
 // 	_res := EmptyVector
 // 	_res = _res.Conjoin(NIL)
@@ -236,7 +236,7 @@ func interfaces() Object {
 // 	return _res
 // }
 
-// func listenUnix(network string, laddr ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/unixsock.go:314:39)) Object {
+// func listenUnix(network string, laddr ABEND882(unrecognized Expr type *ast.StarExpr at: tests\big\src\net\unixsock.go:314:39)) Object {
 // 	_, _res2 := _net.ListenUnix(network, laddr)
 // 	_res := EmptyVector
 // 	_res = _res.Conjoin(NIL)
@@ -244,7 +244,7 @@ func interfaces() Object {
 // 	return _res
 // }
 
-// func listenUnixgram(network string, laddr ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/unixsock.go:334:43)) Object {
+// func listenUnixgram(network string, laddr ABEND882(unrecognized Expr type *ast.StarExpr at: tests\big\src\net\unixsock.go:334:43)) Object {
 // 	_, _res2 := _net.ListenUnixgram(network, laddr)
 // 	_res := EmptyVector
 // 	_res = _res.Conjoin(NIL)
