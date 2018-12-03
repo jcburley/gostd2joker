@@ -13,8 +13,8 @@ RC=0
 ./gostd2joker --no-timestamp -v --go tests/small 2>&1 | grep -v '^Default context:' > $GOENV/small.gold
 git diff --quiet -u $GOENV/small.gold || { echo >&2 "FAILED: small test"; RC=1; $EXIT; }
 
-rm -fr tests/joker
-cp -pr tests/joker.orig tests/joker
+rm -fr $GOENV/joker
+cp -pr tests/joker.orig $GOENV/joker
 ./gostd2joker --no-timestamp -v --go tests/big --replace --joker $GOENV/joker 2>&1 | grep -v '^Default context:' > $GOENV/big.gold
 git diff --quiet -u $GOENV/big.gold || { echo >&2 "FAILED: big test"; RC=1; $EXIT; }
 

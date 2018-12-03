@@ -3357,11 +3357,11 @@ GO FUNC url.UserPassword has:
 // 	ABEND124(no public information returned)
 // }
 
-Adding custom import line to tests/joker/main.go
-Writing tests/joker/main.go
-Adding custom loaded libraries to tests/joker/core/data/core.joke
-Writing tests/joker/core/data/core.joke
-Adding custom namespaces to tests/joker/std/generate-std.joke
-Writing tests/joker/std/generate-std.joke
+Adding custom import line to tests/gold/amd64-windows/joker/main.go
+Writing tests/gold/amd64-windows/joker/main.go
+Adding custom loaded libraries to tests/gold/amd64-windows/joker/core/data/core.joke
+Writing tests/gold/amd64-windows/joker/core/data/core.joke
+Adding custom namespaces to tests/gold/amd64-windows/joker/std/generate-std.joke
+Writing tests/gold/amd64-windows/joker/std/generate-std.joke
 ABENDs: 883(174) 881(92) 882(82) 885(21) 401(20) 675(18) 884(14) 124(10) 947(7)
 Totals: types=102 functions=1319 methods=1171 (88.78%) standalone=148 (11.22%) generated=41 (27.70%)
