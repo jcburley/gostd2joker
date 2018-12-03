@@ -2739,11 +2739,11 @@ NOTE: Already seen function syscall.Flock in GO.link/src/syscall/zsyscall_linux_
 NOTE: Already seen function syscall.Getcwd in GO.link/src/syscall/zsyscall_linux_amd64.go, yet again in GO.link/src/syscall/syscall_aix.go
 NOTE: Already seen function syscall.Getgroups in GO.link/src/syscall/syscall_linux.go, yet again in GO.link/src/syscall/syscall_aix.go
 NOTE: Already seen function syscall.Getsockname in GO.link/src/syscall/syscall_linux.go, yet again in GO.link/src/syscall/syscall_aix.go
-NOTE: Already seen function syscall.Gettimeofday in GO.link/src/syscall/syscall_aix.go, yet again in GO.link/src/syscall/syscall_linux_amd64.go
+NOTE: Already seen function syscall.Gettimeofday in GO.link/src/syscall/syscall_linux_amd64.go, yet again in GO.link/src/syscall/syscall_aix.go
 NOTE: Already seen function syscall.Getwd in GO.link/src/syscall/syscall_linux.go, yet again in GO.link/src/syscall/syscall_aix.go
 NOTE: Already seen function syscall.Mmap in GO.link/src/syscall/syscall_linux.go, yet again in GO.link/src/syscall/syscall_aix.go
 NOTE: Already seen function syscall.Munmap in GO.link/src/syscall/syscall_linux.go, yet again in GO.link/src/syscall/syscall_aix.go
-NOTE: Already seen function syscall.Pipe in GO.link/src/syscall/syscall_aix.go, yet again in GO.link/src/syscall/syscall_linux_amd64.go
+NOTE: Already seen function syscall.Pipe in GO.link/src/syscall/syscall_linux_amd64.go, yet again in GO.link/src/syscall/syscall_aix.go
 NOTE: Already seen function syscall.PtraceAttach in GO.link/src/syscall/syscall_linux.go, yet again in GO.link/src/syscall/syscall_aix.go
 NOTE: Already seen function syscall.PtraceCont in GO.link/src/syscall/syscall_linux.go, yet again in GO.link/src/syscall/syscall_aix.go
 NOTE: Already seen function syscall.PtraceDetach in GO.link/src/syscall/syscall_linux.go, yet again in GO.link/src/syscall/syscall_aix.go
@@ -13624,7 +13624,7 @@ JOKER FUNC syscall.Gettimeofday has:
 ;;   "Go return type: error\n\nJoker return type: Error"
 ;;   {:added "1.0"
 ;;    :go "syscall.Gettimeofday(_tv)"}
-;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/syscall/syscall_linux_amd64.go:78:22) _tv])
+;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/syscall/syscall_aix.go:172:22) _tv])
 
 JOKER FUNC syscall.Getuid has:
 (defn ^"Int" Getuid
@@ -13950,10 +13950,10 @@ JOKER FUNC syscall.Pause has:
 
 JOKER FUNC syscall.Pipe has:
 ;; (defn ^"Error" Pipe
-;;   "Go return type: error\n\nJoker return type: Error"
+;;   "sysnb pipe(p *[2]_C_int) (err error)\n\nGo return type: error\n\nJoker return type: Error"
 ;;   {:added "1.0"
 ;;    :go "syscall.Pipe(_p)"}
-;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: GO.link/src/syscall/syscall_linux_amd64.go:108:13) _p])
+;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: GO.link/src/syscall/syscall_aix.go:44:13) _p])
 
 JOKER FUNC syscall.Pipe2 has:
 ;; (defn ^"Error" Pipe2
