@@ -28,4 +28,4 @@
 ;;   "ReadMessage reads a message from r.\nThe headers are parsed, and the body of the message will be available\nfor reading from msg.Body.\n\nGo return type: (msg *Message, err error)\n\nJoker return type: [{:Header ^ABEND883(unrecognized Expr type *ast.MapType at: tests/big/src/net/mail/message.go:106:13), :Body ^ABEND883(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/mail/message.go:46:9)} Error]"
 ;;   {:added "1.0"
 ;;    :go "readMessage(_r)"}
-;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: tests\big\src\net\mail\message.go:52:20) _r])
+;;   [^ABEND881(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/mail/message.go:52:20) _r])

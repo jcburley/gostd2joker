@@ -22,49 +22,49 @@
 ;;   "DialIP acts like Dial for IP networks.\n\nThe network must be an IP network name; see func Dial for details.\n\nIf laddr is nil, a local address is automatically chosen.\nIf the IP field of raddr is nil or an unspecified IP address, the\nlocal system is assumed.\n\nGo return type: (*IPConn, error)\n\nJoker return type: [{} Error]"
 ;;   {:added "1.0"
 ;;    :go "dialIP(_network, _laddr, _raddr)"}
-;;   [^String _network, ^ABEND881(unrecognized Expr type *ast.StarExpr at: tests\big\src\net\iprawsock.go:211:42) _laddr, ^ABEND881(unrecognized Expr type *ast.StarExpr at: tests\big\src\net\iprawsock.go:211:42) _raddr])
+;;   [^String _network, ^ABEND881(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/iprawsock.go:211:42) _laddr, ^ABEND881(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/iprawsock.go:211:42) _raddr])
 
 ;; (defn DialTCP
 ;;   "DialTCP acts like Dial for TCP networks.\n\nThe network must be a TCP network name; see func Dial for details.\n\nIf laddr is nil, a local address is automatically chosen.\nIf the IP field of raddr is nil or an unspecified IP address, the\nlocal system is assumed.\n\nGo return type: (*TCPConn, error)\n\nJoker return type: [{} Error]"
 ;;   {:added "1.0"
 ;;    :go "dialTCP(_network, _laddr, _raddr)"}
-;;   [^String _network, ^ABEND881(unrecognized Expr type *ast.StarExpr at: tests\big\src\net\tcpsock.go:206:43) _laddr, ^ABEND881(unrecognized Expr type *ast.StarExpr at: tests\big\src\net\tcpsock.go:206:43) _raddr])
+;;   [^String _network, ^ABEND881(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/tcpsock.go:206:43) _laddr, ^ABEND881(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/tcpsock.go:206:43) _raddr])
 
 ;; (defn DialTimeout
 ;;   "DialTimeout acts like Dial but takes a timeout.\n\nThe timeout includes name resolution, if required.\nWhen using TCP, and the host in the address parameter resolves to\nmultiple IP addresses, the timeout is spread over each consecutive\ndial, such that each is given an appropriate fraction of the time\nto connect.\n\nSee func Dial for a description of the network and address\nparameters.\n\nGo return type: (Conn, error)\n\nJoker return type: [ABEND883(unrecognized Expr type *ast.InterfaceType at: tests/big/src/net/net.go:113:11) Error]"
 ;;   {:added "1.0"
 ;;    :go "dialTimeout(_network, _address, _timeout)"}
-;;   [^String _network, ^String _address, ^ABEND881(unrecognized Expr type *ast.SelectorExpr at: tests\big\src\net\dial.go:313:51) _timeout])
+;;   [^String _network, ^String _address, ^ABEND881(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/dial.go:313:51) _timeout])
 
 ;; (defn DialUDP
 ;;   "DialUDP acts like Dial for UDP networks.\n\nThe network must be a UDP network name; see func Dial for details.\n\nIf laddr is nil, a local address is automatically chosen.\nIf the IP field of raddr is nil or an unspecified IP address, the\nlocal system is assumed.\n\nGo return type: (*UDPConn, error)\n\nJoker return type: [{} Error]"
 ;;   {:added "1.0"
 ;;    :go "dialUDP(_network, _laddr, _raddr)"}
-;;   [^String _network, ^ABEND881(unrecognized Expr type *ast.StarExpr at: tests\big\src\net\udpsock.go:205:43) _laddr, ^ABEND881(unrecognized Expr type *ast.StarExpr at: tests\big\src\net\udpsock.go:205:43) _raddr])
+;;   [^String _network, ^ABEND881(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/udpsock.go:205:43) _laddr, ^ABEND881(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/udpsock.go:205:43) _raddr])
 
 ;; (defn DialUnix
 ;;   "DialUnix acts like Dial for Unix networks.\n\nThe network must be a Unix network name; see func Dial for details.\n\nIf laddr is non-nil, it is used as the local address for the\nconnection.\n\nGo return type: (*UnixConn, error)\n\nJoker return type: [{} Error]"
 ;;   {:added "1.0"
 ;;    :go "dialUnix(_network, _laddr, _raddr)"}
-;;   [^String _network, ^ABEND881(unrecognized Expr type *ast.StarExpr at: tests\big\src\net\unixsock.go:200:44) _laddr, ^ABEND881(unrecognized Expr type *ast.StarExpr at: tests\big\src\net\unixsock.go:200:44) _raddr])
+;;   [^String _network, ^ABEND881(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/unixsock.go:200:44) _laddr, ^ABEND881(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/unixsock.go:200:44) _raddr])
 
 ;; (defn FileConn
 ;;   "FileConn returns a copy of the network connection corresponding to\nthe open file f.\nIt is the caller's responsibility to close f when finished.\nClosing c does not affect f, and closing f does not affect c.\n\nGo return type: (c Conn, err error)\n\nJoker return type: [ABEND883(unrecognized Expr type *ast.InterfaceType at: tests/big/src/net/net.go:113:11) Error]"
 ;;   {:added "1.0"
 ;;    :go "fileConn(_f)"}
-;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: tests\big\src\net\file.go:21:17) _f])
+;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/file.go:21:17) _f])
 
 ;; (defn FileListener
 ;;   "FileListener returns a copy of the network listener corresponding\nto the open file f.\nIt is the caller's responsibility to close ln when finished.\nClosing ln does not affect f, and closing f does not affect ln.\n\nGo return type: (ln Listener, err error)\n\nJoker return type: [ABEND883(unrecognized Expr type *ast.InterfaceType at: tests/big/src/net/net.go:365:15) Error]"
 ;;   {:added "1.0"
 ;;    :go "fileListener(_f)"}
-;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: tests\big\src\net\file.go:33:21) _f])
+;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/file.go:33:21) _f])
 
 ;; (defn FilePacketConn
 ;;   "FilePacketConn returns a copy of the packet network connection\ncorresponding to the open file f.\nIt is the caller's responsibility to close f when finished.\nClosing c does not affect f, and closing f does not affect c.\n\nGo return type: (c PacketConn, err error)\n\nJoker return type: [ABEND883(unrecognized Expr type *ast.InterfaceType at: tests/big/src/net/net.go:303:17) Error]"
 ;;   {:added "1.0"
 ;;    :go "filePacketConn(_f)"}
-;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: tests\big\src\net\file.go:45:23) _f])
+;;   [^ABEND881(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/file.go:45:23) _f])
 
 (defn IPv4
   "IPv4 returns the IP address (in 16-byte form) of the\nIPv4 address a.b.c.d.\n\nGo return type: IP\n\nJoker return type: (vector-of Int)"
@@ -118,13 +118,13 @@
 ;;   "ListenIP acts like ListenPacket for IP networks.\n\nThe network must be an IP network name; see func Dial for details.\n\nIf the IP field of laddr is nil or an unspecified IP address,\nListenIP listens on all available IP addresses of the local system\nexcept multicast IP addresses.\n\nGo return type: (*IPConn, error)\n\nJoker return type: [{} Error]"
 ;;   {:added "1.0"
 ;;    :go "listenIP(_network, _laddr)"}
-;;   [^String _network, ^ABEND881(unrecognized Expr type *ast.StarExpr at: tests\big\src\net\iprawsock.go:230:37) _laddr])
+;;   [^String _network, ^ABEND881(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/iprawsock.go:230:37) _laddr])
 
 ;; (defn ListenMulticastUDP
 ;;   "ListenMulticastUDP acts like ListenPacket for UDP networks but\ntakes a group address on a specific network interface.\n\nThe network must be a UDP network name; see func Dial for details.\n\nListenMulticastUDP listens on all available IP addresses of the\nlocal system including the group, multicast IP address.\nIf ifi is nil, ListenMulticastUDP uses the system-assigned\nmulticast interface, although this is not recommended because the\nassignment depends on platforms and sometimes it might require\nrouting configuration.\nIf the Port field of gaddr is 0, a port number is automatically\nchosen.\n\nListenMulticastUDP is just for convenience of simple, small\napplications. There are golang.org/x/net/ipv4 and\ngolang.org/x/net/ipv6 packages for general purpose uses.\n\nGo return type: (*UDPConn, error)\n\nJoker return type: [{} Error]"
 ;;   {:added "1.0"
 ;;    :go "listenMulticastUDP(_network, _ifi, _gaddr)"}
-;;   [^String _network, ^ABEND881(unrecognized Expr type *ast.StarExpr at: tests\big\src\net\udpsock.go:265:45) _ifi, ^ABEND881(unrecognized Expr type *ast.StarExpr at: tests\big\src\net\udpsock.go:265:63) _gaddr])
+;;   [^String _network, ^ABEND881(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/udpsock.go:265:45) _ifi, ^ABEND881(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/udpsock.go:265:63) _gaddr])
 
 ;; (defn ListenPacket
 ;;   "ListenPacket announces on the local network address.\n\nThe network must be \"udp\", \"udp4\", \"udp6\", \"unixgram\", or an IP\ntransport. The IP transports are \"ip\", \"ip4\", or \"ip6\" followed by\na colon and a literal protocol number or a protocol name, as in\n\"ip:1\" or \"ip:icmp\".\n\nFor UDP and IP networks, if the host in the address parameter is\nempty or a literal unspecified IP address, ListenPacket listens on\nall available IP addresses of the local system except multicast IP\naddresses.\nTo only use IPv4, use network \"udp4\" or \"ip4:proto\".\nThe address can use a host name, but this is not recommended,\nbecause it will create a listener for at most one of the host's IP\naddresses.\nIf the port in the address parameter is empty or \"0\", as in\n\"127.0.0.1:\" or \"[::1]:0\", a port number is automatically chosen.\nThe LocalAddr method of PacketConn can be used to discover the\nchosen port.\n\nSee func Dial for a description of the network and address\nparameters.\n\nGo return type: (PacketConn, error)\n\nJoker return type: [ABEND883(unrecognized Expr type *ast.InterfaceType at: tests/big/src/net/net.go:303:17) Error]"
@@ -136,25 +136,25 @@
 ;;   "ListenTCP acts like Listen for TCP networks.\n\nThe network must be a TCP network name; see func Dial for details.\n\nIf the IP field of laddr is nil or an unspecified IP address,\nListenTCP listens on all available unicast and anycast IP addresses\nof the local system.\nIf the Port field of laddr is 0, a port number is automatically\nchosen.\n\nGo return type: (*TCPListener, error)\n\nJoker return type: [{} Error]"
 ;;   {:added "1.0"
 ;;    :go "listenTCP(_network, _laddr)"}
-;;   [^String _network, ^ABEND881(unrecognized Expr type *ast.StarExpr at: tests\big\src\net\tcpsock.go:323:38) _laddr])
+;;   [^String _network, ^ABEND881(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/tcpsock.go:323:38) _laddr])
 
 ;; (defn ListenUDP
 ;;   "ListenUDP acts like ListenPacket for UDP networks.\n\nThe network must be a UDP network name; see func Dial for details.\n\nIf the IP field of laddr is nil or an unspecified IP address,\nListenUDP listens on all available IP addresses of the local system\nexcept multicast IP addresses.\nIf the Port field of laddr is 0, a port number is automatically\nchosen.\n\nGo return type: (*UDPConn, error)\n\nJoker return type: [{} Error]"
 ;;   {:added "1.0"
 ;;    :go "listenUDP(_network, _laddr)"}
-;;   [^String _network, ^ABEND881(unrecognized Expr type *ast.StarExpr at: tests\big\src\net\udpsock.go:231:38) _laddr])
+;;   [^String _network, ^ABEND881(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/udpsock.go:231:38) _laddr])
 
 ;; (defn ListenUnix
 ;;   "ListenUnix acts like Listen for Unix networks.\n\nThe network must be \"unix\" or \"unixpacket\".\n\nGo return type: (*UnixListener, error)\n\nJoker return type: [{} Error]"
 ;;   {:added "1.0"
 ;;    :go "listenUnix(_network, _laddr)"}
-;;   [^String _network, ^ABEND881(unrecognized Expr type *ast.StarExpr at: tests\big\src\net\unixsock.go:314:39) _laddr])
+;;   [^String _network, ^ABEND881(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/unixsock.go:314:39) _laddr])
 
 ;; (defn ListenUnixgram
 ;;   "ListenUnixgram acts like ListenPacket for Unix networks.\n\nThe network must be \"unixgram\".\n\nGo return type: (*UnixConn, error)\n\nJoker return type: [{} Error]"
 ;;   {:added "1.0"
 ;;    :go "listenUnixgram(_network, _laddr)"}
-;;   [^String _network, ^ABEND881(unrecognized Expr type *ast.StarExpr at: tests\big\src\net\unixsock.go:334:43) _laddr])
+;;   [^String _network, ^ABEND881(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/unixsock.go:334:43) _laddr])
 
 (defn LookupAddr
   "LookupAddr performs a reverse lookup for the given address, returning a list\nof names mapping to that address.\n\nWhen using the host C library resolver, at most one result will be\nreturned. To bypass the host resolver, use a custom Resolver.\n\nGo return type: (names []string, err error)\n\nJoker return type: [(vector-of String) Error]"

@@ -7,12 +7,12 @@ import (
 	. "github.com/candid82/joker/core"
 )
 
-// func error(w ABEND884(unrecognized type ResponseWriter at: tests\big\src\net\http\server.go:1973:14), error string, code int) Object {
+// func error(w ABEND884(unrecognized type ResponseWriter at: tests/big/src/net/http/server.go:1973:14), error string, code int) Object {
 // 	_http.Error(w, error, code)
 // 	...ABEND675: TODO...
 // }
 
-// func fileServer(root ABEND884(unrecognized type FileSystem at: tests\big\src\net\http\fs.go:713:22)) Object {
+// func fileServer(root ABEND884(unrecognized type FileSystem at: tests/big/src/net/http/fs.go:713:22)) Object {
 // 	return _http.FileServer(root)
 // }
 
@@ -81,12 +81,12 @@ import (
 // 	return _res
 // }
 
-// func handle(pattern string, handler ABEND884(unrecognized type Handler at: tests\big\src\net\http\server.go:2401:37)) Object {
+// func handle(pattern string, handler ABEND884(unrecognized type Handler at: tests/big/src/net/http/server.go:2401:37)) Object {
 // 	_http.Handle(pattern, handler)
 // 	...ABEND675: TODO...
 // }
 
-// func handleFunc(pattern string, handler ABEND882(unrecognized Expr type *ast.FuncType at: tests\big\src\net\http\server.go:2406:41)) Object {
+// func handleFunc(pattern string, handler ABEND882(unrecognized Expr type *ast.FuncType at: tests/big/src/net/http/server.go:2406:41)) Object {
 // 	_http.HandleFunc(pattern, handler)
 // 	...ABEND675: TODO...
 // }
@@ -156,15 +156,15 @@ import (
 // 	return _res
 // }
 
-// func maxBytesReader(w ABEND884(unrecognized type ResponseWriter at: tests\big\src\net\http\request.go:1056:23), r ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests\big\src\net\http\request.go:1056:41), n int64) Object {
+// func maxBytesReader(w ABEND884(unrecognized type ResponseWriter at: tests/big/src/net/http/request.go:1056:23), r ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/request.go:1056:41), n int64) Object {
 // 	return _http.MaxBytesReader(w, r, n)
 // }
 
-// func newFileTransport(fs ABEND884(unrecognized type FileSystem at: tests\big\src\net\http\filetransport.go:30:26)) Object {
+// func newFileTransport(fs ABEND884(unrecognized type FileSystem at: tests/big/src/net/http/filetransport.go:30:26)) Object {
 // 	return _http.NewFileTransport(fs)
 // }
 
-// func newRequest(method string, url string, body ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests\big\src\net\http\request.go:792:42)) Object {
+// func newRequest(method string, url string, body ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/request.go:792:42)) Object {
 // 	_res1, _res2 := _http.NewRequest(method, url, body)
 // 	_res := EmptyVector
 // 	var _obj_map1 Object
@@ -234,7 +234,7 @@ import (
 // 	ABEND124(no public information returned)
 // }
 
-// func notFound(w ABEND884(unrecognized type ResponseWriter at: tests\big\src\net\http\server.go:1981:17), r ABEND882(unrecognized Expr type *ast.StarExpr at: tests\big\src\net\http\server.go:1981:35)) Object {
+// func notFound(w ABEND884(unrecognized type ResponseWriter at: tests/big/src/net/http/server.go:1981:17), r ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/http/server.go:1981:35)) Object {
 // 	_http.NotFound(w, r)
 // 	...ABEND675: TODO...
 // }
@@ -260,7 +260,7 @@ func parseHTTPVersion(vers string) Object {
 // 	return _res
 // }
 
-// func post(url string, contentType string, body ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests\big\src\net\http\client.go:748:41)) Object {
+// func post(url string, contentType string, body ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/client.go:748:41)) Object {
 // 	resp, err := _http.Post(url, contentType, body)
 // 	_res := EmptyVector
 // 	var _obj_map1 Object
@@ -325,7 +325,7 @@ func parseHTTPVersion(vers string) Object {
 // 	return _res
 // }
 
-// func postForm(url string, data ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests\big\src\net\http\client.go:785:32)) Object {
+// func postForm(url string, data ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/client.go:785:32)) Object {
 // 	resp, err := _http.PostForm(url, data)
 // 	_res := EmptyVector
 // 	var _obj_map1 Object
@@ -390,7 +390,7 @@ func parseHTTPVersion(vers string) Object {
 // 	return _res
 // }
 
-// func proxyFromEnvironment(req ABEND882(unrecognized Expr type *ast.StarExpr at: tests\big\src\net\http\transport.go:345:31)) Object {
+// func proxyFromEnvironment(req ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/http/transport.go:345:31)) Object {
 // 	_res1, _res2 := _http.ProxyFromEnvironment(req)
 // 	_res := EmptyVector
 // 	_res = _res.Conjoin((*_res1))
@@ -398,11 +398,11 @@ func parseHTTPVersion(vers string) Object {
 // 	return _res
 // }
 
-// func proxyURL(fixedURL ABEND882(unrecognized Expr type *ast.StarExpr at: tests\big\src\net\http\transport.go:351:24)) Object {
+// func proxyURL(fixedURL ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/http/transport.go:351:24)) Object {
 // 	return _http.ProxyURL(fixedURL)
 // }
 
-// func readRequest(b ABEND882(unrecognized Expr type *ast.StarExpr at: tests\big\src\net\http\request.go:942:20)) Object {
+// func readRequest(b ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/http/request.go:942:20)) Object {
 // 	_res1, _res2 := _http.ReadRequest(b)
 // 	_res := EmptyVector
 // 	var _obj_map1 Object
@@ -467,7 +467,7 @@ func parseHTTPVersion(vers string) Object {
 // 	return _res
 // }
 
-// func readResponse(r ABEND882(unrecognized Expr type *ast.StarExpr at: tests\big\src\net\http\response.go:148:21), req ABEND882(unrecognized Expr type *ast.StarExpr at: tests\big\src\net\http\response.go:148:40)) Object {
+// func readResponse(r ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/http/response.go:148:21), req ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/http/response.go:148:40)) Object {
 // 	_res1, _res2 := _http.ReadResponse(r, req)
 // 	_res := EmptyVector
 // 	var _obj_map1 Object
@@ -532,7 +532,7 @@ func parseHTTPVersion(vers string) Object {
 // 	return _res
 // }
 
-// func redirect(w ABEND884(unrecognized type ResponseWriter at: tests\big\src\net\http\server.go:2020:17), r ABEND882(unrecognized Expr type *ast.StarExpr at: tests\big\src\net\http\server.go:2020:35), url string, code int) Object {
+// func redirect(w ABEND884(unrecognized type ResponseWriter at: tests/big/src/net/http/server.go:2020:17), r ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/http/server.go:2020:35), url string, code int) Object {
 // 	_http.Redirect(w, r, url, code)
 // 	...ABEND675: TODO...
 // }
@@ -541,25 +541,25 @@ func parseHTTPVersion(vers string) Object {
 // 	return _http.RedirectHandler(url, code)
 // }
 
-// func serveContent(w ABEND884(unrecognized type ResponseWriter at: tests\big\src\net\http\fs.go:151:21), req ABEND882(unrecognized Expr type *ast.StarExpr at: tests\big\src\net\http\fs.go:151:41), name string, modtime ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests\big\src\net\http\fs.go:151:72), content ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests\big\src\net\http\fs.go:151:91)) Object {
+// func serveContent(w ABEND884(unrecognized type ResponseWriter at: tests/big/src/net/http/fs.go:151:21), req ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/http/fs.go:151:41), name string, modtime ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/fs.go:151:72), content ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/fs.go:151:91)) Object {
 // 	_http.ServeContent(w, req, name, modtime, content)
 // 	...ABEND675: TODO...
 // }
 
-// func serveFile(w ABEND884(unrecognized type ResponseWriter at: tests\big\src\net\http\fs.go:670:18), r ABEND882(unrecognized Expr type *ast.StarExpr at: tests\big\src\net\http\fs.go:670:36), name string) Object {
+// func serveFile(w ABEND884(unrecognized type ResponseWriter at: tests/big/src/net/http/fs.go:670:18), r ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/http/fs.go:670:36), name string) Object {
 // 	_http.ServeFile(w, r, name)
 // 	...ABEND675: TODO...
 // }
 
-// func setCookie(w ABEND884(unrecognized type ResponseWriter at: tests\big\src\net\http\cookie.go:157:18), cookie ABEND882(unrecognized Expr type *ast.StarExpr at: tests\big\src\net\http\cookie.go:157:41)) Object {
+// func setCookie(w ABEND884(unrecognized type ResponseWriter at: tests/big/src/net/http/cookie.go:157:18), cookie ABEND882(unrecognized Expr type *ast.StarExpr at: tests/big/src/net/http/cookie.go:157:41)) Object {
 // 	_http.SetCookie(w, cookie)
 // 	...ABEND675: TODO...
 // }
 
-// func stripPrefix(prefix string, h ABEND884(unrecognized type Handler at: tests\big\src\net\http\server.go:1992:35)) Object {
+// func stripPrefix(prefix string, h ABEND884(unrecognized type Handler at: tests/big/src/net/http/server.go:1992:35)) Object {
 // 	return _http.StripPrefix(prefix, h)
 // }
 
-// func timeoutHandler(h ABEND884(unrecognized type Handler at: tests\big\src\net\http\server.go:3106:23), dt ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests\big\src\net\http\server.go:3106:35), msg string) Object {
+// func timeoutHandler(h ABEND884(unrecognized type Handler at: tests/big/src/net/http/server.go:3106:23), dt ABEND882(unrecognized Expr type *ast.SelectorExpr at: tests/big/src/net/http/server.go:3106:35), msg string) Object {
 // 	return _http.TimeoutHandler(h, dt, msg)
 // }
