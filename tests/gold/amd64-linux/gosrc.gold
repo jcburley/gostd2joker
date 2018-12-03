@@ -2734,34 +2734,34 @@ Matchfile(GO.link/src/unsafe/unsafe.go) => true <nil>
 Package unsafe:
 Processing package=unsafe in unsafe:
 Excluding GO.link/src/vendor
-NOTE: Already seen function syscall.Accept in GO.link/src/syscall/syscall_aix.go, yet again in GO.link/src/syscall/syscall_linux.go
+NOTE: Already seen function syscall.Accept in GO.link/src/syscall/syscall_linux.go, yet again in GO.link/src/syscall/syscall_aix.go
 NOTE: Already seen function syscall.Flock in GO.link/src/syscall/zsyscall_linux_amd64.go, yet again in GO.link/src/syscall/flock_aix.go
 NOTE: Already seen function syscall.Getcwd in GO.link/src/syscall/zsyscall_linux_amd64.go, yet again in GO.link/src/syscall/syscall_aix.go
-NOTE: Already seen function syscall.Getgroups in GO.link/src/syscall/syscall_aix.go, yet again in GO.link/src/syscall/syscall_linux.go
-NOTE: Already seen function syscall.Getsockname in GO.link/src/syscall/syscall_aix.go, yet again in GO.link/src/syscall/syscall_linux.go
+NOTE: Already seen function syscall.Getgroups in GO.link/src/syscall/syscall_linux.go, yet again in GO.link/src/syscall/syscall_aix.go
+NOTE: Already seen function syscall.Getsockname in GO.link/src/syscall/syscall_linux.go, yet again in GO.link/src/syscall/syscall_aix.go
 NOTE: Already seen function syscall.Gettimeofday in GO.link/src/syscall/syscall_aix.go, yet again in GO.link/src/syscall/syscall_linux_amd64.go
-NOTE: Already seen function syscall.Getwd in GO.link/src/syscall/syscall_aix.go, yet again in GO.link/src/syscall/syscall_linux.go
-NOTE: Already seen function syscall.Mmap in GO.link/src/syscall/syscall_aix.go, yet again in GO.link/src/syscall/syscall_linux.go
-NOTE: Already seen function syscall.Munmap in GO.link/src/syscall/syscall_aix.go, yet again in GO.link/src/syscall/syscall_linux.go
+NOTE: Already seen function syscall.Getwd in GO.link/src/syscall/syscall_linux.go, yet again in GO.link/src/syscall/syscall_aix.go
+NOTE: Already seen function syscall.Mmap in GO.link/src/syscall/syscall_linux.go, yet again in GO.link/src/syscall/syscall_aix.go
+NOTE: Already seen function syscall.Munmap in GO.link/src/syscall/syscall_linux.go, yet again in GO.link/src/syscall/syscall_aix.go
 NOTE: Already seen function syscall.Pipe in GO.link/src/syscall/syscall_aix.go, yet again in GO.link/src/syscall/syscall_linux_amd64.go
-NOTE: Already seen function syscall.PtraceAttach in GO.link/src/syscall/syscall_aix.go, yet again in GO.link/src/syscall/syscall_linux.go
-NOTE: Already seen function syscall.PtraceCont in GO.link/src/syscall/syscall_aix.go, yet again in GO.link/src/syscall/syscall_linux.go
-NOTE: Already seen function syscall.PtraceDetach in GO.link/src/syscall/syscall_aix.go, yet again in GO.link/src/syscall/syscall_linux.go
-NOTE: Already seen function syscall.PtracePeekData in GO.link/src/syscall/syscall_aix.go, yet again in GO.link/src/syscall/syscall_linux.go
-NOTE: Already seen function syscall.PtracePeekText in GO.link/src/syscall/syscall_aix.go, yet again in GO.link/src/syscall/syscall_linux.go
-NOTE: Already seen function syscall.PtracePokeData in GO.link/src/syscall/syscall_aix.go, yet again in GO.link/src/syscall/syscall_linux.go
-NOTE: Already seen function syscall.PtracePokeText in GO.link/src/syscall/syscall_aix.go, yet again in GO.link/src/syscall/syscall_linux.go
-NOTE: Already seen function syscall.PtraceSingleStep in GO.link/src/syscall/syscall_aix.go, yet again in GO.link/src/syscall/syscall_linux.go
-NOTE: Already seen function syscall.ReadDirent in GO.link/src/syscall/syscall_aix.go, yet again in GO.link/src/syscall/syscall_linux.go
-NOTE: Already seen function syscall.Readlink in GO.link/src/syscall/syscall_aix.go, yet again in GO.link/src/syscall/syscall_linux.go
-NOTE: Already seen function syscall.Recvmsg in GO.link/src/syscall/syscall_aix.go, yet again in GO.link/src/syscall/syscall_linux.go
-NOTE: Already seen function syscall.Sendmsg in GO.link/src/syscall/syscall_aix.go, yet again in GO.link/src/syscall/syscall_linux.go
-NOTE: Already seen function syscall.SendmsgN in GO.link/src/syscall/syscall_aix.go, yet again in GO.link/src/syscall/syscall_linux.go
-NOTE: Already seen function syscall.Setgroups in GO.link/src/syscall/syscall_aix.go, yet again in GO.link/src/syscall/syscall_linux.go
-NOTE: Already seen function syscall.Unlinkat in GO.link/src/syscall/syscall_aix.go, yet again in GO.link/src/syscall/syscall_linux.go
-NOTE: Already seen function syscall.Utimes in GO.link/src/syscall/syscall_aix.go, yet again in GO.link/src/syscall/syscall_linux.go
-NOTE: Already seen function syscall.UtimesNano in GO.link/src/syscall/syscall_aix.go, yet again in GO.link/src/syscall/syscall_linux.go
-NOTE: Already seen function syscall.Wait4 in GO.link/src/syscall/syscall_aix.go, yet again in GO.link/src/syscall/syscall_linux.go
+NOTE: Already seen function syscall.PtraceAttach in GO.link/src/syscall/syscall_linux.go, yet again in GO.link/src/syscall/syscall_aix.go
+NOTE: Already seen function syscall.PtraceCont in GO.link/src/syscall/syscall_linux.go, yet again in GO.link/src/syscall/syscall_aix.go
+NOTE: Already seen function syscall.PtraceDetach in GO.link/src/syscall/syscall_linux.go, yet again in GO.link/src/syscall/syscall_aix.go
+NOTE: Already seen function syscall.PtracePeekData in GO.link/src/syscall/syscall_linux.go, yet again in GO.link/src/syscall/syscall_aix.go
+NOTE: Already seen function syscall.PtracePeekText in GO.link/src/syscall/syscall_linux.go, yet again in GO.link/src/syscall/syscall_aix.go
+NOTE: Already seen function syscall.PtracePokeData in GO.link/src/syscall/syscall_linux.go, yet again in GO.link/src/syscall/syscall_aix.go
+NOTE: Already seen function syscall.PtracePokeText in GO.link/src/syscall/syscall_linux.go, yet again in GO.link/src/syscall/syscall_aix.go
+NOTE: Already seen function syscall.PtraceSingleStep in GO.link/src/syscall/syscall_linux.go, yet again in GO.link/src/syscall/syscall_aix.go
+NOTE: Already seen function syscall.ReadDirent in GO.link/src/syscall/syscall_linux.go, yet again in GO.link/src/syscall/syscall_aix.go
+NOTE: Already seen function syscall.Readlink in GO.link/src/syscall/syscall_linux.go, yet again in GO.link/src/syscall/syscall_aix.go
+NOTE: Already seen function syscall.Recvmsg in GO.link/src/syscall/syscall_linux.go, yet again in GO.link/src/syscall/syscall_aix.go
+NOTE: Already seen function syscall.Sendmsg in GO.link/src/syscall/syscall_linux.go, yet again in GO.link/src/syscall/syscall_aix.go
+NOTE: Already seen function syscall.SendmsgN in GO.link/src/syscall/syscall_linux.go, yet again in GO.link/src/syscall/syscall_aix.go
+NOTE: Already seen function syscall.Setgroups in GO.link/src/syscall/syscall_linux.go, yet again in GO.link/src/syscall/syscall_aix.go
+NOTE: Already seen function syscall.Unlinkat in GO.link/src/syscall/syscall_linux.go, yet again in GO.link/src/syscall/syscall_aix.go
+NOTE: Already seen function syscall.Utimes in GO.link/src/syscall/syscall_linux.go, yet again in GO.link/src/syscall/syscall_aix.go
+NOTE: Already seen function syscall.UtimesNano in GO.link/src/syscall/syscall_linux.go, yet again in GO.link/src/syscall/syscall_aix.go
+NOTE: Already seen function syscall.Wait4 in GO.link/src/syscall/syscall_linux.go, yet again in GO.link/src/syscall/syscall_aix.go
 TYPE archive/tar.Format:
   GO.link/src/archive/tar/format.go
 TYPE archive/tar.Header:
@@ -4573,7 +4573,7 @@ TYPE syscall.Utimbuf:
 TYPE syscall.Utsname:
   GO.link/src/syscall/ztypes_linux_amd64.go
 TYPE syscall.WaitStatus:
-  GO.link/src/syscall/syscall_linux.go
+  GO.link/src/syscall/syscall_aix.go
 TYPE testing.B:
   GO.link/src/testing/benchmark.go
 TYPE testing.BenchmarkResult:
@@ -13096,7 +13096,7 @@ JOKER FUNC atomic.SwapUintptr has:
 
 JOKER FUNC syscall.Accept has:
 ;; (defn Accept
-;;   "Go return type: (nfd int, sa Sockaddr, err error)\n\nJoker return type: [Int ABEND883(unrecognized Expr type *ast.InterfaceType at: GO.link/src/syscall/syscall_unix.go:205:15) Error]"
+;;   "sys\taccept(s int, rsa *RawSockaddrAny, addrlen *_Socklen) (fd int, err error)\n\nGo return type: (nfd int, sa Sockaddr, err error)\n\nJoker return type: [Int ABEND883(unrecognized Expr type *ast.InterfaceType at: GO.link/src/syscall/syscall_unix.go:205:15) Error]"
 ;;   {:added "1.0"
 ;;    :go "accept(_fd)"}
 ;;   [^Int _fd])
@@ -13635,7 +13635,7 @@ JOKER FUNC syscall.Getuid has:
 
 JOKER FUNC syscall.Getwd has:
 (defn Getwd
-  "Go return type: (wd string, err error)\n\nJoker return type: [String Error]"
+  "Go return type: (ret string, err error)\n\nJoker return type: [String Error]"
   {:added "1.0"
    :go "getwd()"}
   [])
@@ -13820,7 +13820,7 @@ JOKER FUNC syscall.Mmap has:
 ;;   "Go return type: (data []int, err error)\n\nJoker return type: [(vector-of Int) Error]"
 ;;   {:added "1.0"
 ;;    :go "mmap(_fd, _offset, _length, _prot, _flags)"}
-;;   [^Int _fd, ^ABEND885(unrecognized type int64 at: GO.link/src/syscall/syscall_linux.go:997:26) _offset, ^Int _length, ^Int _prot, ^Int _flags])
+;;   [^Int _fd, ^ABEND885(unrecognized type int64 at: GO.link/src/syscall/syscall_aix.go:645:26) _offset, ^Int _length, ^Int _prot, ^Int _flags])
 
 JOKER FUNC syscall.Mount has:
 ;; (defn ^"Error" Mount
@@ -13855,7 +13855,7 @@ JOKER FUNC syscall.Munmap has:
 ;;   "Go return type: error\n\nJoker return type: Error"
 ;;   {:added "1.0"
 ;;    :go "syscall.Munmap(_b)"}
-;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: GO.link/src/syscall/syscall_linux.go:1001:15) _b])
+;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: GO.link/src/syscall/syscall_aix.go:649:15) _b])
 
 JOKER FUNC syscall.Nanosleep has:
 ;; (defn ^"Error" Nanosleep
@@ -14016,28 +14016,28 @@ JOKER FUNC syscall.PtracePeekData has:
 ;;   "Go return type: (count int, err error)\n\nJoker return type: [Int Error]"
 ;;   {:added "1.0"
 ;;    :go "ptracePeekData(_pid, _addr, _out)"}
-;;   [^Int _pid, ^ABEND885(unrecognized type uintptr at: GO.link/src/syscall/syscall_linux.go:760:35) _addr, ^ABEND881(unrecognized Expr type *ast.ArrayType at: GO.link/src/syscall/syscall_linux.go:760:48) _out])
+;;   [^Int _pid, ^ABEND885(unrecognized type uintptr at: GO.link/src/syscall/syscall_aix.go:514:35) _addr, ^ABEND881(unrecognized Expr type *ast.ArrayType at: GO.link/src/syscall/syscall_aix.go:514:48) _out])
 
 JOKER FUNC syscall.PtracePeekText has:
 ;; (defn PtracePeekText
 ;;   "Go return type: (count int, err error)\n\nJoker return type: [Int Error]"
 ;;   {:added "1.0"
 ;;    :go "ptracePeekText(_pid, _addr, _out)"}
-;;   [^Int _pid, ^ABEND885(unrecognized type uintptr at: GO.link/src/syscall/syscall_linux.go:756:35) _addr, ^ABEND881(unrecognized Expr type *ast.ArrayType at: GO.link/src/syscall/syscall_linux.go:756:48) _out])
+;;   [^Int _pid, ^ABEND885(unrecognized type uintptr at: GO.link/src/syscall/syscall_aix.go:510:35) _addr, ^ABEND881(unrecognized Expr type *ast.ArrayType at: GO.link/src/syscall/syscall_aix.go:510:48) _out])
 
 JOKER FUNC syscall.PtracePokeData has:
 ;; (defn PtracePokeData
 ;;   "Go return type: (count int, err error)\n\nJoker return type: [Int Error]"
 ;;   {:added "1.0"
 ;;    :go "ptracePokeData(_pid, _addr, _data)"}
-;;   [^Int _pid, ^ABEND885(unrecognized type uintptr at: GO.link/src/syscall/syscall_linux.go:819:35) _addr, ^ABEND881(unrecognized Expr type *ast.ArrayType at: GO.link/src/syscall/syscall_linux.go:819:49) _data])
+;;   [^Int _pid, ^ABEND885(unrecognized type uintptr at: GO.link/src/syscall/syscall_aix.go:540:35) _addr, ^ABEND881(unrecognized Expr type *ast.ArrayType at: GO.link/src/syscall/syscall_aix.go:540:49) _data])
 
 JOKER FUNC syscall.PtracePokeText has:
 ;; (defn PtracePokeText
 ;;   "Go return type: (count int, err error)\n\nJoker return type: [Int Error]"
 ;;   {:added "1.0"
 ;;    :go "ptracePokeText(_pid, _addr, _data)"}
-;;   [^Int _pid, ^ABEND885(unrecognized type uintptr at: GO.link/src/syscall/syscall_linux.go:815:35) _addr, ^ABEND881(unrecognized Expr type *ast.ArrayType at: GO.link/src/syscall/syscall_linux.go:815:49) _data])
+;;   [^Int _pid, ^ABEND885(unrecognized type uintptr at: GO.link/src/syscall/syscall_aix.go:536:35) _addr, ^ABEND881(unrecognized Expr type *ast.ArrayType at: GO.link/src/syscall/syscall_aix.go:536:49) _data])
 
 JOKER FUNC syscall.PtraceSetOptions has:
 (defn ^"Error" PtraceSetOptions
@@ -14097,17 +14097,17 @@ JOKER FUNC syscall.Read has:
 
 JOKER FUNC syscall.ReadDirent has:
 ;; (defn ReadDirent
-;;   "Go return type: (n int, err error)\n\nJoker return type: [Int Error]"
+;;   "sys\tgetdirent(fd int, buf []byte) (n int, err error)\n\nGo return type: (n int, err error)\n\nJoker return type: [Int Error]"
 ;;   {:added "1.0"
 ;;    :go "readDirent(_fd, _buf)"}
-;;   [^Int _fd, ^ABEND881(unrecognized Expr type *ast.ArrayType at: GO.link/src/syscall/syscall_linux.go:862:29) _buf])
+;;   [^Int _fd, ^ABEND881(unrecognized Expr type *ast.ArrayType at: GO.link/src/syscall/syscall_aix.go:183:29) _buf])
 
 JOKER FUNC syscall.Readlink has:
 ;; (defn Readlink
-;;   "Go return type: (n int, err error)\n\nJoker return type: [Int Error]"
+;;   "sys\treadlink(path string, buf []byte, bufSize uint64) (n int, err error)\n\nGo return type: (n int, err error)\n\nJoker return type: [Int Error]"
 ;;   {:added "1.0"
 ;;    :go "readlink(_path, _buf)"}
-;;   [^String _path, ^ABEND881(unrecognized Expr type *ast.ArrayType at: GO.link/src/syscall/syscall_linux.go:149:32) _buf])
+;;   [^String _path, ^ABEND881(unrecognized Expr type *ast.ArrayType at: GO.link/src/syscall/syscall_aix.go:56:32) _buf])
 
 JOKER FUNC syscall.Reboot has:
 (defn ^"Error" Reboot
@@ -14128,7 +14128,7 @@ JOKER FUNC syscall.Recvmsg has:
 ;;   "Go return type: (n int, oobn int, recvflags int, from Sockaddr, err error)\n\nJoker return type: [Int Int Int ABEND883(unrecognized Expr type *ast.InterfaceType at: GO.link/src/syscall/syscall_unix.go:205:15) Error]"
 ;;   {:added "1.0"
 ;;    :go "recvmsg(_fd, _p, _oob, _flags)"}
-;;   [^Int _fd, ^ABEND881(unrecognized Expr type *ast.ArrayType at: GO.link/src/syscall/syscall_linux.go:617:29) _p, ^ABEND881(unrecognized Expr type *ast.ArrayType at: GO.link/src/syscall/syscall_linux.go:617:29) _oob, ^Int _flags])
+;;   [^Int _fd, ^ABEND881(unrecognized Expr type *ast.ArrayType at: GO.link/src/syscall/syscall_aix.go:301:29) _p, ^ABEND881(unrecognized Expr type *ast.ArrayType at: GO.link/src/syscall/syscall_aix.go:301:29) _oob, ^Int _flags])
 
 JOKER FUNC syscall.Removexattr has:
 (defn ^"Error" Removexattr
@@ -14184,14 +14184,14 @@ JOKER FUNC syscall.Sendmsg has:
 ;;   "Go return type: error\n\nJoker return type: Error"
 ;;   {:added "1.0"
 ;;    :go "syscall.Sendmsg(_fd, _p, _oob, _to, _flags)"}
-;;   [^Int _fd, ^ABEND881(unrecognized Expr type *ast.ArrayType at: GO.link/src/syscall/syscall_linux.go:658:29) _p, ^ABEND881(unrecognized Expr type *ast.ArrayType at: GO.link/src/syscall/syscall_linux.go:658:29) _oob, ^ABEND885(unrecognized type Sockaddr at: GO.link/src/syscall/syscall_linux.go:658:40) _to, ^Int _flags])
+;;   [^Int _fd, ^ABEND881(unrecognized Expr type *ast.ArrayType at: GO.link/src/syscall/syscall_aix.go:340:29) _p, ^ABEND881(unrecognized Expr type *ast.ArrayType at: GO.link/src/syscall/syscall_aix.go:340:29) _oob, ^ABEND885(unrecognized type Sockaddr at: GO.link/src/syscall/syscall_aix.go:340:40) _to, ^Int _flags])
 
 JOKER FUNC syscall.SendmsgN has:
 ;; (defn SendmsgN
 ;;   "Go return type: (n int, err error)\n\nJoker return type: [Int Error]"
 ;;   {:added "1.0"
 ;;    :go "sendmsgN(_fd, _p, _oob, _to, _flags)"}
-;;   [^Int _fd, ^ABEND881(unrecognized Expr type *ast.ArrayType at: GO.link/src/syscall/syscall_linux.go:663:30) _p, ^ABEND881(unrecognized Expr type *ast.ArrayType at: GO.link/src/syscall/syscall_linux.go:663:30) _oob, ^ABEND885(unrecognized type Sockaddr at: GO.link/src/syscall/syscall_linux.go:663:41) _to, ^Int _flags])
+;;   [^Int _fd, ^ABEND881(unrecognized Expr type *ast.ArrayType at: GO.link/src/syscall/syscall_aix.go:345:30) _p, ^ABEND881(unrecognized Expr type *ast.ArrayType at: GO.link/src/syscall/syscall_aix.go:345:30) _oob, ^ABEND885(unrecognized type Sockaddr at: GO.link/src/syscall/syscall_aix.go:345:41) _to, ^Int _flags])
 
 JOKER FUNC syscall.Sendto has:
 ;; (defn ^"Error" Sendto
@@ -14254,7 +14254,7 @@ JOKER FUNC syscall.Setgroups has:
 ;;   "Go return type: error\n\nJoker return type: Error"
 ;;   {:added "1.0"
 ;;    :go "syscall.Setgroups(_gids)"}
-;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: GO.link/src/syscall/syscall_linux.go:268:21) _gids])
+;;   [^ABEND881(unrecognized Expr type *ast.ArrayType at: GO.link/src/syscall/syscall_aix.go:144:21) _gids])
 
 JOKER FUNC syscall.Sethostname has:
 ;; (defn ^"Error" Sethostname
@@ -14615,7 +14615,7 @@ JOKER FUNC syscall.Unlink has:
 
 JOKER FUNC syscall.Unlinkat has:
 (defn ^"Error" Unlinkat
-  "Go return type: error\n\nJoker return type: Error"
+  "sys\tunlinkat(dirfd int, path string, flags int) (err error)\n\nGo return type: error\n\nJoker return type: Error"
   {:added "1.0"
    :go "syscall.Unlinkat(_dirfd, _path)"}
   [^Int _dirfd, ^String _path])
@@ -14657,24 +14657,24 @@ JOKER FUNC syscall.Utime has:
 
 JOKER FUNC syscall.Utimes has:
 ;; (defn ^"Error" Utimes
-;;   "Go return type: error\n\nJoker return type: Error"
+;;   "sys\tutimes(path string, times *[2]Timeval) (err error)\n\nGo return type: error\n\nJoker return type: Error"
 ;;   {:added "1.0"
 ;;    :go "syscall.Utimes(_path, _tv)"}
-;;   [^String _path, ^ABEND881(unrecognized Expr type *ast.ArrayType at: GO.link/src/syscall/syscall_linux.go:179:29) _tv])
+;;   [^String _path, ^ABEND881(unrecognized Expr type *ast.ArrayType at: GO.link/src/syscall/syscall_aix.go:62:29) _tv])
 
 JOKER FUNC syscall.UtimesNano has:
 ;; (defn ^"Error" UtimesNano
-;;   "Go return type: error\n\nJoker return type: Error"
+;;   "sys\tutimensat(dirfd int, path string, times *[2]Timespec, flag int) (err error)\n\nGo return type: error\n\nJoker return type: Error"
 ;;   {:added "1.0"
 ;;    :go "syscall.UtimesNano(_path, _ts)"}
-;;   [^String _path, ^ABEND881(unrecognized Expr type *ast.ArrayType at: GO.link/src/syscall/syscall_linux.go:188:33) _ts])
+;;   [^String _path, ^ABEND881(unrecognized Expr type *ast.ArrayType at: GO.link/src/syscall/syscall_aix.go:70:33) _ts])
 
 JOKER FUNC syscall.Wait4 has:
 ;; (defn Wait4
-;;   "Go return type: (wpid int, err error)\n\nJoker return type: [Int Error]"
+;;   "sys  wait4(pid Pid_t, status *_C_int, options int, rusage *Rusage) (wpid Pid_t, err error)\n\nGo return type: (wpid int, err error)\n\nJoker return type: [Int Error]"
 ;;   {:added "1.0"
 ;;    :go "wait4(_pid, _wstatus, _options, _rusage)"}
-;;   [^Int _pid, ^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/syscall/syscall_linux.go:339:29) _wstatus, ^Int _options, ^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/syscall/syscall_linux.go:339:62) _rusage])
+;;   [^Int _pid, ^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/syscall/syscall_aix.go:188:29) _wstatus, ^Int _options, ^ABEND881(unrecognized Expr type *ast.StarExpr at: GO.link/src/syscall/syscall_aix.go:188:62) _rusage])
 
 JOKER FUNC syscall.Write has:
 ;; (defn Write
@@ -25433,9 +25433,9 @@ func getsockoptUcred(fd int, level int, opt int) Object {
 
 GO FUNC syscall.Getwd has:
 func getwd() Object {
-	wd, err := _syscall.Getwd()
+	ret, err := _syscall.Getwd()
 	_res := EmptyVector
-	_res = _res.Conjoin(MakeString(wd))
+	_res = _res.Conjoin(MakeString(ret))
 	_res = _res.Conjoin(func () Object { if (err) == nil { return NIL } else { return MakeError(err) } }())
 	return _res
 }
@@ -25746,7 +25746,7 @@ func ptraceGetEventMsg(pid int) Object {
 }
 
 GO FUNC syscall.PtracePeekData has:
-// func ptracePeekData(pid int, addr ABEND884(unrecognized type uintptr at: GO.link/src/syscall/syscall_linux.go:760:35), out ABEND882(unrecognized Expr type *ast.ArrayType at: GO.link/src/syscall/syscall_linux.go:760:48)) Object {
+// func ptracePeekData(pid int, addr ABEND884(unrecognized type uintptr at: GO.link/src/syscall/syscall_aix.go:514:35), out ABEND882(unrecognized Expr type *ast.ArrayType at: GO.link/src/syscall/syscall_aix.go:514:48)) Object {
 // 	count, err := _syscall.PtracePeekData(pid, addr, out)
 // 	_res := EmptyVector
 // 	_res = _res.Conjoin(MakeInt(int(count)))
@@ -25755,7 +25755,7 @@ GO FUNC syscall.PtracePeekData has:
 // }
 
 GO FUNC syscall.PtracePeekText has:
-// func ptracePeekText(pid int, addr ABEND884(unrecognized type uintptr at: GO.link/src/syscall/syscall_linux.go:756:35), out ABEND882(unrecognized Expr type *ast.ArrayType at: GO.link/src/syscall/syscall_linux.go:756:48)) Object {
+// func ptracePeekText(pid int, addr ABEND884(unrecognized type uintptr at: GO.link/src/syscall/syscall_aix.go:510:35), out ABEND882(unrecognized Expr type *ast.ArrayType at: GO.link/src/syscall/syscall_aix.go:510:48)) Object {
 // 	count, err := _syscall.PtracePeekText(pid, addr, out)
 // 	_res := EmptyVector
 // 	_res = _res.Conjoin(MakeInt(int(count)))
@@ -25764,7 +25764,7 @@ GO FUNC syscall.PtracePeekText has:
 // }
 
 GO FUNC syscall.PtracePokeData has:
-// func ptracePokeData(pid int, addr ABEND884(unrecognized type uintptr at: GO.link/src/syscall/syscall_linux.go:819:35), data ABEND882(unrecognized Expr type *ast.ArrayType at: GO.link/src/syscall/syscall_linux.go:819:49)) Object {
+// func ptracePokeData(pid int, addr ABEND884(unrecognized type uintptr at: GO.link/src/syscall/syscall_aix.go:540:35), data ABEND882(unrecognized Expr type *ast.ArrayType at: GO.link/src/syscall/syscall_aix.go:540:49)) Object {
 // 	count, err := _syscall.PtracePokeData(pid, addr, data)
 // 	_res := EmptyVector
 // 	_res = _res.Conjoin(MakeInt(int(count)))
@@ -25773,7 +25773,7 @@ GO FUNC syscall.PtracePokeData has:
 // }
 
 GO FUNC syscall.PtracePokeText has:
-// func ptracePokeText(pid int, addr ABEND884(unrecognized type uintptr at: GO.link/src/syscall/syscall_linux.go:815:35), data ABEND882(unrecognized Expr type *ast.ArrayType at: GO.link/src/syscall/syscall_linux.go:815:49)) Object {
+// func ptracePokeText(pid int, addr ABEND884(unrecognized type uintptr at: GO.link/src/syscall/syscall_aix.go:536:35), data ABEND882(unrecognized Expr type *ast.ArrayType at: GO.link/src/syscall/syscall_aix.go:536:49)) Object {
 // 	count, err := _syscall.PtracePokeText(pid, addr, data)
 // 	_res := EmptyVector
 // 	_res = _res.Conjoin(MakeInt(int(count)))
@@ -25820,7 +25820,7 @@ GO FUNC syscall.Read has:
 // }
 
 GO FUNC syscall.ReadDirent has:
-// func readDirent(fd int, buf ABEND882(unrecognized Expr type *ast.ArrayType at: GO.link/src/syscall/syscall_linux.go:862:29)) Object {
+// func readDirent(fd int, buf ABEND882(unrecognized Expr type *ast.ArrayType at: GO.link/src/syscall/syscall_aix.go:183:29)) Object {
 // 	n, err := _syscall.ReadDirent(fd, buf)
 // 	_res := EmptyVector
 // 	_res = _res.Conjoin(MakeInt(int(n)))
@@ -25829,7 +25829,7 @@ GO FUNC syscall.ReadDirent has:
 // }
 
 GO FUNC syscall.Readlink has:
-// func readlink(path string, buf ABEND882(unrecognized Expr type *ast.ArrayType at: GO.link/src/syscall/syscall_linux.go:149:32)) Object {
+// func readlink(path string, buf ABEND882(unrecognized Expr type *ast.ArrayType at: GO.link/src/syscall/syscall_aix.go:56:32)) Object {
 // 	n, err := _syscall.Readlink(path, buf)
 // 	_res := EmptyVector
 // 	_res = _res.Conjoin(MakeInt(int(n)))
@@ -25848,7 +25848,7 @@ GO FUNC syscall.Recvfrom has:
 // }
 
 GO FUNC syscall.Recvmsg has:
-// func recvmsg(fd int, p ABEND882(unrecognized Expr type *ast.ArrayType at: GO.link/src/syscall/syscall_linux.go:617:29), oob ABEND882(unrecognized Expr type *ast.ArrayType at: GO.link/src/syscall/syscall_linux.go:617:29), flags int) Object {
+// func recvmsg(fd int, p ABEND882(unrecognized Expr type *ast.ArrayType at: GO.link/src/syscall/syscall_aix.go:301:29), oob ABEND882(unrecognized Expr type *ast.ArrayType at: GO.link/src/syscall/syscall_aix.go:301:29), flags int) Object {
 // 	n, oobn, recvflags, from, err := _syscall.Recvmsg(fd, p, oob, flags)
 // 	_res := EmptyVector
 // 	_res = _res.Conjoin(MakeInt(int(n)))
@@ -25887,7 +25887,7 @@ GO FUNC syscall.Sendfile has:
 // }
 
 GO FUNC syscall.SendmsgN has:
-// func sendmsgN(fd int, p ABEND882(unrecognized Expr type *ast.ArrayType at: GO.link/src/syscall/syscall_linux.go:663:30), oob ABEND882(unrecognized Expr type *ast.ArrayType at: GO.link/src/syscall/syscall_linux.go:663:30), to ABEND884(unrecognized type Sockaddr at: GO.link/src/syscall/syscall_linux.go:663:41), flags int) Object {
+// func sendmsgN(fd int, p ABEND882(unrecognized Expr type *ast.ArrayType at: GO.link/src/syscall/syscall_aix.go:345:30), oob ABEND882(unrecognized Expr type *ast.ArrayType at: GO.link/src/syscall/syscall_aix.go:345:30), to ABEND884(unrecognized type Sockaddr at: GO.link/src/syscall/syscall_aix.go:345:41), flags int) Object {
 // 	n, err := _syscall.SendmsgN(fd, p, oob, to, flags)
 // 	_res := EmptyVector
 // 	_res = _res.Conjoin(MakeInt(int(n)))
@@ -26052,7 +26052,7 @@ GO FUNC syscall.UnixRights has:
 // }
 
 GO FUNC syscall.Wait4 has:
-// func wait4(pid int, wstatus ABEND882(unrecognized Expr type *ast.StarExpr at: GO.link/src/syscall/syscall_linux.go:339:29), options int, rusage ABEND882(unrecognized Expr type *ast.StarExpr at: GO.link/src/syscall/syscall_linux.go:339:62)) Object {
+// func wait4(pid int, wstatus ABEND882(unrecognized Expr type *ast.StarExpr at: GO.link/src/syscall/syscall_aix.go:188:29), options int, rusage ABEND882(unrecognized Expr type *ast.StarExpr at: GO.link/src/syscall/syscall_aix.go:188:62)) Object {
 // 	wpid, err := _syscall.Wait4(pid, wstatus, options, rusage)
 // 	_res := EmptyVector
 // 	_res = _res.Conjoin(MakeInt(int(wpid)))
