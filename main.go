@@ -979,7 +979,13 @@ func printAbends(m map[string]int) {
 	for k, v := range m {
 		a = append(a, ac{abendCode: k, abendCount: v})
 	}
-	sort.Slice(a, func(i, j int) bool { return a[i].abendCount > a[j].abendCount })
+	sort.Slice(a,
+		func(i, j int) bool {
+			if a[i].abendCount == a[j].abendCount {
+				return a[i].abendCode < a[j].abendCode
+			}
+			return a[i].abendCount > a[j].abendCount
+		})
 	for _, v := range a {
 		fmt.Printf(" %s(%d)", v.abendCode, v.abendCount)
 	}
