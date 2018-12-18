@@ -8,13 +8,13 @@ import (
 	"go/parser"
 	"go/token"
 	"io/ioutil"
-	"path"
-	"regexp"
-	"strings"
 	"os"
+	"path"
 	"path/filepath"
+	"regexp"
 	"sort"
 	"strconv"
+	"strings"
 	"time"
 	"unicode"
 )
@@ -22,9 +22,9 @@ import (
 const VERSION = "0.1"
 
 func check(e error) {
-    if e != nil {
-        panic(e)
-    }
+	if e != nil {
+		panic(e)
+	}
 }
 
 /* Want to support e.g.:
@@ -77,10 +77,10 @@ func commentGroupInQuotes(doc *CommentGroup, jok, gol string) string {
 }
 
 type funcInfo struct {
-	fd *FuncDecl
-	pkg string // base package name
+	fd         *FuncDecl
+	pkg        string // base package name
 	pkgDirUnix string // relative (Unix-style) path to package
-	filename string // relative (Unix-style) filename within package
+	filename   string // relative (Unix-style) filename within package
 }
 
 /* Go apparently doesn't support/allow 'interface{}' as the value (or
@@ -101,13 +101,13 @@ func sortedFuncInfoMap(m map[string]*funcInfo, f func(k string, v *funcInfo)) {
 }
 
 // Map qualified function names to info on each.
-var qualifiedFunctions = map[string]*funcInfo {}
+var qualifiedFunctions = map[string]*funcInfo{}
 
-var alreadySeen = []string {}
+var alreadySeen = []string{}
 
 // Returns whether any public functions were actually processed.
 func processFuncDecl(pkg, pkgDirUnix, filename string, f *File, fn *FuncDecl) bool {
-	if (dump) {
+	if dump {
 		Print(fset, fn)
 	}
 	fname := pkgDirUnix + "." + fn.Name.Name
@@ -121,8 +121,8 @@ func processFuncDecl(pkg, pkgDirUnix, filename string, f *File, fn *FuncDecl) bo
 }
 
 type typeInfo struct {
-	td *TypeSpec
-	file string // Relative (Unix-style) path to defining file
+	td       *TypeSpec
+	file     string // Relative (Unix-style) path to defining file
 	building bool
 }
 
@@ -137,10 +137,10 @@ func sortedTypeInfoMap(m map[string]*typeInfo, f func(k string, v *typeInfo)) {
 	}
 }
 
-var types = map[string]*typeInfo {}
+var types = map[string]*typeInfo{}
 
 func processTypeSpec(pkg string, filename string, f *File, ts *TypeSpec) {
-	if (dump) {
+	if dump {
 		Print(fset, ts)
 	}
 	typename := pkg + "." + ts.Name.Name
@@ -156,7 +156,7 @@ func processTypeSpecs(pkg string, filename string, f *File, tss []Spec) {
 	for _, spec := range tss {
 		ts := spec.(*TypeSpec)
 		if isPrivate(ts.Name.Name) {
-			continue  // Skipping non-exported functions
+			continue // Skipping non-exported functions
 		}
 		processTypeSpec(pkg, filename, f, ts)
 	}
@@ -170,10 +170,10 @@ func processDecls(pkg, pkgDirUnix, filename string, f *File) (found bool) {
 			rcv := v.Recv // *FieldList of methods or nil (functions)
 			if rcv != nil {
 				methods += 1
-				continue  // Skipping these for now
+				continue // Skipping these for now
 			}
 			if isPrivate(v.Name.Name) {
-				continue  // Skipping non-exported functions
+				continue // Skipping non-exported functions
 			}
 			if processFuncDecl(pkg, pkgDirUnix, filename, f, v) {
 				found = true
@@ -195,12 +195,13 @@ var exists = struct{}{}
 /* Maps relative package (unix-style) names to their imports, non-emptiness, etc. */
 type packageImports map[string]struct{}
 type packageInfo struct {
-	importsNative packageImports
+	importsNative  packageImports
 	importsAutoGen packageImports
-	nonEmpty bool // Whether any non-comment code has been generated
-	hasGoFiles bool // Whether any .go files (would) have been generated
+	nonEmpty       bool // Whether any non-comment code has been generated
+	hasGoFiles     bool // Whether any .go files (would) have been generated
 }
-var packagesInfo = map[string]*packageInfo {}
+
+var packagesInfo = map[string]*packageInfo{}
 
 /* Sort the packages -- currently appears to not actually be
 /* necessary, probably because of how walkDirs() works. */
@@ -244,7 +245,7 @@ func processPackage(pkgDir, pkgDirUnix, pkg string, p *Package) {
 }
 
 func processDir(d string, path string, mode parser.Mode) error {
-	pkgDir := strings.TrimPrefix(path, d + string(filepath.Separator))
+	pkgDir := strings.TrimPrefix(path, d+string(filepath.Separator))
 	pkgDirUnix := filepath.ToSlash(pkgDir)
 	if verbose {
 		fmt.Printf("Processing %s:\n", pkgDirUnix)
@@ -252,14 +253,14 @@ func processDir(d string, path string, mode parser.Mode) error {
 
 	pkgs, err := parser.ParseDir(fset, path,
 		// Walk only *.go files that meet default (target) build constraints, e.g. per "// build ..."
-		func (info os.FileInfo) bool {
+		func(info os.FileInfo) bool {
 			if strings.HasSuffix(info.Name(), "_test.go") {
 				if verbose {
 					fmt.Printf("Ignoring test code in %s\n", info.Name())
 				}
 				return false
 			}
-			b, e := build.Default.MatchFile(path, info.Name());
+			b, e := build.Default.MatchFile(path, info.Name())
 			if verbose {
 				fmt.Printf("Matchfile(%s) => %v %v\n",
 					filepath.ToSlash(filepath.Join(path, info.Name())),
@@ -275,7 +276,7 @@ func processDir(d string, path string, mode parser.Mode) error {
 
 	basename := filepath.Base(path)
 	for k, v := range pkgs {
-		if k != basename && k != basename + "_test" {
+		if k != basename && k != basename+"_test" {
 			if verbose {
 				fmt.Printf("NOTICE: Package %s is defined in %s -- ignored\n", k, path)
 			}
@@ -290,14 +291,13 @@ func processDir(d string, path string, mode parser.Mode) error {
 	return nil
 }
 
-var excludeDirs = map[string]bool {
-	"builtin": true,
-	"cmd": true,
+var excludeDirs = map[string]bool{
+	"builtin":  true,
+	"cmd":      true,
 	"internal": true, // look into this later?
 	"testdata": true,
-	"vendor": true,
+	"vendor":   true,
 }
-
 
 func walkDirs(d string, mode parser.Mode) error {
 	target, err := filepath.EvalSymlinks(d)
@@ -502,9 +502,9 @@ func argsAsGo(p *FieldList) string {
    old-fashioned use of custom transformation code per point (sharing
    code where appropriate, of course) if it gets too hairy.
 
- */
+*/
 
-var genSymIndex = map[string]int {}
+var genSymIndex = map[string]int{}
 
 func genSym(pre string) string {
 	var idx int
@@ -518,7 +518,7 @@ func genSym(pre string) string {
 }
 
 func genSymReset() {
-	genSymIndex = map[string]int {}
+	genSymIndex = map[string]int{}
 }
 
 func exprIsUseful(rtn string) bool {
@@ -530,7 +530,7 @@ func genGoPostNamed(indent, pkg, in, t, onlyIf string) (jok, gol, goc, out strin
 	if v, ok := types[qt]; ok {
 		if v.building { // Mutually-referring types currently not supported
 			jok = fmt.Sprintf("ABEND947(recursive type reference involving %s)",
-				qt)  // TODO: handle these, e.g. http Request/Response
+				qt) // TODO: handle these, e.g. http Request/Response
 			gol = jok
 			goc = ""
 		} else {
@@ -560,11 +560,11 @@ func genGoPostStruct(indent, pkg, in string, fl *FieldList, onlyIf string) (jok,
 	for _, f := range fl.List {
 		for _, p := range f.Names {
 			if isPrivate(p.Name) {
-				continue  // Skipping non-exported fields
+				continue // Skipping non-exported fields
 			}
 			var joktype, goltype, more_goc string
 			joktype, goltype, more_goc, out =
-				genGoPostExpr(indent, pkg, in + "." + p.Name, f.Type, "")
+				genGoPostExpr(indent, pkg, in+"."+p.Name, f.Type, "")
 			if useful || exprIsUseful(out) {
 				useful = true
 			}
@@ -608,7 +608,7 @@ func genGoPostArray(indent, pkg, in string, el Expr, onlyIf string) (jok, gol, g
 	tmpelem := "_elem" + tmp
 
 	var goc_pre string
-	jok, gol, goc_pre, out = genGoPostExpr(indent + "\t", pkg, tmpelem, el, "")
+	jok, gol, goc_pre, out = genGoPostExpr(indent+"\t", pkg, tmpelem, el, "")
 	useful := exprIsUseful(out)
 	jok = "(vector-of " + jok + ")"
 	gol = "[]" + gol
@@ -634,7 +634,7 @@ func genGoPostStar(indent, pkg, in string, e Expr, onlyIf string) (jok, gol, goc
 	} else {
 		onlyIf = in + " != nil && " + onlyIf
 	}
-	jok, gol, goc, out = genGoPostExpr(indent, pkg, "(*" + in + ")", e, onlyIf)
+	jok, gol, goc, out = genGoPostExpr(indent, pkg, "(*"+in+")", e, onlyIf)
 	gol = "*" + gol
 	return
 }
@@ -651,7 +651,7 @@ func genGoPostExpr(indent, pkg, in string, e Expr, onlyIf string) (jok, gol, goc
 			jok = "String"
 			gol = "string"
 			out = "MakeString(" + in + ")"
-		case "int", "int16", "uint", "uint16", "int32", "uint32", "int64", "byte":  // TODO: Does Joker always have 64-bit signed ints?
+		case "int", "int16", "uint", "uint16", "int32", "uint32", "int64", "byte": // TODO: Does Joker always have 64-bit signed ints?
 			jok = "Int"
 			gol = "int"
 			out = "MakeInt(int(" + in + "))"
@@ -662,10 +662,10 @@ func genGoPostExpr(indent, pkg, in string, e Expr, onlyIf string) (jok, gol, goc
 		case "error":
 			jok = "Error"
 			gol = "error"
-			out = maybeNil(in, "MakeError(" + in + ")")  // TODO: Test this against the MakeError() added to joker/core/object.go
+			out = maybeNil(in, "MakeError("+in+")") // TODO: Test this against the MakeError() added to joker/core/object.go
 		default:
 			jok, _, goc, out = genGoPostNamed(indent, pkg, in, v.Name, onlyIf)
-			gol = v.Name  // This is as far as Go needs to go for a type signature
+			gol = v.Name // This is as far as Go needs to go for a type signature
 		}
 	case *ArrayType:
 		jok, gol, goc, out = genGoPostArray(indent, pkg, in, v.Elt, onlyIf)
@@ -702,7 +702,7 @@ func genGoPostItem(indent, pkg, in string, f *Field, onlyIf string) (captureVar,
 func reverseJoin(a []string, infix string) string {
 	j := ""
 	for idx := len(a) - 1; idx >= 0; idx-- {
-		if idx != len(a) - 1 {
+		if idx != len(a)-1 {
 			j += infix
 		}
 		j += a[idx]
@@ -742,15 +742,15 @@ func wrapStmtOnlyIfs(indent, v, t, e string, onlyIf string, c string, out *strin
 // Caller generates "outGOCALL;goc" while saving jok and gol for type info (they go into .joke as metadata and docstrings)
 func genGoPostList(indent string, pkg string, fl FieldList) (jok, gol, goc, out string) {
 	useful := false
-	captureVars := []string {}
-	jokType := []string {}
-	golType := []string {}
-	goCode := []string {}
+	captureVars := []string{}
+	jokType := []string{}
+	golType := []string{}
+	goCode := []string{}
 
 	result := resultName
 	multipleCaptures := len(fl.List) > 1 || (fl.List[0].Names != nil && len(fl.List[0].Names) > 1)
 	for _, f := range fl.List {
-		names := []string {}
+		names := []string{}
 		if f.Names == nil {
 			names = append(names, "")
 		} else {
@@ -820,7 +820,7 @@ func genGoPostList(indent string, pkg string, fl FieldList) (jok, gol, goc, out 
 // through or "Object" is returned for it if jok is returned as empty.
 func jokerReturnTypeForGenerateSTD(in_jok, in_gol string) (jok, gol string) {
 	switch in_jok {
-	case "String", "Int", "Byte", "Double", "Bool", "Time", "Error":  // TODO: Have tested only String so far
+	case "String", "Int", "Byte", "Double", "Bool", "Time", "Error": // TODO: Have tested only String so far
 		jok = `^"` + in_jok + `"`
 	default:
 		jok = ""
@@ -832,8 +832,8 @@ func jokerReturnTypeForGenerateSTD(in_jok, in_gol string) (jok, gol string) {
 type codeInfo map[string]string
 
 /* Map relative (Unix-style) package names to maps of filenames to code strings. */
-var jokerCode = map[string]codeInfo {}
-var goCode = map[string]codeInfo {}
+var jokerCode = map[string]codeInfo{}
+var goCode = map[string]codeInfo{}
 
 func sortedPackageMap(m map[string]codeInfo, f func(k string, v codeInfo)) {
 	var keys []string
@@ -860,12 +860,12 @@ func sortedCodeMap(m codeInfo, f func(k string, v string)) {
 var nonEmptyLineRegexp *regexp.Regexp
 
 type funcCode struct {
-	jokerParamList string  // fieldListAsClojure(d.Type.Params)
-	goParamList string  // paramListAsGo(d.Type.Params)
-	jokerGoParams string  // "(" + fieldListToGo(d.Type.Params) + ")"
-	goCode string
-	jokerReturnTypeForDoc string  // genReturnType(pkg, d.Type.Results)
-	goReturnTypeForDoc string  // genReturnType(pkg, d.Type.Results)
+	jokerParamList        string // fieldListAsClojure(d.Type.Params)
+	goParamList           string // paramListAsGo(d.Type.Params)
+	jokerGoParams         string // "(" + fieldListToGo(d.Type.Params) + ")"
+	goCode                string
+	jokerReturnTypeForDoc string // genReturnType(pkg, d.Type.Results)
+	goReturnTypeForDoc    string // genReturnType(pkg, d.Type.Results)
 }
 
 func genGoPre(indent string, fl *FieldList, goFname string) (jok, jok2golParams, gol, code, params string) {
@@ -938,7 +938,7 @@ func maybeConvertGoResult(pkg, call string, fl *FieldList) string {
 	switch v := t.(type) {
 	case *Ident:
 		switch v.Name {
-		case "int16", "uint", "uint16", "int32", "uint32", "int64", "byte":  // TODO: Does Joker always have 64-bit signed ints?
+		case "int16", "uint", "uint16", "int32", "uint32", "int64", "byte": // TODO: Does Joker always have 64-bit signed ints?
 			return "int(" + call + ")"
 		case "int":
 			if named {
@@ -953,7 +953,7 @@ func maybeConvertGoResult(pkg, call string, fl *FieldList) string {
 
 var abendRegexp *regexp.Regexp
 
-var abends = map[string]int {}
+var abends = map[string]int{}
 
 func trackAbends(a string) {
 	subMatches := abendRegexp.FindAllStringSubmatch(a, -1)
@@ -972,10 +972,10 @@ func trackAbends(a string) {
 
 func printAbends(m map[string]int) {
 	type ac struct {
-		abendCode string
+		abendCode  string
 		abendCount int
 	}
-	a := []ac {}
+	a := []ac{}
 	for k, v := range m {
 		a = append(a, ac{abendCode: k, abendCount: v})
 	}
@@ -1016,7 +1016,7 @@ func genFunction(f string, fn *funcInfo) {
 			panic(fmt.Sprintf("Cannot find package %s", pkgDirUnix))
 		}
 	}
-	jok2golCall := maybeConvertGoResult(pkgDirUnix, jok2gol + fc.jokerGoParams, fn.fd.Type.Results)
+	jok2golCall := maybeConvertGoResult(pkgDirUnix, jok2gol+fc.jokerGoParams, fn.fd.Type.Results)
 
 	jokerFn := fmt.Sprintf(jfmt, jokerReturnType, d.Name.Name,
 		commentGroupInQuotes(d.Doc, fc.jokerReturnTypeForDoc, fc.goReturnTypeForDoc),
@@ -1028,7 +1028,7 @@ func %s(%s) %s {
 `
 
 	goFn := ""
-	if jokerReturnType == "" {  // TODO: Generate this anyway if it contains ABEND, so we can see what's needed.
+	if jokerReturnType == "" { // TODO: Generate this anyway if it contains ABEND, so we can see what's needed.
 		goFn = fmt.Sprintf(gfmt, goFname, fc.goParamList, goReturnType, fc.goCode)
 	}
 
@@ -1048,12 +1048,12 @@ func %s(%s) %s {
 	}
 
 	if _, ok := jokerCode[pkgDirUnix]; !ok {
-		jokerCode[pkgDirUnix] = codeInfo {}
+		jokerCode[pkgDirUnix] = codeInfo{}
 	}
 	jokerCode[pkgDirUnix][d.Name.Name] = jokerFn
 
 	if _, ok := goCode[pkgDirUnix]; !ok {
-		goCode[pkgDirUnix] = codeInfo {} // There'll at least be a .joke file
+		goCode[pkgDirUnix] = codeInfo{} // There'll at least be a .joke file
 	}
 	if goFn != "" {
 		goCode[pkgDirUnix][d.Name.Name] = goFn
@@ -1090,6 +1090,7 @@ If <joker-std-subdir> is not specified, no Go nor Clojure source files
 
 var currentTimeAndVersion = ""
 var noTimeAndVersion = false
+
 func curTimeAndVersion() string {
 	if noTimeAndVersion {
 		return "(omitted for testing)"
@@ -1113,17 +1114,17 @@ func updateJokerMain(pkgs []string, f string) {
 		if verbose {
 			fmt.Printf("Adding custom import line to %s\n", filepath.ToSlash(f))
 		}
-		m = strings.Replace(m, "import", "import ( // " + flag + "\n) // " + endflag + "\n\nimport", 1)
+		m = strings.Replace(m, "import", "import ( // "+flag+"\n) // "+endflag+"\n\nimport", 1)
 		m = "// Auto-modified by gostd2joker at " + curTimeAndVersion() + "\n\n" + m
 	}
 
-	reImport := regexp.MustCompile("(?msU)" + flag + ".*" + endflag)  // [^(]*[(][^)]*[)]
+	reImport := regexp.MustCompile("(?msU)" + flag + ".*" + endflag) // [^(]*[(][^)]*[)]
 	newImports := "\n"
 	importPrefix := "\t_ \"github.com/candid82/joker/std/go/"
 	for _, p := range pkgs {
 		newImports += importPrefix + p + "\"\n"
 	}
-	m = reImport.ReplaceAllString(m, flag + newImports + ") // " + endflag)
+	m = reImport.ReplaceAllString(m, flag+newImports+") // "+endflag)
 
 	if verbose {
 		fmt.Printf("Writing %s\n", filepath.ToSlash(f))
@@ -1145,7 +1146,7 @@ func updateCoreDotJoke(pkgs []string, f string) {
 			fmt.Printf("Adding custom loaded libraries to %s\n", filepath.ToSlash(f))
 		}
 		m = strings.Replace(m, "\n  *loaded-libs* #{",
-			"\n  *loaded-libs* #{\n   ;; " + flag + "\n   ;; " + endflag + "\n", 1)
+			"\n  *loaded-libs* #{\n   ;; "+flag+"\n   ;; "+endflag+"\n", 1)
 		m = ";;;; Auto-modified by gostd2joker at " + curTimeAndVersion() + "\n\n" + m
 	}
 
@@ -1155,7 +1156,7 @@ func updateCoreDotJoke(pkgs []string, f string) {
 	curLine := ""
 	for _, p := range pkgs {
 		more := importPrefix + strings.Replace(p, "/", ".", -1)
-		if curLine != "" && len(curLine) + len(more) > 77 {
+		if curLine != "" && len(curLine)+len(more) > 77 {
 			newImports += curLine + "\n  "
 			curLine = more
 		} else {
@@ -1163,7 +1164,7 @@ func updateCoreDotJoke(pkgs []string, f string) {
 		}
 	}
 	newImports += curLine
-	m = reImport.ReplaceAllString(m, flag + newImports + "\n   ;; " + endflag + "\n   ")
+	m = reImport.ReplaceAllString(m, flag+newImports+"\n   ;; "+endflag+"\n   ")
 
 	if verbose {
 		fmt.Printf("Writing %s\n", filepath.ToSlash(f))
@@ -1185,7 +1186,7 @@ func updateGenerateSTD(pkgs []string, f string) {
 			fmt.Printf("Adding custom namespaces to %s\n", filepath.ToSlash(f))
 		}
 		m = strings.Replace(m, "(def namespaces [",
-			"(def namespaces [\n  ;; " + flag + "\n  ;; " + endflag + "\n  ", 1)
+			"(def namespaces [\n  ;; "+flag+"\n  ;; "+endflag+"\n  ", 1)
 		m = ";;;; Auto-modified by gostd2joker at " + curTimeAndVersion() + "\n\n" + m
 	}
 
@@ -1195,7 +1196,7 @@ func updateGenerateSTD(pkgs []string, f string) {
 	curLine := ""
 	for _, p := range pkgs {
 		more := importPrefix + strings.Replace(p, "/", ".", -1)
-		if curLine != "" && len(curLine) + len(more) > 77 {
+		if curLine != "" && len(curLine)+len(more) > 77 {
 			newImports += curLine + "\n "
 			curLine = more
 		} else {
@@ -1203,7 +1204,7 @@ func updateGenerateSTD(pkgs []string, f string) {
 		}
 	}
 	newImports += curLine
-	m = reImport.ReplaceAllString(m, flag + newImports + "\n  ;; " + endflag + "\n  ")
+	m = reImport.ReplaceAllString(m, flag+newImports+"\n  ;; "+endflag+"\n  ")
 
 	if verbose {
 		fmt.Printf("Writing %s\n", filepath.ToSlash(f))
@@ -1341,7 +1342,7 @@ func main() {
 		if !overwrite {
 			if _, e := os.Stat(jokerLibDir); e == nil ||
 				(!strings.Contains(e.Error(), "no such file or directory") &&
-				!strings.Contains(e.Error(), "The system cannot find the file specified.")) {
+					!strings.Contains(e.Error(), "The system cannot find the file specified.")) {
 				msg := "already exists"
 				if e != nil {
 					msg = e.Error()
@@ -1388,7 +1389,7 @@ func main() {
 			pkgBaseName := path.Base(pkgDirUnix)
 			if jokerLibDir != "" && jokerLibDir != "-" &&
 				(generateEmpty || packagesInfo[pkgDirUnix].nonEmpty) {
-				jf := filepath.Join(jokerLibDir, filepath.FromSlash(pkgDirUnix) + ".joke")
+				jf := filepath.Join(jokerLibDir, filepath.FromSlash(pkgDirUnix)+".joke")
 				var e error
 				e = os.MkdirAll(filepath.Dir(jf), 0777)
 				unbuf_out, e = os.Create(jf)
@@ -1398,7 +1399,7 @@ func main() {
 				pi := packagesInfo[pkgDirUnix]
 
 				fmt.Fprintf(out,
-					`;;;; Auto-generated by gostd2joker at ` + curTimeAndVersion() + `, do not edit!!
+					`;;;; Auto-generated by gostd2joker at `+curTimeAndVersion()+`, do not edit!!
 
 (ns
   ^{:go-imports [%s]
@@ -1416,7 +1417,7 @@ func main() {
 						}
 					}(),
 					strings.Replace(pkgDirUnix, "/", ".", -1))
-				}
+			}
 			sortedCodeMap(v,
 				func(f string, w string) {
 					if verbose || jokerLibDir == "" {
@@ -1443,7 +1444,7 @@ func main() {
 			if jokerLibDir != "" && jokerLibDir != "-" &&
 				(generateEmpty || packagesInfo[pkgDirUnix].nonEmpty) {
 				gf := filepath.Join(jokerLibDir, pkgDirNative,
-					pkgBaseName + "_native.go")
+					pkgBaseName+"_native.go")
 				var e error
 				e = os.MkdirAll(filepath.Dir(gf), 0777)
 				check(e)
@@ -1458,7 +1459,7 @@ func main() {
 				}
 
 				fmt.Fprintf(out,
-					`// Auto-generated by gostd2joker at ` + curTimeAndVersion() + `, do not edit!!
+					`// Auto-generated by gostd2joker at `+curTimeAndVersion()+`, do not edit!!
 
 package %s
 
@@ -1488,10 +1489,10 @@ import (%s%s
 
 	if jokerSourceDir != "" && jokerSourceDir != "-" {
 		var packagesArray = []string{} // Relative package pathnames in alphabetical order
-		var dotJokeArray = []string{} // Relative package pathnames in alphabetical order
+		var dotJokeArray = []string{}  // Relative package pathnames in alphabetical order
 
 		sortedPackagesInfo(packagesInfo,
-			func (p string, i *packageInfo) {
+			func(p string, i *packageInfo) {
 				if !generateEmpty && !i.nonEmpty {
 					return
 				}
@@ -1505,13 +1506,13 @@ import (%s%s
 		updateGenerateSTD(packagesArray, filepath.Join(jokerSourceDir, "std", "generate-std.joke"))
 	}
 
-	if verbose || summary{
+	if verbose || summary {
 		fmt.Printf("ABENDs:")
 		printAbends(abends)
 		fmt.Printf("\nTotals: types=%d functions=%d methods=%d (%s%%) standalone=%d (%s%%) generated=%d (%s%%)\n",
-			len(types), len(qualifiedFunctions) + methods, methods,
-			pct(methods, len(qualifiedFunctions) + methods),
-			len(qualifiedFunctions), pct(len(qualifiedFunctions), len(qualifiedFunctions) + methods),
+			len(types), len(qualifiedFunctions)+methods, methods,
+			pct(methods, len(qualifiedFunctions)+methods),
+			len(qualifiedFunctions), pct(len(qualifiedFunctions), len(qualifiedFunctions)+methods),
 			generatedFunctions, pct(generatedFunctions, len(qualifiedFunctions)))
 	}
 
@@ -1522,7 +1523,7 @@ func pct(i, j int) string {
 	if j == 0 {
 		return "--"
 	}
-	return fmt.Sprintf("%0.2f", (float64(i) / float64(j)) * 100.0)
+	return fmt.Sprintf("%0.2f", (float64(i)/float64(j))*100.0)
 }
 
 func init() {
